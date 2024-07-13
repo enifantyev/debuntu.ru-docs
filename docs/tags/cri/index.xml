@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cri on Debuntarium</title>
-    <link>https://debuntu.ru/tags/cri/</link>
+    <link>http://localhost:1313/tags/cri/</link>
     <description>Recent content in Cri on Debuntarium</description>
     <generator>Hugo</generator>
     <language>ru-ru</language>
     <lastBuildDate>Sat, 18 May 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://debuntu.ru/tags/cri/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/cri/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Развёртывание containerd 1.x в изолированной среде</title>
-      <link>https://debuntu.ru/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/razvortyvaniye-konteynera-1-x-v-izolirovannoy-srede/</link>
+      <link>http://localhost:1313/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/razvortyvaniye-konteynera-1-x-v-izolirovannoy-srede/</link>
       <pubDate>Sat, 18 May 2024 00:00:00 +0000</pubDate>
-      <guid>https://debuntu.ru/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/razvortyvaniye-konteynera-1-x-v-izolirovannoy-srede/</guid>
-      <description>title: &amp;#34;1. Подготовка всех хостов к установке containerd&amp;#34; date: 2024-05-18 weight: 10 tags: - containerd - cri slug: podgotovka-vseh-hostov-k-ustanovke-containerd — 1. Добавление загрузки модуля overlay в систему Модуль overlay добавляет в систему поддержку файловой системы OverlayFS. Эта файловая система используется для хранения слоёв образов, которые использует containerd.&#xA;Этот шаг можно пропустить, так как загрузка модуля overlay выполняется через systemd-юнит &amp;#39;containerd.service&amp;#39;, где присутствует строка &amp;#39;ExecStartPre=-/sbin/modprobe overlay&amp;#39;.&#xA;Выполните:&#xA;cat &amp;lt;&amp;lt; EOF &amp;gt; /etc/modules-load.</description>
+      <guid>http://localhost:1313/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/razvortyvaniye-konteynera-1-x-v-izolirovannoy-srede/</guid>
+      <description>1. Добавление загрузки модуля overlay в систему Модуль overlay добавляет в систему поддержку файловой системы OverlayFS. Эта файловая система используется для хранения слоёв образов, которые использует containerd.&#xA;Этот шаг можно пропустить, так как загрузка модуля overlay выполняется через systemd-юнит &amp;#39;containerd.service&amp;#39;, где присутствует строка &amp;#39;ExecStartPre=-/sbin/modprobe overlay&amp;#39;.&#xA;Выполните:&#xA;cat &amp;lt;&amp;lt; EOF &amp;gt; /etc/modules-load.d/containerd.conf overlay EOF modprobe overlay 2. Скачивание компонентов containerd из внутреннего raw-репозитория Если внутренний репозиторий требует аутентификации, то задайте учётные данные для скачивания компонентов containerd:</description>
     </item>
     <item>
       <title>30. Установка containerd</title>
-      <link>https://debuntu.ru/manuals/kubernetes/obshchaya-instruktsiya-po-ustanovke-k8s-s-high-availability-i-stacked-etcd-v-izolirovannoy-srede-s-pomoshchyu-kubeadm/10-k8s-podgotovka-vsekh-khostov-k-ustanovke-kubernetes/ustanovka-containerd/</link>
+      <link>http://localhost:1313/manuals/kubernetes/obshchaya-instruktsiya-po-ustanovke-k8s-s-high-availability-i-stacked-etcd-v-izolirovannoy-srede-s-pomoshchyu-kubeadm/10-k8s-podgotovka-vsekh-khostov-k-ustanovke-kubernetes/ustanovka-containerd/</link>
       <pubDate>Tue, 08 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>https://debuntu.ru/manuals/kubernetes/obshchaya-instruktsiya-po-ustanovke-k8s-s-high-availability-i-stacked-etcd-v-izolirovannoy-srede-s-pomoshchyu-kubeadm/10-k8s-podgotovka-vsekh-khostov-k-ustanovke-kubernetes/ustanovka-containerd/</guid>
+      <guid>http://localhost:1313/manuals/kubernetes/obshchaya-instruktsiya-po-ustanovke-k8s-s-high-availability-i-stacked-etcd-v-izolirovannoy-srede-s-pomoshchyu-kubeadm/10-k8s-podgotovka-vsekh-khostov-k-ustanovke-kubernetes/ustanovka-containerd/</guid>
       <description></description>
     </item>
   </channel>
