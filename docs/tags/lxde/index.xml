@@ -12,7 +12,7 @@
       <link>https://debuntu.ru/n/v-lxde-net-russkoi-raskladki/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://debuntu.ru/n/v-lxde-net-russkoi-raskladki/</guid>
-      <description> </description>
+      <description>Устал от тормозов гнома и кде. Поставил lxde. Порадовался скорости, но огорчился при попытке переключиться на русскую раскладку.&#xA;Обнаружил http://smartnik.livejournal.com/189931.html: Добиться русской раскладки клавиатуры в lxde графическими средствами у меня не получилось, поэтому запускаем setxkbmap -option grp:switch,grp:alt_shift_toggle us,ru&#xA;После этого клавиатура переключается по Alt+Shift (это поведение можно менять, меняя alt_shift_toggle на то, что вам нравится) между русской и английской (естественно, вместо us,ru можно написать те варианты, которые вам нужны). Чтобы запускать эту команду каждый раз при запуске lxde, нужно добавить в конец файла</description>
     </item>
   </channel>
 </rss>

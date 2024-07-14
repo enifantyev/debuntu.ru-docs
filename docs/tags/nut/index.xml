@@ -13,7 +13,7 @@
       <link>https://debuntu.ru/n/nastroika-nut-dlya-ippon-back-power-pro-600/</link>
       <pubDate>Wed, 30 Mar 2011 00:00:00 +0000</pubDate>
       <guid>https://debuntu.ru/n/nastroika-nut-dlya-ippon-back-power-pro-600/</guid>
-      <description> </description>
+      <description>http://blog.shadypixel.com/monitoring-a-ups-with-nut-on-debian-or-ubuntu-linux/&#xA;man ups.conf man upsd.conf man upsd.users man upsmon.conf $ aptitude install nut Надо проверить наличие юзера и группы с именем nut и, если автоматом не были созданы, создать.&#xA;Лезем http://www.networkupstools.org/compat/stable.html и видим что для данной модели UPS можно юзать два дрйвера blazer_ser or megatec.&#xA;Создаём /etc/nut/ups/ups.conf и пишем внутри: # /etc/nut/ups.conf [ippon] driver = megatec port = /dev/ttyS0 (так как у меня UPS сидит на COM1) Создаём /etc/udev/rules.d/99_nut-serialups.rules: # /etc/udev/rules.</description>
     </item>
   </channel>
 </rss>

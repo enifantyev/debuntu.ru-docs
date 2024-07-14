@@ -48,7 +48,7 @@
       <link>https://debuntu.ru/n/otpravka-pochty-iz-kontaktnoi-formy-modx-evo-cherez-gmail/</link>
       <pubDate>Thu, 12 Dec 2013 00:00:00 +0000</pubDate>
       <guid>https://debuntu.ru/n/otpravka-pochty-iz-kontaktnoi-formy-modx-evo-cherez-gmail/</guid>
-      <description> </description>
+      <description>Появился сайт на MODx&#39;е. Отправка почты из контактной формы не работает. Разработчик ушёл в оффлайн. С MODx&#39;ом я ранее дела не имел. Не уверен, что я правильно всё сделал, но пока работает.&#xA;В &#34;Инструменты - Конфигурация - Пользователи&#34; заполнено всё правильно:&#xA;Метод отправки писем MAIL - cообщения отправляются с помощью функции mail().&#xA;Через SMTP-сервер SMTP авторизация Да&#xA;Нет Адрес SMTP-сервера smtp.gmail.com SMTP порт 465 SMTP почта ivanmoskvinvogradetule@example.com SMTP пароль Зашёл через ssh на хостинг и дал команду:</description>
     </item>
     <item>
       <title>Необходимые модули для Drupal 7.0</title>

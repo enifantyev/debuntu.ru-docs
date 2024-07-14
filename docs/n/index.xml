@@ -328,14 +328,14 @@
       <link>https://debuntu.ru/n/otpravka-pochty-iz-kontaktnoi-formy-modx-evo-cherez-gmail/</link>
       <pubDate>Thu, 12 Dec 2013 00:00:00 +0000</pubDate>
       <guid>https://debuntu.ru/n/otpravka-pochty-iz-kontaktnoi-formy-modx-evo-cherez-gmail/</guid>
-      <description> </description>
+      <description>Появился сайт на MODx&#39;е. Отправка почты из контактной формы не работает. Разработчик ушёл в оффлайн. С MODx&#39;ом я ранее дела не имел. Не уверен, что я правильно всё сделал, но пока работает.&#xA;В &#34;Инструменты - Конфигурация - Пользователи&#34; заполнено всё правильно:&#xA;Метод отправки писем MAIL - cообщения отправляются с помощью функции mail().&#xA;Через SMTP-сервер SMTP авторизация Да&#xA;Нет Адрес SMTP-сервера smtp.gmail.com SMTP порт 465 SMTP почта ivanmoskvinvogradetule@example.com SMTP пароль Зашёл через ssh на хостинг и дал команду:</description>
     </item>
     <item>
       <title>Краткое описание установки DD-WRT на роутер Linksys WRT610N V2.0</title>
       <link>https://debuntu.ru/n/kratkoe-opisanie-ustanovki-dd-wrt-na-router-linksys-wrt610n-v2.0/</link>
       <pubDate>Sun, 25 Nov 2012 00:00:00 +0000</pubDate>
       <guid>https://debuntu.ru/n/kratkoe-opisanie-ustanovki-dd-wrt-na-router-linksys-wrt610n-v2.0/</guid>
-      <description> </description>
+      <description>Пару лет назад я уже юзал DD-WRT на своём роутере, используя древнюю прошивку, которая указана в инструкции http://www.dd-wrt.com/wiki/index.php/Linksys_WRT610N_v2.0. Но нестабильное подключение к провайдеру через PPPoE в DD-WRT вынудила перейти на древнюю и убогую прошивку от мира вай-фай для билайна. Позже я несколько раз пытался перейти обратно на DD-WRT, но натыкался на те же грабли с работой PPPoE. Сегодня заставил себя более плотно разобраться с DD-WRT, что и позволило, как мне кажется, решить вопрос с PPPoE.</description>
     </item>
     <item>
       <title>Разборка трекбола Logitech M570</title>
@@ -363,7 +363,7 @@
       <link>https://debuntu.ru/n/nastroika-voip-na-nokia-e52/</link>
       <pubDate>Fri, 01 Apr 2011 00:00:00 +0000</pubDate>
       <guid>https://debuntu.ru/n/nastroika-voip-na-nokia-e52/</guid>
-      <description> </description>
+      <description>Скачиваем отсюда http://www.forum.nokia.com/info/sw.nokia.com/id/d476061e-90ca-42e9-b3ea-1a852f3808ec/SIP_VoIP_Settings.html SIP VoIP 3.x Settings (164 kB) и устанавливаем на телефон эту приблуду, которая позволит нам настроить профили для sip провайдеров.&#xA;Настраиваем sipnet.ru Меню - Панель управления - Параметры сети - Advanced VoIP settings SIP settings Функции - Новый профиль SIP - Исп. проф. по умолч. Для sipnet.ru: Имя профиля: Sipnet Профиль услуги: IETF Назначание по умолч.: Интернет Открыт. имя польз.: 000000@sipnet.ru (свой номер в сипнете) Использовать сжатие: нет Регистрация: Всегда Использовать защиту: Нет Прокси-сервер: не заполняем Сервер регистрации: Адрес сервера рег: sipnet.</description>
     </item>
     <item>
       <title>Настройка проброса L2TP через NAT</title>
@@ -377,7 +377,7 @@
       <link>https://debuntu.ru/n/ustanovka-debian-na-fake-raid/</link>
       <pubDate>Fri, 01 Apr 2011 00:00:00 +0000</pubDate>
       <guid>https://debuntu.ru/n/ustanovka-debian-na-fake-raid/</guid>
-      <description> </description>
+      <description>Fake raid (фальшивый) - это дешёвые raid контроллеры с урезанной аппаратной частью, которые встраивают, например, в матери, чтобы, видимо, написать в спецификации слово &#34;RAID&#34;. Вся работа по работе с рэйд-массивами возложена на драйвер. Аппаратная часть помогает вычислять CRC или что-то подобное. Стоимость такого контроллера несколько долларов-десятков долларов. Полноценный RAID контроллер стоит от пары-тройки сотен долларов и выше.&#xA;Я имею дело с дешёвыми Promise рэйд контроллерами, которые, по ощущениям, всё таки лучше, чем встроенные в матери.</description>
     </item>
     <item>
       <title>Дефрагментация XFS на удалённом сервере</title>
@@ -405,7 +405,7 @@
       <link>https://debuntu.ru/n/nastroika-nut-dlya-ippon-back-power-pro-600/</link>
       <pubDate>Wed, 30 Mar 2011 00:00:00 +0000</pubDate>
       <guid>https://debuntu.ru/n/nastroika-nut-dlya-ippon-back-power-pro-600/</guid>
-      <description> </description>
+      <description>http://blog.shadypixel.com/monitoring-a-ups-with-nut-on-debian-or-ubuntu-linux/&#xA;man ups.conf man upsd.conf man upsd.users man upsmon.conf $ aptitude install nut Надо проверить наличие юзера и группы с именем nut и, если автоматом не были созданы, создать.&#xA;Лезем http://www.networkupstools.org/compat/stable.html и видим что для данной модели UPS можно юзать два дрйвера blazer_ser or megatec.&#xA;Создаём /etc/nut/ups/ups.conf и пишем внутри: # /etc/nut/ups.conf [ippon] driver = megatec port = /dev/ttyS0 (так как у меня UPS сидит на COM1) Создаём /etc/udev/rules.d/99_nut-serialups.rules: # /etc/udev/rules.</description>
     </item>
     <item>
       <title>Необходимые модули для Drupal 7.0</title>
@@ -426,7 +426,7 @@
       <link>https://debuntu.ru/n/ustanovka-i-ispolzovanie-truecrypt/</link>
       <pubDate>Wed, 30 Mar 2011 00:00:00 +0000</pubDate>
       <guid>https://debuntu.ru/n/ustanovka-i-ispolzovanie-truecrypt/</guid>
-      <description> </description>
+      <description>Установка Truecrypt Установка truecrypt проста.&#xA;Устанавливаем необходимые пакеты для установки трукрипта:&#xA;# aptitude install libfuse2 fuse-utils dmsetup libsm6 libgtk2.0-0 sudo&#xA;Скачиваем с www.truecrypt.org соответствующий архив:&#xA;# lynx www.truecrypt.org&#xA;На сайте переходим на страницу downloads. Потом выбираем соответствующий архив и скачиваем его к себе. На текущий момент truecrypt-6.2a-ubuntu-x86.tar.gz.&#xA;Распаковываем его:&#xA;# tar -xvf truecrypt*.&#xA;Запускаем распакованный скрипт truecrypt-6.2a-setup-ubuntu-x86 и отвечаем на вопросы:&#xA;Инсталлировать трукрипт или только распаковать? Выбираем 1 - инсталлировать.</description>
     </item>
     <item>
       <title>Краткое описание Monitorix</title>
@@ -440,7 +440,7 @@
       <link>https://debuntu.ru/n/v-lxde-net-russkoi-raskladki/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://debuntu.ru/n/v-lxde-net-russkoi-raskladki/</guid>
-      <description> </description>
+      <description>Устал от тормозов гнома и кде. Поставил lxde. Порадовался скорости, но огорчился при попытке переключиться на русскую раскладку.&#xA;Обнаружил http://smartnik.livejournal.com/189931.html: Добиться русской раскладки клавиатуры в lxde графическими средствами у меня не получилось, поэтому запускаем setxkbmap -option grp:switch,grp:alt_shift_toggle us,ru&#xA;После этого клавиатура переключается по Alt+Shift (это поведение можно менять, меняя alt_shift_toggle на то, что вам нравится) между русской и английской (естественно, вместо us,ru можно написать те варианты, которые вам нужны). Чтобы запускать эту команду каждый раз при запуске lxde, нужно добавить в конец файла</description>
     </item>
     <item>
       <title>Выпуск Monitorix версии 3.12.0 (2020-02-21)</title>

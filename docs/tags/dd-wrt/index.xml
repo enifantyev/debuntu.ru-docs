@@ -13,7 +13,7 @@
       <link>https://debuntu.ru/n/kratkoe-opisanie-ustanovki-dd-wrt-na-router-linksys-wrt610n-v2.0/</link>
       <pubDate>Sun, 25 Nov 2012 00:00:00 +0000</pubDate>
       <guid>https://debuntu.ru/n/kratkoe-opisanie-ustanovki-dd-wrt-na-router-linksys-wrt610n-v2.0/</guid>
-      <description> </description>
+      <description>Пару лет назад я уже юзал DD-WRT на своём роутере, используя древнюю прошивку, которая указана в инструкции http://www.dd-wrt.com/wiki/index.php/Linksys_WRT610N_v2.0. Но нестабильное подключение к провайдеру через PPPoE в DD-WRT вынудила перейти на древнюю и убогую прошивку от мира вай-фай для билайна. Позже я несколько раз пытался перейти обратно на DD-WRT, но натыкался на те же грабли с работой PPPoE. Сегодня заставил себя более плотно разобраться с DD-WRT, что и позволило, как мне кажется, решить вопрос с PPPoE.</description>
     </item>
   </channel>
 </rss>

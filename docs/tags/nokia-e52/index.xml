@@ -13,7 +13,7 @@
       <link>https://debuntu.ru/n/nastroika-voip-na-nokia-e52/</link>
       <pubDate>Fri, 01 Apr 2011 00:00:00 +0000</pubDate>
       <guid>https://debuntu.ru/n/nastroika-voip-na-nokia-e52/</guid>
-      <description> </description>
+      <description>Скачиваем отсюда http://www.forum.nokia.com/info/sw.nokia.com/id/d476061e-90ca-42e9-b3ea-1a852f3808ec/SIP_VoIP_Settings.html SIP VoIP 3.x Settings (164 kB) и устанавливаем на телефон эту приблуду, которая позволит нам настроить профили для sip провайдеров.&#xA;Настраиваем sipnet.ru Меню - Панель управления - Параметры сети - Advanced VoIP settings SIP settings Функции - Новый профиль SIP - Исп. проф. по умолч. Для sipnet.ru: Имя профиля: Sipnet Профиль услуги: IETF Назначание по умолч.: Интернет Открыт. имя польз.: 000000@sipnet.ru (свой номер в сипнете) Использовать сжатие: нет Регистрация: Всегда Использовать защиту: Нет Прокси-сервер: не заполняем Сервер регистрации: Адрес сервера рег: sipnet.</description>
     </item>
   </channel>
 </rss>

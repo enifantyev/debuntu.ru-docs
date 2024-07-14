@@ -13,7 +13,7 @@
       <link>https://debuntu.ru/n/ustanovka-i-ispolzovanie-truecrypt/</link>
       <pubDate>Wed, 30 Mar 2011 00:00:00 +0000</pubDate>
       <guid>https://debuntu.ru/n/ustanovka-i-ispolzovanie-truecrypt/</guid>
-      <description> </description>
+      <description>Установка Truecrypt Установка truecrypt проста.&#xA;Устанавливаем необходимые пакеты для установки трукрипта:&#xA;# aptitude install libfuse2 fuse-utils dmsetup libsm6 libgtk2.0-0 sudo&#xA;Скачиваем с www.truecrypt.org соответствующий архив:&#xA;# lynx www.truecrypt.org&#xA;На сайте переходим на страницу downloads. Потом выбираем соответствующий архив и скачиваем его к себе. На текущий момент truecrypt-6.2a-ubuntu-x86.tar.gz.&#xA;Распаковываем его:&#xA;# tar -xvf truecrypt*.&#xA;Запускаем распакованный скрипт truecrypt-6.2a-setup-ubuntu-x86 и отвечаем на вопросы:&#xA;Инсталлировать трукрипт или только распаковать? Выбираем 1 - инсталлировать.</description>
     </item>
   </channel>
 </rss>
