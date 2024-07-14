@@ -13,7 +13,7 @@
       <link>https://debuntu.ru/a/ustanovka-egroupware-1-8-na-debian-6.0/</link>
       <pubDate>Mon, 07 Mar 2011 00:00:00 +0000</pubDate>
       <guid>https://debuntu.ru/a/ustanovka-egroupware-1-8-na-debian-6.0/</guid>
-      <description> </description>
+      <description>Автор: Евгений Нифантьев&#xA;Статус: не завершено&#xA;Дата: 2011-03-07&#xA;ОС: Debian 6.0 x64&#xA;Приложения: eGroupWare 1.8, MySQL 5.1.49&#xA;Установка Debian 6.0 Установка произведена с помощью первого CD-диска Debian на виртуальную машину VMWare Player. При установке выбрал метод разметки “Авто - использовать весь диск с шифрованным LVM”. Также использовал схему разметки “Отдельные разделы для /home, /usr, /var, /tmp”. Выбор программного обеспечения, предлагаемый на заключительном этапе установки системы, не производил. Предпочитаю выбрать необходимые пакеты после завершения установки операционной системы.</description>
     </item>
   </channel>
 </rss>

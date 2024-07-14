@@ -13,14 +13,14 @@
       <link>https://debuntu.ru/a/freebsd-ustanovka-udalenie-programm/</link>
       <pubDate>Sat, 13 Sep 2014 00:00:00 +0000</pubDate>
       <guid>https://debuntu.ru/a/freebsd-ustanovka-udalenie-programm/</guid>
-      <description> </description>
+      <description>2014-09-13 Введение Установка программы из пакета pkg pkgng Установка программы из порта Развёртывание дерева портов Поиск программы в дереве портов Установка программы Удаление программы Способы обновлений установленного программного обеспечения portupgrade portmanager portmaster Введение Во FreeBSD я обнаружил два способа централизованной установки программ. Первый способ — установка программ из готовых пакетов, хранящихся на специальном сервере-репозитории, а второй способ — сборка программы из исходников-портов.&#xA;Пакет — архив txz, содержащий всё необходимое для работы программы.</description>
     </item>
     <item>
       <title>Установка и использование в FreeBSD 9.1 нового пакетного менеджера pkgng</title>
       <link>https://debuntu.ru/a/ustanovka-i-ispolzovanie-v-freebsd-9-1-novogo-paketnogo-menedzhera-pkgng/</link>
       <pubDate>Wed, 24 Apr 2013 00:00:00 +0000</pubDate>
       <guid>https://debuntu.ru/a/ustanovka-i-ispolzovanie-v-freebsd-9-1-novogo-paketnogo-menedzhera-pkgng/</guid>
-      <description> Repository definitions #repos:&#xA;default : http://example.org/pkgng/ repo1 : http://somewhere.org/pkgng/repo1/ repo2 : http://somewhere.org/pkgng/repo2/ </description>
+      <description>ОС: FreeBSD 9.1 Последнее существенное изменение: 2013-04-24 Введение Установка Настройка Использование Ссылки Введение Мой опыт использования FreeBSD не превышает нескольких дней, поэтому подразумевается, что в тексте обильно рассыпаны фразеологизмы &#34;насколько я понял&#34;, &#34;если я правильно понял&#34; и т.п. Если их не видно, это не значит, что их там нет.&#xA;Пакетный менеджер pkgng пришёл на смену pkg_install и более старым способам сборки портов прямо на компьютере. Изначально процесс установки пакета состоял из скачивания исходников пакета на компьютер и сборку пакета через make и т.</description>
     </item>
   </channel>
 </rss>

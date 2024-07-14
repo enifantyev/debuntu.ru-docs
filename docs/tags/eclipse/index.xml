@@ -13,7 +13,7 @@
       <link>https://debuntu.ru/a/ustanovka-eclipse-3-6-helios-v-ubuntu/</link>
       <pubDate>Fri, 19 Feb 2010 00:00:00 +0000</pubDate>
       <guid>https://debuntu.ru/a/ustanovka-eclipse-3-6-helios-v-ubuntu/</guid>
-      <description> </description>
+      <description>2010-02-19&#xA;Ссылки: www.eclipse.org&#xA;Описание Установка приложения без использования репозитория Скачиваем с http://www.eclipse.org/downloads/ дистрибутив. Я выбрал Eclipse Classic 3.6.1, 169 MB для Linux 64 bit, так как у меня 64-битная Ubuntu. Полученный файл распаковал в /opt. Добавил ссылку на рабочий стол /opt/eclipse/eclipse.&#xA;Включение функциональности классического обновления Ставим галку в меню Window - Preferences - General - Capabilities - Classic Update.&#xA;Подключение некоторых репозиториев Установка дополнений, как и русификация, производится через меню Help - Install New Software.</description>
     </item>
   </channel>
 </rss>
