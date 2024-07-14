@@ -1,4 +1,4 @@
-;(function () { /*! Asciidoctor Tabs | Copyright (c) 2018-present Dan Allen | MIT License */
+(function () { /*! Asciidoctor Tabs | Copyright (c) 2018-present Dan Allen | MIT License */
   'use strict'
 
   var config = (document.currentScript || {}).dataset || {}

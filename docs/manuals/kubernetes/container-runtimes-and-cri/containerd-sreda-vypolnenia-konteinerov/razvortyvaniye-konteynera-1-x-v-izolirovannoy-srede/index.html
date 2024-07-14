@@ -44,7 +44,7 @@ cat &lt;&lt; EOF &gt; /etc/modules-load.d/containerd.conf overlay EOF modprobe o
 cat &lt;&lt; EOF &gt; /etc/modules-load.d/containerd.conf overlay EOF modprobe overlay 2. Скачивание компонентов containerd из внутреннего raw-репозитория Если внутренний репозиторий требует аутентификации, то задайте учётные данные для скачивания компонентов containerd:">
   <meta itemprop="datePublished" content="2024-05-18T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-05-18T00:00:00+00:00">
-  <meta itemprop="wordCount" content="444">
+  <meta itemprop="wordCount" content="451">
   <meta itemprop="keywords" content="Containerd,Cri">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Развёртывание containerd 1.x в изолированной среде">
@@ -421,10 +421,11 @@ if (!doNotTrack) {
     <li><a href="#_установка_containerd">3. Установка containerd</a></li>
     <li><a href="#_добавление_в_систему_systemd_юнит_containerd">4. Добавление в систему systemd-юнит containerd</a></li>
     <li><a href="#_установка_runc">5. Установка runc</a></li>
-    <li><a href="#_создание_файла_конфигурации">6. Создание файла конфигурации</a></li>
-    <li><a href="#_конфигурирование">7. Конфигурирование</a></li>
+    <li><a href="#_создание_файла_конфигурации_containerd">6. Создание файла конфигурации containerd</a></li>
+    <li><a href="#_конфигурирование_containerd">7. Конфигурирование containerd</a></li>
     <li><a href="#_перенастройка_для_работы_с_внутренним_registry">8. Перенастройка для работы с внутренним registry</a></li>
     <li><a href="#_запуск_containerd">9. Запуск containerd</a></li>
+    <li><a href="#_тестирование_containerd">10. Тестирование containerd</a></li>
   </ul>
 </nav>
       </div>
@@ -786,7 +787,7 @@ systemctl daemon-reload</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_создание_файла_конфигурации">6. Создание файла конфигурации</h2>
+<h2 id="_создание_файла_конфигурации_containerd">6. Создание файла конфигурации containerd</h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
@@ -804,7 +805,7 @@ containerd config default &gt; /etc/containerd/config.toml</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_конфигурирование">7. Конфигурирование</h2>
+<h2 id="_конфигурирование_containerd">7. Конфигурирование containerd</h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
@@ -860,6 +861,12 @@ containerd config default &gt; /etc/containerd/config.toml</code></pre>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
+<p><a href="https://github.com/containerd/containerd/blob/main/docs/cri/config.md#registry-configuration" class="bare">https://github.com/containerd/containerd/blob/main/docs/cri/config.md#registry-configuration</a></p>
+</li>
+<li>
+<p><a href="https://github.com/containerd/containerd/blob/main/docs/hosts.md#setup-default-mirror-for-all-registries" class="bare">https://github.com/containerd/containerd/blob/main/docs/hosts.md#setup-default-mirror-for-all-registries</a></p>
+</li>
+<li>
 <p>Выполните:</p>
 <div class="listingblock">
 <div class="content">
@@ -899,7 +906,11 @@ sed -i &#39;/\.registry\]/{ n; s|config_path = .*|config_path = \&#34;/etc/conta
 </li>
 </ol>
 </div>
-<hr/>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_тестирование_containerd">10. Тестирование containerd</h2>
+<div class="sectionbody">
 <div id="_tabs_1" class="openblock tabs is-loading">
 <div class="content">
 <div class="ulist tablist">
