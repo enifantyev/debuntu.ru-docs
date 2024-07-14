@@ -853,7 +853,7 @@
       <link>https://debuntu.ru/n/nastroika-probrosa-l2tp/</link>
       <pubDate>Fri, 01 Apr 2011 00:00:00 +0000</pubDate>
       <guid>https://debuntu.ru/n/nastroika-probrosa-l2tp/</guid>
-      <description> </description>
+      <description>L2TP сервер слушает на портах udp 1701 и udp 500.&#xA;L2TP не обеспечивает шифрования трафика. Для шифрования используется IPsec (протокол #50). Есть проблема при прохождении IPsec через NAT. Для его решения используется протокол NAT-T (порт udp 4500). В заголовок пакета IPsec вставляется заголовок обычного udp. Таким образом, протокол IPsec инкапсулирован в протокол UDP и обрабатывается в сети, как обычный UDP, что обеспечивает ему прохождение через барьеры. Есть проблема с клиентами Microsoft.</description>
     </item>
     <item>
       <title>Установка debian на fake raid</title>
