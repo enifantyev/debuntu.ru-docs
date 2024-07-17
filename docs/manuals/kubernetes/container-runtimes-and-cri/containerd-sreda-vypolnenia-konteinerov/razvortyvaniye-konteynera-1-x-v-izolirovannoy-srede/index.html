@@ -44,7 +44,7 @@ cat &lt;&lt; EOF &gt; /etc/modules-load.d/containerd.conf overlay EOF modprobe o
 cat &lt;&lt; EOF &gt; /etc/modules-load.d/containerd.conf overlay EOF modprobe overlay 2. Скачивание компонентов containerd из внутреннего raw-репозитория Если внутренний репозиторий требует аутентификации, то задайте учётные данные для скачивания компонентов containerd:">
   <meta itemprop="datePublished" content="2024-05-18T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-05-18T00:00:00+00:00">
-  <meta itemprop="wordCount" content="451">
+  <meta itemprop="wordCount" content="438">
   <meta itemprop="keywords" content="Containerd,Cri">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Развёртывание containerd 1.x в изолированной среде">
@@ -64,8 +64,6 @@ cat &lt;&lt; EOF &gt; /etc/modules-load.d/containerd.conf overlay EOF modprobe o
   integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
   crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://debuntu.ru/css/tabs.css"><link rel="stylesheet" href="https://debuntu.ru/css/asciidoc-admon.css"><link rel="stylesheet" href="https://debuntu.ru/css/monokai.css"><link rel="stylesheet" href="https://debuntu.ru/css/tulip.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<script type="text/javascript" src="https://debuntu.ru/js/tabs.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1HVBCPETY0"></script>
 <script>
 var doNotTrack = false;
@@ -668,11 +666,11 @@ if (!doNotTrack) {
 <p>Выполните:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">cat &lt;&lt; EOF &gt; /etc/modules-load.d/containerd.conf
-overlay
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">cat &lt;&lt; EOF &gt;</span><span style="color: #BBBBBB"> </span>/etc/modules-load.d/containerd.conf
+<span style="color: #FFFFFF;background-color: #231529">overlay
 EOF
 
-modprobe overlay</code></pre>
+modprobe overlay</span></code></pre>
 </div>
 </div>
 </li>
@@ -689,9 +687,9 @@ modprobe overlay</code></pre>
 <p>Если внутренний репозиторий требует аутентификации, то задайте учётные данные для скачивания компонентов containerd:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">set +o history
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">set +o history
 USER_PASS=&#39;nifantevea:xxxxxxxxxxxxxxx&#39;
-set -o history</code></pre>
+set -o history</span></code></pre>
 </div>
 </div>
 </li>
@@ -699,7 +697,7 @@ set -o history</code></pre>
 <p>Скачайте компоненты, предварительно изменив номера версий на актуальные:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">CONTAINERD_VER=&#39;1.7.16&#39;
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">CONTAINERD_VER=&#39;1.7.16&#39;
 CONTAINERD_SERVICE_VER=&#39;231012&#39;
 RUNC_VER=&#39;1.1.12&#39;
 INTERNAL_REPO=&#39;http://nexus.example.org:8081/repository/evolut_raw&#39;
@@ -708,9 +706,9 @@ REPO_FOLDER=&#39;kubernetes/containerd&#39;
 mkdir -p /root/tmp
 cd /root/tmp
 
-curl -LO -u $USER_PASS ${INTERNAL_REPO}/${REPO_FOLDER}/containerd-${CONTAINERD_VER}-linux-amd64.tar.gz
-curl -LO -u $USER_PASS ${INTERNAL_REPO}/${REPO_FOLDER}/containerd.service.${CONTAINERD_SERVICE_VER}
-curl -LO -u $USER_PASS ${INTERNAL_REPO}/${REPO_FOLDER}/runc.amd64-${RUNC_VER}</code></pre>
+</span><span style="color: #FFFFFF;background-color: #231529">curl -LO -u $</span>USER_PASS <span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">INTERNAL_REPO</span><span style="color: #FFF02A;font-weight: bold">}</span>/<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">REPO_FOLDER</span><span style="color: #FFF02A;font-weight: bold">}</span>/containerd-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">CONTAINERD_VER</span><span style="color: #FFF02A;font-weight: bold">}</span><span style="color: #9f93e6;font-weight: bold">-linux-amd64</span>.tar.gz
+<span style="color: #FFFFFF;background-color: #231529">curl -LO -u $</span>USER_PASS <span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">INTERNAL_REPO</span><span style="color: #FFF02A;font-weight: bold">}</span>/<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">REPO_FOLDER</span><span style="color: #FFF02A;font-weight: bold">}</span>/containerd.service.<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">CONTAINERD_SERVICE_VER</span><span style="color: #FFF02A;font-weight: bold">}</span>
+<span style="color: #FFFFFF;background-color: #231529">curl -LO -u $</span>USER_PASS <span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">INTERNAL_REPO</span><span style="color: #FFF02A;font-weight: bold">}</span>/<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">REPO_FOLDER</span><span style="color: #FFF02A;font-weight: bold">}</span>/runc.amd64-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">RUNC_VER</span><span style="color: #FFF02A;font-weight: bold">}</span></code></pre>
 </div>
 </div>
 </li>
@@ -727,7 +725,7 @@ curl -LO -u $USER_PASS ${INTERNAL_REPO}/${REPO_FOLDER}/runc.amd64-${RUNC_VER}</c
 <p>Распакуйте containerd в каталог <code>/usr/local</code>:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">tar Cxvf /usr/local containerd-${CONTAINERD_VER}-linux-amd64.tar.gz</code></pre>
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">tar Cxvf /usr/local containerd-$</span><span style="color: #41ff5b">{</span>CONTAINERD_VER<span style="color: #41ff5b">}</span><span style="color: #9f93e6;font-weight: bold">-linux-amd64</span>.tar.gz</code></pre>
 </div>
 </div>
 <details>
@@ -760,8 +758,8 @@ bin/containerd-shim</pre>
 <p>Добавьте в Systemd ранее скачанный юнит:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">cp containerd.service.${CONTAINERD_SERVICE_VER} /etc/systemd/system/containerd.service
-systemctl daemon-reload</code></pre>
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">cp containerd.service.$</span><span style="color: #41ff5b">{</span>CONTAINERD_SERVICE_VER<span style="color: #41ff5b">}</span> /etc/systemd/system/containerd.service
+<span style="color: #FFFFFF;background-color: #231529">systemctl daemon-reload</span></code></pre>
 </div>
 </div>
 </li>
@@ -778,7 +776,7 @@ systemctl daemon-reload</code></pre>
 <p>Скопируйте ранее скачанный runc в каталог <code>/usr/local/sbin/</code>:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">install -m 755 runc.amd64-${RUNC_VER} /usr/local/sbin/runc</code></pre>
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">install -m 755 runc.amd64-$</span><span style="color: #41ff5b">{</span>RUNC_VER<span style="color: #41ff5b">}</span> /usr/local/sbin/runc</code></pre>
 </div>
 </div>
 </li>
@@ -795,8 +793,8 @@ systemctl daemon-reload</code></pre>
 <p>Сгенерируйте конфиг по-умолчанию для containerd:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">mkdir -p /etc/containerd
-containerd config default &gt; /etc/containerd/config.toml</code></pre>
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">mkdir -p /etc/containerd
+</span><span style="color: #FFFFFF;background-color: #231529">containerd config default &gt;</span><span style="color: #BBBBBB"> </span>/etc/containerd/config.toml</code></pre>
 </div>
 </div>
 </li>
@@ -813,7 +811,7 @@ containerd config default &gt; /etc/containerd/config.toml</code></pre>
 <p>Включите в конфиге использование &#39;Control Group&#39;:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">sed -i &#39;s/SystemdCgroup = false/SystemdCgroup = true/&#39; /etc/containerd/config.toml</code></pre>
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">sed -i &#39;s/SystemdCgroup = false/SystemdCgroup = true/&#39; /etc/containerd/config.toml</span></code></pre>
 </div>
 </div>
 </li>
@@ -821,7 +819,7 @@ containerd config default &gt; /etc/containerd/config.toml</code></pre>
 <p>Переключите версию pause-образа:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">sed -i &#34;s|pause:3.8|pause:3.9|&#34; /etc/containerd/config.toml</code></pre>
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">sed -i &#34;s|pause:3.8|pause:3.9|&#34; /etc/containerd/config.toml</span></code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -847,7 +845,7 @@ containerd config default &gt; /etc/containerd/config.toml</code></pre>
 <p>Если требуется, то приведите опцию &#39;bin_dir&#39; в секции &#39;[plugins.&#34;io.containerd.grpc.v1.cri&#34;.cni]&#39; к актуальному значению. В опции указан каталог, где будет установлен пакет cni-plugins и куда будут распаковываться устанавливаемые плагины, например cilium:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-source" data-lang="source">bin_dir = &#34;/opt/cni/bin&#34;</code></pre>
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="source">bin_dir = &#34;/opt/cni/bin&#34;</code></pre>
 </div>
 </div>
 </li>
@@ -858,6 +856,14 @@ containerd config default &gt; /etc/containerd/config.toml</code></pre>
 <div class="sect1">
 <h2 id="_перенастройка_для_работы_с_внутренним_registry">8. Перенастройка для работы с внутренним registry</h2>
 <div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Использованные материалы:</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -866,24 +872,32 @@ containerd config default &gt; /etc/containerd/config.toml</code></pre>
 <li>
 <p><a href="https://github.com/containerd/containerd/blob/main/docs/hosts.md#setup-default-mirror-for-all-registries" class="bare">https://github.com/containerd/containerd/blob/main/docs/hosts.md#setup-default-mirror-for-all-registries</a></p>
 </li>
+</ol>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>Выполните:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">#INTERNAL_REGISTRY=&#39;http://192.168.31.250:5000&#39;
-INTERNAL_REGISTRY=&#39;https://dockerhub.example.org&#39;
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #41ff5b;font-weight: bold">INTERNAL_REGISTRY</span><span style="color: #41ff5b">=</span><span style="color: #fff0a6;font-weight: bold">&#39;http://192.168.31.250:5000&#39;</span>
+<span style="color: #FFFFFF;background-color: #231529">INTERNAL_REGISTRY=&#39;https://dockerhub.example.org&#39;
 
 mkdir -p /etc/containerd/certs.d/_default
 
-cat &lt;&lt; EOF &gt; /etc/containerd/certs.d/_default/hosts.toml
-[host.&#34;${INTERNAL_REGISTRY}&#34;]
-  capabilities = [&#34;pull&#34;, &#34;resolve&#34;]
-  #skip_verify = true
-EOF
+</span><span style="color: #FFFFFF;background-color: #231529">cat &lt;&lt; EOF &gt;</span><span style="color: #BBBBBB"> </span>/etc/containerd/certs.d/_default/hosts.toml
+<span style="color: #FFFFFF;background-color: #231529">[host.&#34;$</span><span style="color: #41ff5b">{</span>INTERNAL_REGISTRY<span style="color: #41ff5b">}</span><span style="color: #fff0a6;font-weight: bold">&#34;]
+</span><span style="color: #FFFFFF;background-color: #231529">  capabilities = [&#34;pull&#34;, &#34;resolve&#34;]
+</span><span style="color: #FFFFFF;background-color: #231529">  #</span>skip_verify <span style="color: #41ff5b">=</span> <span style="font-weight: bold">true</span>
+<span style="color: #FFFFFF;background-color: #231529">EOF
 
-# Поиск строки .registry и замена следующей строки на
-# config_path = \&#34;/etc/containerd/certs.d\&#34;
-sed -i &#39;/\.registry\]/{ n; s|config_path = .*|config_path = \&#34;/etc/containerd/certs.d\&#34;|g }&#39; /etc/containerd/config.toml</code></pre>
+</span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>Поиск строки .registry и замена следующей строки на
+<span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>config_path <span style="color: #41ff5b">=</span> <span style="color: #FAAF4C;font-weight: bold">\&#34;</span>/etc/containerd/certs.d<span style="color: #FAAF4C;font-weight: bold">\&#34;</span>
+<span style="color: #FFFFFF;background-color: #231529">sed -i &#39;/\.registry\]/{ n;</span><span style="color: #BBBBBB"> </span>s|config_path <span style="color: #41ff5b">=</span> .<span style="color: #FFF02A;font-weight: bold">*</span>|config_path <span style="color: #41ff5b">=</span> <span style="color: #FAAF4C;font-weight: bold">\&#34;</span>/etc/containerd/certs.d<span style="color: #FAAF4C;font-weight: bold">\&#34;</span>|g <span style="color: #41ff5b">}</span><span style="color: #fff0a6;font-weight: bold">&#39; /etc/containerd/config.toml</span></code></pre>
 </div>
 </div>
 </li>
@@ -900,7 +914,7 @@ sed -i &#39;/\.registry\]/{ n; s|config_path = .*|config_path = \&#34;/etc/conta
 <p>Включите и запустите демон containerd:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">systemctl enable --now containerd</code></pre>
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">systemctl enable --now containerd</span></code></pre>
 </div>
 </div>
 </li>
@@ -921,47 +935,34 @@ sed -i &#39;/\.registry\]/{ n; s|config_path = .*|config_path = \&#34;/etc/conta
 <li id="_tabs_1_tab_b" class="tab">
 <p>Tab B</p>
 </li>
+<li id="_tabs_1_tab_c" class="tab">
+<p>Tab C</p>
+</li>
 </ul>
 </div>
 <div id="_tabs_1_tab_a--panel" class="tabpanel" aria-labelledby="_tabs_1_tab_a">
 <div class="paragraph">
-<p>Selecting Tab A reveals a tabset with Tab Y and Tab Z.</p>
-</div>
-<div id="_tabs_2" class="openblock tabs is-loading">
-<div class="content">
-<div class="ulist tablist">
-<ul>
-<li id="_tabs_2_tab_y" class="tab">
-<p>Tab Y</p>
-</li>
-<li id="_tabs_2_tab_z" class="tab">
-<p>Tab Z</p>
-</li>
-</ul>
-</div>
-<div id="_tabs_2_tab_y--panel" class="tabpanel" aria-labelledby="_tabs_2_tab_y">
-<div class="paragraph">
-<p>Contents of Tab Y, nested inside Tab A.</p>
-</div>
-</div>
-<div id="_tabs_2_tab_z--panel" class="tabpanel" aria-labelledby="_tabs_2_tab_z">
-<div class="paragraph">
-<p>Contents of Tab Z, nested inside Tab A.</p>
-</div>
-</div>
-</div>
+<p>Contents of Tab A.</p>
 </div>
 </div>
 <div id="_tabs_1_tab_b--panel" class="tabpanel" aria-labelledby="_tabs_1_tab_b">
 <div class="paragraph">
-<p>Just .</p>
+<p>Contents of Tab B.</p>
+</div>
+</div>
+<div id="_tabs_1_tab_c--panel" class="tabpanel" aria-labelledby="_tabs_1_tab_c">
+<div class="paragraph">
+<p>Contents of Tab C.</p>
+</div>
+<div class="paragraph">
+<p>Contains more than one block.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-mermaid" data-lang="mermaid">sequenceDiagram
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="mermaid">sequenceDiagram
     autonumber
     Docsy user-&gt;&gt;Discussion board: Ask question
     Discussion board-&gt;&gt;Community member: read question
@@ -990,7 +991,16 @@ sed -i &#39;/\.registry\]/{ n; s|config_path = .*|config_path = \&#34;/etc/conta
   <div class="container-fluid">
     <div class="row mx-md-2">
       <div class="td-footer__left col-6 col-sm-4 order-sm-1">
-        
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Telegram" aria-label="Telegram">
+    <a target="_blank" rel="noopener" href="https://t.me/debuntu_ru" aria-label="Telegram">
+      <i class="fab fa-telegram"></i>
+    </a>
+  </li>
+  
+</ul>
+
       </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
         
       </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
@@ -1006,6 +1016,7 @@ sed -i &#39;/\.registry\]/{ n; s|config_path = .*|config_path = \&#34;/etc/conta
     <script src="/js/main.min.73be0e798cb328decc7b6abbe26f2641a14dea3bf1d77a6f1ca067d3ab39374b.js" integrity="sha256-c74OeYyzKN7Me2q74m8mQaFN6jvx13pvHKBn06s5N0s=" crossorigin="anonymous"></script>
 <script defer src="/js/click-to-copy.min.73478a7d4807698aed7e355eb23f9890ca18fea3158604c8471746d046702bad.js" integrity="sha256-c0eKfUgHaYrtfjVesj&#43;YkMoY/qMVhgTIRxdG0EZwK60=" crossorigin="anonymous"></script>
 <script src='/js/tabpane-persist.js'></script>
+<script async src="https://debuntu.ru/js/tabs.js"></script>
 
   </body>
 </html>
