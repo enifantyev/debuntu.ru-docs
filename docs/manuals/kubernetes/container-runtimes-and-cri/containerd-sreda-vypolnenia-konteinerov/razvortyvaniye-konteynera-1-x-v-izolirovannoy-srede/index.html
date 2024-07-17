@@ -44,7 +44,7 @@ cat &lt;&lt; EOF &gt; /etc/modules-load.d/containerd.conf overlay EOF modprobe o
 cat &lt;&lt; EOF &gt; /etc/modules-load.d/containerd.conf overlay EOF modprobe overlay 2. Скачивание компонентов containerd из внутреннего raw-репозитория Если внутренний репозиторий требует аутентификации, то задайте учётные данные для скачивания компонентов containerd:">
   <meta itemprop="datePublished" content="2024-05-18T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-05-18T00:00:00+00:00">
-  <meta itemprop="wordCount" content="438">
+  <meta itemprop="wordCount" content="615">
   <meta itemprop="keywords" content="Containerd,Cri">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Развёртывание containerd 1.x в изолированной среде">
@@ -929,52 +929,130 @@ mkdir -p /etc/containerd/certs.d/_default
 <div class="content">
 <div class="ulist tablist">
 <ul>
-<li id="_tabs_1_tab_a" class="tab">
-<p>Tab A</p>
+<li id="_tabs_1_с_комментариями" class="tab">
+<p>С комментариями</p>
 </li>
-<li id="_tabs_1_tab_b" class="tab">
-<p>Tab B</p>
-</li>
-<li id="_tabs_1_tab_c" class="tab">
-<p>Tab C</p>
+<li id="_tabs_1_одним_скриптом" class="tab">
+<p>Одним скриптом</p>
 </li>
 </ul>
 </div>
-<div id="_tabs_1_tab_a--panel" class="tabpanel" aria-labelledby="_tabs_1_tab_a">
-<div class="paragraph">
-<p>Contents of Tab A.</p>
+<div id="_tabs_1_с_комментариями--panel" class="tabpanel" aria-labelledby="_tabs_1_с_комментариями">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Задайте в переменной адрес внутреннего docker-registry:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">INTERNAL_REGISTRY=&#39;dockerhub.example.org&#39;</span></code></pre>
 </div>
 </div>
-<div id="_tabs_1_tab_b--panel" class="tabpanel" aria-labelledby="_tabs_1_tab_b">
-<div class="paragraph">
-<p>Contents of Tab B.</p>
+</li>
+<li>
+<p>С помощью утилиты <code>ctr</code> убедитесь, что списки контейнеров и образов в containerd пусты:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">ctr c ls   #</span>ctr containers <span style="font-weight: bold">ls</span>
+<span style="color: #FFFFFF;background-color: #231529">ctr i ls   #</span>ctr images <span style="font-weight: bold">ls</span></code></pre>
 </div>
 </div>
-<div id="_tabs_1_tab_c--panel" class="tabpanel" aria-labelledby="_tabs_1_tab_c">
-<div class="paragraph">
-<p>Contents of Tab C.</p>
-</div>
-<div class="paragraph">
-<p>Contains more than one block.</p>
-</div>
-</div>
+</li>
+<li>
+<p>Скачайте &#39;Hello, World&#39; для Docker’а:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">ctr images pull $</span><span style="color: #41ff5b">{</span>INTERNAL_REGISTRY<span style="color: #41ff5b">}</span>/hello-world:latest</code></pre>
 </div>
 </div>
 <div class="listingblock">
+<div class="title">stdout:</div>
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="mermaid">sequenceDiagram
-    autonumber
-    Docsy user-&gt;&gt;Discussion board: Ask question
-    Discussion board-&gt;&gt;Community member: read question
-    loop Different strategies
-    Community member-&gt;&gt;Test instance: Investigate issue raised
-    end
-    Note right of Community member: After hours of investigation:
-    Test instance--&gt;&gt;Community member: Come up with solution
-    Community member--&gt;&gt;Discussion board: Propose solution
-    Discussion board--&gt;&gt;Docsy user: check proposed solution
-    Docsy user-&gt;&gt;Discussion board: Mark question as resolved
-    Docsy user-&gt;&gt;Docsy user: Being happy</code></pre>
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">dockerhub.mos.ru/hello-world:latest:                                              resolved       |++++++++++++++++++++++++++++++++++++++|
+index-sha256:266b191e926f65542fa8daaec01a192c4d292bff79426f47300a046e1bc576fd:    done           |++++++++++++++++++++++++++++++++++++++|
+manifest-sha256:e2fc4e5012d16e7fe466f5291c476431beaa1f9b90a5c2125b493ed28e2aba57: done           |++++++++++++++++++++++++++++++++++++++|
+config-sha256:d2c94e258dcb3c5ac2798d32e1249e42ef01cba4841c2234249495f87264ac5a:   done           |++++++++++++++++++++++++++++++++++++++|
+layer-sha256:c1ec31eb59444d78df06a974d155e597c894ab4cda84f08294145e845394988e:    done           |++++++++++++++++++++++++++++++++++++++|
+elapsed: 1.6 s                                                                    total:  12.0 K (7.5 KiB/s)
+unpacking linux/amd64 sha256:266b191e926f65542fa8daaec01a192c4d292bff79426f47300a046e1bc576fd...
+done: 25.375964ms</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Запустите тестовый контейнер &#39;Hello, World&#39;:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">ctr run -rm $</span><span style="color: #41ff5b">{</span>INTERNAL_REGISTRY<span style="color: #41ff5b">}</span>/hello-world:latest hello-world</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">stdout:</div>
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the &#34;hello-world&#34; image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+</span><span style="color: #FFFFFF;background-color: #231529"> $</span><span style="color: #BBBBBB"> </span>docker run <span style="color: #9f93e6;font-weight: bold">-it</span> ubuntu bash
+<span style="color: #FFFFFF;background-color: #231529">
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Удалите ранее скачанный образ:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">ctr i rm $</span><span style="color: #41ff5b">{</span>INTERNAL_REGISTRY<span style="color: #41ff5b">}</span>/hello-world:latest</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Вновь убедитесь, что списки контейнеров и образов пусты:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">ctr c ls
+ctr i ls</span></code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="_tabs_1_одним_скриптом--panel" class="tabpanel" aria-labelledby="_tabs_1_одним_скриптом">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Выполните:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">INTERNAL_REGISTRY=&#39;dockerhub.example.org&#39;
+
+</span><span style="color: #FFFFFF;background-color: #231529">ctr c ls   #</span>ctr containers <span style="font-weight: bold">ls</span>
+<span style="color: #FFFFFF;background-color: #231529">ctr i ls   #</span>ctr images <span style="font-weight: bold">ls</span>
+<span style="color: #FFFFFF;background-color: #231529">ctr images pull $</span><span style="color: #41ff5b">{</span>INTERNAL_REGISTRY<span style="color: #41ff5b">}</span>/hello-world:latest
+<span style="color: #FFFFFF;background-color: #231529">ctr run -rm $</span><span style="color: #41ff5b">{</span>INTERNAL_REGISTRY<span style="color: #41ff5b">}</span>/hello-world:latest hello-world
+<span style="color: #FFFFFF;background-color: #231529">ctr i rm $</span><span style="color: #41ff5b">{</span>INTERNAL_REGISTRY<span style="color: #41ff5b">}</span>/hello-world:latest
+<span style="color: #FFFFFF;background-color: #231529">ctr c ls
+ctr i ls</span></code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
 </div>
 </div>
 </div>

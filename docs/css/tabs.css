@@ -78,7 +78,28 @@
 
 .tablist > ul li,
 .tabpanel {
+  #border: 1px solid #dcdcdc;
+}
+
+.tab {
+  color: gray;
   border: 1px solid #dcdcdc;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.tab.is-selected > p {
+  color: Blue;
+  font-weight: bold;
+  border-top-color: black;
+  #margin-bottom: 10px;
+}
+
+.tabpanel {
+  border: 1px solid #dcdcdc;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .tablist > ul li {
