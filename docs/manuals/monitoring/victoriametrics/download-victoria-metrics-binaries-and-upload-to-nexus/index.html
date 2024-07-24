@@ -17,33 +17,46 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>11. Настройка TLS для HDFS и YARN | Debuntarium</title>
-<meta name="description" content="В этой части описывается настройка TLS для HDFS и YARN.
-">
-<meta property="og:url" content="https://debuntu.ru/manuals/bigdata/ustanovka-cloudera-cdh-6.3.2-s-tls-i-kerberos-na-osnove-freeipa/nastroyka-tls-dlya-hdfs-i-yarn/">
+<title>Перенос бинарников Victoria Metrics Cluster из github в локальный Nexus | Debuntarium</title>
+<meta name="description" content="1. Скачивание бинарников из GitHub Посетите страницу https://github.com/VictoriaMetrics/VictoriaMetrics/releases и задайте в переменной актуальную версию Victoria Metrics:
+VER=&amp;#39;v1.102.0&amp;#39; Скачайте следующие пакеты в отдельную директорию:
+URI=&amp;#39;https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download&amp;#39; PLATFORM=&amp;#39;linux-amd64&amp;#39; TMPDIR=$(mktemp -d) &amp;amp;&amp;amp; cd $TMPDIR curl -LO ${URI}/${VER}/victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz curl -LO ${URI}/${VER}/victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt curl -LO ${URI}/${VER}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LO ${URI}/${VER}/vmutils-${PLATFORM}-${VER}_checksums.txt Распакуйте скачанные файлы-архивы:
+tar xvf victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz tar xvf vmutils-${PLATFORM}-${VER}.tar.gz Проверьте целостность всех полученных файлов:
+sha256sum -c \ victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt \ vmutils-${PLATFORM}-${VER}_checksums.txt Ожидаемый вывод:
+victoria-metrics-linux-amd64-v1.102.0-cluster.tar.gz: OK vminsert-prod: OK vmselect-prod: OK vmstorage-prod: OK vmutils-linux-amd64-v1.">
+<meta property="og:url" content="https://debuntu.ru/manuals/monitoring/victoriametrics/download-victoria-metrics-binaries-and-upload-to-nexus/">
   <meta property="og:site_name" content="Debuntarium">
-  <meta property="og:title" content="11. Настройка TLS для HDFS и YARN">
-  <meta property="og:description" content="В этой части описывается настройка TLS для HDFS и YARN.">
+  <meta property="og:title" content="Перенос бинарников Victoria Metrics Cluster из github в локальный Nexus">
+  <meta property="og:description" content="1. Скачивание бинарников из GitHub Посетите страницу https://github.com/VictoriaMetrics/VictoriaMetrics/releases и задайте в переменной актуальную версию Victoria Metrics:
+VER=&#39;v1.102.0&#39; Скачайте следующие пакеты в отдельную директорию:
+URI=&#39;https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download&#39; PLATFORM=&#39;linux-amd64&#39; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LO ${URI}/${VER}/victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz curl -LO ${URI}/${VER}/victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt curl -LO ${URI}/${VER}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LO ${URI}/${VER}/vmutils-${PLATFORM}-${VER}_checksums.txt Распакуйте скачанные файлы-архивы:
+tar xvf victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz tar xvf vmutils-${PLATFORM}-${VER}.tar.gz Проверьте целостность всех полученных файлов:
+sha256sum -c \ victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt \ vmutils-${PLATFORM}-${VER}_checksums.txt Ожидаемый вывод:
+victoria-metrics-linux-amd64-v1.102.0-cluster.tar.gz: OK vminsert-prod: OK vmselect-prod: OK vmstorage-prod: OK vmutils-linux-amd64-v1.">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:type" content="article">
     <meta property="article:section" content="manuals">
-    <meta property="article:published_time" content="2021-06-01T00:00:00+00:00">
-    <meta property="article:modified_time" content="2021-06-01T00:00:00+00:00">
-    <meta property="article:tag" content="Cloudera CDH 6.3.2">
-    <meta property="article:tag" content="Apache Hadoop">
-    <meta property="article:tag" content="CentOS">
-    <meta property="article:tag" content="CentOS 7">
-    <meta property="article:tag" content="BigData">
+    <meta property="article:published_time" content="2024-07-24T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-07-24T00:00:00+00:00">
 
-  <meta itemprop="name" content="11. Настройка TLS для HDFS и YARN">
-  <meta itemprop="description" content="В этой части описывается настройка TLS для HDFS и YARN.">
-  <meta itemprop="datePublished" content="2021-06-01T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2021-06-01T00:00:00+00:00">
-  <meta itemprop="wordCount" content="972">
-  <meta itemprop="keywords" content="Cloudera CDH 6.3.2,Apache Hadoop,CentOS,CentOS 7,BigData">
+  <meta itemprop="name" content="Перенос бинарников Victoria Metrics Cluster из github в локальный Nexus">
+  <meta itemprop="description" content="1. Скачивание бинарников из GitHub Посетите страницу https://github.com/VictoriaMetrics/VictoriaMetrics/releases и задайте в переменной актуальную версию Victoria Metrics:
+VER=&#39;v1.102.0&#39; Скачайте следующие пакеты в отдельную директорию:
+URI=&#39;https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download&#39; PLATFORM=&#39;linux-amd64&#39; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LO ${URI}/${VER}/victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz curl -LO ${URI}/${VER}/victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt curl -LO ${URI}/${VER}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LO ${URI}/${VER}/vmutils-${PLATFORM}-${VER}_checksums.txt Распакуйте скачанные файлы-архивы:
+tar xvf victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz tar xvf vmutils-${PLATFORM}-${VER}.tar.gz Проверьте целостность всех полученных файлов:
+sha256sum -c \ victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt \ vmutils-${PLATFORM}-${VER}_checksums.txt Ожидаемый вывод:
+victoria-metrics-linux-amd64-v1.102.0-cluster.tar.gz: OK vminsert-prod: OK vmselect-prod: OK vmstorage-prod: OK vmutils-linux-amd64-v1.">
+  <meta itemprop="datePublished" content="2024-07-24T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-07-24T00:00:00+00:00">
+  <meta itemprop="wordCount" content="177">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="11. Настройка TLS для HDFS и YARN">
-  <meta name="twitter:description" content="В этой части описывается настройка TLS для HDFS и YARN.">
+  <meta name="twitter:title" content="Перенос бинарников Victoria Metrics Cluster из github в локальный Nexus">
+  <meta name="twitter:description" content="1. Скачивание бинарников из GitHub Посетите страницу https://github.com/VictoriaMetrics/VictoriaMetrics/releases и задайте в переменной актуальную версию Victoria Metrics:
+VER=&#39;v1.102.0&#39; Скачайте следующие пакеты в отдельную директорию:
+URI=&#39;https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download&#39; PLATFORM=&#39;linux-amd64&#39; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LO ${URI}/${VER}/victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz curl -LO ${URI}/${VER}/victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt curl -LO ${URI}/${VER}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LO ${URI}/${VER}/vmutils-${PLATFORM}-${VER}_checksums.txt Распакуйте скачанные файлы-архивы:
+tar xvf victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz tar xvf vmutils-${PLATFORM}-${VER}.tar.gz Проверьте целостность всех полученных файлов:
+sha256sum -c \ victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt \ vmutils-${PLATFORM}-${VER}_checksums.txt Ожидаемый вывод:
+victoria-metrics-linux-amd64-v1.102.0-cluster.tar.gz: OK vminsert-prod: OK vmselect-prod: OK vmstorage-prod: OK vmutils-linux-amd64-v1.">
 
 
 
@@ -160,14 +173,14 @@ if (!doNotTrack) {
       <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-manuals-li">
   <a href="/manuals/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-manuals"><span class="">Инструкции</span></a>
   <ul class="ul-1">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsmonitoring-li">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-manualsmonitoring-li">
   <a href="/manuals/monitoring/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoring"><span class="">Monitoring</span></a>
   <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsmonitoringvictoriametrics-li">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-manualsmonitoringvictoriametrics-li">
   <a href="/manuals/monitoring/victoriametrics/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoringvictoriametrics"><span class="">Victoria Metrics</span></a>
   <ul class="ul-3 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsdownload-victoria-metrics-binaries-and-upload-to-nexus-li">
-  <a href="/manuals/monitoring/victoriametrics/download-victoria-metrics-binaries-and-upload-to-nexus/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsdownload-victoria-metrics-binaries-and-upload-to-nexus"><span class="">Перенос бинарников Victoria Metrics Cluster из github в локальный Nexus</span></a>
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-manualsmonitoringvictoriametricsdownload-victoria-metrics-binaries-and-upload-to-nexus-li">
+  <a href="/manuals/monitoring/victoriametrics/download-victoria-metrics-binaries-and-upload-to-nexus/" class="align-left ps-0 active td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsdownload-victoria-metrics-binaries-and-upload-to-nexus"><span class="td-sidebar-nav-active-item">Перенос бинарников Victoria Metrics Cluster из github в локальный Nexus</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsinstalling-victoria-metrics-cluster-from-binaries-li">
   <a href="/manuals/monitoring/victoriametrics/installing-victoria-metrics-cluster-from-binaries/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsinstalling-victoria-metrics-cluster-from-binaries"><span class="">Установка Victoria Metrics Cluster из бинарников</span></a>
 </li>
@@ -217,7 +230,7 @@ if (!doNotTrack) {
   </ul>
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-manualsbigdata-li">
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsbigdata-li">
   <a href="/manuals/bigdata/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualsbigdata"><span class="">BigData</span></a>
   <ul class="ul-2 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsbigdataapacheatlas-li">
@@ -276,7 +289,7 @@ if (!doNotTrack) {
   <a href="/manuals/bigdata/ustanovka-arenadata-hadoop-s-tls-i-kerberos-na-osnove-freeipa/vazhnyye-zamechaniya/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsbigdataustanovka-arenadata-hadoop-s-tls-i-kerberos-na-osnove-freeipavazhnyye-zamechaniya"><span class="">01. Важные замечания</span></a>
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-manualsbigdataustanovka-cloudera-cdh-632-s-tls-i-kerberos-na-osnove-freeipa-li">
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsbigdataustanovka-cloudera-cdh-632-s-tls-i-kerberos-na-osnove-freeipa-li">
   <a href="/manuals/bigdata/ustanovka-cloudera-cdh-6.3.2-s-tls-i-kerberos-na-osnove-freeipa/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualsbigdataustanovka-cloudera-cdh-632-s-tls-i-kerberos-na-osnove-freeipa"><span class="">Установка Cloudera CDH 6.3.2 с TLS и Kerberos на основе FreeIPA</span></a>
   <ul class="ul-3 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsbigdataustanovka-cloudera-cdh-632-s-tls-i-kerberos-na-osnove-freeipapodgotovka-k-ustanovke-klastera-cloudera-cdh-6-32-li">
@@ -291,8 +304,8 @@ if (!doNotTrack) {
   <a href="/manuals/bigdata/ustanovka-cloudera-cdh-6.3.2-s-tls-i-kerberos-na-osnove-freeipa/posle-ustanovki-osnovnykh-komponentov/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsbigdataustanovka-cloudera-cdh-632-s-tls-i-kerberos-na-osnove-freeipaposle-ustanovki-osnovnykh-komponentov"><span class="">04. После установки основных компонентов</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsbigdataustanovka-cloudera-cdh-632-s-tls-i-kerberos-na-osnove-freeipanastroyka-tls-dlya-cloudera-manager-server-i-yego-agentov-li">
   <a href="/manuals/bigdata/ustanovka-cloudera-cdh-6.3.2-s-tls-i-kerberos-na-osnove-freeipa/nastroyka-tls-dlya-cloudera-manager-server-i-yego-agentov/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsbigdataustanovka-cloudera-cdh-632-s-tls-i-kerberos-na-osnove-freeipanastroyka-tls-dlya-cloudera-manager-server-i-yego-agentov"><span class="">10. Настройка TLS для Cloudera Manager Server и его агентов</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-manualsbigdataustanovka-cloudera-cdh-632-s-tls-i-kerberos-na-osnove-freeipanastroyka-tls-dlya-hdfs-i-yarn-li">
-  <a href="/manuals/bigdata/ustanovka-cloudera-cdh-6.3.2-s-tls-i-kerberos-na-osnove-freeipa/nastroyka-tls-dlya-hdfs-i-yarn/" class="align-left ps-0 active td-sidebar-link td-sidebar-link__page" id="m-manualsbigdataustanovka-cloudera-cdh-632-s-tls-i-kerberos-na-osnove-freeipanastroyka-tls-dlya-hdfs-i-yarn"><span class="td-sidebar-nav-active-item">11. Настройка TLS для HDFS и YARN</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsbigdataustanovka-cloudera-cdh-632-s-tls-i-kerberos-na-osnove-freeipanastroyka-tls-dlya-hdfs-i-yarn-li">
+  <a href="/manuals/bigdata/ustanovka-cloudera-cdh-6.3.2-s-tls-i-kerberos-na-osnove-freeipa/nastroyka-tls-dlya-hdfs-i-yarn/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsbigdataustanovka-cloudera-cdh-632-s-tls-i-kerberos-na-osnove-freeipanastroyka-tls-dlya-hdfs-i-yarn"><span class="">11. Настройка TLS для HDFS и YARN</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsbigdataustanovka-cloudera-cdh-632-s-tls-i-kerberos-na-osnove-freeipavklyucheniye-kerberos-v-cloudera-cdh-632-li">
   <a href="/manuals/bigdata/ustanovka-cloudera-cdh-6.3.2-s-tls-i-kerberos-na-osnove-freeipa/vklyucheniye-kerberos-v-cloudera-cdh-6.3.2/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsbigdataustanovka-cloudera-cdh-632-s-tls-i-kerberos-na-osnove-freeipavklyucheniye-kerberos-v-cloudera-cdh-632"><span class="">12. Включение Kerberos в Cloudera CDH 6.3.2</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsbigdataustanovka-cloudera-cdh-632-s-tls-i-kerberos-na-osnove-freeipazookeeper-nastroyka-li">
@@ -420,20 +433,8 @@ if (!doNotTrack) {
             <div class="td-toc">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#использованные-материалы">Использованные материалы</a></li>
-    <li><a href="#вступление">Вступление</a>
-      <ul>
-        <li><a href="#предпосылки">Предпосылки</a></li>
-      </ul>
-    </li>
-    <li><a href="#1-настройка-tls-для-hdfs-и-yarn">1. Настройка TLS для HDFS и YARN</a>
-      <ul>
-        <li><a href="#11-прежде-чем-вы-начнёте">1.1. Прежде чем вы начнёте</a></li>
-        <li><a href="#12-настройка-tls-для-hdfs">1.2. Настройка TLS для HDFS</a></li>
-        <li><a href="#13-настройка-tls-для-yarn">1.3. Настройка TLS для YARN</a></li>
-        <li><a href="#14-включение-tls-для-hdfs-и-yarn">1.4. Включение TLS для HDFS и YARN</a></li>
-      </ul>
-    </li>
+    <li><a href="#_скачивание_бинарников_из_github">1. Скачивание бинарников из GitHub</a></li>
+    <li><a href="#_загрузка_бинарников_в_локальный_репозиторий_nxrm">2. Загрузка бинарников в локальный репозиторий NXRM</a></li>
   </ul>
 </nav>
       </div>
@@ -626,127 +627,144 @@ if (!doNotTrack) {
   <li class="breadcrumb-item">
     <a href="/manuals/">Инструкции</a></li>
   <li class="breadcrumb-item">
-    <a href="/manuals/bigdata/">BigData</a></li>
+    <a href="/manuals/monitoring/">Monitoring</a></li>
   <li class="breadcrumb-item">
-    <a href="/manuals/bigdata/ustanovka-cloudera-cdh-6.3.2-s-tls-i-kerberos-na-osnove-freeipa/">Установка Cloudera CDH 6.3.2 с TLS и Kerberos на основе FreeIPA</a></li>
+    <a href="/manuals/monitoring/victoriametrics/">Victoria Metrics</a></li>
   <li class="breadcrumb-item active" aria-current="page">
-    11. Настройка TLS для HDFS и YARN</li>
+    Перенос бинарников Victoria Metrics Cluster из github в локальный Nexus</li>
   </ol>
 </nav>
             
 <div class="td-content">
-	<h1>11. Настройка TLS для HDFS и YARN</h1>
-	<div class="lead">В этой части описывается настройка TLS для HDFS и YARN.</div>
+	<h1>Перенос бинарников Victoria Metrics Cluster из github в локальный Nexus</h1>
+	
 	<header class="article-meta">
-		<div class="taxonomy taxonomy-terms-article taxo-tags">
-  <h5 class="taxonomy-title">Tags:</h5>
-  <ul class="taxonomy-terms">
-    <li><a class="taxonomy-term" href="https://debuntu.ru/tags/cloudera-cdh-6.3.2/" data-taxonomy-term="cloudera-cdh-6.3.2"><span class="taxonomy-label">Cloudera CDH 6.3.2</span></a></li>
-    <li><a class="taxonomy-term" href="https://debuntu.ru/tags/apache-hadoop/" data-taxonomy-term="apache-hadoop"><span class="taxonomy-label">Apache Hadoop</span></a></li>
-    <li><a class="taxonomy-term" href="https://debuntu.ru/tags/centos/" data-taxonomy-term="centos"><span class="taxonomy-label">CentOS</span></a></li>
-    <li><a class="taxonomy-term" href="https://debuntu.ru/tags/centos-7/" data-taxonomy-term="centos-7"><span class="taxonomy-label">CentOS 7</span></a></li>
-    <li><a class="taxonomy-term" href="https://debuntu.ru/tags/bigdata/" data-taxonomy-term="bigdata"><span class="taxonomy-label">BigData</span></a></li>
-    </ul>
-</div>
-
+		
 </header>
-	<h2 id="использованные-материалы">Использованные материалы</h2>
-<p><a href="https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/cm_sg_hadoop_ssl_cm.html">Manually Configuring TLS/SSL Encryption for CDH Services</a></p>
-<h2 id="вступление">Вступление</h2>
-<p>Помимо настройки кластера Cloudera Manager для использования TLS, различные службы CDH, работающие в кластере, также должны быть настроены для использования TLS. Процесс настройки TLS зависит от компонента, поэтому выполните следующие действия, если это необходимо для вашей системы. Однако, прежде чем пытаться настроить TLS, убедитесь, что ваш кластер соответствует предварительным требованиям.</p>
-<p>В общем, все роли на любом узле в кластере могут использовать одни и те же сертификаты, при условии, что сертификаты имеют соответствующий формат (JKS, PEM) и что конфигурация правильно указывает на расположение.</p>
-<blockquote>
-<p><!-- raw HTML omitted -->Примечание. TLS для основных сервисов Hadoop — HDFS и YARN — необходимо включить одновременно. TLS для других компонентов, таких как HBase, Hue и Oozie, можно включить независимо.<!-- raw HTML omitted --></p>
-</blockquote>
-<p>Не все компоненты поддерживают TLS, и не все внешние механизмы поддерживают TLS. Если явно не указано в этом руководстве, компонент, который вы хотите настроить, может в настоящее время не поддерживать TLS. Например, Sqoop в настоящее время не поддерживает TLS для Oracle, MySQL или других баз данных.</p>
-<h3 id="предпосылки">Предпосылки</h3>
-<p>Cloudera рекомендует, чтобы кластер и все службы использовали Kerberos для проверки подлинности. Если вы включите TLS для кластера, который не был настроен для использования Kerberos, отобразится предупреждение. Прежде чем продолжить, вам следует интегрировать кластер с развертыванием Kerberos.</p>
-<p>Для выполнения описанных ниже шагов требуется, чтобы в кластере был включен TLS, и что сертификат сервера Cloudera Manager и сертификаты агента Cloudera Manager правильно настроены и уже установлены. Кроме того, у вас должны быть готовы сертификаты и ключи, необходимые для конкретного сервера CDH.</p>
-<p>Если кластер соответствует этим требованиям, вы можете настроить конкретную службу CDH для использования TLS, как подробно описано в этом разделе.</p>
-<h2 id="1-настройка-tls-для-hdfs-и-yarn">1. Настройка TLS для HDFS и YARN</h2>
-<p>TLS для основных сервисов Hadoop — HDFS, MapReduce и YARN — необходимо включить одновременно. Поскольку большинство кластеров запускают либо MapReduce, либо YARN, а не оба сразу, вы обычно включаете HDFS и YARN или HDFS и MapReduce. Включение TLS в HDFS необходимо, прежде чем его можно будет включить в MapReduce или YARN.
-Примечание. Если вы включаете TLS для HDFS, вы также должны включить его для MapReduce или YARN.</p>
-<p>Следующие шаги включают включение аутентификации Kerberos для веб-консолей HTTP. При включении TLS для основных служб Hadoop в кластере без включения аутентификации отображается предупреждение.</p>
-<h3 id="11-прежде-чем-вы-начнёте">1.1. Прежде чем вы начнёте</h3>
-<p>Перед включением TLS хранилища ключей, содержащие сертификаты, привязанные к соответствующим доменным именам, должны быть доступны на всех хостах, на которых работает хотя бы одна роль демона HDFS или YARN.</p>
-<p>Поскольку демоны HDFS и YARN действуют как клиенты TLS, а также как серверы TLS, они должны иметь доступ к хранилищам доверенных сертификатов. Во многих случаях наиболее практичным подходом является развертывание доверенных хранилищ на всех хостах в кластере, поскольку может быть нежелательно заранее определять набор хостов, на которых будут работать клиенты.</p>
-<p>Хранилища ключей для HDFS и YARN должны принадлежать группе hadoop и иметь разрешения 0440 (то есть их могут читать владелец и группа). У хранилищ доверенных сертификатов должны быть разрешения 0444 (то есть быть доступными для чтения всем).</p>
-<p>Cloudera Manager поддерживает конфигурацию TLS для HDFS и YARN на уровне обслуживания. Для каждой из этих служб необходимо указать абсолютные пути к файлам хранилища ключей и доверенных сертификатов. Эти настройки применяются ко всем хостам, на которых выполняются роли демонов рассматриваемой службы. Следовательно, выбранные вами пути должны быть действительны на всех хостах.</p>
-<p>Следствием этого является то, что имена файлов хранилища ключей для данной службы должны быть одинаковыми на всех хостах. Если, например, вы получили отдельные сертификаты для демонов HDFS на хостах node1.example.com и node2.example.com, вы могли бы выбрать для хранения этих сертификатов файлы с именами hdfs-node1.keystore и hdfs-node2.keystore ( соответственно). При развертывании этих хранилищ ключей вы должны дать им одинаковое имя на целевом хосте, например, hdfs.keystore.</p>
-<p>Несколько демонов, запущенных на хосте, могут совместно использовать сертификат. Например, если на одном хосте запущены DataNode и сервер Oozie, они могут использовать один и тот же сертификат.</p>
-<h3 id="12-настройка-tls-для-hdfs">1.2. Настройка TLS для HDFS</h3>
-<ol>
-<li>В настройках службы HDFS, используя фильтр &lsquo;ssl.server.keystore&rsquo;, изменяем следующие параметры:</li>
-</ol>
-<!-- raw HTML omitted -->
-<p><img src="/img/ustanovka-cloudera-cdh-6.3.2-s-tls-i-kerberos-na-osnove-freeipa/image_11_1.png" alt=""></p>
-<ol start="2">
-<li>Настройка TLS/SSL client truststore. Эти параметры могут быть переопределены в настройках YARN, но там мы их настраивать не будем.
-Для роли HDFS, используя фильтр &lsquo;ssl.client.truststore&rsquo;, изменяем следующие параметры:</li>
-</ol>
-<!-- raw HTML omitted -->
-<p><img src="/img/ustanovka-cloudera-cdh-6.3.2-s-tls-i-kerberos-na-osnove-freeipa/image_11_2.png" alt=""></p>
-<ol start="3">
-<li><!-- raw HTML omitted --><!-- raw HTML omitted -->Этот пункт инструкции необходимо перести в соответствующий раздел, так как здесь Kerberos ещё не активирован<!-- raw HTML omitted -->.<!-- raw HTML omitted -->
-(Optional) Эта настройка была предложена к выполнению в предыдущей инструкции &ldquo;Включение FreeIPA Kerberos-аутентификации в Cloudera CDH 6.3.2&rdquo;. Если параметр не был настроен, то есть шанс сделать это сейчас.<!-- raw HTML omitted -->
-Cloudera рекомендует включить аутентификацию веб-интерфейса для службы HDFS. Аутентификация веб-интерфейса использует SPNEGO. После включения вы не сможете получить доступ к веб-консолям Hadoop без действительного билета Kerberos и правильной конфигурации на стороне клиента.<!-- raw HTML omitted --></li>
-</ol>
-<!-- raw HTML omitted -->
-<p><img src="/img/ustanovka-cloudera-cdh-6.3.2-s-tls-i-kerberos-na-osnove-freeipa/image_11_3.png" alt=""></p>
-<ol start="4">
-<li>Нажимаем <strong>Save Changes</strong>.</li>
-</ol>
-<blockquote>
-<p>При применении этого изменения может высветиться ошибка:<!-- raw HTML omitted --><!-- raw HTML omitted -->
-General Error(s)<!-- raw HTML omitted --><!-- raw HTML omitted -->
-<!-- raw HTML omitted -->Role is missing Kerberos keytab. Go to the Kerberos Credentials page and click the Generate Missing Credentials button<!-- raw HTML omitted -->.<!-- raw HTML omitted --><!-- raw HTML omitted -->
-Но после перезапуска сервисов ошибка пропадает.</p>
-</blockquote>
-<h3 id="13-настройка-tls-для-yarn">1.3. Настройка TLS для YARN</h3>
-<ol>
-<li>В настройках роли YARN, используя фильтр &lsquo;ssl.server.keystore&rsquo;, изменяем следующие параметры:</li>
-</ol>
-<!-- raw HTML omitted -->
-<p><img src="/img/ustanovka-cloudera-cdh-6.3.2-s-tls-i-kerberos-na-osnove-freeipa/image_11_4.png" alt=""></p>
-<ol start="2">
+	
+<div class="sect1">
+<h2 id="_скачивание_бинарников_из_github">1. Скачивание бинарников из GitHub</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p><!-- raw HTML omitted -->Настройки YARN для TLS/SSL Client Truststore File пропускаем, так как они переопределяют такие же настройки в роли HDFS, что не имеет смысла.<!-- raw HTML omitted --></p>
+<p>Посетите страницу <a href="https://github.com/VictoriaMetrics/VictoriaMetrics/releases" class="bare">https://github.com/VictoriaMetrics/VictoriaMetrics/releases</a> и задайте в переменной актуальную версию Victoria Metrics:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">VER=&#39;v1.102.0&#39;</span></code></pre>
+</div>
+</div>
 </li>
 <li>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted -->Этот пункт инструкции необходимо перести в соответствующий раздел, так как здесь Kerberos ещё не активирован.<!-- raw HTML omitted --><!-- raw HTML omitted -->
-Cloudera рекомендует включить аутентификацию веб-интерфейса для рассматриваемой службы. Эта настройка была предложена к выполнению в предыдущей инструкции &ldquo;Включение FreeIPA Kerberos-аутентификации в Cloudera CDH 6.3.2&rdquo;. Если параметр не был настроен, то есть шанс сделать это сейчас.<!-- raw HTML omitted --></p>
-</li>
-</ol>
-<!-- raw HTML omitted -->
-<p><img src="/img/ustanovka-cloudera-cdh-6.3.2-s-tls-i-kerberos-na-osnove-freeipa/image_11_5.png" alt=""></p>
-<blockquote>
-<p>При применении этого изменения может высветиться ошибка:<!-- raw HTML omitted --><!-- raw HTML omitted -->
-General Error(s)<!-- raw HTML omitted --><!-- raw HTML omitted -->
-<!-- raw HTML omitted -->Role is missing Kerberos keytab. Go to the Kerberos Credentials page and click the Generate Missing Credentials button<!-- raw HTML omitted -->.<!-- raw HTML omitted --><!-- raw HTML omitted -->
-Но после перезапуска сервисов ошибка пропадает.</p>
-</blockquote>
-<ol start="4">
-<li>Нажимаем <strong>Save Changes</strong>.</li>
-</ol>
-<h3 id="14-включение-tls-для-hdfs-и-yarn">1.4. Включение TLS для HDFS и YARN</h3>
-<ol>
-<li>В настройках службы HDFS, используя фильтр &lsquo;hadoop.ssl.enabled&rsquo;, изменяем следующие параметры:</li>
-</ol>
-<!-- raw HTML omitted -->
-<p><img src="/img/ustanovka-cloudera-cdh-6.3.2-s-tls-i-kerberos-na-osnove-freeipa/image_11_6.png" alt=""></p>
-<ol start="2">
-<li><!-- raw HTML omitted --><!-- raw HTML omitted -->Этот пункт инструкции необходимо перести в соответствующий раздел, так как здесь Kerberos ещё не активирован, впрочем это предупреждение может и не появиться.<!-- raw HTML omitted --><!-- raw HTML omitted -->
-Для выполнения появившейся рекомендации, изменяем значение HDFS-параметра &lsquo;DataNode Transceiver Port&rsquo; c &lsquo;1004&rsquo; на предлагаемый номер по умолчанию &lsquo;9866&rsquo;:<!-- raw HTML omitted --></li>
-</ol>
-<!-- raw HTML omitted -->
-<ol start="3">
-<li>
-<p>Нажимаем <strong>Save Changes</strong>.</p>
+<p>Скачайте следующие пакеты в отдельную директорию:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">URI=&#39;https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download&#39;
+PLATFORM=&#39;linux-amd64&#39;
+
+</span><span style="color: #FFFFFF;background-color: #231529">TMPDIR=$</span><span style="color: #41ff5b">(</span><span style="font-weight: bold">mktemp</span> <span style="color: #9f93e6;font-weight: bold">-d</span><span style="color: #41ff5b">)</span> <span style="color: #41ff5b">&amp;&amp;</span> <span style="font-weight: bold">cd</span> <span style="color: #41ff5b;font-weight: bold">$TMPDIR</span>
+<span style="color: #FFFFFF;background-color: #231529">curl -LO $</span><span style="color: #41ff5b">{</span>URI<span style="color: #41ff5b">}</span>/<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VER</span><span style="color: #FFF02A;font-weight: bold">}</span>/victoria-metrics-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">PLATFORM</span><span style="color: #FFF02A;font-weight: bold">}</span>-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VER</span><span style="color: #FFF02A;font-weight: bold">}</span><span style="color: #9f93e6;font-weight: bold">-cluster</span>.tar.gz
+<span style="color: #FFFFFF;background-color: #231529">curl -LO $</span><span style="color: #41ff5b">{</span>URI<span style="color: #41ff5b">}</span>/<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VER</span><span style="color: #FFF02A;font-weight: bold">}</span>/victoria-metrics-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">PLATFORM</span><span style="color: #FFF02A;font-weight: bold">}</span>-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VER</span><span style="color: #FFF02A;font-weight: bold">}</span><span style="color: #9f93e6;font-weight: bold">-cluster_checksums</span>.txt
+<span style="color: #FFFFFF;background-color: #231529">curl -LO $</span><span style="color: #41ff5b">{</span>URI<span style="color: #41ff5b">}</span>/<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VER</span><span style="color: #FFF02A;font-weight: bold">}</span>/vmutils-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">PLATFORM</span><span style="color: #FFF02A;font-weight: bold">}</span>-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VER</span><span style="color: #FFF02A;font-weight: bold">}</span>.tar.gz
+<span style="color: #FFFFFF;background-color: #231529">curl -LO $</span><span style="color: #41ff5b">{</span>URI<span style="color: #41ff5b">}</span>/<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VER</span><span style="color: #FFF02A;font-weight: bold">}</span>/vmutils-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">PLATFORM</span><span style="color: #FFF02A;font-weight: bold">}</span>-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VER</span><span style="color: #FFF02A;font-weight: bold">}</span>_checksums.txt</code></pre>
+</div>
+</div>
 </li>
 <li>
-<p><img src="/img/clouderabutton.png" alt="">Перезапускаем все зависимые сервисы по приглашению Cloudera Manager Console.</p>
+<p>Распакуйте скачанные файлы-архивы:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">tar xvf victoria-metrics-$</span><span style="color: #41ff5b">{</span>PLATFORM<span style="color: #41ff5b">}</span>-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VER</span><span style="color: #FFF02A;font-weight: bold">}</span><span style="color: #9f93e6;font-weight: bold">-cluster</span>.tar.gz
+<span style="color: #FFFFFF;background-color: #231529">tar xvf vmutils-$</span><span style="color: #41ff5b">{</span>PLATFORM<span style="color: #41ff5b">}</span>-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VER</span><span style="color: #FFF02A;font-weight: bold">}</span>.tar.gz</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Проверьте целостность всех полученных файлов:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">sha256sum -c \
+</span><span style="color: #FFFFFF;background-color: #231529">  victoria-metrics-$</span><span style="color: #41ff5b">{</span>PLATFORM<span style="color: #41ff5b">}</span>-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VER</span><span style="color: #FFF02A;font-weight: bold">}</span><span style="color: #9f93e6;font-weight: bold">-cluster_checksums</span>.txt <span style="color: #FAAF4C;font-weight: bold">\</span>
+<span style="color: #FFFFFF;background-color: #231529">  vmutils-$</span><span style="color: #41ff5b">{</span>PLATFORM<span style="color: #41ff5b">}</span>-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VER</span><span style="color: #FFF02A;font-weight: bold">}</span>_checksums.txt</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ожидаемый вывод:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">victoria-metrics-linux-amd64-v1.102.0-cluster.tar.gz: OK
+vminsert-prod: OK
+vmselect-prod: OK
+vmstorage-prod: OK
+vmutils-linux-amd64-v1.102.0.tar.gz: OK
+vmagent-prod: OK
+vmalert-prod: OK
+vmalert-tool-prod: OK
+vmauth-prod: OK
+vmbackup-prod: OK
+vmrestore-prod: OK
+vmctl-prod: OK</span></code></pre>
+</div>
+</div>
 </li>
 </ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_загрузка_бинарников_в_локальный_репозиторий_nxrm">2. Загрузка бинарников в локальный репозиторий NXRM</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Задайте учётные данные используемые для доступа к локальному репо:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">set +o history
+USER_PASS=&#39;evgeny:xxxxxxxxxxxxxxxx&#39;
+set -o history</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Загрузите файлы-архивы и файлы с контрольными суммами в NXRM:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">INTERNAL_REPO=&#34;https://nexus.example.org/repository/dud_evolut_raw&#34;
+REPO_FOLDER=&#34;monitoring/victoriametrics&#34;
+
+</span><span style="color: #FFFFFF;background-color: #231529">curl -v --user &#34;$</span><span style="color: #41ff5b">{</span>USER_PASS<span style="color: #41ff5b">}</span><span style="color: #fff0a6;font-weight: bold">&#34; </span><span style="color: #FAAF4C;font-weight: bold">\</span><span style="color: #fff0a6;font-weight: bold">
+</span><span style="color: #FFFFFF;background-color: #231529">  --upload-file victoria-metrics-$</span><span style="color: #fff0a6;font-weight: bold">{PLATFORM}-</span><span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VER</span><span style="color: #FFF02A;font-weight: bold">}</span><span style="color: #fff0a6;font-weight: bold">-cluster.tar.gz </span><span style="color: #FAAF4C;font-weight: bold">\</span><span style="color: #fff0a6;font-weight: bold">
+</span><span style="color: #FFFFFF;background-color: #231529">  $</span><span style="color: #fff0a6;font-weight: bold">{INTERNAL_REPO}/</span><span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">REPO_FOLDER</span><span style="color: #FFF02A;font-weight: bold">}</span><span style="color: #fff0a6;font-weight: bold">/
+</span><span style="color: #FFFFFF;background-color: #231529">curl -v --user &#34;$</span><span style="color: #fff0a6;font-weight: bold">{USER_PASS}&#34;</span> <span style="color: #FAAF4C;font-weight: bold">\</span>
+<span style="color: #FFFFFF;background-color: #231529">  --upload-file vmutils-$</span><span style="color: #41ff5b">{</span>PLATFORM<span style="color: #41ff5b">}</span>-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VER</span><span style="color: #FFF02A;font-weight: bold">}</span>.tar.gz <span style="color: #FAAF4C;font-weight: bold">\</span>
+<span style="color: #FFFFFF;background-color: #231529">  $</span><span style="color: #41ff5b">{</span>INTERNAL_REPO<span style="color: #41ff5b">}</span>/<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">REPO_FOLDER</span><span style="color: #FFF02A;font-weight: bold">}</span>/
+<span style="color: #FFFFFF;background-color: #231529">curl -v --user &#34;$</span><span style="color: #41ff5b">{</span>USER_PASS<span style="color: #41ff5b">}</span><span style="color: #fff0a6;font-weight: bold">&#34; </span><span style="color: #FAAF4C;font-weight: bold">\</span><span style="color: #fff0a6;font-weight: bold">
+</span><span style="color: #FFFFFF;background-color: #231529">  --upload-file victoria-metrics-$</span><span style="color: #fff0a6;font-weight: bold">{PLATFORM}-</span><span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VER</span><span style="color: #FFF02A;font-weight: bold">}</span><span style="color: #fff0a6;font-weight: bold">-cluster_checksums.txt </span><span style="color: #FAAF4C;font-weight: bold">\</span><span style="color: #fff0a6;font-weight: bold">
+</span><span style="color: #FFFFFF;background-color: #231529">  $</span><span style="color: #fff0a6;font-weight: bold">{INTERNAL_REPO}/</span><span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">REPO_FOLDER</span><span style="color: #FFF02A;font-weight: bold">}</span><span style="color: #fff0a6;font-weight: bold">/
+</span><span style="color: #FFFFFF;background-color: #231529">curl -v --user &#34;$</span><span style="color: #fff0a6;font-weight: bold">{USER_PASS}&#34;</span> <span style="color: #FAAF4C;font-weight: bold">\</span>
+<span style="color: #FFFFFF;background-color: #231529">  --upload-file vmutils-$</span><span style="color: #41ff5b">{</span>PLATFORM<span style="color: #41ff5b">}</span>-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VER</span><span style="color: #FFF02A;font-weight: bold">}</span>_checksums.txt <span style="color: #FAAF4C;font-weight: bold">\</span>
+<span style="color: #FFFFFF;background-color: #231529">  $</span><span style="color: #41ff5b">{</span>INTERNAL_REPO<span style="color: #41ff5b">}</span>/<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">REPO_FOLDER</span><span style="color: #FFF02A;font-weight: bold">}</span>/
+<span style="color: #FFFFFF;background-color: #231529">
+
+</span><span style="color: #FFFFFF;background-color: #231529">curl -v --user &#34;$</span><span style="color: #41ff5b">{</span>USER_PASS<span style="color: #41ff5b">}</span><span style="color: #fff0a6;font-weight: bold">&#34; --upload-file &#34;</span><span style="color: #41ff5b">{</span><span style="color: #41ff5b;font-weight: bold">$FILES</span><span style="color: #41ff5b">}</span><span style="color: #fff0a6;font-weight: bold">&#34; </span><span style="color: #FAAF4C;font-weight: bold">\</span><span style="color: #fff0a6;font-weight: bold">
+</span><span style="color: #FFFFFF;background-color: #231529">  $</span><span style="color: #fff0a6;font-weight: bold">{INTERNAL_REPO}/</span><span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">REPO_FOLDER</span><span style="color: #FFF02A;font-weight: bold">}</span><span style="color: #fff0a6;font-weight: bold">/</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Удалите временный каталог со скачанными файлами Victoria Metrics:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">rm -rf &#34;$</span><span style="color: #41ff5b">{</span>TMPDIR<span style="color: #41ff5b">}</span><span style="color: #fff0a6;font-weight: bold">&#34;&#34;</span></code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
 
 	
 </div>

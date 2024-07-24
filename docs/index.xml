@@ -6,7 +6,7 @@
     <description>Recent content on Debuntarium</description>
     <generator>Hugo</generator>
     <language>ru-RU</language>
-    <lastBuildDate>Sat, 18 May 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 24 Jul 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://debuntu.ru/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>00. Удаление Apache Atlas</title>
@@ -1183,6 +1183,20 @@
       <pubDate>Fri, 18 Mar 2022 00:00:00 +0000</pubDate>
       <guid>https://debuntu.ru/manuals/borgbackup/ustanovka-novogo-yadra-v-altlinux-10-dlya-proverki-vosstanovleniya-mashiny-s-pomoshchyu-borgbackup/</guid>
       <description>https://help.72to.ru/projects/alt-linux/wiki/Откат_на_старую_версию_ядра&#xA;$ uname -r 5.10.82-std-def-alt1 apt-repo add http://ftp.altlinux.ru/pub/distributions/archive/p10/task/archive/_289/295939/ x86_64 classic apt-repo add http://ftp.altlinux.ru/pub/distributions/archive/p10/task/archive/_289/295939/ noarch classic $ sudo apt-cache show kernel-image-std-def Package kernel-image-std-def is a virtual package provided by: kernel-image-std-def#2:5.10.82-alt1:p10+290646.100.3.1@1638544255 2:5.10.82-alt1:p10+290646.100.3.1@1638544255 kernel-image-std-def#2:5.10.102-alt1:p10+295939.100.1.1@1645810219 2:5.10.102-alt1:p10+295939.100.1.1@1645810219 You should explicitly select one to show. E: Package kernel-image-std-def is a virtual package with multiple providers. update-kernel -t std-def -r 2:5.10.102-alt1:p10+295939.100.1.1@1645810219 reboot $ uname -r 5.10.102-std-def-alt1 remove-old-kernels </description>
+    </item>
+    <item>
+      <title>Перенос бинарников Victoria Metrics Cluster из github в локальный Nexus</title>
+      <link>https://debuntu.ru/manuals/monitoring/victoriametrics/download-victoria-metrics-binaries-and-upload-to-nexus/</link>
+      <pubDate>Wed, 24 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>https://debuntu.ru/manuals/monitoring/victoriametrics/download-victoria-metrics-binaries-and-upload-to-nexus/</guid>
+      <description>1. Скачивание бинарников из GitHub Посетите страницу https://github.com/VictoriaMetrics/VictoriaMetrics/releases и задайте в переменной актуальную версию Victoria Metrics:&#xA;VER=&amp;#39;v1.102.0&amp;#39; Скачайте следующие пакеты в отдельную директорию:&#xA;URI=&amp;#39;https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download&amp;#39; PLATFORM=&amp;#39;linux-amd64&amp;#39; TMPDIR=$(mktemp -d) &amp;amp;&amp;amp; cd $TMPDIR curl -LO ${URI}/${VER}/victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz curl -LO ${URI}/${VER}/victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt curl -LO ${URI}/${VER}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LO ${URI}/${VER}/vmutils-${PLATFORM}-${VER}_checksums.txt Распакуйте скачанные файлы-архивы:&#xA;tar xvf victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz tar xvf vmutils-${PLATFORM}-${VER}.tar.gz Проверьте целостность всех полученных файлов:&#xA;sha256sum -c \ victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt \ vmutils-${PLATFORM}-${VER}_checksums.txt Ожидаемый вывод:&#xA;victoria-metrics-linux-amd64-v1.102.0-cluster.tar.gz: OK vminsert-prod: OK vmselect-prod: OK vmstorage-prod: OK vmutils-linux-amd64-v1.</description>
+    </item>
+    <item>
+      <title>Установка Victoria Metrics Cluster из бинарников</title>
+      <link>https://debuntu.ru/manuals/monitoring/victoriametrics/installing-victoria-metrics-cluster-from-binaries/</link>
+      <pubDate>Tue, 23 Jul 2024 11:17:28 +0300</pubDate>
+      <guid>https://debuntu.ru/manuals/monitoring/victoriametrics/installing-victoria-metrics-cluster-from-binaries/</guid>
+      <description>1. Использованные материалы https://docs.victoriametrics.com/quick-start/&#xA;2. Скачивание бинарников из локального репозитория на целевые хосты На целевых нодах будущего кластера Victoria Metrics выполните загрузку бинарников из локального NXRM:&#xA;VER=&amp;#39;v1.102.0&amp;#39; PLATFORM=&amp;#39;linux-amd64&amp;#39; INTERNAL_REPO=&amp;#34;https://nexus.example.org/repository/dud_evolut_raw&amp;#34; REPO_FOLDER=&amp;#34;monitoring/victoriametrics&amp;#34; TMPDIR=$(mktemp -d) &amp;amp;&amp;amp; cd $TMPDIR curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}_checksums.txt Распакуйте скачанные файлы-архивы:&#xA;tar xvf victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz tar xvf vmutils-${PLATFORM}-${VER}.tar.gz Проверьте целостность всех полученных файлов:&#xA;sha256sum -c \ victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt \ vmutils-${PLATFORM}-${VER}_checksums.txt Ожидаемый вывод:</description>
     </item>
     <item>
       <title></title>

@@ -1129,6 +1129,27 @@
   
   
   <url>
+    <loc>https://debuntu.ru/manuals/monitoring/</loc>
+    <lastmod>2024-07-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/</loc>
+    <lastmod>2024-07-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/</loc>
+    <lastmod>2024-07-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://debuntu.ru/manuals/kubernetes/container-runtimes-and-cri/</loc>
     <lastmod>2024-05-18T00:00:00+00:00</lastmod>
   </url>
@@ -1144,13 +1165,6 @@
   
   <url>
     <loc>https://debuntu.ru/manuals/kubernetes/</loc>
-    <lastmod>2024-05-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://debuntu.ru/manuals/</loc>
     <lastmod>2024-05-18T00:00:00+00:00</lastmod>
   </url>
   
@@ -1365,14 +1379,28 @@
   
   
   
-  
+  <url>
+    <loc>https://debuntu.ru/</loc>
+    <lastmod>2024-07-24T00:00:00+00:00</lastmod>
+  </url>
   
   
   
   <url>
-    <loc>https://debuntu.ru/</loc>
-    <lastmod>2024-05-18T00:00:00+00:00</lastmod>
+    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/download-victoria-metrics-binaries-and-upload-to-nexus/</loc>
+    <lastmod>2024-07-24T00:00:00+00:00</lastmod>
   </url>
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/installing-victoria-metrics-cluster-from-binaries/</loc>
+    <lastmod>2024-07-23T11:17:28+03:00</lastmod>
+  </url>
+  
+  
+  
+  
   
   
   

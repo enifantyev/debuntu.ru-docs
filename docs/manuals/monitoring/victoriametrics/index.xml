@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Victoria Metrics on Debuntarium</title>
+    <link>https://debuntu.ru/manuals/monitoring/victoriametrics/</link>
+    <description>Recent content in Victoria Metrics on Debuntarium</description>
+    <generator>Hugo</generator>
+    <language>ru-RU</language>
+    <lastBuildDate>Wed, 24 Jul 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://debuntu.ru/manuals/monitoring/victoriametrics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Перенос бинарников Victoria Metrics Cluster из github в локальный Nexus</title>
+      <link>https://debuntu.ru/manuals/monitoring/victoriametrics/download-victoria-metrics-binaries-and-upload-to-nexus/</link>
+      <pubDate>Wed, 24 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>https://debuntu.ru/manuals/monitoring/victoriametrics/download-victoria-metrics-binaries-and-upload-to-nexus/</guid>
+      <description>1. Скачивание бинарников из GitHub Посетите страницу https://github.com/VictoriaMetrics/VictoriaMetrics/releases и задайте в переменной актуальную версию Victoria Metrics:&#xA;VER=&amp;#39;v1.102.0&amp;#39; Скачайте следующие пакеты в отдельную директорию:&#xA;URI=&amp;#39;https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download&amp;#39; PLATFORM=&amp;#39;linux-amd64&amp;#39; TMPDIR=$(mktemp -d) &amp;amp;&amp;amp; cd $TMPDIR curl -LO ${URI}/${VER}/victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz curl -LO ${URI}/${VER}/victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt curl -LO ${URI}/${VER}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LO ${URI}/${VER}/vmutils-${PLATFORM}-${VER}_checksums.txt Распакуйте скачанные файлы-архивы:&#xA;tar xvf victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz tar xvf vmutils-${PLATFORM}-${VER}.tar.gz Проверьте целостность всех полученных файлов:&#xA;sha256sum -c \ victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt \ vmutils-${PLATFORM}-${VER}_checksums.txt Ожидаемый вывод:&#xA;victoria-metrics-linux-amd64-v1.102.0-cluster.tar.gz: OK vminsert-prod: OK vmselect-prod: OK vmstorage-prod: OK vmutils-linux-amd64-v1.</description>
+    </item>
+    <item>
+      <title>Установка Victoria Metrics Cluster из бинарников</title>
+      <link>https://debuntu.ru/manuals/monitoring/victoriametrics/installing-victoria-metrics-cluster-from-binaries/</link>
+      <pubDate>Tue, 23 Jul 2024 11:17:28 +0300</pubDate>
+      <guid>https://debuntu.ru/manuals/monitoring/victoriametrics/installing-victoria-metrics-cluster-from-binaries/</guid>
+      <description>1. Использованные материалы https://docs.victoriametrics.com/quick-start/&#xA;2. Скачивание бинарников из локального репозитория на целевые хосты На целевых нодах будущего кластера Victoria Metrics выполните загрузку бинарников из локального NXRM:&#xA;VER=&amp;#39;v1.102.0&amp;#39; PLATFORM=&amp;#39;linux-amd64&amp;#39; INTERNAL_REPO=&amp;#34;https://nexus.example.org/repository/dud_evolut_raw&amp;#34; REPO_FOLDER=&amp;#34;monitoring/victoriametrics&amp;#34; TMPDIR=$(mktemp -d) &amp;amp;&amp;amp; cd $TMPDIR curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}_checksums.txt Распакуйте скачанные файлы-архивы:&#xA;tar xvf victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz tar xvf vmutils-${PLATFORM}-${VER}.tar.gz Проверьте целостность всех полученных файлов:&#xA;sha256sum -c \ victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt \ vmutils-${PLATFORM}-${VER}_checksums.txt Ожидаемый вывод:</description>
+    </item>
+  </channel>
+</rss>
