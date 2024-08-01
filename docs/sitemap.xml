@@ -1067,7 +1067,7 @@
   
   <url>
     <loc>https://debuntu.ru/manuals/borgbackup/nastroyka-borg-servera/</loc>
-    <lastmod>2022-03-11T00:00:00+00:00</lastmod>
+    <lastmod>2024-07-29T00:00:00+00:00</lastmod>
   </url>
   
   
@@ -1088,7 +1088,7 @@
   
   <url>
     <loc>https://debuntu.ru/manuals/borgbackup/nastroyka-pervogo-borg-repo/</loc>
-    <lastmod>2022-03-11T00:00:00+00:00</lastmod>
+    <lastmod>2024-07-29T00:00:00+00:00</lastmod>
   </url>
   
   
@@ -1129,22 +1129,8 @@
   
   
   <url>
-    <loc>https://debuntu.ru/manuals/monitoring/</loc>
-    <lastmod>2024-07-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/</loc>
-    <lastmod>2024-07-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  
-  
-  <url>
     <loc>https://debuntu.ru/manuals/</loc>
-    <lastmod>2024-07-24T00:00:00+00:00</lastmod>
+    <lastmod>2024-07-29T00:00:00+00:00</lastmod>
   </url>
   
   
@@ -1158,13 +1144,6 @@
   
   <url>
     <loc>https://debuntu.ru/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/</loc>
-    <lastmod>2024-05-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://debuntu.ru/manuals/kubernetes/</loc>
     <lastmod>2024-05-18T00:00:00+00:00</lastmod>
   </url>
   
@@ -1185,13 +1164,6 @@
   
   
   <url>
-    <loc>https://debuntu.ru/manuals/databases/</loc>
-    <lastmod>2023-05-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  
-  
-  <url>
     <loc>https://debuntu.ru/manuals/databases/postgresql/</loc>
     <lastmod>2023-05-02T00:00:00+00:00</lastmod>
   </url>
@@ -1200,13 +1172,6 @@
   
   <url>
     <loc>https://debuntu.ru/manuals/bigdata/apacheatlas/</loc>
-    <lastmod>2023-02-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://debuntu.ru/manuals/bigdata/</loc>
     <lastmod>2023-02-26T00:00:00+00:00</lastmod>
   </url>
   
@@ -1234,22 +1199,8 @@
   
   
   <url>
-    <loc>https://debuntu.ru/manuals/borgbackup/</loc>
-    <lastmod>2022-04-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  
-  
-  <url>
     <loc>https://debuntu.ru/manuals/borgbackup/sozdaniye-bekapa-vsey-sistemy-s-pomoshchyu-borgbackup/</loc>
     <lastmod>2022-03-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://debuntu.ru/manuals/freeipa/</loc>
-    <lastmod>2021-12-27T00:00:00+00:00</lastmod>
   </url>
   
   
@@ -1271,13 +1222,6 @@
   <url>
     <loc>https://debuntu.ru/a/</loc>
     <lastmod>2021-11-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://debuntu.ru/manuals/vpn/</loc>
-    <lastmod>2021-11-19T00:00:00+00:00</lastmod>
   </url>
   
   
@@ -1339,12 +1283,6 @@
   
   
   <url>
-    <loc>https://debuntu.ru/manuals/proxmox/</loc>
-  </url>
-  
-  
-  
-  <url>
     <loc>https://debuntu.ru/manuals/bigdata/ustanovka-cloudera-cdh-6.3.2-s-tls-i-kerberos-na-osnove-freeipa/solr-ustanovka-i-nastroyka/</loc>
     <lastmod>2021-07-21T00:00:00+00:00</lastmod>
   </url>
@@ -1379,8 +1317,35 @@
   
   
   
+  
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/borgbackup/</loc>
+    <lastmod>2024-07-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
   <url>
     <loc>https://debuntu.ru/</loc>
+    <lastmod>2024-07-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/monitoring/</loc>
+    <lastmod>2024-07-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/</loc>
     <lastmod>2024-07-24T00:00:00+00:00</lastmod>
   </url>
   
@@ -1404,16 +1369,28 @@
   
   
   
+  <url>
+    <loc>https://debuntu.ru/manuals/kubernetes/</loc>
+    <lastmod>2024-05-18T00:00:00+00:00</lastmod>
+  </url>
   
   
   
   
   
+  <url>
+    <loc>https://debuntu.ru/manuals/proxmox/</loc>
+    <lastmod>2023-06-19T00:00:00+00:00</lastmod>
+  </url>
   
   
   
   
   
+  <url>
+    <loc>https://debuntu.ru/manuals/databases/</loc>
+    <lastmod>2023-05-02T00:00:00+00:00</lastmod>
+  </url>
   
   
   
@@ -1425,278 +1402,10 @@
   
   
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <url>
+    <loc>https://debuntu.ru/manuals/bigdata/</loc>
+    <lastmod>2023-02-26T00:00:00+00:00</lastmod>
+  </url>
   
   
   
@@ -1735,8 +1444,294 @@
   
   
   <url>
-    <loc>https://debuntu.ru/manuals/proxmox/proxmox-freeipa-ldap-authentication-setup/</loc>
+    <loc>https://debuntu.ru/manuals/freeipa/</loc>
+    <lastmod>2021-12-27T00:00:00+00:00</lastmod>
   </url>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/vpn/</loc>
+    <lastmod>2021-11-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   

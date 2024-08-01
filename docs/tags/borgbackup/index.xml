@@ -6,7 +6,7 @@
     <description>Recent content in BorgBackup on Debuntarium</description>
     <generator>Hugo</generator>
     <language>ru-RU</language>
-    <lastBuildDate>Mon, 04 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 29 Jul 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://debuntu.ru/tags/borgbackup/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>10. Установка BorgBackup в CentOS и Ubuntu</title>
@@ -30,18 +30,18 @@
       <description>2022-03-17&#xA;Установка пакетов, необходимых для сборки borgbackup yum -y install openssl-devel python3-devel libacl-devel libacl lz4-devel \ libzstd-devel libxxhash-devel gcc-c++ fuse-devel Обновляем pip python3 -m pip install -U pip Добавляем borgbackup в /roo/.local/bin Пакеты pkgconfig setuptools wheel msgpack python3 -m pip install --user pkgconfig setuptools setuptools-scm wheel msgpack stdout:&#xA;WARNING: Running pip install with root privileges is generally not a good idea. Try `__main__.py install --user` instead. Collecting pip Downloading https://files.pythonhosted.org/packages/a4/6d/6463d49a933f547439d6b5b98b46af8742cc03ae83543e4d7688c2420f8b/pip-21.3.1-py3-none-any.whl (1.</description>
     </item>
     <item>
-      <title>14. Настройка BorgBackup-сервера</title>
+      <title>Настройка BorgBackup-сервера</title>
       <link>https://debuntu.ru/manuals/borgbackup/nastroyka-borg-servera/</link>
-      <pubDate>Fri, 11 Mar 2022 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Jul 2024 00:00:00 +0000</pubDate>
       <guid>https://debuntu.ru/manuals/borgbackup/nastroyka-borg-servera/</guid>
-      <description>2022-03-11&#xA;1. Настройка Borg-сервера 1.1. Добавляем системного пользователя &amp;lsquo;_borg&amp;rsquo;, под которым клиенты будут подключаться по ssh к серверу и запускать приложение borg. Пароль для этой УЗ не запоминаем, так как он не потребуется в дальнейшем, но без наличия пароля будет невозможно подключиться к borg-аккаунту через ssh.&#xA;export BORGUSERNAME=&amp;#34;_borg&amp;#34; useradd -r -s /bin/sh \ -m -p $(tr -dc &amp;#39;A-Za-z0-9&amp;#39; &amp;lt;/dev/urandom | head -c 21; echo) ${BORGUSERNAME} 1.2. Создаём папку .ssh, где позже разместим файлы необходимые для подключения по ssh.</description>
+      <description>2024-07-29&#xA;Настройка Borg-сервера Добавьте системного пользователя &amp;#39;borg&amp;#39;, под которым borg-клиенты будут подключаться по ssh к серверу и запускать приложение borg. Пароль для этой УЗ не будет использоваться, так как borg-подключения будут производиться по ssh-ключу, но создать его требуется, иначе sshd не позволит подключиться к borg-аккаунту (даже по ssh-ключу). Сохранять пароль не обязательно.&#xA;BORGUSERNAME=&amp;#34;borg&amp;#34; PASSWORD=&amp;#34;$(tr -dc &amp;#39;A-Za-z0-9.,{}[]!@#$%^&amp;amp;*()=\|/;:&amp;#34;~&amp;#39; \ &amp;lt;/dev/urandom | head -c 51)&amp;#34; BORGHOMEDIR=&amp;#39;/srv/borg&amp;#39; #useradd --system \ # --user-group \ # --shell /bin/sh \ # --create-home \ # --home-dir ${BORGHOMEDIR} \ # --password ${PASSWORD} \ # ${BORGUSERNAME} useradd -r -U -s /bin/sh -m -d ${BORGHOMEDIR} -p ${PASSWORD} ${BORGUSERNAME} Создайте папку .</description>
     </item>
     <item>
-      <title>16. Настройка первого borg-репо</title>
+      <title>Настройка первого borg-репо без шифрования</title>
       <link>https://debuntu.ru/manuals/borgbackup/nastroyka-pervogo-borg-repo/</link>
-      <pubDate>Fri, 11 Mar 2022 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Jul 2024 00:00:00 +0000</pubDate>
       <guid>https://debuntu.ru/manuals/borgbackup/nastroyka-pervogo-borg-repo/</guid>
-      <description>2022-03-11&#xA;1. Настройка первого репо для бэкапов 1.1. Создаём первый каталог для хранения первого репо и пробрасываем линк к нему в домашний каталог. По этой короткой ссылке будет удобно указывать название репо для архивов, вместо длинного полного пути к бэкап-каталогу.&#xA;export BORGUSERNAME=&amp;#34;_borg&amp;#34; export REPONAME=&amp;#34;repo1&amp;#34; export REPODIR=&amp;#34;/data/borgbackup/${REPONAME}&amp;#34; sudo mkdir -p ${REPODIR} sudo chown ${BORGUSERNAME}.${BORGUSERNAME} ${REPODIR} sudo -u ${BORGUSERNAME} /bin/bash -c &amp;#34;ln -s ${REPODIR} ~/&amp;#34; 1.2. Создаём ssh-ключи для будущих клиентов этого репо.</description>
+      <description>2024-07-29&#xA;Настройка первого репо для бэкапов Если первый каталог для хранения первого репо будет создан вне домашнего каталога УЗ borg, то пробросьте линк к нему в корень домашнего каталога. По этой короткой ссылке будет удобно в borg-командах указывать просто название репо для архивов, вместо длинного полного пути к бэкап-каталогу. Иначе создайте каталог внутри домашней директории УЗ borg:&#xA;BORGUSERNAME=&amp;#34;borg&amp;#34; BORGHOMEDIR=&amp;#39;/srv/borg&amp;#39; REPONAME=&amp;#34;repo1&amp;#34; REPODIR=&amp;#34;~/${REPONAME}&amp;#34; sudo -u ${BORGUSERNAME} /bin/bash -c &amp;#34;mkdir ${REPODIR}&amp;#34; #sudo -u ${BORGUSERNAME} /bin/bash -c &amp;#34;ln -s ${REPODIR} ~/&amp;#34; Создайте ssh-ключи для будущих клиентов этого репо.</description>
     </item>
     <item>
       <title>18. Создание шлюза в удалённой ИС для доступа хостов к бэкап-серверу</title>

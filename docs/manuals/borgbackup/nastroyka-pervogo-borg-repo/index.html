@@ -17,30 +17,37 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>16. Настройка первого borg-репо | Debuntarium</title>
-<meta name="description" content="Описание процесса настройки borg-репозитория.
-">
+<title>Настройка первого borg-репо без шифрования | Debuntarium</title>
+<meta name="description" content="2024-07-29
+Настройка первого репо для бэкапов Если первый каталог для хранения первого репо будет создан вне домашнего каталога УЗ borg, то пробросьте линк к нему в корень домашнего каталога. По этой короткой ссылке будет удобно в borg-командах указывать просто название репо для архивов, вместо длинного полного пути к бэкап-каталогу. Иначе создайте каталог внутри домашней директории УЗ borg:
+BORGUSERNAME=&amp;#34;borg&amp;#34; BORGHOMEDIR=&amp;#39;/srv/borg&amp;#39; REPONAME=&amp;#34;repo1&amp;#34; REPODIR=&amp;#34;~/${REPONAME}&amp;#34; sudo -u ${BORGUSERNAME} /bin/bash -c &amp;#34;mkdir ${REPODIR}&amp;#34; #sudo -u ${BORGUSERNAME} /bin/bash -c &amp;#34;ln -s ${REPODIR} ~/&amp;#34; Создайте ssh-ключи для будущих клиентов этого репо.">
 <meta property="og:url" content="https://debuntu.ru/manuals/borgbackup/nastroyka-pervogo-borg-repo/">
   <meta property="og:site_name" content="Debuntarium">
-  <meta property="og:title" content="16. Настройка первого borg-репо">
-  <meta property="og:description" content="Описание процесса настройки borg-репозитория.">
+  <meta property="og:title" content="Настройка первого borg-репо без шифрования">
+  <meta property="og:description" content="2024-07-29
+Настройка первого репо для бэкапов Если первый каталог для хранения первого репо будет создан вне домашнего каталога УЗ borg, то пробросьте линк к нему в корень домашнего каталога. По этой короткой ссылке будет удобно в borg-командах указывать просто название репо для архивов, вместо длинного полного пути к бэкап-каталогу. Иначе создайте каталог внутри домашней директории УЗ borg:
+BORGUSERNAME=&#34;borg&#34; BORGHOMEDIR=&#39;/srv/borg&#39; REPONAME=&#34;repo1&#34; REPODIR=&#34;~/${REPONAME}&#34; sudo -u ${BORGUSERNAME} /bin/bash -c &#34;mkdir ${REPODIR}&#34; #sudo -u ${BORGUSERNAME} /bin/bash -c &#34;ln -s ${REPODIR} ~/&#34; Создайте ssh-ключи для будущих клиентов этого репо.">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:type" content="article">
     <meta property="article:section" content="manuals">
-    <meta property="article:published_time" content="2022-03-11T00:00:00+00:00">
-    <meta property="article:modified_time" content="2022-03-11T00:00:00+00:00">
+    <meta property="article:published_time" content="2024-07-29T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-07-29T00:00:00+00:00">
     <meta property="article:tag" content="BorgBackup">
     <meta property="article:tag" content="Backup SoftWare">
 
-  <meta itemprop="name" content="16. Настройка первого borg-репо">
-  <meta itemprop="description" content="Описание процесса настройки borg-репозитория.">
-  <meta itemprop="datePublished" content="2022-03-11T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2022-03-11T00:00:00+00:00">
-  <meta itemprop="wordCount" content="297">
+  <meta itemprop="name" content="Настройка первого borg-репо без шифрования">
+  <meta itemprop="description" content="2024-07-29
+Настройка первого репо для бэкапов Если первый каталог для хранения первого репо будет создан вне домашнего каталога УЗ borg, то пробросьте линк к нему в корень домашнего каталога. По этой короткой ссылке будет удобно в borg-командах указывать просто название репо для архивов, вместо длинного полного пути к бэкап-каталогу. Иначе создайте каталог внутри домашней директории УЗ borg:
+BORGUSERNAME=&#34;borg&#34; BORGHOMEDIR=&#39;/srv/borg&#39; REPONAME=&#34;repo1&#34; REPODIR=&#34;~/${REPONAME}&#34; sudo -u ${BORGUSERNAME} /bin/bash -c &#34;mkdir ${REPODIR}&#34; #sudo -u ${BORGUSERNAME} /bin/bash -c &#34;ln -s ${REPODIR} ~/&#34; Создайте ssh-ключи для будущих клиентов этого репо.">
+  <meta itemprop="datePublished" content="2024-07-29T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-07-29T00:00:00+00:00">
+  <meta itemprop="wordCount" content="285">
   <meta itemprop="keywords" content="BorgBackup,Backup SoftWare">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="16. Настройка первого borg-репо">
-  <meta name="twitter:description" content="Описание процесса настройки borg-репозитория.">
+  <meta name="twitter:title" content="Настройка первого borg-репо без шифрования">
+  <meta name="twitter:description" content="2024-07-29
+Настройка первого репо для бэкапов Если первый каталог для хранения первого репо будет создан вне домашнего каталога УЗ borg, то пробросьте линк к нему в корень домашнего каталога. По этой короткой ссылке будет удобно в borg-командах указывать просто название репо для архивов, вместо длинного полного пути к бэкап-каталогу. Иначе создайте каталог внутри домашней директории УЗ borg:
+BORGUSERNAME=&#34;borg&#34; BORGHOMEDIR=&#39;/srv/borg&#39; REPONAME=&#34;repo1&#34; REPODIR=&#34;~/${REPONAME}&#34; sudo -u ${BORGUSERNAME} /bin/bash -c &#34;mkdir ${REPODIR}&#34; #sudo -u ${BORGUSERNAME} /bin/bash -c &#34;ln -s ${REPODIR} ~/&#34; Создайте ssh-ключи для будущих клиентов этого репо.">
 
 
 
@@ -53,6 +60,8 @@
   integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
   crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://debuntu.ru/css/tabs.css"><link rel="stylesheet" href="https://debuntu.ru/css/asciidoc-admon.css"><link rel="stylesheet" href="https://debuntu.ru/css/monokai.css"><link rel="stylesheet" href="https://debuntu.ru/css/tulip.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3517323381341731"
+     crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1HVBCPETY0"></script>
 <script>
 var doNotTrack = false;
@@ -157,7 +166,32 @@ if (!doNotTrack) {
       <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-manuals-li">
   <a href="/manuals/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-manuals"><span class="">Инструкции</span></a>
   <ul class="ul-1">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsmonitoring-li">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-manualsborgbackup-li">
+  <a href="/manuals/borgbackup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualsborgbackup"><span class="">BorgBackup</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupustanovka-borgbackup-v-centos-i-ubuntu-li">
+  <a href="/manuals/borgbackup/ustanovka-borgbackup-v-centos-i-ubuntu/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupustanovka-borgbackup-v-centos-i-ubuntu"><span class="">10. Установка BorgBackup в CentOS и Ubuntu</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupustanovka-borgbackup-v-altlinux-9-10-li">
+  <a href="/manuals/borgbackup/ustanovka-borgbackup-v-altlinux-9-10/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupustanovka-borgbackup-v-altlinux-9-10"><span class="">12. Установка BorgBackup в AltLinux 9/10</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupustanovka-borgbackup-v-redos-72-li">
+  <a href="/manuals/borgbackup/ustanovka-borgbackup-v-redos-7.2/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupustanovka-borgbackup-v-redos-72"><span class="">13. Установка BorgBackup в RedOS 7.2</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupnastroyka-borg-servera-li">
+  <a href="/manuals/borgbackup/nastroyka-borg-servera/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupnastroyka-borg-servera"><span class="">Настройка BorgBackup-сервера</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-manualsborgbackupnastroyka-pervogo-borg-repo-li">
+  <a href="/manuals/borgbackup/nastroyka-pervogo-borg-repo/" class="align-left ps-0 active td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupnastroyka-pervogo-borg-repo"><span class="td-sidebar-nav-active-item">Настройка первого borg-репо без шифрования</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupsozdaniye-shlyuza-v-udalonnoy-is-dlya-dostupa-khostov-k-bekap-serveru-li">
+  <a href="/manuals/borgbackup/sozdaniye-shlyuza-v-udalonnoy-is-dlya-dostupa-khostov-k-bekap-serveru/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupsozdaniye-shlyuza-v-udalonnoy-is-dlya-dostupa-khostov-k-bekap-serveru"><span class="">18. Создание шлюза в удалённой ИС для доступа хостов к бэкап-серверу</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupsozdaniye-bekapa-vsey-sistemy-s-pomoshchyu-borgbackup-li">
+  <a href="/manuals/borgbackup/sozdaniye-bekapa-vsey-sistemy-s-pomoshchyu-borgbackup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupsozdaniye-bekapa-vsey-sistemy-s-pomoshchyu-borgbackup"><span class="">20. Создание бэкапа всей системы с помощью LVM и BorgBackup</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupvosstanovleniye-vsey-sistemy-iz-bekapa-s-pomoshchyu-borgbackup-li">
+  <a href="/manuals/borgbackup/vosstanovleniye-vsey-sistemy-iz-bekapa-s-pomoshchyu-borgbackup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupvosstanovleniye-vsey-sistemy-iz-bekapa-s-pomoshchyu-borgbackup"><span class="">30. Восстановление всей системы из бэкапа с помощью LVM и BorgBackup</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupnakatyvanie-na-host-chuzhogo-snimka-s-pomoshchyu-borgbackup-li">
+  <a href="/manuals/borgbackup/nakatyvanie-na-host-chuzhogo-snimka-s-pomoshchyu-borgbackup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupnakatyvanie-na-host-chuzhogo-snimka-s-pomoshchyu-borgbackup"><span class="">31. Накатывание на хост чужого снимка с помощью LVM и BorgBackup</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupustanovka-novogo-yadra-v-altlinux-10-dlya-proverki-vosstanovleniya-mashiny-s-pomoshchyu-borgbackup-li">
+  <a href="/manuals/borgbackup/ustanovka-novogo-yadra-v-altlinux-10-dlya-proverki-vosstanovleniya-mashiny-s-pomoshchyu-borgbackup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupustanovka-novogo-yadra-v-altlinux-10-dlya-proverki-vosstanovleniya-mashiny-s-pomoshchyu-borgbackup"><span class="">40. Установка нового ядра в AltLinux 10 для проверки правильности восстановления машины с помощью BorgBackup</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsmonitoring-li">
   <a href="/manuals/monitoring/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoring"><span class="">Monitoring</span></a>
   <ul class="ul-2 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsmonitoringvictoriametrics-li">
@@ -202,6 +236,8 @@ if (!doNotTrack) {
   </ul>
 </li>
   </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsproxmox-li">
+  <a href="/manuals/proxmox/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualsproxmox"><span class="">Proxmox</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsdatabases-li">
   <a href="/manuals/databases/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualsdatabases"><span class="">DataBases</span></a>
   <ul class="ul-2 foldable">
@@ -332,31 +368,6 @@ if (!doNotTrack) {
   </ul>
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-manualsborgbackup-li">
-  <a href="/manuals/borgbackup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualsborgbackup"><span class="">BorgBackup</span></a>
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupustanovka-borgbackup-v-centos-i-ubuntu-li">
-  <a href="/manuals/borgbackup/ustanovka-borgbackup-v-centos-i-ubuntu/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupustanovka-borgbackup-v-centos-i-ubuntu"><span class="">10. Установка BorgBackup в CentOS и Ubuntu</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupustanovka-borgbackup-v-altlinux-9-10-li">
-  <a href="/manuals/borgbackup/ustanovka-borgbackup-v-altlinux-9-10/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupustanovka-borgbackup-v-altlinux-9-10"><span class="">12. Установка BorgBackup в AltLinux 9/10</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupustanovka-borgbackup-v-redos-72-li">
-  <a href="/manuals/borgbackup/ustanovka-borgbackup-v-redos-7.2/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupustanovka-borgbackup-v-redos-72"><span class="">13. Установка BorgBackup в RedOS 7.2</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupnastroyka-borg-servera-li">
-  <a href="/manuals/borgbackup/nastroyka-borg-servera/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupnastroyka-borg-servera"><span class="">14. Настройка BorgBackup-сервера</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-manualsborgbackupnastroyka-pervogo-borg-repo-li">
-  <a href="/manuals/borgbackup/nastroyka-pervogo-borg-repo/" class="align-left ps-0 active td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupnastroyka-pervogo-borg-repo"><span class="td-sidebar-nav-active-item">16. Настройка первого borg-репо</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupsozdaniye-shlyuza-v-udalonnoy-is-dlya-dostupa-khostov-k-bekap-serveru-li">
-  <a href="/manuals/borgbackup/sozdaniye-shlyuza-v-udalonnoy-is-dlya-dostupa-khostov-k-bekap-serveru/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupsozdaniye-shlyuza-v-udalonnoy-is-dlya-dostupa-khostov-k-bekap-serveru"><span class="">18. Создание шлюза в удалённой ИС для доступа хостов к бэкап-серверу</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupsozdaniye-bekapa-vsey-sistemy-s-pomoshchyu-borgbackup-li">
-  <a href="/manuals/borgbackup/sozdaniye-bekapa-vsey-sistemy-s-pomoshchyu-borgbackup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupsozdaniye-bekapa-vsey-sistemy-s-pomoshchyu-borgbackup"><span class="">20. Создание бэкапа всей системы с помощью LVM и BorgBackup</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupvosstanovleniye-vsey-sistemy-iz-bekapa-s-pomoshchyu-borgbackup-li">
-  <a href="/manuals/borgbackup/vosstanovleniye-vsey-sistemy-iz-bekapa-s-pomoshchyu-borgbackup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupvosstanovleniye-vsey-sistemy-iz-bekapa-s-pomoshchyu-borgbackup"><span class="">30. Восстановление всей системы из бэкапа с помощью LVM и BorgBackup</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupnakatyvanie-na-host-chuzhogo-snimka-s-pomoshchyu-borgbackup-li">
-  <a href="/manuals/borgbackup/nakatyvanie-na-host-chuzhogo-snimka-s-pomoshchyu-borgbackup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupnakatyvanie-na-host-chuzhogo-snimka-s-pomoshchyu-borgbackup"><span class="">31. Накатывание на хост чужого снимка с помощью LVM и BorgBackup</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupustanovka-novogo-yadra-v-altlinux-10-dlya-proverki-vosstanovleniya-mashiny-s-pomoshchyu-borgbackup-li">
-  <a href="/manuals/borgbackup/ustanovka-novogo-yadra-v-altlinux-10-dlya-proverki-vosstanovleniya-mashiny-s-pomoshchyu-borgbackup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupustanovka-novogo-yadra-v-altlinux-10-dlya-proverki-vosstanovleniya-mashiny-s-pomoshchyu-borgbackup"><span class="">40. Установка нового ядра в AltLinux 10 для проверки правильности восстановления машины с помощью BorgBackup</span></a>
-</li>
-  </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsfreeipa-li">
   <a href="/manuals/freeipa/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualsfreeipa"><span class="">FreeIPA</span></a>
   <ul class="ul-2 foldable">
@@ -394,13 +405,6 @@ if (!doNotTrack) {
   <a href="/manuals/vpn/nastraivaem-openvpn-server-na-podklyucheniya-klientov/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsvpnnastraivaem-openvpn-server-na-podklyucheniya-klientov"><span class="">Настраиваем OpenVPN сервер на подключение клиентов</span></a>
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsproxmox-li">
-  <a href="/manuals/proxmox/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualsproxmox"><span class="">Proxmox</span></a>
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsproxmoxproxmox-freeipa-ldap-authentication-setup-li">
-  <a href="/manuals/proxmox/proxmox-freeipa-ldap-authentication-setup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsproxmoxproxmox-freeipa-ldap-authentication-setup"><span class=""></span></a>
-</li>
-  </ul>
 </li>
   </ul>
 </li>
@@ -414,14 +418,7 @@ if (!doNotTrack) {
 
 </div>
 
-            <div class="td-toc">
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#1-настройка-первого-репо-для-бэкапов">1. Настройка первого репо для бэкапов</a></li>
-  </ul>
-</nav>
-      </div>
-    
+            
             <div class="taxonomy taxonomy-terms-cloud taxo-categories">
       <h5 class="taxonomy-title">Categories</h5>
       <ul class="taxonomy-terms">
@@ -612,13 +609,13 @@ if (!doNotTrack) {
   <li class="breadcrumb-item">
     <a href="/manuals/borgbackup/">BorgBackup</a></li>
   <li class="breadcrumb-item active" aria-current="page">
-    16. Настройка первого borg-репо</li>
+    Настройка первого borg-репо без шифрования</li>
   </ol>
 </nav>
             
 <div class="td-content">
-	<h1>16. Настройка первого borg-репо</h1>
-	<div class="lead">Описание процесса настройки borg-репозитория.</div>
+	<h1>Настройка первого borg-репо без шифрования</h1>
+	
 	<header class="article-meta">
 		<div class="taxonomy taxonomy-terms-article taxo-tags">
   <h5 class="taxonomy-title">Tags:</h5>
@@ -629,45 +626,105 @@ if (!doNotTrack) {
 </div>
 
 </header>
-	<p>2022-03-11</p>
-<h2 id="1-настройка-первого-репо-для-бэкапов">1. Настройка первого репо для бэкапов</h2>
-<p>1.1. Создаём первый каталог для хранения первого репо и пробрасываем линк к нему в домашний каталог. По этой короткой ссылке будет удобно указывать название репо для архивов, вместо длинного полного пути к бэкап-каталогу.</p>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#fff;font-weight:bold">export</span> BORGUSERNAME=<span style="color:#0ff;font-weight:bold">&#34;_borg&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#fff;font-weight:bold">export</span> REPONAME=<span style="color:#0ff;font-weight:bold">&#34;repo1&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#fff;font-weight:bold">export</span> REPODIR=<span style="color:#0ff;font-weight:bold">&#34;/data/borgbackup/</span><span style="color:#0ff;font-weight:bold">${</span>REPONAME<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold">&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>sudo mkdir -p <span style="color:#0ff;font-weight:bold">${</span>REPODIR<span style="color:#0ff;font-weight:bold">}</span>
-</span></span><span style="display:flex;"><span>sudo chown <span style="color:#0ff;font-weight:bold">${</span>BORGUSERNAME<span style="color:#0ff;font-weight:bold">}</span>.<span style="color:#0ff;font-weight:bold">${</span>BORGUSERNAME<span style="color:#0ff;font-weight:bold">}</span> <span style="color:#0ff;font-weight:bold">${</span>REPODIR<span style="color:#0ff;font-weight:bold">}</span>
-</span></span><span style="display:flex;"><span>sudo -u <span style="color:#0ff;font-weight:bold">${</span>BORGUSERNAME<span style="color:#0ff;font-weight:bold">}</span> /bin/bash -c <span style="color:#0ff;font-weight:bold">&#34;ln -s </span><span style="color:#0ff;font-weight:bold">${</span>REPODIR<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold"> ~/&#34;</span>
-</span></span></code></pre></div><p>1.2. Создаём ssh-ключи для будущих клиентов этого репо. Кстати, здесь их хранить не обязательно. Наверное, будет правильней для каждого репо создавать отдельные ключи.</p>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#fff;font-weight:bold">export</span> SSHKEYNAME=<span style="color:#0ff;font-weight:bold">&#34;borg_</span><span style="color:#0ff;font-weight:bold">${</span>REPONAME<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold">&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>sudo -u <span style="color:#0ff;font-weight:bold">${</span>BORGUSERNAME<span style="color:#0ff;font-weight:bold">}</span> /bin/bash -c <span style="color:#0ff;font-weight:bold">&#34;ssh-keygen -t ed25519 -q -N &#39;&#39; -f ~/.ssh/</span><span style="color:#0ff;font-weight:bold">${</span>SSHKEYNAME<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold">&#34;</span>
-</span></span></code></pre></div><p>1.3. Если файл <code>authorized_keys</code> отсутствует, то создаём его с единственной записью-комментом &ldquo;<em>Требуется указывать полный путь к каждому репо</em>&rdquo;.</p>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo -u <span style="color:#0ff;font-weight:bold">${</span>BORGUSERNAME<span style="color:#0ff;font-weight:bold">}</span> /bin/bash -c <span style="color:#0ff;font-weight:bold">&#34;cd ~/.ssh; echo &#39;# Требуется указывать полный путь к каждому репо&#39; &gt; /home/</span><span style="color:#0ff;font-weight:bold">${</span>BORGUSERNAME<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold">/.ssh/authorized_keys&#34;</span>
-</span></span><span style="display:flex;"><span>chmod <span style="color:#ff0;font-weight:bold">600</span> /home/<span style="color:#0ff;font-weight:bold">${</span>BORGUSERNAME<span style="color:#0ff;font-weight:bold">}</span>/.ssh/authorized_keys
-</span></span></code></pre></div><p>1.4. Добавляем в <code>authorized_keys</code> запись для доступа к репо:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo -u <span style="color:#0ff;font-weight:bold">${</span>BORGUSERNAME<span style="color:#0ff;font-weight:bold">}</span> /bin/bash -c <span style="color:#0ff;font-weight:bold">&#34;cd ~/.ssh; echo -e &#39;command=\&#34;/home/</span><span style="color:#0ff;font-weight:bold">${</span>BORGUSERNAME<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold">/.local/bin/borg serve --restrict-to-path </span><span style="color:#0ff;font-weight:bold">${</span>REPODIR<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold">\&#34;,restrict </span><span style="color:#fff;font-weight:bold">$(</span>cat /home/<span style="color:#0ff;font-weight:bold">${</span>BORGUSERNAME<span style="color:#0ff;font-weight:bold">}</span>/.ssh/<span style="color:#0ff;font-weight:bold">${</span>SSHKEYNAME<span style="color:#0ff;font-weight:bold">}</span>.pub<span style="color:#fff;font-weight:bold">)</span><span style="color:#0ff;font-weight:bold">&#39; &gt;&gt; authorized_keys&#34;</span>
-</span></span></code></pre></div><p>1.5. Инициализируем первый репо без шифрования:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>REPOLINKNAME=<span style="color:#0ff;font-weight:bold">&#34;</span><span style="color:#0ff;font-weight:bold">${</span>REPONAME<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold">&#34;</span> <span style="color:#007f7f"># Имя ссылки в home на репо</span>
-</span></span><span style="display:flex;"><span><span style="color:#fff;font-weight:bold">export</span> BORG_RSH=<span style="color:#0ff;font-weight:bold">&#34;ssh -i ~/.ssh/</span><span style="color:#0ff;font-weight:bold">${</span>SSHKEYNAME<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold">&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#fff;font-weight:bold">export</span> BORG_REPO=<span style="color:#0ff;font-weight:bold">&#34;</span><span style="color:#0ff;font-weight:bold">${</span>BORGUSERNAME<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold">@localhost:</span><span style="color:#0ff;font-weight:bold">${</span>REPOLINKNAME<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold">&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#007f7f"># Вызываем sudo -EH для передачи переменных</span>
-</span></span><span style="display:flex;"><span><span style="color:#007f7f"># окружения в borg и смены HOME.</span>
-</span></span><span style="display:flex;"><span>sudo -EH -u <span style="color:#0ff;font-weight:bold">${</span>BORGUSERNAME<span style="color:#0ff;font-weight:bold">}</span> /bin/bash -c <span style="color:#0ff;font-weight:bold">&#39;borg init -e none&#39;</span>
-</span></span></code></pre></div><p>1.6. Проверяем, что в каталоге первого репо создана структура:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ls -al <span style="color:#0ff;font-weight:bold">${</span>REPODIR<span style="color:#0ff;font-weight:bold">}</span>
-</span></span><span style="display:flex;"><span>total <span style="color:#ff0;font-weight:bold">72</span>
-</span></span><span style="display:flex;"><span>drwxr-xr-x <span style="color:#ff0;font-weight:bold">3</span> _borg _borg  <span style="color:#ff0;font-weight:bold">4096</span> мар <span style="color:#ff0;font-weight:bold">11</span> 17:30 .
-</span></span><span style="display:flex;"><span>drwxr-xr-x <span style="color:#ff0;font-weight:bold">3</span> root        root         <span style="color:#ff0;font-weight:bold">4096</span> мар <span style="color:#ff0;font-weight:bold">10</span> 15:42 ..
-</span></span><span style="display:flex;"><span>-rw------- <span style="color:#ff0;font-weight:bold">1</span> _borg _borg   <span style="color:#ff0;font-weight:bold">209</span> мар <span style="color:#ff0;font-weight:bold">11</span> 17:30 config
-</span></span><span style="display:flex;"><span>drwx------ <span style="color:#ff0;font-weight:bold">3</span> _borg _borg  <span style="color:#ff0;font-weight:bold">4096</span> мар <span style="color:#ff0;font-weight:bold">11</span> 17:30 data
-</span></span><span style="display:flex;"><span>-rw------- <span style="color:#ff0;font-weight:bold">1</span> _borg _borg    <span style="color:#ff0;font-weight:bold">52</span> мар <span style="color:#ff0;font-weight:bold">11</span> 17:30 hints.1
-</span></span><span style="display:flex;"><span>-rw------- <span style="color:#ff0;font-weight:bold">1</span> _borg _borg <span style="color:#ff0;font-weight:bold">41258</span> мар <span style="color:#ff0;font-weight:bold">11</span> 17:30 index.1
-</span></span><span style="display:flex;"><span>-rw------- <span style="color:#ff0;font-weight:bold">1</span> _borg _borg   <span style="color:#ff0;font-weight:bold">190</span> мар <span style="color:#ff0;font-weight:bold">11</span> 17:30 integrity.1
-</span></span><span style="display:flex;"><span>-rw------- <span style="color:#ff0;font-weight:bold">1</span> _borg _borg    <span style="color:#ff0;font-weight:bold">73</span> мар <span style="color:#ff0;font-weight:bold">11</span> 17:30 README
-</span></span></code></pre></div>
+	<div class="paragraph">
+<p>2024-07-29</p>
+</div>
+<div class="sect1">
+<h2 id="_настройка_первого_репо_для_бэкапов">Настройка первого репо для бэкапов</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Если первый каталог для хранения первого репо будет создан вне домашнего каталога УЗ borg, то пробросьте линк к нему в корень домашнего каталога. По этой короткой ссылке будет удобно в borg-командах указывать просто название репо для архивов, вместо длинного полного пути к бэкап-каталогу. Иначе создайте каталог внутри домашней директории УЗ borg:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">BORGUSERNAME=&#34;borg&#34;
+BORGHOMEDIR=&#39;/srv/borg&#39;
+REPONAME=&#34;repo1&#34;
+</span><span style="color: #FFFFFF;background-color: #231529">REPODIR=&#34;~/$</span><span style="color: #41ff5b">{</span>REPONAME<span style="color: #41ff5b">}</span><span style="color: #fff0a6;font-weight: bold">&#34;
+</span><span style="color: #FFFFFF;background-color: #231529">
+</span><span style="color: #FFFFFF;background-color: #231529">sudo -u $</span><span style="color: #41ff5b">{</span>BORGUSERNAME<span style="color: #41ff5b">}</span> /bin/bash <span style="color: #9f93e6;font-weight: bold">-c</span> <span style="color: #fff0a6;font-weight: bold">&#34;mkdir </span><span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">REPODIR</span><span style="color: #FFF02A;font-weight: bold">}</span><span style="color: #fff0a6;font-weight: bold">&#34;</span>
+<span style="color: #FFFFFF;background-color: #231529">#</span><span style="font-weight: bold">sudo</span> <span style="color: #9f93e6;font-weight: bold">-u</span> <span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">BORGUSERNAME</span><span style="color: #FFF02A;font-weight: bold">}</span> /bin/bash <span style="color: #9f93e6;font-weight: bold">-c</span> <span style="color: #fff0a6;font-weight: bold">&#34;ln -s </span><span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">REPODIR</span><span style="color: #FFF02A;font-weight: bold">}</span><span style="color: #fff0a6;font-weight: bold"> ~/&#34;</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Создайте ssh-ключи для будущих клиентов этого репо. Кстати, здесь их хранить не обязательно, и даже вредно. И, наверное, будет правильней для каждого репо создавать отдельные ключи.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">SSHKEYNAME=&#34;borg_$</span><span style="color: #41ff5b">{</span>REPONAME<span style="color: #41ff5b">}</span><span style="color: #fff0a6;font-weight: bold">&#34;
+</span><span style="color: #FFFFFF;background-color: #231529">
+</span><span style="color: #FFFFFF;background-color: #231529">sudo -u $</span><span style="color: #41ff5b">{</span>BORGUSERNAME<span style="color: #41ff5b">}</span> /bin/bash <span style="color: #9f93e6;font-weight: bold">-c</span> <span style="color: #fff0a6;font-weight: bold">&#34;ssh-keygen -t ed25519 -q -N &#39;&#39; -f ~/.ssh/</span><span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">SSHKEYNAME</span><span style="color: #FFF02A;font-weight: bold">}</span><span style="color: #fff0a6;font-weight: bold">&#34;</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Если в каталоге <code>~/.ssh</code> файл <code>authorized_keys</code> отсутствует, то создаём его с единственной записью-комментом &#34;<strong>Требуется указывать полный путь к каждому репо</strong>&#34;.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">FILE=&#39;~/.ssh/authorized_keys&#39;
+
+</span><span style="color: #FFFFFF;background-color: #231529">sudo -u $</span><span style="color: #41ff5b">{</span>BORGUSERNAME<span style="color: #41ff5b">}</span> /bin/bash <span style="color: #9f93e6;font-weight: bold">-c</span> <span style="color: #fff0a6;font-weight: bold">&#34;[ ! -f </span><span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">FILE</span><span style="color: #FFF02A;font-weight: bold">}</span><span style="color: #fff0a6;font-weight: bold"> ] &amp;&amp; </span><span style="color: #FAAF4C;font-weight: bold">\</span><span style="color: #fff0a6;font-weight: bold">
+</span><span style="color: #FFFFFF;background-color: #231529">  umask 077 &amp;&amp; \
+</span><span style="color: #FFFFFF;background-color: #231529">  echo &#39;#</span><span style="color: #BBBBBB"> </span>Требуется указывать полный путь к каждому репо!<span style="color: #fff0a6;font-weight: bold">&#39; \
+</span><span style="color: #FFFFFF;background-color: #231529">  &gt;</span><span style="color: #BBBBBB"> </span><span style="color: #fff0a6;font-weight: bold">${FILE}&#34;</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Добавьте в <code>authorized_keys</code> запись для доступа к репо:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">sudo -u $</span><span style="color: #41ff5b">{</span>BORGUSERNAME<span style="color: #41ff5b">}</span> /bin/bash <span style="color: #9f93e6;font-weight: bold">-c</span> <span style="color: #fff0a6;font-weight: bold">&#34; </span><span style="color: #FAAF4C;font-weight: bold">\</span><span style="color: #fff0a6;font-weight: bold">
+</span><span style="color: #FFFFFF;background-color: #231529"> printf &#39;command=\&#34;~/.local/bin/borg serve \
+</span><span style="color: #FFFFFF;background-color: #231529"> --restrict-to-path $</span><span style="color: #41ff5b">{</span>REPODIR<span style="color: #41ff5b">}</span><span style="color: #FAAF4C;font-weight: bold">\&#34;</span>,restrict <span style="color: #FAAF4C;font-weight: bold">\</span>
+<span style="color: #FFFFFF;background-color: #231529"> $</span><span style="color: #41ff5b">(</span><span style="font-weight: bold">cat</span> <span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">BORGHOMEDIR</span><span style="color: #FFF02A;font-weight: bold">}</span>/.ssh/<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">SSHKEYNAME</span><span style="color: #FFF02A;font-weight: bold">}</span>.pub<span style="color: #41ff5b">)</span><span style="color: #fff0a6;font-weight: bold">&#39; &gt;&gt; ${FILE}&#34;</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Инициализируйте первый репо без шифрования:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">BORGUSERNAME=&#39;borg&#39;
+REPONAME=&#39;repo1&#39;
+</span><span style="color: #FFFFFF;background-color: #231529">SSHKEYNAME=&#34;borg_$</span><span style="color: #41ff5b">{</span>REPONAME<span style="color: #41ff5b">}</span><span style="color: #fff0a6;font-weight: bold">&#34;
+</span><span style="color: #FFFFFF;background-color: #231529">export BORG_RSH=&#34;ssh -i ~/.ssh/$</span><span style="color: #fff0a6;font-weight: bold">{SSHKEYNAME}&#34;</span>
+<span style="color: #FFFFFF;background-color: #231529">export BORG_REPO=&#34;$</span><span style="color: #41ff5b">{</span>BORGUSERNAME<span style="color: #41ff5b">}</span>@localhost:<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">REPONAME</span><span style="color: #FFF02A;font-weight: bold">}</span><span style="color: #fff0a6;font-weight: bold">&#34;
+</span><span style="color: #FFFFFF;background-color: #231529">
+</span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>Вызываем <span style="font-weight: bold">sudo</span> <span style="color: #9f93e6;font-weight: bold">-EH</span> для передачи переменных
+<span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>окружения в borg и смены HOME.
+<span style="color: #FFFFFF;background-color: #231529">sudo -EH -u $</span><span style="color: #41ff5b">{</span>BORGUSERNAME<span style="color: #41ff5b">}</span> /bin/bash <span style="color: #9f93e6;font-weight: bold">-c</span> <span style="color: #fff0a6;font-weight: bold">&#39;~/.local/bin/borg init -e none&#39;</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Проверьте целостность репо:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">sudo -EH -u $</span><span style="color: #41ff5b">{</span>BORGUSERNAME<span style="color: #41ff5b">}</span> /bin/bash <span style="color: #9f93e6;font-weight: bold">-c</span> <span style="color: #fff0a6;font-weight: bold">&#39;~/.local/bin/borg check -v&#39;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ожидаемый примерный вывод:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">Remote: Starting repository check
+Remote: finished segment check at segment 1
+Remote: Starting repository index check
+Remote: Index object count match.
+Remote: Finished full repository check, no problems found.
+Starting archive consistency check...
+Archive consistency check complete, no problems found.</span></code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
 	
 </div>
 

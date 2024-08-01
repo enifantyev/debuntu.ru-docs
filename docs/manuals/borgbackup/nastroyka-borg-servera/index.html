@@ -17,30 +17,37 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>14. Настройка BorgBackup-сервера | Debuntarium</title>
-<meta name="description" content="Описание процесса настройки Borg-сервера.
-">
+<title>Настройка BorgBackup-сервера | Debuntarium</title>
+<meta name="description" content="2024-07-29
+Настройка Borg-сервера Добавьте системного пользователя &amp;#39;borg&amp;#39;, под которым borg-клиенты будут подключаться по ssh к серверу и запускать приложение borg. Пароль для этой УЗ не будет использоваться, так как borg-подключения будут производиться по ssh-ключу, но создать его требуется, иначе sshd не позволит подключиться к borg-аккаунту (даже по ssh-ключу). Сохранять пароль не обязательно.
+BORGUSERNAME=&amp;#34;borg&amp;#34; PASSWORD=&amp;#34;$(tr -dc &amp;#39;A-Za-z0-9.,{}[]!@#$%^&amp;amp;*()=\|/;:&amp;#34;~&amp;#39; \ &amp;lt;/dev/urandom | head -c 51)&amp;#34; BORGHOMEDIR=&amp;#39;/srv/borg&amp;#39; #useradd --system \ # --user-group \ # --shell /bin/sh \ # --create-home \ # --home-dir ${BORGHOMEDIR} \ # --password ${PASSWORD} \ # ${BORGUSERNAME} useradd -r -U -s /bin/sh -m -d ${BORGHOMEDIR} -p ${PASSWORD} ${BORGUSERNAME} Создайте папку .">
 <meta property="og:url" content="https://debuntu.ru/manuals/borgbackup/nastroyka-borg-servera/">
   <meta property="og:site_name" content="Debuntarium">
-  <meta property="og:title" content="14. Настройка BorgBackup-сервера">
-  <meta property="og:description" content="Описание процесса настройки Borg-сервера.">
+  <meta property="og:title" content="Настройка BorgBackup-сервера">
+  <meta property="og:description" content="2024-07-29
+Настройка Borg-сервера Добавьте системного пользователя &#39;borg&#39;, под которым borg-клиенты будут подключаться по ssh к серверу и запускать приложение borg. Пароль для этой УЗ не будет использоваться, так как borg-подключения будут производиться по ssh-ключу, но создать его требуется, иначе sshd не позволит подключиться к borg-аккаунту (даже по ssh-ключу). Сохранять пароль не обязательно.
+BORGUSERNAME=&#34;borg&#34; PASSWORD=&#34;$(tr -dc &#39;A-Za-z0-9.,{}[]!@#$%^&amp;*()=\|/;:&#34;~&#39; \ &lt;/dev/urandom | head -c 51)&#34; BORGHOMEDIR=&#39;/srv/borg&#39; #useradd --system \ # --user-group \ # --shell /bin/sh \ # --create-home \ # --home-dir ${BORGHOMEDIR} \ # --password ${PASSWORD} \ # ${BORGUSERNAME} useradd -r -U -s /bin/sh -m -d ${BORGHOMEDIR} -p ${PASSWORD} ${BORGUSERNAME} Создайте папку .">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:type" content="article">
     <meta property="article:section" content="manuals">
-    <meta property="article:published_time" content="2022-03-11T00:00:00+00:00">
-    <meta property="article:modified_time" content="2022-03-11T00:00:00+00:00">
+    <meta property="article:published_time" content="2024-07-29T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-07-29T00:00:00+00:00">
     <meta property="article:tag" content="BorgBackup">
     <meta property="article:tag" content="Backup SoftWare">
 
-  <meta itemprop="name" content="14. Настройка BorgBackup-сервера">
-  <meta itemprop="description" content="Описание процесса настройки Borg-сервера.">
-  <meta itemprop="datePublished" content="2022-03-11T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2022-03-11T00:00:00+00:00">
-  <meta itemprop="wordCount" content="127">
+  <meta itemprop="name" content="Настройка BorgBackup-сервера">
+  <meta itemprop="description" content="2024-07-29
+Настройка Borg-сервера Добавьте системного пользователя &#39;borg&#39;, под которым borg-клиенты будут подключаться по ssh к серверу и запускать приложение borg. Пароль для этой УЗ не будет использоваться, так как borg-подключения будут производиться по ssh-ключу, но создать его требуется, иначе sshd не позволит подключиться к borg-аккаунту (даже по ssh-ключу). Сохранять пароль не обязательно.
+BORGUSERNAME=&#34;borg&#34; PASSWORD=&#34;$(tr -dc &#39;A-Za-z0-9.,{}[]!@#$%^&amp;*()=\|/;:&#34;~&#39; \ &lt;/dev/urandom | head -c 51)&#34; BORGHOMEDIR=&#39;/srv/borg&#39; #useradd --system \ # --user-group \ # --shell /bin/sh \ # --create-home \ # --home-dir ${BORGHOMEDIR} \ # --password ${PASSWORD} \ # ${BORGUSERNAME} useradd -r -U -s /bin/sh -m -d ${BORGHOMEDIR} -p ${PASSWORD} ${BORGUSERNAME} Создайте папку .">
+  <meta itemprop="datePublished" content="2024-07-29T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-07-29T00:00:00+00:00">
+  <meta itemprop="wordCount" content="181">
   <meta itemprop="keywords" content="BorgBackup,Backup SoftWare">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="14. Настройка BorgBackup-сервера">
-  <meta name="twitter:description" content="Описание процесса настройки Borg-сервера.">
+  <meta name="twitter:title" content="Настройка BorgBackup-сервера">
+  <meta name="twitter:description" content="2024-07-29
+Настройка Borg-сервера Добавьте системного пользователя &#39;borg&#39;, под которым borg-клиенты будут подключаться по ssh к серверу и запускать приложение borg. Пароль для этой УЗ не будет использоваться, так как borg-подключения будут производиться по ssh-ключу, но создать его требуется, иначе sshd не позволит подключиться к borg-аккаунту (даже по ssh-ключу). Сохранять пароль не обязательно.
+BORGUSERNAME=&#34;borg&#34; PASSWORD=&#34;$(tr -dc &#39;A-Za-z0-9.,{}[]!@#$%^&amp;*()=\|/;:&#34;~&#39; \ &lt;/dev/urandom | head -c 51)&#34; BORGHOMEDIR=&#39;/srv/borg&#39; #useradd --system \ # --user-group \ # --shell /bin/sh \ # --create-home \ # --home-dir ${BORGHOMEDIR} \ # --password ${PASSWORD} \ # ${BORGUSERNAME} useradd -r -U -s /bin/sh -m -d ${BORGHOMEDIR} -p ${PASSWORD} ${BORGUSERNAME} Создайте папку .">
 
 
 
@@ -53,6 +60,8 @@
   integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
   crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://debuntu.ru/css/tabs.css"><link rel="stylesheet" href="https://debuntu.ru/css/asciidoc-admon.css"><link rel="stylesheet" href="https://debuntu.ru/css/monokai.css"><link rel="stylesheet" href="https://debuntu.ru/css/tulip.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3517323381341731"
+     crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1HVBCPETY0"></script>
 <script>
 var doNotTrack = false;
@@ -157,7 +166,32 @@ if (!doNotTrack) {
       <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-manuals-li">
   <a href="/manuals/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-manuals"><span class="">Инструкции</span></a>
   <ul class="ul-1">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsmonitoring-li">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-manualsborgbackup-li">
+  <a href="/manuals/borgbackup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualsborgbackup"><span class="">BorgBackup</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupustanovka-borgbackup-v-centos-i-ubuntu-li">
+  <a href="/manuals/borgbackup/ustanovka-borgbackup-v-centos-i-ubuntu/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupustanovka-borgbackup-v-centos-i-ubuntu"><span class="">10. Установка BorgBackup в CentOS и Ubuntu</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupustanovka-borgbackup-v-altlinux-9-10-li">
+  <a href="/manuals/borgbackup/ustanovka-borgbackup-v-altlinux-9-10/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupustanovka-borgbackup-v-altlinux-9-10"><span class="">12. Установка BorgBackup в AltLinux 9/10</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupustanovka-borgbackup-v-redos-72-li">
+  <a href="/manuals/borgbackup/ustanovka-borgbackup-v-redos-7.2/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupustanovka-borgbackup-v-redos-72"><span class="">13. Установка BorgBackup в RedOS 7.2</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-manualsborgbackupnastroyka-borg-servera-li">
+  <a href="/manuals/borgbackup/nastroyka-borg-servera/" class="align-left ps-0 active td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupnastroyka-borg-servera"><span class="td-sidebar-nav-active-item">Настройка BorgBackup-сервера</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupnastroyka-pervogo-borg-repo-li">
+  <a href="/manuals/borgbackup/nastroyka-pervogo-borg-repo/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupnastroyka-pervogo-borg-repo"><span class="">Настройка первого borg-репо без шифрования</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupsozdaniye-shlyuza-v-udalonnoy-is-dlya-dostupa-khostov-k-bekap-serveru-li">
+  <a href="/manuals/borgbackup/sozdaniye-shlyuza-v-udalonnoy-is-dlya-dostupa-khostov-k-bekap-serveru/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupsozdaniye-shlyuza-v-udalonnoy-is-dlya-dostupa-khostov-k-bekap-serveru"><span class="">18. Создание шлюза в удалённой ИС для доступа хостов к бэкап-серверу</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupsozdaniye-bekapa-vsey-sistemy-s-pomoshchyu-borgbackup-li">
+  <a href="/manuals/borgbackup/sozdaniye-bekapa-vsey-sistemy-s-pomoshchyu-borgbackup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupsozdaniye-bekapa-vsey-sistemy-s-pomoshchyu-borgbackup"><span class="">20. Создание бэкапа всей системы с помощью LVM и BorgBackup</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupvosstanovleniye-vsey-sistemy-iz-bekapa-s-pomoshchyu-borgbackup-li">
+  <a href="/manuals/borgbackup/vosstanovleniye-vsey-sistemy-iz-bekapa-s-pomoshchyu-borgbackup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupvosstanovleniye-vsey-sistemy-iz-bekapa-s-pomoshchyu-borgbackup"><span class="">30. Восстановление всей системы из бэкапа с помощью LVM и BorgBackup</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupnakatyvanie-na-host-chuzhogo-snimka-s-pomoshchyu-borgbackup-li">
+  <a href="/manuals/borgbackup/nakatyvanie-na-host-chuzhogo-snimka-s-pomoshchyu-borgbackup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupnakatyvanie-na-host-chuzhogo-snimka-s-pomoshchyu-borgbackup"><span class="">31. Накатывание на хост чужого снимка с помощью LVM и BorgBackup</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupustanovka-novogo-yadra-v-altlinux-10-dlya-proverki-vosstanovleniya-mashiny-s-pomoshchyu-borgbackup-li">
+  <a href="/manuals/borgbackup/ustanovka-novogo-yadra-v-altlinux-10-dlya-proverki-vosstanovleniya-mashiny-s-pomoshchyu-borgbackup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupustanovka-novogo-yadra-v-altlinux-10-dlya-proverki-vosstanovleniya-mashiny-s-pomoshchyu-borgbackup"><span class="">40. Установка нового ядра в AltLinux 10 для проверки правильности восстановления машины с помощью BorgBackup</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsmonitoring-li">
   <a href="/manuals/monitoring/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoring"><span class="">Monitoring</span></a>
   <ul class="ul-2 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsmonitoringvictoriametrics-li">
@@ -202,6 +236,8 @@ if (!doNotTrack) {
   </ul>
 </li>
   </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsproxmox-li">
+  <a href="/manuals/proxmox/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualsproxmox"><span class="">Proxmox</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsdatabases-li">
   <a href="/manuals/databases/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualsdatabases"><span class="">DataBases</span></a>
   <ul class="ul-2 foldable">
@@ -332,31 +368,6 @@ if (!doNotTrack) {
   </ul>
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-manualsborgbackup-li">
-  <a href="/manuals/borgbackup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualsborgbackup"><span class="">BorgBackup</span></a>
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupustanovka-borgbackup-v-centos-i-ubuntu-li">
-  <a href="/manuals/borgbackup/ustanovka-borgbackup-v-centos-i-ubuntu/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupustanovka-borgbackup-v-centos-i-ubuntu"><span class="">10. Установка BorgBackup в CentOS и Ubuntu</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupustanovka-borgbackup-v-altlinux-9-10-li">
-  <a href="/manuals/borgbackup/ustanovka-borgbackup-v-altlinux-9-10/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupustanovka-borgbackup-v-altlinux-9-10"><span class="">12. Установка BorgBackup в AltLinux 9/10</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupustanovka-borgbackup-v-redos-72-li">
-  <a href="/manuals/borgbackup/ustanovka-borgbackup-v-redos-7.2/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupustanovka-borgbackup-v-redos-72"><span class="">13. Установка BorgBackup в RedOS 7.2</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-manualsborgbackupnastroyka-borg-servera-li">
-  <a href="/manuals/borgbackup/nastroyka-borg-servera/" class="align-left ps-0 active td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupnastroyka-borg-servera"><span class="td-sidebar-nav-active-item">14. Настройка BorgBackup-сервера</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupnastroyka-pervogo-borg-repo-li">
-  <a href="/manuals/borgbackup/nastroyka-pervogo-borg-repo/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupnastroyka-pervogo-borg-repo"><span class="">16. Настройка первого borg-репо</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupsozdaniye-shlyuza-v-udalonnoy-is-dlya-dostupa-khostov-k-bekap-serveru-li">
-  <a href="/manuals/borgbackup/sozdaniye-shlyuza-v-udalonnoy-is-dlya-dostupa-khostov-k-bekap-serveru/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupsozdaniye-shlyuza-v-udalonnoy-is-dlya-dostupa-khostov-k-bekap-serveru"><span class="">18. Создание шлюза в удалённой ИС для доступа хостов к бэкап-серверу</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupsozdaniye-bekapa-vsey-sistemy-s-pomoshchyu-borgbackup-li">
-  <a href="/manuals/borgbackup/sozdaniye-bekapa-vsey-sistemy-s-pomoshchyu-borgbackup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupsozdaniye-bekapa-vsey-sistemy-s-pomoshchyu-borgbackup"><span class="">20. Создание бэкапа всей системы с помощью LVM и BorgBackup</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupvosstanovleniye-vsey-sistemy-iz-bekapa-s-pomoshchyu-borgbackup-li">
-  <a href="/manuals/borgbackup/vosstanovleniye-vsey-sistemy-iz-bekapa-s-pomoshchyu-borgbackup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupvosstanovleniye-vsey-sistemy-iz-bekapa-s-pomoshchyu-borgbackup"><span class="">30. Восстановление всей системы из бэкапа с помощью LVM и BorgBackup</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupnakatyvanie-na-host-chuzhogo-snimka-s-pomoshchyu-borgbackup-li">
-  <a href="/manuals/borgbackup/nakatyvanie-na-host-chuzhogo-snimka-s-pomoshchyu-borgbackup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupnakatyvanie-na-host-chuzhogo-snimka-s-pomoshchyu-borgbackup"><span class="">31. Накатывание на хост чужого снимка с помощью LVM и BorgBackup</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupustanovka-novogo-yadra-v-altlinux-10-dlya-proverki-vosstanovleniya-mashiny-s-pomoshchyu-borgbackup-li">
-  <a href="/manuals/borgbackup/ustanovka-novogo-yadra-v-altlinux-10-dlya-proverki-vosstanovleniya-mashiny-s-pomoshchyu-borgbackup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupustanovka-novogo-yadra-v-altlinux-10-dlya-proverki-vosstanovleniya-mashiny-s-pomoshchyu-borgbackup"><span class="">40. Установка нового ядра в AltLinux 10 для проверки правильности восстановления машины с помощью BorgBackup</span></a>
-</li>
-  </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsfreeipa-li">
   <a href="/manuals/freeipa/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualsfreeipa"><span class="">FreeIPA</span></a>
   <ul class="ul-2 foldable">
@@ -394,13 +405,6 @@ if (!doNotTrack) {
   <a href="/manuals/vpn/nastraivaem-openvpn-server-na-podklyucheniya-klientov/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsvpnnastraivaem-openvpn-server-na-podklyucheniya-klientov"><span class="">Настраиваем OpenVPN сервер на подключение клиентов</span></a>
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsproxmox-li">
-  <a href="/manuals/proxmox/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualsproxmox"><span class="">Proxmox</span></a>
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsproxmoxproxmox-freeipa-ldap-authentication-setup-li">
-  <a href="/manuals/proxmox/proxmox-freeipa-ldap-authentication-setup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsproxmoxproxmox-freeipa-ldap-authentication-setup"><span class=""></span></a>
-</li>
-  </ul>
 </li>
   </ul>
 </li>
@@ -414,14 +418,7 @@ if (!doNotTrack) {
 
 </div>
 
-            <div class="td-toc">
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#1-настройка-borg-сервера">1. Настройка Borg-сервера</a></li>
-  </ul>
-</nav>
-      </div>
-    
+            
             <div class="taxonomy taxonomy-terms-cloud taxo-categories">
       <h5 class="taxonomy-title">Categories</h5>
       <ul class="taxonomy-terms">
@@ -612,13 +609,13 @@ if (!doNotTrack) {
   <li class="breadcrumb-item">
     <a href="/manuals/borgbackup/">BorgBackup</a></li>
   <li class="breadcrumb-item active" aria-current="page">
-    14. Настройка BorgBackup-сервера</li>
+    Настройка BorgBackup-сервера</li>
   </ol>
 </nav>
             
 <div class="td-content">
-	<h1>14. Настройка BorgBackup-сервера</h1>
-	<div class="lead">Описание процесса настройки Borg-сервера.</div>
+	<h1>Настройка BorgBackup-сервера</h1>
+	
 	<header class="article-meta">
 		<div class="taxonomy taxonomy-terms-article taxo-tags">
   <h5 class="taxonomy-title">Tags:</h5>
@@ -629,20 +626,74 @@ if (!doNotTrack) {
 </div>
 
 </header>
-	<p>2022-03-11</p>
-<h2 id="1-настройка-borg-сервера">1. Настройка Borg-сервера</h2>
-<p>1.1. Добавляем системного пользователя &lsquo;_borg&rsquo;, под которым клиенты будут подключаться по ssh к серверу и запускать приложение <code>borg</code>. Пароль для этой УЗ не запоминаем, так как он не потребуется в дальнейшем, но без наличия пароля будет невозможно подключиться к borg-аккаунту через ssh.</p>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#fff;font-weight:bold">export</span> BORGUSERNAME=<span style="color:#0ff;font-weight:bold">&#34;_borg&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>useradd -r -s /bin/sh <span style="color:#0ff;font-weight:bold">\
-</span></span></span><span style="display:flex;"><span><span style="color:#0ff;font-weight:bold"></span>  -m -p <span style="color:#fff;font-weight:bold">$(</span>tr -dc <span style="color:#0ff;font-weight:bold">&#39;A-Za-z0-9&#39;</span> &lt;/dev/urandom | head -c 21; <span style="color:#fff;font-weight:bold">echo</span><span style="color:#fff;font-weight:bold">)</span> <span style="color:#0ff;font-weight:bold">${</span>BORGUSERNAME<span style="color:#0ff;font-weight:bold">}</span>
-</span></span></code></pre></div><p>1.2. Создаём папку <code>.ssh</code>, где позже разместим файлы необходимые для подключения по ssh.</p>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo -u <span style="color:#0ff;font-weight:bold">${</span>BORGUSERNAME<span style="color:#0ff;font-weight:bold">}</span> /bin/bash -c <span style="color:#0ff;font-weight:bold">&#39;mkdir -p ~/.ssh &amp;&amp; chmod 700 ~/.ssh&#39;</span>
-</span></span></code></pre></div><p>1.3. Установка borg-утилиты в <code>/home/_borg/.local/bin</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo -u <span style="color:#0ff;font-weight:bold">${</span>BORGUSERNAME<span style="color:#0ff;font-weight:bold">}</span> python3 -m pip install --upgrade --user pip
-</span></span><span style="display:flex;"><span>sudo -u <span style="color:#0ff;font-weight:bold">${</span>BORGUSERNAME<span style="color:#0ff;font-weight:bold">}</span> python3 -m pip install --user pkgconfig setuptools setuptools-scm wheel msgpack
-</span></span><span style="display:flex;"><span>sudo -u <span style="color:#0ff;font-weight:bold">${</span>BORGUSERNAME<span style="color:#0ff;font-weight:bold">}</span> python3 -m pip install --user borgbackup
-</span></span></code></pre></div>
+	<div class="paragraph">
+<p>2024-07-29</p>
+</div>
+<div class="sect1">
+<h2 id="_настройка_borg_сервера">Настройка Borg-сервера</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Добавьте системного пользователя &#39;borg&#39;, под которым borg-клиенты будут подключаться по ssh к серверу и запускать приложение <code>borg</code>. Пароль для этой УЗ не будет использоваться, так как borg-подключения будут производиться по ssh-ключу, но создать его требуется, иначе sshd не позволит подключиться к borg-аккаунту (даже по ssh-ключу). Сохранять пароль не обязательно.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">BORGUSERNAME=&#34;borg&#34;
+</span><span style="color: #FFFFFF;background-color: #231529">PASSWORD=&#34;$</span><span style="color: #41ff5b">(</span><span style="font-weight: bold">tr</span> <span style="color: #9f93e6;font-weight: bold">-dc</span> <span style="color: #fff0a6;font-weight: bold">&#39;A-Za-z0-9.,{}[]!@#$%^&amp;*()=\|/;:&#34;~&#39;</span> <span style="color: #FAAF4C;font-weight: bold">\</span>
+<span style="color: #FFFFFF;background-color: #231529"> &lt;/dev/urandom | head -c 51)&#34;
+BORGHOMEDIR=&#39;/srv/borg&#39;
+
+</span><span style="color: #FFFFFF;background-color: #231529">#</span>useradd <span style="color: #9f93e6;font-weight: bold">--system</span> <span style="color: #FAAF4C;font-weight: bold">\</span>
+<span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB">  </span><span style="color: #9f93e6;font-weight: bold">--user-group</span> <span style="color: #FAAF4C;font-weight: bold">\</span>
+<span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB">  </span><span style="color: #9f93e6;font-weight: bold">--shell</span> /bin/sh <span style="color: #FAAF4C;font-weight: bold">\</span>
+<span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB">  </span><span style="color: #9f93e6;font-weight: bold">--create-home</span> <span style="color: #FAAF4C;font-weight: bold">\</span>
+<span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB">  </span><span style="color: #9f93e6;font-weight: bold">--home-dir</span> <span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">BORGHOMEDIR</span><span style="color: #FFF02A;font-weight: bold">}</span> <span style="color: #FAAF4C;font-weight: bold">\</span>
+<span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB">  </span><span style="color: #9f93e6;font-weight: bold">--password</span> <span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">PASSWORD</span><span style="color: #FFF02A;font-weight: bold">}</span>  <span style="color: #FAAF4C;font-weight: bold">\</span>
+<span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB">  </span><span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">BORGUSERNAME</span><span style="color: #FFF02A;font-weight: bold">}</span>
+<span style="color: #FFFFFF;background-color: #231529">
+</span><span style="color: #FFFFFF;background-color: #231529">useradd -r -U -s /bin/sh -m -d $</span><span style="color: #41ff5b">{</span>BORGHOMEDIR<span style="color: #41ff5b">}</span> <span style="color: #9f93e6;font-weight: bold">-p</span> <span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">PASSWORD</span><span style="color: #FFF02A;font-weight: bold">}</span> <span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">BORGUSERNAME</span><span style="color: #FFF02A;font-weight: bold">}</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Создайте папку <code>.ssh</code>, где позже будут размещены файлы необходимые для подключения по ssh.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">sudo -u $</span><span style="color: #41ff5b">{</span>BORGUSERNAME<span style="color: #41ff5b">}</span> /bin/bash <span style="color: #9f93e6;font-weight: bold">-c</span> <span style="color: #fff0a6;font-weight: bold">&#39;umask 077 &amp;&amp; mkdir -p ~/.ssh&#39;</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Установите borg-утилиту в домашний borg-каталог <code>~/.local/bin</code>:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">sudo -u $</span><span style="color: #41ff5b">{</span>BORGUSERNAME<span style="color: #41ff5b">}</span> python3 <span style="color: #9f93e6;font-weight: bold">-m</span> pip <span style="font-weight: bold">install</span> <span style="color: #9f93e6;font-weight: bold">--upgrade</span> <span style="color: #9f93e6;font-weight: bold">--user</span> pip
+<span style="color: #FFFFFF;background-color: #231529">sudo -u $</span><span style="color: #41ff5b">{</span>BORGUSERNAME<span style="color: #41ff5b">}</span> python3 <span style="color: #9f93e6;font-weight: bold">-m</span> pip <span style="font-weight: bold">install</span> <span style="color: #9f93e6;font-weight: bold">--user</span> pkgconfig setuptools setuptools-scm wheel msgpack
+<span style="color: #FFFFFF;background-color: #231529">sudo -u $</span><span style="color: #41ff5b">{</span>BORGUSERNAME<span style="color: #41ff5b">}</span> python3 <span style="color: #9f93e6;font-weight: bold">-m</span> pip <span style="font-weight: bold">install</span> <span style="color: #9f93e6;font-weight: bold">--user</span> borgbackup</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Проверьте работоспособность утилиты borg под УЗ &#39;borg&#39;:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">sudo -u $</span><span style="color: #41ff5b">{</span>BORGUSERNAME<span style="color: #41ff5b">}</span> /bin/bash <span style="color: #9f93e6;font-weight: bold">-c</span> <span style="color: #fff0a6;font-weight: bold">&#39;. ~/.bashrc &amp;&amp; borg --version&#39;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Примерный ожидаемый вывод:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">borg 1.2.8</span></code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
 	
 </div>
 

@@ -18,12 +18,15 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>20. Создание бэкапа всей системы с помощью LVM и BorgBackup | Debuntarium</title>
-<meta name="description" content="Описание процесса создания LVM-снимка всей операционной системы и его архивирование в borg-репо.
-">
+<meta name="description" content="2022-03-11
+Подготовительные мероприятия Для создания LVM-снэпшотов требуется некоторое незанятое место на тех VG, для LV которых будут создаваться снэпшоты. В том случае, если на машине остановлены все сервисы, могущие создавать большой объём записываемых данных, то для создания снэпшотов много места не потребуется и достаточно, например, временно отключить swap и удалить соответствующий LV для освобождения пары Гигабайт под создание снэпшотов.
+Возможно, будет правильней добавить к машине дополнительный диск достаточного объёма на постоянной основе, который будет использоваться не только для создания бэкапов, но и восстановления всей системы.">
 <meta property="og:url" content="https://debuntu.ru/manuals/borgbackup/sozdaniye-bekapa-vsey-sistemy-s-pomoshchyu-borgbackup/">
   <meta property="og:site_name" content="Debuntarium">
   <meta property="og:title" content="20. Создание бэкапа всей системы с помощью LVM и BorgBackup">
-  <meta property="og:description" content="Описание процесса создания LVM-снимка всей операционной системы и его архивирование в borg-репо.">
+  <meta property="og:description" content="2022-03-11
+Подготовительные мероприятия Для создания LVM-снэпшотов требуется некоторое незанятое место на тех VG, для LV которых будут создаваться снэпшоты. В том случае, если на машине остановлены все сервисы, могущие создавать большой объём записываемых данных, то для создания снэпшотов много места не потребуется и достаточно, например, временно отключить swap и удалить соответствующий LV для освобождения пары Гигабайт под создание снэпшотов.
+Возможно, будет правильней добавить к машине дополнительный диск достаточного объёма на постоянной основе, который будет использоваться не только для создания бэкапов, но и восстановления всей системы.">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:type" content="article">
     <meta property="article:section" content="manuals">
@@ -34,14 +37,18 @@
     <meta property="article:tag" content="LVM">
 
   <meta itemprop="name" content="20. Создание бэкапа всей системы с помощью LVM и BorgBackup">
-  <meta itemprop="description" content="Описание процесса создания LVM-снимка всей операционной системы и его архивирование в borg-репо.">
+  <meta itemprop="description" content="2022-03-11
+Подготовительные мероприятия Для создания LVM-снэпшотов требуется некоторое незанятое место на тех VG, для LV которых будут создаваться снэпшоты. В том случае, если на машине остановлены все сервисы, могущие создавать большой объём записываемых данных, то для создания снэпшотов много места не потребуется и достаточно, например, временно отключить swap и удалить соответствующий LV для освобождения пары Гигабайт под создание снэпшотов.
+Возможно, будет правильней добавить к машине дополнительный диск достаточного объёма на постоянной основе, который будет использоваться не только для создания бэкапов, но и восстановления всей системы.">
   <meta itemprop="datePublished" content="2022-03-11T00:00:00+00:00">
   <meta itemprop="dateModified" content="2022-03-11T00:00:00+00:00">
-  <meta itemprop="wordCount" content="704">
+  <meta itemprop="wordCount" content="671">
   <meta itemprop="keywords" content="BorgBackup,Backup SoftWare,LVM">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="20. Создание бэкапа всей системы с помощью LVM и BorgBackup">
-  <meta name="twitter:description" content="Описание процесса создания LVM-снимка всей операционной системы и его архивирование в borg-репо.">
+  <meta name="twitter:description" content="2022-03-11
+Подготовительные мероприятия Для создания LVM-снэпшотов требуется некоторое незанятое место на тех VG, для LV которых будут создаваться снэпшоты. В том случае, если на машине остановлены все сервисы, могущие создавать большой объём записываемых данных, то для создания снэпшотов много места не потребуется и достаточно, например, временно отключить swap и удалить соответствующий LV для освобождения пары Гигабайт под создание снэпшотов.
+Возможно, будет правильней добавить к машине дополнительный диск достаточного объёма на постоянной основе, который будет использоваться не только для создания бэкапов, но и восстановления всей системы.">
 
 
 
@@ -54,6 +61,8 @@
   integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
   crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://debuntu.ru/css/tabs.css"><link rel="stylesheet" href="https://debuntu.ru/css/asciidoc-admon.css"><link rel="stylesheet" href="https://debuntu.ru/css/monokai.css"><link rel="stylesheet" href="https://debuntu.ru/css/tulip.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3517323381341731"
+     crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1HVBCPETY0"></script>
 <script>
 var doNotTrack = false;
@@ -158,7 +167,32 @@ if (!doNotTrack) {
       <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-manuals-li">
   <a href="/manuals/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-manuals"><span class="">Инструкции</span></a>
   <ul class="ul-1">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsmonitoring-li">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-manualsborgbackup-li">
+  <a href="/manuals/borgbackup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualsborgbackup"><span class="">BorgBackup</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupustanovka-borgbackup-v-centos-i-ubuntu-li">
+  <a href="/manuals/borgbackup/ustanovka-borgbackup-v-centos-i-ubuntu/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupustanovka-borgbackup-v-centos-i-ubuntu"><span class="">10. Установка BorgBackup в CentOS и Ubuntu</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupustanovka-borgbackup-v-altlinux-9-10-li">
+  <a href="/manuals/borgbackup/ustanovka-borgbackup-v-altlinux-9-10/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupustanovka-borgbackup-v-altlinux-9-10"><span class="">12. Установка BorgBackup в AltLinux 9/10</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupustanovka-borgbackup-v-redos-72-li">
+  <a href="/manuals/borgbackup/ustanovka-borgbackup-v-redos-7.2/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupustanovka-borgbackup-v-redos-72"><span class="">13. Установка BorgBackup в RedOS 7.2</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupnastroyka-borg-servera-li">
+  <a href="/manuals/borgbackup/nastroyka-borg-servera/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupnastroyka-borg-servera"><span class="">Настройка BorgBackup-сервера</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupnastroyka-pervogo-borg-repo-li">
+  <a href="/manuals/borgbackup/nastroyka-pervogo-borg-repo/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupnastroyka-pervogo-borg-repo"><span class="">Настройка первого borg-репо без шифрования</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupsozdaniye-shlyuza-v-udalonnoy-is-dlya-dostupa-khostov-k-bekap-serveru-li">
+  <a href="/manuals/borgbackup/sozdaniye-shlyuza-v-udalonnoy-is-dlya-dostupa-khostov-k-bekap-serveru/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupsozdaniye-shlyuza-v-udalonnoy-is-dlya-dostupa-khostov-k-bekap-serveru"><span class="">18. Создание шлюза в удалённой ИС для доступа хостов к бэкап-серверу</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-manualsborgbackupsozdaniye-bekapa-vsey-sistemy-s-pomoshchyu-borgbackup-li">
+  <a href="/manuals/borgbackup/sozdaniye-bekapa-vsey-sistemy-s-pomoshchyu-borgbackup/" class="align-left ps-0 active td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupsozdaniye-bekapa-vsey-sistemy-s-pomoshchyu-borgbackup"><span class="td-sidebar-nav-active-item">20. Создание бэкапа всей системы с помощью LVM и BorgBackup</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupvosstanovleniye-vsey-sistemy-iz-bekapa-s-pomoshchyu-borgbackup-li">
+  <a href="/manuals/borgbackup/vosstanovleniye-vsey-sistemy-iz-bekapa-s-pomoshchyu-borgbackup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupvosstanovleniye-vsey-sistemy-iz-bekapa-s-pomoshchyu-borgbackup"><span class="">30. Восстановление всей системы из бэкапа с помощью LVM и BorgBackup</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupnakatyvanie-na-host-chuzhogo-snimka-s-pomoshchyu-borgbackup-li">
+  <a href="/manuals/borgbackup/nakatyvanie-na-host-chuzhogo-snimka-s-pomoshchyu-borgbackup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupnakatyvanie-na-host-chuzhogo-snimka-s-pomoshchyu-borgbackup"><span class="">31. Накатывание на хост чужого снимка с помощью LVM и BorgBackup</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupustanovka-novogo-yadra-v-altlinux-10-dlya-proverki-vosstanovleniya-mashiny-s-pomoshchyu-borgbackup-li">
+  <a href="/manuals/borgbackup/ustanovka-novogo-yadra-v-altlinux-10-dlya-proverki-vosstanovleniya-mashiny-s-pomoshchyu-borgbackup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupustanovka-novogo-yadra-v-altlinux-10-dlya-proverki-vosstanovleniya-mashiny-s-pomoshchyu-borgbackup"><span class="">40. Установка нового ядра в AltLinux 10 для проверки правильности восстановления машины с помощью BorgBackup</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsmonitoring-li">
   <a href="/manuals/monitoring/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoring"><span class="">Monitoring</span></a>
   <ul class="ul-2 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsmonitoringvictoriametrics-li">
@@ -203,6 +237,8 @@ if (!doNotTrack) {
   </ul>
 </li>
   </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsproxmox-li">
+  <a href="/manuals/proxmox/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualsproxmox"><span class="">Proxmox</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsdatabases-li">
   <a href="/manuals/databases/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualsdatabases"><span class="">DataBases</span></a>
   <ul class="ul-2 foldable">
@@ -333,31 +369,6 @@ if (!doNotTrack) {
   </ul>
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-manualsborgbackup-li">
-  <a href="/manuals/borgbackup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualsborgbackup"><span class="">BorgBackup</span></a>
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupustanovka-borgbackup-v-centos-i-ubuntu-li">
-  <a href="/manuals/borgbackup/ustanovka-borgbackup-v-centos-i-ubuntu/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupustanovka-borgbackup-v-centos-i-ubuntu"><span class="">10. Установка BorgBackup в CentOS и Ubuntu</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupustanovka-borgbackup-v-altlinux-9-10-li">
-  <a href="/manuals/borgbackup/ustanovka-borgbackup-v-altlinux-9-10/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupustanovka-borgbackup-v-altlinux-9-10"><span class="">12. Установка BorgBackup в AltLinux 9/10</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupustanovka-borgbackup-v-redos-72-li">
-  <a href="/manuals/borgbackup/ustanovka-borgbackup-v-redos-7.2/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupustanovka-borgbackup-v-redos-72"><span class="">13. Установка BorgBackup в RedOS 7.2</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupnastroyka-borg-servera-li">
-  <a href="/manuals/borgbackup/nastroyka-borg-servera/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupnastroyka-borg-servera"><span class="">14. Настройка BorgBackup-сервера</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupnastroyka-pervogo-borg-repo-li">
-  <a href="/manuals/borgbackup/nastroyka-pervogo-borg-repo/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupnastroyka-pervogo-borg-repo"><span class="">16. Настройка первого borg-репо</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupsozdaniye-shlyuza-v-udalonnoy-is-dlya-dostupa-khostov-k-bekap-serveru-li">
-  <a href="/manuals/borgbackup/sozdaniye-shlyuza-v-udalonnoy-is-dlya-dostupa-khostov-k-bekap-serveru/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupsozdaniye-shlyuza-v-udalonnoy-is-dlya-dostupa-khostov-k-bekap-serveru"><span class="">18. Создание шлюза в удалённой ИС для доступа хостов к бэкап-серверу</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-manualsborgbackupsozdaniye-bekapa-vsey-sistemy-s-pomoshchyu-borgbackup-li">
-  <a href="/manuals/borgbackup/sozdaniye-bekapa-vsey-sistemy-s-pomoshchyu-borgbackup/" class="align-left ps-0 active td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupsozdaniye-bekapa-vsey-sistemy-s-pomoshchyu-borgbackup"><span class="td-sidebar-nav-active-item">20. Создание бэкапа всей системы с помощью LVM и BorgBackup</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupvosstanovleniye-vsey-sistemy-iz-bekapa-s-pomoshchyu-borgbackup-li">
-  <a href="/manuals/borgbackup/vosstanovleniye-vsey-sistemy-iz-bekapa-s-pomoshchyu-borgbackup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupvosstanovleniye-vsey-sistemy-iz-bekapa-s-pomoshchyu-borgbackup"><span class="">30. Восстановление всей системы из бэкапа с помощью LVM и BorgBackup</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupnakatyvanie-na-host-chuzhogo-snimka-s-pomoshchyu-borgbackup-li">
-  <a href="/manuals/borgbackup/nakatyvanie-na-host-chuzhogo-snimka-s-pomoshchyu-borgbackup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupnakatyvanie-na-host-chuzhogo-snimka-s-pomoshchyu-borgbackup"><span class="">31. Накатывание на хост чужого снимка с помощью LVM и BorgBackup</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupustanovka-novogo-yadra-v-altlinux-10-dlya-proverki-vosstanovleniya-mashiny-s-pomoshchyu-borgbackup-li">
-  <a href="/manuals/borgbackup/ustanovka-novogo-yadra-v-altlinux-10-dlya-proverki-vosstanovleniya-mashiny-s-pomoshchyu-borgbackup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupustanovka-novogo-yadra-v-altlinux-10-dlya-proverki-vosstanovleniya-mashiny-s-pomoshchyu-borgbackup"><span class="">40. Установка нового ядра в AltLinux 10 для проверки правильности восстановления машины с помощью BorgBackup</span></a>
-</li>
-  </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsfreeipa-li">
   <a href="/manuals/freeipa/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualsfreeipa"><span class="">FreeIPA</span></a>
   <ul class="ul-2 foldable">
@@ -395,13 +406,6 @@ if (!doNotTrack) {
   <a href="/manuals/vpn/nastraivaem-openvpn-server-na-podklyucheniya-klientov/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsvpnnastraivaem-openvpn-server-na-podklyucheniya-klientov"><span class="">Настраиваем OpenVPN сервер на подключение клиентов</span></a>
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsproxmox-li">
-  <a href="/manuals/proxmox/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualsproxmox"><span class="">Proxmox</span></a>
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsproxmoxproxmox-freeipa-ldap-authentication-setup-li">
-  <a href="/manuals/proxmox/proxmox-freeipa-ldap-authentication-setup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsproxmoxproxmox-freeipa-ldap-authentication-setup"><span class=""></span></a>
-</li>
-  </ul>
 </li>
   </ul>
 </li>
@@ -415,31 +419,7 @@ if (!doNotTrack) {
 
 </div>
 
-            <div class="td-toc">
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#подготовительные-мероприятия">Подготовительные мероприятия</a>
-      <ul>
-        <li><a href="#описание-бэкапируемой-системы">Описание бэкапируемой системы</a></li>
-        <li><a href="#добавление-пространства-в-volume-group">Добавление пространства в Volume Group</a></li>
-      </ul>
-    </li>
-    <li><a href="#процесс-резервного-копирования">Процесс резервного копирования</a>
-      <ul>
-        <li><a href="#отключение-работающих-демонов">Отключение работающих демонов</a></li>
-        <li><a href="#создание-временных-lvm-snapshotов">Создание временных LVM snapshot&rsquo;ов</a></li>
-        <li><a href="#запуск-остановленных-демонов">Запуск остановленных демонов</a></li>
-        <li><a href="#монтирование-снэпшотов--директорию-boot">Монтирование снэпшотов + директорию <code>/boot</code></a></li>
-        <li><a href="#проверка-монтирования">Проверка монтирования</a></li>
-        <li><a href="#чистка-системы-в-снимке">Чистка системы в снимке:</a></li>
-        <li><a href="#резервное-копирование">Резервное копирование</a></li>
-        <li><a href="#удаление-временных-снэпшотов">Удаление временных снэпшотов</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-      </div>
-    
+            
             <div class="taxonomy taxonomy-terms-cloud taxo-categories">
       <h5 class="taxonomy-title">Categories</h5>
       <ul class="taxonomy-terms">
@@ -636,7 +616,7 @@ if (!doNotTrack) {
             
 <div class="td-content">
 	<h1>20. Создание бэкапа всей системы с помощью LVM и BorgBackup</h1>
-	<div class="lead">Описание процесса создания LVM-снимка всей операционной системы и его архивирование в borg-репо.</div>
+	
 	<header class="article-meta">
 		<div class="taxonomy taxonomy-terms-article taxo-tags">
   <h5 class="taxonomy-title">Tags:</h5>
@@ -648,148 +628,334 @@ if (!doNotTrack) {
 </div>
 
 </header>
-	<p>2022-03-11</p>
-<h2 id="подготовительные-мероприятия">Подготовительные мероприятия</h2>
+	<div class="paragraph">
+<p>2022-03-11</p>
+</div>
+<div class="sect1">
+<h2 id="_подготовительные_мероприятия">Подготовительные мероприятия</h2>
+<div class="sectionbody">
+<div class="paragraph">
 <p>Для создания LVM-снэпшотов требуется некоторое незанятое место на тех VG, для LV которых будут создаваться снэпшоты. В том случае, если на машине остановлены все сервисы, могущие создавать большой объём записываемых данных, то для создания снэпшотов много места не потребуется и достаточно, например, временно отключить swap и удалить соответствующий LV для освобождения пары Гигабайт под создание снэпшотов.</p>
+</div>
+<div class="paragraph">
 <p>Возможно, будет правильней добавить к машине дополнительный диск достаточного объёма на постоянной основе, который будет использоваться не только для создания бэкапов, но и восстановления всей системы.</p>
-<h3 id="описание-бэкапируемой-системы">Описание бэкапируемой системы</h3>
-<p>Дисковая подсистема стандартной бэкапируемой системы состоит из следующего:</p>
-<ul>
-<li>Два диска
-<ul>
-<li>Первый диск системный, где расположены отдельные разделы для:
-<ul>
-<li><code>/dev/sda1</code> - <code>/boot</code></li>
-<li><code>/dev/vg/root</code> - <code>/</code></li>
-<li><code>/dev/vg/var</code> - <code>/var</code></li>
-</ul>
+</div>
+<div class="sect2">
+<h3 id="_описание_бэкапируемой_системы">Описание бэкапируемой системы</h3>
+<div class="paragraph">
+<p>Дисковая подсистема стандартной бэкапируемой системы состоит из:
+- Первый диск, где расположены отдельные разделы для:
+  - <code>/dev/sda1</code> - <code>/boot</code>
+  - <code>/dev/vg/root</code> - <code>/</code>
+  - <code>/dev/vg/var</code> - <code>/var</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>parted /dev/sda unit mib print free
+<span style="color: #FFFFFF;background-color: #231529">Model: VMware Virtual disk (scsi)
+Disk /dev/sda: 51200MiB
+Sector size (logical/physical): 512B/512B
+Partition Table: msdos
+Disk Flags:
+
+Number  Start    End       Size      Type     File system  Flags
+ 1      1,00MiB  1025MiB   1024MiB   primary  xfs          boot
+ 2      1025MiB  51200MiB  50175MiB  primary               lvm</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_добавление_пространства_в_volume_group">Добавление пространства в Volume Group</h3>
+<div class="sect3">
+<h4 id="_ramdisk">Ramdisk</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>При отсутствии свободного пространства на VG, можно временно добавить PV из Ramdisk’а, например на 1.5GB:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">modprobe brd rd_size=1536000 #</span><span style="color: #41ff5b;font-weight: bold">max_part</span><span style="color: #41ff5b">=</span>0 <span style="color: #41ff5b;font-weight: bold">rd_nr</span><span style="color: #41ff5b">=</span>1</code></pre>
+</div>
+</div>
 </li>
-<li>Второй диск дополнительный. Возможно, что он:
-<ul>
-<li>диск не разбит или разбит на один раздел. Пространство подключёно к LVM2 и именовано и подключено так <code>/dev/vg/data</code> - <code>/data</code>;</li>
-<li>может быть организован по другому.</li>
-</ul>
+<li>
+<p>После чего добавьте его к VG:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">vgextend vg /dev/ram0</span></code></pre>
+</div>
+</div>
 </li>
-</ul>
+<li>
+<p>По окончании работ выньте Ramdisk из VG:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">vgreduce vg /dev/ram0</span></code></pre>
+</div>
+</div>
 </li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#007f7f"># parted /dev/sda unit mib print free</span>
-</span></span><span style="display:flex;"><span>Model: VMware Virtual disk (scsi)
-</span></span><span style="display:flex;"><span>Disk /dev/sda: 51200MiB
-</span></span><span style="display:flex;"><span>Sector size (logical/physical): 512B/512B
-</span></span><span style="display:flex;"><span>Partition Table: msdos
-</span></span><span style="display:flex;"><span>Disk Flags:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Number  Start    End       Size      Type     File system  Flags
-</span></span><span style="display:flex;"><span> <span style="color:#ff0;font-weight:bold">1</span>      1,00MiB  1025MiB   1024MiB   primary  xfs          boot
-</span></span><span style="display:flex;"><span> <span style="color:#ff0;font-weight:bold">2</span>      1025MiB  51200MiB  50175MiB  primary               lvm
-</span></span></code></pre></div><h3 id="добавление-пространства-в-volume-group">Добавление пространства в Volume Group</h3>
-<p>Если требуется бэкап LV-томов на одном VG, то разбивать дополнительный диск на разделы не требуется. Достаточно будет добавить в VG весь новый диск командой <code>vgextend /dev/vg /dev/sdb</code>.</p>
-<p>В противном случае, когда восстанавливаемые тома находятся на разных VG, потребуется разбивка дополнительного диска на отдельные разделы и добавление этих новых PV в свои VG.</p>
-<h2 id="процесс-резервного-копирования">Процесс резервного копирования</h2>
-<h3 id="отключение-работающих-демонов">Отключение работающих демонов</h3>
-<p>Останавливаем и выключаем главные сервисы, работающие на хосте, чтобы предотвратить автоматический запуск демонов после восстановления системы. Например:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#007f7f"># Имя домена example.org преобразовываем в EXAMPLE-ORG</span>
-</span></span><span style="display:flex;"><span>D=<span style="color:#fff;font-weight:bold">$(</span>hostname -d<span style="color:#fff;font-weight:bold">)</span>;D=<span style="color:#0ff;font-weight:bold">${</span>D/./-<span style="color:#0ff;font-weight:bold">}</span>;D=<span style="color:#0ff;font-weight:bold">${</span>D^^<span style="color:#0ff;font-weight:bold">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#007f7f"># Останавливаем FreeIPA</span>
-</span></span><span style="display:flex;"><span>ipactl stop
-</span></span><span style="display:flex;"><span><span style="color:#007f7f"># Выключаем службы для перестраховки на случай</span>
-</span></span><span style="display:flex;"><span><span style="color:#007f7f"># автозапуска после восстановления из бэкапа</span>
-</span></span><span style="display:flex;"><span>systemctl disable ipa
-</span></span><span style="display:flex;"><span><span style="color:#007f7f">#systemctl disable krb5kdc</span>
-</span></span><span style="display:flex;"><span><span style="color:#007f7f">#systemctl disable kadmin</span>
-</span></span><span style="display:flex;"><span><span style="color:#007f7f"># Останавливаем демон dirsrv@EXAMPLE-ORG</span>
-</span></span><span style="display:flex;"><span>systemctl disable dirsrv@<span style="color:#0ff;font-weight:bold">${</span>D<span style="color:#0ff;font-weight:bold">}</span>
-</span></span><span style="display:flex;"><span>systemctl disable pki-tomcatd@pki-tomcat
-</span></span><span style="display:flex;"><span><span style="color:#007f7f">#systemctl disable named-pkcs11</span>
-</span></span><span style="display:flex;"><span><span style="color:#007f7f">#systemctl disable httpd</span>
-</span></span><span style="display:flex;"><span><span style="color:#007f7f">#systemctl disable ipa-dnskeysyncd</span>
-</span></span><span style="display:flex;"><span><span style="color:#007f7f">#systemctl disable ipa-custodia</span>
-</span></span><span style="display:flex;"><span>systemctl disable certmonger
-</span></span><span style="display:flex;"><span><span style="color:#007f7f">#systemctl disable ipa-otpd.socket</span>
-</span></span></code></pre></div><p>В дополнение к остановке главных сервисов, работающих на машине, останавливаем второстепенные, которые могут вызвать переполнение на LV места выделенного под снэпшоты. Пример остановки дополнительных сервисов:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl stop postfix
-</span></span><span style="display:flex;"><span>systemctl stop rsyslog
-</span></span><span style="display:flex;"><span>service auditd stop
-</span></span></code></pre></div><h3 id="создание-временных-lvm-snapshotов">Создание временных LVM snapshot&rsquo;ов</h3>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_уменьшение_подходящего_lv">Уменьшение подходящего LV</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Если требуется освободить немного места в VG, то можно попробовать освободить пару гигабайтов за счёт уменьшения, например <code>/dev/vg/data</code>, конечно, если на томе используется файловая система &#39;ext4&#39;:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">/usr/sbin/lvreduce -L -2G -r /dev/vg/data</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>После завершения бэкапа вновь увеличиваем LV:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">/usr/sbin/lvextend -l +100%FREE -r /dev/vg/data</span></code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_процесс_резервного_копирования">Процесс резервного копирования</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_отключение_работающих_демонов">Отключение работающих демонов</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Остановите и выключите главные сервисы, работающие на хосте, чтобы предотвратить автоматический запуск демонов после восстановления системы. Например:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>Имя домена example.org преобразовываем в EXAMPLE-ORG
+<span style="color: #FFFFFF;background-color: #231529">D=$</span><span style="color: #41ff5b">(</span><span style="font-weight: bold">hostname</span> <span style="color: #9f93e6;font-weight: bold">-d</span><span style="color: #41ff5b">)</span><span style="color: #41ff5b">;</span><span style="color: #41ff5b;font-weight: bold">D</span><span style="color: #41ff5b">=</span><span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">D</span><span style="color: #41ff5b">/./-</span><span style="color: #FFF02A;font-weight: bold">}</span><span style="color: #41ff5b">;</span><span style="color: #41ff5b;font-weight: bold">D</span><span style="color: #41ff5b">=</span><span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">D</span><span style="color: #41ff5b">^^</span><span style="color: #FFF02A;font-weight: bold">}</span>
+<span style="color: #FFFFFF;background-color: #231529">
+</span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>Останавливаем FreeIPA
+<span style="color: #FFFFFF;background-color: #231529">ipactl stop
+</span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>Выключаем службы для перестраховки на случай
+<span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>автозапуска после восстановления из бэкапа
+<span style="color: #FFFFFF;background-color: #231529">systemctl disable ipa
+</span><span style="color: #FFFFFF;background-color: #231529">#</span>systemctl disable krb5kdc
+<span style="color: #FFFFFF;background-color: #231529">#</span>systemctl disable kadmin
+<span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>Останавливаем демон dirsrv@EXAMPLE-ORG
+<span style="color: #FFFFFF;background-color: #231529">systemctl disable dirsrv@$</span><span style="color: #41ff5b">{</span>D<span style="color: #41ff5b">}</span>
+<span style="color: #FFFFFF;background-color: #231529">systemctl disable pki-tomcatd@pki-tomcat
+</span><span style="color: #FFFFFF;background-color: #231529">#</span>systemctl disable named-pkcs11
+<span style="color: #FFFFFF;background-color: #231529">#</span>systemctl disable httpd
+<span style="color: #FFFFFF;background-color: #231529">#</span>systemctl disable ipa-dnskeysyncd
+<span style="color: #FFFFFF;background-color: #231529">#</span>systemctl disable ipa-custodia
+<span style="color: #FFFFFF;background-color: #231529">systemctl disable certmonger
+</span><span style="color: #FFFFFF;background-color: #231529">#</span>systemctl disable ipa-otpd.socket</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>В дополнение к остановке главных сервисов, работающих на машине, остановите второстепенные, которые могут вызвать переполнение на LV места выделенного под снэпшоты. Пример остановки дополнительных сервисов:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">systemctl stop postfix
+systemctl stop rsyslog
+service auditd stop</span></code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_создание_временных_lvm_snapshotов">Создание временных LVM snapshot’ов</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
 <p>Помним, что в Volume Group должно быть достаточно свободного места для размещения снэпшотов.</p>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lvcreate -L 500M -s -n snap_root /dev/vg/root
-</span></span><span style="display:flex;"><span>lvcreate -L 500M -s -n snap_var /dev/vg/var
-</span></span></code></pre></div><p>Если требуется освободить немного места в VG, то можно попробовать освободить пару гигабайтов за счёт уменьшения, например <code>/dev/vg/data</code>, конечно, если на томе используется файловая система &rsquo;ext4':</p>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/usr/sbin/lvreduce -L -2G -r /dev/vg/data
-</span></span></code></pre></div><p>После завершения бэкапа вновь увеличиваем LV:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/usr/sbin/lvextend -l +100%FREE -r /dev/vg/data
-</span></span></code></pre></div><h3 id="запуск-остановленных-демонов">Запуск остановленных демонов</h3>
-<p>Запускаем ранее остановленные локальные демоны:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>service auditd start
-</span></span><span style="display:flex;"><span>systemctl start rsyslog
-</span></span><span style="display:flex;"><span>systemctl start postfix
-</span></span></code></pre></div><p>FreeIPA:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl <span style="color:#fff;font-weight:bold">enable</span> ipa
-</span></span><span style="display:flex;"><span><span style="color:#007f7f">#systemctl enable krb5kdc</span>
-</span></span><span style="display:flex;"><span><span style="color:#007f7f">#systemctl enable kadmin</span>
-</span></span><span style="display:flex;"><span>D=<span style="color:#fff;font-weight:bold">$(</span>hostname -d<span style="color:#fff;font-weight:bold">)</span>;D=<span style="color:#0ff;font-weight:bold">${</span>D/./-<span style="color:#0ff;font-weight:bold">}</span>;D=<span style="color:#0ff;font-weight:bold">${</span>D^^<span style="color:#0ff;font-weight:bold">}</span>
-</span></span><span style="display:flex;"><span>systemctl <span style="color:#fff;font-weight:bold">enable</span> dirsrv@<span style="color:#0ff;font-weight:bold">${</span>D<span style="color:#0ff;font-weight:bold">}</span>
-</span></span><span style="display:flex;"><span>systemctl <span style="color:#fff;font-weight:bold">enable</span> pki-tomcatd@pki-tomcat
-</span></span><span style="display:flex;"><span><span style="color:#007f7f">#systemctl enable named-pkcs11</span>
-</span></span><span style="display:flex;"><span><span style="color:#007f7f">#systemctl enable httpd</span>
-</span></span><span style="display:flex;"><span><span style="color:#007f7f">#systemctl enable ipa-dnskeysyncd</span>
-</span></span><span style="display:flex;"><span><span style="color:#007f7f">#systemctl enable ipa-custodia</span>
-</span></span><span style="display:flex;"><span>systemctl <span style="color:#fff;font-weight:bold">enable</span> certmonger
-</span></span><span style="display:flex;"><span><span style="color:#007f7f">#systemctl enable ipa-otpd.socket</span>
-</span></span><span style="display:flex;"><span>ipactl start
-</span></span></code></pre></div><p>В случае проблем с запуском &lsquo;pki-tomcatd@pki-tomcat&rsquo;, восстанавливаем ссылку:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ln -s /lib/systemd/system/pki-tomcatd@.service <span style="color:#0ff;font-weight:bold">\
-</span></span></span><span style="display:flex;"><span><span style="color:#0ff;font-weight:bold"></span>  /etc/systemd/system/pki-tomcatd.target.wants/pki-tomcatd@pki-tomcat.service
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>chown -h pkiuser:pkiuser <span style="color:#0ff;font-weight:bold">\
-</span></span></span><span style="display:flex;"><span><span style="color:#0ff;font-weight:bold"></span>  /etc/systemd/system/pki-tomcatd.target.wants/pki-tomcatd@pki-tomcat.service
-</span></span></code></pre></div><h3 id="монтирование-снэпшотов--директорию-boot">Монтирование снэпшотов + директорию <code>/boot</code></h3>
-<p>При монтировании xfs используем опцию <code>nouuid</code>, поэтому проверяем тип файловой системы:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#007f7f"># Mounting root on /mnt/sysroot</span>
-</span></span><span style="display:flex;"><span>LV=<span style="color:#0ff;font-weight:bold">&#39;/dev/vg/snap_root&#39;</span>
-</span></span><span style="display:flex;"><span>SYSROOT=<span style="color:#0ff;font-weight:bold">&#39;/mnt/sysroot&#39;</span>
-</span></span><span style="display:flex;"><span>mkdir -p <span style="color:#0ff;font-weight:bold">${</span>SYSROOT<span style="color:#0ff;font-weight:bold">}</span>
-</span></span><span style="display:flex;"><span>FSTYPE=<span style="color:#fff;font-weight:bold">$(</span>df -T <span style="color:#0ff;font-weight:bold">${</span>LV/snap_/<span style="color:#0ff;font-weight:bold">}</span> | egrep <span style="color:#0ff;font-weight:bold">&#34;ext4|xfs&#34;</span> | awk <span style="color:#0ff;font-weight:bold">&#39;{print $2}&#39;</span><span style="color:#fff;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#fff;font-weight:bold">if</span> [[ <span style="color:#0ff;font-weight:bold">${</span>FSTYPE<span style="color:#0ff;font-weight:bold">}</span> = <span style="color:#0ff;font-weight:bold">&#34;xfs&#34;</span> ]]; <span style="color:#fff;font-weight:bold">then</span>
-</span></span><span style="display:flex;"><span>  mount -o nouuid <span style="color:#0ff;font-weight:bold">${</span>LV<span style="color:#0ff;font-weight:bold">}</span> <span style="color:#0ff;font-weight:bold">${</span>SYSROOT<span style="color:#0ff;font-weight:bold">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#fff;font-weight:bold">elif</span> [[ <span style="color:#0ff;font-weight:bold">${</span>FSTYPE<span style="color:#0ff;font-weight:bold">}</span> = <span style="color:#0ff;font-weight:bold">&#34;ext4&#34;</span> ]]; <span style="color:#fff;font-weight:bold">then</span>
-</span></span><span style="display:flex;"><span>  mount <span style="color:#0ff;font-weight:bold">${</span>LV<span style="color:#0ff;font-weight:bold">}</span> <span style="color:#0ff;font-weight:bold">${</span>SYSROOT<span style="color:#0ff;font-weight:bold">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#fff;font-weight:bold">fi</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#007f7f"># Mounting /var on /mnt/sysroot/var</span>
-</span></span><span style="display:flex;"><span>LV=<span style="color:#0ff;font-weight:bold">&#39;/dev/vg/snap_var&#39;</span>
-</span></span><span style="display:flex;"><span>FSTYPE=<span style="color:#fff;font-weight:bold">$(</span>df -T <span style="color:#0ff;font-weight:bold">${</span>LV/snap_/<span style="color:#0ff;font-weight:bold">}</span> | egrep <span style="color:#0ff;font-weight:bold">&#34;ext4|xfs&#34;</span> | awk <span style="color:#0ff;font-weight:bold">&#39;{print $2}&#39;</span><span style="color:#fff;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#fff;font-weight:bold">if</span> [[ <span style="color:#0ff;font-weight:bold">${</span>FSTYPE<span style="color:#0ff;font-weight:bold">}</span> = <span style="color:#0ff;font-weight:bold">&#34;xfs&#34;</span> ]]; <span style="color:#fff;font-weight:bold">then</span>
-</span></span><span style="display:flex;"><span>  mount -o nouuid <span style="color:#0ff;font-weight:bold">${</span>LV<span style="color:#0ff;font-weight:bold">}</span> <span style="color:#0ff;font-weight:bold">${</span>SYSROOT<span style="color:#0ff;font-weight:bold">}</span>/var
-</span></span><span style="display:flex;"><span><span style="color:#fff;font-weight:bold">elif</span> [[ <span style="color:#0ff;font-weight:bold">${</span>FSTYPE<span style="color:#0ff;font-weight:bold">}</span> = <span style="color:#0ff;font-weight:bold">&#34;ext4&#34;</span> ]]; <span style="color:#fff;font-weight:bold">then</span>
-</span></span><span style="display:flex;"><span>  mount <span style="color:#0ff;font-weight:bold">${</span>LV<span style="color:#0ff;font-weight:bold">}</span> <span style="color:#0ff;font-weight:bold">${</span>SYSROOT<span style="color:#0ff;font-weight:bold">}</span>/var
-</span></span><span style="display:flex;"><span><span style="color:#fff;font-weight:bold">fi</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#007f7f"># Mounting /boot on /mnt/boot</span>
-</span></span><span style="display:flex;"><span>mount -o bind,ro /boot <span style="color:#0ff;font-weight:bold">${</span>SYSROOT<span style="color:#0ff;font-weight:bold">}</span>/boot
-</span></span></code></pre></div><h3 id="проверка-монтирования">Проверка монтирования</h3>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mount | grep <span style="color:#0ff;font-weight:bold">&#39;/mnt&#39;</span>
-</span></span></code></pre></div><p>Пример вывода:</p>
-<pre tabindex="0"><code>/dev/mapper/vg-snap_root on /mnt/sysroot type ext4 (rw,relatime,seclabel)
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">lvcreate -L 500M -s -n snap_root /dev/vg/root
+lvcreate -L 500M -s -n snap_var /dev/vg/var</span></code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_запуск_остановленных_демонов">Запуск остановленных демонов</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Запустите ранее остановленные локальные демоны:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">service auditd start
+systemctl start rsyslog
+systemctl start postfix</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>FreeIPA:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">systemctl enable ipa
+</span><span style="color: #FFFFFF;background-color: #231529">#</span>systemctl <span style="font-weight: bold">enable </span>krb5kdc
+<span style="color: #FFFFFF;background-color: #231529">#</span>systemctl <span style="font-weight: bold">enable </span>kadmin
+<span style="color: #FFFFFF;background-color: #231529">D=$</span><span style="color: #41ff5b">(</span><span style="font-weight: bold">hostname</span> <span style="color: #9f93e6;font-weight: bold">-d</span><span style="color: #41ff5b">)</span><span style="color: #41ff5b">;</span><span style="color: #41ff5b;font-weight: bold">D</span><span style="color: #41ff5b">=</span><span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">D</span><span style="color: #41ff5b">/./-</span><span style="color: #FFF02A;font-weight: bold">}</span><span style="color: #41ff5b">;</span><span style="color: #41ff5b;font-weight: bold">D</span><span style="color: #41ff5b">=</span><span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">D</span><span style="color: #41ff5b">^^</span><span style="color: #FFF02A;font-weight: bold">}</span>
+<span style="color: #FFFFFF;background-color: #231529">systemctl enable dirsrv@$</span><span style="color: #41ff5b">{</span>D<span style="color: #41ff5b">}</span>
+<span style="color: #FFFFFF;background-color: #231529">systemctl enable pki-tomcatd@pki-tomcat
+</span><span style="color: #FFFFFF;background-color: #231529">#</span>systemctl <span style="font-weight: bold">enable </span>named-pkcs11
+<span style="color: #FFFFFF;background-color: #231529">#</span>systemctl <span style="font-weight: bold">enable </span>httpd
+<span style="color: #FFFFFF;background-color: #231529">#</span>systemctl <span style="font-weight: bold">enable </span>ipa-dnskeysyncd
+<span style="color: #FFFFFF;background-color: #231529">#</span>systemctl <span style="font-weight: bold">enable </span>ipa-custodia
+<span style="color: #FFFFFF;background-color: #231529">systemctl enable certmonger
+</span><span style="color: #FFFFFF;background-color: #231529">#</span>systemctl <span style="font-weight: bold">enable </span>ipa-otpd.socket
+<span style="color: #FFFFFF;background-color: #231529">ipactl start</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>В случае проблем с запуском &#39;pki-tomcatd@pki-tomcat&#39;, восстанавливаем ссылку:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">ln -s /lib/systemd/system/pki-tomcatd@.service \
+  /etc/systemd/system/pki-tomcatd.target.wants/pki-tomcatd@pki-tomcat.service
+
+chown -h pkiuser:pkiuser \
+  /etc/systemd/system/pki-tomcatd.target.wants/pki-tomcatd@pki-tomcat.service</span></code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_монтирование_снэпшотов_директорию_boot">Монтирование снэпшотов + директорию <code>/boot</code></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>При монтировании xfs используем опцию <code>nouuid</code>, поэтому проверьте тип файловой системы:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>Mounting root on /mnt/sysroot
+<span style="color: #FFFFFF;background-color: #231529">LV=&#39;/dev/vg/snap_root&#39;
+SYSROOT=&#39;/mnt/sysroot&#39;
+</span><span style="color: #FFFFFF;background-color: #231529">mkdir -p $</span><span style="color: #41ff5b">{</span>SYSROOT<span style="color: #41ff5b">}</span>
+<span style="color: #FFFFFF;background-color: #231529">FSTYPE=$</span><span style="color: #41ff5b">(</span><span style="font-weight: bold">df</span> <span style="color: #9f93e6;font-weight: bold">-T</span> <span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">LV</span><span style="color: #41ff5b">/snap_/</span><span style="color: #FFF02A;font-weight: bold">}</span> | egrep <span style="color: #fff0a6;font-weight: bold">&#34;ext4|xfs&#34;</span> | <span style="font-weight: bold">awk</span> <span style="color: #fff0a6;font-weight: bold">&#39;{print $2}&#39;</span><span style="color: #41ff5b">)</span>
+<span style="color: #FFFFFF;background-color: #231529">if [[ $</span><span style="color: #41ff5b">{</span>FSTYPE<span style="color: #41ff5b">}</span> <span style="color: #41ff5b">=</span> <span style="color: #fff0a6;font-weight: bold">&#34;xfs&#34;</span> <span style="color: #41ff5b">]]</span><span style="color: #41ff5b">;</span> <span style="color: #FFF02A;font-weight: bold">then</span>
+<span style="color: #FFFFFF;background-color: #231529">  mount -o nouuid $</span><span style="color: #41ff5b">{</span>LV<span style="color: #41ff5b">}</span> <span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">SYSROOT</span><span style="color: #FFF02A;font-weight: bold">}</span>
+<span style="color: #FFFFFF;background-color: #231529">elif [[ $</span><span style="color: #41ff5b">{</span>FSTYPE<span style="color: #41ff5b">}</span> <span style="color: #41ff5b">=</span> <span style="color: #fff0a6;font-weight: bold">&#34;ext4&#34;</span> <span style="color: #41ff5b">]]</span><span style="color: #41ff5b">;</span> <span style="color: #FFF02A;font-weight: bold">then</span>
+<span style="color: #FFFFFF;background-color: #231529">  mount $</span><span style="color: #41ff5b">{</span>LV<span style="color: #41ff5b">}</span> <span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">SYSROOT</span><span style="color: #FFF02A;font-weight: bold">}</span>
+<span style="color: #FFFFFF;background-color: #231529">fi
+
+</span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>Mounting /var on /mnt/sysroot/var
+<span style="color: #FFFFFF;background-color: #231529">LV=&#39;/dev/vg/snap_var&#39;
+</span><span style="color: #FFFFFF;background-color: #231529">FSTYPE=$</span><span style="color: #41ff5b">(</span><span style="font-weight: bold">df</span> <span style="color: #9f93e6;font-weight: bold">-T</span> <span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">LV</span><span style="color: #41ff5b">/snap_/</span><span style="color: #FFF02A;font-weight: bold">}</span> | egrep <span style="color: #fff0a6;font-weight: bold">&#34;ext4|xfs&#34;</span> | <span style="font-weight: bold">awk</span> <span style="color: #fff0a6;font-weight: bold">&#39;{print $2}&#39;</span><span style="color: #41ff5b">)</span>
+<span style="color: #FFFFFF;background-color: #231529">if [[ $</span><span style="color: #41ff5b">{</span>FSTYPE<span style="color: #41ff5b">}</span> <span style="color: #41ff5b">=</span> <span style="color: #fff0a6;font-weight: bold">&#34;xfs&#34;</span> <span style="color: #41ff5b">]]</span><span style="color: #41ff5b">;</span> <span style="color: #FFF02A;font-weight: bold">then</span>
+<span style="color: #FFFFFF;background-color: #231529">  mount -o nouuid $</span><span style="color: #41ff5b">{</span>LV<span style="color: #41ff5b">}</span> <span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">SYSROOT</span><span style="color: #FFF02A;font-weight: bold">}</span>/var
+<span style="color: #FFFFFF;background-color: #231529">elif [[ $</span><span style="color: #41ff5b">{</span>FSTYPE<span style="color: #41ff5b">}</span> <span style="color: #41ff5b">=</span> <span style="color: #fff0a6;font-weight: bold">&#34;ext4&#34;</span> <span style="color: #41ff5b">]]</span><span style="color: #41ff5b">;</span> <span style="color: #FFF02A;font-weight: bold">then</span>
+<span style="color: #FFFFFF;background-color: #231529">  mount $</span><span style="color: #41ff5b">{</span>LV<span style="color: #41ff5b">}</span> <span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">SYSROOT</span><span style="color: #FFF02A;font-weight: bold">}</span>/var
+<span style="color: #FFFFFF;background-color: #231529">fi
+
+</span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>Mounting /boot on /mnt/boot
+<span style="color: #FFFFFF;background-color: #231529">mount -o bind,ro /boot $</span><span style="color: #41ff5b">{</span>SYSROOT<span style="color: #41ff5b">}</span>/boot</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_проверка_монтирования">Проверка монтирования</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Проверьте</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">mount | grep &#39;/mnt&#39;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Пример вывода:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">/dev/mapper/vg-snap_root on /mnt/sysroot type ext4 (rw,relatime,seclabel)
 /dev/mapper/vg-snap_var on /mnt/sysroot/var type ext4 (rw,relatime,seclabel)
-/dev/sda1 on /mnt/sysroot/boot type ext4 (rw,relatime,seclabel)
-</code></pre><h3 id="чистка-системы-в-снимке">Чистка системы в снимке:</h3>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rm -rf <span style="color:#0ff;font-weight:bold">${</span>SYSROOT<span style="color:#0ff;font-weight:bold">}</span>/var/cache/{yum,dnf}
-</span></span><span style="display:flex;"><span>truncate -s0 <span style="color:#0ff;font-weight:bold">${</span>SYSROOT<span style="color:#0ff;font-weight:bold">}</span>/var/log/lastlog
-</span></span><span style="display:flex;"><span>rm -f <span style="color:#0ff;font-weight:bold">${</span>SYSROOT<span style="color:#0ff;font-weight:bold">}</span>/var/log/lastlog.*
-</span></span></code></pre></div><h3 id="резервное-копирование">Резервное копирование</h3>
-<p>Устанавливаем переменные, чтобы не вводить параметры дважды:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#fff;font-weight:bold">export</span> BORG_RSH=<span style="color:#0ff;font-weight:bold">&#34;ssh -i ~/.ssh/borg1&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#fff;font-weight:bold">export</span> BORG_REPO=<span style="color:#0ff;font-weight:bold">&#34;ssh://_borg@192.168.50.10:22/./repo1&#34;</span>
-</span></span></code></pre></div><p>Выполняем бэкап со сжатием передовым компрессором <a href="https://ru.wikipedia.org/wiki/Zstandard">Zstandard</a>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>borg create -C zstd --stats --progress ::full_{hostname}_{now} <span style="color:#0ff;font-weight:bold">${</span>SYSROOT<span style="color:#0ff;font-weight:bold">}</span>
-</span></span></code></pre></div><h3 id="удаление-временных-снэпшотов">Удаление временных снэпшотов</h3>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>umount -R <span style="color:#0ff;font-weight:bold">${</span>SYSROOT<span style="color:#0ff;font-weight:bold">}</span>
-</span></span><span style="display:flex;"><span>lvremove -y /dev/vg/snap_var
-</span></span><span style="display:flex;"><span>lvremove -y /dev/vg/snap_root
-</span></span></code></pre></div>
+/dev/sda1 on /mnt/sysroot/boot type ext4 (rw,relatime,seclabel)</span></code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_чистка_системы_в_снимке">Чистка системы в снимке:</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Зачистите лишнюю информацию:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">rm -rf $</span><span style="color: #41ff5b">{</span>SYSROOT<span style="color: #41ff5b">}</span>/var/cache/<span style="color: #41ff5b">{</span>yum,dnf<span style="color: #41ff5b">}</span>
+<span style="color: #FFFFFF;background-color: #231529">truncate -s0 $</span><span style="color: #41ff5b">{</span>SYSROOT<span style="color: #41ff5b">}</span>/var/log/lastlog
+<span style="color: #FFFFFF;background-color: #231529">rm -f $</span><span style="color: #41ff5b">{</span>SYSROOT<span style="color: #41ff5b">}</span>/var/log/lastlog.<span style="color: #FFF02A;font-weight: bold">*</span></code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_резервное_копирование">Резервное копирование</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Устанавите переменные, чтобы не вводить параметры дважды:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">export BORG_RSH=&#34;ssh -i ~/.ssh/borg1&#34;
+export BORG_REPO=&#34;ssh://borg@192.168.50.10:22/./repo1&#34;</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Выполните бэкап со сжатием передовым компрессором [Zstandard](<a href="https://ru.wikipedia.org/wiki/Zstandard" class="bare">https://ru.wikipedia.org/wiki/Zstandard</a>):</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">borg create -C zstd --stats --progress ::full_{hostname}_{now} $</span><span style="color: #41ff5b">{</span>SYSROOT<span style="color: #41ff5b">}</span></code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_удаление_временных_снэпшотов">Удаление временных снэпшотов</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Удалите временные снэпшоты:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">umount -R $</span><span style="color: #41ff5b">{</span>SYSROOT<span style="color: #41ff5b">}</span>
+<span style="color: #FFFFFF;background-color: #231529">lvremove -y /dev/vg/snap_var
+lvremove -y /dev/vg/snap_root</span></code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+
 	
 </div>
 

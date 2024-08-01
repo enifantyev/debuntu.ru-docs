@@ -6,7 +6,7 @@
     <description>Recent content on Debuntarium</description>
     <generator>Hugo</generator>
     <language>ru-RU</language>
-    <lastBuildDate>Wed, 24 Jul 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 29 Jul 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://debuntu.ru/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>00. Удаление Apache Atlas</title>
@@ -1073,11 +1073,11 @@
       <description>2021-07-09&#xA;Настройка TLS для ZooKeeper Напомню, что перед включением TLS-настроек для Zookeeper&amp;rsquo;а должен быть включён TLS для «Firehose Debug Server» в Cloudera Manager. Иначе Zookeeper будет работать, но статус ролей перестаёт отображаться корректно и высвечивается ошибка &amp;ldquo;Quorum Membership&amp;rdquo;. В настройках сервиса ZooKeeper, используя фильтр по слову &amp;lsquo;JMX&amp;rsquo;, изменяем следующие параметры: Нажимаем Save Changes. Перезапускаем все зависимые сервисы по приглашению Cloudera Manager Console. Ссылки по теме Получение прав Superuser&amp;rsquo;а в ZooKeeper&amp;rsquo;е Cloudera CDH 6.</description>
     </item>
     <item>
-      <title>14. Настройка BorgBackup-сервера</title>
+      <title>Настройка BorgBackup-сервера</title>
       <link>https://debuntu.ru/manuals/borgbackup/nastroyka-borg-servera/</link>
-      <pubDate>Fri, 11 Mar 2022 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Jul 2024 00:00:00 +0000</pubDate>
       <guid>https://debuntu.ru/manuals/borgbackup/nastroyka-borg-servera/</guid>
-      <description>2022-03-11&#xA;1. Настройка Borg-сервера 1.1. Добавляем системного пользователя &amp;lsquo;_borg&amp;rsquo;, под которым клиенты будут подключаться по ssh к серверу и запускать приложение borg. Пароль для этой УЗ не запоминаем, так как он не потребуется в дальнейшем, но без наличия пароля будет невозможно подключиться к borg-аккаунту через ssh.&#xA;export BORGUSERNAME=&amp;#34;_borg&amp;#34; useradd -r -s /bin/sh \ -m -p $(tr -dc &amp;#39;A-Za-z0-9&amp;#39; &amp;lt;/dev/urandom | head -c 21; echo) ${BORGUSERNAME} 1.2. Создаём папку .ssh, где позже разместим файлы необходимые для подключения по ssh.</description>
+      <description>2024-07-29&#xA;Настройка Borg-сервера Добавьте системного пользователя &amp;#39;borg&amp;#39;, под которым borg-клиенты будут подключаться по ssh к серверу и запускать приложение borg. Пароль для этой УЗ не будет использоваться, так как borg-подключения будут производиться по ssh-ключу, но создать его требуется, иначе sshd не позволит подключиться к borg-аккаунту (даже по ssh-ключу). Сохранять пароль не обязательно.&#xA;BORGUSERNAME=&amp;#34;borg&amp;#34; PASSWORD=&amp;#34;$(tr -dc &amp;#39;A-Za-z0-9.,{}[]!@#$%^&amp;amp;*()=\|/;:&amp;#34;~&amp;#39; \ &amp;lt;/dev/urandom | head -c 51)&amp;#34; BORGHOMEDIR=&amp;#39;/srv/borg&amp;#39; #useradd --system \ # --user-group \ # --shell /bin/sh \ # --create-home \ # --home-dir ${BORGHOMEDIR} \ # --password ${PASSWORD} \ # ${BORGUSERNAME} useradd -r -U -s /bin/sh -m -d ${BORGHOMEDIR} -p ${PASSWORD} ${BORGUSERNAME} Создайте папку .</description>
     </item>
     <item>
       <title>14. HDFS. Настройка</title>
@@ -1094,11 +1094,11 @@
       <description>2021-07-09&#xA;1. Перенастройка размещения log&amp;rsquo;ов В настройках YARN, используя фильтр &amp;lsquo;/var/log&amp;rsquo;, изменяем только следующие параметры, добавляя имя каталога &amp;lsquo;/data&amp;rsquo; вместо &amp;lsquo;/var&amp;rsquo;: Нажимаем Save Changes. 2. Настройка ACL Managing YARN ACLs&#xA;Во FreeIPA добавляем группу &amp;rsquo;test1_yarn_admins&amp;rsquo;: ADM_USER=&amp;#39;eugene&amp;#39; \ ADM_PASS=&amp;#39;JL9d]qtw$p=2=M2K=~z?|EU,&amp;#39; \ CL_NAME=&amp;#34;TEST1&amp;#34; # UPPERCASE \ CL_NAME_L=${CL_NAME,,} # lowercase ansible mgm -i cluster.inv -m shell -a &amp;#34;echo &amp;#39;${ADM_PASS}&amp;#39; | kinit ${ADM_USER} &amp;amp;&amp;amp; \ ipa group-add --desc=&amp;#39;YARN admins for cluster ${CL_NAME}&amp;#39; ${CL_NAME_L}_yarn_admins&amp;#34; В настройках YARN, используя фильтр «acl», изменяем только следующие параметры: В настройках YARN, используя фильтр «Admin Users Applications List», изменяем только следующие параметры: 3.</description>
     </item>
     <item>
-      <title>16. Настройка первого borg-репо</title>
+      <title>Настройка первого borg-репо без шифрования</title>
       <link>https://debuntu.ru/manuals/borgbackup/nastroyka-pervogo-borg-repo/</link>
-      <pubDate>Fri, 11 Mar 2022 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Jul 2024 00:00:00 +0000</pubDate>
       <guid>https://debuntu.ru/manuals/borgbackup/nastroyka-pervogo-borg-repo/</guid>
-      <description>2022-03-11&#xA;1. Настройка первого репо для бэкапов 1.1. Создаём первый каталог для хранения первого репо и пробрасываем линк к нему в домашний каталог. По этой короткой ссылке будет удобно указывать название репо для архивов, вместо длинного полного пути к бэкап-каталогу.&#xA;export BORGUSERNAME=&amp;#34;_borg&amp;#34; export REPONAME=&amp;#34;repo1&amp;#34; export REPODIR=&amp;#34;/data/borgbackup/${REPONAME}&amp;#34; sudo mkdir -p ${REPODIR} sudo chown ${BORGUSERNAME}.${BORGUSERNAME} ${REPODIR} sudo -u ${BORGUSERNAME} /bin/bash -c &amp;#34;ln -s ${REPODIR} ~/&amp;#34; 1.2. Создаём ssh-ключи для будущих клиентов этого репо.</description>
+      <description>2024-07-29&#xA;Настройка первого репо для бэкапов Если первый каталог для хранения первого репо будет создан вне домашнего каталога УЗ borg, то пробросьте линк к нему в корень домашнего каталога. По этой короткой ссылке будет удобно в borg-командах указывать просто название репо для архивов, вместо длинного полного пути к бэкап-каталогу. Иначе создайте каталог внутри домашней директории УЗ borg:&#xA;BORGUSERNAME=&amp;#34;borg&amp;#34; BORGHOMEDIR=&amp;#39;/srv/borg&amp;#39; REPONAME=&amp;#34;repo1&amp;#34; REPODIR=&amp;#34;~/${REPONAME}&amp;#34; sudo -u ${BORGUSERNAME} /bin/bash -c &amp;#34;mkdir ${REPODIR}&amp;#34; #sudo -u ${BORGUSERNAME} /bin/bash -c &amp;#34;ln -s ${REPODIR} ~/&amp;#34; Создайте ssh-ключи для будущих клиентов этого репо.</description>
     </item>
     <item>
       <title>16. HBase. Установка и настройка</title>
@@ -1197,13 +1197,6 @@
       <pubDate>Tue, 23 Jul 2024 11:17:28 +0300</pubDate>
       <guid>https://debuntu.ru/manuals/monitoring/victoriametrics/installing-victoria-metrics-cluster-from-binaries/</guid>
       <description>1. Использованные материалы https://docs.victoriametrics.com/quick-start/&#xA;2. Скачивание бинарников из локального репозитория на целевые хосты На целевых нодах будущего кластера Victoria Metrics выполните загрузку бинарников из локального NXRM:&#xA;VER=&amp;#39;v1.102.0&amp;#39; PLATFORM=&amp;#39;linux-amd64&amp;#39; INTERNAL_REPO=&amp;#34;https://nexus.example.org/repository/dud_evolut_raw&amp;#34; REPO_FOLDER=&amp;#34;monitoring/victoriametrics&amp;#34; TMPDIR=$(mktemp -d) &amp;amp;&amp;amp; cd $TMPDIR curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}_checksums.txt Распакуйте скачанные файлы-архивы:&#xA;tar xvf victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz tar xvf vmutils-${PLATFORM}-${VER}.tar.gz Проверьте целостность всех полученных файлов:&#xA;sha256sum -c \ victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt \ vmutils-${PLATFORM}-${VER}_checksums.txt Ожидаемый вывод:</description>
-    </item>
-    <item>
-      <title></title>
-      <link>https://debuntu.ru/manuals/proxmox/proxmox-freeipa-ldap-authentication-setup/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://debuntu.ru/manuals/proxmox/proxmox-freeipa-ldap-authentication-setup/</guid>
-      <description>2023-06-19&#xA;Добавление REALM для подключения к LDAP-каталогу В настройках Datacenter — Permissions — Realms добавляем новую область, где заполняем следующие поля.</description>
     </item>
   </channel>
 </rss>
