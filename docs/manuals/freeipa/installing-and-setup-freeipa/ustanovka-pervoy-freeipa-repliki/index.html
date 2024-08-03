@@ -19,30 +19,34 @@
 
 <title>Установка первой FreeIPA-реплики | Debuntarium</title>
 <meta name="description" content="2023-04-13
-1. Подготовка хоста к установке FreeIPA Проверьте сетевые настройки.
-Проверьте настройки точного времени.
-Добавьте в /etc/hosts запись для локальной реплики.
-Возможно стоит перегенерировать ssh-ключи /etc/ssh/ssh_host_*_key*.
-Обновить /etc/machine-id.
-Обновите систему.
-Добавьте в систему пакеты FreeIPA.
-Проверьте, что в системе по умолчанию используется Java 8.
-2. Установка реплики FreeIPA Установку будем производить в бездиалоговом режиме с заданием всех необходимых опций из командной строки.
-2.1. Описание опций установочного скрипта Описание некоторых опций:">
+1. Подготовка ОС к установке FreeIPA-сервера Проверьте настройки точного времени.
+Проверьте сетевые настройки.
+Задайте полное имя хоста. Пример:
+hostnamectl set-hostname dev-ipa01.example.org
+Добавьте в /etc/hosts запись для локальной реплики. Пример:
+192.168.100.10 dev-ipa01.example.org
+Перегенерируте ssh-ключи. Пример:
+rm -f /etc/ssh/ssh_host_*_key* systemctl restart sshd Обновить /etc/machine-id:
+rm -f /etc/machine-id dbus-uuidgen --ensure=/etc/machine-id Обновите систему.
+Добавьте в систему пакеты freeipa-server.
+Перезапустите хост.
+2. Установка реплики FreeIPA Установку будем производить в бездиалоговом режиме с заданием всех необходимых опций из командной строки.">
 <meta property="og:url" content="https://debuntu.ru/manuals/freeipa/installing-and-setup-freeipa/ustanovka-pervoy-freeipa-repliki/">
   <meta property="og:site_name" content="Debuntarium">
   <meta property="og:title" content="Установка первой FreeIPA-реплики">
   <meta property="og:description" content="2023-04-13
-1. Подготовка хоста к установке FreeIPA Проверьте сетевые настройки.
-Проверьте настройки точного времени.
-Добавьте в /etc/hosts запись для локальной реплики.
-Возможно стоит перегенерировать ssh-ключи /etc/ssh/ssh_host_*_key*.
-Обновить /etc/machine-id.
-Обновите систему.
-Добавьте в систему пакеты FreeIPA.
-Проверьте, что в системе по умолчанию используется Java 8.
-2. Установка реплики FreeIPA Установку будем производить в бездиалоговом режиме с заданием всех необходимых опций из командной строки.
-2.1. Описание опций установочного скрипта Описание некоторых опций:">
+1. Подготовка ОС к установке FreeIPA-сервера Проверьте настройки точного времени.
+Проверьте сетевые настройки.
+Задайте полное имя хоста. Пример:
+hostnamectl set-hostname dev-ipa01.example.org
+Добавьте в /etc/hosts запись для локальной реплики. Пример:
+192.168.100.10 dev-ipa01.example.org
+Перегенерируте ssh-ключи. Пример:
+rm -f /etc/ssh/ssh_host_*_key* systemctl restart sshd Обновить /etc/machine-id:
+rm -f /etc/machine-id dbus-uuidgen --ensure=/etc/machine-id Обновите систему.
+Добавьте в систему пакеты freeipa-server.
+Перезапустите хост.
+2. Установка реплики FreeIPA Установку будем производить в бездиалоговом режиме с заданием всех необходимых опций из командной строки.">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:type" content="article">
     <meta property="article:section" content="manuals">
@@ -52,33 +56,37 @@
 
   <meta itemprop="name" content="Установка первой FreeIPA-реплики">
   <meta itemprop="description" content="2023-04-13
-1. Подготовка хоста к установке FreeIPA Проверьте сетевые настройки.
-Проверьте настройки точного времени.
-Добавьте в /etc/hosts запись для локальной реплики.
-Возможно стоит перегенерировать ssh-ключи /etc/ssh/ssh_host_*_key*.
-Обновить /etc/machine-id.
-Обновите систему.
-Добавьте в систему пакеты FreeIPA.
-Проверьте, что в системе по умолчанию используется Java 8.
-2. Установка реплики FreeIPA Установку будем производить в бездиалоговом режиме с заданием всех необходимых опций из командной строки.
-2.1. Описание опций установочного скрипта Описание некоторых опций:">
+1. Подготовка ОС к установке FreeIPA-сервера Проверьте настройки точного времени.
+Проверьте сетевые настройки.
+Задайте полное имя хоста. Пример:
+hostnamectl set-hostname dev-ipa01.example.org
+Добавьте в /etc/hosts запись для локальной реплики. Пример:
+192.168.100.10 dev-ipa01.example.org
+Перегенерируте ssh-ключи. Пример:
+rm -f /etc/ssh/ssh_host_*_key* systemctl restart sshd Обновить /etc/machine-id:
+rm -f /etc/machine-id dbus-uuidgen --ensure=/etc/machine-id Обновите систему.
+Добавьте в систему пакеты freeipa-server.
+Перезапустите хост.
+2. Установка реплики FreeIPA Установку будем производить в бездиалоговом режиме с заданием всех необходимых опций из командной строки.">
   <meta itemprop="datePublished" content="2024-08-02T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-08-02T00:00:00+00:00">
-  <meta itemprop="wordCount" content="2223">
+  <meta itemprop="wordCount" content="2427">
   <meta itemprop="keywords" content="FreeIPA">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Установка первой FreeIPA-реплики">
   <meta name="twitter:description" content="2023-04-13
-1. Подготовка хоста к установке FreeIPA Проверьте сетевые настройки.
-Проверьте настройки точного времени.
-Добавьте в /etc/hosts запись для локальной реплики.
-Возможно стоит перегенерировать ssh-ключи /etc/ssh/ssh_host_*_key*.
-Обновить /etc/machine-id.
-Обновите систему.
-Добавьте в систему пакеты FreeIPA.
-Проверьте, что в системе по умолчанию используется Java 8.
-2. Установка реплики FreeIPA Установку будем производить в бездиалоговом режиме с заданием всех необходимых опций из командной строки.
-2.1. Описание опций установочного скрипта Описание некоторых опций:">
+1. Подготовка ОС к установке FreeIPA-сервера Проверьте настройки точного времени.
+Проверьте сетевые настройки.
+Задайте полное имя хоста. Пример:
+hostnamectl set-hostname dev-ipa01.example.org
+Добавьте в /etc/hosts запись для локальной реплики. Пример:
+192.168.100.10 dev-ipa01.example.org
+Перегенерируте ssh-ключи. Пример:
+rm -f /etc/ssh/ssh_host_*_key* systemctl restart sshd Обновить /etc/machine-id:
+rm -f /etc/machine-id dbus-uuidgen --ensure=/etc/machine-id Обновите систему.
+Добавьте в систему пакеты freeipa-server.
+Перезапустите хост.
+2. Установка реплики FreeIPA Установку будем производить в бездиалоговом режиме с заданием всех необходимых опций из командной строки.">
 
 
 
@@ -484,7 +492,7 @@ if (!doNotTrack) {
             <div class="td-toc">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#_подготовка_хоста_к_установке_freeipa">1. Подготовка хоста к установке FreeIPA</a></li>
+    <li><a href="#_подготовка_ос_к_установке_freeipa_сервера">1. Подготовка ОС к установке FreeIPA-сервера</a></li>
     <li><a href="#_установка_реплики_freeipa">2. Установка реплики FreeIPA</a>
       <ul>
         <li><a href="#_описание_опций_установочного_скрипта">2.1. Описание опций установочного скрипта</a></li>
@@ -493,6 +501,7 @@ if (!doNotTrack) {
         <li><a href="#_вход_в_web_ui_freeipa">2.4. Вход в Web UI FreeIPA</a></li>
       </ul>
     </li>
+    <li><a href="#_бэкап_важной_особо_секретной_информации">3. Бэкап важной особо секретной информации</a></li>
   </ul>
 </nav>
       </div>
@@ -710,33 +719,54 @@ if (!doNotTrack) {
 <p>2023-04-13</p>
 </div>
 <div class="sect1">
-<h2 id="_подготовка_хоста_к_установке_freeipa">1. Подготовка хоста к установке FreeIPA</h2>
+<h2 id="_подготовка_ос_к_установке_freeipa_сервера">1. Подготовка ОС к установке FreeIPA-сервера</h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Проверьте сетевые настройки.</p>
-</li>
-<li>
 <p>Проверьте настройки точного времени.</p>
 </li>
 <li>
-<p>Добавьте в <code>/etc/hosts</code> запись для локальной реплики.</p>
+<p>Проверьте сетевые настройки.</p>
 </li>
 <li>
-<p>Возможно стоит перегенерировать ssh-ключи <code>/etc/ssh/ssh_host_*_key*</code>.</p>
+<p>Задайте полное имя хоста. Пример:</p>
+<div class="paragraph">
+<p><code>hostnamectl set-hostname dev-ipa01.example.org</code></p>
+</div>
 </li>
 <li>
-<p>Обновить <code>/etc/machine-id</code>.</p>
+<p>Добавьте в <code>/etc/hosts</code> запись для локальной реплики. Пример:</p>
+<div class="paragraph">
+<p><code>192.168.100.10 dev-ipa01.example.org</code></p>
+</div>
+</li>
+<li>
+<p>Перегенерируте ssh-ключи. Пример:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">rm -f /etc/ssh/ssh_host_*_key*
+systemctl restart sshd</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Обновить <code>/etc/machine-id</code>:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">rm -f /etc/machine-id
+dbus-uuidgen --ensure=/etc/machine-id</span></code></pre>
+</div>
+</div>
 </li>
 <li>
 <p>Обновите систему.</p>
 </li>
 <li>
-<p>Добавьте в систему пакеты FreeIPA.</p>
+<p>Добавьте в систему пакеты freeipa-server.</p>
 </li>
 <li>
-<p>Проверьте, что в системе по умолчанию используется Java 8.</p>
+<p>Перезапустите хост.</p>
 </li>
 </ol>
 </div>
@@ -952,7 +982,9 @@ Warning: skipping DNS resolution of host dev-ipa01.example.org
 The domain name has been determined based on the host name.
 
 Checking DNS domain example.org., please wait ...
-DNS zone example.org. already exists in DNS and is handled by server(s): [&#39;a.iana-servers.net.&#39;, &#39;b.iana-servers.net.&#39;] Please make sure that the domain is properly delegated to this IPA server.
+DNS zone example.org. already exists in DNS and is handled by server(s):
+  [&#39;a.iana-servers.net.&#39;, &#39;b.iana-servers.net.&#39;]
+  Please make sure that the domain is properly delegated to this IPA server.
 Reverse record for IP address 192.168.100.10 already exists
 Trust is configured but no NetBIOS domain name found, setting it now.
 
@@ -1263,6 +1295,74 @@ The ipa-server-install command was successful</span></code></pre>
 </li>
 </ol>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_бэкап_важной_особо_секретной_информации">3. Бэкап важной особо секретной информации</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>После первого поднятия домена необходимо сохранить следующую важную информацию в безопасном месте с ограниченным доступом:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Пароль аккаунта &#39;cn=Directory Manager&#39;. Находится в первой строке файла <code>/root/freeipa_passwords.txt</code>.</p>
+</li>
+<li>
+<p>Пароль аккаунта &#39;uid=admin,cn=users,cn=accounts,dc=test3,dc=lan&#39;. Находится в второй строке файла <code>/root/freeipa_passwords.txt</code>.</p>
+</li>
+<li>
+<p>Файл <code>/root/cacert.p12</code> с приватным ключом и сертификатом от Центра Сертификации. Файл зашифрован на основе пароля от &#39;cn=Directory Manager.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Перед удалением файла <code>/root/freeipa_passwords.txt</code>, проверяем корректность сохранённых паролей путём их ввода в ответ на запрос пароля следующих двух команд:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">kdestroy &amp;&amp; kinit admin
+Password for admin@EXAMPLE.ORG: *********
+
+Ticket cache: KCM:0
+Default principal: admin@EXAMPLE.ORG
+
+Valid starting       Expires              Service principal
+08/03/2024 23:15:35  08/04/2024 23:13:39  krbtgt/EXAMPLE.ORG@EXAMPLE.ORG</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">ldapsearch -D &#39;cn=Directory Manager&#39; -W | head
+Enter LDAP Password: *********
+
+</span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>extended LDIF
+<span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB">
+</span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>LDAPv3
+<span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>base &lt;<span style="color: #41ff5b;font-weight: bold">dc</span><span style="color: #41ff5b">=</span>example,dc<span style="color: #41ff5b">=</span>org&gt; <span style="color: #41ff5b">(</span>default<span style="color: #41ff5b">)</span> with scope subtree
+<span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>filter: <span style="color: #41ff5b">(</span><span style="color: #41ff5b;font-weight: bold">objectclass</span><span style="color: #41ff5b">=</span><span style="color: #FFF02A;font-weight: bold">*</span><span style="color: #41ff5b">)</span>
+<span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>requesting: ALL
+<span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB">
+</span><span style="color: #FFFFFF;background-color: #231529">
+</span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>example.org
+<span style="color: #FFFFFF;background-color: #231529">dn: dc=example,dc=org</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Сохранив и проверив пароли для УЗ &#39;cn=Directory Manager&#39; и &#39;uid=admin&#39; в надёжном месте, удаляем файл <code>/root/freeipa_passwords.txt</code>:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">shred -u /root/freeipa_passwords.txt</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Напомню, что безопасное удаление с помощью утилиты &#39;shred&#39; может быть обратимо, например, на журналируемых файловых системах. Поэтому, в некоторых случаях, необходимо переработать данный сценарий установки FreeIPA-сервера, где пароли бы не сохранялись в файл на жёсткий диск.</p>
+</div>
+</li>
+</ol>
 </div>
 </div>
 </div>
