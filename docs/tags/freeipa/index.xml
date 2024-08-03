@@ -6,8 +6,15 @@
     <description>Recent content in FreeIPA on Debuntarium</description>
     <generator>Hugo</generator>
     <language>ru-RU</language>
-    <lastBuildDate>Mon, 27 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 02 Aug 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://debuntu.ru/tags/freeipa/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Установка первой FreeIPA-реплики</title>
+      <link>https://debuntu.ru/manuals/freeipa/installing-and-setup-freeipa/ustanovka-pervoy-freeipa-repliki/</link>
+      <pubDate>Fri, 02 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://debuntu.ru/manuals/freeipa/installing-and-setup-freeipa/ustanovka-pervoy-freeipa-repliki/</guid>
+      <description>2023-04-13&#xA;1. Подготовка хоста к установке FreeIPA Проверьте сетевые настройки.&#xA;Проверьте настройки точного времени.&#xA;Добавьте в /etc/hosts запись для локальной реплики.&#xA;Возможно стоит перегенерировать ssh-ключи /etc/ssh/ssh_host_*_key*.&#xA;Обновить /etc/machine-id.&#xA;Обновите систему.&#xA;Добавьте в систему пакеты FreeIPA.&#xA;Проверьте, что в системе по умолчанию используется Java 8.&#xA;2. Установка реплики FreeIPA Установку будем производить в бездиалоговом режиме с заданием всех необходимых опций из командной строки.&#xA;2.1. Описание опций установочного скрипта Описание некоторых опций:</description>
+    </item>
     <item>
       <title>00. Удаление реплики</title>
       <link>https://debuntu.ru/manuals/freeipa/sozdaniye-i-konfigurirovaniye-novogo-domena-ipa-4-9-6-na-almalinux-8-5/udaleniye-repliki/</link>

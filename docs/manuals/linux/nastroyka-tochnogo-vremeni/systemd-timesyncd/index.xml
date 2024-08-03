@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>systemd-timesyncd on Debuntarium</title>
+    <link>https://debuntu.ru/manuals/linux/nastroyka-tochnogo-vremeni/systemd-timesyncd/</link>
+    <description>Recent content in systemd-timesyncd on Debuntarium</description>
+    <generator>Hugo</generator>
+    <language>ru-RU</language>
+    <atom:link href="https://debuntu.ru/manuals/linux/nastroyka-tochnogo-vremeni/systemd-timesyncd/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

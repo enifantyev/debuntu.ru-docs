@@ -81,6 +81,13 @@
   
   
   <url>
+    <loc>https://debuntu.ru/manuals/freeipa/installing-and-setup-freeipa/ustanovka-pervoy-freeipa-repliki/</loc>
+    <lastmod>2024-08-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://debuntu.ru/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/razvortyvaniye-konteynera-1-x-v-izolirovannoy-srede/</loc>
     <lastmod>2024-05-18T00:00:00+00:00</lastmod>
   </url>
@@ -956,6 +963,12 @@
   
   
   <url>
+    <loc>https://debuntu.ru/manuals/linux/</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://debuntu.ru/n/v-lxde-net-russkoi-raskladki/</loc>
   </url>
   
@@ -1129,8 +1142,15 @@
   
   
   <url>
+    <loc>https://debuntu.ru/refbooks/</loc>
+    <lastmod>2024-08-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://debuntu.ru/manuals/</loc>
-    <lastmod>2024-07-29T00:00:00+00:00</lastmod>
+    <lastmod>2024-08-02T00:00:00+00:00</lastmod>
   </url>
   
   
@@ -1241,13 +1261,6 @@
   
   
   <url>
-    <loc>https://debuntu.ru/refbooks/</loc>
-    <lastmod>2021-10-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  
-  
-  <url>
     <loc>https://debuntu.ru/manuals/bigdata/apachezookeeper/</loc>
     <lastmod>2021-08-11T00:00:00+00:00</lastmod>
   </url>
@@ -1317,6 +1330,45 @@
   
   
   
+  <url>
+    <loc>https://debuntu.ru/refbooks/doc/asciidoctor/</loc>
+    <lastmod>2024-08-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/</loc>
+    <lastmod>2024-08-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/refbooks/doc/</loc>
+    <lastmod>2024-08-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/freeipa/</loc>
+    <lastmod>2024-08-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/freeipa/installing-and-setup-freeipa/</loc>
+    <lastmod>2024-08-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
   
   
   
@@ -1325,15 +1377,6 @@
     <loc>https://debuntu.ru/manuals/borgbackup/</loc>
     <lastmod>2024-07-29T00:00:00+00:00</lastmod>
   </url>
-  
-  
-  
-  <url>
-    <loc>https://debuntu.ru/</loc>
-    <lastmod>2024-07-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  
   
   
   
@@ -1438,15 +1481,6 @@
   
   
   
-  
-  
-  
-  
-  
-  <url>
-    <loc>https://debuntu.ru/manuals/freeipa/</loc>
-    <lastmod>2021-12-27T00:00:00+00:00</lastmod>
-  </url>
   
   
   
@@ -1734,6 +1768,48 @@
   
   
   
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/linux/nastroyka-tochnogo-vremeni/chronyd/</loc>
+  </url>
+  
+  
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/linux/nastroyka-seti/</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/linux/nastroyka-seti/network-scripts/</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/linux/nastroyka-seti/networkmanager/</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/linux/nastroyka-tochnogo-vremeni/</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/linux/nastroyka-tochnogo-vremeni/ntpd/</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/linux/nastroyka-tochnogo-vremeni/systemd-timesyncd/</loc>
+  </url>
   
   
 </urlset>

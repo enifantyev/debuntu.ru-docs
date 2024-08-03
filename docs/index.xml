@@ -6,7 +6,7 @@
     <description>Recent content on Debuntarium</description>
     <generator>Hugo</generator>
     <language>ru-RU</language>
-    <lastBuildDate>Mon, 29 Jul 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 02 Aug 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://debuntu.ru/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>00. Удаление Apache Atlas</title>
@@ -84,6 +84,13 @@
       <pubDate>Wed, 16 Jun 2021 00:00:00 +0000</pubDate>
       <guid>https://debuntu.ru/manuals/bigdata/ustanovka-cloudera-cdh-6.3.2-s-tls-i-kerberos-na-osnove-freeipa/posle-ustanovki-osnovnykh-komponentov/</guid>
       <description>2021-06-16&#xA;Настройка каталогов для логгирования В центральном окне Cloudera Web UI выбираем раздел Log Directories, где изменяем все &amp;lsquo;/var/log&amp;rsquo; на &amp;lsquo;/data/log&amp;rsquo;: Также и для каждого Cloudera-сервиса заходим в конфигурацию и ищём параметры по признаку &amp;lsquo;/var&amp;rsquo;, которые и меняем на &amp;lsquo;/data/log&amp;rsquo;.&#xA;Применяем изменения для Cloudera Management и для кластера.&#xA;Выполняем предложения Cloudera Рассматриваем предложения Cloudera Management Console и исправляем ситуацию. Стараемся, по возможности, добиться полностью &amp;ldquo;зелёного&amp;rdquo; состояния кластера, но часто это невозможно из-за, например, недостатка ресурсов выделенных для инициализации кластера.</description>
+    </item>
+    <item>
+      <title>Установка первой FreeIPA-реплики</title>
+      <link>https://debuntu.ru/manuals/freeipa/installing-and-setup-freeipa/ustanovka-pervoy-freeipa-repliki/</link>
+      <pubDate>Fri, 02 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://debuntu.ru/manuals/freeipa/installing-and-setup-freeipa/ustanovka-pervoy-freeipa-repliki/</guid>
+      <description>2023-04-13&#xA;1. Подготовка хоста к установке FreeIPA Проверьте сетевые настройки.&#xA;Проверьте настройки точного времени.&#xA;Добавьте в /etc/hosts запись для локальной реплики.&#xA;Возможно стоит перегенерировать ssh-ключи /etc/ssh/ssh_host_*_key*.&#xA;Обновить /etc/machine-id.&#xA;Обновите систему.&#xA;Добавьте в систему пакеты FreeIPA.&#xA;Проверьте, что в системе по умолчанию используется Java 8.&#xA;2. Установка реплики FreeIPA Установку будем производить в бездиалоговом режиме с заданием всех необходимых опций из командной строки.&#xA;2.1. Описание опций установочного скрипта Описание некоторых опций:</description>
     </item>
     <item>
       <title>Развёртывание containerd 1.x в изолированной среде</title>
