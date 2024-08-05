@@ -1143,6 +1143,13 @@
       <description>Добавление сервиса Sentry В консоли Cloudera Manager в меню выбираем &amp;lsquo;Add Service&amp;rsquo;: Выбираем Sentry. Распределяем роли: Настройка базы данных. Так как сейчас используется встроенная база данных, то никаких дополнительных действий не производим, а нажимаем кнопку &amp;lsquo;Test Connection&amp;rsquo;. Наблюдаем запуск ролей. Визард успешно закончен. Перенастройка размещения log&amp;rsquo;ов В настройках Sentry, используя категорию &amp;lsquo;Logs&amp;rsquo;, изменяем следующие параметры, добавляя &amp;lsquo;/data&amp;rsquo; вместо &amp;lsquo;/var&amp;rsquo;: Нажимаем Save Changes. Создание группы администраторов Sentry Добавление группы во FreeIPA. Так как установка кластера производится с машины, домен которой отличен от домена настраиваемых машин, то вновь используем ansible:</description>
     </item>
     <item>
+      <title>Первоначальная настройка FreeIPA</title>
+      <link>https://debuntu.ru/manuals/freeipa/installing-and-setup-freeipa/first-configuring-freeipa/</link>
+      <pubDate>Thu, 13 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://debuntu.ru/manuals/freeipa/installing-and-setup-freeipa/first-configuring-freeipa/</guid>
+      <description>2023-04-13&#xA;1. Настройка LDAP-каталога 1.1. Отключение анонимного доступа к LDAP-каталогу Процедура выполняется на каждом сервере FreeIPA-реплике, так как изменения производятся в нереплицируемой части LDAP-каталога &amp;#39;cn=config&amp;#39;.&#xA;Выполните из командной строки:&#xA;IPAREPLICA=$(hostname) set +o history DM_PASSWORD=&amp;#39;&amp;lt;Password of Directory Manager is here&amp;gt;&amp;#39; set -o history ldapmodify -x -D &amp;#34;cn=Directory Manager&amp;#34; -w ${DM_PASSWORD} -h ${IPAREPLICA} -Z &amp;lt;&amp;lt; EOF dn: cn=config changetype: modify replace: nsslapd-allow-anonymous-access nsslapd-allow-anonymous-access: rootdse EOF ipactl restart 2. Настройка DNS 2.1. Включение автодобавления обратных записей По умолчанию, при введении новой машины в домен, соответствующая PTR-запись в обратной зоне DNS не создаётся.</description>
+    </item>
+    <item>
       <title>20. Создание бэкапа всей системы с помощью LVM и BorgBackup</title>
       <link>https://debuntu.ru/manuals/borgbackup/sozdaniye-bekapa-vsey-sistemy-s-pomoshchyu-borgbackup/</link>
       <pubDate>Fri, 11 Mar 2022 00:00:00 +0000</pubDate>
