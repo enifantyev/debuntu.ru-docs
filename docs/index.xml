@@ -6,7 +6,7 @@
     <description>Recent content on Debuntarium</description>
     <generator>Hugo</generator>
     <language>ru-RU</language>
-    <lastBuildDate>Fri, 02 Aug 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 13 Aug 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://debuntu.ru/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>00. Удаление Apache Atlas</title>
@@ -86,11 +86,18 @@
       <description>2021-06-16&#xA;Настройка каталогов для логгирования В центральном окне Cloudera Web UI выбираем раздел Log Directories, где изменяем все &amp;lsquo;/var/log&amp;rsquo; на &amp;lsquo;/data/log&amp;rsquo;: Также и для каждого Cloudera-сервиса заходим в конфигурацию и ищём параметры по признаку &amp;lsquo;/var&amp;rsquo;, которые и меняем на &amp;lsquo;/data/log&amp;rsquo;.&#xA;Применяем изменения для Cloudera Management и для кластера.&#xA;Выполняем предложения Cloudera Рассматриваем предложения Cloudera Management Console и исправляем ситуацию. Стараемся, по возможности, добиться полностью &amp;ldquo;зелёного&amp;rdquo; состояния кластера, но часто это невозможно из-за, например, недостатка ресурсов выделенных для инициализации кластера.</description>
     </item>
     <item>
+      <title>Установка и настройка cert-manager</title>
+      <link>https://debuntu.ru/manuals/kubernetes/tls-kerberos-in-kubernetes/cert-manager_and_all_about_it/installing-configuring-cert-manager/</link>
+      <pubDate>Tue, 13 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://debuntu.ru/manuals/kubernetes/tls-kerberos-in-kubernetes/cert-manager_and_all_about_it/installing-configuring-cert-manager/</guid>
+      <description>2024-08-13&#xA;1. Настройка FreeIPA для работы с Cert-manager по протоколу ACME 1.1. Включение ACME Для включения протокола ACME для IPA-домена, выполните следующие команды на одной из IPA-реплик:&#xA;[[ $(ipa-acme-manage status -q) = &amp;#39;ACME is disabled&amp;#39; ]] &amp;amp;&amp;amp; ipa-acme-manage enable 1.2. Подготовка переменных Задайте переменную с именем целевого домена:&#xA;SUBDOMAIN_NAME=&amp;#39;k8s.example.org&amp;#39; 1.3. Создание TSIG-ключа для удалённого обновления DNS-зоны Сгенерируйте TSIG-ключ, добавьте его в настройки Named и перезапустите демон:&#xA;TSIG_KEY_NAME=&amp;#34;${SUBDOMAIN_NAME}-acme&amp;#34; tsig-keygen -a hmac-sha512 ${TSIG_KEY_NAME} | tee -a /etc/named/ipa-ext.</description>
+    </item>
+    <item>
       <title>Установка первой FreeIPA-реплики</title>
       <link>https://debuntu.ru/manuals/freeipa/installing-and-setup-freeipa/ustanovka-pervoy-freeipa-repliki/</link>
       <pubDate>Fri, 02 Aug 2024 00:00:00 +0000</pubDate>
       <guid>https://debuntu.ru/manuals/freeipa/installing-and-setup-freeipa/ustanovka-pervoy-freeipa-repliki/</guid>
-      <description>2023-04-13&#xA;1. Подготовка ОС к установке FreeIPA-сервера Проверьте настройки точного времени.&#xA;Проверьте сетевые настройки.&#xA;Задайте полное имя хоста. Пример:&#xA;hostnamectl set-hostname dev-ipa01.example.org&#xA;Добавьте в /etc/hosts запись для локальной реплики. Пример:&#xA;192.168.100.10 dev-ipa01.example.org&#xA;Перегенерируте ssh-ключи. Пример:&#xA;rm -f /etc/ssh/ssh_host_*_key* systemctl restart sshd Обновить /etc/machine-id:&#xA;rm -f /etc/machine-id dbus-uuidgen --ensure=/etc/machine-id Обновите систему.&#xA;Добавьте в систему пакеты freeipa-server.&#xA;Перезапустите хост.&#xA;2. Установка реплики FreeIPA Установку будем производить в бездиалоговом режиме с заданием всех необходимых опций из командной строки.</description>
+      <description>2023-04-13&#xA;1. Подготовка ОС к установке FreeIPA-сервера Проверьте настройки точного времени.&#xA;Проверьте сетевые настройки.&#xA;Задайте полное имя хоста. Пример:&#xA;hostnamectl set-hostname dev-ipa01.example.org&#xA;Добавьте в /etc/hosts запись для локальной реплики. Пример:&#xA;192.168.100.10 dev-ipa01.example.org dev-ipa01&#xA;Перегенерируте ssh-ключи. Пример:&#xA;rm -f /etc/ssh/ssh_host_*_key* systemctl restart sshd Обновить /etc/machine-id:&#xA;rm -f /etc/machine-id dbus-uuidgen --ensure=/etc/machine-id Обновите систему.&#xA;Добавьте в систему пакеты freeipa-server.&#xA;Перезапустите хост.&#xA;2. Установка реплики FreeIPA Установку будем производить в бездиалоговом режиме с заданием всех необходимых опций из командной строки.</description>
     </item>
     <item>
       <title>Развёртывание containerd 1.x в изолированной среде</title>
@@ -1211,6 +1218,34 @@
       <pubDate>Tue, 23 Jul 2024 11:17:28 +0300</pubDate>
       <guid>https://debuntu.ru/manuals/monitoring/victoriametrics/installing-victoria-metrics-cluster-from-binaries/</guid>
       <description>1. Использованные материалы https://docs.victoriametrics.com/quick-start/&#xA;2. Скачивание бинарников из локального репозитория на целевые хосты На целевых нодах будущего кластера Victoria Metrics выполните загрузку бинарников из локального NXRM:&#xA;VER=&amp;#39;v1.102.0&amp;#39; PLATFORM=&amp;#39;linux-amd64&amp;#39; INTERNAL_REPO=&amp;#34;https://nexus.example.org/repository/dud_evolut_raw&amp;#34; REPO_FOLDER=&amp;#34;monitoring/victoriametrics&amp;#34; TMPDIR=$(mktemp -d) &amp;amp;&amp;amp; cd $TMPDIR curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}_checksums.txt Распакуйте скачанные файлы-архивы:&#xA;tar xvf victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz tar xvf vmutils-${PLATFORM}-${VER}.tar.gz Проверьте целостность всех полученных файлов:&#xA;sha256sum -c \ victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt \ vmutils-${PLATFORM}-${VER}_checksums.txt Ожидаемый вывод:</description>
+    </item>
+    <item>
+      <title>cert-manager. Проверка после установки</title>
+      <link>https://debuntu.ru/manuals/kubernetes/tls-kerberos-in-kubernetes/cert-manager_and_all_about_it/cert-manager_check_after_installing/</link>
+      <pubDate>Mon, 27 May 2024 00:00:00 +0000</pubDate>
+      <guid>https://debuntu.ru/manuals/kubernetes/tls-kerberos-in-kubernetes/cert-manager_and_all_about_it/cert-manager_check_after_installing/</guid>
+      <description>Использованные материалы End-to-end verify the installation&#xA;1. Выпуск тестового сертификата Создайте манифест для выпуска тестового сертификата:&#xA;cat &amp;lt;&amp;lt; EOF &amp;gt; test-resources.yaml apiVersion: v1 kind: Namespace metadata: name: cert-manager-test --- apiVersion: cert-manager.io/v1 kind: Issuer metadata: name: test-selfsigned namespace: cert-manager-test spec: selfSigned: {} --- apiVersion: cert-manager.io/v1 kind: Certificate metadata: name: selfsigned-cert namespace: cert-manager-test spec: dnsNames: - example.com secretName: selfsigned-cert-tls issuerRef: name: test-selfsigned EOF Примените созданный манифест:&#xA;kubectl apply -f test-resources.yaml Проверьте наличие успешно выданного сертификата (&amp;#34;The certificate has been successfully issued&amp;#34;):</description>
+    </item>
+    <item>
+      <title>cert-manager. Удаление</title>
+      <link>https://debuntu.ru/manuals/kubernetes/tls-kerberos-in-kubernetes/cert-manager_and_all_about_it/cert-uninstalling/</link>
+      <pubDate>Mon, 27 May 2024 00:00:00 +0000</pubDate>
+      <guid>https://debuntu.ru/manuals/kubernetes/tls-kerberos-in-kubernetes/cert-manager_and_all_about_it/cert-uninstalling/</guid>
+      <description>2024-05-27&#xA;Использованные материалы https://cert-manager.io/docs/installation/kubectl/#uninstalling</description>
+    </item>
+    <item>
+      <title>cert-manager. Обновление</title>
+      <link>https://debuntu.ru/manuals/kubernetes/tls-kerberos-in-kubernetes/cert-manager_and_all_about_it/cert-manager_upgrade/</link>
+      <pubDate>Mon, 13 May 2024 00:00:00 +0000</pubDate>
+      <guid>https://debuntu.ru/manuals/kubernetes/tls-kerberos-in-kubernetes/cert-manager_and_all_about_it/cert-manager_upgrade/</guid>
+      <description>Использованные материалы https://cert-manager.io/docs/installation/upgrade/&#xA;Так как Helm Chart cert-manager мы применяем без CRD, чтобы случайно не потерять ранее выданные сертификаты, то сначала вручную применим CRD-манифест, а потом накатим Helm Chart.&#xA;Скачайте файлы с новой версией cert-manager’а и распакуйте их:&#xA;set +o history USER_PASS=&amp;#39;eugene:xxxxxxxxxxxxxxxxxxxx&amp;#39; set -o history INTERNAL_REPO=&amp;#39;https://nexus.example.org/repository/evo_raw&amp;#39; REPO_FOLDER=&amp;#39;kubernetes/cert-manager/&amp;#39; VERSION=&amp;#39;v1.15.0&amp;#39; curl -LOu $USER_PASS ${INTERNAL_REPO}/${REPO_FOLDER}/cert-manager-${VERSION}.tgz curl -LOu $USER_PASS ${INTERNAL_REPO}/${REPO_FOLDER}/cert-manager-${VERSION}.crds.yaml tar xvf cert-manager-${VERSION}.tgz Примените новый CRD:&#xA;kubectl apply -f cert-manager-${VERSION}.crds.yaml Накатите новый Helm Chart (предварительно измените значения в values.</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://debuntu.ru/snippets/adding_system_user_and_home_in_opt/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://debuntu.ru/snippets/adding_system_user_and_home_in_opt/</guid>
+      <description> Задайте наименование устанавливаемого приложения APPNAME=&amp;#39;prometheus&amp;#39; Добавьте одноимённый аккаунт, группу, и каталог в /opt CREATE_HOME=yes \ useradd --system \ --shell /usr/sbin/nologin \ --create-home \ --home-dir /opt/${APPNAME} \ --user-group \ ${APPNAME} install \ --owner=${APPNAME} \ --group=${APPNAME} \ prometheus promtool \ /opt/${APPNAME}/bin/ </description>
     </item>
   </channel>
 </rss>

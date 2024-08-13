@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kubernetes on Debuntarium</title>
+    <link>https://debuntu.ru/tags/kubernetes/</link>
+    <description>Recent content in Kubernetes on Debuntarium</description>
+    <generator>Hugo</generator>
+    <language>ru-RU</language>
+    <lastBuildDate>Tue, 13 Aug 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://debuntu.ru/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Установка и настройка cert-manager</title>
+      <link>https://debuntu.ru/manuals/kubernetes/tls-kerberos-in-kubernetes/cert-manager_and_all_about_it/installing-configuring-cert-manager/</link>
+      <pubDate>Tue, 13 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://debuntu.ru/manuals/kubernetes/tls-kerberos-in-kubernetes/cert-manager_and_all_about_it/installing-configuring-cert-manager/</guid>
+      <description>2024-08-13&#xA;1. Настройка FreeIPA для работы с Cert-manager по протоколу ACME 1.1. Включение ACME Для включения протокола ACME для IPA-домена, выполните следующие команды на одной из IPA-реплик:&#xA;[[ $(ipa-acme-manage status -q) = &amp;#39;ACME is disabled&amp;#39; ]] &amp;amp;&amp;amp; ipa-acme-manage enable 1.2. Подготовка переменных Задайте переменную с именем целевого домена:&#xA;SUBDOMAIN_NAME=&amp;#39;k8s.example.org&amp;#39; 1.3. Создание TSIG-ключа для удалённого обновления DNS-зоны Сгенерируйте TSIG-ключ, добавьте его в настройки Named и перезапустите демон:&#xA;TSIG_KEY_NAME=&amp;#34;${SUBDOMAIN_NAME}-acme&amp;#34; tsig-keygen -a hmac-sha512 ${TSIG_KEY_NAME} | tee -a /etc/named/ipa-ext.</description>
+    </item>
+    <item>
+      <title>cert-manager. Проверка после установки</title>
+      <link>https://debuntu.ru/manuals/kubernetes/tls-kerberos-in-kubernetes/cert-manager_and_all_about_it/cert-manager_check_after_installing/</link>
+      <pubDate>Mon, 27 May 2024 00:00:00 +0000</pubDate>
+      <guid>https://debuntu.ru/manuals/kubernetes/tls-kerberos-in-kubernetes/cert-manager_and_all_about_it/cert-manager_check_after_installing/</guid>
+      <description>Использованные материалы End-to-end verify the installation&#xA;1. Выпуск тестового сертификата Создайте манифест для выпуска тестового сертификата:&#xA;cat &amp;lt;&amp;lt; EOF &amp;gt; test-resources.yaml apiVersion: v1 kind: Namespace metadata: name: cert-manager-test --- apiVersion: cert-manager.io/v1 kind: Issuer metadata: name: test-selfsigned namespace: cert-manager-test spec: selfSigned: {} --- apiVersion: cert-manager.io/v1 kind: Certificate metadata: name: selfsigned-cert namespace: cert-manager-test spec: dnsNames: - example.com secretName: selfsigned-cert-tls issuerRef: name: test-selfsigned EOF Примените созданный манифест:&#xA;kubectl apply -f test-resources.yaml Проверьте наличие успешно выданного сертификата (&amp;#34;The certificate has been successfully issued&amp;#34;):</description>
+    </item>
+    <item>
+      <title>cert-manager. Удаление</title>
+      <link>https://debuntu.ru/manuals/kubernetes/tls-kerberos-in-kubernetes/cert-manager_and_all_about_it/cert-uninstalling/</link>
+      <pubDate>Mon, 27 May 2024 00:00:00 +0000</pubDate>
+      <guid>https://debuntu.ru/manuals/kubernetes/tls-kerberos-in-kubernetes/cert-manager_and_all_about_it/cert-uninstalling/</guid>
+      <description>2024-05-27&#xA;Использованные материалы https://cert-manager.io/docs/installation/kubectl/#uninstalling</description>
+    </item>
+    <item>
+      <title>cert-manager. Обновление</title>
+      <link>https://debuntu.ru/manuals/kubernetes/tls-kerberos-in-kubernetes/cert-manager_and_all_about_it/cert-manager_upgrade/</link>
+      <pubDate>Mon, 13 May 2024 00:00:00 +0000</pubDate>
+      <guid>https://debuntu.ru/manuals/kubernetes/tls-kerberos-in-kubernetes/cert-manager_and_all_about_it/cert-manager_upgrade/</guid>
+      <description>Использованные материалы https://cert-manager.io/docs/installation/upgrade/&#xA;Так как Helm Chart cert-manager мы применяем без CRD, чтобы случайно не потерять ранее выданные сертификаты, то сначала вручную применим CRD-манифест, а потом накатим Helm Chart.&#xA;Скачайте файлы с новой версией cert-manager’а и распакуйте их:&#xA;set +o history USER_PASS=&amp;#39;eugene:xxxxxxxxxxxxxxxxxxxx&amp;#39; set -o history INTERNAL_REPO=&amp;#39;https://nexus.example.org/repository/evo_raw&amp;#39; REPO_FOLDER=&amp;#39;kubernetes/cert-manager/&amp;#39; VERSION=&amp;#39;v1.15.0&amp;#39; curl -LOu $USER_PASS ${INTERNAL_REPO}/${REPO_FOLDER}/cert-manager-${VERSION}.tgz curl -LOu $USER_PASS ${INTERNAL_REPO}/${REPO_FOLDER}/cert-manager-${VERSION}.crds.yaml tar xvf cert-manager-${VERSION}.tgz Примените новый CRD:&#xA;kubectl apply -f cert-manager-${VERSION}.crds.yaml Накатите новый Helm Chart (предварительно измените значения в values.</description>
+    </item>
+  </channel>
+</rss>

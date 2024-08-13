@@ -24,7 +24,7 @@
 Задайте полное имя хоста. Пример:
 hostnamectl set-hostname dev-ipa01.example.org
 Добавьте в /etc/hosts запись для локальной реплики. Пример:
-192.168.100.10 dev-ipa01.example.org
+192.168.100.10 dev-ipa01.example.org dev-ipa01
 Перегенерируте ssh-ключи. Пример:
 rm -f /etc/ssh/ssh_host_*_key* systemctl restart sshd Обновить /etc/machine-id:
 rm -f /etc/machine-id dbus-uuidgen --ensure=/etc/machine-id Обновите систему.
@@ -40,7 +40,7 @@ rm -f /etc/machine-id dbus-uuidgen --ensure=/etc/machine-id Обновите с�
 Задайте полное имя хоста. Пример:
 hostnamectl set-hostname dev-ipa01.example.org
 Добавьте в /etc/hosts запись для локальной реплики. Пример:
-192.168.100.10 dev-ipa01.example.org
+192.168.100.10 dev-ipa01.example.org dev-ipa01
 Перегенерируте ssh-ключи. Пример:
 rm -f /etc/ssh/ssh_host_*_key* systemctl restart sshd Обновить /etc/machine-id:
 rm -f /etc/machine-id dbus-uuidgen --ensure=/etc/machine-id Обновите систему.
@@ -61,7 +61,7 @@ rm -f /etc/machine-id dbus-uuidgen --ensure=/etc/machine-id Обновите с�
 Задайте полное имя хоста. Пример:
 hostnamectl set-hostname dev-ipa01.example.org
 Добавьте в /etc/hosts запись для локальной реплики. Пример:
-192.168.100.10 dev-ipa01.example.org
+192.168.100.10 dev-ipa01.example.org dev-ipa01
 Перегенерируте ssh-ключи. Пример:
 rm -f /etc/ssh/ssh_host_*_key* systemctl restart sshd Обновить /etc/machine-id:
 rm -f /etc/machine-id dbus-uuidgen --ensure=/etc/machine-id Обновите систему.
@@ -70,7 +70,7 @@ rm -f /etc/machine-id dbus-uuidgen --ensure=/etc/machine-id Обновите с�
 2. Установка реплики FreeIPA Установку будем производить в бездиалоговом режиме с заданием всех необходимых опций из командной строки.">
   <meta itemprop="datePublished" content="2024-08-02T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-08-02T00:00:00+00:00">
-  <meta itemprop="wordCount" content="2427">
+  <meta itemprop="wordCount" content="2428">
   <meta itemprop="keywords" content="FreeIPA">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Установка первой FreeIPA-реплики">
@@ -80,7 +80,7 @@ rm -f /etc/machine-id dbus-uuidgen --ensure=/etc/machine-id Обновите с�
 Задайте полное имя хоста. Пример:
 hostnamectl set-hostname dev-ipa01.example.org
 Добавьте в /etc/hosts запись для локальной реплики. Пример:
-192.168.100.10 dev-ipa01.example.org
+192.168.100.10 dev-ipa01.example.org dev-ipa01
 Перегенерируте ssh-ключи. Пример:
 rm -f /etc/ssh/ssh_host_*_key* systemctl restart sshd Обновить /etc/machine-id:
 rm -f /etc/machine-id dbus-uuidgen --ensure=/etc/machine-id Обновите систему.
@@ -230,6 +230,71 @@ if (!doNotTrack) {
   </ul>
 </li>
   </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualskubernetes-li">
+  <a href="/manuals/kubernetes/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualskubernetes"><span class="">Kubernetes</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualskubernetescontainer-runtimes-and-cri-li">
+  <a href="/manuals/kubernetes/container-runtimes-and-cri/" title="Container Runtimes и CRI" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualskubernetescontainer-runtimes-and-cri"><span class="">container-runtimes-and-cri</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerov-li">
+  <a href="/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/" title="containerd. Среда выполнения контейнеров" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerov"><span class="">containerd-sreda-vypolnenia-konteinerov</span></a>
+  <ul class="ul-4 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-konteynera-1-x-v-izolirovannoy-srede-li">
+  <a href="/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/razvortyvaniye-konteynera-1-x-v-izolirovannoy-srede/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-konteynera-1-x-v-izolirovannoy-srede"><span class="">Развёртывание containerd 1.x в изолированной среде</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualskubernetesobshchaya-instruktsiya-po-ustanovke-k8s-s-high-availability-i-stacked-etcd-v-izolirovannoy-srede-s-pomoshchyu-kubeadm-li">
+  <a href="/manuals/kubernetes/obshchaya-instruktsiya-po-ustanovke-k8s-s-high-availability-i-stacked-etcd-v-izolirovannoy-srede-s-pomoshchyu-kubeadm/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualskubernetesobshchaya-instruktsiya-po-ustanovke-k8s-s-high-availability-i-stacked-etcd-v-izolirovannoy-srede-s-pomoshchyu-kubeadm"><span class="">Общая инструкция по установке K8s with High Availability and Stacked Etcd в изолированной среде с помощью kubeadm</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualskubernetesobshchaya-instruktsiya-po-ustanovke-k8s-s-high-availability-i-stacked-etcd-v-izolirovannoy-srede-s-pomoshchyu-kubeadm10-k8s-podgotovka-vsekh-khostov-k-ustanovke-kubernetes-li">
+  <a href="/manuals/kubernetes/obshchaya-instruktsiya-po-ustanovke-k8s-s-high-availability-i-stacked-etcd-v-izolirovannoy-srede-s-pomoshchyu-kubeadm/10-k8s-podgotovka-vsekh-khostov-k-ustanovke-kubernetes/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualskubernetesobshchaya-instruktsiya-po-ustanovke-k8s-s-high-availability-i-stacked-etcd-v-izolirovannoy-srede-s-pomoshchyu-kubeadm10-k8s-podgotovka-vsekh-khostov-k-ustanovke-kubernetes"><span class="">10. K8s. Подготовка всех хостов к установке Kubernetes&#39;а</span></a>
+  <ul class="ul-4 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualskubernetesobshchaya-instruktsiya-po-ustanovke-k8s-s-high-availability-i-stacked-etcd-v-izolirovannoy-srede-s-pomoshchyu-kubeadm10-k8s-podgotovka-vsekh-khostov-k-ustanovke-kubernetesotklyucheniye-swap-na-vsekh-nodakh-li">
+  <a href="/manuals/kubernetes/obshchaya-instruktsiya-po-ustanovke-k8s-s-high-availability-i-stacked-etcd-v-izolirovannoy-srede-s-pomoshchyu-kubeadm/10-k8s-podgotovka-vsekh-khostov-k-ustanovke-kubernetes/otklyucheniye-swap-na-vsekh-nodakh/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualskubernetesobshchaya-instruktsiya-po-ustanovke-k8s-s-high-availability-i-stacked-etcd-v-izolirovannoy-srede-s-pomoshchyu-kubeadm10-k8s-podgotovka-vsekh-khostov-k-ustanovke-kubernetesotklyucheniye-swap-na-vsekh-nodakh"><span class="">10. Отключение swap на всех нодах</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualskubernetesobshchaya-instruktsiya-po-ustanovke-k8s-s-high-availability-i-stacked-etcd-v-izolirovannoy-srede-s-pomoshchyu-kubeadm10-k8s-podgotovka-vsekh-khostov-k-ustanovke-kubernetesustanovka-containerd-li">
+  <a href="/manuals/kubernetes/obshchaya-instruktsiya-po-ustanovke-k8s-s-high-availability-i-stacked-etcd-v-izolirovannoy-srede-s-pomoshchyu-kubeadm/10-k8s-podgotovka-vsekh-khostov-k-ustanovke-kubernetes/ustanovka-containerd/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualskubernetesobshchaya-instruktsiya-po-ustanovke-k8s-s-high-availability-i-stacked-etcd-v-izolirovannoy-srede-s-pomoshchyu-kubeadm10-k8s-podgotovka-vsekh-khostov-k-ustanovke-kubernetesustanovka-containerd"><span class="">30. Установка containerd</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualskubernetestls-kerberos-in-kubernetes-li">
+  <a href="/manuals/kubernetes/tls-kerberos-in-kubernetes/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualskubernetestls-kerberos-in-kubernetes"><span class="">TLS и Kerberos в Kubernetes</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualskubernetestls-kerberos-in-kubernetescert-manager_and_all_about_it-li">
+  <a href="/manuals/kubernetes/tls-kerberos-in-kubernetes/cert-manager_and_all_about_it/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualskubernetestls-kerberos-in-kubernetescert-manager_and_all_about_it"><span class="">Cert-manager. Всё по этой теме</span></a>
+  <ul class="ul-4 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualskubernetestls-kerberos-in-kubernetescert-manager_and_all_about_itinstalling-configuring-cert-manager-li">
+  <a href="/manuals/kubernetes/tls-kerberos-in-kubernetes/cert-manager_and_all_about_it/installing-configuring-cert-manager/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualskubernetestls-kerberos-in-kubernetescert-manager_and_all_about_itinstalling-configuring-cert-manager"><span class="">Установка и настройка cert-manager</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualskubernetestls-kerberos-in-kubernetescert-manager_and_all_about_itcert-manager_check_after_installing-li">
+  <a href="/manuals/kubernetes/tls-kerberos-in-kubernetes/cert-manager_and_all_about_it/cert-manager_check_after_installing/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualskubernetestls-kerberos-in-kubernetescert-manager_and_all_about_itcert-manager_check_after_installing"><span class="">cert-manager. Проверка после установки</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualskubernetestls-kerberos-in-kubernetescert-manager_and_all_about_itcert-uninstalling-li">
+  <a href="/manuals/kubernetes/tls-kerberos-in-kubernetes/cert-manager_and_all_about_it/cert-uninstalling/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualskubernetestls-kerberos-in-kubernetescert-manager_and_all_about_itcert-uninstalling"><span class="">cert-manager. Удаление</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualskubernetestls-kerberos-in-kubernetescert-manager_and_all_about_itcert-manager_upgrade-li">
+  <a href="/manuals/kubernetes/tls-kerberos-in-kubernetes/cert-manager_and_all_about_it/cert-manager_upgrade/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualskubernetestls-kerberos-in-kubernetescert-manager_and_all_about_itcert-manager_upgrade"><span class="">cert-manager. Обновление</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsmonitoring-li">
+  <a href="/manuals/monitoring/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoring"><span class="">Monitoring</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringprometheus-li">
+  <a href="/manuals/monitoring/prometheus/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoringprometheus"><span class="">Prometheus</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsmonitoringvictoriametrics-li">
+  <a href="/manuals/monitoring/victoriametrics/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoringvictoriametrics"><span class="">Victoria Metrics</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsdownload-victoria-metrics-binaries-and-upload-to-nexus-li">
+  <a href="/manuals/monitoring/victoriametrics/download-victoria-metrics-binaries-and-upload-to-nexus/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsdownload-victoria-metrics-binaries-and-upload-to-nexus"><span class="">Перенос бинарников Victoria Metrics Cluster из github в локальный Nexus</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsinstalling-victoria-metrics-cluster-from-binaries-li">
+  <a href="/manuals/monitoring/victoriametrics/installing-victoria-metrics-cluster-from-binaries/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsinstalling-victoria-metrics-cluster-from-binaries"><span class="">Установка Victoria Metrics Cluster из бинарников</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-manualsfreeipa-li">
   <a href="/manuals/freeipa/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualsfreeipa"><span class="">FreeIPA</span></a>
   <ul class="ul-2 foldable">
@@ -282,51 +347,6 @@ if (!doNotTrack) {
   <a href="/manuals/borgbackup/nakatyvanie-na-host-chuzhogo-snimka-s-pomoshchyu-borgbackup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupnakatyvanie-na-host-chuzhogo-snimka-s-pomoshchyu-borgbackup"><span class="">31. Накатывание на хост чужого снимка с помощью LVM и BorgBackup</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsborgbackupustanovka-novogo-yadra-v-altlinux-10-dlya-proverki-vosstanovleniya-mashiny-s-pomoshchyu-borgbackup-li">
   <a href="/manuals/borgbackup/ustanovka-novogo-yadra-v-altlinux-10-dlya-proverki-vosstanovleniya-mashiny-s-pomoshchyu-borgbackup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsborgbackupustanovka-novogo-yadra-v-altlinux-10-dlya-proverki-vosstanovleniya-mashiny-s-pomoshchyu-borgbackup"><span class="">40. Установка нового ядра в AltLinux 10 для проверки правильности восстановления машины с помощью BorgBackup</span></a>
-</li>
-  </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsmonitoring-li">
-  <a href="/manuals/monitoring/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoring"><span class="">Monitoring</span></a>
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsmonitoringvictoriametrics-li">
-  <a href="/manuals/monitoring/victoriametrics/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoringvictoriametrics"><span class="">Victoria Metrics</span></a>
-  <ul class="ul-3 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsdownload-victoria-metrics-binaries-and-upload-to-nexus-li">
-  <a href="/manuals/monitoring/victoriametrics/download-victoria-metrics-binaries-and-upload-to-nexus/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsdownload-victoria-metrics-binaries-and-upload-to-nexus"><span class="">Перенос бинарников Victoria Metrics Cluster из github в локальный Nexus</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsinstalling-victoria-metrics-cluster-from-binaries-li">
-  <a href="/manuals/monitoring/victoriametrics/installing-victoria-metrics-cluster-from-binaries/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsinstalling-victoria-metrics-cluster-from-binaries"><span class="">Установка Victoria Metrics Cluster из бинарников</span></a>
-</li>
-  </ul>
-</li>
-  </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualskubernetes-li">
-  <a href="/manuals/kubernetes/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualskubernetes"><span class="">Kubernetes</span></a>
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualskubernetescontainer-runtimes-and-cri-li">
-  <a href="/manuals/kubernetes/container-runtimes-and-cri/" title="Container Runtimes и CRI" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualskubernetescontainer-runtimes-and-cri"><span class="">container-runtimes-and-cri</span></a>
-  <ul class="ul-3 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerov-li">
-  <a href="/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/" title="containerd. Среда выполнения контейнеров" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerov"><span class="">containerd-sreda-vypolnenia-konteinerov</span></a>
-  <ul class="ul-4 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-konteynera-1-x-v-izolirovannoy-srede-li">
-  <a href="/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/razvortyvaniye-konteynera-1-x-v-izolirovannoy-srede/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-konteynera-1-x-v-izolirovannoy-srede"><span class="">Развёртывание containerd 1.x в изолированной среде</span></a>
-</li>
-  </ul>
-</li>
-  </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualskubernetesobshchaya-instruktsiya-po-ustanovke-k8s-s-high-availability-i-stacked-etcd-v-izolirovannoy-srede-s-pomoshchyu-kubeadm-li">
-  <a href="/manuals/kubernetes/obshchaya-instruktsiya-po-ustanovke-k8s-s-high-availability-i-stacked-etcd-v-izolirovannoy-srede-s-pomoshchyu-kubeadm/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualskubernetesobshchaya-instruktsiya-po-ustanovke-k8s-s-high-availability-i-stacked-etcd-v-izolirovannoy-srede-s-pomoshchyu-kubeadm"><span class="">Общая инструкция по установке K8s with High Availability and Stacked Etcd в изолированной среде с помощью kubeadm</span></a>
-  <ul class="ul-3 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualskubernetesobshchaya-instruktsiya-po-ustanovke-k8s-s-high-availability-i-stacked-etcd-v-izolirovannoy-srede-s-pomoshchyu-kubeadm10-k8s-podgotovka-vsekh-khostov-k-ustanovke-kubernetes-li">
-  <a href="/manuals/kubernetes/obshchaya-instruktsiya-po-ustanovke-k8s-s-high-availability-i-stacked-etcd-v-izolirovannoy-srede-s-pomoshchyu-kubeadm/10-k8s-podgotovka-vsekh-khostov-k-ustanovke-kubernetes/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualskubernetesobshchaya-instruktsiya-po-ustanovke-k8s-s-high-availability-i-stacked-etcd-v-izolirovannoy-srede-s-pomoshchyu-kubeadm10-k8s-podgotovka-vsekh-khostov-k-ustanovke-kubernetes"><span class="">10. K8s. Подготовка всех хостов к установке Kubernetes&#39;а</span></a>
-  <ul class="ul-4 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualskubernetesobshchaya-instruktsiya-po-ustanovke-k8s-s-high-availability-i-stacked-etcd-v-izolirovannoy-srede-s-pomoshchyu-kubeadm10-k8s-podgotovka-vsekh-khostov-k-ustanovke-kubernetesotklyucheniye-swap-na-vsekh-nodakh-li">
-  <a href="/manuals/kubernetes/obshchaya-instruktsiya-po-ustanovke-k8s-s-high-availability-i-stacked-etcd-v-izolirovannoy-srede-s-pomoshchyu-kubeadm/10-k8s-podgotovka-vsekh-khostov-k-ustanovke-kubernetes/otklyucheniye-swap-na-vsekh-nodakh/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualskubernetesobshchaya-instruktsiya-po-ustanovke-k8s-s-high-availability-i-stacked-etcd-v-izolirovannoy-srede-s-pomoshchyu-kubeadm10-k8s-podgotovka-vsekh-khostov-k-ustanovke-kubernetesotklyucheniye-swap-na-vsekh-nodakh"><span class="">10. Отключение swap на всех нодах</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualskubernetesobshchaya-instruktsiya-po-ustanovke-k8s-s-high-availability-i-stacked-etcd-v-izolirovannoy-srede-s-pomoshchyu-kubeadm10-k8s-podgotovka-vsekh-khostov-k-ustanovke-kubernetesustanovka-containerd-li">
-  <a href="/manuals/kubernetes/obshchaya-instruktsiya-po-ustanovke-k8s-s-high-availability-i-stacked-etcd-v-izolirovannoy-srede-s-pomoshchyu-kubeadm/10-k8s-podgotovka-vsekh-khostov-k-ustanovke-kubernetes/ustanovka-containerd/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualskubernetesobshchaya-instruktsiya-po-ustanovke-k8s-s-high-availability-i-stacked-etcd-v-izolirovannoy-srede-s-pomoshchyu-kubeadm10-k8s-podgotovka-vsekh-khostov-k-ustanovke-kubernetesustanovka-containerd"><span class="">30. Установка containerd</span></a>
-</li>
-  </ul>
-</li>
-  </ul>
 </li>
   </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsproxmox-li">
@@ -518,6 +538,7 @@ if (!doNotTrack) {
       <h5 class="taxonomy-title">Tags</h5>
       <ul class="taxonomy-terms">
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/acl/" data-taxonomy-term="acl"><span class="taxonomy-label">ACL</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/acme-protocol/" data-taxonomy-term="acme-protocol"><span class="taxonomy-label">Acme Protocol</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/almalinux-8.5/" data-taxonomy-term="almalinux-8.5"><span class="taxonomy-label">AlmaLinux 8.5</span><span class="taxonomy-count">4</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/alpine-linux/" data-taxonomy-term="alpine-linux"><span class="taxonomy-label">Alpine Linux</span><span class="taxonomy-count">3</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/altlinux/" data-taxonomy-term="altlinux"><span class="taxonomy-label">AltLinux</span><span class="taxonomy-count">2</span></a></li>
@@ -553,6 +574,7 @@ if (!doNotTrack) {
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/centos/" data-taxonomy-term="centos"><span class="taxonomy-label">CentOS</span><span class="taxonomy-count">30</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/centos-7/" data-taxonomy-term="centos-7"><span class="taxonomy-label">CentOS 7</span><span class="taxonomy-count">27</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/centos7/" data-taxonomy-term="centos7"><span class="taxonomy-label">CentOS7</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/cert-manager/" data-taxonomy-term="cert-manager"><span class="taxonomy-label">Cert-Manager</span><span class="taxonomy-count">4</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/chroot/" data-taxonomy-term="chroot"><span class="taxonomy-label">Chroot</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/ci/cd/" data-taxonomy-term="ci/cd"><span class="taxonomy-label">CI/CD</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/cloudera-cdh-6.3.2/" data-taxonomy-term="cloudera-cdh-6.3.2"><span class="taxonomy-label">Cloudera CDH 6.3.2</span><span class="taxonomy-count">36</span></a></li>
@@ -582,7 +604,7 @@ if (!doNotTrack) {
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/encfs/" data-taxonomy-term="encfs"><span class="taxonomy-label">EncFS</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/filesystem/" data-taxonomy-term="filesystem"><span class="taxonomy-label">FileSystem</span><span class="taxonomy-count">6</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/freebsd/" data-taxonomy-term="freebsd"><span class="taxonomy-label">FreeBSD</span><span class="taxonomy-count">2</span></a></li>
-        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/freeipa/" data-taxonomy-term="freeipa"><span class="taxonomy-label">FreeIPA</span><span class="taxonomy-count">21</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/freeipa/" data-taxonomy-term="freeipa"><span class="taxonomy-label">FreeIPA</span><span class="taxonomy-count">23</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/freeipa-4.9.6/" data-taxonomy-term="freeipa-4.9.6"><span class="taxonomy-label">FreeIPA 4.9.6</span><span class="taxonomy-count">4</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/gnu-screen/" data-taxonomy-term="gnu-screen"><span class="taxonomy-label">GNU Screen</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/groupware/" data-taxonomy-term="groupware"><span class="taxonomy-label">Groupware</span><span class="taxonomy-count">1</span></a></li>
@@ -601,6 +623,7 @@ if (!doNotTrack) {
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/kafka-mirror-maker/" data-taxonomy-term="kafka-mirror-maker"><span class="taxonomy-label">Kafka-Mirror-Maker</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/kerberos/" data-taxonomy-term="kerberos"><span class="taxonomy-label">Kerberos</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/keytab/" data-taxonomy-term="keytab"><span class="taxonomy-label">Keytab</span><span class="taxonomy-count">2</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/kubernetes/" data-taxonomy-term="kubernetes"><span class="taxonomy-label">Kubernetes</span><span class="taxonomy-count">4</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/kvm/" data-taxonomy-term="kvm"><span class="taxonomy-label">KVM</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/l2tp/" data-taxonomy-term="l2tp"><span class="taxonomy-label">L2TP</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/ldap/" data-taxonomy-term="ldap"><span class="taxonomy-label">LDAP</span><span class="taxonomy-count">4</span></a></li>
@@ -664,6 +687,7 @@ if (!doNotTrack) {
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/swap/" data-taxonomy-term="swap"><span class="taxonomy-label">Swap</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/syslinux/" data-taxonomy-term="syslinux"><span class="taxonomy-label">Syslinux</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/terminal/" data-taxonomy-term="terminal"><span class="taxonomy-label">Terminal</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/tls-certification/" data-taxonomy-term="tls-certification"><span class="taxonomy-label">TLS Certification</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/traditional-unix-permission/" data-taxonomy-term="traditional-unix-permission"><span class="taxonomy-label">Traditional Unix Permission</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/translation/" data-taxonomy-term="translation"><span class="taxonomy-label">Translation</span><span class="taxonomy-count">10</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/truecrypt/" data-taxonomy-term="truecrypt"><span class="taxonomy-label">TrueCrypt</span><span class="taxonomy-count">1</span></a></li>
@@ -740,7 +764,7 @@ if (!doNotTrack) {
 <li>
 <p>Добавьте в <code>/etc/hosts</code> запись для локальной реплики. Пример:</p>
 <div class="paragraph">
-<p><code>192.168.100.10 dev-ipa01.example.org</code></p>
+<p><code>192.168.100.10 dev-ipa01.example.org dev-ipa01</code></p>
 </div>
 </li>
 <li>

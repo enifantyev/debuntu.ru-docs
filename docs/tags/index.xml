@@ -6,13 +6,41 @@
     <description>Recent content in Tags on Debuntarium</description>
     <generator>Hugo</generator>
     <language>ru-RU</language>
-    <lastBuildDate>Fri, 02 Aug 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 13 Aug 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://debuntu.ru/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Acme Protocol</title>
+      <link>https://debuntu.ru/tags/acme-protocol/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://debuntu.ru/tags/acme-protocol/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cert-Manager</title>
+      <link>https://debuntu.ru/tags/cert-manager/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://debuntu.ru/tags/cert-manager/</guid>
+      <description></description>
+    </item>
     <item>
       <title>FreeIPA</title>
       <link>https://debuntu.ru/tags/freeipa/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://debuntu.ru/tags/freeipa/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kubernetes</title>
+      <link>https://debuntu.ru/tags/kubernetes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://debuntu.ru/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>TLS Certification</title>
+      <link>https://debuntu.ru/tags/tls-certification/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://debuntu.ru/tags/tls-certification/</guid>
       <description></description>
     </item>
     <item>
