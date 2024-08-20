@@ -956,8 +956,8 @@ bin/containerd-shim</pre>
 <pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">INTERNAL_REGISTRY=&#39;https://dockerhub.example.org&#39;
 
 PRIVATE_REGISTRY=&#39;nexus.example.org:5022&#39;
-PRIVATE_REGISTRY_HTTP=&#39;http://nexus.example.org:5022&#39;
-
+</span><span style="color: #FFFFFF;background-color: #231529">PRIVATE_REGISTRY_HTTP=&#39;http://$</span><span style="color: #41ff5b">{</span>PRIVATE_REGISTRY<span style="color: #41ff5b">}</span><span style="color: #fff0a6;font-weight: bold">&#39;
+</span><span style="color: #FFFFFF;background-color: #231529">
 mkdir -p /etc/containerd/certs.d/_default
 </span><span style="color: #FFFFFF;background-color: #231529">cat &lt;&lt; EOF &gt;</span><span style="color: #BBBBBB"> </span>/etc/containerd/certs.d/_default/hosts.toml
 <span style="color: #FFFFFF;background-color: #231529">[host.&#34;$</span><span style="color: #41ff5b">{</span>INTERNAL_REGISTRY<span style="color: #41ff5b">}</span><span style="color: #fff0a6;font-weight: bold">&#34;]
