@@ -44,7 +44,7 @@ cat &lt;&lt; EOF &gt; /etc/modules-load.d/containerd.conf overlay EOF modprobe o
 cat &lt;&lt; EOF &gt; /etc/modules-load.d/containerd.conf overlay EOF modprobe overlay 2. Скачивание компонентов containerd из внутреннего raw-репозитория Если внутренний репозиторий требует аутентификации, то задайте учётные данные для скачивания компонентов containerd:">
   <meta itemprop="datePublished" content="2024-05-18T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-05-18T00:00:00+00:00">
-  <meta itemprop="wordCount" content="633">
+  <meta itemprop="wordCount" content="631">
   <meta itemprop="keywords" content="Containerd,Cri">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Развёртывание containerd 1.x в изолированной среде">
@@ -1018,14 +1018,6 @@ EOF
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Задайте в переменной адрес внутреннего docker-registry:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">INTERNAL_REGISTRY=&#39;dockerhub.example.org&#39;</span></code></pre>
-</div>
-</div>
-</li>
-<li>
 <p>С помощью утилиты <code>ctr</code> убедитесь, что списки контейнеров и образов в containerd пусты:</p>
 <div class="listingblock">
 <div class="content">
@@ -1038,20 +1030,21 @@ EOF
 <p>Скачайте &#39;Hello, World&#39; для Docker’а:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">ctr images pull $</span><span style="color: #41ff5b">{</span>INTERNAL_REGISTRY<span style="color: #41ff5b">}</span>/hello-world:latest</code></pre>
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">ctr images pull --hosts-dir &#34;/etc/containerd/certs.d&#34; \
+  docker.io/hello-world:latest</span></code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">stdout:</div>
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">dockerhub.example.org/hello-world:latest:                                              resolved       |++++++++++++++++++++++++++++++++++++++|
-index-sha256:266b191e926f65542fa8daaec01a192c4d292bff79426f47300a046e1bc576fd:    done           |++++++++++++++++++++++++++++++++++++++|
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">docker.io/hello-world:latest:                                                     resolved       |++++++++++++++++++++++++++++++++++++++|
+index-sha256:53cc4d415d839c98be39331c948609b659ed725170ad2ca8eb36951288f81b75:    done           |++++++++++++++++++++++++++++++++++++++|
 manifest-sha256:e2fc4e5012d16e7fe466f5291c476431beaa1f9b90a5c2125b493ed28e2aba57: done           |++++++++++++++++++++++++++++++++++++++|
-config-sha256:d2c94e258dcb3c5ac2798d32e1249e42ef01cba4841c2234249495f87264ac5a:   done           |++++++++++++++++++++++++++++++++++++++|
 layer-sha256:c1ec31eb59444d78df06a974d155e597c894ab4cda84f08294145e845394988e:    done           |++++++++++++++++++++++++++++++++++++++|
-elapsed: 1.6 s                                                                    total:  12.0 K (7.5 KiB/s)
-unpacking linux/amd64 sha256:266b191e926f65542fa8daaec01a192c4d292bff79426f47300a046e1bc576fd...
-done: 25.375964ms</span></code></pre>
+config-sha256:d2c94e258dcb3c5ac2798d32e1249e42ef01cba4841c2234249495f87264ac5a:   done           |++++++++++++++++++++++++++++++++++++++|
+elapsed: 1.1 s                                                                    total:  12.5 K (11.4 KiB/s)
+unpacking linux/amd64 sha256:53cc4d415d839c98be39331c948609b659ed725170ad2ca8eb36951288f81b75...
+done: 31.118275ms</span></code></pre>
 </div>
 </div>
 </li>
@@ -1059,7 +1052,7 @@ done: 25.375964ms</span></code></pre>
 <p>Запустите тестовый контейнер &#39;Hello, World&#39;:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">ctr run -rm $</span><span style="color: #41ff5b">{</span>INTERNAL_REGISTRY<span style="color: #41ff5b">}</span>/hello-world:latest hello-world</code></pre>
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">ctr run -rm docker.io/hello-world:latest hello-world</span></code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -1092,7 +1085,7 @@ For more examples and ideas, visit:
 <p>Удалите ранее скачанный образ:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">ctr i rm $</span><span style="color: #41ff5b">{</span>INTERNAL_REGISTRY<span style="color: #41ff5b">}</span>/hello-world:latest</code></pre>
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">ctr i rm docker.io/hello-world:latest</span></code></pre>
 </div>
 </div>
 </li>
@@ -1115,14 +1108,13 @@ ctr i ls</span></code></pre>
 <p>Выполните:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">INTERNAL_REGISTRY=&#39;dockerhub.example.org&#39;
-
-</span><span style="color: #FFFFFF;background-color: #231529">ctr c ls   #</span>ctr containers <span style="font-weight: bold">ls</span>
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">ctr c ls   #</span>ctr containers <span style="font-weight: bold">ls</span>
 <span style="color: #FFFFFF;background-color: #231529">ctr i ls   #</span>ctr images <span style="font-weight: bold">ls</span>
-<span style="color: #FFFFFF;background-color: #231529">ctr images pull $</span><span style="color: #41ff5b">{</span>INTERNAL_REGISTRY<span style="color: #41ff5b">}</span>/hello-world:latest
-<span style="color: #FFFFFF;background-color: #231529">ctr run -rm $</span><span style="color: #41ff5b">{</span>INTERNAL_REGISTRY<span style="color: #41ff5b">}</span>/hello-world:latest hello-world
-<span style="color: #FFFFFF;background-color: #231529">ctr i rm $</span><span style="color: #41ff5b">{</span>INTERNAL_REGISTRY<span style="color: #41ff5b">}</span>/hello-world:latest
-<span style="color: #FFFFFF;background-color: #231529">ctr c ls
+<span style="color: #FFFFFF;background-color: #231529">ctr images pull --hosts-dir &#34;/etc/containerd/certs.d&#34; \
+  docker.io/hello-world:latest
+ctr run -rm docker.io/hello-world:latest hello-world
+ctr i rm docker.io/hello-world:latest
+ctr c ls
 ctr i ls</span></code></pre>
 </div>
 </div>
