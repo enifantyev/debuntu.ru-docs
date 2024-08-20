@@ -44,7 +44,7 @@ cat &lt;&lt; EOF &gt; /etc/modules-load.d/containerd.conf overlay EOF modprobe o
 cat &lt;&lt; EOF &gt; /etc/modules-load.d/containerd.conf overlay EOF modprobe overlay 2. Скачивание компонентов containerd из внутреннего raw-репозитория Если внутренний репозиторий требует аутентификации, то задайте учётные данные для скачивания компонентов containerd:">
   <meta itemprop="datePublished" content="2024-05-18T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-05-18T00:00:00+00:00">
-  <meta itemprop="wordCount" content="615">
+  <meta itemprop="wordCount" content="633">
   <meta itemprop="keywords" content="Containerd,Cri">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Развёртывание containerd 1.x в изолированной среде">
@@ -953,19 +953,27 @@ bin/containerd-shim</pre>
 <p>Выполните:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #41ff5b;font-weight: bold">INTERNAL_REGISTRY</span><span style="color: #41ff5b">=</span><span style="color: #fff0a6;font-weight: bold">&#39;http://192.168.31.250:5000&#39;</span>
-<span style="color: #FFFFFF;background-color: #231529">INTERNAL_REGISTRY=&#39;https://dockerhub.example.org&#39;
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">INTERNAL_REGISTRY=&#39;https://dockerhub.example.org&#39;
+
+PRIVATE_REGISTRY=&#39;nexus.example.org:5022&#39;
+PRIVATE_REGISTRY_HTTP=&#39;http://nexus.example.org:5022&#39;
 
 mkdir -p /etc/containerd/certs.d/_default
-
 </span><span style="color: #FFFFFF;background-color: #231529">cat &lt;&lt; EOF &gt;</span><span style="color: #BBBBBB"> </span>/etc/containerd/certs.d/_default/hosts.toml
 <span style="color: #FFFFFF;background-color: #231529">[host.&#34;$</span><span style="color: #41ff5b">{</span>INTERNAL_REGISTRY<span style="color: #41ff5b">}</span><span style="color: #fff0a6;font-weight: bold">&#34;]
 </span><span style="color: #FFFFFF;background-color: #231529">  capabilities = [&#34;pull&#34;, &#34;resolve&#34;]
 </span><span style="color: #FFFFFF;background-color: #231529">  #</span>skip_verify <span style="color: #41ff5b">=</span> <span style="font-weight: bold">true</span>
 <span style="color: #FFFFFF;background-color: #231529">EOF
 
+</span><span style="color: #FFFFFF;background-color: #231529">mkdir -p /etc/containerd/certs.d/$</span><span style="color: #41ff5b">{</span>PRIVATE_REGISTRY<span style="color: #41ff5b">}</span>
+<span style="color: #FFFFFF;background-color: #231529">cat &lt;&lt; EOF &gt;</span><span style="color: #BBBBBB"> </span>/etc/containerd/certs.d/<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">PRIVATE_REGISTRY</span><span style="color: #FFF02A;font-weight: bold">}</span>/hosts.toml
+<span style="color: #FFFFFF;background-color: #231529">[host.&#34;$</span><span style="color: #41ff5b">{</span>PRIVATE_REGISTRY_HTTP<span style="color: #41ff5b">}</span><span style="color: #fff0a6;font-weight: bold">&#34;]
+</span><span style="color: #FFFFFF;background-color: #231529">  capabilities = [&#34;pull&#34;, &#34;resolve&#34;]
+  inscure_skip_verify = true
+EOF
+
 </span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>Поиск строки .registry и замена следующей строки на
-<span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>config_path <span style="color: #41ff5b">=</span> <span style="color: #FAAF4C;font-weight: bold">\&#34;</span>/etc/containerd/certs.d<span style="color: #FAAF4C;font-weight: bold">\&#34;</span>
+<span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>config_path <span style="color: #41ff5b">=</span> <span style="color: #fff0a6;font-weight: bold">&#34;/etc/containerd/certs.d&#34;</span>
 <span style="color: #FFFFFF;background-color: #231529">sed -i &#39;/\.registry\]/{ n;</span><span style="color: #BBBBBB"> </span>s|config_path <span style="color: #41ff5b">=</span> .<span style="color: #FFF02A;font-weight: bold">*</span>|config_path <span style="color: #41ff5b">=</span> <span style="color: #FAAF4C;font-weight: bold">\&#34;</span>/etc/containerd/certs.d<span style="color: #FAAF4C;font-weight: bold">\&#34;</span>|g <span style="color: #41ff5b">}</span><span style="color: #fff0a6;font-weight: bold">&#39; /etc/containerd/config.toml</span></code></pre>
 </div>
 </div>
