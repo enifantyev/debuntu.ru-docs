@@ -208,8 +208,8 @@ if (!doNotTrack) {
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerov-li">
   <a href="/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/" title="containerd. Среда выполнения контейнеров" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerov"><span class="">containerd-sreda-vypolnenia-konteinerov</span></a>
   <ul class="ul-4 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-konteynera-1-x-v-izolirovannoy-srede-li">
-  <a href="/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/razvortyvaniye-konteynera-1-x-v-izolirovannoy-srede/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-konteynera-1-x-v-izolirovannoy-srede"><span class="">Развёртывание containerd 1.x в изолированной среде</span></a>
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-containerd-1-x-v-izolirovannoy-srede-li">
+  <a href="/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/razvortyvaniye-containerd-1-x-v-izolirovannoy-srede/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-containerd-1-x-v-izolirovannoy-srede"><span class="">Развёртывание containerd 1.x в изолированной среде</span></a>
 </li>
   </ul>
 </li>
@@ -748,7 +748,7 @@ if (!doNotTrack) {
 FILENAME=&#34;apache-atlas-2.2.0_rs-api-2.1.1.tar.bz2&#34;
 
 set +o history
-NXUSERPASS=&#34;eugene:xxxxxxxxxxxxx&#34;
+NXUSERPASS=&#34;dmr:xxxxxxxxxxxxx&#34;
 set -o history
 
 ## Скачиваем сборку с Nexus&#39;а
@@ -767,7 +767,7 @@ sudo ln -s /opt/${ATLASDIR} /opt/atlas
 <p>Этот принципал — &lsquo;atlas/$(hostname)&rsquo; — используется для Kerberos-аутентификации Atlas&rsquo;а в различных Hadoop-сервисах.</p>
 <p>2.1.1. Напомню, что последующие получения ключей необходимо выполнять с опцией &lsquo;-r&rsquo;, иначе вместо получения keytab&rsquo;а с существующим kerberos-ключём, будет создан новый ключ с новым номером KVNO (key version number), вследствие чего уже работающие сервисы Atlas&rsquo;а перестанут аутентифицироваться и потребуется повторить для них получение ключей с последующим перезапуском сервиса:</p>
 <pre tabindex="0"><code>REALMNAME=&#34;$(hostname -d | tr [:lower:] [:upper:])&#34;
-IPAADMIN=&#34;eugene&#34;
+IPAADMIN=&#34;dmr&#34;
 
 ## При необходимости получаем kerberos-билет
 # kinit ${IPAADMIN}
@@ -1318,7 +1318,7 @@ rangertagsync=RANGER_TAG_SYNC::0afe7a1968b07d4c3ff4ed8c2d809a32ffea706c66cd795ea
 <p>Не работает для автоматического входа, хотя браузер настроен и Kerberos-билет в наличии. Автоматический вход не происходит. При попытке ввода учётных данных высвечивается ошибка Error while authentication.</p>
 <p>Получение keytab&rsquo;а для принципала <a href="mailto:HTTP/_HOST@TEST.LAN">HTTP/_HOST@TEST.LAN</a>, обязательно без пересоздания его (-r опция), так как перестанут работать уже настроенные роли Cloudera-кластера, вследствие чего будет необходимо выполнить перегенерацию kerberos-принципалов средствами Cloudera Manager&rsquo;а:</p>
 <pre tabindex="0"><code>REALMNAME=&#34;EXAMPLE.ORG&#34;
-IPAADMIN=&#34;eugene&#34;
+IPAADMIN=&#34;dmr&#34;
 #kinit
 
 ipa service-allow-retrieve-keytab HTTP/$(hostname)@${REALMNAME} --users=${IPAADMIN}

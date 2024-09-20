@@ -532,7 +532,7 @@ if (!doNotTrack) {
 </span></span></code></pre></div><p>Создаём keytab для сервисной УЗ &lsquo;kafdrop&rsquo;:</p>
 <div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>SERVICE=&#34;kafdrop&#34;
 </span></span><span style="display:flex;"><span>REALMNAME=&#34;$(hostname -d | tr [:lower:] [:upper:])&#34;
-</span></span><span style="display:flex;"><span>IPAADMIN=&#34;eugene&#34;
+</span></span><span style="display:flex;"><span>IPAADMIN=&#34;dmr&#34;
 </span></span><span style="display:flex;"><span> 
 </span></span><span style="display:flex;"><span>#<span style="color:#007f7f"># При необходимости получаем kerberos-билет</span>
 </span></span><span style="display:flex;"><span># kinit <span style="color:#0ff;font-weight:bold">${</span>IPAADMIN<span style="color:#0ff;font-weight:bold">}</span>

@@ -208,8 +208,8 @@ if (!doNotTrack) {
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerov-li">
   <a href="/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/" title="containerd. Среда выполнения контейнеров" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerov"><span class="">containerd-sreda-vypolnenia-konteinerov</span></a>
   <ul class="ul-4 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-konteynera-1-x-v-izolirovannoy-srede-li">
-  <a href="/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/razvortyvaniye-konteynera-1-x-v-izolirovannoy-srede/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-konteynera-1-x-v-izolirovannoy-srede"><span class="">Развёртывание containerd 1.x в изолированной среде</span></a>
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-containerd-1-x-v-izolirovannoy-srede-li">
+  <a href="/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/razvortyvaniye-containerd-1-x-v-izolirovannoy-srede/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-containerd-1-x-v-izolirovannoy-srede"><span class="">Развёртывание containerd 1.x в изолированной среде</span></a>
 </li>
   </ul>
 </li>
@@ -721,7 +721,7 @@ EOF
 
 hdfs dfs -put ${TESTFILENAME}
 </code></pre><p>1.2. Есть вероятность что аккаунт hive, которого чуть позже заставим импортировать данные из файла в таблицу, не имеет прав на домашний каталог + созданный файл, поэтому выдаём права:</p>
-<pre tabindex="0"><code>HDFSHOMEDIR=&#34;/user/eugene&#34;
+<pre tabindex="0"><code>HDFSHOMEDIR=&#34;/user/dmr&#34;
 
 hdfs dfs -setfacl -m user:hive:rwx ${HDFSHOMEDIR}
 hdfs dfs -setfacl -m user:hive:rw ${TESTFILENAME}
@@ -729,7 +729,7 @@ hdfs dfs -setfacl -m user:hive:rw ${TESTFILENAME}
 <pre tabindex="0"><code>$ beeline
 
 beeline&gt; !connect jdbc:hive2://dev-aux110p.test2.lan:10000/;ssl=true;sslTrustStore=/usr/java/jdk1.8.0_181-cloudera/jre/lib/security/jssecacerts
-Enter username for jdbc:hive2://dev-aux110p.test2.lan:10000/: eugene
+Enter username for jdbc:hive2://dev-aux110p.test2.lan:10000/: dmr
 Enter password for jdbc:hive2://dev-aux110p.test2.lan:10000/: ******************
 
 0: jdbc:hive2://dev-aux110p.test2.lan:100&gt; show databases;
@@ -738,7 +738,7 @@ Enter password for jdbc:hive2://dev-aux110p.test2.lan:10000/: ******************
 +-------------------+
 | michael_test  |
 | default           |
-| eugenetest    |
+| dmrtest    |
 +-------------------+
 </code></pre><p>1.4. Выполняем создание новой базы данных:</p>
 <pre tabindex="0"><code>0: jdbc:hive2://dev-aux110p.test2.lan:100&gt; create database atlas25;
@@ -767,12 +767,12 @@ EOF
 
 hdfs dfs -put ${TESTFILENAME}
 </code></pre><p>2.2. На машине с ролью &lsquo;HBase Gateway&rsquo; получаем kerberos-тикет и создаём HBase-таблицу &lsquo;atlas26&rsquo;:</p>
-<pre tabindex="0"><code>kinit eugene
+<pre tabindex="0"><code>kinit dmr
 echo &#34;create &#39;atlas26&#39;, &#39;n&#39;, &#39;hook&#39;&#34; | hbase shell
 </code></pre><p>2.3. Импортируем данные из файла <code>atlas26.csv</code> в созданную HBase-таблицу:</p>
 <pre tabindex="0"><code>$ hbase org.apache.hadoop.hbase.mapreduce.ImportTsv \
 -Dimporttsv.separator=&#39;,&#39; \
--Dimporttsv.columns=HBASE_ROW_KEY,n,hook atlas26 /user/eugene/atlas26.csv
+-Dimporttsv.columns=HBASE_ROW_KEY,n,hook atlas26 /user/dmr/atlas26.csv
 </code></pre><p>2.4. Проверяем содержимое таблицы (впрочем это не обязательно):</p>
 <pre tabindex="0"><code>$ echo &#34;scan &#39;atlas26&#39;&#34; | hbase shell
 ...

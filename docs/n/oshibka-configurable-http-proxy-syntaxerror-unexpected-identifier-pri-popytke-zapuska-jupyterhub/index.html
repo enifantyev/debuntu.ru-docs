@@ -530,7 +530,7 @@ jupyterhub: File &#34;/opt/jupyterhub/lib64/python3.6/site-packages/jupyterhub/p
 jupyterhub: raise e from None
 jupyterhub: RuntimeError: Proxy failed to start with exit code 1
 </code></pre><p>Повторяем ошибку ручным запуском <code>configurable-http-proxy</code>:</p>
-<pre tabindex="0"><code>[eugene@localhost ~]$ configurable-http-proxy
+<pre tabindex="0"><code>[dmr@localhost ~]$ configurable-http-proxy
 /usr/lib/node_modules/configurable-http-proxy/node_modules/prom-client/lib/registry.js:25
         async getMetricAsPrometheusString(metric) {
               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -547,10 +547,10 @@ SyntaxError: Unexpected identifier
     at require (internal/module.js:20:19)
     at Object.&lt;anonymous&gt; (/usr/lib/node_modules/configurable-http-proxy/node_modules/prom-client/index.js:8:20)
 </code></pre><p>Узнал версию установленного пакета <code>configurable-http-proxy</code>:</p>
-<pre tabindex="0"><code>[eugene@localhost ~]$ configurable-http-proxy -V
+<pre tabindex="0"><code>[dmr@localhost ~]$ configurable-http-proxy -V
 4.4.0
 </code></pre><p>В <a href="https://github.com/jupyterhub/configurable-http-proxy/releases">репозитории домашнего сайта пакета</a> определил предыдущую версию пакета: 4.3.2 и попробовал установить её:</p>
-<pre tabindex="0"><code>[eugene@localhost ~]$ npm install -g configurable-http-proxy@4.3.2
+<pre tabindex="0"><code>[dmr@localhost ~]$ npm install -g configurable-http-proxy@4.3.2
 /usr/bin/configurable-http-proxy -&gt; /usr/lib/node_modules/configurable-http-proxy/bin/configurable-http-proxy
 - bintrees@1.0.1 node_modules/configurable-http-proxy/node_modules/bintrees
 - tdigest@0.1.1 node_modules/configurable-http-proxy/node_modules/tdigest
@@ -566,8 +566,8 @@ SyntaxError: Unexpected identifier
 15:49:41.669 [ConfigProxy] info: Proxy API at http://localhost:8001/api/routes
 ^C15:49:46.740 [ConfigProxy] warn: Interrupted
 </code></pre><p>Повторил запуск &lsquo;jupyterhub.service&rsquo;, на этот раз успешный:</p>
-<pre tabindex="0"><code>[eugene@localhost ~]$ sudo systemctl start jupyterhub.service
-[eugene@localhost ~]$ sudo systemctl status jupyterhub.service
+<pre tabindex="0"><code>[dmr@localhost ~]$ sudo systemctl start jupyterhub.service
+[dmr@localhost ~]$ sudo systemctl status jupyterhub.service
 ● jupyterhub.service - JupyterHub
    Loaded: loaded (/opt/jupyterhub/etc/systemd/jupyterhub.service; enabled; vendor preset: disabled)
    Active: active (running) since Wed 2021-07-07 16:08:58 MSK;

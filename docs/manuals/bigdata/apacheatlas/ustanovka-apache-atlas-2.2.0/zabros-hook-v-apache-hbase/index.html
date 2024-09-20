@@ -209,8 +209,8 @@ if (!doNotTrack) {
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerov-li">
   <a href="/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/" title="containerd. Среда выполнения контейнеров" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerov"><span class="">containerd-sreda-vypolnenia-konteinerov</span></a>
   <ul class="ul-4 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-konteynera-1-x-v-izolirovannoy-srede-li">
-  <a href="/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/razvortyvaniye-konteynera-1-x-v-izolirovannoy-srede/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-konteynera-1-x-v-izolirovannoy-srede"><span class="">Развёртывание containerd 1.x в изолированной среде</span></a>
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-containerd-1-x-v-izolirovannoy-srede-li">
+  <a href="/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/razvortyvaniye-containerd-1-x-v-izolirovannoy-srede/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-containerd-1-x-v-izolirovannoy-srede"><span class="">Развёртывание containerd 1.x в изолированной среде</span></a>
 </li>
   </ul>
 </li>
@@ -715,7 +715,7 @@ if (!doNotTrack) {
 <p>2.1. На хостах с ролью &lsquo;HBase Master&rsquo; создаём atlas-каталоги и скачиваем с Nexus&rsquo;а необходимый файл:</p>
 <pre tabindex="0"><code>FILENAME=&#34;?????????????????????????&#34;
 set +o history
-NXUSERPASS=&#34;eugene:xxxxxxxxxxxxx&#34;
+NXUSERPASS=&#34;dmr:xxxxxxxxxxxxx&#34;
 set -o history
 DIR=&#34;apache-atlas-2.2.0_cdh6.3.2_j8.181_mvn3.8.1&#34;
 
@@ -771,7 +771,7 @@ atlas.jaas.KafkaClient.option.principal=atlas/_HOST@${REALMNAME}
 EOF
 </code></pre><p>2.4. Создаём, если таковой ещё не был сгененирован, и получаем новый keytab. Напомню, что <!-- raw HTML omitted -->последующие получения keytab&rsquo;а необходимо выполнять с опцией &lsquo;-r&rsquo;, иначе вместо получения существующего keytab&rsquo;а будет создан новый keytab<!-- raw HTML omitted -->, вследствие чего уже работающие сервисы Atlas&rsquo;а перестанут аутентифицировать и потребуется повторить для них получение keytab&rsquo;ов и перезапустить сервисы:</p>
 <pre tabindex="0"><code>REALMNAME=&#34;$(hostname -d | tr [:lower:] [:upper:])&#34;
-IPAADMIN=&#34;eugene&#34;
+IPAADMIN=&#34;dmr&#34;
 # Закомментировать след строку, если генерируем новый ключ для keytab&#39;а.
 OPTION=&#34;-r&#34;
 

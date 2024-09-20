@@ -210,8 +210,8 @@ if (!doNotTrack) {
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerov-li">
   <a href="/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/" title="containerd. Среда выполнения контейнеров" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerov"><span class="">containerd-sreda-vypolnenia-konteinerov</span></a>
   <ul class="ul-4 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-konteynera-1-x-v-izolirovannoy-srede-li">
-  <a href="/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/razvortyvaniye-konteynera-1-x-v-izolirovannoy-srede/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-konteynera-1-x-v-izolirovannoy-srede"><span class="">Развёртывание containerd 1.x в изолированной среде</span></a>
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-containerd-1-x-v-izolirovannoy-srede-li">
+  <a href="/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/razvortyvaniye-containerd-1-x-v-izolirovannoy-srede/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-containerd-1-x-v-izolirovannoy-srede"><span class="">Развёртывание containerd 1.x в изолированной среде</span></a>
 </li>
   </ul>
 </li>
@@ -739,10 +739,10 @@ if (!doNotTrack) {
 </ul>
 <h2 id="заметки">Заметки</h2>
 <ul>
-<li>Если в DAG&rsquo;е указать &lsquo;run_as_user&rsquo;: &rsquo;eugene&rsquo;, то Airflow запускает процесс от имени пользователя командой <code>sudo -E -H</code>, в результате которой процесс пользователя наследует переменные родительского процесса, а переменная HOME меняется на пользовательскую директорию в <code>/home</code>.</li>
+<li>Если в DAG&rsquo;е указать &lsquo;run_as_user&rsquo;: &lsquo;dmr&rsquo;, то Airflow запускает процесс от имени пользователя командой <code>sudo -E -H</code>, в результате которой процесс пользователя наследует переменные родительского процесса, а переменная HOME меняется на пользовательскую директорию в <code>/home</code>.</li>
 <li>Надо дать права на рабочую папку airflow для группы пользователей <code>_airflow-dev</code>, так как запускаемый дочерний run_as процесс от имени пользователя, должен иметь право на запись в рабочую папку Airflow.</li>
 <li>Установку python-пакетов следует производить под учётной записью пользователя. Лишь пакеты airflow должны быть установлены под системной учётной записью.</li>
-<li>Разграничение DAG&rsquo;ов между пользователями задаётся внутри DAG&rsquo;а строкой: &lsquo;owner&rsquo;: &rsquo;eugene&rsquo;.</li>
+<li>Разграничение DAG&rsquo;ов между пользователями задаётся внутри DAG&rsquo;а строкой: &lsquo;owner&rsquo;: &lsquo;dmr&rsquo;.</li>
 <li>В <code>/etc/pip.conf</code> необходимо добавить python-репо в Nexus&rsquo;е с пользовательскими библиотеками, чтобы пользователь мог вызвать <code>pip install</code> прямо из своего кода, без дополнительных операций.</li>
 <li>Для сборки некоторых python-пакетов (найти где я это делал), pydoop, и ещё один пакет, &hellip;., требуется установить компилятор gcc-c++, полный пакет явы с инструментами разработчика.</li>
 <li>Kerberos-аутентификация, как для входа пользователей в Web UI, так и для подлключения к службам в hadoop-кластере, не работает в Apache Airflow из-за использования древнего python-пакета <code>python-krbV</code>, написанного под python2.7 много лет назад. Неизвестно, когда будет решена эта проблема.</li>
@@ -901,7 +901,7 @@ sudo chmod 400 /etc/airflow/psql-pass.txt
 <li>Проверяем, что сертификат добавлен и будет обновляться в срок (auto-renew: yes).</li>
 <li>Добавляем CNAME-запись в DNS-зону.</li>
 </ol>
-<pre tabindex="0"><code># kinit eugene
+<pre tabindex="0"><code># kinit dmr
 # ipa service-add-principal HTTP/srv-app100.example.org HTTP/airf1.example.org
 -------------------------------------------------------------------------------------
 Added new aliases to the service principal &#34;HTTP/srv-app100.example.org@EXAMPLE.ORG&#34;

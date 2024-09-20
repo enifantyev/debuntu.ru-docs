@@ -513,10 +513,10 @@ if (!doNotTrack) {
   Имя учётной записи: hbase/prod-hbr01p.example.org@EXAMPLE.ORG
   Псевдоним учётной записи: hbase/prod-hbr01p.example.org@EXAMPLE.ORG
   Managed by: prod-hbr01p.example.org
-  Пользователи, которым разрешено получать таблицу ключей: eugene
+  Пользователи, которым разрешено получать таблицу ключей: dmr
 </code></pre><p>Получаем таблицу ключей и сохраняем её в файле:</p>
 <pre tabindex="0"><code>$ ipa-getkeytab -r -p hbase/$(hostname) -k ~/keytabs/hbase_$(hostname -s).keytab
-  Keytab successfully retrieved and stored in: /home/eugene/keytabs/hbase_prod-hbr01p.keytab
+  Keytab successfully retrieved and stored in: /home/dmr/keytabs/hbase_prod-hbr01p.keytab
 </code></pre><p>Всё ещё имея свой персональный kerberos-билет, отнимаем у себя право получения таблицы ключей:</p>
 <pre tabindex="0"><code>ipa service-disallow-retrieve-keytab hbase/$(hostname) --users=$USER
 </code></pre><p>Используем полученный keytab для выпуска билета:</p>

@@ -210,8 +210,8 @@ if (!doNotTrack) {
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerov-li">
   <a href="/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/" title="containerd. Среда выполнения контейнеров" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerov"><span class="">containerd-sreda-vypolnenia-konteinerov</span></a>
   <ul class="ul-4 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-konteynera-1-x-v-izolirovannoy-srede-li">
-  <a href="/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/razvortyvaniye-konteynera-1-x-v-izolirovannoy-srede/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-konteynera-1-x-v-izolirovannoy-srede"><span class="">Развёртывание containerd 1.x в изолированной среде</span></a>
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-containerd-1-x-v-izolirovannoy-srede-li">
+  <a href="/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/razvortyvaniye-containerd-1-x-v-izolirovannoy-srede/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-containerd-1-x-v-izolirovannoy-srede"><span class="">Развёртывание containerd 1.x в изолированной среде</span></a>
 </li>
   </ul>
 </li>
@@ -778,15 +778,15 @@ EOF
 <pre tabindex="0"><code>sudo systemctl daemon-reload
 sudo systemctl enable --now stunnel
 </code></pre><h2 id="получение-сертификата-пользователя">Получение сертификата пользователя</h2>
-<p>На своей рабочей машине создаём свой приватный ключ <code>eugene.key</code>и запрос на сертификацию <code>cert.csr</code> (опция &lsquo;-nodes&rsquo; опускает задание пароля для ключа):</p>
-<pre tabindex="0"><code>$ openssl req -new -newkey rsa:4096 -nodes -keyout eugene.key -out cert.csr -subj &#39;/CN=eugene&#39;
+<p>На своей рабочей машине создаём свой приватный ключ <code>dmr.key</code>и запрос на сертификацию <code>cert.csr</code> (опция &lsquo;-nodes&rsquo; опускает задание пароля для ключа):</p>
+<pre tabindex="0"><code>$ openssl req -new -newkey rsa:4096 -nodes -keyout dmr.key -out cert.csr -subj &#39;/CN=dmr&#39;
 Generating a RSA private key
 ...........++++
 .........++++
-writing new private key to &#39;eugene.key&#39;
+writing new private key to &#39;dmr.key&#39;
 </code></pre><p>&lt;Здесь дописать процедуру получения TLS-сертификата из FreeIPA с помощью созданного файла с запросом на сертификацию.&gt;</p>
 <p>После получения сертификата, вычисляем его hash:</p>
-<pre tabindex="0"><code>$ openssl x509 -hash -noout -in eugene.crt
+<pre tabindex="0"><code>$ openssl x509 -hash -noout -in dmr.crt
 0518aad7
 </code></pre><p>Создаём на сервере в каталоге <code>/etc/stunnel/certs</code> файл <code>0518aad7.0</code> с содержимым, копией содержимого полученного сертификата. Цифра в расширении имени файла означает порядковый номер. Следующему добавленному сертификату дадим имя <code>xxxxxxxx.1</code>.</p>
 <p>Возможно, что на сервере, после добавления очередного сертификата, потребуется перезапустить демон tunnel:</p>
@@ -807,8 +807,8 @@ accept = 127.0.0.1:2222
 connect = 10.1.61.28:2222
 
 CAfile = /home/user/.config/stunnel/ca.crt
-cert = /home/user/.config/stunnel/eugene_example.org.pub
-key = /home/user/.config/stunnel/eugene.key
+cert = /home/user/.config/stunnel/dmr_example.org.pub
+key = /home/user/.config/stunnel/dmr.key
 
 verifyChain = yes
 EOF
@@ -822,7 +822,7 @@ EOF
 chmod u+x ~/.local/bin/stun1
 </code></pre><p>С этого момента можно запускать туннель командой <code>stun1</code> при условии, что в переменной PATH указан путь <code>~/.local/bin</code>.</p>
 <p>Добавляем Alias для входа на удалённый sshd через TLS-туннель:</p>
-<pre tabindex="0"><code>alias ssh1=&#34;ssh -p 2222 eugene@127.0.0.1&#34;
+<pre tabindex="0"><code>alias ssh1=&#34;ssh -p 2222 dmr@127.0.0.1&#34;
 </code></pre><p>При желании, можно добавить этот Alias в <code>~/.bashrc</code>.</p>
 <h2 id="процедура-подключения-к-ssh-серверу">Процедура подключения к ssh-серверу</h2>
 <p>Поднимаем туннель и подключаемся через него к удалённому серверу:</p>

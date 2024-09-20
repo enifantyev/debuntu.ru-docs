@@ -211,8 +211,8 @@ if (!doNotTrack) {
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerov-li">
   <a href="/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/" title="containerd. Среда выполнения контейнеров" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerov"><span class="">containerd-sreda-vypolnenia-konteinerov</span></a>
   <ul class="ul-4 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-konteynera-1-x-v-izolirovannoy-srede-li">
-  <a href="/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/razvortyvaniye-konteynera-1-x-v-izolirovannoy-srede/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-konteynera-1-x-v-izolirovannoy-srede"><span class="">Развёртывание containerd 1.x в изолированной среде</span></a>
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-containerd-1-x-v-izolirovannoy-srede-li">
+  <a href="/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/razvortyvaniye-containerd-1-x-v-izolirovannoy-srede/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-containerd-1-x-v-izolirovannoy-srede"><span class="">Развёртывание containerd 1.x в изолированной среде</span></a>
 </li>
   </ul>
 </li>
@@ -808,9 +808,9 @@ Pi is roughly 3.146675733378667
 <li>В логе Spark History Server видны записи:
 <pre tabindex="0"><code>FsHistoryProvider
 Unable to read log hdfs://test1/user/spark/applicationHistory/application_1627632320956_0001
-org.apache.hadoop.security.AccessControlException: Permission denied: user=spark, access=READ, inode=&#34;/user/spark/applicationHistory/application_1627632320956_0001&#34;:eugene:spark:-rwxrwx---
+org.apache.hadoop.security.AccessControlException: Permission denied: user=spark, access=READ, inode=&#34;/user/spark/applicationHistory/application_1627632320956_0001&#34;:dmr:spark:-rwxrwx---
 ...
-Caused by: org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.security.AccessControlException): Permission denied: user=spark, access=READ, inode=&#34;/user/spark/applicationHistory/application_1627632320956_0001&#34;:eugene:spark:-rwxrwx---
+Caused by: org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.security.AccessControlException): Permission denied: user=spark, access=READ, inode=&#34;/user/spark/applicationHistory/application_1627632320956_0001&#34;:dmr:spark:-rwxrwx---
 </code></pre></li>
 </ol>
 <h4 id="сбор-данных">Сбор данных</h4>
@@ -821,12 +821,12 @@ Caused by: org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.security.Acce
 drwxr-xr-x   - hdfs supergroup      0     2021-07-12 16:09 /user
 drwxr-x--x   - spark spark          0     2021-07-02 16:22 /user/spark
 drwxrwxrwt   - spark spark          0     2021-07-30 11:15 /user/spark/applicationHistory
--rwxrwx---   3 eugene spark     45499     2021-07-30 11:15 /user/spark/applicationHistory/application_1627632320956_0001
+-rwxrwx---   3 dmr spark     45499     2021-07-30 11:15 /user/spark/applicationHistory/application_1627632320956_0001
 </code></pre></li>
 <li>
-<p>Исходные файлы истории создаются в <code>/tmp/logs/eugene/logs</code>. После чего копируются в <code>/user/spark/applicationHistory</code>:</p>
-<pre tabindex="0"><code>$ hdfs dfs -ls /tmp/logs/eugene/logs
-drwxrwx---   - eugene hadoop          0 2021-07-30 11:15 /tmp/logs/eugene/logs/application_1627632320956_0001
+<p>Исходные файлы истории создаются в <code>/tmp/logs/dmr/logs</code>. После чего копируются в <code>/user/spark/applicationHistory</code>:</p>
+<pre tabindex="0"><code>$ hdfs dfs -ls /tmp/logs/dmr/logs
+drwxrwx---   - dmr hadoop          0 2021-07-30 11:15 /tmp/logs/dmr/logs/application_1627632320956_0001
 </code></pre></li>
 </ol>
 <h4 id="лечение">Лечение</h4>

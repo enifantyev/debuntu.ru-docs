@@ -210,8 +210,8 @@ if (!doNotTrack) {
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerov-li">
   <a href="/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/" title="containerd. Среда выполнения контейнеров" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerov"><span class="">containerd-sreda-vypolnenia-konteinerov</span></a>
   <ul class="ul-4 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-konteynera-1-x-v-izolirovannoy-srede-li">
-  <a href="/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/razvortyvaniye-konteynera-1-x-v-izolirovannoy-srede/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-konteynera-1-x-v-izolirovannoy-srede"><span class="">Развёртывание containerd 1.x в изолированной среде</span></a>
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-containerd-1-x-v-izolirovannoy-srede-li">
+  <a href="/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/razvortyvaniye-containerd-1-x-v-izolirovannoy-srede/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-containerd-1-x-v-izolirovannoy-srede"><span class="">Развёртывание containerd 1.x в изолированной среде</span></a>
 </li>
   </ul>
 </li>
@@ -753,10 +753,10 @@ if (!doNotTrack) {
 После скачивания свежего файла с зависимостями дл apache-airflow, необходимо изменить в этом файле строку &lsquo;Flask-AppBuilder==3.1.1&rsquo; на &lsquo;Flask-AppBuilder==3.2.0&rsquo;, чтобы заработал мэппинг между пользовательскими группами в IPA и ролями в Airflow.
 Для уже установленных экземпляров Airflow, можно изменить соответствующую строку в файле &lsquo;/usr/local/lib/python3.6/site-packages/apache_airflow-2.0.1.dist-info/METADATA&rsquo;.</li>
 <li>Если пользовательские DAG&rsquo;и запускаются через &lsquo;run_as_user&rsquo;, то необходимо обеспечить чтение файла <code>/etc/airflow/airflow.cfg</code> этими пользователями, иначе DAG&rsquo;и не будут выполнены с ошибкой &lsquo;airflow.exceptions.AirflowConfigException: error: cannot use sqlite version &lt; 3.15.0&rsquo;</li>
-<li>Если в DAG&rsquo;е указать &lsquo;run_as_user&rsquo;: &rsquo;eugene&rsquo;, то Airflow запускает процесс от имени пользователя командой <code>sudo -E -H -u eugene</code>, в результате которой процесс пользователя наследует переменные родительского процесса, а переменная HOME меняется на пользовательскую директорию в /home.</li>
+<li>Если в DAG&rsquo;е указать &lsquo;run_as_user&rsquo;: &lsquo;dmr&rsquo;, то Airflow запускает процесс от имени пользователя командой <code>sudo -E -H -u dmr</code>, в результате которой процесс пользователя наследует переменные родительского процесса, а переменная HOME меняется на пользовательскую директорию в /home.</li>
 <li>Надо дать права на подпапки в рабочей папке airflow для группы пользователей prod_airflow_airf1, так как запускаемый дочерний run_as процесс от имени пользователя, должен иметь право на запись в рабочую папку Airflow.</li>
 <li>Установку python-пакетов производить под учётной записью пользователя. Лишь пакеты airflow должны быть установлены под системной учётной записью.</li>
-<li>Разграничение DAG&rsquo;ов между пользователями задаётся внутри DAG&rsquo;а строкой: &lsquo;owner&rsquo;: &rsquo;eugene&rsquo;. Это не работает во второй версии Airflow?</li>
+<li>Разграничение DAG&rsquo;ов между пользователями задаётся внутри DAG&rsquo;а строкой: &lsquo;owner&rsquo;: &lsquo;dmr&rsquo;. Это не работает во второй версии Airflow?</li>
 <li>В /etc/pip.conf необходимо добавить python-репо в Nexus&rsquo;е с пользовательскими библиотеками, чтобы пользователь мог вызвать pip install прямо из своего кода, без дополнительных операций?</li>
 <li>Для сборки некоторых python-пакетов (найти где я это делал), pydoop, и ещё один пакет, &hellip;., требуется установить компилятор gcc-c++, полный пакет явы с инструментами разработчика.</li>
 </ul>

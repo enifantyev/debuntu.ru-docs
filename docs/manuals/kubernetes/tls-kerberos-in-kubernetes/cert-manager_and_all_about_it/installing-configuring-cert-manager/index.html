@@ -50,7 +50,7 @@ SUBDOMAIN_NAME=&#39;k8s.example.org&#39; 1.3. Создание TSIG-ключа �
 TSIG_KEY_NAME=&#34;${SUBDOMAIN_NAME}-acme&#34; tsig-keygen -a hmac-sha512 ${TSIG_KEY_NAME} | tee -a /etc/named/ipa-ext.">
   <meta itemprop="datePublished" content="2024-08-13T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-08-13T00:00:00+00:00">
-  <meta itemprop="wordCount" content="962">
+  <meta itemprop="wordCount" content="1021">
   <meta itemprop="keywords" content="FreeIPA,Kubernetes,Cert-Manager,Acme Protocol,TLS Certification">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Установка и настройка cert-manager">
@@ -225,8 +225,8 @@ if (!doNotTrack) {
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerov-li">
   <a href="/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/" title="containerd. Среда выполнения контейнеров" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerov"><span class="">containerd-sreda-vypolnenia-konteinerov</span></a>
   <ul class="ul-4 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-konteynera-1-x-v-izolirovannoy-srede-li">
-  <a href="/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/razvortyvaniye-konteynera-1-x-v-izolirovannoy-srede/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-konteynera-1-x-v-izolirovannoy-srede"><span class="">Развёртывание containerd 1.x в изолированной среде</span></a>
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-containerd-1-x-v-izolirovannoy-srede-li">
+  <a href="/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/razvortyvaniye-containerd-1-x-v-izolirovannoy-srede/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-containerd-1-x-v-izolirovannoy-srede"><span class="">Развёртывание containerd 1.x в изолированной среде</span></a>
 </li>
   </ul>
 </li>
@@ -1114,9 +1114,37 @@ SUBDOMAIN_NAME=&#39;k8s.example.org&#39;
 </li>
 </ol>
 </div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Здесь дописать проверку попадания в secret tsig-ключа, правильно закодированного на основе base64. Были прецеденты несоответствия.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_добавление_сертификата_центра_сертификации_freeipa_в_именованное_пространство_cert_managerа">4.2. Добавление сертификата Центра Сертификации FreeIPA в именованное пространство cert-manager’а</h3>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Пересмотреть этот пункт. Вместо добавления CA-сертификата в namespace, будет удобней добавить его прямо в нижеописанный ClusterIssuer, как описано в <a href="https://cert-manager.io/docs/configuration/acme/#private-acme-servers" class="bare">https://cert-manager.io/docs/configuration/acme/#private-acme-servers</a>. Спасибо <strong>Andrey Shingiriy</strong> из Фланта за подсказку.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1140,6 +1168,20 @@ INT_CA_CRT_FILE=&#39;ca-certificates.crt&#39;
 </div>
 <div class="sect2">
 <h3 id="_создание_выпускателя_tls_сертификатов">4.3. Создание выпускателя TLS-сертификатов</h3>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>В этом пункте необходимо добавить CA-сертификат прямо в ClusterIssuer, как описано в <a href="https://cert-manager.io/docs/configuration/acme/#private-acme-servers" class="bare">https://cert-manager.io/docs/configuration/acme/#private-acme-servers</a>.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1178,7 +1220,9 @@ spec:
 <span style="color: #FFFFFF;background-color: #231529">        selector:
           dnsZones:
 </span><span style="color: #FFFFFF;background-color: #231529">            - $</span><span style="color: #41ff5b">{</span>SUBDOMAIN_NAME<span style="color: #41ff5b">}</span>
-<span style="color: #FFFFFF;background-color: #231529">EOF</span></code></pre>
+<span style="color: #FFFFFF;background-color: #231529">EOF
+
+kunectl apply -f issuer.yaml</span></code></pre>
 </div>
 </div>
 </li>

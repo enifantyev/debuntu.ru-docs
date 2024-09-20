@@ -13,7 +13,7 @@
       <link>https://debuntu.ru/refbooks/python/upravleniye-paketami-v-payton/</link>
       <pubDate>Thu, 01 Jan 1970 03:00:02 +0300</pubDate>
       <guid>https://debuntu.ru/refbooks/python/upravleniye-paketami-v-payton/</guid>
-      <description>Способы установки python-пакетов С помощью системного менеджера пакетов APT или YUM sudo yum install python3-requests С помощью python-модуля pip Если на машине установлена только одна версия python, или установка производится в активированном виртуальном окружении, то можно установить пакет/ы следующим образом:&#xA;pip install wheel requests Узнать к какой версии Python принадлежит pip:&#xA;[eugene@wks1 ~]$ pip -V pip 20.3.4 from /usr/lib/python2.7/site-packages/pip (python 2.7) Исключающее ошибку в выборе версии Python, установка пакетов с использованием pip:</description>
+      <description>Способы установки python-пакетов С помощью системного менеджера пакетов APT или YUM sudo yum install python3-requests С помощью python-модуля pip Если на машине установлена только одна версия python, или установка производится в активированном виртуальном окружении, то можно установить пакет/ы следующим образом:&#xA;pip install wheel requests Узнать к какой версии Python принадлежит pip:&#xA;[dmr@wks1 ~]$ pip -V pip 20.3.4 from /usr/lib/python2.7/site-packages/pip (python 2.7) Исключающее ошибку в выборе версии Python, установка пакетов с использованием pip:</description>
     </item>
   </channel>
 </rss>

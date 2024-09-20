@@ -211,8 +211,8 @@ if (!doNotTrack) {
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerov-li">
   <a href="/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/" title="containerd. Среда выполнения контейнеров" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerov"><span class="">containerd-sreda-vypolnenia-konteinerov</span></a>
   <ul class="ul-4 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-konteynera-1-x-v-izolirovannoy-srede-li">
-  <a href="/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/razvortyvaniye-konteynera-1-x-v-izolirovannoy-srede/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-konteynera-1-x-v-izolirovannoy-srede"><span class="">Развёртывание containerd 1.x в изолированной среде</span></a>
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-containerd-1-x-v-izolirovannoy-srede-li">
+  <a href="/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/razvortyvaniye-containerd-1-x-v-izolirovannoy-srede/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-containerd-1-x-v-izolirovannoy-srede"><span class="">Развёртывание containerd 1.x в изолированной среде</span></a>
 </li>
   </ul>
 </li>
@@ -802,7 +802,7 @@ if (!doNotTrack) {
 <ol>
 <li>Добавление группы во FreeIPA. Так как установка кластера производится с машины, домен которой отличен от домена настраиваемых машин, то вновь используем ansible:</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ADM_USER=<span style="color:#0ff;font-weight:bold">&#39;nifantevea&#39;</span> <span style="color:#0ff;font-weight:bold">\
+<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ADM_USER=<span style="color:#0ff;font-weight:bold">&#39;ken&#39;</span> <span style="color:#0ff;font-weight:bold">\
 </span></span></span><span style="display:flex;"><span><span style="color:#0ff;font-weight:bold"></span>ADM_PASS=<span style="color:#0ff;font-weight:bold">&#39;JL9d]qtw$p=2=M2K=~z?|EU,&#39;</span> <span style="color:#0ff;font-weight:bold">\
 </span></span></span><span style="display:flex;"><span><span style="color:#0ff;font-weight:bold"></span>CL_NAME=<span style="color:#0ff;font-weight:bold">&#34;TEST1&#34;</span>          <span style="color:#007f7f"># UPPERCASE \</span>
 </span></span><span style="display:flex;"><span>CL_NAME_L=<span style="color:#0ff;font-weight:bold">${</span>CL_NAME,,<span style="color:#0ff;font-weight:bold">}</span>   <span style="color:#007f7f"># lowercase</span>
@@ -826,7 +826,7 @@ SASL configuration failed: javax.security.auth.login.LoginException: Zookeeper c
 <ol>
 <li>На узле с ролью &lsquo;HBase Thrift Server&rsquo; cоздаём необходимые файлы:</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>USERNAME=<span style="color:#0ff;font-weight:bold">&#34;eugene&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>USERNAME=<span style="color:#0ff;font-weight:bold">&#34;dmr&#34;</span>
 </span></span><span style="display:flex;"><span>DIR=<span style="color:#0ff;font-weight:bold">&#34;/opt/hbase&#34;</span>
 </span></span><span style="display:flex;"><span>PRINCIPAL=<span style="color:#0ff;font-weight:bold">&#34;hbase&#34;</span>
 </span></span><span style="display:flex;"><span>REALMNAME=<span style="color:#0ff;font-weight:bold">&#34;TEST.LAN&#34;</span>

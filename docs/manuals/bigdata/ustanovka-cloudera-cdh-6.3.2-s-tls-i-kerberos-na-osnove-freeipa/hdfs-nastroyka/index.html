@@ -211,8 +211,8 @@ if (!doNotTrack) {
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerov-li">
   <a href="/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/" title="containerd. Среда выполнения контейнеров" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerov"><span class="">containerd-sreda-vypolnenia-konteinerov</span></a>
   <ul class="ul-4 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-konteynera-1-x-v-izolirovannoy-srede-li">
-  <a href="/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/razvortyvaniye-konteynera-1-x-v-izolirovannoy-srede/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-konteynera-1-x-v-izolirovannoy-srede"><span class="">Развёртывание containerd 1.x в изолированной среде</span></a>
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-containerd-1-x-v-izolirovannoy-srede-li">
+  <a href="/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/razvortyvaniye-containerd-1-x-v-izolirovannoy-srede/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-containerd-1-x-v-izolirovannoy-srede"><span class="">Развёртывание containerd 1.x в изолированной среде</span></a>
 </li>
   </ul>
 </li>
@@ -809,20 +809,20 @@ reconnection_retries = 3
 <ul>
 <li>HDFS-сервис не был переведён на &lsquo;org.apache.hadoop.security.LdapGroupsMapping&rsquo;, то есть испытания проводились в режиме &lsquo;org.apache.hadoop.security.ShellBasedUnixGroupsMapping&rsquo;.</li>
 <li>Posix-группа &rsquo;test2_hdfs_su&rsquo; создана во FreeIPA и указана в параметре &lsquo;dfs.permissions.superusergroup&rsquo;. Non-posix группа не сработала.</li>
-<li>В группу &rsquo;test2_hdfs_su&rsquo; была вложена группа &lsquo;dom_admins&rsquo;, участником которой была УЗ &rsquo;eugene&rsquo;.</li>
+<li>В группу &rsquo;test2_hdfs_su&rsquo; была вложена группа &lsquo;dom_admins&rsquo;, участником которой была УЗ &lsquo;dmr&rsquo;.</li>
 </ul>
-<p>В результате, наблюдаем, что УЗ &rsquo;eugene&rsquo;, которая является участником группы &lsquo;dom_admins&rsquo;, также распознаётся hadoop&rsquo;ом, как участник и родительской группы &rsquo;test2_hdfs_su&rsquo;:</p>
-<p>$ hdfs groups eugene
-eugene : eugene test2_hdfs_su dom_admins</p>
+<p>В результате, наблюдаем, что УЗ &lsquo;dmr&rsquo;, которая является участником группы &lsquo;dom_admins&rsquo;, также распознаётся hadoop&rsquo;ом, как участник и родительской группы &rsquo;test2_hdfs_su&rsquo;:</p>
+<p>$ hdfs groups dmr
+dmr : dmr test2_hdfs_su dom_admins</p>
 
 </div>
 
 
 
 <div class="pageinfo pageinfo-primary">
-<p>В другом кластере применил схему eugene &ndash;&gt; dom_admins &ndash;&gt; test01_superadmins. А нруппа test01_superadmins является участником всех кластерных групп. Результат:</p>
-<p>hdfs groups eugene
-eugene : eugene dom_admins test01_yarn_admins test01_hbase_su test01_hdfs_su test01_superadmins test01_sentry_admins test01_hue_admins</p>
+<p>В другом кластере применил схему dmr &ndash;&gt; dom_admins &ndash;&gt; test01_superadmins. А нруппа test01_superadmins является участником всех кластерных групп. Результат:</p>
+<p>hdfs groups dmr
+dmr : dmr dom_admins test01_yarn_admins test01_hbase_su test01_hdfs_su test01_superadmins test01_sentry_admins test01_hue_admins</p>
 
 </div>
 
@@ -831,7 +831,7 @@ eugene : eugene dom_admins test01_yarn_admins test01_hbase_su test01_hdfs_su tes
 <ol>
 <li>Добавление группы во FreeIPA. Так как установка кластера производится с машины, домен которой отличен от домена настраиваемых машин, то вновь используем ansible:</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ADM_USER=<span style="color:#0ff;font-weight:bold">&#39;eugene&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ADM_USER=<span style="color:#0ff;font-weight:bold">&#39;dmr&#39;</span>
 </span></span><span style="display:flex;"><span>ADM_PASS=<span style="color:#0ff;font-weight:bold">&#39;JL9d]qtw$p=2=M2K=~z?|EU,&#39;</span>
 </span></span><span style="display:flex;"><span>CL_NAME=<span style="color:#0ff;font-weight:bold">&#34;TEST1&#34;</span>          <span style="color:#007f7f"># UPPERCASE</span>
 </span></span><span style="display:flex;"><span>CL_NAME_L=<span style="color:#0ff;font-weight:bold">${</span>CL_NAME,,<span style="color:#0ff;font-weight:bold">}</span>   <span style="color:#007f7f"># lowercase</span>

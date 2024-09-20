@@ -464,7 +464,7 @@ if (!doNotTrack) {
 <p>Если на машине установлена только одна версия python, или установка производится в активированном виртуальном окружении, то можно установить пакет/ы следующим образом:</p>
 <pre tabindex="0"><code>pip install wheel requests
 </code></pre><p>Узнать к какой версии Python принадлежит <code>pip</code>:</p>
-<pre tabindex="0"><code>[eugene@wks1 ~]$ pip -V
+<pre tabindex="0"><code>[dmr@wks1 ~]$ pip -V
 pip 20.3.4 from /usr/lib/python2.7/site-packages/pip (python 2.7)
 </code></pre><p>Исключающее ошибку в выборе версии Python, установка пакетов с использованием <code>pip</code>:</p>
 <pre tabindex="0"><code>python3.8 -m pip install airflow
@@ -472,13 +472,13 @@ pip 20.3.4 from /usr/lib/python2.7/site-packages/pip (python 2.7)
 <p>-&quot;- дописать.</p>
 <h3 id="установка-пакетов-в-виртуальное-окружение">Установка пакетов в виртуальное окружение</h3>
 <p>Создадим каталог для Python-проекта, где развернём виртуальное окружение, активируем его, после чего установим пакет wheel:</p>
-<pre tabindex="0"><code>[eugene@wks1 ~]$ mkdir -p ~/pythonprojects/airflow
-[eugene@wks1 ~]$ cd ~/pythonprojects/airflow
-[eugene@wks1 ~]$ python3.6 -m venv .
-[eugene@wks1 ~]$ source bin/activate
-(airflow) [eugene@wks1 ~]$ pip -V
+<pre tabindex="0"><code>[dmr@wks1 ~]$ mkdir -p ~/pythonprojects/airflow
+[dmr@wks1 ~]$ cd ~/pythonprojects/airflow
+[dmr@wks1 ~]$ python3.6 -m venv .
+[dmr@wks1 ~]$ source bin/activate
+(airflow) [dmr@wks1 ~]$ pip -V
 pip 18.1 from /root/pythonprojects/airflow/lib64/python3.6/site-packages/pip (python 3.6)
-(airflow) [eugene@wks1 ~]$ pip install wheel
+(airflow) [dmr@wks1 ~]$ pip install wheel
 Collecting wheel
   Using cached wheel-0.37.1-py2.py3-none-any.whl (35 kB)
 Installing collected packages: wheel

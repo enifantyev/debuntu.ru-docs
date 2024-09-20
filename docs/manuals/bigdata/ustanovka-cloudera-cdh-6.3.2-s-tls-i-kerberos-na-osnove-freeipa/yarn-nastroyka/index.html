@@ -211,8 +211,8 @@ if (!doNotTrack) {
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerov-li">
   <a href="/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/" title="containerd. Среда выполнения контейнеров" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerov"><span class="">containerd-sreda-vypolnenia-konteinerov</span></a>
   <ul class="ul-4 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-konteynera-1-x-v-izolirovannoy-srede-li">
-  <a href="/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/razvortyvaniye-konteynera-1-x-v-izolirovannoy-srede/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-konteynera-1-x-v-izolirovannoy-srede"><span class="">Развёртывание containerd 1.x в изолированной среде</span></a>
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-containerd-1-x-v-izolirovannoy-srede-li">
+  <a href="/manuals/kubernetes/container-runtimes-and-cri/containerd-sreda-vypolnenia-konteinerov/razvortyvaniye-containerd-1-x-v-izolirovannoy-srede/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualskubernetescontainer-runtimes-and-cricontainerd-sreda-vypolnenia-konteinerovrazvortyvaniye-containerd-1-x-v-izolirovannoy-srede"><span class="">Развёртывание containerd 1.x в изолированной среде</span></a>
 </li>
   </ul>
 </li>
@@ -729,7 +729,7 @@ if (!doNotTrack) {
 <ol>
 <li>Во FreeIPA добавляем группу &rsquo;test1_yarn_admins&rsquo;:</li>
 </ol>
-<pre tabindex="0"><code>ADM_USER=&#39;eugene&#39; \
+<pre tabindex="0"><code>ADM_USER=&#39;dmr&#39; \
 ADM_PASS=&#39;JL9d]qtw$p=2=M2K=~z?|EU,&#39; \
 CL_NAME=&#34;TEST1&#34;          # UPPERCASE \
 CL_NAME_L=${CL_NAME,,}   # lowercase
@@ -749,7 +749,7 @@ ipa group-add --desc=&#39;YARN admins for cluster ${CL_NAME}&#39; ${CL_NAME_L}_y
 <ol>
 <li>
 <p>Продолжаем использовать ansible, с помощью которого на mgm-машине получаем kerberos-тикет и запускаем тестовое задание вычисления числа Пи. Наблюдаем приблизительный результат вычислений:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ADM_USER=<span style="color:#0ff;font-weight:bold">&#39;eugene&#39;</span> <span style="color:#0ff;font-weight:bold">\
+<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ADM_USER=<span style="color:#0ff;font-weight:bold">&#39;dmr&#39;</span> <span style="color:#0ff;font-weight:bold">\
 </span></span></span><span style="display:flex;"><span><span style="color:#0ff;font-weight:bold"></span>  ADM_PASS=<span style="color:#0ff;font-weight:bold">&#39;JL9d]qtw$p=2=M2K=~z?|EU,&#39;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>$ ansible mgm -i cluster.inv -m shell -a <span style="color:#0ff;font-weight:bold">&#34;echo &#39;</span><span style="color:#0ff;font-weight:bold">${</span>ADM_PASS<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold">&#39; | kinit &#39;</span><span style="color:#0ff;font-weight:bold">${</span>ADM_USER<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold">&#39; &amp;&amp; \
@@ -802,19 +802,19 @@ drwxrwxrwx   - mapred hadoop          0 2021-06-30 15:15 /user/history
 
 # Ветка done_intermediate/, где сохраняются файлы заданиями между /tmp/logs/ и /user/history/done/. Зачем? Пока не знаю.
 drwxrwxrwt   - mapred hadoop          0 2021-07-30 10:56 /user/history/done_intermediate
-drwxrwx---   - eugene hadoop      0 2021-07-30 10:56 /user/history/done_intermediate/eugene
+drwxrwx---   - dmr hadoop      0 2021-07-30 10:56 /user/history/done_intermediate/dmr
 
--rwxrwx---   3 eugene hadoop      56883 2021-07-30 10:56 /user/history/done_intermediate/eugene/job_16...SUC...7.jhist
--rwxrwx---   3 eugene hadoop        453 2021-07-30 10:56 /user/history/done_intermediate/eugene/job_16...1.summary
--rwxrwx---   3 eugene hadoop     222521 2021-07-30 10:56 /user/history/done_intermediate/eugene/job_16...1_conf.xml
+-rwxrwx---   3 dmr hadoop      56883 2021-07-30 10:56 /user/history/done_intermediate/dmr/job_16...SUC...7.jhist
+-rwxrwx---   3 dmr hadoop        453 2021-07-30 10:56 /user/history/done_intermediate/dmr/job_16...1.summary
+-rwxrwx---   3 dmr hadoop     222521 2021-07-30 10:56 /user/history/done_intermediate/dmr/job_16...1_conf.xml
 
 # Ветка done/, где сохраняются завершённые задания. Срок хранение по умолчанию 7 дней?
 drwxrwx--x   - mapred hadoop          0 2021-04-22 21:55 /user/history/done
 drwxrwx--x   - mapred hadoop          0 2021-08-01 12:56 /user/history/done/2021/08/01/000000
--rwxrwx---  3 eugenetest hadoop  56814 2021-08-01 12:33 /user/history/done/2021/08/01/000000/job_16...SUС...56.jhist
+-rwxrwx---  3 dmrtest hadoop  56814 2021-08-01 12:33 /user/history/done/2021/08/01/000000/job_16...SUС...56.jhist
 </code></pre></li>
 <li>
-<p>Изначальная УЗ &lsquo;mapred&rsquo;, ещё до включения Kerberos, являлась участником локальной группы &lsquo;hadoop&rsquo;, поэтому имела доступ каталогам с группой-владельцем  &lsquo;hadoop&rsquo;, типа <code>/user/history/done_intermediate/eugene</code>. Но, похоже,  после включения Kerberos, бывшая УЗ mapred становится отображением kerberos-УЗ &lsquo;<a href="mailto:mapred@TEST.LAN">mapred@TEST.LAN</a>&rsquo;. А так как новая УЗ &lsquo;<a href="mailto:mapred@TEST.LAN">mapred@TEST.LAN</a>&rsquo; не является участником LDAP-группы &lsquo;hadoop&rsquo; (такой группы вообще нет во FreeIPA, то и доступ к каталогам с группой-владельцем &lsquo;hadoop&rsquo; перестаёт работать.<!-- raw HTML omitted -->
+<p>Изначальная УЗ &lsquo;mapred&rsquo;, ещё до включения Kerberos, являлась участником локальной группы &lsquo;hadoop&rsquo;, поэтому имела доступ каталогам с группой-владельцем  &lsquo;hadoop&rsquo;, типа <code>/user/history/done_intermediate/dmr</code>. Но, похоже,  после включения Kerberos, бывшая УЗ mapred становится отображением kerberos-УЗ &lsquo;<a href="mailto:mapred@TEST.LAN">mapred@TEST.LAN</a>&rsquo;. А так как новая УЗ &lsquo;<a href="mailto:mapred@TEST.LAN">mapred@TEST.LAN</a>&rsquo; не является участником LDAP-группы &lsquo;hadoop&rsquo; (такой группы вообще нет во FreeIPA, то и доступ к каталогам с группой-владельцем &lsquo;hadoop&rsquo; перестаёт работать.<!-- raw HTML omitted -->
 Получим тикет для УЗ mapred и посмотрим членство в группах:<!-- raw HTML omitted --></p>
 <div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#007f7f"># klist -kt /var/run/cloudera-scm-agent/process/1729-yarn-JOBHISTORY/mapred.keytab</span>
 </span></span><span style="display:flex;"><span>Keytab name: FILE:/var/run/cloudera-scm-agent/process/1729-yarn-JOBHISTORY/mapred.keytab

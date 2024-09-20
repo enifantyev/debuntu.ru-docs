@@ -590,11 +590,11 @@ sqoop import -Dmapreduce.job.queuename=&#34;root.yarn-queue-dev&#34; \
 </code></pre><h3 id="результат-импорта-в-hdfs">Результат импорта в HDFS</h3>
 <pre tabindex="0"><code>$ hdfs dfs -ls SqoopTestSales
 Found 5 items
--rw-rw----   2 eugene eugene          0 2020-11-06 17:03 SqoopTestSales/_SUCCESS
--rw-rw----   2 eugene eugene        110 2020-11-06 17:03 SqoopTestSales/part-m-00000
--rw-rw----   2 eugene eugene        111 2020-11-06 17:03 SqoopTestSales/part-m-00001
--rw-rw----   2 eugene eugene        115 2020-11-06 17:03 SqoopTestSales/part-m-00002
--rw-rw----   2 eugene eugene        115 2020-11-06 17:03 SqoopTestSales/part-m-00003
+-rw-rw----   2 dmr dmr          0 2020-11-06 17:03 SqoopTestSales/_SUCCESS
+-rw-rw----   2 dmr dmr        110 2020-11-06 17:03 SqoopTestSales/part-m-00000
+-rw-rw----   2 dmr dmr        111 2020-11-06 17:03 SqoopTestSales/part-m-00001
+-rw-rw----   2 dmr dmr        115 2020-11-06 17:03 SqoopTestSales/part-m-00002
+-rw-rw----   2 dmr dmr        115 2020-11-06 17:03 SqoopTestSales/part-m-00003
 $ hdfs dfs -cat SqoopTestSales/part-m-00000
 1,2016-09-27,1.23,1,1
 2,2016-09-27,2.34,1,2

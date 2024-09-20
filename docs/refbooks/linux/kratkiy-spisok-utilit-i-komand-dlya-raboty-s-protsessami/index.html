@@ -512,13 +512,13 @@ sshd    2914    root    3u  IPv4  16110      0t0  TCP 172.16.14.10:22-&gt;172.16
 <p>Какой процесс используется порт 22000 в пространстве имён «tcp»:</p>
 <pre tabindex="0"><code> user@wks01:~$ sudo fuser -v -n tcp 22000
                      USER        PID ACCESS COMMAND
-22000/tcp:           eugene    221135 F.... syncthing
+22000/tcp:           dmr    221135 F.... syncthing
 </code></pre><h2 id="убить-выбранный-процесс">Убить выбранный процесс</h2>
 <h3 id="kill-pkill-killall"><code>kill</code>, <code>pkill</code>, <code>killall</code></h3>
 <p><code>kill</code>, <code>pkill</code>, <code>killall</code> — process kill.</p>
 <pre tabindex="0"><code>user@wks01:~$ kill 221135
 user@wks01:~$ pkill -9 firefox
-user@wks01:~$ sudo killall -u eugene
+user@wks01:~$ sudo killall -u dmr
 </code></pre><h2 id="изменить-приоритет-процесса">Изменить приоритет процесса</h2>
 <h3 id="nice-renice"><code>nice</code>, <code>renice</code></h3>
 <p><code>nice</code>, <code>renice</code> — запуск процесса с заданным приоритетом «nice» или изменение приоритета «nice» работающего процесса.</p>
