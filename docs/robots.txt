@@ -13,6 +13,7 @@ Allow: /n/
 Allow: /a/
 Allow: /manuals/
 Allow: /refbooks/
+Disallow: /snippets/
 Disallow: /search/
 Disallow: /tags/
 Disallow: /*?*
