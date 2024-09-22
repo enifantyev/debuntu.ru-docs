@@ -19,16 +19,20 @@
 
 <title>Первоначальная настройка FreeIPA | Debuntarium</title>
 <meta name="description" content="2023-04-13
-1. Настройка LDAP-каталога 1.1. Отключение анонимного доступа к LDAP-каталогу Процедура выполняется на каждом сервере FreeIPA-реплике, так как изменения производятся в нереплицируемой части LDAP-каталога &amp;#39;cn=config&amp;#39;.
+1. Настройка LDAP-каталога Так как у нас вышестоящие форвард-серверы не поддерживают DNSSEC, необходимо отключить эту опцию и на нашем BIND9, иначе рекурсивные запросы на сторонние DNS будут возвращать ошибку.
+https://access.redhat.com/solutions/5633621
+1.1. Отключение анонимного доступа к LDAP-каталогу Процедура выполняется на каждом сервере FreeIPA-реплике, так как изменения производятся в нереплицируемой части LDAP-каталога &amp;#39;cn=config&amp;#39;.
 Выполните из командной строки:
-IPAREPLICA=$(hostname) set &#43;o history DM_PASSWORD=&amp;#39;&amp;lt;Password of Directory Manager is here&amp;gt;&amp;#39; set -o history ldapmodify -x -D &amp;#34;cn=Directory Manager&amp;#34; -w ${DM_PASSWORD} -h ${IPAREPLICA} -Z &amp;lt;&amp;lt; EOF dn: cn=config changetype: modify replace: nsslapd-allow-anonymous-access nsslapd-allow-anonymous-access: rootdse EOF ipactl restart 2. Настройка DNS 2.1. Включение автодобавления обратных записей По умолчанию, при введении новой машины в домен, соответствующая PTR-запись в обратной зоне DNS не создаётся.">
+IPAREPLICA=$(hostname) set &#43;o history DM_PASSWORD=&amp;#39;&amp;lt;Password of Directory Manager is here&amp;gt;&amp;#39; set -o history ldapmodify -x -D &amp;#34;cn=Directory Manager&amp;#34; -w ${DM_PASSWORD} -h ${IPAREPLICA} -Z &amp;lt;&amp;lt; EOF dn: cn=config changetype: modify replace: nsslapd-allow-anonymous-access nsslapd-allow-anonymous-access: rootdse EOF ipactl restart 2.">
 <meta property="og:url" content="https://debuntu.ru/manuals/freeipa/installing-and-setup-freeipa/first-configuring-freeipa/">
   <meta property="og:site_name" content="Debuntarium">
   <meta property="og:title" content="Первоначальная настройка FreeIPA">
   <meta property="og:description" content="2023-04-13
-1. Настройка LDAP-каталога 1.1. Отключение анонимного доступа к LDAP-каталогу Процедура выполняется на каждом сервере FreeIPA-реплике, так как изменения производятся в нереплицируемой части LDAP-каталога &#39;cn=config&#39;.
+1. Настройка LDAP-каталога Так как у нас вышестоящие форвард-серверы не поддерживают DNSSEC, необходимо отключить эту опцию и на нашем BIND9, иначе рекурсивные запросы на сторонние DNS будут возвращать ошибку.
+https://access.redhat.com/solutions/5633621
+1.1. Отключение анонимного доступа к LDAP-каталогу Процедура выполняется на каждом сервере FreeIPA-реплике, так как изменения производятся в нереплицируемой части LDAP-каталога &#39;cn=config&#39;.
 Выполните из командной строки:
-IPAREPLICA=$(hostname) set &#43;o history DM_PASSWORD=&#39;&lt;Password of Directory Manager is here&gt;&#39; set -o history ldapmodify -x -D &#34;cn=Directory Manager&#34; -w ${DM_PASSWORD} -h ${IPAREPLICA} -Z &lt;&lt; EOF dn: cn=config changetype: modify replace: nsslapd-allow-anonymous-access nsslapd-allow-anonymous-access: rootdse EOF ipactl restart 2. Настройка DNS 2.1. Включение автодобавления обратных записей По умолчанию, при введении новой машины в домен, соответствующая PTR-запись в обратной зоне DNS не создаётся.">
+IPAREPLICA=$(hostname) set &#43;o history DM_PASSWORD=&#39;&lt;Password of Directory Manager is here&gt;&#39; set -o history ldapmodify -x -D &#34;cn=Directory Manager&#34; -w ${DM_PASSWORD} -h ${IPAREPLICA} -Z &lt;&lt; EOF dn: cn=config changetype: modify replace: nsslapd-allow-anonymous-access nsslapd-allow-anonymous-access: rootdse EOF ipactl restart 2.">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:type" content="article">
     <meta property="article:section" content="manuals">
@@ -38,19 +42,23 @@ IPAREPLICA=$(hostname) set &#43;o history DM_PASSWORD=&#39;&lt;Password of Direc
 
   <meta itemprop="name" content="Первоначальная настройка FreeIPA">
   <meta itemprop="description" content="2023-04-13
-1. Настройка LDAP-каталога 1.1. Отключение анонимного доступа к LDAP-каталогу Процедура выполняется на каждом сервере FreeIPA-реплике, так как изменения производятся в нереплицируемой части LDAP-каталога &#39;cn=config&#39;.
+1. Настройка LDAP-каталога Так как у нас вышестоящие форвард-серверы не поддерживают DNSSEC, необходимо отключить эту опцию и на нашем BIND9, иначе рекурсивные запросы на сторонние DNS будут возвращать ошибку.
+https://access.redhat.com/solutions/5633621
+1.1. Отключение анонимного доступа к LDAP-каталогу Процедура выполняется на каждом сервере FreeIPA-реплике, так как изменения производятся в нереплицируемой части LDAP-каталога &#39;cn=config&#39;.
 Выполните из командной строки:
-IPAREPLICA=$(hostname) set &#43;o history DM_PASSWORD=&#39;&lt;Password of Directory Manager is here&gt;&#39; set -o history ldapmodify -x -D &#34;cn=Directory Manager&#34; -w ${DM_PASSWORD} -h ${IPAREPLICA} -Z &lt;&lt; EOF dn: cn=config changetype: modify replace: nsslapd-allow-anonymous-access nsslapd-allow-anonymous-access: rootdse EOF ipactl restart 2. Настройка DNS 2.1. Включение автодобавления обратных записей По умолчанию, при введении новой машины в домен, соответствующая PTR-запись в обратной зоне DNS не создаётся.">
+IPAREPLICA=$(hostname) set &#43;o history DM_PASSWORD=&#39;&lt;Password of Directory Manager is here&gt;&#39; set -o history ldapmodify -x -D &#34;cn=Directory Manager&#34; -w ${DM_PASSWORD} -h ${IPAREPLICA} -Z &lt;&lt; EOF dn: cn=config changetype: modify replace: nsslapd-allow-anonymous-access nsslapd-allow-anonymous-access: rootdse EOF ipactl restart 2.">
   <meta itemprop="datePublished" content="2023-04-13T00:00:00+00:00">
   <meta itemprop="dateModified" content="2023-04-13T00:00:00+00:00">
-  <meta itemprop="wordCount" content="647">
+  <meta itemprop="wordCount" content="655">
   <meta itemprop="keywords" content="FreeIPA">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Первоначальная настройка FreeIPA">
   <meta name="twitter:description" content="2023-04-13
-1. Настройка LDAP-каталога 1.1. Отключение анонимного доступа к LDAP-каталогу Процедура выполняется на каждом сервере FreeIPA-реплике, так как изменения производятся в нереплицируемой части LDAP-каталога &#39;cn=config&#39;.
+1. Настройка LDAP-каталога Так как у нас вышестоящие форвард-серверы не поддерживают DNSSEC, необходимо отключить эту опцию и на нашем BIND9, иначе рекурсивные запросы на сторонние DNS будут возвращать ошибку.
+https://access.redhat.com/solutions/5633621
+1.1. Отключение анонимного доступа к LDAP-каталогу Процедура выполняется на каждом сервере FreeIPA-реплике, так как изменения производятся в нереплицируемой части LDAP-каталога &#39;cn=config&#39;.
 Выполните из командной строки:
-IPAREPLICA=$(hostname) set &#43;o history DM_PASSWORD=&#39;&lt;Password of Directory Manager is here&gt;&#39; set -o history ldapmodify -x -D &#34;cn=Directory Manager&#34; -w ${DM_PASSWORD} -h ${IPAREPLICA} -Z &lt;&lt; EOF dn: cn=config changetype: modify replace: nsslapd-allow-anonymous-access nsslapd-allow-anonymous-access: rootdse EOF ipactl restart 2. Настройка DNS 2.1. Включение автодобавления обратных записей По умолчанию, при введении новой машины в домен, соответствующая PTR-запись в обратной зоне DNS не создаётся.">
+IPAREPLICA=$(hostname) set &#43;o history DM_PASSWORD=&#39;&lt;Password of Directory Manager is here&gt;&#39; set -o history ldapmodify -x -D &#34;cn=Directory Manager&#34; -w ${DM_PASSWORD} -h ${IPAREPLICA} -Z &lt;&lt; EOF dn: cn=config changetype: modify replace: nsslapd-allow-anonymous-access nsslapd-allow-anonymous-access: rootdse EOF ipactl restart 2.">
 
 
 
@@ -283,6 +291,12 @@ if (!doNotTrack) {
   <a href="/manuals/freeipa/installing-and-setup-freeipa/ustanovka-pervoy-freeipa-repliki/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsfreeipainstalling-and-setup-freeipaustanovka-pervoy-freeipa-repliki"><span class="">Установка первой FreeIPA-реплики</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-manualsfreeipainstalling-and-setup-freeipafirst-configuring-freeipa-li">
   <a href="/manuals/freeipa/installing-and-setup-freeipa/first-configuring-freeipa/" class="align-left ps-0 active td-sidebar-link td-sidebar-link__page" id="m-manualsfreeipainstalling-and-setup-freeipafirst-configuring-freeipa"><span class="td-sidebar-nav-active-item">Первоначальная настройка FreeIPA</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsfreeipainstalling-and-setup-freeipacommon10-podgotovka-hosta-li">
+  <a href="/manuals/freeipa/installing-and-setup-freeipa/common/10-podgotovka-hosta/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsfreeipainstalling-and-setup-freeipacommon10-podgotovka-hosta"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsfreeipainstalling-and-setup-freeipacommondisabling-dnssec-validation-li">
+  <a href="/manuals/freeipa/installing-and-setup-freeipa/common/disabling-dnssec-validation/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsfreeipainstalling-and-setup-freeipacommondisabling-dnssec-validation"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsfreeipainstalling-and-setup-freeipacommonldap-disabling-anonymous-access-to-directory-li">
+  <a href="/manuals/freeipa/installing-and-setup-freeipa/common/ldap-disabling-anonymous-access-to-directory/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-manualsfreeipainstalling-and-setup-freeipacommonldap-disabling-anonymous-access-to-directory"><span class=""></span></a>
 </li>
   </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsfreeipacheckipaconsistency-utilita-dlya-opredeleniya-rassinhronizacii-replik-freeipa-li">
@@ -728,6 +742,23 @@ if (!doNotTrack) {
 <div class="sect1">
 <h2 id="_настройка_ldap_каталога">1. Настройка LDAP-каталога</h2>
 <div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Так как у нас вышестоящие форвард-серверы не поддерживают DNSSEC, необходимо отключить эту опцию и на нашем BIND9, иначе рекурсивные запросы на сторонние DNS будут возвращать ошибку.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://access.redhat.com/solutions/5633621" class="bare">https://access.redhat.com/solutions/5633621</a></p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
 <div class="sect2">
 <h3 id="_отключение_анонимного_доступа_к_ldap_каталогу">1.1. Отключение анонимного доступа к LDAP-каталогу</h3>
 <div class="olist arabic">
@@ -1066,34 +1097,17 @@ If DNSSEC validation is enabled on IPA server(s), please disable it.
 </div>
 <div class="sect2">
 <h3 id="_отключение_dnssec_validation">2.4. Отключение DNSSEC validation</h3>
-<div class="admonitionblock note">
-<table>
-<tbody><tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Так как у нас вышестоящие форвард-серверы не поддерживают DNSSEC, необходимо отключить эту опцию и на нашем BIND9, иначе рекурсивные запросы на сторонние DNS будут возвращать ошибку.</p>
-</div>
-<div class="paragraph">
-<p><a href="https://access.redhat.com/solutions/5633621" class="bare">https://access.redhat.com/solutions/5633621</a></p>
-</div>
-</td>
-</tr>
-</tbody></table>
-</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Отключите DNSSEC-валидацию в файле <code>/etc/named/ipa-options-ext.conf</code>:</p>
+<p>Отключите DNSSEC-валидацию в файле <code>/etc/named/ipa-options-ext.conf</code> на каждой IPA-реплике:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">sed -i &#39;s/dnssec-validation yes/dnssec-validation no/&#39; /etc/named/ipa-options-ext.conf
 
-</span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>Earlier
+</span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>Было ранее
 <span style="color: #FFFFFF;background-color: #231529">systemctl restart named-pkcs11
-</span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>Now
+</span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>На более свежих версиях FreeIPA
 <span style="color: #FFFFFF;background-color: #231529">systemctl restart named</span></code></pre>
 </div>
 </div>

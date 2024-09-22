@@ -1834,6 +1834,24 @@
   
   
   <url>
+    <loc>https://debuntu.ru/manuals/freeipa/installing-and-setup-freeipa/common/10-podgotovka-hosta/</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/freeipa/installing-and-setup-freeipa/common/disabling-dnssec-validation/</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/freeipa/installing-and-setup-freeipa/common/ldap-disabling-anonymous-access-to-directory/</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://debuntu.ru/snippets/adding_system_user_and_home_in_opt/</loc>
   </url>
   

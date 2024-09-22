@@ -13,14 +13,35 @@
       <link>https://debuntu.ru/manuals/freeipa/installing-and-setup-freeipa/ustanovka-pervoy-freeipa-repliki/</link>
       <pubDate>Fri, 02 Aug 2024 00:00:00 +0000</pubDate>
       <guid>https://debuntu.ru/manuals/freeipa/installing-and-setup-freeipa/ustanovka-pervoy-freeipa-repliki/</guid>
-      <description>2023-04-13&#xA;1. Подготовка ОС к установке FreeIPA-сервера Проверьте настройки точного времени.&#xA;Проверьте сетевые настройки.&#xA;Задайте полное имя хоста. Пример:&#xA;hostnamectl set-hostname dev-ipa01.example.org&#xA;Добавьте в /etc/hosts запись для локальной реплики. Пример:&#xA;192.168.100.10 dev-ipa01.example.org dev-ipa01&#xA;Перегенерируте ssh-ключи. Пример:&#xA;rm -f /etc/ssh/ssh_host_*_key* systemctl restart sshd Обновить /etc/machine-id:&#xA;rm -f /etc/machine-id dbus-uuidgen --ensure=/etc/machine-id Обновите систему.&#xA;Добавьте в систему пакеты freeipa-server.&#xA;Перезапустите хост.&#xA;2. Установка реплики FreeIPA Установку будем производить в бездиалоговом режиме с заданием всех необходимых опций из командной строки.</description>
+      <description>2023-04-13&#xA;1. Подготовка ОС к установке FreeIPA-сервера Проверьте настройки точного времени.&#xA;Проверьте сетевые настройки.&#xA;Задайте полное имя хоста. Пример:&#xA;hostnamectl set-hostname dev-ipa01.example.org Добавьте в /etc/hosts записи для локальной, или для всех существующих/будущих IPA-реплик. Пример:&#xA;192.168.100.11 dev-ipa01.example.org dev-ipa01 192.168.100.12 dev-ipa02.example.org dev-ipa02 192.168.100.13 dev-ipa03.example.org dev-ipa03 Перегенерируйте ssh-ключи. Пример:&#xA;rm -f /etc/ssh/ssh_host_*_key* systemctl restart sshd Обновите /etc/machine-id:&#xA;rm -f /etc/machine-id dbus-uuidgen --ensure=/etc/machine-id Обновите систему.&#xA;Добавьте в систему пакеты freeipa-server.&#xA;Перезапустите хост.&#xA;2. Установка первого сервера FreeIPA Установку будем производить в бездиалоговом режиме с заданием всех необходимых опций из командной строки.</description>
     </item>
     <item>
       <title>Первоначальная настройка FreeIPA</title>
       <link>https://debuntu.ru/manuals/freeipa/installing-and-setup-freeipa/first-configuring-freeipa/</link>
       <pubDate>Thu, 13 Apr 2023 00:00:00 +0000</pubDate>
       <guid>https://debuntu.ru/manuals/freeipa/installing-and-setup-freeipa/first-configuring-freeipa/</guid>
-      <description>2023-04-13&#xA;1. Настройка LDAP-каталога 1.1. Отключение анонимного доступа к LDAP-каталогу Процедура выполняется на каждом сервере FreeIPA-реплике, так как изменения производятся в нереплицируемой части LDAP-каталога &amp;#39;cn=config&amp;#39;.&#xA;Выполните из командной строки:&#xA;IPAREPLICA=$(hostname) set +o history DM_PASSWORD=&amp;#39;&amp;lt;Password of Directory Manager is here&amp;gt;&amp;#39; set -o history ldapmodify -x -D &amp;#34;cn=Directory Manager&amp;#34; -w ${DM_PASSWORD} -h ${IPAREPLICA} -Z &amp;lt;&amp;lt; EOF dn: cn=config changetype: modify replace: nsslapd-allow-anonymous-access nsslapd-allow-anonymous-access: rootdse EOF ipactl restart 2. Настройка DNS 2.1. Включение автодобавления обратных записей По умолчанию, при введении новой машины в домен, соответствующая PTR-запись в обратной зоне DNS не создаётся.</description>
+      <description>2023-04-13&#xA;1. Настройка LDAP-каталога Так как у нас вышестоящие форвард-серверы не поддерживают DNSSEC, необходимо отключить эту опцию и на нашем BIND9, иначе рекурсивные запросы на сторонние DNS будут возвращать ошибку.&#xA;https://access.redhat.com/solutions/5633621&#xA;1.1. Отключение анонимного доступа к LDAP-каталогу Процедура выполняется на каждом сервере FreeIPA-реплике, так как изменения производятся в нереплицируемой части LDAP-каталога &amp;#39;cn=config&amp;#39;.&#xA;Выполните из командной строки:&#xA;IPAREPLICA=$(hostname) set +o history DM_PASSWORD=&amp;#39;&amp;lt;Password of Directory Manager is here&amp;gt;&amp;#39; set -o history ldapmodify -x -D &amp;#34;cn=Directory Manager&amp;#34; -w ${DM_PASSWORD} -h ${IPAREPLICA} -Z &amp;lt;&amp;lt; EOF dn: cn=config changetype: modify replace: nsslapd-allow-anonymous-access nsslapd-allow-anonymous-access: rootdse EOF ipactl restart 2.</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://debuntu.ru/manuals/freeipa/installing-and-setup-freeipa/common/10-podgotovka-hosta/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://debuntu.ru/manuals/freeipa/installing-and-setup-freeipa/common/10-podgotovka-hosta/</guid>
+      <description>Подготовка ОС к установке FreeIPA-сервера Проверьте настройки точного времени.&#xA;Проверьте сетевые настройки.&#xA;Задайте полное имя хоста. Пример:&#xA;hostnamectl set-hostname dev-ipa01.example.org Добавьте в /etc/hosts записи для локальной, или для всех существующих/будущих IPA-реплик. Пример:&#xA;192.168.100.11 dev-ipa01.example.org dev-ipa01 192.168.100.12 dev-ipa02.example.org dev-ipa02 192.168.100.13 dev-ipa03.example.org dev-ipa03 Перегенерируйте ssh-ключи. Пример:&#xA;rm -f /etc/ssh/ssh_host_*_key* systemctl restart sshd Обновите /etc/machine-id:&#xA;rm -f /etc/machine-id dbus-uuidgen --ensure=/etc/machine-id Обновите систему.&#xA;Добавьте в систему пакеты freeipa-server.&#xA;Перезапустите хост.</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://debuntu.ru/manuals/freeipa/installing-and-setup-freeipa/common/disabling-dnssec-validation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://debuntu.ru/manuals/freeipa/installing-and-setup-freeipa/common/disabling-dnssec-validation/</guid>
+      <description> Отключение DNSSEC validation Отключите DNSSEC-валидацию в файле /etc/named/ipa-options-ext.conf на каждой IPA-реплике:&#xA;sed -i &amp;#39;s/dnssec-validation yes/dnssec-validation no/&amp;#39; /etc/named/ipa-options-ext.conf # Было ранее systemctl restart named-pkcs11 # На более свежих версиях FreeIPA systemctl restart named </description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://debuntu.ru/manuals/freeipa/installing-and-setup-freeipa/common/ldap-disabling-anonymous-access-to-directory/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://debuntu.ru/manuals/freeipa/installing-and-setup-freeipa/common/ldap-disabling-anonymous-access-to-directory/</guid>
+      <description> Отключение анонимного доступа к LDAP-каталогу Процедура выполняется на каждом сервере FreeIPA-реплике, так как изменения производятся в нереплицируемой части LDAP-каталога &amp;#39;cn=config&amp;#39;.&#xA;Выполните из командной строки:&#xA;IPAREPLICA=$(hostname) set +o history DM_PASSWORD=&amp;#39;&amp;lt;Password of Directory Manager is here&amp;gt;&amp;#39; set -o history ldapmodify -x -D &amp;#34;cn=Directory Manager&amp;#34; -w ${DM_PASSWORD} -h ${IPAREPLICA} -Z &amp;lt;&amp;lt; EOF dn: cn=config changetype: modify replace: nsslapd-allow-anonymous-access nsslapd-allow-anonymous-access: rootdse EOF ipactl restart </description>
     </item>
   </channel>
 </rss>
