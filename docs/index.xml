@@ -1185,6 +1185,13 @@
       <description>2021-07-23&#xA;Добавление сервиса Kafka В консоли Cloudera Manager в меню выбираем &amp;lsquo;Add Service&amp;rsquo;: Выбираем Kafka. Выбираем зависимости: Распределяем роли с некоторыми условиями: Из-за особенностей работы, которая приводит к высокой утилизации ресурсов системы, под Kafka Brokers лучше выделить отдельные хосты. Чрезвычайно не рекомендуется размещать Kafka на ZooKeeper-узлах. Изменяем настройки: Наблюдаем запуск ролей. Визард успешно закончен. 3. Перенастройка размещения log&amp;rsquo;ов В настройках Kafka, используя категорию &amp;lsquo;Logs&amp;rsquo;, изменяем следующие параметры, добавляя &amp;lsquo;/data&amp;rsquo; вместо &amp;lsquo;/var&amp;rsquo;: Нажимаем Save Changes.</description>
     </item>
     <item>
+      <title>Добавление дополнительных реплик FreeIPA</title>
+      <link>https://debuntu.ru/manuals/freeipa/installing-and-setup-freeipa/adding-additional-freeipa-replicas/</link>
+      <pubDate>Thu, 13 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://debuntu.ru/manuals/freeipa/installing-and-setup-freeipa/adding-additional-freeipa-replicas/</guid>
+      <description>2023-04-13&#xA;1. Подготовка ОС к установке FreeIPA-сервера Проверьте настройки точного времени.&#xA;Проверьте сетевые настройки.&#xA;Задайте полное имя хоста. Пример:&#xA;hostnamectl set-hostname dev-ipa01.example.org Добавьте в /etc/hosts записи для локальной, или для всех существующих/будущих IPA-реплик. Пример:&#xA;192.168.100.11 dev-ipa01.example.org dev-ipa01 192.168.100.12 dev-ipa02.example.org dev-ipa02 192.168.100.13 dev-ipa03.example.org dev-ipa03 Перегенерируйте ssh-ключи. Пример:&#xA;rm -f /etc/ssh/ssh_host_*_key* systemctl restart sshd Обновите /etc/machine-id:&#xA;rm -f /etc/machine-id dbus-uuidgen --ensure=/etc/machine-id Обновите систему.&#xA;Добавьте в систему пакеты freeipa-server.&#xA;Перезапустите хост.&#xA;Перед запуском инсталлятора дополнительного IPA-сервера добавьте запись в /etc/resolv.</description>
+    </item>
+    <item>
       <title>30. Восстановление всей системы из бэкапа с помощью LVM и BorgBackup</title>
       <link>https://debuntu.ru/manuals/borgbackup/vosstanovleniye-vsey-sistemy-iz-bekapa-s-pomoshchyu-borgbackup/</link>
       <pubDate>Fri, 18 Mar 2022 00:00:00 +0000</pubDate>
