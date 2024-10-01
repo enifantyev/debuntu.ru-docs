@@ -1,4 +1,4 @@
-#yandex-banner-after-navbar {
+.yandex-banner-after-navbar {
   padding-top: calc(var(--navbar-height, 60px));
 }
 
