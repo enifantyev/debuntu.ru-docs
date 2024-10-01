@@ -159,12 +159,14 @@ if (!doNotTrack) {
 
 <div id="yandex_rtb_R-A-10775853-1"></div>
 <script>
-window.yaContextCb.push(() => {
-    Ya.Context.AdvManager.render({
-        "blockId": "R-A-10775853-1",
-        "renderTo": "yandex_rtb_R-A-10775853-1"
+if (window.location.pathname !== "/") {
+    window.yaContextCb.push(() => {
+        Ya.Context.AdvManager.render({
+            "blockId": "R-A-10775853-1",
+            "renderTo": "yandex_rtb_R-A-10775853-1"
+        })
     })
-})
+}
 </script>
 
     </header>
