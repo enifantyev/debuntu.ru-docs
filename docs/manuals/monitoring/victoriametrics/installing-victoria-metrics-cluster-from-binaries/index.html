@@ -19,32 +19,36 @@
 
 <title>Установка Victoria Metrics Cluster из бинарников | Debuntarium</title>
 <meta name="description" content=" 1. Использованные материалы https://docs.victoriametrics.com/quick-start/
+https://github.com/VictoriaMetrics-Community/victoriametrics-rpm/blob/master/vmstorage.service
 2. Скачивание бинарников из локального репозитория на целевые хосты На целевых нодах будущего кластера Victoria Metrics выполните загрузку бинарников из локального NXRM:
-VER=&#39;v1.106.0&#39; PLATFORM=&#39;linux-amd64&#39; INTERNAL_REPO=&#34;https://nexus.example.org/repository/dud_evolut_raw&#34; REPO_FOLDER=&#34;monitoring/victoriametrics&#34; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}_checksums.txt ">
+VER=&#39;v1.110.0&#39; PLATFORM=&#39;linux-amd64&#39; INTERNAL_REPO=&#34;https://nexus.example.org/repository/dud_evolut_raw&#34; REPO_FOLDER=&#34;monitoring/victoriametrics&#34; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}_checksums.txt ">
 <meta property="og:url" content="https://debuntu.ru/manuals/monitoring/victoriametrics/installing-victoria-metrics-cluster-from-binaries/">
   <meta property="og:site_name" content="Debuntarium">
   <meta property="og:title" content="Установка Victoria Metrics Cluster из бинарников">
   <meta property="og:description" content="1. Использованные материалы https://docs.victoriametrics.com/quick-start/
+https://github.com/VictoriaMetrics-Community/victoriametrics-rpm/blob/master/vmstorage.service
 2. Скачивание бинарников из локального репозитория на целевые хосты На целевых нодах будущего кластера Victoria Metrics выполните загрузку бинарников из локального NXRM:
-VER=&#39;v1.106.0&#39; PLATFORM=&#39;linux-amd64&#39; INTERNAL_REPO=&#34;https://nexus.example.org/repository/dud_evolut_raw&#34; REPO_FOLDER=&#34;monitoring/victoriametrics&#34; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}_checksums.txt">
+VER=&#39;v1.110.0&#39; PLATFORM=&#39;linux-amd64&#39; INTERNAL_REPO=&#34;https://nexus.example.org/repository/dud_evolut_raw&#34; REPO_FOLDER=&#34;monitoring/victoriametrics&#34; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}_checksums.txt">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:type" content="article">
     <meta property="article:section" content="manuals">
-    <meta property="article:published_time" content="2024-07-23T11:17:28+03:00">
-    <meta property="article:modified_time" content="2024-07-23T11:17:28+03:00">
+    <meta property="article:published_time" content="2025-01-30T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-01-30T00:00:00+00:00">
 
   <meta itemprop="name" content="Установка Victoria Metrics Cluster из бинарников">
   <meta itemprop="description" content="1. Использованные материалы https://docs.victoriametrics.com/quick-start/
+https://github.com/VictoriaMetrics-Community/victoriametrics-rpm/blob/master/vmstorage.service
 2. Скачивание бинарников из локального репозитория на целевые хосты На целевых нодах будущего кластера Victoria Metrics выполните загрузку бинарников из локального NXRM:
-VER=&#39;v1.106.0&#39; PLATFORM=&#39;linux-amd64&#39; INTERNAL_REPO=&#34;https://nexus.example.org/repository/dud_evolut_raw&#34; REPO_FOLDER=&#34;monitoring/victoriametrics&#34; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}_checksums.txt">
-  <meta itemprop="datePublished" content="2024-07-23T11:17:28+03:00">
-  <meta itemprop="dateModified" content="2024-07-23T11:17:28+03:00">
-  <meta itemprop="wordCount" content="496">
+VER=&#39;v1.110.0&#39; PLATFORM=&#39;linux-amd64&#39; INTERNAL_REPO=&#34;https://nexus.example.org/repository/dud_evolut_raw&#34; REPO_FOLDER=&#34;monitoring/victoriametrics&#34; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}_checksums.txt">
+  <meta itemprop="datePublished" content="2025-01-30T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-01-30T00:00:00+00:00">
+  <meta itemprop="wordCount" content="500">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Установка Victoria Metrics Cluster из бинарников">
   <meta name="twitter:description" content="1. Использованные материалы https://docs.victoriametrics.com/quick-start/
+https://github.com/VictoriaMetrics-Community/victoriametrics-rpm/blob/master/vmstorage.service
 2. Скачивание бинарников из локального репозитория на целевые хосты На целевых нодах будущего кластера Victoria Metrics выполните загрузку бинарников из локального NXRM:
-VER=&#39;v1.106.0&#39; PLATFORM=&#39;linux-amd64&#39; INTERNAL_REPO=&#34;https://nexus.example.org/repository/dud_evolut_raw&#34; REPO_FOLDER=&#34;monitoring/victoriametrics&#34; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}_checksums.txt">
+VER=&#39;v1.110.0&#39; PLATFORM=&#39;linux-amd64&#39; INTERNAL_REPO=&#34;https://nexus.example.org/repository/dud_evolut_raw&#34; REPO_FOLDER=&#34;monitoring/victoriametrics&#34; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}_checksums.txt">
 
 
 
@@ -687,22 +691,18 @@ if (window.location.pathname !== "/") {
   <label for="m-manualsmonitoring-check"><a href="/manuals/monitoring/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoring"><span class="">Monitoring</span></a></label>
   
   <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringprometheus-li">
-  <input type="checkbox" id="m-manualsmonitoringprometheus-check"/>
-  <label for="m-manualsmonitoringprometheus-check"><a href="/manuals/monitoring/prometheus/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoringprometheus"><span class="">Prometheus</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsmonitoringvictoriametrics-li">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsmonitoringvictoriametrics-li">
   <input type="checkbox" id="m-manualsmonitoringvictoriametrics-check"/>
   <label for="m-manualsmonitoringvictoriametrics-check"><a href="/manuals/monitoring/victoriametrics/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoringvictoriametrics"><span class="">Victoria Metrics</span></a></label>
   
   <ul class="ul-3 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsdownload-victoria-metrics-binaries-and-upload-to-nexus-li">
-  <input type="checkbox" id="m-manualsmonitoringvictoriametricsdownload-victoria-metrics-binaries-and-upload-to-nexus-check"/>
-  <label for="m-manualsmonitoringvictoriametricsdownload-victoria-metrics-binaries-and-upload-to-nexus-check"><a href="/manuals/monitoring/victoriametrics/download-victoria-metrics-binaries-and-upload-to-nexus/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsdownload-victoria-metrics-binaries-and-upload-to-nexus"><span class="">Перенос бинарников Victoria Metrics Cluster из github в локальный Nexus</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsinstalling-victoria-metrics-cluster-from-binaries-li">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsinstalling-victoria-metrics-cluster-from-binaries-li">
   <input type="checkbox" id="m-manualsmonitoringvictoriametricsinstalling-victoria-metrics-cluster-from-binaries-check"/>
   <label for="m-manualsmonitoringvictoriametricsinstalling-victoria-metrics-cluster-from-binaries-check"><a href="/manuals/monitoring/victoriametrics/installing-victoria-metrics-cluster-from-binaries/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsinstalling-victoria-metrics-cluster-from-binaries"><span class="">Установка Victoria Metrics Cluster из бинарников</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsdownload-victoria-metrics-binaries-and-upload-to-nexus-li">
+  <input type="checkbox" id="m-manualsmonitoringvictoriametricsdownload-victoria-metrics-binaries-and-upload-to-nexus-check"/>
+  <label for="m-manualsmonitoringvictoriametricsdownload-victoria-metrics-binaries-and-upload-to-nexus-check"><a href="/manuals/monitoring/victoriametrics/download-victoria-metrics-binaries-and-upload-to-nexus/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsdownload-victoria-metrics-binaries-and-upload-to-nexus"><span class="">Перенос бинарников Victoria Metrics Cluster из github в локальный Nexus</span></a></label>
   
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options-li">
   <input type="checkbox" id="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options-check"/>
@@ -710,6 +710,10 @@ if (window.location.pathname !== "/") {
   
 </li>
   </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringprometheus-li">
+  <input type="checkbox" id="m-manualsmonitoringprometheus-check"/>
+  <label for="m-manualsmonitoringprometheus-check"><a href="/manuals/monitoring/prometheus/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoringprometheus"><span class="">Prometheus</span></a></label>
+  
 </li>
   </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsproxmox-li">
@@ -988,6 +992,9 @@ if (window.location.pathname !== "/") {
 <li>
 <p><a href="https://docs.victoriametrics.com/quick-start/" class="bare">https://docs.victoriametrics.com/quick-start/</a></p>
 </li>
+<li>
+<p><a href="https://github.com/VictoriaMetrics-Community/victoriametrics-rpm/blob/master/vmstorage.service" class="bare">https://github.com/VictoriaMetrics-Community/victoriametrics-rpm/blob/master/vmstorage.service</a></p>
+</li>
 </ol>
 </div>
 </div>
@@ -1001,7 +1008,7 @@ if (window.location.pathname !== "/") {
 <p>На целевых нодах будущего кластера Victoria Metrics выполните загрузку бинарников из локального NXRM:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">VER=&#39;v1.106.0&#39;
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">VER=&#39;v1.110.0&#39;
 PLATFORM=&#39;linux-amd64&#39;
 
 INTERNAL_REPO=&#34;https://nexus.example.org/repository/dud_evolut_raw&#34;
@@ -1114,7 +1121,7 @@ RestartSec=1
 EnvironmentFile=/etc/sysconfig/vmstorage
 ExecStart=/usr/local/bin/vmstorage-prod -envflag.enable
 </span><span style="color: #FFFFFF;background-color: #231529">ExecStop=/bin/kill -s SIGTERM \$</span>MAINPID
-<span style="color: #FFFFFF;background-color: #231529">ExecReload=/bin/kill -HUP \$</span>MAINPID
+<span style="color: #FFFFFF;background-color: #231529">ExecReload=/bin/kill -s HUP \$</span>MAINPID
 <span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>See docs https://docs.victoriametrics.com/Single-server-VictoriaMetrics.html#tuning
 <span style="color: #FFFFFF;background-color: #231529">LimitNOFILE=1048576
 LimitNPROC=1048576
@@ -1173,7 +1180,7 @@ systemctl enable --now vmstorage</span></code></pre>
 <p>На тех же хостах с установленными vmstorage, или же отдельных, добавьте в systemd соответствующий service-модуль <code>vminsert.service</code>:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">VMSTORAGE_ADDRESSES=&#39;10.15.160.1,10.15.160.2&#39;
+<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">VMSTORAGE_ADDRESSES=&#39;10.15.160.1,10.15.160.2,10.15.160.3,10.15.160.4,10.15.160.5&#39;
 
 groupadd -r victoriametrics
 useradd -r -M -s sbin/nologin -g victoriametrics vminsert
@@ -1195,7 +1202,7 @@ RestartSec=1
 EnvironmentFile=/etc/sysconfig/vminsert
 ExecStart=/usr/local/bin/vminsert-prod -envflag.enable
 </span><span style="color: #FFFFFF;background-color: #231529">ExecStop=/bin/kill -s SIGTERM \$</span>MAINPID
-<span style="color: #FFFFFF;background-color: #231529">ExecReload=/bin/kill -HUP \$</span>MAINPID
+<span style="color: #FFFFFF;background-color: #231529">ExecReload=/bin/kill -s HUP \$</span>MAINPID
 <span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>See docs https://docs.victoriametrics.com/Single-server-VictoriaMetrics.html#tuning
 <span style="color: #FFFFFF;background-color: #231529">LimitNOFILE=1048576
 LimitNPROC=1048576
@@ -1252,7 +1259,7 @@ systemctl enable --now vminsert</span></code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">VMSELECT_DIR=&#39;/srv/vmselect&#39;
-VMSTORAGE_ADDRESSES=&#39;10.15.160.1,10.15.160.2&#39;
+VMSTORAGE_ADDRESSES=&#39;10.15.160.1,10.15.160.2,10.15.160.3,10.15.160.4,10.15.160.5&#39;
 
 groupadd -r victoriametrics
 </span><span style="color: #FFFFFF;background-color: #231529">useradd -r -M -s /usr/sbin/nologin -g victoriametrics -d $</span><span style="color: #41ff5b">{</span>VMSELECT_DIR<span style="color: #41ff5b">}</span> vmselect
@@ -1277,7 +1284,7 @@ RestartSec=1
 EnvironmentFile=/etc/sysconfig/vmselect
 ExecStart=/usr/local/bin/vmselect-prod -envflag.enable
 </span><span style="color: #FFFFFF;background-color: #231529">ExecStop=/bin/kill -s SIGTERM \$</span>MAINPID
-<span style="color: #FFFFFF;background-color: #231529">ExecReload=/bin/kill -HUP \$</span>MAINPID
+<span style="color: #FFFFFF;background-color: #231529">ExecReload=/bin/kill -s HUP \$</span>MAINPID
 <span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>See docs https://docs.victoriametrics.com/Single-server-VictoriaMetrics.html#tuning
 <span style="color: #FFFFFF;background-color: #231529">LimitNOFILE=1048576
 LimitNPROC=1048576
