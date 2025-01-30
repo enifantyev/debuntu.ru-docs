@@ -73,7 +73,7 @@
 <script>window.yaContextCb=window.yaContextCb||[]</script>
 <script src="https://yandex.ru/ads/system/context.js" async></script>
 
-<link rel="stylesheet" href="https://debuntu.ru/css/yandex-ad-blocks.css"><link rel="stylesheet" href="https://debuntu.ru/css/tabs.css"><link rel="stylesheet" href="https://debuntu.ru/css/asciidoc-admon.css"><link rel="stylesheet" href="https://debuntu.ru/css/monokai.css"><link rel="stylesheet" href="https://debuntu.ru/css/tulip.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://debuntu.ru/css/yandex-ad-blocks.css"><link rel="stylesheet" href="https://debuntu.ru/css/tabs.css"><link rel="stylesheet" href="https://debuntu.ru/css/asciidoc-admon.css"><link rel="stylesheet" href="https://debuntu.ru/css/github.css"><link rel="stylesheet" href="https://debuntu.ru/css/tulip.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1HVBCPETY0"></script>
 <script>
 var doNotTrack = false;
@@ -182,97 +182,186 @@ if (window.location.pathname !== "/") {
       <div class="td-main">
         <div class="row flex-xl-nowrap">
           <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
-            <div id="td-sidebar-menu" class="td-sidebar__inner">
+            
+  <script>
+    $(function() {
+    $("#td-section-nav a").removeClass("active");
+    $("#td-section-nav #m-alvm2-sozdanie-peremeschenie-i-udalenie-logicheskih-tomov").addClass("active"); 
+    $("#td-section-nav #m-alvm2-sozdanie-peremeschenie-i-udalenie-logicheskih-tomov-li span").addClass("td-sidebar-nav-active-item"); 
+    $("#td-section-nav #m-alvm2-sozdanie-peremeschenie-i-udalenie-logicheskih-tomov").parents("li").addClass("active-path"); 
+    $("#td-section-nav li.active-path").addClass("show"); 
+    $("#td-section-nav li.active-path").children("input").prop('checked', true);
+    $("#td-section-nav #m-alvm2-sozdanie-peremeschenie-i-udalenie-logicheskih-tomov-li").siblings("li").addClass("show");  
+    $("#td-section-nav #m-alvm2-sozdanie-peremeschenie-i-udalenie-logicheskih-tomov-li").children("ul").children("li").addClass("show");  
+    $("#td-sidebar-menu").toggleClass("d-none"); 
+    });
+  </script>
+  <div id="td-sidebar-menu" class="td-sidebar__inner d-none">
   <form class="td-sidebar__search d-flex align-items-center">
     
     <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
     </button>
   </form>
-  <nav class="td-sidebar-nav collapse" id="td-section-nav">
+  <nav class="td-sidebar-nav collapse foldable-nav" id="td-section-nav">
     <ul class="td-sidebar-nav__section pe-md-3 ul-0">
-      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-a-li">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-a-li">
   <a href="/a/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-a"><span class="">Статьи</span></a>
   <ul class="ul-1">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-acmak-sborka-rpm-paketa-dlya-centos7-li">
-  <a href="/a/cmak-sborka-rpm-paketa-dlya-centos7/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-acmak-sborka-rpm-paketa-dlya-centos7"><span class="">CMAK. 01. Сборка rpm-пакета для CentOS7</span></a>
+  <input type="checkbox" id="m-acmak-sborka-rpm-paketa-dlya-centos7-check"/>
+  <label for="m-acmak-sborka-rpm-paketa-dlya-centos7-check"><a href="/a/cmak-sborka-rpm-paketa-dlya-centos7/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-acmak-sborka-rpm-paketa-dlya-centos7"><span class="">CMAK. 01. Сборка rpm-пакета для CentOS7</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-akafdrop-sborka-jar-paketa-li">
-  <a href="/a/kafdrop-sborka-jar-paketa/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-akafdrop-sborka-jar-paketa"><span class="">Kafdrop. 01. Сборка jar-пакета</span></a>
+  <input type="checkbox" id="m-akafdrop-sborka-jar-paketa-check"/>
+  <label for="m-akafdrop-sborka-jar-paketa-check"><a href="/a/kafdrop-sborka-jar-paketa/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-akafdrop-sborka-jar-paketa"><span class="">Kafdrop. 01. Сборка jar-пакета</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-akafdrop-ustanovka-i-nastroika-li">
-  <a href="/a/kafdrop-ustanovka-i-nastroika/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-akafdrop-ustanovka-i-nastroika"><span class="">Kafdrop. 02. Установка и настройка</span></a>
+  <input type="checkbox" id="m-akafdrop-ustanovka-i-nastroika-check"/>
+  <label for="m-akafdrop-ustanovka-i-nastroika-check"><a href="/a/kafdrop-ustanovka-i-nastroika/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-akafdrop-ustanovka-i-nastroika"><span class="">Kafdrop. 02. Установка и настройка</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-austanovka-cockpit-s-avtoobnovlyaemym-tls-sertifikatom-iz-freeipa-li">
-  <a href="/a/ustanovka-cockpit-s-avtoobnovlyaemym-tls-sertifikatom-iz-freeipa/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-austanovka-cockpit-s-avtoobnovlyaemym-tls-sertifikatom-iz-freeipa"><span class="">Установка Cockpit с автообновляемым TLS-сертификатом из FreeIPA</span></a>
+  <input type="checkbox" id="m-austanovka-cockpit-s-avtoobnovlyaemym-tls-sertifikatom-iz-freeipa-check"/>
+  <label for="m-austanovka-cockpit-s-avtoobnovlyaemym-tls-sertifikatom-iz-freeipa-check"><a href="/a/ustanovka-cockpit-s-avtoobnovlyaemym-tls-sertifikatom-iz-freeipa/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-austanovka-cockpit-s-avtoobnovlyaemym-tls-sertifikatom-iz-freeipa"><span class="">Установка Cockpit с автообновляемым TLS-сертификатом из FreeIPA</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-austanovka-jupyterhub-na-centos-7-li">
-  <a href="/a/ustanovka-jupyterhub-na-centos-7/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-austanovka-jupyterhub-na-centos-7"><span class="">Установка JupyterHub на CentOS 7 (draft)</span></a>
+  <input type="checkbox" id="m-austanovka-jupyterhub-na-centos-7-check"/>
+  <label for="m-austanovka-jupyterhub-na-centos-7-check"><a href="/a/ustanovka-jupyterhub-na-centos-7/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-austanovka-jupyterhub-na-centos-7"><span class="">Установка JupyterHub на CentOS 7 (draft)</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-austanovka-nexus-repository-manager-li">
-  <a href="/a/ustanovka-nexus-repository-manager/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-austanovka-nexus-repository-manager"><span class="">Установка Nexus Repository Manager</span></a>
+  <input type="checkbox" id="m-austanovka-nexus-repository-manager-check"/>
+  <label for="m-austanovka-nexus-repository-manager-check"><a href="/a/ustanovka-nexus-repository-manager/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-austanovka-nexus-repository-manager"><span class="">Установка Nexus Repository Manager</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-amokey-polzovatelskii-servis-sbrosa-smeny-parolei-freeipa-li">
-  <a href="/a/mokey-polzovatelskii-servis-sbrosa-smeny-parolei-freeipa/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-amokey-polzovatelskii-servis-sbrosa-smeny-parolei-freeipa"><span class="">Mokey - пользовательский сервис сброса/смены паролей FreeIPA</span></a>
+  <input type="checkbox" id="m-amokey-polzovatelskii-servis-sbrosa-smeny-parolei-freeipa-check"/>
+  <label for="m-amokey-polzovatelskii-servis-sbrosa-smeny-parolei-freeipa-check"><a href="/a/mokey-polzovatelskii-servis-sbrosa-smeny-parolei-freeipa/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-amokey-polzovatelskii-servis-sbrosa-smeny-parolei-freeipa"><span class="">Mokey - пользовательский сервис сброса/смены паролей FreeIPA</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-anastroika-autentifikacii-avtorizacii-v-apache-spark-li">
-  <a href="/a/nastroika-autentifikacii-avtorizacii-v-apache-spark/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-anastroika-autentifikacii-avtorizacii-v-apache-spark"><span class="">Настройка аутентификации/авторизации в Apache Spark</span></a>
+  <input type="checkbox" id="m-anastroika-autentifikacii-avtorizacii-v-apache-spark-check"/>
+  <label for="m-anastroika-autentifikacii-avtorizacii-v-apache-spark-check"><a href="/a/nastroika-autentifikacii-avtorizacii-v-apache-spark/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-anastroika-autentifikacii-avtorizacii-v-apache-spark"><span class="">Настройка аутентификации/авторизации в Apache Spark</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-asozdanie-system-account-dlya-podklyucheniya-ldap-klienta-k-freeipa-li">
-  <a href="/a/sozdanie-system-account-dlya-podklyucheniya-ldap-klienta-k-freeipa/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-asozdanie-system-account-dlya-podklyucheniya-ldap-klienta-k-freeipa"><span class="">Создание system account для подключения LDAP-клиента к FreeIPA</span></a>
+  <input type="checkbox" id="m-asozdanie-system-account-dlya-podklyucheniya-ldap-klienta-k-freeipa-check"/>
+  <label for="m-asozdanie-system-account-dlya-podklyucheniya-ldap-klienta-k-freeipa-check"><a href="/a/sozdanie-system-account-dlya-podklyucheniya-ldap-klienta-k-freeipa/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-asozdanie-system-account-dlya-podklyucheniya-ldap-klienta-k-freeipa"><span class="">Создание system account для подключения LDAP-клиента к FreeIPA</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-aispolzovanie-apache-sqoop-dlya-importa-eksporta-dannyh-mezhdu-postgresql-i-hdfs-li">
-  <a href="/a/ispolzovanie-apache-sqoop-dlya-importa-eksporta-dannyh-mezhdu-postgresql-i-hdfs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-aispolzovanie-apache-sqoop-dlya-importa-eksporta-dannyh-mezhdu-postgresql-i-hdfs"><span class="">Использование Apache Sqoop для импорта/экспорта данных между PostgreSQL и HDFS</span></a>
+  <input type="checkbox" id="m-aispolzovanie-apache-sqoop-dlya-importa-eksporta-dannyh-mezhdu-postgresql-i-hdfs-check"/>
+  <label for="m-aispolzovanie-apache-sqoop-dlya-importa-eksporta-dannyh-mezhdu-postgresql-i-hdfs-check"><a href="/a/ispolzovanie-apache-sqoop-dlya-importa-eksporta-dannyh-mezhdu-postgresql-i-hdfs/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-aispolzovanie-apache-sqoop-dlya-importa-eksporta-dannyh-mezhdu-postgresql-i-hdfs"><span class="">Использование Apache Sqoop для импорта/экспорта данных между PostgreSQL и HDFS</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-anastroika-ldap-autentifikacii-v-nexus-repository-manager-li">
-  <a href="/a/nastroika-ldap-autentifikacii-v-nexus-repository-manager/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-anastroika-ldap-autentifikacii-v-nexus-repository-manager"><span class="">Настройка LDAP-аутентификации в Nexus Repository Manager</span></a>
+  <input type="checkbox" id="m-anastroika-ldap-autentifikacii-v-nexus-repository-manager-check"/>
+  <label for="m-anastroika-ldap-autentifikacii-v-nexus-repository-manager-check"><a href="/a/nastroika-ldap-autentifikacii-v-nexus-repository-manager/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-anastroika-ldap-autentifikacii-v-nexus-repository-manager"><span class="">Настройка LDAP-аутентификации в Nexus Repository Manager</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-abest-practices-for-using-ldap-link-with-vertica-perevod-li">
-  <a href="/a/best-practices-for-using-ldap-link-with-vertica-perevod/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-abest-practices-for-using-ldap-link-with-vertica-perevod"><span class="">Best Practices for Using LDAP Link with Vertica (перевод)</span></a>
+  <input type="checkbox" id="m-abest-practices-for-using-ldap-link-with-vertica-perevod-check"/>
+  <label for="m-abest-practices-for-using-ldap-link-with-vertica-perevod-check"><a href="/a/best-practices-for-using-ldap-link-with-vertica-perevod/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-abest-practices-for-using-ldap-link-with-vertica-perevod"><span class="">Best Practices for Using LDAP Link with Vertica (перевод)</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-ajenkins-problemy-vypolneniya-udalyonnyh-komand-v-setyah-s-stateful-firewall-i-sposoby-ih-resheniya-li">
-  <a href="/a/jenkins-problemy-vypolneniya-udalyonnyh-komand-v-setyah-s-stateful-firewall-i-sposoby-ih-resheniya/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-ajenkins-problemy-vypolneniya-udalyonnyh-komand-v-setyah-s-stateful-firewall-i-sposoby-ih-resheniya"><span class="">Jenkins Проблемы выполнения удалённых команд в сетях со stateful firewall и способы их решения</span></a>
+  <input type="checkbox" id="m-ajenkins-problemy-vypolneniya-udalyonnyh-komand-v-setyah-s-stateful-firewall-i-sposoby-ih-resheniya-check"/>
+  <label for="m-ajenkins-problemy-vypolneniya-udalyonnyh-komand-v-setyah-s-stateful-firewall-i-sposoby-ih-resheniya-check"><a href="/a/jenkins-problemy-vypolneniya-udalyonnyh-komand-v-setyah-s-stateful-firewall-i-sposoby-ih-resheniya/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-ajenkins-problemy-vypolneniya-udalyonnyh-komand-v-setyah-s-stateful-firewall-i-sposoby-ih-resheniya"><span class="">Jenkins Проблемы выполнения удалённых команд в сетях со stateful firewall и способы их решения</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-asborka-rpm-paketa-nginx-c-modulyami-dlya-kafka-li">
-  <a href="/a/sborka-rpm-paketa-nginx-c-modulyami-dlya-kafka/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-asborka-rpm-paketa-nginx-c-modulyami-dlya-kafka"><span class="">Сборка rpm-пакета nginx c модулями для kafka</span></a>
+  <input type="checkbox" id="m-asborka-rpm-paketa-nginx-c-modulyami-dlya-kafka-check"/>
+  <label for="m-asborka-rpm-paketa-nginx-c-modulyami-dlya-kafka-check"><a href="/a/sborka-rpm-paketa-nginx-c-modulyami-dlya-kafka/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-asborka-rpm-paketa-nginx-c-modulyami-dlya-kafka"><span class="">Сборка rpm-пакета nginx c модулями для kafka</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-abekap-dampa-bazy-postgresql-i-ego-vosstanovlenie-na-novom-servere-li">
-  <a href="/a/bekap-dampa-bazy-postgresql-i-ego-vosstanovlenie-na-novom-servere/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-abekap-dampa-bazy-postgresql-i-ego-vosstanovlenie-na-novom-servere"><span class="">Бэкап дампа базы Postgresql и его восстановление на новом сервере</span></a>
+  <input type="checkbox" id="m-abekap-dampa-bazy-postgresql-i-ego-vosstanovlenie-na-novom-servere-check"/>
+  <label for="m-abekap-dampa-bazy-postgresql-i-ego-vosstanovlenie-na-novom-servere-check"><a href="/a/bekap-dampa-bazy-postgresql-i-ego-vosstanovlenie-na-novom-servere/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-abekap-dampa-bazy-postgresql-i-ego-vosstanovlenie-na-novom-servere"><span class="">Бэкап дампа базы Postgresql и его восстановление на новом сервере</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-avoid-linux-posleustanovochnye-shagi-li">
-  <a href="/a/void-linux-posleustanovochnye-shagi/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-avoid-linux-posleustanovochnye-shagi"><span class="">Void Linux Послеустановочные шаги</span></a>
+  <input type="checkbox" id="m-avoid-linux-posleustanovochnye-shagi-check"/>
+  <label for="m-avoid-linux-posleustanovochnye-shagi-check"><a href="/a/void-linux-posleustanovochnye-shagi/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-avoid-linux-posleustanovochnye-shagi"><span class="">Void Linux Послеустановочные шаги</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-achto-takoe-zakrytyi-klyuch-otkrytyi-klyuch-zapros-na-sertifikaciyu-sertifikat-otkrytogo-klyucha-li">
-  <a href="/a/chto-takoe-zakrytyi-klyuch-otkrytyi-klyuch-zapros-na-sertifikaciyu-sertifikat-otkrytogo-klyucha/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-achto-takoe-zakrytyi-klyuch-otkrytyi-klyuch-zapros-na-sertifikaciyu-sertifikat-otkrytogo-klyucha"><span class="">Что такое Закрытый Ключ, Открытый Ключ, Запрос На Сертификацию, Сертификат Открытого Ключа</span></a>
+  <input type="checkbox" id="m-achto-takoe-zakrytyi-klyuch-otkrytyi-klyuch-zapros-na-sertifikaciyu-sertifikat-otkrytogo-klyucha-check"/>
+  <label for="m-achto-takoe-zakrytyi-klyuch-otkrytyi-klyuch-zapros-na-sertifikaciyu-sertifikat-otkrytogo-klyucha-check"><a href="/a/chto-takoe-zakrytyi-klyuch-otkrytyi-klyuch-zapros-na-sertifikaciyu-sertifikat-otkrytogo-klyucha/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-achto-takoe-zakrytyi-klyuch-otkrytyi-klyuch-zapros-na-sertifikaciyu-sertifikat-otkrytogo-klyucha"><span class="">Что такое Закрытый Ключ, Открытый Ключ, Запрос На Сертификацию, Сертификат Открытого Ключа</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-aopisanie-failovoi-sistemy-overlayfs-li">
-  <a href="/a/opisanie-failovoi-sistemy-overlayfs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-aopisanie-failovoi-sistemy-overlayfs"><span class="">Описание файловой системы OverlayFS</span></a>
+  <input type="checkbox" id="m-aopisanie-failovoi-sistemy-overlayfs-check"/>
+  <label for="m-aopisanie-failovoi-sistemy-overlayfs-check"><a href="/a/opisanie-failovoi-sistemy-overlayfs/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-aopisanie-failovoi-sistemy-overlayfs"><span class="">Описание файловой системы OverlayFS</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-apath-mtu-discovery-i-prochee-svyazannoe-s-etim-li">
-  <a href="/a/path-mtu-discovery-i-prochee-svyazannoe-s-etim/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-apath-mtu-discovery-i-prochee-svyazannoe-s-etim"><span class="">Path MTU Discovery и прочее связанное с этим</span></a>
+  <input type="checkbox" id="m-apath-mtu-discovery-i-prochee-svyazannoe-s-etim-check"/>
+  <label for="m-apath-mtu-discovery-i-prochee-svyazannoe-s-etim-check"><a href="/a/path-mtu-discovery-i-prochee-svyazannoe-s-etim/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-apath-mtu-discovery-i-prochee-svyazannoe-s-etim"><span class="">Path MTU Discovery и прочее связанное с этим</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-aopisanie-vfs-virtualnoi-failovoi-sistemy-linux-li">
-  <a href="/a/opisanie-vfs-virtualnoi-failovoi-sistemy-linux/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-aopisanie-vfs-virtualnoi-failovoi-sistemy-linux"><span class="">Описание VFS Виртуальной Файловой Системы Linux</span></a>
+  <input type="checkbox" id="m-aopisanie-vfs-virtualnoi-failovoi-sistemy-linux-check"/>
+  <label for="m-aopisanie-vfs-virtualnoi-failovoi-sistemy-linux-check"><a href="/a/opisanie-vfs-virtualnoi-failovoi-sistemy-linux/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-aopisanie-vfs-virtualnoi-failovoi-sistemy-linux"><span class="">Описание VFS Виртуальной Файловой Системы Linux</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-abezopasnoe-umenshenie-logicheskogo-toma-lvm-s-failovoi-sistemoi-btrfs-li">
-  <a href="/a/bezopasnoe-umenshenie-logicheskogo-toma-lvm-s-failovoi-sistemoi-btrfs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-abezopasnoe-umenshenie-logicheskogo-toma-lvm-s-failovoi-sistemoi-btrfs"><span class="">Безопасное уменьшение логического тома LVM с файловой системой Btrfs</span></a>
+  <input type="checkbox" id="m-abezopasnoe-umenshenie-logicheskogo-toma-lvm-s-failovoi-sistemoi-btrfs-check"/>
+  <label for="m-abezopasnoe-umenshenie-logicheskogo-toma-lvm-s-failovoi-sistemoi-btrfs-check"><a href="/a/bezopasnoe-umenshenie-logicheskogo-toma-lvm-s-failovoi-sistemoi-btrfs/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-abezopasnoe-umenshenie-logicheskogo-toma-lvm-s-failovoi-sistemoi-btrfs"><span class="">Безопасное уменьшение логического тома LVM с файловой системой Btrfs</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-achem-konsol-otlichaetsya-ot-terminala-li">
-  <a href="/a/chem-konsol-otlichaetsya-ot-terminala/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-achem-konsol-otlichaetsya-ot-terminala"><span class="">Чем консоль отличается от терминала</span></a>
+  <input type="checkbox" id="m-achem-konsol-otlichaetsya-ot-terminala-check"/>
+  <label for="m-achem-konsol-otlichaetsya-ot-terminala-check"><a href="/a/chem-konsol-otlichaetsya-ot-terminala/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-achem-konsol-otlichaetsya-ot-terminala"><span class="">Чем консоль отличается от терминала</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-austanovka-plone-cms-li">
-  <a href="/a/ustanovka-plone-cms/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-austanovka-plone-cms"><span class="">Установка Plone CMS</span></a>
+  <input type="checkbox" id="m-austanovka-plone-cms-check"/>
+  <label for="m-austanovka-plone-cms-check"><a href="/a/ustanovka-plone-cms/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-austanovka-plone-cms"><span class="">Установка Plone CMS</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-atradicionnye-prava-dostupa-unix-i-acl-li">
-  <a href="/a/tradicionnye-prava-dostupa-unix-i-acl/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-atradicionnye-prava-dostupa-unix-i-acl"><span class="">Traditional Unix permissions и Access Control Lists</span></a>
+  <input type="checkbox" id="m-atradicionnye-prava-dostupa-unix-i-acl-check"/>
+  <label for="m-atradicionnye-prava-dostupa-unix-i-acl-check"><a href="/a/tradicionnye-prava-dostupa-unix-i-acl/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-atradicionnye-prava-dostupa-unix-i-acl"><span class="">Traditional Unix permissions и Access Control Lists</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-arezervnoe-kopirovanie-plone-li">
-  <a href="/a/rezervnoe-kopirovanie-plone/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-arezervnoe-kopirovanie-plone"><span class="">Резервное копирование Plone</span></a>
+  <input type="checkbox" id="m-arezervnoe-kopirovanie-plone-check"/>
+  <label for="m-arezervnoe-kopirovanie-plone-check"><a href="/a/rezervnoe-kopirovanie-plone/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-arezervnoe-kopirovanie-plone"><span class="">Резервное копирование Plone</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-achroot-rsync-dlya-bezopasnogo-sbora-bekapov-s-udalyonnyh-hostov-li">
-  <a href="/a/chroot-rsync-dlya-bezopasnogo-sbora-bekapov-s-udalyonnyh-hostov/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-achroot-rsync-dlya-bezopasnogo-sbora-bekapov-s-udalyonnyh-hostov"><span class="">Chroot rsync для безопасного сбора бэкапов с удалённых хостов</span></a>
+  <input type="checkbox" id="m-achroot-rsync-dlya-bezopasnogo-sbora-bekapov-s-udalyonnyh-hostov-check"/>
+  <label for="m-achroot-rsync-dlya-bezopasnogo-sbora-bekapov-s-udalyonnyh-hostov-check"><a href="/a/chroot-rsync-dlya-bezopasnogo-sbora-bekapov-s-udalyonnyh-hostov/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-achroot-rsync-dlya-bezopasnogo-sbora-bekapov-s-udalyonnyh-hostov"><span class="">Chroot rsync для безопасного сбора бэкапов с удалённых хостов</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-aozdanie-kopii-saita-plone-li">
-  <a href="/a/ozdanie-kopii-saita-plone/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-aozdanie-kopii-saita-plone"><span class="">Создание копии сайта Plone</span></a>
+  <input type="checkbox" id="m-aozdanie-kopii-saita-plone-check"/>
+  <label for="m-aozdanie-kopii-saita-plone-check"><a href="/a/ozdanie-kopii-saita-plone/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-aozdanie-kopii-saita-plone"><span class="">Создание копии сайта Plone</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-asozdanie-kopii-saita-plone-li">
-  <a href="/a/sozdanie-kopii-saita-plone/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-asozdanie-kopii-saita-plone"><span class="">Создание копии сайта Plone</span></a>
+  <input type="checkbox" id="m-asozdanie-kopii-saita-plone-check"/>
+  <label for="m-asozdanie-kopii-saita-plone-check"><a href="/a/sozdanie-kopii-saita-plone/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-asozdanie-kopii-saita-plone"><span class="">Создание копии сайта Plone</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-adobavlenie-recaptcha-v-plone-li">
-  <a href="/a/dobavlenie-recaptcha-v-plone/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-adobavlenie-recaptcha-v-plone"><span class="">Добавление reCAPTCHA в Plone</span></a>
+  <input type="checkbox" id="m-adobavlenie-recaptcha-v-plone-check"/>
+  <label for="m-adobavlenie-recaptcha-v-plone-check"><a href="/a/dobavlenie-recaptcha-v-plone/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-adobavlenie-recaptcha-v-plone"><span class="">Добавление reCAPTCHA в Plone</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-aispolzovanie-composer-dlya-ustanovki-i-upravleniya-zavisimostyami-drupal-8-li">
-  <a href="/a/ispolzovanie-composer-dlya-ustanovki-i-upravleniya-zavisimostyami-drupal-8/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-aispolzovanie-composer-dlya-ustanovki-i-upravleniya-zavisimostyami-drupal-8"><span class="">Использование Composer для установки и управления зависимостями Drupal 8</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-alvm2-sozdanie-peremeschenie-i-udalenie-logicheskih-tomov-li">
-  <a href="/a/lvm2-sozdanie-peremeschenie-i-udalenie-logicheskih-tomov/" class="align-left ps-0 active td-sidebar-link td-sidebar-link__page" id="m-alvm2-sozdanie-peremeschenie-i-udalenie-logicheskih-tomov"><span class="td-sidebar-nav-active-item">LVM2 — создание, перемещение и удаление логических томов</span></a>
+  <input type="checkbox" id="m-aispolzovanie-composer-dlya-ustanovki-i-upravleniya-zavisimostyami-drupal-8-check"/>
+  <label for="m-aispolzovanie-composer-dlya-ustanovki-i-upravleniya-zavisimostyami-drupal-8-check"><a href="/a/ispolzovanie-composer-dlya-ustanovki-i-upravleniya-zavisimostyami-drupal-8/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-aispolzovanie-composer-dlya-ustanovki-i-upravleniya-zavisimostyami-drupal-8"><span class="">Использование Composer для установки и управления зависимостями Drupal 8</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-alvm2-sozdanie-peremeschenie-i-udalenie-logicheskih-tomov-li">
+  <input type="checkbox" id="m-alvm2-sozdanie-peremeschenie-i-udalenie-logicheskih-tomov-check"/>
+  <label for="m-alvm2-sozdanie-peremeschenie-i-udalenie-logicheskih-tomov-check"><a href="/a/lvm2-sozdanie-peremeschenie-i-udalenie-logicheskih-tomov/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-alvm2-sozdanie-peremeschenie-i-udalenie-logicheskih-tomov"><span class="">LVM2 — создание, перемещение и удаление логических томов</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-afreebsd-ustanovka-udalenie-programm-li">
-  <a href="/a/freebsd-ustanovka-udalenie-programm/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-afreebsd-ustanovka-udalenie-programm"><span class="">FreeBSD Установка, удаление программ</span></a>
+  <input type="checkbox" id="m-afreebsd-ustanovka-udalenie-programm-check"/>
+  <label for="m-afreebsd-ustanovka-udalenie-programm-check"><a href="/a/freebsd-ustanovka-udalenie-programm/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-afreebsd-ustanovka-udalenie-programm"><span class="">FreeBSD Установка, удаление программ</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-austanovka-i-ispolzovanie-v-freebsd-9-1-novogo-paketnogo-menedzhera-pkgng-li">
-  <a href="/a/ustanovka-i-ispolzovanie-v-freebsd-9-1-novogo-paketnogo-menedzhera-pkgng/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-austanovka-i-ispolzovanie-v-freebsd-9-1-novogo-paketnogo-menedzhera-pkgng"><span class="">Установка и использование в FreeBSD 9.1 нового пакетного менеджера pkgng</span></a>
+  <input type="checkbox" id="m-austanovka-i-ispolzovanie-v-freebsd-9-1-novogo-paketnogo-menedzhera-pkgng-check"/>
+  <label for="m-austanovka-i-ispolzovanie-v-freebsd-9-1-novogo-paketnogo-menedzhera-pkgng-check"><a href="/a/ustanovka-i-ispolzovanie-v-freebsd-9-1-novogo-paketnogo-menedzhera-pkgng/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-austanovka-i-ispolzovanie-v-freebsd-9-1-novogo-paketnogo-menedzhera-pkgng"><span class="">Установка и использование в FreeBSD 9.1 нового пакетного менеджера pkgng</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-austanovka-postgresql-90-na-debian-60-li">
-  <a href="/a/ustanovka-postgresql-90-na-debian-60/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-austanovka-postgresql-90-na-debian-60"><span class="">Установка PostgreSQL 9.0 на Debian 6.0</span></a>
+  <input type="checkbox" id="m-austanovka-postgresql-90-na-debian-60-check"/>
+  <label for="m-austanovka-postgresql-90-na-debian-60-check"><a href="/a/ustanovka-postgresql-90-na-debian-60/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-austanovka-postgresql-90-na-debian-60"><span class="">Установка PostgreSQL 9.0 на Debian 6.0</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-anastroyka-prozrachnogo-squid3-squidguard-li">
-  <a href="/a/nastroyka-prozrachnogo-squid3-squidguard/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-anastroyka-prozrachnogo-squid3-squidguard"><span class="">Настройка прозрачного squid3 &#43; squidGuard</span></a>
+  <input type="checkbox" id="m-anastroyka-prozrachnogo-squid3-squidguard-check"/>
+  <label for="m-anastroyka-prozrachnogo-squid3-squidguard-check"><a href="/a/nastroyka-prozrachnogo-squid3-squidguard/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-anastroyka-prozrachnogo-squid3-squidguard"><span class="">Настройка прозрачного squid3 &#43; squidGuard</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-austanovka-egroupware-1-8-na-debian-60-li">
-  <a href="/a/ustanovka-egroupware-1-8-na-debian-6.0/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-austanovka-egroupware-1-8-na-debian-60"><span class="">Установка egroupware 1.8 на debian 6.0</span></a>
+  <input type="checkbox" id="m-austanovka-egroupware-1-8-na-debian-60-check"/>
+  <label for="m-austanovka-egroupware-1-8-na-debian-60-check"><a href="/a/ustanovka-egroupware-1-8-na-debian-6.0/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-austanovka-egroupware-1-8-na-debian-60"><span class="">Установка egroupware 1.8 на debian 6.0</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-austanovka-eclipse-3-6-helios-v-ubuntu-li">
-  <a href="/a/ustanovka-eclipse-3-6-helios-v-ubuntu/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-austanovka-eclipse-3-6-helios-v-ubuntu"><span class="">Установка Eclipse 3.6 (Helios) в Ubuntu</span></a>
+  <input type="checkbox" id="m-austanovka-eclipse-3-6-helios-v-ubuntu-check"/>
+  <label for="m-austanovka-eclipse-3-6-helios-v-ubuntu-check"><a href="/a/ustanovka-eclipse-3-6-helios-v-ubuntu/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-austanovka-eclipse-3-6-helios-v-ubuntu"><span class="">Установка Eclipse 3.6 (Helios) в Ubuntu</span></a></label>
+  
 </li>
   </ul>
 </li>
     </ul>
   </nav>
 </div>
+
 
           </aside>
           <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
@@ -525,7 +614,7 @@ if (window.location.pathname !== "/") {
 </code></pre><h3 id="сбор-информации-о-физическом-размещении-lv-на-физических-томах-pv">Сбор информации о физическом размещении LV на физических томах (PV)</h3>
 <p>Размещение логических томов (LV) на физических томах (PV) выдаёт команда:</p>
 <pre tabindex="0"><code># lvs -a -o +devices
-</code></pre><!-- raw HTML omitted -->
+</code></pre><details><p>
 <pre tabindex="0"><code>LV             VG        Attr       LSize    Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert Devices
   allegrograph0  vg        -wi-ao----    5,00g                                                     /dev/mapper/pv10(117096)
   arangodb0      vg        -wi-ao----    5,00g                                                     /dev/mapper/pv10(114536)
@@ -539,13 +628,13 @@ if (window.location.pathname !== "/") {
   nextcloud-www  vg        -wi-ao----    5,00g                                                     /dev/mapper/pv2(26880)
   vol            vg        -wi-ao----  500,00g                                                     /dev/mapper/pv5(0)
   vol            vg        -wi-ao----  500,00g                                                     /dev/mapper/pv12(93281)
-</code></pre><!-- raw HTML omitted -->
+</code></pre></p></details>
 <h3 id="перетаскивание-части-или-всего-lv">Перетаскивание части или всего LV</h3>
 <p>Перенос экстентов указанного LV на другой PV:</p>
 <pre tabindex="0"><code># pvmove -n docker /dev/mapper/pv13 /dev/mapper/pv11
 </code></pre><p>Если экстенты LV находятся в разных местах, то посмотреть карту размещения можно с помощью команды:</p>
 <pre tabindex="0"><code># lvdisplay -m /dev/vg/vol
-</code></pre><!-- raw HTML omitted -->
+</code></pre><details><p>
 <pre tabindex="0"><code>File descriptor 7 (pipe:[274631]) leaked on lvdisplay invocation. Parent PID 22239: bash
   --- Logical volume ---
   LV Path                /dev/vg/vol
@@ -579,10 +668,10 @@ if (window.location.pathname !== "/") {
     Type                linear
     Physical volume     /dev/mapper/pv10
     Physical extents    59999 to 68727
-</code></pre><!-- raw HTML omitted -->
+</code></pre></p></details>
 <p>Карту физического тома можно посмотреть через команду:</p>
 <pre tabindex="0"><code># pvdisplay -m /dev/mapper/pv2
-</code></pre><!-- raw HTML omitted -->
+</code></pre><details><p>
 <pre tabindex="0"><code>File descriptor 7 (pipe:[274631]) leaked on pvdisplay invocation. Parent PID 22239: bash
   --- Physical volume ---
   PV Name               /dev/mapper/pv2
@@ -622,7 +711,7 @@ if (window.location.pathname !== "/") {
     Logical extents     0 to 1279
   Physical extent 35840 to 113175:
     FREE
-</code></pre><!-- raw HTML omitted -->
+</code></pre></p></details>
 <h3 id="перемещение-extentов-с-помощью-pvmove">Перемещение extent&rsquo;ов с помощью pvmove</h3>
 <p>Перенос определённых PE между разными томами:</p>
 <pre tabindex="0"><code># pvmove -nstorj /dev/mapper/pv3:0-66312  /dev/mapper/pv13:35243-119200
@@ -677,7 +766,7 @@ window.yaContextCb.push(() => {
 
       </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
         <span class="td-footer__copyright">&copy;
-    2009&ndash;2024
+    2009&ndash;2025
     <span class="td-footer__authors">Evgeny Nifantiev</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span>
       </div>
     </div>

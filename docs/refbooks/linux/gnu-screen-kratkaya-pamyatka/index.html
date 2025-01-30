@@ -72,7 +72,7 @@
 <script>window.yaContextCb=window.yaContextCb||[]</script>
 <script src="https://yandex.ru/ads/system/context.js" async></script>
 
-<link rel="stylesheet" href="https://debuntu.ru/css/yandex-ad-blocks.css"><link rel="stylesheet" href="https://debuntu.ru/css/tabs.css"><link rel="stylesheet" href="https://debuntu.ru/css/asciidoc-admon.css"><link rel="stylesheet" href="https://debuntu.ru/css/monokai.css"><link rel="stylesheet" href="https://debuntu.ru/css/tulip.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://debuntu.ru/css/yandex-ad-blocks.css"><link rel="stylesheet" href="https://debuntu.ru/css/tabs.css"><link rel="stylesheet" href="https://debuntu.ru/css/asciidoc-admon.css"><link rel="stylesheet" href="https://debuntu.ru/css/github.css"><link rel="stylesheet" href="https://debuntu.ru/css/tulip.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1HVBCPETY0"></script>
 <script>
 var doNotTrack = false;
@@ -181,45 +181,77 @@ if (window.location.pathname !== "/") {
       <div class="td-main">
         <div class="row flex-xl-nowrap">
           <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
-            <div id="td-sidebar-menu" class="td-sidebar__inner">
+            
+  <script>
+    $(function() {
+    $("#td-section-nav a").removeClass("active");
+    $("#td-section-nav #m-refbookslinuxgnu-screen-kratkaya-pamyatka").addClass("active"); 
+    $("#td-section-nav #m-refbookslinuxgnu-screen-kratkaya-pamyatka-li span").addClass("td-sidebar-nav-active-item"); 
+    $("#td-section-nav #m-refbookslinuxgnu-screen-kratkaya-pamyatka").parents("li").addClass("active-path"); 
+    $("#td-section-nav li.active-path").addClass("show"); 
+    $("#td-section-nav li.active-path").children("input").prop('checked', true);
+    $("#td-section-nav #m-refbookslinuxgnu-screen-kratkaya-pamyatka-li").siblings("li").addClass("show");  
+    $("#td-section-nav #m-refbookslinuxgnu-screen-kratkaya-pamyatka-li").children("ul").children("li").addClass("show");  
+    $("#td-sidebar-menu").toggleClass("d-none"); 
+    });
+  </script>
+  <div id="td-sidebar-menu" class="td-sidebar__inner d-none">
   <form class="td-sidebar__search d-flex align-items-center">
     
     <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
     </button>
   </form>
-  <nav class="td-sidebar-nav collapse" id="td-section-nav">
+  <nav class="td-sidebar-nav collapse foldable-nav" id="td-section-nav">
     <ul class="td-sidebar-nav__section pe-md-3 ul-0">
-      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-refbooks-li">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-refbooks-li">
   <a href="/refbooks/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-refbooks"><span class="">Справочники</span></a>
   <ul class="ul-1">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-refbookslinux-li">
-  <a href="/refbooks/linux/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-refbookslinux"><span class="">Linux</span></a>
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-refbookslinux-li">
+  <input type="checkbox" id="m-refbookslinux-check"/>
+  <label for="m-refbookslinux-check"><a href="/refbooks/linux/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-refbookslinux"><span class="">Linux</span></a></label>
+  
   <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-refbookslinuxgnu-screen-kratkaya-pamyatka-li">
-  <a href="/refbooks/linux/gnu-screen-kratkaya-pamyatka/" class="align-left ps-0 active td-sidebar-link td-sidebar-link__page" id="m-refbookslinuxgnu-screen-kratkaya-pamyatka"><span class="td-sidebar-nav-active-item">GNU Screen. Краткая памятка</span></a>
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-refbookslinuxgnu-screen-kratkaya-pamyatka-li">
+  <input type="checkbox" id="m-refbookslinuxgnu-screen-kratkaya-pamyatka-check"/>
+  <label for="m-refbookslinuxgnu-screen-kratkaya-pamyatka-check"><a href="/refbooks/linux/gnu-screen-kratkaya-pamyatka/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-refbookslinuxgnu-screen-kratkaya-pamyatka"><span class="">GNU Screen. Краткая памятка</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-refbookslinuxkratkiy-spisok-utilit-i-komand-dlya-raboty-s-protsessami-li">
-  <a href="/refbooks/linux/kratkiy-spisok-utilit-i-komand-dlya-raboty-s-protsessami/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-refbookslinuxkratkiy-spisok-utilit-i-komand-dlya-raboty-s-protsessami"><span class="">Краткий список утилит и команд оболочки для работы с процессами</span></a>
+  <input type="checkbox" id="m-refbookslinuxkratkiy-spisok-utilit-i-komand-dlya-raboty-s-protsessami-check"/>
+  <label for="m-refbookslinuxkratkiy-spisok-utilit-i-komand-dlya-raboty-s-protsessami-check"><a href="/refbooks/linux/kratkiy-spisok-utilit-i-komand-dlya-raboty-s-protsessami/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-refbookslinuxkratkiy-spisok-utilit-i-komand-dlya-raboty-s-protsessami"><span class="">Краткий список утилит и команд оболочки для работы с процессами</span></a></label>
+  
 </li>
   </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-refbooksapachehadoop-li">
-  <a href="/refbooks/apachehadoop/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-refbooksapachehadoop"><span class="">Apache Hadoop</span></a>
+  <input type="checkbox" id="m-refbooksapachehadoop-check"/>
+  <label for="m-refbooksapachehadoop-check"><a href="/refbooks/apachehadoop/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-refbooksapachehadoop"><span class="">Apache Hadoop</span></a></label>
+  
   <ul class="ul-2 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-refbooksapachehadoopadministrirovanie-tablic-v-apache-hbase-li">
-  <a href="/refbooks/apachehadoop/administrirovanie-tablic-v-apache-hbase/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-refbooksapachehadoopadministrirovanie-tablic-v-apache-hbase"><span class="">Администрирование таблиц в Apache HBase</span></a>
+  <input type="checkbox" id="m-refbooksapachehadoopadministrirovanie-tablic-v-apache-hbase-check"/>
+  <label for="m-refbooksapachehadoopadministrirovanie-tablic-v-apache-hbase-check"><a href="/refbooks/apachehadoop/administrirovanie-tablic-v-apache-hbase/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-refbooksapachehadoopadministrirovanie-tablic-v-apache-hbase"><span class="">Администрирование таблиц в Apache HBase</span></a></label>
+  
 </li>
   </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-refbookspython-li">
-  <a href="/refbooks/python/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-refbookspython"><span class="">Python</span></a>
+  <input type="checkbox" id="m-refbookspython-check"/>
+  <label for="m-refbookspython-check"><a href="/refbooks/python/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-refbookspython"><span class="">Python</span></a></label>
+  
   <ul class="ul-2 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-refbookspythonupravleniye-paketami-v-payton-li">
-  <a href="/refbooks/python/upravleniye-paketami-v-payton/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-refbookspythonupravleniye-paketami-v-payton"><span class="">Управление пакетами в Python</span></a>
+  <input type="checkbox" id="m-refbookspythonupravleniye-paketami-v-payton-check"/>
+  <label for="m-refbookspythonupravleniye-paketami-v-payton-check"><a href="/refbooks/python/upravleniye-paketami-v-payton/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-refbookspythonupravleniye-paketami-v-payton"><span class="">Управление пакетами в Python</span></a></label>
+  
 </li>
   </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-refbooksdoc-li">
-  <a href="/refbooks/doc/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-refbooksdoc"><span class="">Doc</span></a>
+  <input type="checkbox" id="m-refbooksdoc-check"/>
+  <label for="m-refbooksdoc-check"><a href="/refbooks/doc/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-refbooksdoc"><span class="">Doc</span></a></label>
+  
   <ul class="ul-2 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-refbooksdocasciidoctor-li">
-  <a href="/refbooks/doc/asciidoctor/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-refbooksdocasciidoctor"><span class="">AsciiDoctor</span></a>
+  <input type="checkbox" id="m-refbooksdocasciidoctor-check"/>
+  <label for="m-refbooksdocasciidoctor-check"><a href="/refbooks/doc/asciidoctor/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-refbooksdocasciidoctor"><span class="">AsciiDoctor</span></a></label>
+  
 </li>
   </ul>
 </li>
@@ -228,6 +260,7 @@ if (window.location.pathname !== "/") {
     </ul>
   </nav>
 </div>
+
 
           </aside>
           <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
@@ -459,188 +492,188 @@ if (window.location.pathname !== "/") {
 <p>Совет. Гугление дополнительной информации производить по ключевой фразе &ldquo;gnu screen&rdquo;.</p>
 <h2 id="единственный-сеанс-gnu-screen">Единственный сеанс GNU Screen</h2>
 <table>
-<thead>
-<tr>
-<th>Команда</th>
-<th>Описание</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>screen -ls</code></td>
-<td>вывести список всех Screen-сеансов.</td>
-</tr>
-<tr>
-<td><code>screen</code></td>
-<td>запустить новый безымянный Screen-сеанс.</td>
-</tr>
-<tr>
-<td><code>screen -r</code></td>
-<td>возобновить отключённый Screen-сеанс.</td>
-</tr>
-<tr>
-<td><code>screen -d</code></td>
-<td>отключиться от текущего Screen-сеанса.</td>
-</tr>
-<tr>
-<td><code>screen -x</code></td>
-<td>подключиться к активному Screen-сеанс в режиме multiuser.</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Команда</th>
+          <th>Описание</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>screen -ls</code></td>
+          <td>вывести список всех Screen-сеансов.</td>
+      </tr>
+      <tr>
+          <td><code>screen</code></td>
+          <td>запустить новый безымянный Screen-сеанс.</td>
+      </tr>
+      <tr>
+          <td><code>screen -r</code></td>
+          <td>возобновить отключённый Screen-сеанс.</td>
+      </tr>
+      <tr>
+          <td><code>screen -d</code></td>
+          <td>отключиться от текущего Screen-сеанса.</td>
+      </tr>
+      <tr>
+          <td><code>screen -x</code></td>
+          <td>подключиться к активному Screen-сеанс в режиме multiuser.</td>
+      </tr>
+  </tbody>
 </table>
 <h2 id="множество-сеансов-gnu-screen">Множество сеансов GNU Screen</h2>
 <table>
-<thead>
-<tr>
-<th>Команда</th>
-<th>Описание</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>screen -ls</code></td>
-<td>вывести список всех Screen-сеансов.</td>
-</tr>
-<tr>
-<td><code>screen -S Atlas</code></td>
-<td>создать сеанс Screen с названием Atlas.</td>
-</tr>
-<tr>
-<td><code>screen -r A</code> или <code>screen -r At</code> и т.д.</td>
-<td>возобновить сеанс Screen, указав часть его имени.</td>
-</tr>
-<tr>
-<td><code>screen -r 230919</code></td>
-<td>возобновить сеанс Screen, указав его полный номер.</td>
-</tr>
-<tr>
-<td><code>screen -d At</code></td>
-<td>отключиться от текущего Screen-сеанса, указав часть его имени.</td>
-</tr>
-<tr>
-<td><code>screen -d 2309</code></td>
-<td>отключиться от текущего Screen-сеанса, указав часть его номера.</td>
-</tr>
-<tr>
-<td><code>screen -x Atlas</code></td>
-<td>подключиться к активному Screen-сеанс в режиме multiuser, указав его полное имя.</td>
-</tr>
-<tr>
-<td><code>screen -x 23</code></td>
-<td>подключиться к активному Screen-сеанс в режиме multiuser, указав часть его номера.</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Команда</th>
+          <th>Описание</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>screen -ls</code></td>
+          <td>вывести список всех Screen-сеансов.</td>
+      </tr>
+      <tr>
+          <td><code>screen -S Atlas</code></td>
+          <td>создать сеанс Screen с названием Atlas.</td>
+      </tr>
+      <tr>
+          <td><code>screen -r A</code> или <code>screen -r At</code> и т.д.</td>
+          <td>возобновить сеанс Screen, указав часть его имени.</td>
+      </tr>
+      <tr>
+          <td><code>screen -r 230919</code></td>
+          <td>возобновить сеанс Screen, указав его полный номер.</td>
+      </tr>
+      <tr>
+          <td><code>screen -d At</code></td>
+          <td>отключиться от текущего Screen-сеанса, указав часть его имени.</td>
+      </tr>
+      <tr>
+          <td><code>screen -d 2309</code></td>
+          <td>отключиться от текущего Screen-сеанса, указав часть его номера.</td>
+      </tr>
+      <tr>
+          <td><code>screen -x Atlas</code></td>
+          <td>подключиться к активному Screen-сеанс в режиме multiuser, указав его полное имя.</td>
+      </tr>
+      <tr>
+          <td><code>screen -x 23</code></td>
+          <td>подключиться к активному Screen-сеанс в режиме multiuser, указав часть его номера.</td>
+      </tr>
+  </tbody>
 </table>
 <h2 id="часто--используемые-сочетания-клавиш-внутри-gnu-screen">Часто  используемые сочетания клавиш внутри GNU Screen</h2>
 <table>
-<thead>
-<tr>
-<th>Сочетание клавиш</th>
-<th>Описание</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><!-- raw HTML omitted -->Ctrl<!-- raw HTML omitted -->+<!-- raw HTML omitted -->a<!-- raw HTML omitted --> <!-- raw HTML omitted -->d<!-- raw HTML omitted --></td>
-<td>покинуть текущий сеанс screen.</td>
-</tr>
-<tr>
-<td><!-- raw HTML omitted -->Ctrl<!-- raw HTML omitted -->+<!-- raw HTML omitted -->a<!-- raw HTML omitted --> <!-- raw HTML omitted -->s<!-- raw HTML omitted --></td>
-<td>заморозка вывода stdout в активном окне. Ввод продолжает работать. Часто нажимается по ошибке.</td>
-</tr>
-<tr>
-<td><!-- raw HTML omitted -->Ctrl<!-- raw HTML omitted -->+<!-- raw HTML omitted -->a<!-- raw HTML omitted --> <!-- raw HTML omitted -->q<!-- raw HTML omitted --></td>
-<td>разморозка вывода stdout в активном окне.</td>
-</tr>
-<tr>
-<td><!-- raw HTML omitted -->Ctrl<!-- raw HTML omitted -->+<!-- raw HTML omitted -->a<!-- raw HTML omitted --> <!-- raw HTML omitted -->x<!-- raw HTML omitted --></td>
-<td><strong>заблокировать текущий сеанс Screen с выводом запроса пароля текущего пользователя.</strong>  Часто нажимается по ошибке. Как назло, именно в этот момент пароль вылетает из головы!</td>
-</tr>
-<tr>
-<td>&mdash;</td>
-<td></td>
-</tr>
-<tr>
-<td><!-- raw HTML omitted -->Ctrl<!-- raw HTML omitted -->+<!-- raw HTML omitted -->a<!-- raw HTML omitted --> <!-- raw HTML omitted -->c<!-- raw HTML omitted --></td>
-<td>создать новое окно.</td>
-</tr>
-<tr>
-<td><!-- raw HTML omitted -->Ctrl<!-- raw HTML omitted -->+<!-- raw HTML omitted -->a<!-- raw HTML omitted --> <!-- raw HTML omitted -->&quot;<!-- raw HTML omitted --></td>
-<td>вывести меню со всеми окнами в текущем сеансе screen&rsquo;а с возможность перехода в выбранное окно.</td>
-</tr>
-<tr>
-<td><!-- raw HTML omitted -->Ctrl<!-- raw HTML omitted -->+<!-- raw HTML omitted -->a<!-- raw HTML omitted --> <!-- raw HTML omitted -->1<!-- raw HTML omitted --></td>
-<td>переключиться на окно номер &ldquo;1&rdquo; или вывести в текущем регионе окно номер &ldquo;1&rdquo;.</td>
-</tr>
-<tr>
-<td><!-- raw HTML omitted -->Ctrl<!-- raw HTML omitted -->+<!-- raw HTML omitted -->a<!-- raw HTML omitted --> <!-- raw HTML omitted -->n<!-- raw HTML omitted --></td>
-<td>переключиться на следующее по порядку окно.</td>
-</tr>
-<tr>
-<td><!-- raw HTML omitted -->Ctrl<!-- raw HTML omitted -->+<!-- raw HTML omitted -->a<!-- raw HTML omitted --> <!-- raw HTML omitted -->p<!-- raw HTML omitted --></td>
-<td>переключиться на предыдущее по порядку окно.</td>
-</tr>
-<tr>
-<td>&mdash;</td>
-<td></td>
-</tr>
-<tr>
-<td><!-- raw HTML omitted -->Ctrl<!-- raw HTML omitted -->+<!-- raw HTML omitted -->a<!-- raw HTML omitted --> <!-- raw HTML omitted -->S<!-- raw HTML omitted --></td>
-<td>разделить горизонтально активное окно/регион на два региона.</td>
-</tr>
-<tr>
-<td><!-- raw HTML omitted -->Ctrl<!-- raw HTML omitted -->+<!-- raw HTML omitted -->a<!-- raw HTML omitted --> <!-- raw HTML omitted -->|<!-- raw HTML omitted --></td>
-<td>разделить вертикально активное окно/регион на два региона.</td>
-</tr>
-<tr>
-<td><!-- raw HTML omitted -->Ctrl<!-- raw HTML omitted -->+<!-- raw HTML omitted -->a<!-- raw HTML omitted --> <!-- raw HTML omitted -->Tab<!-- raw HTML omitted -->  (или <!-- raw HTML omitted -->Shift<!-- raw HTML omitted -->+<!-- raw HTML omitted -->Tab<!-- raw HTML omitted -->)</td>
-<td>переключиться между видимыми регионами по часовой или против часовой стрелки.</td>
-</tr>
-<tr>
-<td><!-- raw HTML omitted -->Ctrl<!-- raw HTML omitted -->+<!-- raw HTML omitted -->a<!-- raw HTML omitted --> <!-- raw HTML omitted -->:<!-- raw HTML omitted --> <!-- raw HTML omitted -->resize -10<!-- raw HTML omitted --></td>
-<td>уменьшить размер текущего региона на десять строк или десять знакомест, в зависимости от схемы разделения окна.</td>
-</tr>
-<tr>
-<td><!-- raw HTML omitted -->Ctrl<!-- raw HTML omitted -->+<!-- raw HTML omitted -->a<!-- raw HTML omitted --> <!-- raw HTML omitted -->:<!-- raw HTML omitted --> <!-- raw HTML omitted -->resize -v -10<!-- raw HTML omitted --></td>
-<td>уменьшить размер текущего региона на десять строк.</td>
-</tr>
-<tr>
-<td><!-- raw HTML omitted -->Ctrl<!-- raw HTML omitted -->+<!-- raw HTML omitted -->a<!-- raw HTML omitted --> <!-- raw HTML omitted -->:<!-- raw HTML omitted --> <!-- raw HTML omitted -->resize -h +10<!-- raw HTML omitted --></td>
-<td>увеличить размер текущего региона на десять знакомест.</td>
-</tr>
-<tr>
-<td><!-- raw HTML omitted -->Ctrl<!-- raw HTML omitted -->+<!-- raw HTML omitted -->a<!-- raw HTML omitted --> <!-- raw HTML omitted -->:<!-- raw HTML omitted --> <!-- raw HTML omitted -->resize 10<!-- raw HTML omitted --></td>
-<td>установить размер текущего региона в десять строк или десять знакомест, в зависимости от схемы разделения окна.</td>
-</tr>
-<tr>
-<td><!-- raw HTML omitted -->Ctrl<!-- raw HTML omitted -->+<!-- raw HTML omitted -->a<!-- raw HTML omitted --> <!-- raw HTML omitted -->X<!-- raw HTML omitted --></td>
-<td>закрыть активный регион.</td>
-</tr>
-<tr>
-<td>&mdash;</td>
-<td>&mdash;</td>
-</tr>
-<tr>
-<td><!-- raw HTML omitted -->Ctrl<!-- raw HTML omitted -->+<!-- raw HTML omitted -->a<!-- raw HTML omitted --> <!-- raw HTML omitted -->[<!-- raw HTML omitted --> или <!-- raw HTML omitted -->Esc<!-- raw HTML omitted --></td>
-<td>переход в режим копирования/вставки. Этот режим также используется для изучения вывода команды, когда интересующие строки скрылись за верхним краем экрана.</td>
-</tr>
-<tr>
-<td><!-- raw HTML omitted -->↑<!-- raw HTML omitted --></td>
-<td>переместить курсор вверх и прокрутить экран вниз.</td>
-</tr>
-<tr>
-<td><!-- raw HTML omitted -->↓<!-- raw HTML omitted --></td>
-<td>переместить крусор вниз и прокрутить экран вверх.</td>
-</tr>
-<tr>
-<td><!-- raw HTML omitted -->q<!-- raw HTML omitted --> или <!-- raw HTML omitted -->Esc<!-- raw HTML omitted --></td>
-<td>выход из режима копирования/вставки.</td>
-</tr>
-<tr>
-<td>&mdash;</td>
-<td>&mdash;</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Сочетание клавиш</th>
+          <th>Описание</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><kbd>Ctrl</kbd>+<kbd>a</kbd> <kbd>d</kbd></td>
+          <td>покинуть текущий сеанс screen.</td>
+      </tr>
+      <tr>
+          <td><kbd>Ctrl</kbd>+<kbd>a</kbd> <kbd>s</kbd></td>
+          <td>заморозка вывода stdout в активном окне. Ввод продолжает работать. Часто нажимается по ошибке.</td>
+      </tr>
+      <tr>
+          <td><kbd>Ctrl</kbd>+<kbd>a</kbd> <kbd>q</kbd></td>
+          <td>разморозка вывода stdout в активном окне.</td>
+      </tr>
+      <tr>
+          <td><kbd>Ctrl</kbd>+<kbd>a</kbd> <kbd>x</kbd></td>
+          <td><strong>заблокировать текущий сеанс Screen с выводом запроса пароля текущего пользователя.</strong>  Часто нажимается по ошибке. Как назло, именно в этот момент пароль вылетает из головы!</td>
+      </tr>
+      <tr>
+          <td>&mdash;</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><kbd>Ctrl</kbd>+<kbd>a</kbd> <kbd>c</kbd></td>
+          <td>создать новое окно.</td>
+      </tr>
+      <tr>
+          <td><kbd>Ctrl</kbd>+<kbd>a</kbd> <kbd>&quot;</kbd></td>
+          <td>вывести меню со всеми окнами в текущем сеансе screen&rsquo;а с возможность перехода в выбранное окно.</td>
+      </tr>
+      <tr>
+          <td><kbd>Ctrl</kbd>+<kbd>a</kbd> <kbd>1</kbd></td>
+          <td>переключиться на окно номер &ldquo;1&rdquo; или вывести в текущем регионе окно номер &ldquo;1&rdquo;.</td>
+      </tr>
+      <tr>
+          <td><kbd>Ctrl</kbd>+<kbd>a</kbd> <kbd>n</kbd></td>
+          <td>переключиться на следующее по порядку окно.</td>
+      </tr>
+      <tr>
+          <td><kbd>Ctrl</kbd>+<kbd>a</kbd> <kbd>p</kbd></td>
+          <td>переключиться на предыдущее по порядку окно.</td>
+      </tr>
+      <tr>
+          <td>&mdash;</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><kbd>Ctrl</kbd>+<kbd>a</kbd> <kbd>S</kbd></td>
+          <td>разделить горизонтально активное окно/регион на два региона.</td>
+      </tr>
+      <tr>
+          <td><kbd>Ctrl</kbd>+<kbd>a</kbd> <kbd>|</kbd></td>
+          <td>разделить вертикально активное окно/регион на два региона.</td>
+      </tr>
+      <tr>
+          <td><kbd>Ctrl</kbd>+<kbd>a</kbd> <kbd>Tab</kbd>  (или <kbd>Shift</kbd>+<kbd>Tab</kbd>)</td>
+          <td>переключиться между видимыми регионами по часовой или против часовой стрелки.</td>
+      </tr>
+      <tr>
+          <td><kbd>Ctrl</kbd>+<kbd>a</kbd> <kbd>:</kbd> <code>resize -10</code></td>
+          <td>уменьшить размер текущего региона на десять строк или десять знакомест, в зависимости от схемы разделения окна.</td>
+      </tr>
+      <tr>
+          <td><kbd>Ctrl</kbd>+<kbd>a</kbd> <kbd>:</kbd> <code>resize -v -10</code></td>
+          <td>уменьшить размер текущего региона на десять строк.</td>
+      </tr>
+      <tr>
+          <td><kbd>Ctrl</kbd>+<kbd>a</kbd> <kbd>:</kbd> <code>resize -h +10</code></td>
+          <td>увеличить размер текущего региона на десять знакомест.</td>
+      </tr>
+      <tr>
+          <td><kbd>Ctrl</kbd>+<kbd>a</kbd> <kbd>:</kbd> <code>resize 10</code></td>
+          <td>установить размер текущего региона в десять строк или десять знакомест, в зависимости от схемы разделения окна.</td>
+      </tr>
+      <tr>
+          <td><kbd>Ctrl</kbd>+<kbd>a</kbd> <kbd>X</kbd></td>
+          <td>закрыть активный регион.</td>
+      </tr>
+      <tr>
+          <td>&mdash;</td>
+          <td>&mdash;</td>
+      </tr>
+      <tr>
+          <td><kbd>Ctrl</kbd>+<kbd>a</kbd> <kbd>[</kbd> или <kbd>Esc</kbd></td>
+          <td>переход в режим копирования/вставки. Этот режим также используется для изучения вывода команды, когда интересующие строки скрылись за верхним краем экрана.</td>
+      </tr>
+      <tr>
+          <td><kbd>↑</kbd></td>
+          <td>переместить курсор вверх и прокрутить экран вниз.</td>
+      </tr>
+      <tr>
+          <td><kbd>↓</kbd></td>
+          <td>переместить крусор вниз и прокрутить экран вверх.</td>
+      </tr>
+      <tr>
+          <td><kbd>q</kbd> или <kbd>Esc</kbd></td>
+          <td>выход из режима копирования/вставки.</td>
+      </tr>
+      <tr>
+          <td>&mdash;</td>
+          <td>&mdash;</td>
+      </tr>
+  </tbody>
 </table>
 
 	
@@ -679,7 +712,7 @@ window.yaContextCb.push(() => {
 
       </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
         <span class="td-footer__copyright">&copy;
-    2009&ndash;2024
+    2009&ndash;2025
     <span class="td-footer__authors">Evgeny Nifantiev</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span>
       </div>
     </div>

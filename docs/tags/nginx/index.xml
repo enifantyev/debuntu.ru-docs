@@ -13,7 +13,7 @@
       <link>https://debuntu.ru/a/sborka-rpm-paketa-nginx-c-modulyami-dlya-kafka/</link>
       <pubDate>Tue, 26 May 2020 00:00:00 +0000</pubDate>
       <guid>https://debuntu.ru/a/sborka-rpm-paketa-nginx-c-modulyami-dlya-kafka/</guid>
-      <description>2020-05-26&#xA;Сборку производил в свежеустановленной виртуальной машине CentOS 7 (минимальный дистр), из-под обычного пользователя имеющего беспарольное sudo.&#xA;Сборка пакета librdkafka Сначала надо собрать свежий https://github.com/edenhill/librdkafka, так как в репо CentOS&amp;rsquo;а librdkafka имеет версию 0.11.5, тогда как на странице разработчиков — 1.5.0.&#xA;Сборка этого пакета заняла по времени чуть больше часа, но не из-за сложности. К счастью, разработчики всё продумали и собирать этот пакет проще простого.&#xA;Сборка пакета будет производиться в песочнице, с помощью mock.</description>
+      <description>&lt;p&gt;2020-05-26&lt;/p&gt;&#xA;&lt;p&gt;Сборку производил в свежеустановленной виртуальной машине CentOS 7 (минимальный дистр), из-под обычного пользователя имеющего беспарольное sudo.&lt;/p&gt;&#xA;&lt;h2 id=&#34;сборка-пакета-librdkafka&#34;&gt;Сборка пакета librdkafka&lt;/h2&gt;&#xA;&lt;p&gt;Сначала надо собрать свежий &lt;code&gt;https://github.com/edenhill/librdkafka&lt;/code&gt;, так как в репо CentOS&amp;rsquo;а librdkafka имеет версию 0.11.5, тогда как на странице разработчиков — 1.5.0.&lt;/p&gt;&#xA;&lt;p&gt;Сборка этого пакета заняла по времени чуть больше часа, но не из-за сложности. К счастью, разработчики всё продумали и собирать этот пакет проще простого.&lt;/p&gt;&#xA;&lt;p&gt;Сборка пакета будет производиться в песочнице, с помощью &lt;code&gt;mock&lt;/code&gt;.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

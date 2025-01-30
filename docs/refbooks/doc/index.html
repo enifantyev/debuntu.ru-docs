@@ -29,6 +29,7 @@
 
   <meta itemprop="name" content="Doc">
   <meta itemprop="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
+  <meta itemprop="datePublished" content="2024-08-03T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-08-03T00:00:00+00:00">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Doc">
@@ -65,7 +66,7 @@
 <script>window.yaContextCb=window.yaContextCb||[]</script>
 <script src="https://yandex.ru/ads/system/context.js" async></script>
 
-<link rel="stylesheet" href="https://debuntu.ru/css/yandex-ad-blocks.css"><link rel="stylesheet" href="https://debuntu.ru/css/tabs.css"><link rel="stylesheet" href="https://debuntu.ru/css/asciidoc-admon.css"><link rel="stylesheet" href="https://debuntu.ru/css/monokai.css"><link rel="stylesheet" href="https://debuntu.ru/css/tulip.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://debuntu.ru/css/yandex-ad-blocks.css"><link rel="stylesheet" href="https://debuntu.ru/css/tabs.css"><link rel="stylesheet" href="https://debuntu.ru/css/asciidoc-admon.css"><link rel="stylesheet" href="https://debuntu.ru/css/github.css"><link rel="stylesheet" href="https://debuntu.ru/css/tulip.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1HVBCPETY0"></script>
 <script>
 var doNotTrack = false;
@@ -174,45 +175,77 @@ if (window.location.pathname !== "/") {
       <div class="td-main">
         <div class="row flex-xl-nowrap">
           <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
-            <div id="td-sidebar-menu" class="td-sidebar__inner">
+            
+  <script>
+    $(function() {
+    $("#td-section-nav a").removeClass("active");
+    $("#td-section-nav #m-refbooksdoc").addClass("active"); 
+    $("#td-section-nav #m-refbooksdoc-li span").addClass("td-sidebar-nav-active-item"); 
+    $("#td-section-nav #m-refbooksdoc").parents("li").addClass("active-path"); 
+    $("#td-section-nav li.active-path").addClass("show"); 
+    $("#td-section-nav li.active-path").children("input").prop('checked', true);
+    $("#td-section-nav #m-refbooksdoc-li").siblings("li").addClass("show");  
+    $("#td-section-nav #m-refbooksdoc-li").children("ul").children("li").addClass("show");  
+    $("#td-sidebar-menu").toggleClass("d-none"); 
+    });
+  </script>
+  <div id="td-sidebar-menu" class="td-sidebar__inner d-none">
   <form class="td-sidebar__search d-flex align-items-center">
     
     <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
     </button>
   </form>
-  <nav class="td-sidebar-nav collapse" id="td-section-nav">
+  <nav class="td-sidebar-nav collapse foldable-nav" id="td-section-nav">
     <ul class="td-sidebar-nav__section pe-md-3 ul-0">
-      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-refbooks-li">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-refbooks-li">
   <a href="/refbooks/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-refbooks"><span class="">Справочники</span></a>
   <ul class="ul-1">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-refbookslinux-li">
-  <a href="/refbooks/linux/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-refbookslinux"><span class="">Linux</span></a>
+  <input type="checkbox" id="m-refbookslinux-check"/>
+  <label for="m-refbookslinux-check"><a href="/refbooks/linux/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-refbookslinux"><span class="">Linux</span></a></label>
+  
   <ul class="ul-2 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-refbookslinuxgnu-screen-kratkaya-pamyatka-li">
-  <a href="/refbooks/linux/gnu-screen-kratkaya-pamyatka/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-refbookslinuxgnu-screen-kratkaya-pamyatka"><span class="">GNU Screen. Краткая памятка</span></a>
+  <input type="checkbox" id="m-refbookslinuxgnu-screen-kratkaya-pamyatka-check"/>
+  <label for="m-refbookslinuxgnu-screen-kratkaya-pamyatka-check"><a href="/refbooks/linux/gnu-screen-kratkaya-pamyatka/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-refbookslinuxgnu-screen-kratkaya-pamyatka"><span class="">GNU Screen. Краткая памятка</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-refbookslinuxkratkiy-spisok-utilit-i-komand-dlya-raboty-s-protsessami-li">
-  <a href="/refbooks/linux/kratkiy-spisok-utilit-i-komand-dlya-raboty-s-protsessami/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-refbookslinuxkratkiy-spisok-utilit-i-komand-dlya-raboty-s-protsessami"><span class="">Краткий список утилит и команд оболочки для работы с процессами</span></a>
+  <input type="checkbox" id="m-refbookslinuxkratkiy-spisok-utilit-i-komand-dlya-raboty-s-protsessami-check"/>
+  <label for="m-refbookslinuxkratkiy-spisok-utilit-i-komand-dlya-raboty-s-protsessami-check"><a href="/refbooks/linux/kratkiy-spisok-utilit-i-komand-dlya-raboty-s-protsessami/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-refbookslinuxkratkiy-spisok-utilit-i-komand-dlya-raboty-s-protsessami"><span class="">Краткий список утилит и команд оболочки для работы с процессами</span></a></label>
+  
 </li>
   </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-refbooksapachehadoop-li">
-  <a href="/refbooks/apachehadoop/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-refbooksapachehadoop"><span class="">Apache Hadoop</span></a>
+  <input type="checkbox" id="m-refbooksapachehadoop-check"/>
+  <label for="m-refbooksapachehadoop-check"><a href="/refbooks/apachehadoop/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-refbooksapachehadoop"><span class="">Apache Hadoop</span></a></label>
+  
   <ul class="ul-2 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-refbooksapachehadoopadministrirovanie-tablic-v-apache-hbase-li">
-  <a href="/refbooks/apachehadoop/administrirovanie-tablic-v-apache-hbase/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-refbooksapachehadoopadministrirovanie-tablic-v-apache-hbase"><span class="">Администрирование таблиц в Apache HBase</span></a>
+  <input type="checkbox" id="m-refbooksapachehadoopadministrirovanie-tablic-v-apache-hbase-check"/>
+  <label for="m-refbooksapachehadoopadministrirovanie-tablic-v-apache-hbase-check"><a href="/refbooks/apachehadoop/administrirovanie-tablic-v-apache-hbase/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-refbooksapachehadoopadministrirovanie-tablic-v-apache-hbase"><span class="">Администрирование таблиц в Apache HBase</span></a></label>
+  
 </li>
   </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-refbookspython-li">
-  <a href="/refbooks/python/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-refbookspython"><span class="">Python</span></a>
+  <input type="checkbox" id="m-refbookspython-check"/>
+  <label for="m-refbookspython-check"><a href="/refbooks/python/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-refbookspython"><span class="">Python</span></a></label>
+  
   <ul class="ul-2 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-refbookspythonupravleniye-paketami-v-payton-li">
-  <a href="/refbooks/python/upravleniye-paketami-v-payton/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-refbookspythonupravleniye-paketami-v-payton"><span class="">Управление пакетами в Python</span></a>
+  <input type="checkbox" id="m-refbookspythonupravleniye-paketami-v-payton-check"/>
+  <label for="m-refbookspythonupravleniye-paketami-v-payton-check"><a href="/refbooks/python/upravleniye-paketami-v-payton/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-refbookspythonupravleniye-paketami-v-payton"><span class="">Управление пакетами в Python</span></a></label>
+  
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-refbooksdoc-li">
-  <a href="/refbooks/doc/" class="align-left ps-0 active td-sidebar-link td-sidebar-link__section" id="m-refbooksdoc"><span class="td-sidebar-nav-active-item">Doc</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-refbooksdoc-li">
+  <input type="checkbox" id="m-refbooksdoc-check"/>
+  <label for="m-refbooksdoc-check"><a href="/refbooks/doc/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-refbooksdoc"><span class="">Doc</span></a></label>
+  
   <ul class="ul-2 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-refbooksdocasciidoctor-li">
-  <a href="/refbooks/doc/asciidoctor/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-refbooksdocasciidoctor"><span class="">AsciiDoctor</span></a>
+  <input type="checkbox" id="m-refbooksdocasciidoctor-check"/>
+  <label for="m-refbooksdocasciidoctor-check"><a href="/refbooks/doc/asciidoctor/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-refbooksdocasciidoctor"><span class="">AsciiDoctor</span></a></label>
+  
 </li>
   </ul>
 </li>
@@ -221,6 +254,7 @@ if (window.location.pathname !== "/") {
     </ul>
   </nav>
 </div>
+
 
           </aside>
           <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
@@ -477,7 +511,7 @@ window.yaContextCb.push(() => {
 
       </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
         <span class="td-footer__copyright">&copy;
-    2009&ndash;2024
+    2009&ndash;2025
     <span class="td-footer__authors">Evgeny Nifantiev</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span>
       </div>
     </div>

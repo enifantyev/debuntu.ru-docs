@@ -977,7 +977,7 @@
   
   
   <url>
-    <loc>https://debuntu.ru/manuals/linux/</loc>
+    <loc>https://debuntu.ru/manuals/apps/</loc>
   </url>
   
   
@@ -1219,6 +1219,13 @@
   
   
   <url>
+    <loc>https://debuntu.ru/manuals/bigdata/</loc>
+    <lastmod>2023-02-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://debuntu.ru/manuals/bigdata/apacheatlas/ustanovka-apache-atlas-2.2.0-v-arenadata-hadoop/</loc>
     <lastmod>2023-02-26T00:00:00+00:00</lastmod>
   </url>
@@ -1331,6 +1338,13 @@
   
   
   <url>
+    <loc>https://debuntu.ru/manuals/borgbackup/</loc>
+    <lastmod>2024-07-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://debuntu.ru/manuals/freeipa/installing-and-setup-freeipa/adding-additional-freeipa-replicas/</loc>
     <lastmod>2023-04-13T00:00:00+00:00</lastmod>
   </url>
@@ -1352,8 +1366,56 @@
   
   
   <url>
+    <loc>https://debuntu.ru/manuals/databases/</loc>
+    <lastmod>2023-05-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://debuntu.ru/manuals/borgbackup/ustanovka-novogo-yadra-v-altlinux-10-dlya-proverki-vosstanovleniya-mashiny-s-pomoshchyu-borgbackup/</loc>
     <lastmod>2022-03-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/freeipa/</loc>
+    <lastmod>2024-08-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/kubernetes/</loc>
+    <lastmod>2024-08-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/linux/</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/monitoring/</loc>
+    <lastmod>2024-08-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/proxmox/</loc>
+    <lastmod>2023-06-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/vpn/</loc>
+    <lastmod>2021-11-19T00:00:00+00:00</lastmod>
   </url>
   
   
@@ -1380,13 +1442,6 @@
   
   
   
-  <url>
-    <loc>https://debuntu.ru/manuals/kubernetes/</loc>
-    <lastmod>2024-08-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  
-  
   
   
   
@@ -1394,13 +1449,6 @@
   <url>
     <loc>https://debuntu.ru/manuals/kubernetes/tls-kerberos-in-kubernetes/</loc>
     <lastmod>2024-08-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://debuntu.ru/manuals/monitoring/</loc>
-    <lastmod>2024-08-09T00:00:00+00:00</lastmod>
   </url>
   
   
@@ -1426,21 +1474,7 @@
   
   
   
-  <url>
-    <loc>https://debuntu.ru/manuals/freeipa/</loc>
-    <lastmod>2024-08-02T00:00:00+00:00</lastmod>
-  </url>
   
-  
-  
-  
-  
-  
-  
-  <url>
-    <loc>https://debuntu.ru/manuals/borgbackup/</loc>
-    <lastmod>2024-07-29T00:00:00+00:00</lastmod>
-  </url>
   
   
   
@@ -1492,19 +1526,11 @@
   
   
   
-  <url>
-    <loc>https://debuntu.ru/manuals/proxmox/</loc>
-    <lastmod>2023-06-19T00:00:00+00:00</lastmod>
-  </url>
   
   
   
   
   
-  <url>
-    <loc>https://debuntu.ru/manuals/databases/</loc>
-    <lastmod>2023-05-02T00:00:00+00:00</lastmod>
-  </url>
   
   
   
@@ -1516,10 +1542,6 @@
   
   
   
-  <url>
-    <loc>https://debuntu.ru/manuals/bigdata/</loc>
-    <lastmod>2023-02-26T00:00:00+00:00</lastmod>
-  </url>
   
   
   
@@ -1557,22 +1579,6 @@
   
   
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <url>
-    <loc>https://debuntu.ru/manuals/vpn/</loc>
-    <lastmod>2021-11-19T00:00:00+00:00</lastmod>
-  </url>
   
   
   
@@ -1903,6 +1909,12 @@
   
   
   <url>
+    <loc>https://debuntu.ru/manuals/apps/opensearch/</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://debuntu.ru/snippets/</loc>
   </url>
   
@@ -1910,6 +1922,12 @@
   
   <url>
     <loc>https://debuntu.ru/manuals/linux/nastroyka-tochnogo-vremeni/systemd-timesyncd/</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/victoriametrics-vminsert-options/</loc>
   </url>
   
   

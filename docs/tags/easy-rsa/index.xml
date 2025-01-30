@@ -13,7 +13,7 @@
       <link>https://debuntu.ru/manuals/vpn/perevod-easy-rsa-3-quickstart-readme/</link>
       <pubDate>Tue, 22 Oct 2019 00:00:00 +0000</pubDate>
       <guid>https://debuntu.ru/manuals/vpn/perevod-easy-rsa-3-quickstart-readme/</guid>
-      <description>2019-10-22&#xA;Предисловие от меня В статье задействован правильный способ использования PKI для OpenVPN, когда операция создания приватных ключей с последующим запросом на сертификацию и операция выпуска сертификата ключа на основе запроса, выполняются на разных системах.&#xA;Easy-RSA 3 Quickstart README Это инструкция как быстро начать использовать Easy-RSA версии 3. Детальный хэлп по использованию и описанию команд может быть найден по команде ./easyrsa -h. Дополнительная документация может быть найдена в директории doc/.</description>
+      <description>&lt;p&gt;2019-10-22&lt;/p&gt;&#xA;&lt;h3 id=&#34;предисловие-от-меня&#34;&gt;Предисловие от меня&lt;/h3&gt;&#xA;&lt;p&gt;В статье задействован &lt;em&gt;правильный&lt;/em&gt; способ использования &lt;em&gt;PKI&lt;/em&gt; для OpenVPN, когда операция создания &lt;em&gt;приватных ключей&lt;/em&gt; с последующим &lt;em&gt;запросом на сертификацию&lt;/em&gt; и операция выпуска &lt;em&gt;сертификата ключа&lt;/em&gt; на основе &lt;em&gt;запроса&lt;/em&gt;, выполняются на разных системах.&lt;/p&gt;&#xA;&lt;h2 id=&#34;easy-rsa-3-quickstart-readme&#34;&gt;Easy-RSA 3 Quickstart README&lt;/h2&gt;&#xA;&lt;p&gt;Это инструкция как быстро начать использовать Easy-RSA версии 3. Детальный хэлп по использованию и описанию команд может быть найден по команде &lt;code&gt;./easyrsa -h&lt;/code&gt;. Дополнительная документация может быть найдена в директории &lt;code&gt;doc/&lt;/code&gt;.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

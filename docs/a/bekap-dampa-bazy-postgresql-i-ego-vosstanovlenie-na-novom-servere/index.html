@@ -73,7 +73,7 @@
 <script>window.yaContextCb=window.yaContextCb||[]</script>
 <script src="https://yandex.ru/ads/system/context.js" async></script>
 
-<link rel="stylesheet" href="https://debuntu.ru/css/yandex-ad-blocks.css"><link rel="stylesheet" href="https://debuntu.ru/css/tabs.css"><link rel="stylesheet" href="https://debuntu.ru/css/asciidoc-admon.css"><link rel="stylesheet" href="https://debuntu.ru/css/monokai.css"><link rel="stylesheet" href="https://debuntu.ru/css/tulip.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://debuntu.ru/css/yandex-ad-blocks.css"><link rel="stylesheet" href="https://debuntu.ru/css/tabs.css"><link rel="stylesheet" href="https://debuntu.ru/css/asciidoc-admon.css"><link rel="stylesheet" href="https://debuntu.ru/css/github.css"><link rel="stylesheet" href="https://debuntu.ru/css/tulip.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1HVBCPETY0"></script>
 <script>
 var doNotTrack = false;
@@ -182,97 +182,186 @@ if (window.location.pathname !== "/") {
       <div class="td-main">
         <div class="row flex-xl-nowrap">
           <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
-            <div id="td-sidebar-menu" class="td-sidebar__inner">
+            
+  <script>
+    $(function() {
+    $("#td-section-nav a").removeClass("active");
+    $("#td-section-nav #m-abekap-dampa-bazy-postgresql-i-ego-vosstanovlenie-na-novom-servere").addClass("active"); 
+    $("#td-section-nav #m-abekap-dampa-bazy-postgresql-i-ego-vosstanovlenie-na-novom-servere-li span").addClass("td-sidebar-nav-active-item"); 
+    $("#td-section-nav #m-abekap-dampa-bazy-postgresql-i-ego-vosstanovlenie-na-novom-servere").parents("li").addClass("active-path"); 
+    $("#td-section-nav li.active-path").addClass("show"); 
+    $("#td-section-nav li.active-path").children("input").prop('checked', true);
+    $("#td-section-nav #m-abekap-dampa-bazy-postgresql-i-ego-vosstanovlenie-na-novom-servere-li").siblings("li").addClass("show");  
+    $("#td-section-nav #m-abekap-dampa-bazy-postgresql-i-ego-vosstanovlenie-na-novom-servere-li").children("ul").children("li").addClass("show");  
+    $("#td-sidebar-menu").toggleClass("d-none"); 
+    });
+  </script>
+  <div id="td-sidebar-menu" class="td-sidebar__inner d-none">
   <form class="td-sidebar__search d-flex align-items-center">
     
     <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
     </button>
   </form>
-  <nav class="td-sidebar-nav collapse" id="td-section-nav">
+  <nav class="td-sidebar-nav collapse foldable-nav" id="td-section-nav">
     <ul class="td-sidebar-nav__section pe-md-3 ul-0">
-      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-a-li">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-a-li">
   <a href="/a/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-a"><span class="">Статьи</span></a>
   <ul class="ul-1">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-acmak-sborka-rpm-paketa-dlya-centos7-li">
-  <a href="/a/cmak-sborka-rpm-paketa-dlya-centos7/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-acmak-sborka-rpm-paketa-dlya-centos7"><span class="">CMAK. 01. Сборка rpm-пакета для CentOS7</span></a>
+  <input type="checkbox" id="m-acmak-sborka-rpm-paketa-dlya-centos7-check"/>
+  <label for="m-acmak-sborka-rpm-paketa-dlya-centos7-check"><a href="/a/cmak-sborka-rpm-paketa-dlya-centos7/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-acmak-sborka-rpm-paketa-dlya-centos7"><span class="">CMAK. 01. Сборка rpm-пакета для CentOS7</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-akafdrop-sborka-jar-paketa-li">
-  <a href="/a/kafdrop-sborka-jar-paketa/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-akafdrop-sborka-jar-paketa"><span class="">Kafdrop. 01. Сборка jar-пакета</span></a>
+  <input type="checkbox" id="m-akafdrop-sborka-jar-paketa-check"/>
+  <label for="m-akafdrop-sborka-jar-paketa-check"><a href="/a/kafdrop-sborka-jar-paketa/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-akafdrop-sborka-jar-paketa"><span class="">Kafdrop. 01. Сборка jar-пакета</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-akafdrop-ustanovka-i-nastroika-li">
-  <a href="/a/kafdrop-ustanovka-i-nastroika/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-akafdrop-ustanovka-i-nastroika"><span class="">Kafdrop. 02. Установка и настройка</span></a>
+  <input type="checkbox" id="m-akafdrop-ustanovka-i-nastroika-check"/>
+  <label for="m-akafdrop-ustanovka-i-nastroika-check"><a href="/a/kafdrop-ustanovka-i-nastroika/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-akafdrop-ustanovka-i-nastroika"><span class="">Kafdrop. 02. Установка и настройка</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-austanovka-cockpit-s-avtoobnovlyaemym-tls-sertifikatom-iz-freeipa-li">
-  <a href="/a/ustanovka-cockpit-s-avtoobnovlyaemym-tls-sertifikatom-iz-freeipa/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-austanovka-cockpit-s-avtoobnovlyaemym-tls-sertifikatom-iz-freeipa"><span class="">Установка Cockpit с автообновляемым TLS-сертификатом из FreeIPA</span></a>
+  <input type="checkbox" id="m-austanovka-cockpit-s-avtoobnovlyaemym-tls-sertifikatom-iz-freeipa-check"/>
+  <label for="m-austanovka-cockpit-s-avtoobnovlyaemym-tls-sertifikatom-iz-freeipa-check"><a href="/a/ustanovka-cockpit-s-avtoobnovlyaemym-tls-sertifikatom-iz-freeipa/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-austanovka-cockpit-s-avtoobnovlyaemym-tls-sertifikatom-iz-freeipa"><span class="">Установка Cockpit с автообновляемым TLS-сертификатом из FreeIPA</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-austanovka-jupyterhub-na-centos-7-li">
-  <a href="/a/ustanovka-jupyterhub-na-centos-7/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-austanovka-jupyterhub-na-centos-7"><span class="">Установка JupyterHub на CentOS 7 (draft)</span></a>
+  <input type="checkbox" id="m-austanovka-jupyterhub-na-centos-7-check"/>
+  <label for="m-austanovka-jupyterhub-na-centos-7-check"><a href="/a/ustanovka-jupyterhub-na-centos-7/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-austanovka-jupyterhub-na-centos-7"><span class="">Установка JupyterHub на CentOS 7 (draft)</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-austanovka-nexus-repository-manager-li">
-  <a href="/a/ustanovka-nexus-repository-manager/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-austanovka-nexus-repository-manager"><span class="">Установка Nexus Repository Manager</span></a>
+  <input type="checkbox" id="m-austanovka-nexus-repository-manager-check"/>
+  <label for="m-austanovka-nexus-repository-manager-check"><a href="/a/ustanovka-nexus-repository-manager/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-austanovka-nexus-repository-manager"><span class="">Установка Nexus Repository Manager</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-amokey-polzovatelskii-servis-sbrosa-smeny-parolei-freeipa-li">
-  <a href="/a/mokey-polzovatelskii-servis-sbrosa-smeny-parolei-freeipa/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-amokey-polzovatelskii-servis-sbrosa-smeny-parolei-freeipa"><span class="">Mokey - пользовательский сервис сброса/смены паролей FreeIPA</span></a>
+  <input type="checkbox" id="m-amokey-polzovatelskii-servis-sbrosa-smeny-parolei-freeipa-check"/>
+  <label for="m-amokey-polzovatelskii-servis-sbrosa-smeny-parolei-freeipa-check"><a href="/a/mokey-polzovatelskii-servis-sbrosa-smeny-parolei-freeipa/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-amokey-polzovatelskii-servis-sbrosa-smeny-parolei-freeipa"><span class="">Mokey - пользовательский сервис сброса/смены паролей FreeIPA</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-anastroika-autentifikacii-avtorizacii-v-apache-spark-li">
-  <a href="/a/nastroika-autentifikacii-avtorizacii-v-apache-spark/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-anastroika-autentifikacii-avtorizacii-v-apache-spark"><span class="">Настройка аутентификации/авторизации в Apache Spark</span></a>
+  <input type="checkbox" id="m-anastroika-autentifikacii-avtorizacii-v-apache-spark-check"/>
+  <label for="m-anastroika-autentifikacii-avtorizacii-v-apache-spark-check"><a href="/a/nastroika-autentifikacii-avtorizacii-v-apache-spark/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-anastroika-autentifikacii-avtorizacii-v-apache-spark"><span class="">Настройка аутентификации/авторизации в Apache Spark</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-asozdanie-system-account-dlya-podklyucheniya-ldap-klienta-k-freeipa-li">
-  <a href="/a/sozdanie-system-account-dlya-podklyucheniya-ldap-klienta-k-freeipa/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-asozdanie-system-account-dlya-podklyucheniya-ldap-klienta-k-freeipa"><span class="">Создание system account для подключения LDAP-клиента к FreeIPA</span></a>
+  <input type="checkbox" id="m-asozdanie-system-account-dlya-podklyucheniya-ldap-klienta-k-freeipa-check"/>
+  <label for="m-asozdanie-system-account-dlya-podklyucheniya-ldap-klienta-k-freeipa-check"><a href="/a/sozdanie-system-account-dlya-podklyucheniya-ldap-klienta-k-freeipa/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-asozdanie-system-account-dlya-podklyucheniya-ldap-klienta-k-freeipa"><span class="">Создание system account для подключения LDAP-клиента к FreeIPA</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-aispolzovanie-apache-sqoop-dlya-importa-eksporta-dannyh-mezhdu-postgresql-i-hdfs-li">
-  <a href="/a/ispolzovanie-apache-sqoop-dlya-importa-eksporta-dannyh-mezhdu-postgresql-i-hdfs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-aispolzovanie-apache-sqoop-dlya-importa-eksporta-dannyh-mezhdu-postgresql-i-hdfs"><span class="">Использование Apache Sqoop для импорта/экспорта данных между PostgreSQL и HDFS</span></a>
+  <input type="checkbox" id="m-aispolzovanie-apache-sqoop-dlya-importa-eksporta-dannyh-mezhdu-postgresql-i-hdfs-check"/>
+  <label for="m-aispolzovanie-apache-sqoop-dlya-importa-eksporta-dannyh-mezhdu-postgresql-i-hdfs-check"><a href="/a/ispolzovanie-apache-sqoop-dlya-importa-eksporta-dannyh-mezhdu-postgresql-i-hdfs/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-aispolzovanie-apache-sqoop-dlya-importa-eksporta-dannyh-mezhdu-postgresql-i-hdfs"><span class="">Использование Apache Sqoop для импорта/экспорта данных между PostgreSQL и HDFS</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-anastroika-ldap-autentifikacii-v-nexus-repository-manager-li">
-  <a href="/a/nastroika-ldap-autentifikacii-v-nexus-repository-manager/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-anastroika-ldap-autentifikacii-v-nexus-repository-manager"><span class="">Настройка LDAP-аутентификации в Nexus Repository Manager</span></a>
+  <input type="checkbox" id="m-anastroika-ldap-autentifikacii-v-nexus-repository-manager-check"/>
+  <label for="m-anastroika-ldap-autentifikacii-v-nexus-repository-manager-check"><a href="/a/nastroika-ldap-autentifikacii-v-nexus-repository-manager/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-anastroika-ldap-autentifikacii-v-nexus-repository-manager"><span class="">Настройка LDAP-аутентификации в Nexus Repository Manager</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-abest-practices-for-using-ldap-link-with-vertica-perevod-li">
-  <a href="/a/best-practices-for-using-ldap-link-with-vertica-perevod/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-abest-practices-for-using-ldap-link-with-vertica-perevod"><span class="">Best Practices for Using LDAP Link with Vertica (перевод)</span></a>
+  <input type="checkbox" id="m-abest-practices-for-using-ldap-link-with-vertica-perevod-check"/>
+  <label for="m-abest-practices-for-using-ldap-link-with-vertica-perevod-check"><a href="/a/best-practices-for-using-ldap-link-with-vertica-perevod/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-abest-practices-for-using-ldap-link-with-vertica-perevod"><span class="">Best Practices for Using LDAP Link with Vertica (перевод)</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-ajenkins-problemy-vypolneniya-udalyonnyh-komand-v-setyah-s-stateful-firewall-i-sposoby-ih-resheniya-li">
-  <a href="/a/jenkins-problemy-vypolneniya-udalyonnyh-komand-v-setyah-s-stateful-firewall-i-sposoby-ih-resheniya/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-ajenkins-problemy-vypolneniya-udalyonnyh-komand-v-setyah-s-stateful-firewall-i-sposoby-ih-resheniya"><span class="">Jenkins Проблемы выполнения удалённых команд в сетях со stateful firewall и способы их решения</span></a>
+  <input type="checkbox" id="m-ajenkins-problemy-vypolneniya-udalyonnyh-komand-v-setyah-s-stateful-firewall-i-sposoby-ih-resheniya-check"/>
+  <label for="m-ajenkins-problemy-vypolneniya-udalyonnyh-komand-v-setyah-s-stateful-firewall-i-sposoby-ih-resheniya-check"><a href="/a/jenkins-problemy-vypolneniya-udalyonnyh-komand-v-setyah-s-stateful-firewall-i-sposoby-ih-resheniya/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-ajenkins-problemy-vypolneniya-udalyonnyh-komand-v-setyah-s-stateful-firewall-i-sposoby-ih-resheniya"><span class="">Jenkins Проблемы выполнения удалённых команд в сетях со stateful firewall и способы их решения</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-asborka-rpm-paketa-nginx-c-modulyami-dlya-kafka-li">
-  <a href="/a/sborka-rpm-paketa-nginx-c-modulyami-dlya-kafka/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-asborka-rpm-paketa-nginx-c-modulyami-dlya-kafka"><span class="">Сборка rpm-пакета nginx c модулями для kafka</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-abekap-dampa-bazy-postgresql-i-ego-vosstanovlenie-na-novom-servere-li">
-  <a href="/a/bekap-dampa-bazy-postgresql-i-ego-vosstanovlenie-na-novom-servere/" class="align-left ps-0 active td-sidebar-link td-sidebar-link__page" id="m-abekap-dampa-bazy-postgresql-i-ego-vosstanovlenie-na-novom-servere"><span class="td-sidebar-nav-active-item">Бэкап дампа базы Postgresql и его восстановление на новом сервере</span></a>
+  <input type="checkbox" id="m-asborka-rpm-paketa-nginx-c-modulyami-dlya-kafka-check"/>
+  <label for="m-asborka-rpm-paketa-nginx-c-modulyami-dlya-kafka-check"><a href="/a/sborka-rpm-paketa-nginx-c-modulyami-dlya-kafka/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-asborka-rpm-paketa-nginx-c-modulyami-dlya-kafka"><span class="">Сборка rpm-пакета nginx c модулями для kafka</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-abekap-dampa-bazy-postgresql-i-ego-vosstanovlenie-na-novom-servere-li">
+  <input type="checkbox" id="m-abekap-dampa-bazy-postgresql-i-ego-vosstanovlenie-na-novom-servere-check"/>
+  <label for="m-abekap-dampa-bazy-postgresql-i-ego-vosstanovlenie-na-novom-servere-check"><a href="/a/bekap-dampa-bazy-postgresql-i-ego-vosstanovlenie-na-novom-servere/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-abekap-dampa-bazy-postgresql-i-ego-vosstanovlenie-na-novom-servere"><span class="">Бэкап дампа базы Postgresql и его восстановление на новом сервере</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-avoid-linux-posleustanovochnye-shagi-li">
-  <a href="/a/void-linux-posleustanovochnye-shagi/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-avoid-linux-posleustanovochnye-shagi"><span class="">Void Linux Послеустановочные шаги</span></a>
+  <input type="checkbox" id="m-avoid-linux-posleustanovochnye-shagi-check"/>
+  <label for="m-avoid-linux-posleustanovochnye-shagi-check"><a href="/a/void-linux-posleustanovochnye-shagi/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-avoid-linux-posleustanovochnye-shagi"><span class="">Void Linux Послеустановочные шаги</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-achto-takoe-zakrytyi-klyuch-otkrytyi-klyuch-zapros-na-sertifikaciyu-sertifikat-otkrytogo-klyucha-li">
-  <a href="/a/chto-takoe-zakrytyi-klyuch-otkrytyi-klyuch-zapros-na-sertifikaciyu-sertifikat-otkrytogo-klyucha/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-achto-takoe-zakrytyi-klyuch-otkrytyi-klyuch-zapros-na-sertifikaciyu-sertifikat-otkrytogo-klyucha"><span class="">Что такое Закрытый Ключ, Открытый Ключ, Запрос На Сертификацию, Сертификат Открытого Ключа</span></a>
+  <input type="checkbox" id="m-achto-takoe-zakrytyi-klyuch-otkrytyi-klyuch-zapros-na-sertifikaciyu-sertifikat-otkrytogo-klyucha-check"/>
+  <label for="m-achto-takoe-zakrytyi-klyuch-otkrytyi-klyuch-zapros-na-sertifikaciyu-sertifikat-otkrytogo-klyucha-check"><a href="/a/chto-takoe-zakrytyi-klyuch-otkrytyi-klyuch-zapros-na-sertifikaciyu-sertifikat-otkrytogo-klyucha/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-achto-takoe-zakrytyi-klyuch-otkrytyi-klyuch-zapros-na-sertifikaciyu-sertifikat-otkrytogo-klyucha"><span class="">Что такое Закрытый Ключ, Открытый Ключ, Запрос На Сертификацию, Сертификат Открытого Ключа</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-aopisanie-failovoi-sistemy-overlayfs-li">
-  <a href="/a/opisanie-failovoi-sistemy-overlayfs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-aopisanie-failovoi-sistemy-overlayfs"><span class="">Описание файловой системы OverlayFS</span></a>
+  <input type="checkbox" id="m-aopisanie-failovoi-sistemy-overlayfs-check"/>
+  <label for="m-aopisanie-failovoi-sistemy-overlayfs-check"><a href="/a/opisanie-failovoi-sistemy-overlayfs/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-aopisanie-failovoi-sistemy-overlayfs"><span class="">Описание файловой системы OverlayFS</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-apath-mtu-discovery-i-prochee-svyazannoe-s-etim-li">
-  <a href="/a/path-mtu-discovery-i-prochee-svyazannoe-s-etim/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-apath-mtu-discovery-i-prochee-svyazannoe-s-etim"><span class="">Path MTU Discovery и прочее связанное с этим</span></a>
+  <input type="checkbox" id="m-apath-mtu-discovery-i-prochee-svyazannoe-s-etim-check"/>
+  <label for="m-apath-mtu-discovery-i-prochee-svyazannoe-s-etim-check"><a href="/a/path-mtu-discovery-i-prochee-svyazannoe-s-etim/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-apath-mtu-discovery-i-prochee-svyazannoe-s-etim"><span class="">Path MTU Discovery и прочее связанное с этим</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-aopisanie-vfs-virtualnoi-failovoi-sistemy-linux-li">
-  <a href="/a/opisanie-vfs-virtualnoi-failovoi-sistemy-linux/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-aopisanie-vfs-virtualnoi-failovoi-sistemy-linux"><span class="">Описание VFS Виртуальной Файловой Системы Linux</span></a>
+  <input type="checkbox" id="m-aopisanie-vfs-virtualnoi-failovoi-sistemy-linux-check"/>
+  <label for="m-aopisanie-vfs-virtualnoi-failovoi-sistemy-linux-check"><a href="/a/opisanie-vfs-virtualnoi-failovoi-sistemy-linux/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-aopisanie-vfs-virtualnoi-failovoi-sistemy-linux"><span class="">Описание VFS Виртуальной Файловой Системы Linux</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-abezopasnoe-umenshenie-logicheskogo-toma-lvm-s-failovoi-sistemoi-btrfs-li">
-  <a href="/a/bezopasnoe-umenshenie-logicheskogo-toma-lvm-s-failovoi-sistemoi-btrfs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-abezopasnoe-umenshenie-logicheskogo-toma-lvm-s-failovoi-sistemoi-btrfs"><span class="">Безопасное уменьшение логического тома LVM с файловой системой Btrfs</span></a>
+  <input type="checkbox" id="m-abezopasnoe-umenshenie-logicheskogo-toma-lvm-s-failovoi-sistemoi-btrfs-check"/>
+  <label for="m-abezopasnoe-umenshenie-logicheskogo-toma-lvm-s-failovoi-sistemoi-btrfs-check"><a href="/a/bezopasnoe-umenshenie-logicheskogo-toma-lvm-s-failovoi-sistemoi-btrfs/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-abezopasnoe-umenshenie-logicheskogo-toma-lvm-s-failovoi-sistemoi-btrfs"><span class="">Безопасное уменьшение логического тома LVM с файловой системой Btrfs</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-achem-konsol-otlichaetsya-ot-terminala-li">
-  <a href="/a/chem-konsol-otlichaetsya-ot-terminala/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-achem-konsol-otlichaetsya-ot-terminala"><span class="">Чем консоль отличается от терминала</span></a>
+  <input type="checkbox" id="m-achem-konsol-otlichaetsya-ot-terminala-check"/>
+  <label for="m-achem-konsol-otlichaetsya-ot-terminala-check"><a href="/a/chem-konsol-otlichaetsya-ot-terminala/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-achem-konsol-otlichaetsya-ot-terminala"><span class="">Чем консоль отличается от терминала</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-austanovka-plone-cms-li">
-  <a href="/a/ustanovka-plone-cms/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-austanovka-plone-cms"><span class="">Установка Plone CMS</span></a>
+  <input type="checkbox" id="m-austanovka-plone-cms-check"/>
+  <label for="m-austanovka-plone-cms-check"><a href="/a/ustanovka-plone-cms/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-austanovka-plone-cms"><span class="">Установка Plone CMS</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-atradicionnye-prava-dostupa-unix-i-acl-li">
-  <a href="/a/tradicionnye-prava-dostupa-unix-i-acl/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-atradicionnye-prava-dostupa-unix-i-acl"><span class="">Traditional Unix permissions и Access Control Lists</span></a>
+  <input type="checkbox" id="m-atradicionnye-prava-dostupa-unix-i-acl-check"/>
+  <label for="m-atradicionnye-prava-dostupa-unix-i-acl-check"><a href="/a/tradicionnye-prava-dostupa-unix-i-acl/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-atradicionnye-prava-dostupa-unix-i-acl"><span class="">Traditional Unix permissions и Access Control Lists</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-arezervnoe-kopirovanie-plone-li">
-  <a href="/a/rezervnoe-kopirovanie-plone/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-arezervnoe-kopirovanie-plone"><span class="">Резервное копирование Plone</span></a>
+  <input type="checkbox" id="m-arezervnoe-kopirovanie-plone-check"/>
+  <label for="m-arezervnoe-kopirovanie-plone-check"><a href="/a/rezervnoe-kopirovanie-plone/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-arezervnoe-kopirovanie-plone"><span class="">Резервное копирование Plone</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-achroot-rsync-dlya-bezopasnogo-sbora-bekapov-s-udalyonnyh-hostov-li">
-  <a href="/a/chroot-rsync-dlya-bezopasnogo-sbora-bekapov-s-udalyonnyh-hostov/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-achroot-rsync-dlya-bezopasnogo-sbora-bekapov-s-udalyonnyh-hostov"><span class="">Chroot rsync для безопасного сбора бэкапов с удалённых хостов</span></a>
+  <input type="checkbox" id="m-achroot-rsync-dlya-bezopasnogo-sbora-bekapov-s-udalyonnyh-hostov-check"/>
+  <label for="m-achroot-rsync-dlya-bezopasnogo-sbora-bekapov-s-udalyonnyh-hostov-check"><a href="/a/chroot-rsync-dlya-bezopasnogo-sbora-bekapov-s-udalyonnyh-hostov/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-achroot-rsync-dlya-bezopasnogo-sbora-bekapov-s-udalyonnyh-hostov"><span class="">Chroot rsync для безопасного сбора бэкапов с удалённых хостов</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-aozdanie-kopii-saita-plone-li">
-  <a href="/a/ozdanie-kopii-saita-plone/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-aozdanie-kopii-saita-plone"><span class="">Создание копии сайта Plone</span></a>
+  <input type="checkbox" id="m-aozdanie-kopii-saita-plone-check"/>
+  <label for="m-aozdanie-kopii-saita-plone-check"><a href="/a/ozdanie-kopii-saita-plone/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-aozdanie-kopii-saita-plone"><span class="">Создание копии сайта Plone</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-asozdanie-kopii-saita-plone-li">
-  <a href="/a/sozdanie-kopii-saita-plone/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-asozdanie-kopii-saita-plone"><span class="">Создание копии сайта Plone</span></a>
+  <input type="checkbox" id="m-asozdanie-kopii-saita-plone-check"/>
+  <label for="m-asozdanie-kopii-saita-plone-check"><a href="/a/sozdanie-kopii-saita-plone/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-asozdanie-kopii-saita-plone"><span class="">Создание копии сайта Plone</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-adobavlenie-recaptcha-v-plone-li">
-  <a href="/a/dobavlenie-recaptcha-v-plone/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-adobavlenie-recaptcha-v-plone"><span class="">Добавление reCAPTCHA в Plone</span></a>
+  <input type="checkbox" id="m-adobavlenie-recaptcha-v-plone-check"/>
+  <label for="m-adobavlenie-recaptcha-v-plone-check"><a href="/a/dobavlenie-recaptcha-v-plone/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-adobavlenie-recaptcha-v-plone"><span class="">Добавление reCAPTCHA в Plone</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-aispolzovanie-composer-dlya-ustanovki-i-upravleniya-zavisimostyami-drupal-8-li">
-  <a href="/a/ispolzovanie-composer-dlya-ustanovki-i-upravleniya-zavisimostyami-drupal-8/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-aispolzovanie-composer-dlya-ustanovki-i-upravleniya-zavisimostyami-drupal-8"><span class="">Использование Composer для установки и управления зависимостями Drupal 8</span></a>
+  <input type="checkbox" id="m-aispolzovanie-composer-dlya-ustanovki-i-upravleniya-zavisimostyami-drupal-8-check"/>
+  <label for="m-aispolzovanie-composer-dlya-ustanovki-i-upravleniya-zavisimostyami-drupal-8-check"><a href="/a/ispolzovanie-composer-dlya-ustanovki-i-upravleniya-zavisimostyami-drupal-8/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-aispolzovanie-composer-dlya-ustanovki-i-upravleniya-zavisimostyami-drupal-8"><span class="">Использование Composer для установки и управления зависимостями Drupal 8</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-alvm2-sozdanie-peremeschenie-i-udalenie-logicheskih-tomov-li">
-  <a href="/a/lvm2-sozdanie-peremeschenie-i-udalenie-logicheskih-tomov/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-alvm2-sozdanie-peremeschenie-i-udalenie-logicheskih-tomov"><span class="">LVM2 — создание, перемещение и удаление логических томов</span></a>
+  <input type="checkbox" id="m-alvm2-sozdanie-peremeschenie-i-udalenie-logicheskih-tomov-check"/>
+  <label for="m-alvm2-sozdanie-peremeschenie-i-udalenie-logicheskih-tomov-check"><a href="/a/lvm2-sozdanie-peremeschenie-i-udalenie-logicheskih-tomov/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-alvm2-sozdanie-peremeschenie-i-udalenie-logicheskih-tomov"><span class="">LVM2 — создание, перемещение и удаление логических томов</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-afreebsd-ustanovka-udalenie-programm-li">
-  <a href="/a/freebsd-ustanovka-udalenie-programm/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-afreebsd-ustanovka-udalenie-programm"><span class="">FreeBSD Установка, удаление программ</span></a>
+  <input type="checkbox" id="m-afreebsd-ustanovka-udalenie-programm-check"/>
+  <label for="m-afreebsd-ustanovka-udalenie-programm-check"><a href="/a/freebsd-ustanovka-udalenie-programm/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-afreebsd-ustanovka-udalenie-programm"><span class="">FreeBSD Установка, удаление программ</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-austanovka-i-ispolzovanie-v-freebsd-9-1-novogo-paketnogo-menedzhera-pkgng-li">
-  <a href="/a/ustanovka-i-ispolzovanie-v-freebsd-9-1-novogo-paketnogo-menedzhera-pkgng/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-austanovka-i-ispolzovanie-v-freebsd-9-1-novogo-paketnogo-menedzhera-pkgng"><span class="">Установка и использование в FreeBSD 9.1 нового пакетного менеджера pkgng</span></a>
+  <input type="checkbox" id="m-austanovka-i-ispolzovanie-v-freebsd-9-1-novogo-paketnogo-menedzhera-pkgng-check"/>
+  <label for="m-austanovka-i-ispolzovanie-v-freebsd-9-1-novogo-paketnogo-menedzhera-pkgng-check"><a href="/a/ustanovka-i-ispolzovanie-v-freebsd-9-1-novogo-paketnogo-menedzhera-pkgng/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-austanovka-i-ispolzovanie-v-freebsd-9-1-novogo-paketnogo-menedzhera-pkgng"><span class="">Установка и использование в FreeBSD 9.1 нового пакетного менеджера pkgng</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-austanovka-postgresql-90-na-debian-60-li">
-  <a href="/a/ustanovka-postgresql-90-na-debian-60/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-austanovka-postgresql-90-na-debian-60"><span class="">Установка PostgreSQL 9.0 на Debian 6.0</span></a>
+  <input type="checkbox" id="m-austanovka-postgresql-90-na-debian-60-check"/>
+  <label for="m-austanovka-postgresql-90-na-debian-60-check"><a href="/a/ustanovka-postgresql-90-na-debian-60/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-austanovka-postgresql-90-na-debian-60"><span class="">Установка PostgreSQL 9.0 на Debian 6.0</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-anastroyka-prozrachnogo-squid3-squidguard-li">
-  <a href="/a/nastroyka-prozrachnogo-squid3-squidguard/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-anastroyka-prozrachnogo-squid3-squidguard"><span class="">Настройка прозрачного squid3 &#43; squidGuard</span></a>
+  <input type="checkbox" id="m-anastroyka-prozrachnogo-squid3-squidguard-check"/>
+  <label for="m-anastroyka-prozrachnogo-squid3-squidguard-check"><a href="/a/nastroyka-prozrachnogo-squid3-squidguard/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-anastroyka-prozrachnogo-squid3-squidguard"><span class="">Настройка прозрачного squid3 &#43; squidGuard</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-austanovka-egroupware-1-8-na-debian-60-li">
-  <a href="/a/ustanovka-egroupware-1-8-na-debian-6.0/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-austanovka-egroupware-1-8-na-debian-60"><span class="">Установка egroupware 1.8 на debian 6.0</span></a>
+  <input type="checkbox" id="m-austanovka-egroupware-1-8-na-debian-60-check"/>
+  <label for="m-austanovka-egroupware-1-8-na-debian-60-check"><a href="/a/ustanovka-egroupware-1-8-na-debian-6.0/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-austanovka-egroupware-1-8-na-debian-60"><span class="">Установка egroupware 1.8 на debian 6.0</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-austanovka-eclipse-3-6-helios-v-ubuntu-li">
-  <a href="/a/ustanovka-eclipse-3-6-helios-v-ubuntu/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-austanovka-eclipse-3-6-helios-v-ubuntu"><span class="">Установка Eclipse 3.6 (Helios) в Ubuntu</span></a>
+  <input type="checkbox" id="m-austanovka-eclipse-3-6-helios-v-ubuntu-check"/>
+  <label for="m-austanovka-eclipse-3-6-helios-v-ubuntu-check"><a href="/a/ustanovka-eclipse-3-6-helios-v-ubuntu/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-austanovka-eclipse-3-6-helios-v-ubuntu"><span class="">Установка Eclipse 3.6 (Helios) в Ubuntu</span></a></label>
+  
 </li>
   </ul>
 </li>
     </ul>
   </nav>
 </div>
+
 
           </aside>
           <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
@@ -524,24 +613,24 @@ if (window.location.pathname !== "/") {
 <h2 id="работы-на-исходном-сервере">Работы на исходном сервере</h2>
 <h3 id="сбор-сведений-перед-созданием-дампа">Сбор сведений перед созданием дампа</h3>
 <p>На исходном сервере запоминаем версию postgresql:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#007f7f"># rpm -qa|grep sql</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># rpm -qa|grep sql</span>
 </span></span><span style="display:flex;"><span>postgresql11-server-11.4-1PGDG.rhel7.x86_64
 </span></span><span style="display:flex;"><span>postgresql11-11.4-1PGDG.rhel7.x86_64
 </span></span><span style="display:flex;"><span>postgresql11-libs-11.4-1PGDG.rhel7.x86_64
 </span></span></code></pre></div><p>Смотрим <code>who</code> и активные сетевые подключения через <code>ss -tul</code>, чтобы удостовериться в своём одиноком присутствии на сервере.</p>
 <p>Ознакомимся со свободным местом на сервере, где увидим, что есть свободные 340G:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#007f7f"># df -h</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># df -h</span>
 </span></span><span style="display:flex;"><span>Filesystem             Size  Used Avail Use% Mounted on
 </span></span><span style="display:flex;"><span>/dev/mapper/rhel-root  1.3T  906G  340G  73% /
-</span></span><span style="display:flex;"><span>devtmpfs                16G     <span style="color:#ff0;font-weight:bold">0</span>   16G   0% /dev
+</span></span><span style="display:flex;"><span>devtmpfs                16G     <span style="color:#ae81ff">0</span>   16G   0% /dev
 </span></span><span style="display:flex;"><span>tmpfs                   16G  8.0K   16G   1% /dev/shm
 </span></span><span style="display:flex;"><span>tmpfs                   16G  353M   16G   3% /run
-</span></span><span style="display:flex;"><span>tmpfs                   16G     <span style="color:#ff0;font-weight:bold">0</span>   16G   0% /sys/fs/cgroup
+</span></span><span style="display:flex;"><span>tmpfs                   16G     <span style="color:#ae81ff">0</span>   16G   0% /sys/fs/cgroup
 </span></span><span style="display:flex;"><span>/dev/sda1              950M  251M  700M  27% /boot
-</span></span><span style="display:flex;"><span>tmpfs                  3.2G     <span style="color:#ff0;font-weight:bold">0</span>  3.2G   0% /run/user/1000
-</span></span><span style="display:flex;"><span>tmpfs                  3.2G     <span style="color:#ff0;font-weight:bold">0</span>  3.2G   0% /run/user/1007
+</span></span><span style="display:flex;"><span>tmpfs                  3.2G     <span style="color:#ae81ff">0</span>  3.2G   0% /run/user/1000
+</span></span><span style="display:flex;"><span>tmpfs                  3.2G     <span style="color:#ae81ff">0</span>  3.2G   0% /run/user/1007
 </span></span></code></pre></div><p>Ищем postgresql в обычном месте <code>/var/lib</code> и находим экземпляр в <code>/var/lib/pgsql/11/data</code>. Узнаём размер каталога:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#007f7f"># du -hs du -hs /var/lib/pgsql/11/data</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># du -hs du -hs /var/lib/pgsql/11/data</span>
 </span></span><span style="display:flex;"><span>895G    du -hs /var/lib/pgsql/11/data
 </span></span></code></pre></div><p>Огромная база в 900 Гигабайт и свободное место на 340 Гигабайт. Интересуемся у ответственного лица о содержимом базы:</p>
 <pre tabindex="0"><code>&gt; Ещё вопрос, пожалуйста. Внутри базы postgres хорошо сжимаемые данные, типа текста, или что-нибудь несжимаемое, типа jpg?
@@ -555,9 +644,9 @@ if (window.location.pathname !== "/") {
 <p>После знакомства со структурой каталогов на сервере, решаем попробовать задампиться в <code>/var/lib/pgsql/11/backups</code>. Мне кажется, что выбор этого места логичен в данном случае.</p>
 <h3 id="создание-полного-дампа-исходного-экземпляра-posgresql">Создание полного дампа исходного экземпляра posgresql</h3>
 <p>Определяем количество ядер у процессора (через <code>top</code>, <code>htop</code>, <code>cat /proc/cpuinfo</code>) и запускаем создание дампа со сжатием через lbzip2, с указанием найденного количества ядер для ускорения работы (в данном случае восемь потоков):</p>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo su
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo su
 </span></span><span style="display:flex;"><span>su - postgres
-</span></span><span style="display:flex;"><span><span style="color:#fff;font-weight:bold">time</span> pg_dumpall -v | lbzip2 -n <span style="color:#ff0;font-weight:bold">8</span> -9 &gt; /var/lib/pgsql/11/backups/pgsql_dumpall_<span style="color:#fff;font-weight:bold">$(</span>date -u +%Y%m%d-%H%M%S<span style="color:#fff;font-weight:bold">)</span>.bz2
+</span></span><span style="display:flex;"><span>time pg_dumpall -v | lbzip2 -n <span style="color:#ae81ff">8</span> -9 &gt; /var/lib/pgsql/11/backups/pgsql_dumpall_<span style="color:#66d9ef">$(</span>date -u +%Y%m%d-%H%M%S<span style="color:#66d9ef">)</span>.bz2
 </span></span></code></pre></div><p>Забегая вперёд покажу затраченное время:</p>
 <pre tabindex="0"><code>real    88m17.100s
 user    463m50.451s
@@ -573,60 +662,60 @@ sys     16m31.101s
 <li>подключение репо postgresql</li>
 </ul>
 <p>Памятуя о версии на исходном сервере, производим установку конкретной версии posgresql:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#007f7f"># yum install postgresql11-server-11.4-1PGDG.rhel7.x86_64</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># yum install postgresql11-server-11.4-1PGDG.rhel7.x86_64</span>
 </span></span><span style="display:flex;"><span>...
-</span></span><span style="display:flex;"><span>=======================================================================================
+</span></span><span style="display:flex;"><span><span style="color:#f92672">=======================================================================================</span>
 </span></span><span style="display:flex;"><span> Package                        Arch       Version            Repository     Size
-</span></span><span style="display:flex;"><span>=======================================================================================
+</span></span><span style="display:flex;"><span><span style="color:#f92672">=======================================================================================</span>
 </span></span><span style="display:flex;"><span>Installing:
 </span></span><span style="display:flex;"><span> postgresql11-server            x86_64     11.4-1PGDG.rhel7   postgres11     4.7 M
-</span></span><span style="display:flex;"><span>Installing <span style="color:#fff;font-weight:bold">for</span> dependencies:
+</span></span><span style="display:flex;"><span>Installing <span style="color:#66d9ef">for</span> dependencies:
 </span></span><span style="display:flex;"><span> postgresql11                   x86_64     11.4-1PGDG.rhel7   postgres11     1.6 M
-</span></span><span style="display:flex;"><span> postgresql11-libs              x86_64     11.4-1PGDG.rhel7   postgres11     <span style="color:#ff0;font-weight:bold">361</span> k
+</span></span><span style="display:flex;"><span> postgresql11-libs              x86_64     11.4-1PGDG.rhel7   postgres11     <span style="color:#ae81ff">361</span> k
 </span></span><span style="display:flex;"><span>...
 </span></span></code></pre></div><p>Устанавливаем пакет <code>yum-plugin-versionlock</code> для возможности блокировки пакетов от апгрейда и выполняем блокировку пакетов <code>postgresql11*</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#007f7f"># yum install yum-plugin-versionlock</span>
-</span></span><span style="display:flex;"><span><span style="color:#007f7f"># yum versionlock postgresql11*</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># yum install yum-plugin-versionlock</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># yum versionlock postgresql11*</span>
 </span></span><span style="display:flex;"><span>Loaded plugins: product-id, rhnplugin, search-disabled-repos, versionlock
 </span></span><span style="display:flex;"><span>This system is receiving updates from RHN Classic or Red Hat Satellite.
 </span></span><span style="display:flex;"><span>Adding versionlock on: 0:postgresql11-libs-11.4-1PGDG.rhel7
 </span></span><span style="display:flex;"><span>Adding versionlock on: 0:postgresql11-server-11.4-1PGDG.rhel7
 </span></span><span style="display:flex;"><span>Adding versionlock on: 0:postgresql11-11.4-1PGDG.rhel7
-</span></span><span style="display:flex;"><span>versionlock added: <span style="color:#ff0;font-weight:bold">3</span>
+</span></span><span style="display:flex;"><span>versionlock added: <span style="color:#ae81ff">3</span>
 </span></span></code></pre></div><p>При необходимости, актуальный список залоченных пакетов смотрим здесь <code>cat /etc/yum/pluginconf.d/versionlock.list</code>.</p>
 <h3 id="монтирование-большого-раздела-к-varlibpgsql">Монтирование большого раздела к /var/lib/pgsql</h3>
 <p>На новом сервер наблюдаем отдельный большой раздел 1.5TB подмонтрованный к <code>/data</code>. Создадим на нём каталог pgsql и прочее:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p /data/pgsql/11/{data,backup}
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p /data/pgsql/11/<span style="color:#f92672">{</span>data,backup<span style="color:#f92672">}</span>
 </span></span><span style="display:flex;"><span>chown postgres:postgres /data/pgsql -R
-</span></span><span style="display:flex;"><span>chmod <span style="color:#ff0;font-weight:bold">700</span> /data/pgsql -R
+</span></span><span style="display:flex;"><span>chmod <span style="color:#ae81ff">700</span> /data/pgsql -R
 </span></span><span style="display:flex;"><span>cp /var/lib/pgsql/.bash_profile /data/pgsql
 </span></span></code></pre></div><p>Добавим в /etc/fstab следующую строку для автоматического биндинга <code>/data/pgsql</code> к <code>/var/lib/pgsql</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/data/pgsql /var/lib/pgsql none defaults,bind <span style="color:#ff0;font-weight:bold">0</span> <span style="color:#ff0;font-weight:bold">0</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/data/pgsql /var/lib/pgsql none defaults,bind <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>
 </span></span></code></pre></div><p>Важно!!! Если после последней строки в файле <code>/etc/fstab</code> не будет добавлена пустая строка, то сервер зависнет на этапе загрузки системы. Не помню причины этого явления, поэтому примите на веру, если не знали.</p>
 <h3 id="инициализация-и-запуск">Инициализация и запуск</h3>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/usr/pgsql-11/bin/postgresql-11-setup initdb
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/usr/pgsql-11/bin/postgresql-11-setup initdb
 </span></span><span style="display:flex;"><span>systemctl start postgresql-11
 </span></span></code></pre></div><h2 id="завершающие-действия">Завершающие действия</h2>
 <h3 id="копирование-дампа-на-новый-сервер">Копирование дампа на новый сервер</h3>
 <p>В нашем случае прямое ssh-соединение между серверами отсутствует, поэтому скопируем полученный дамп через форпост, который доступен из обоих сегментов сети.</p>
 <p>Сейчас мы находимся на промежуточном сервере. Сначала подключаемся по ssh к одному из серверов, на каковом сервере открывается локальный порт 50000, который связывается с портом 22 другого сервера (через промежуточный сервер!):</p>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#007f7f"># ssh -R 127.0.0.1:50000:10.0.0.2:22 root@10.0.0.1</span>
-</span></span><span style="display:flex;"><span>[root@10.0.0.1]<span style="color:#007f7f"># _</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># ssh -R 127.0.0.1:50000:10.0.0.2:22 root@10.0.0.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>root@10.0.0.1<span style="color:#f92672">]</span><span style="color:#75715e"># _</span>
 </span></span></code></pre></div><p>Теперь, находясь на сервере 10.0.0.1 (что видно по приглашению командной строки) помним, что постучавшись на локальный порт <code>127.0.0.1:50000</code>, мы, на самом деле, стучимся на <code>10.0.0.2:22</code>, но не на прямую, а через промежуточный сервер.</p>
 <p>Поэтому здесь же запускаем процесс копирования с докачкой и проверкой. Копируем дамп и файлы настроек:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rsync -avP -e <span style="color:#0ff;font-weight:bold">&#34;ssh -p50000&#34;</span> /var/lib/pgsql/11/backup/pgsql_dumpall_20200421-103341.bz2 127.0.0.1:/data/pgsql/11/backup/
-</span></span><span style="display:flex;"><span>rsync -vP -e <span style="color:#0ff;font-weight:bold">&#34;ssh -p50000&#34;</span> /var/lib/pgsql/11/data/* 127.0.0.1:/data/pgsql/11/backup/data
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rsync -avP -e <span style="color:#e6db74">&#34;ssh -p50000&#34;</span> /var/lib/pgsql/11/backup/pgsql_dumpall_20200421-103341.bz2 127.0.0.1:/data/pgsql/11/backup/
+</span></span><span style="display:flex;"><span>rsync -vP -e <span style="color:#e6db74">&#34;ssh -p50000&#34;</span> /var/lib/pgsql/11/data/* 127.0.0.1:/data/pgsql/11/backup/data
 </span></span></code></pre></div><p>В результате этой команды, наш дамп, через промежуточный сервер, будет залит на новый сервер.</p>
 <h3 id="восстановление-дампа-на-новом-сервере">Восстановление дампа на новом сервере</h3>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo su
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo su
 </span></span><span style="display:flex;"><span>su - postgres
 </span></span><span style="display:flex;"><span>lbzip2 -c -d /data/pgsql/11/backup/psql_dumpall_20200421-103341.bz2 | psql postgres
 </span></span></code></pre></div><h3 id="восстановление-настроек-экземпляра-postresgql">Восстановление настроек экземпляра postresgql</h3>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cp /data/pgsql/11/backup/data/* /data/pgsql/11/data/
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cp /data/pgsql/11/backup/data/* /data/pgsql/11/data/
 </span></span></code></pre></div><h3 id="настройка-атозапуска-postgesql">Настройка атозапуска postgesql</h3>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl <span style="color:#fff;font-weight:bold">enable</span> postgresql-11
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl enable postgresql-11
 </span></span></code></pre></div><h3 id="перезагрузка-для-проверки">Перезагрузка для проверки</h3>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>reboot
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>reboot
 </span></span></code></pre></div><p>Использованный материал:
 <a href="https://access.redhat.com/solutions/98873">How to restrict yum to install or upgrade a package to a fixed specific package version?</a>
 <a href="https://www.postgresql.org/docs/11/backup-dump.html">25.1. SQL Dump Chapter 25. Backup and Restore</a></p>
@@ -667,7 +756,7 @@ window.yaContextCb.push(() => {
 
       </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
         <span class="td-footer__copyright">&copy;
-    2009&ndash;2024
+    2009&ndash;2025
     <span class="td-footer__authors">Evgeny Nifantiev</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span>
       </div>
     </div>

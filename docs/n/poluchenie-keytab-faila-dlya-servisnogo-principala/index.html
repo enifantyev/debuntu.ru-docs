@@ -76,7 +76,7 @@
 <script>window.yaContextCb=window.yaContextCb||[]</script>
 <script src="https://yandex.ru/ads/system/context.js" async></script>
 
-<link rel="stylesheet" href="https://debuntu.ru/css/yandex-ad-blocks.css"><link rel="stylesheet" href="https://debuntu.ru/css/tabs.css"><link rel="stylesheet" href="https://debuntu.ru/css/asciidoc-admon.css"><link rel="stylesheet" href="https://debuntu.ru/css/monokai.css"><link rel="stylesheet" href="https://debuntu.ru/css/tulip.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://debuntu.ru/css/yandex-ad-blocks.css"><link rel="stylesheet" href="https://debuntu.ru/css/tabs.css"><link rel="stylesheet" href="https://debuntu.ru/css/asciidoc-admon.css"><link rel="stylesheet" href="https://debuntu.ru/css/github.css"><link rel="stylesheet" href="https://debuntu.ru/css/tulip.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1HVBCPETY0"></script>
 <script>
 var doNotTrack = false;
@@ -185,123 +185,238 @@ if (window.location.pathname !== "/") {
       <div class="td-main">
         <div class="row flex-xl-nowrap">
           <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
-            <div id="td-sidebar-menu" class="td-sidebar__inner">
+            
+  <script>
+    $(function() {
+    $("#td-section-nav a").removeClass("active");
+    $("#td-section-nav #m-npoluchenie-keytab-faila-dlya-servisnogo-principala").addClass("active"); 
+    $("#td-section-nav #m-npoluchenie-keytab-faila-dlya-servisnogo-principala-li span").addClass("td-sidebar-nav-active-item"); 
+    $("#td-section-nav #m-npoluchenie-keytab-faila-dlya-servisnogo-principala").parents("li").addClass("active-path"); 
+    $("#td-section-nav li.active-path").addClass("show"); 
+    $("#td-section-nav li.active-path").children("input").prop('checked', true);
+    $("#td-section-nav #m-npoluchenie-keytab-faila-dlya-servisnogo-principala-li").siblings("li").addClass("show");  
+    $("#td-section-nav #m-npoluchenie-keytab-faila-dlya-servisnogo-principala-li").children("ul").children("li").addClass("show");  
+    $("#td-sidebar-menu").toggleClass("d-none"); 
+    });
+  </script>
+  <div id="td-sidebar-menu" class="td-sidebar__inner d-none">
   <form class="td-sidebar__search d-flex align-items-center">
     
     <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
     </button>
   </form>
-  <nav class="td-sidebar-nav collapse" id="td-section-nav">
+  <nav class="td-sidebar-nav collapse foldable-nav" id="td-section-nav">
     <ul class="td-sidebar-nav__section pe-md-3 ul-0">
-      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-n-li">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-n-li">
   <a href="/n/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-n"><span class="">Заметки</span></a>
   <ul class="ul-1">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-ndownload-all-assets-from-nexus-repository-using-curl-li">
-  <a href="/n/download-all-assets-from-nexus-repository-using-curl/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-ndownload-all-assets-from-nexus-repository-using-curl"><span class="">Download all assets from Nexus&#39;s repository using curl</span></a>
+  <input type="checkbox" id="m-ndownload-all-assets-from-nexus-repository-using-curl-check"/>
+  <label for="m-ndownload-all-assets-from-nexus-repository-using-curl-check"><a href="/n/download-all-assets-from-nexus-repository-using-curl/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-ndownload-all-assets-from-nexus-repository-using-curl"><span class="">Download all assets from Nexus&#39;s repository using curl</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-nkompilyaciya-svezhego-stunnel-5-60-iz-ishodnikov-na-centos7-li">
-  <a href="/n/kompilyaciya-svezhego-stunnel-5-60-iz-ishodnikov-na-centos7/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-nkompilyaciya-svezhego-stunnel-5-60-iz-ishodnikov-na-centos7"><span class="">Компиляция свежего stunnel 5.60 из исходников на CentOS7</span></a>
+  <input type="checkbox" id="m-nkompilyaciya-svezhego-stunnel-5-60-iz-ishodnikov-na-centos7-check"/>
+  <label for="m-nkompilyaciya-svezhego-stunnel-5-60-iz-ishodnikov-na-centos7-check"><a href="/n/kompilyaciya-svezhego-stunnel-5-60-iz-ishodnikov-na-centos7/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-nkompilyaciya-svezhego-stunnel-5-60-iz-ishodnikov-na-centos7"><span class="">Компиляция свежего stunnel 5.60 из исходников на CentOS7</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-nkak-sohranit-rascvechennyi-stdout-v-fail-li">
-  <a href="/n/kak-sohranit-rascvechennyi-stdout-v-fail/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-nkak-sohranit-rascvechennyi-stdout-v-fail"><span class="">Как сохранить расцвеченный выхлоп stdout в файл</span></a>
+  <input type="checkbox" id="m-nkak-sohranit-rascvechennyi-stdout-v-fail-check"/>
+  <label for="m-nkak-sohranit-rascvechennyi-stdout-v-fail-check"><a href="/n/kak-sohranit-rascvechennyi-stdout-v-fail/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-nkak-sohranit-rascvechennyi-stdout-v-fail"><span class="">Как сохранить расцвеченный выхлоп stdout в файл</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-nblokirovanie-dostupa-vneshnih-programm-k-hive-metastore-li">
-  <a href="/n/blokirovanie-dostupa-vneshnih-programm-k-hive-metastore/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-nblokirovanie-dostupa-vneshnih-programm-k-hive-metastore"><span class="">Блокирование доступа внешних программ к Hive metastore</span></a>
+  <input type="checkbox" id="m-nblokirovanie-dostupa-vneshnih-programm-k-hive-metastore-check"/>
+  <label for="m-nblokirovanie-dostupa-vneshnih-programm-k-hive-metastore-check"><a href="/n/blokirovanie-dostupa-vneshnih-programm-k-hive-metastore/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-nblokirovanie-dostupa-vneshnih-programm-k-hive-metastore"><span class="">Блокирование доступа внешних программ к Hive metastore</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-ntestirovanie-psevdo-ha-i-lb-dns-nastroek-v-etc-resolvconf-li">
-  <a href="/n/testirovanie-psevdo-ha-i-lb-dns-nastroek-v-etc-resolv.conf/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-ntestirovanie-psevdo-ha-i-lb-dns-nastroek-v-etc-resolvconf"><span class="">Тестирование псевдо HA и LB dns-настроек в /etc/resolv.conf</span></a>
+  <input type="checkbox" id="m-ntestirovanie-psevdo-ha-i-lb-dns-nastroek-v-etc-resolvconf-check"/>
+  <label for="m-ntestirovanie-psevdo-ha-i-lb-dns-nastroek-v-etc-resolvconf-check"><a href="/n/testirovanie-psevdo-ha-i-lb-dns-nastroek-v-etc-resolv.conf/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-ntestirovanie-psevdo-ha-i-lb-dns-nastroek-v-etc-resolvconf"><span class="">Тестирование псевдо HA и LB dns-настроек в /etc/resolv.conf</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-nruchnoe-udalenie-repliki-freeipa-iz-redos72-li">
-  <a href="/n/ruchnoe-udalenie-repliki-freeipa-iz-redos7.2/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-nruchnoe-udalenie-repliki-freeipa-iz-redos72"><span class="">Ручное удаление реплики FreeIPA из RedOS7.2</span></a>
+  <input type="checkbox" id="m-nruchnoe-udalenie-repliki-freeipa-iz-redos72-check"/>
+  <label for="m-nruchnoe-udalenie-repliki-freeipa-iz-redos72-check"><a href="/n/ruchnoe-udalenie-repliki-freeipa-iz-redos7.2/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-nruchnoe-udalenie-repliki-freeipa-iz-redos72"><span class="">Ручное удаление реплики FreeIPA из RedOS7.2</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-noshibka-configurable-http-proxy-syntaxerror-unexpected-identifier-pri-popytke-zapuska-jupyterhub-li">
-  <a href="/n/oshibka-configurable-http-proxy-syntaxerror-unexpected-identifier-pri-popytke-zapuska-jupyterhub/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-noshibka-configurable-http-proxy-syntaxerror-unexpected-identifier-pri-popytke-zapuska-jupyterhub"><span class="">Ошибка configurable-http-proxy: SyntaxError: Unexpected identifier при попытке запуска JupyterHub</span></a>
+  <input type="checkbox" id="m-noshibka-configurable-http-proxy-syntaxerror-unexpected-identifier-pri-popytke-zapuska-jupyterhub-check"/>
+  <label for="m-noshibka-configurable-http-proxy-syntaxerror-unexpected-identifier-pri-popytke-zapuska-jupyterhub-check"><a href="/n/oshibka-configurable-http-proxy-syntaxerror-unexpected-identifier-pri-popytke-zapuska-jupyterhub/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-noshibka-configurable-http-proxy-syntaxerror-unexpected-identifier-pri-popytke-zapuska-jupyterhub"><span class="">Ошибка configurable-http-proxy: SyntaxError: Unexpected identifier при попытке запуска JupyterHub</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-nproblema-s-paketom-psycopg2-pri-sozdanii-novogo-superyuzera-dlya-cloudera-hue-li">
-  <a href="/n/problema-s-paketom-psycopg2-pri-sozdanii-novogo-superyuzera-dlya-cloudera-hue/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-nproblema-s-paketom-psycopg2-pri-sozdanii-novogo-superyuzera-dlya-cloudera-hue"><span class="">Проблема с пакетом psycopg2 при создании нового суперюзера для Cloudera Hue</span></a>
+  <input type="checkbox" id="m-nproblema-s-paketom-psycopg2-pri-sozdanii-novogo-superyuzera-dlya-cloudera-hue-check"/>
+  <label for="m-nproblema-s-paketom-psycopg2-pri-sozdanii-novogo-superyuzera-dlya-cloudera-hue-check"><a href="/n/problema-s-paketom-psycopg2-pri-sozdanii-novogo-superyuzera-dlya-cloudera-hue/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-nproblema-s-paketom-psycopg2-pri-sozdanii-novogo-superyuzera-dlya-cloudera-hue"><span class="">Проблема с пакетом psycopg2 при создании нового суперюзера для Cloudera Hue</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-nsozdanie-rolei-v-kerberizirovannym-hive-s-vklyuchyonnym-tls-v-cloudera-cdh-s-pomoschyu-utility-beeline-li">
-  <a href="/n/sozdanie-rolei-v-kerberizirovannym-hive-s-vklyuchyonnym-tls-v-cloudera-cdh-s-pomoschyu-utility-beeline/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-nsozdanie-rolei-v-kerberizirovannym-hive-s-vklyuchyonnym-tls-v-cloudera-cdh-s-pomoschyu-utility-beeline"><span class="">Создание ролей в керберизированным Hive с включённым TLS в Cloudera CDH с помощью утилиты beeline</span></a>
+  <input type="checkbox" id="m-nsozdanie-rolei-v-kerberizirovannym-hive-s-vklyuchyonnym-tls-v-cloudera-cdh-s-pomoschyu-utility-beeline-check"/>
+  <label for="m-nsozdanie-rolei-v-kerberizirovannym-hive-s-vklyuchyonnym-tls-v-cloudera-cdh-s-pomoschyu-utility-beeline-check"><a href="/n/sozdanie-rolei-v-kerberizirovannym-hive-s-vklyuchyonnym-tls-v-cloudera-cdh-s-pomoschyu-utility-beeline/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-nsozdanie-rolei-v-kerberizirovannym-hive-s-vklyuchyonnym-tls-v-cloudera-cdh-s-pomoschyu-utility-beeline"><span class="">Создание ролей в керберизированным Hive с включённым TLS в Cloudera CDH с помощью утилиты beeline</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-ncloudera-hue-log-couldnt-import-snappy-support-for-snappy-compression-disabled-li">
-  <a href="/n/cloudera-hue-log-couldnt-import-snappy-support-for-snappy-compression-disabled/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-ncloudera-hue-log-couldnt-import-snappy-support-for-snappy-compression-disabled"><span class="">Cloudera Hue Log: Couldn&#39;t import snappy. Support for snappy compression disabled</span></a>
+  <input type="checkbox" id="m-ncloudera-hue-log-couldnt-import-snappy-support-for-snappy-compression-disabled-check"/>
+  <label for="m-ncloudera-hue-log-couldnt-import-snappy-support-for-snappy-compression-disabled-check"><a href="/n/cloudera-hue-log-couldnt-import-snappy-support-for-snappy-compression-disabled/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-ncloudera-hue-log-couldnt-import-snappy-support-for-snappy-compression-disabled"><span class="">Cloudera Hue Log: Couldn&#39;t import snappy. Support for snappy compression disabled</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-nipa-error-4301-certificate-operation-cannot-be-completed-unable-to-communicate-with-cms-500-li">
-  <a href="/n/ipa-error-4301-certificate-operation-cannot-be-completed-unable-to-communicate-with-cms-500/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-nipa-error-4301-certificate-operation-cannot-be-completed-unable-to-communicate-with-cms-500"><span class="">IPA Error 4301 Certificate operation cannot be completed: Unable to communicate with CMS (500)</span></a>
+  <input type="checkbox" id="m-nipa-error-4301-certificate-operation-cannot-be-completed-unable-to-communicate-with-cms-500-check"/>
+  <label for="m-nipa-error-4301-certificate-operation-cannot-be-completed-unable-to-communicate-with-cms-500-check"><a href="/n/ipa-error-4301-certificate-operation-cannot-be-completed-unable-to-communicate-with-cms-500/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-nipa-error-4301-certificate-operation-cannot-be-completed-unable-to-communicate-with-cms-500"><span class="">IPA Error 4301 Certificate operation cannot be completed: Unable to communicate with CMS (500)</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-nvklyuchenie-vo-freeipa-otslezhivaniya-poslednei-uspeshnoi-autentifikacii-polzovatelskih-akkauntov-li">
-  <a href="/n/vklyuchenie-vo-freeipa-otslezhivaniya-poslednei-uspeshnoi-autentifikacii-polzovatelskih-akkauntov/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-nvklyuchenie-vo-freeipa-otslezhivaniya-poslednei-uspeshnoi-autentifikacii-polzovatelskih-akkauntov"><span class="">Включение во FreeIPA отслеживания последней успешной аутентификации пользовательских аккаунтов</span></a>
+  <input type="checkbox" id="m-nvklyuchenie-vo-freeipa-otslezhivaniya-poslednei-uspeshnoi-autentifikacii-polzovatelskih-akkauntov-check"/>
+  <label for="m-nvklyuchenie-vo-freeipa-otslezhivaniya-poslednei-uspeshnoi-autentifikacii-polzovatelskih-akkauntov-check"><a href="/n/vklyuchenie-vo-freeipa-otslezhivaniya-poslednei-uspeshnoi-autentifikacii-polzovatelskih-akkauntov/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-nvklyuchenie-vo-freeipa-otslezhivaniya-poslednei-uspeshnoi-autentifikacii-polzovatelskih-akkauntov"><span class="">Включение во FreeIPA отслеживания последней успешной аутентификации пользовательских аккаунтов</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-notklyuchenie-anonimnogo-dostupa-k-ldap-katalogu-freeipa-li">
-  <a href="/n/otklyuchenie-anonimnogo-dostupa-k-ldap-katalogu-freeipa/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-notklyuchenie-anonimnogo-dostupa-k-ldap-katalogu-freeipa"><span class="">Отключение анонимного доступа к LDAP-каталогу FreeIPA</span></a>
+  <input type="checkbox" id="m-notklyuchenie-anonimnogo-dostupa-k-ldap-katalogu-freeipa-check"/>
+  <label for="m-notklyuchenie-anonimnogo-dostupa-k-ldap-katalogu-freeipa-check"><a href="/n/otklyuchenie-anonimnogo-dostupa-k-ldap-katalogu-freeipa/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-notklyuchenie-anonimnogo-dostupa-k-ldap-katalogu-freeipa"><span class="">Отключение анонимного доступа к LDAP-каталогу FreeIPA</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-nispravlenie-problemy-s-pereklyucheniem-raskladki-v-visual-studio-code-li">
-  <a href="/n/ispravlenie-problemy-s-pereklyucheniem-raskladki-v-visual-studio-code/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-nispravlenie-problemy-s-pereklyucheniem-raskladki-v-visual-studio-code"><span class="">Исправление проблемы с переключением раскладки клавиатуры в Visual Studio Code</span></a>
+  <input type="checkbox" id="m-nispravlenie-problemy-s-pereklyucheniem-raskladki-v-visual-studio-code-check"/>
+  <label for="m-nispravlenie-problemy-s-pereklyucheniem-raskladki-v-visual-studio-code-check"><a href="/n/ispravlenie-problemy-s-pereklyucheniem-raskladki-v-visual-studio-code/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-nispravlenie-problemy-s-pereklyucheniem-raskladki-v-visual-studio-code"><span class="">Исправление проблемы с переключением раскладки клавиатуры в Visual Studio Code</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-notdelnaya-hidden-replicas-dlya-bezopasnogo-full-backup-freeipa-li">
-  <a href="/n/otdelnaya-hidden-replicas-dlya-bezopasnogo-full-backup-freeipa/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-notdelnaya-hidden-replicas-dlya-bezopasnogo-full-backup-freeipa"><span class="">Отдельная hidden replicas для безопасного full backup FreeIPA</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-npoluchenie-keytab-faila-dlya-servisnogo-principala-li">
-  <a href="/n/poluchenie-keytab-faila-dlya-servisnogo-principala/" class="align-left ps-0 active td-sidebar-link td-sidebar-link__page" id="m-npoluchenie-keytab-faila-dlya-servisnogo-principala"><span class="td-sidebar-nav-active-item">Получение keytab-файла для сервисного принципала</span></a>
+  <input type="checkbox" id="m-notdelnaya-hidden-replicas-dlya-bezopasnogo-full-backup-freeipa-check"/>
+  <label for="m-notdelnaya-hidden-replicas-dlya-bezopasnogo-full-backup-freeipa-check"><a href="/n/otdelnaya-hidden-replicas-dlya-bezopasnogo-full-backup-freeipa/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-notdelnaya-hidden-replicas-dlya-bezopasnogo-full-backup-freeipa"><span class="">Отдельная hidden replicas для безопасного full backup FreeIPA</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-npoluchenie-keytab-faila-dlya-servisnogo-principala-li">
+  <input type="checkbox" id="m-npoluchenie-keytab-faila-dlya-servisnogo-principala-check"/>
+  <label for="m-npoluchenie-keytab-faila-dlya-servisnogo-principala-check"><a href="/n/poluchenie-keytab-faila-dlya-servisnogo-principala/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-npoluchenie-keytab-faila-dlya-servisnogo-principala"><span class="">Получение keytab-файла для сервисного принципала</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-nvypolnenie-ad-hoc-absible-komand-li">
-  <a href="/n/vypolnenie-ad-hoc-absible-komand/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-nvypolnenie-ad-hoc-absible-komand"><span class="">Выполнение ad-hoc absible команд</span></a>
+  <input type="checkbox" id="m-nvypolnenie-ad-hoc-absible-komand-check"/>
+  <label for="m-nvypolnenie-ad-hoc-absible-komand-check"><a href="/n/vypolnenie-ad-hoc-absible-komand/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-nvypolnenie-ad-hoc-absible-komand"><span class="">Выполнение ad-hoc absible команд</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-norganizaciya-besparolnogo-zerkala-registry-1-docker-io-li">
-  <a href="/n/organizaciya-besparolnogo-zerkala-registry-1-docker-io/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-norganizaciya-besparolnogo-zerkala-registry-1-docker-io"><span class="">Организация беспарольного зеркала registry-1.docker.io</span></a>
+  <input type="checkbox" id="m-norganizaciya-besparolnogo-zerkala-registry-1-docker-io-check"/>
+  <label for="m-norganizaciya-besparolnogo-zerkala-registry-1-docker-io-check"><a href="/n/organizaciya-besparolnogo-zerkala-registry-1-docker-io/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-norganizaciya-besparolnogo-zerkala-registry-1-docker-io"><span class="">Организация беспарольного зеркала registry-1.docker.io</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-npopytka-ustanovki-svezhego-sudo-s-saita-sudo-ws-na-redos7-2-vyzyvaet-oshibku-signature-region-62-li">
-  <a href="/n/popytka-ustanovki-svezhego-sudo-s-saita-sudo-ws-na-redos7-2-vyzyvaet-oshibku-signature-region-62/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-npopytka-ustanovki-svezhego-sudo-s-saita-sudo-ws-na-redos7-2-vyzyvaet-oshibku-signature-region-62"><span class="">Попытка установки свежего sudo с сайта sudo.ws на RedOS7.2 вызывает ошибку signature region 62</span></a>
+  <input type="checkbox" id="m-npopytka-ustanovki-svezhego-sudo-s-saita-sudo-ws-na-redos7-2-vyzyvaet-oshibku-signature-region-62-check"/>
+  <label for="m-npopytka-ustanovki-svezhego-sudo-s-saita-sudo-ws-na-redos7-2-vyzyvaet-oshibku-signature-region-62-check"><a href="/n/popytka-ustanovki-svezhego-sudo-s-saita-sudo-ws-na-redos7-2-vyzyvaet-oshibku-signature-region-62/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-npopytka-ustanovki-svezhego-sudo-s-saita-sudo-ws-na-redos7-2-vyzyvaet-oshibku-signature-region-62"><span class="">Попытка установки свежего sudo с сайта sudo.ws на RedOS7.2 вызывает ошибку signature region 62</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-nsozdanie-keytab-faila-dlya-polzovatelskogo-principala-li">
-  <a href="/n/sozdanie-keytab-faila-dlya-polzovatelskogo-principala/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-nsozdanie-keytab-faila-dlya-polzovatelskogo-principala"><span class="">Создание keytab-файла для пользовательского принципала</span></a>
+  <input type="checkbox" id="m-nsozdanie-keytab-faila-dlya-polzovatelskogo-principala-check"/>
+  <label for="m-nsozdanie-keytab-faila-dlya-polzovatelskogo-principala-check"><a href="/n/sozdanie-keytab-faila-dlya-polzovatelskogo-principala/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-nsozdanie-keytab-faila-dlya-polzovatelskogo-principala"><span class="">Создание keytab-файла для пользовательского принципала</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-nsript-dlya-dobavleniya-ptr-zapisei-po-spisku-iz-faila-v-obratnuyu-dns-zonu-freeipa-li">
-  <a href="/n/sript-dlya-dobavleniya-ptr-zapisei-po-spisku-iz-faila-v-obratnuyu-dns-zonu-freeipa/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-nsript-dlya-dobavleniya-ptr-zapisei-po-spisku-iz-faila-v-obratnuyu-dns-zonu-freeipa"><span class="">Срипт для добавления PTR-записей по списку из файла в обратную DNS-зону FreeIPA</span></a>
+  <input type="checkbox" id="m-nsript-dlya-dobavleniya-ptr-zapisei-po-spisku-iz-faila-v-obratnuyu-dns-zonu-freeipa-check"/>
+  <label for="m-nsript-dlya-dobavleniya-ptr-zapisei-po-spisku-iz-faila-v-obratnuyu-dns-zonu-freeipa-check"><a href="/n/sript-dlya-dobavleniya-ptr-zapisei-po-spisku-iz-faila-v-obratnuyu-dns-zonu-freeipa/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-nsript-dlya-dobavleniya-ptr-zapisei-po-spisku-iz-faila-v-obratnuyu-dns-zonu-freeipa"><span class="">Срипт для добавления PTR-записей по списку из файла в обратную DNS-зону FreeIPA</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-nldap-binding-vo-freeipa-li">
-  <a href="/n/ldap-binding-vo-freeipa/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-nldap-binding-vo-freeipa"><span class="">LDAP binding во FreeIPA</span></a>
+  <input type="checkbox" id="m-nldap-binding-vo-freeipa-check"/>
+  <label for="m-nldap-binding-vo-freeipa-check"><a href="/n/ldap-binding-vo-freeipa/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-nldap-binding-vo-freeipa"><span class="">LDAP binding во FreeIPA</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-nnastroika-ldap-autentifikacii-v-kerberizirovannom-cloudera-hive-li">
-  <a href="/n/nastroika-ldap-autentifikacii-v-kerberizirovannom-cloudera-hive/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-nnastroika-ldap-autentifikacii-v-kerberizirovannom-cloudera-hive"><span class="">Настройка LDAP-аутентификации Hive в керберизированном Cloudera CDH 6.3.2</span></a>
+  <input type="checkbox" id="m-nnastroika-ldap-autentifikacii-v-kerberizirovannom-cloudera-hive-check"/>
+  <label for="m-nnastroika-ldap-autentifikacii-v-kerberizirovannom-cloudera-hive-check"><a href="/n/nastroika-ldap-autentifikacii-v-kerberizirovannom-cloudera-hive/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-nnastroika-ldap-autentifikacii-v-kerberizirovannom-cloudera-hive"><span class="">Настройка LDAP-аутентификации Hive в керберизированном Cloudera CDH 6.3.2</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-nneudachnyi-zapusk-inspect-network-performance-failed-running-performance-inspector-on-cluster-li">
-  <a href="/n/neudachnyi-zapusk-inspect-network-performance-failed-running-performance-inspector-on-cluster/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-nneudachnyi-zapusk-inspect-network-performance-failed-running-performance-inspector-on-cluster"><span class="">Неудачный запуск &#39;Inspect Network Performance&#39;: Failed running performance inspector on cluster</span></a>
+  <input type="checkbox" id="m-nneudachnyi-zapusk-inspect-network-performance-failed-running-performance-inspector-on-cluster-check"/>
+  <label for="m-nneudachnyi-zapusk-inspect-network-performance-failed-running-performance-inspector-on-cluster-check"><a href="/n/neudachnyi-zapusk-inspect-network-performance-failed-running-performance-inspector-on-cluster/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-nneudachnyi-zapusk-inspect-network-performance-failed-running-performance-inspector-on-cluster"><span class="">Неудачный запуск &#39;Inspect Network Performance&#39;: Failed running performance inspector on cluster</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-nperenos-klastera-cloudera-cdh-6-3-2-v-drugoi-vlan-li">
-  <a href="/n/perenos-klastera-cloudera-cdh-6-3-2-v-drugoi-vlan/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-nperenos-klastera-cloudera-cdh-6-3-2-v-drugoi-vlan"><span class="">Перенос кластера Cloudera CDH 6.3.2 в другой vlan</span></a>
+  <input type="checkbox" id="m-nperenos-klastera-cloudera-cdh-6-3-2-v-drugoi-vlan-check"/>
+  <label for="m-nperenos-klastera-cloudera-cdh-6-3-2-v-drugoi-vlan-check"><a href="/n/perenos-klastera-cloudera-cdh-6-3-2-v-drugoi-vlan/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-nperenos-klastera-cloudera-cdh-6-3-2-v-drugoi-vlan"><span class="">Перенос кластера Cloudera CDH 6.3.2 в другой vlan</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-ndobavlenie-v-nxrm-edinogo-repozitoriya-dlya-vseh-versii-postgresql-li">
-  <a href="/n/dobavlenie-v-nxrm-edinogo-repozitoriya-dlya-vseh-versii-postgresql/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-ndobavlenie-v-nxrm-edinogo-repozitoriya-dlya-vseh-versii-postgresql"><span class="">Добавление в NXRM единого репозитория для всех версий PostgreSQL</span></a>
+  <input type="checkbox" id="m-ndobavlenie-v-nxrm-edinogo-repozitoriya-dlya-vseh-versii-postgresql-check"/>
+  <label for="m-ndobavlenie-v-nxrm-edinogo-repozitoriya-dlya-vseh-versii-postgresql-check"><a href="/n/dobavlenie-v-nxrm-edinogo-repozitoriya-dlya-vseh-versii-postgresql/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-ndobavlenie-v-nxrm-edinogo-repozitoriya-dlya-vseh-versii-postgresql"><span class="">Добавление в NXRM единого репозитория для всех версий PostgreSQL</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-ndisabling-hive-cli-li">
-  <a href="/n/disabling-hive-cli/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-ndisabling-hive-cli"><span class="">Disabling Hive CLI</span></a>
+  <input type="checkbox" id="m-ndisabling-hive-cli-check"/>
+  <label for="m-ndisabling-hive-cli-check"><a href="/n/disabling-hive-cli/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-ndisabling-hive-cli"><span class="">Disabling Hive CLI</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-nispravlenie-zastryavshego-statusa-u-roli-v-cloudera-hadoop-li">
-  <a href="/n/ispravlenie-zastryavshego-statusa-u-roli-v-cloudera-hadoop/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-nispravlenie-zastryavshego-statusa-u-roli-v-cloudera-hadoop"><span class="">Исправление застрявшего статуса у роли в Cloudera CDH</span></a>
+  <input type="checkbox" id="m-nispravlenie-zastryavshego-statusa-u-roli-v-cloudera-hadoop-check"/>
+  <label for="m-nispravlenie-zastryavshego-statusa-u-roli-v-cloudera-hadoop-check"><a href="/n/ispravlenie-zastryavshego-statusa-u-roli-v-cloudera-hadoop/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-nispravlenie-zastryavshego-statusa-u-roli-v-cloudera-hadoop"><span class="">Исправление застрявшего статуса у роли в Cloudera CDH</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-nzapusk-kafka-mirror-maker-iz-systemd-li">
-  <a href="/n/zapusk-kafka-mirror-maker-iz-systemd/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-nzapusk-kafka-mirror-maker-iz-systemd"><span class="">Запуск kafka-mirror-maker из systemd</span></a>
+  <input type="checkbox" id="m-nzapusk-kafka-mirror-maker-iz-systemd-check"/>
+  <label for="m-nzapusk-kafka-mirror-maker-iz-systemd-check"><a href="/n/zapusk-kafka-mirror-maker-iz-systemd/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-nzapusk-kafka-mirror-maker-iz-systemd"><span class="">Запуск kafka-mirror-maker из systemd</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-nobnovlenie-nexus-repository-manager-li">
-  <a href="/n/obnovlenie-nexus-repository-manager/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-nobnovlenie-nexus-repository-manager"><span class="">Обновление Nexus Repository Manager</span></a>
+  <input type="checkbox" id="m-nobnovlenie-nexus-repository-manager-check"/>
+  <label for="m-nobnovlenie-nexus-repository-manager-check"><a href="/n/obnovlenie-nexus-repository-manager/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-nobnovlenie-nexus-repository-manager"><span class="">Обновление Nexus Repository Manager</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-nustanovka-monitorix-v-alpine-linux-li">
-  <a href="/n/ustanovka-monitorix-v-alpine-linux/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-nustanovka-monitorix-v-alpine-linux"><span class="">Установка Monitorix в Alpine Linux</span></a>
+  <input type="checkbox" id="m-nustanovka-monitorix-v-alpine-linux-check"/>
+  <label for="m-nustanovka-monitorix-v-alpine-linux-check"><a href="/n/ustanovka-monitorix-v-alpine-linux/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-nustanovka-monitorix-v-alpine-linux"><span class="">Установка Monitorix в Alpine Linux</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-nvoid-linux-ustanovka-kvm-li">
-  <a href="/n/void-linux-ustanovka-kvm/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-nvoid-linux-ustanovka-kvm"><span class="">Void Linux Установка QEMU/KVM</span></a>
+  <input type="checkbox" id="m-nvoid-linux-ustanovka-kvm-check"/>
+  <label for="m-nvoid-linux-ustanovka-kvm-check"><a href="/n/void-linux-ustanovka-kvm/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-nvoid-linux-ustanovka-kvm"><span class="">Void Linux Установка QEMU/KVM</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-nvoid-linux-ustanovka-docker-li">
-  <a href="/n/void-linux-ustanovka-docker/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-nvoid-linux-ustanovka-docker"><span class="">Void Linux Установка Docker</span></a>
+  <input type="checkbox" id="m-nvoid-linux-ustanovka-docker-check"/>
+  <label for="m-nvoid-linux-ustanovka-docker-check"><a href="/n/void-linux-ustanovka-docker/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-nvoid-linux-ustanovka-docker"><span class="">Void Linux Установка Docker</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-nizbavlyaemsya-ot-roota-v-alpine-linux-li">
-  <a href="/n/izbavlyaemsya-ot-roota-v-alpine-linux/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-nizbavlyaemsya-ot-roota-v-alpine-linux"><span class="">Избавляемся от root&#39;а в Alpine Linux</span></a>
+  <input type="checkbox" id="m-nizbavlyaemsya-ot-roota-v-alpine-linux-check"/>
+  <label for="m-nizbavlyaemsya-ot-roota-v-alpine-linux-check"><a href="/n/izbavlyaemsya-ot-roota-v-alpine-linux/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-nizbavlyaemsya-ot-roota-v-alpine-linux"><span class="">Избавляемся от root&#39;а в Alpine Linux</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-nustanovka-alpine-linux-v-podtom-btrfs-li">
-  <a href="/n/ustanovka-alpine-linux-v-podtom-btrfs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-nustanovka-alpine-linux-v-podtom-btrfs"><span class="">Установка Alpine Linux в подтом btrfs</span></a>
+  <input type="checkbox" id="m-nustanovka-alpine-linux-v-podtom-btrfs-check"/>
+  <label for="m-nustanovka-alpine-linux-v-podtom-btrfs-check"><a href="/n/ustanovka-alpine-linux-v-podtom-btrfs/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-nustanovka-alpine-linux-v-podtom-btrfs"><span class="">Установка Alpine Linux в подтом btrfs</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-napt-vs-apt-get-apt-cache-vs-aptitude-li">
-  <a href="/n/apt-vs-apt-get-apt-cache-vs-aptitude/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-napt-vs-apt-get-apt-cache-vs-aptitude"><span class="">apt vs apt-get/apt-cache vs aptitude</span></a>
+  <input type="checkbox" id="m-napt-vs-apt-get-apt-cache-vs-aptitude-check"/>
+  <label for="m-napt-vs-apt-get-apt-cache-vs-aptitude-check"><a href="/n/apt-vs-apt-get-apt-cache-vs-aptitude/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-napt-vs-apt-get-apt-cache-vs-aptitude"><span class="">apt vs apt-get/apt-cache vs aptitude</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-npervye-vpechatleniya-o-void-linux-li">
-  <a href="/n/pervye-vpechatleniya-o-void-linux/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-npervye-vpechatleniya-o-void-linux"><span class="">Первое впечатление от Void Linux</span></a>
+  <input type="checkbox" id="m-npervye-vpechatleniya-o-void-linux-check"/>
+  <label for="m-npervye-vpechatleniya-o-void-linux-check"><a href="/n/pervye-vpechatleniya-o-void-linux/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-npervye-vpechatleniya-o-void-linux"><span class="">Первое впечатление от Void Linux</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-nsborka-deb-paketa-svezhego-encfs-li">
-  <a href="/n/sborka-deb-paketa-svezhego-encfs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-nsborka-deb-paketa-svezhego-encfs"><span class="">Сборка deb-пакета свежего EncFS</span></a>
+  <input type="checkbox" id="m-nsborka-deb-paketa-svezhego-encfs-check"/>
+  <label for="m-nsborka-deb-paketa-svezhego-encfs-check"><a href="/n/sborka-deb-paketa-svezhego-encfs/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-nsborka-deb-paketa-svezhego-encfs"><span class="">Сборка deb-пакета свежего EncFS</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-nnastroika-oauth2-avtorizacii-google-akkauntov-v-nextcloud-li">
-  <a href="/n/nastroika-oauth2-avtorizacii-google-akkauntov-v-nextcloud/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-nnastroika-oauth2-avtorizacii-google-akkauntov-v-nextcloud"><span class="">Настройка OAuth2-авторизации Google-аккаунтов в NextCloud</span></a>
+  <input type="checkbox" id="m-nnastroika-oauth2-avtorizacii-google-akkauntov-v-nextcloud-check"/>
+  <label for="m-nnastroika-oauth2-avtorizacii-google-akkauntov-v-nextcloud-check"><a href="/n/nastroika-oauth2-avtorizacii-google-akkauntov-v-nextcloud/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-nnastroika-oauth2-avtorizacii-google-akkauntov-v-nextcloud"><span class="">Настройка OAuth2-авторизации Google-аккаунтов в NextCloud</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-nunable-delete-old-snapshots-of-timeshift-on-btrfs-volume-li">
-  <a href="/n/unable-delete-old-snapshots-of-timeshift-on-btrfs-volume/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-nunable-delete-old-snapshots-of-timeshift-on-btrfs-volume"><span class="">Unable delete old snapshots of timeshift on btrfs volume</span></a>
+  <input type="checkbox" id="m-nunable-delete-old-snapshots-of-timeshift-on-btrfs-volume-check"/>
+  <label for="m-nunable-delete-old-snapshots-of-timeshift-on-btrfs-volume-check"><a href="/n/unable-delete-old-snapshots-of-timeshift-on-btrfs-volume/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-nunable-delete-old-snapshots-of-timeshift-on-btrfs-volume"><span class="">Unable delete old snapshots of timeshift on btrfs volume</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-ncryptsetup-korotkaya-pamyatka-li">
-  <a href="/n/cryptsetup-korotkaya-pamyatka/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-ncryptsetup-korotkaya-pamyatka"><span class="">cryptsetup короткая памятка</span></a>
+  <input type="checkbox" id="m-ncryptsetup-korotkaya-pamyatka-check"/>
+  <label for="m-ncryptsetup-korotkaya-pamyatka-check"><a href="/n/cryptsetup-korotkaya-pamyatka/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-ncryptsetup-korotkaya-pamyatka"><span class="">cryptsetup короткая памятка</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-napparmor-prepyatstvuet-elektronnomu-podpisyvaniyu-dokumentov-libreoffice-li">
-  <a href="/n/apparmor-prepyatstvuet-elektronnomu-podpisyvaniyu-dokumentov-libreoffice/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-napparmor-prepyatstvuet-elektronnomu-podpisyvaniyu-dokumentov-libreoffice"><span class="">AppArmor препятствует электронному подписыванию документов LibreOffice</span></a>
+  <input type="checkbox" id="m-napparmor-prepyatstvuet-elektronnomu-podpisyvaniyu-dokumentov-libreoffice-check"/>
+  <label for="m-napparmor-prepyatstvuet-elektronnomu-podpisyvaniyu-dokumentov-libreoffice-check"><a href="/n/apparmor-prepyatstvuet-elektronnomu-podpisyvaniyu-dokumentov-libreoffice/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-napparmor-prepyatstvuet-elektronnomu-podpisyvaniyu-dokumentov-libreoffice"><span class="">AppArmor препятствует электронному подписыванию документов LibreOffice</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-nmikrotik-wireless-wds-mesh-with-mesh-interface-li">
-  <a href="/n/mikrotik-wireless-wds-mesh-with-mesh-interface/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-nmikrotik-wireless-wds-mesh-with-mesh-interface"><span class="">Mikrotik: Wireless WDS Mesh With Mesh Interface</span></a>
+  <input type="checkbox" id="m-nmikrotik-wireless-wds-mesh-with-mesh-interface-check"/>
+  <label for="m-nmikrotik-wireless-wds-mesh-with-mesh-interface-check"><a href="/n/mikrotik-wireless-wds-mesh-with-mesh-interface/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-nmikrotik-wireless-wds-mesh-with-mesh-interface"><span class="">Mikrotik: Wireless WDS Mesh With Mesh Interface</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-nusilenie-zashchity-sshd-li">
-  <a href="/n/usilenie-zashchity-sshd/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-nusilenie-zashchity-sshd"><span class="">Усиление защиты sshd</span></a>
+  <input type="checkbox" id="m-nusilenie-zashchity-sshd-check"/>
+  <label for="m-nusilenie-zashchity-sshd-check"><a href="/n/usilenie-zashchity-sshd/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-nusilenie-zashchity-sshd"><span class="">Усиление защиты sshd</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-nopenwrt-upravlenie-pitaniem-porta-usb-li">
-  <a href="/n/openwrt-upravlenie-pitaniem-porta-usb/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-nopenwrt-upravlenie-pitaniem-porta-usb"><span class="">OpenWRT Управление питанием порта USB</span></a>
+  <input type="checkbox" id="m-nopenwrt-upravlenie-pitaniem-porta-usb-check"/>
+  <label for="m-nopenwrt-upravlenie-pitaniem-porta-usb-check"><a href="/n/openwrt-upravlenie-pitaniem-porta-usb/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-nopenwrt-upravlenie-pitaniem-porta-usb"><span class="">OpenWRT Управление питанием порта USB</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-notpravka-pochty-iz-kontaktnoi-formy-modx-evo-cherez-gmail-li">
-  <a href="/n/otpravka-pochty-iz-kontaktnoi-formy-modx-evo-cherez-gmail/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-notpravka-pochty-iz-kontaktnoi-formy-modx-evo-cherez-gmail"><span class="">Отправка почты из контактной формы MODx Evo через gmail</span></a>
+  <input type="checkbox" id="m-notpravka-pochty-iz-kontaktnoi-formy-modx-evo-cherez-gmail-check"/>
+  <label for="m-notpravka-pochty-iz-kontaktnoi-formy-modx-evo-cherez-gmail-check"><a href="/n/otpravka-pochty-iz-kontaktnoi-formy-modx-evo-cherez-gmail/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-notpravka-pochty-iz-kontaktnoi-formy-modx-evo-cherez-gmail"><span class="">Отправка почты из контактной формы MODx Evo через gmail</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-nkratkoe-opisanie-ustanovki-dd-wrt-na-router-linksys-wrt610n-v20-li">
-  <a href="/n/kratkoe-opisanie-ustanovki-dd-wrt-na-router-linksys-wrt610n-v2.0/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-nkratkoe-opisanie-ustanovki-dd-wrt-na-router-linksys-wrt610n-v20"><span class="">Краткое описание установки DD-WRT на роутер Linksys WRT610N V2.0</span></a>
+  <input type="checkbox" id="m-nkratkoe-opisanie-ustanovki-dd-wrt-na-router-linksys-wrt610n-v20-check"/>
+  <label for="m-nkratkoe-opisanie-ustanovki-dd-wrt-na-router-linksys-wrt610n-v20-check"><a href="/n/kratkoe-opisanie-ustanovki-dd-wrt-na-router-linksys-wrt610n-v2.0/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-nkratkoe-opisanie-ustanovki-dd-wrt-na-router-linksys-wrt610n-v20"><span class="">Краткое описание установки DD-WRT на роутер Linksys WRT610N V2.0</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-nrazborka-trekbola-logitech-m570-li">
-  <a href="/n/razborka-trekbola-logitech-m570/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-nrazborka-trekbola-logitech-m570"><span class="">Разборка трекбола Logitech M570</span></a>
+  <input type="checkbox" id="m-nrazborka-trekbola-logitech-m570-check"/>
+  <label for="m-nrazborka-trekbola-logitech-m570-check"><a href="/n/razborka-trekbola-logitech-m570/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-nrazborka-trekbola-logitech-m570"><span class="">Разборка трекбола Logitech M570</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-nnastroika-klienta-openvpn-na-windows-xp-li">
-  <a href="/n/nastroika-klienta-openvpn-na-windows-xp/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-nnastroika-klienta-openvpn-na-windows-xp"><span class="">Настройка клиента OpenVPN на Windows XP</span></a>
+  <input type="checkbox" id="m-nnastroika-klienta-openvpn-na-windows-xp-check"/>
+  <label for="m-nnastroika-klienta-openvpn-na-windows-xp-check"><a href="/n/nastroika-klienta-openvpn-na-windows-xp/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-nnastroika-klienta-openvpn-na-windows-xp"><span class="">Настройка клиента OpenVPN на Windows XP</span></a></label>
+  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-nkak-sobrat-novoe-yadro-linux-li">
-  <a href="/n/kak-sobrat-novoe-yadro-linux/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-nkak-sobrat-novoe-yadro-linux"><span class="">Как собрать новое ядро linux</span></a>
+  <input type="checkbox" id="m-nkak-sobrat-novoe-yadro-linux-check"/>
+  <label for="m-nkak-sobrat-novoe-yadro-linux-check"><a href="/n/kak-sobrat-novoe-yadro-linux/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-nkak-sobrat-novoe-yadro-linux"><span class="">Как собрать новое ядро linux</span></a></label>
+  
 </li>
   </ul>
 </li>
     </ul>
   </nav>
 </div>
+
 
           </aside>
           <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
@@ -578,7 +693,7 @@ window.yaContextCb.push(() => {
 
       </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
         <span class="td-footer__copyright">&copy;
-    2009&ndash;2024
+    2009&ndash;2025
     <span class="td-footer__authors">Evgeny Nifantiev</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span>
       </div>
     </div>

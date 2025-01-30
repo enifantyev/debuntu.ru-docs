@@ -13,7 +13,7 @@
       <link>https://debuntu.ru/n/ispravlenie-problemy-s-pereklyucheniem-raskladki-v-visual-studio-code/</link>
       <pubDate>Thu, 15 Apr 2021 00:00:00 +0000</pubDate>
       <guid>https://debuntu.ru/n/ispravlenie-problemy-s-pereklyucheniem-raskladki-v-visual-studio-code/</guid>
-      <description>Причина кроется в обработке нажатия клавиши &amp;lsquo;Alt&amp;rsquo;, даже в составе комбинации, что приводит к вызову меню.&#xA;Решение найдено здесь: https://github.com/microsoft/vscode/issues/85405#issuecomment-656659452.&#xA;В настройках Visual Studio Code ищем опцию &amp;lsquo;window.titleBarStyle&amp;rsquo;, которая по умолчанию установлена в &amp;rsquo;native&amp;rsquo;. После смены значения на &amp;lsquo;custom&amp;rsquo;, нажатие клавиши &amp;lsquo;Alt&amp;rsquo; перестаёт вызывать меню.</description>
+      <description>&lt;p&gt;Причина кроется в обработке нажатия клавиши &amp;lsquo;Alt&amp;rsquo;, даже в составе комбинации, что приводит к вызову меню.&lt;/p&gt;&#xA;&lt;p&gt;Решение найдено здесь: &lt;a href=&#34;https://github.com/microsoft/vscode/issues/85405#issuecomment-656659452&#34;&gt;https://github.com/microsoft/vscode/issues/85405#issuecomment-656659452&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;В настройках Visual Studio Code ищем опцию &amp;lsquo;window.titleBarStyle&amp;rsquo;, которая по умолчанию установлена в &amp;rsquo;native&amp;rsquo;. После смены значения на &amp;lsquo;custom&amp;rsquo;, нажатие клавиши &amp;lsquo;Alt&amp;rsquo; перестаёт вызывать меню.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
