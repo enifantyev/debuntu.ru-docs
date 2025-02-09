@@ -81,6 +81,13 @@
   
   
   <url>
+    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/notes-about-victoriametrics-ecosystem/</loc>
+    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://debuntu.ru/manuals/kubernetes/tls-kerberos-in-kubernetes/cert-manager_and_all_about_it/installing-configuring-cert-manager/</loc>
     <lastmod>2024-08-13T00:00:00+00:00</lastmod>
   </url>
@@ -1157,7 +1164,7 @@
   
   <url>
     <loc>https://debuntu.ru/manuals/</loc>
-    <lastmod>2025-01-30T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-09T00:00:00+00:00</lastmod>
   </url>
   
   
@@ -1401,7 +1408,7 @@
   
   <url>
     <loc>https://debuntu.ru/manuals/monitoring/</loc>
-    <lastmod>2025-01-30T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-09T00:00:00+00:00</lastmod>
   </url>
   
   
@@ -1422,20 +1429,45 @@
   
   <url>
     <loc>https://debuntu.ru/</loc>
-    <lastmod>2025-01-30T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-09T00:00:00+00:00</lastmod>
   </url>
+  
+  
   
   
   
   <url>
     <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/</loc>
-    <lastmod>2025-01-30T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-09T00:00:00+00:00</lastmod>
   </url>
   
   
   
   <url>
-    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/installing-victoria-metrics-cluster-from-binaries/</loc>
+    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/victoriametrics-what-you-should-avoid/</loc>
+    <lastmod>2025-02-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/airgapped-installing-victoria-metrics-cluster-from-binaries/</loc>
     <lastmod>2025-01-30T00:00:00+00:00</lastmod>
   </url>
   
@@ -1449,8 +1481,6 @@
     <loc>https://debuntu.ru/manuals/kubernetes/tls-kerberos-in-kubernetes/cert-manager_and_all_about_it/</loc>
     <lastmod>2024-08-13T00:00:00+00:00</lastmod>
   </url>
-  
-  
   
   
   
@@ -1865,7 +1895,13 @@
   
   
   <url>
-    <loc>https://debuntu.ru/snippets/adding_system_user_and_home_in_opt/</loc>
+    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/snippets/</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/snippets/</loc>
   </url>
   
   
@@ -1910,12 +1946,6 @@
   
   <url>
     <loc>https://debuntu.ru/manuals/apps/opensearch/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://debuntu.ru/snippets/</loc>
   </url>
   
   

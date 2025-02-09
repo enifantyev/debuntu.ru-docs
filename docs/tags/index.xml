@@ -6,8 +6,64 @@
     <description>Recent content in Tags on Debuntarium</description>
     <generator>Hugo</generator>
     <language>ru-RU</language>
-    <lastBuildDate>Tue, 13 Aug 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 09 Feb 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://debuntu.ru/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VictoriaMetrics</title>
+      <link>https://debuntu.ru/tags/victoriametrics/</link>
+      <pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://debuntu.ru/tags/victoriametrics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>VictoriaMetrics Cluster</title>
+      <link>https://debuntu.ru/tags/victoriametrics-cluster/</link>
+      <pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://debuntu.ru/tags/victoriametrics-cluster/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vmagent</title>
+      <link>https://debuntu.ru/tags/vmagent/</link>
+      <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://debuntu.ru/tags/vmagent/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vmalert</title>
+      <link>https://debuntu.ru/tags/vmalert/</link>
+      <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://debuntu.ru/tags/vmalert/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vmauth</title>
+      <link>https://debuntu.ru/tags/vmauth/</link>
+      <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://debuntu.ru/tags/vmauth/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vminsert</title>
+      <link>https://debuntu.ru/tags/vminsert/</link>
+      <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://debuntu.ru/tags/vminsert/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vmselect</title>
+      <link>https://debuntu.ru/tags/vmselect/</link>
+      <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://debuntu.ru/tags/vmselect/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vmstorage</title>
+      <link>https://debuntu.ru/tags/vmstorage/</link>
+      <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://debuntu.ru/tags/vmstorage/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Acme Protocol</title>
       <link>https://debuntu.ru/tags/acme-protocol/</link>
