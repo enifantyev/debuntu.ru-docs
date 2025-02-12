@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Victoria Metrics on Debuntarium</title>
+    <title>VictoriaMetrics on Debuntarium</title>
     <link>https://debuntu.ru/manuals/monitoring/victoriametrics/</link>
-    <description>Recent content in Victoria Metrics on Debuntarium</description>
+    <description>Recent content in VictoriaMetrics on Debuntarium</description>
     <generator>Hugo</generator>
     <language>ru-RU</language>
     <lastBuildDate>Sun, 09 Feb 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://debuntu.ru/manuals/monitoring/victoriametrics/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Victoria Metrics ecosystem. Краткий обзор</title>
+      <title>VictoriaMetrics ecosystem. Краткий обзор</title>
       <link>https://debuntu.ru/manuals/monitoring/victoriametrics/notes-about-victoriametrics-ecosystem/</link>
       <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
       <guid>https://debuntu.ru/manuals/monitoring/victoriametrics/notes-about-victoriametrics-ecosystem/</guid>
       <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_анатомия_экосистемы&#34;&gt;1. Анатомия экосистемы&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;VictoriaMetrics ecosystem состоит из нескольких компонентов.&lt;/p&gt;&#xA;&lt;div class=&#34;olist arabic&#34;&gt;&#xA;&lt;ol class=&#34;arabic&#34;&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;vmstorage&lt;/strong&gt;, &lt;strong&gt;vminsert&lt;/strong&gt;, &lt;strong&gt;vmselect&lt;/strong&gt; — составляют ядро системы VictoriaMetrics Cluster.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;vmagent&lt;/strong&gt;, &lt;strong&gt;vmauth&lt;/strong&gt;, &lt;strong&gt;vmalert&lt;/strong&gt; — дополнительные компоненты.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;vmctl&lt;/strong&gt;, &lt;strong&gt;vmalert-tool&lt;/strong&gt;, &lt;strong&gt;vmbackup&lt;/strong&gt;, &lt;strong&gt;vmrestore&lt;/strong&gt; — различные утилиты.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/div&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Каждый компонент экосистемы VictoriaMetrics компилируется в форме одного бинарника без зависимостей, поэтому эти компоненты могут работать почти в любом Linux’е без установки дополнительных пакетов.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;vminsert и vmselect поддерживают различные форматы метрик, поэтому взаимодействовать с хранилищем возможно из различных инструментов, что удобно для бесшовного перехода из других систем мониторинга.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Относительно недавно в экосистему был добавлен VictoriaLogs, но я его пока не изучал.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>Victoria Metrics. Чего надо избегать</title>
+      <title>VictoriaMetrics. Чего надо избегать</title>
       <link>https://debuntu.ru/manuals/monitoring/victoriametrics/victoriametrics-what-you-should-avoid/</link>
       <pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate>
       <guid>https://debuntu.ru/manuals/monitoring/victoriametrics/victoriametrics-what-you-should-avoid/</guid>
@@ -44,7 +44,7 @@
       <description></description>
     </item>
     <item>
-      <title>Victoria Metrics. vminsert options</title>
+      <title>VictoriaMetrics. vminsert options</title>
       <link>https://debuntu.ru/manuals/monitoring/victoriametrics/victoriametrics-vminsert-options/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://debuntu.ru/manuals/monitoring/victoriametrics/victoriametrics-vminsert-options/</guid>

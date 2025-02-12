@@ -81,6 +81,13 @@
   
   
   <url>
+    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/installing-vmagent-with-systemd/</loc>
+    <lastmod>2025-02-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/notes-about-victoriametrics-ecosystem/</loc>
     <lastmod>2025-02-08T00:00:00+00:00</lastmod>
   </url>
@@ -1163,8 +1170,15 @@
   
   
   <url>
+    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/vmagent-configuring-metrics-sending/</loc>
+    <lastmod>2025-02-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://debuntu.ru/manuals/</loc>
-    <lastmod>2025-02-09T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-12T00:00:00+00:00</lastmod>
   </url>
   
   
@@ -1408,7 +1422,7 @@
   
   <url>
     <loc>https://debuntu.ru/manuals/monitoring/</loc>
-    <lastmod>2025-02-09T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-12T00:00:00+00:00</lastmod>
   </url>
   
   
@@ -1429,8 +1443,10 @@
   
   <url>
     <loc>https://debuntu.ru/</loc>
-    <lastmod>2025-02-09T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-12T00:00:00+00:00</lastmod>
   </url>
+  
+  
   
   
   
@@ -1438,8 +1454,26 @@
   
   <url>
     <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/</loc>
-    <lastmod>2025-02-09T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-12T00:00:00+00:00</lastmod>
   </url>
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/</loc>
+    <lastmod>2025-02-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/</loc>
+    <lastmod>2025-02-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  
   
   
   
@@ -1447,12 +1481,6 @@
     <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/victoriametrics-what-you-should-avoid/</loc>
     <lastmod>2025-02-09T00:00:00+00:00</lastmod>
   </url>
-  
-  
-  
-  
-  
-  
   
   
   
