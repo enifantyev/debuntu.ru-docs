@@ -88,6 +88,13 @@
   
   
   <url>
+    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/</loc>
+    <lastmod>2025-02-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/notes-about-victoriametrics-ecosystem/</loc>
     <lastmod>2025-02-08T00:00:00+00:00</lastmod>
   </url>
@@ -1170,14 +1177,14 @@
   
   
   <url>
-    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/vmagent-configuring-metrics-sending/</loc>
-    <lastmod>2025-02-12T00:00:00+00:00</lastmod>
+    <loc>https://debuntu.ru/manuals/</loc>
+    <lastmod>2025-02-13T00:00:00+00:00</lastmod>
   </url>
   
   
   
   <url>
-    <loc>https://debuntu.ru/manuals/</loc>
+    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/vmagent-configuring-metrics-sending/</loc>
     <lastmod>2025-02-12T00:00:00+00:00</lastmod>
   </url>
   
@@ -1359,6 +1366,13 @@
   
   
   <url>
+    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/adding-global-labels-to-collected-metrics/</loc>
+    <lastmod>2025-02-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://debuntu.ru/manuals/borgbackup/</loc>
     <lastmod>2024-07-29T00:00:00+00:00</lastmod>
   </url>
@@ -1422,7 +1436,7 @@
   
   <url>
     <loc>https://debuntu.ru/manuals/monitoring/</loc>
-    <lastmod>2025-02-12T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-13T00:00:00+00:00</lastmod>
   </url>
   
   
@@ -1443,7 +1457,7 @@
   
   <url>
     <loc>https://debuntu.ru/</loc>
-    <lastmod>2025-02-12T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-13T00:00:00+00:00</lastmod>
   </url>
   
   
@@ -1454,14 +1468,14 @@
   
   <url>
     <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/</loc>
-    <lastmod>2025-02-12T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-13T00:00:00+00:00</lastmod>
   </url>
   
   
   
   <url>
     <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/</loc>
-    <lastmod>2025-02-12T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-13T00:00:00+00:00</lastmod>
   </url>
   
   
@@ -1469,7 +1483,28 @@
   
   
   <url>
-    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/</loc>
+    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/labeling-in-vmagent/</loc>
+    <lastmod>2025-02-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/labeling-in-vmagent/adding-global-labels-in-remotewrite/</loc>
+    <lastmod>2025-02-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/labeling-in-vmagent/adding-global-labels-with-scraping/</loc>
+    <lastmod>2025-02-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/labeling-in-vmagent/example-list-of-global-labels/</loc>
     <lastmod>2025-02-12T00:00:00+00:00</lastmod>
   </url>
   
