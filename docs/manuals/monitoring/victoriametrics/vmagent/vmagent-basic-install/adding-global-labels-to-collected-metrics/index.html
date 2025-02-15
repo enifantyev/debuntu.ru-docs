@@ -18,13 +18,19 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>30. vmagent. Добавление глобальных меток к собираемым метрикам | Debuntarium</title>
-<meta name="description" content=" В этой инструкции описан способ добавления глобальных меток и к собираемым метрикам, и ко всем отправляемым. Смысл этого в том, что метрики могут быть отправлены сторонним клиентом через этот настраиваемый vmagent. То есть метрики &#34;vmagent_*&#34; позволят узнать узнать через какой vmagent пришли метрики в VictoriaMetrics-кластер, в случае отсутствия меток &#34;scraper&#34; или отличных значений &#34;scraper&#34;-меток.
-1. Задание будущих значений глобальным меткам 1.1. Географический регион vlan’а Эта метка позволит фильтровать ресурсы по местоположению.">
+<meta name="description" content=" 1. Задание будущих значений глобальным меткам 1.1. Географический регион vlan’а Эта метка позволит фильтровать ресурсы по местоположению.
+Вручную задайте регион расположения VLAN’а:
+VLAN_REGION=&#39;moscow&#39; #VLAN_REGION=&#39;kirov&#39; 1.2. Числовой номер vlan’а Есть вероятность, что в hostname vmagent’а может не быть номера vlan, поэтому сможем получить номер vlan’а из этой переменной.
+В следующем скрипте происходит вычленение номера VLAN из имени текущей машины, иначе задайте номер вручную:
+# Убираем всё до &#34;ctl&#34; part1=&#34;${HOSTNAME#*ctl}&#34; # Убираем всё после числа (включая &#34;p&#34; и дальше) number=&#34;${part1%%p*}&#34; VLAN_NUM=${number} #VLAN_NUM=&#39;0617&#39; ">
 <meta property="og:url" content="https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/adding-global-labels-to-collected-metrics/">
   <meta property="og:site_name" content="Debuntarium">
   <meta property="og:title" content="30. vmagent. Добавление глобальных меток к собираемым метрикам">
-  <meta property="og:description" content="В этой инструкции описан способ добавления глобальных меток и к собираемым метрикам, и ко всем отправляемым. Смысл этого в том, что метрики могут быть отправлены сторонним клиентом через этот настраиваемый vmagent. То есть метрики &#34;vmagent_*&#34; позволят узнать узнать через какой vmagent пришли метрики в VictoriaMetrics-кластер, в случае отсутствия меток &#34;scraper&#34; или отличных значений &#34;scraper&#34;-меток.
-1. Задание будущих значений глобальным меткам 1.1. Географический регион vlan’а Эта метка позволит фильтровать ресурсы по местоположению.">
+  <meta property="og:description" content="1. Задание будущих значений глобальным меткам 1.1. Географический регион vlan’а Эта метка позволит фильтровать ресурсы по местоположению.
+Вручную задайте регион расположения VLAN’а:
+VLAN_REGION=&#39;moscow&#39; #VLAN_REGION=&#39;kirov&#39; 1.2. Числовой номер vlan’а Есть вероятность, что в hostname vmagent’а может не быть номера vlan, поэтому сможем получить номер vlan’а из этой переменной.
+В следующем скрипте происходит вычленение номера VLAN из имени текущей машины, иначе задайте номер вручную:
+# Убираем всё до &#34;ctl&#34; part1=&#34;${HOSTNAME#*ctl}&#34; # Убираем всё после числа (включая &#34;p&#34; и дальше) number=&#34;${part1%%p*}&#34; VLAN_NUM=${number} #VLAN_NUM=&#39;0617&#39;">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:type" content="article">
     <meta property="article:section" content="manuals">
@@ -34,16 +40,22 @@
     <meta property="article:tag" content="Vmagent">
 
   <meta itemprop="name" content="30. vmagent. Добавление глобальных меток к собираемым метрикам">
-  <meta itemprop="description" content="В этой инструкции описан способ добавления глобальных меток и к собираемым метрикам, и ко всем отправляемым. Смысл этого в том, что метрики могут быть отправлены сторонним клиентом через этот настраиваемый vmagent. То есть метрики &#34;vmagent_*&#34; позволят узнать узнать через какой vmagent пришли метрики в VictoriaMetrics-кластер, в случае отсутствия меток &#34;scraper&#34; или отличных значений &#34;scraper&#34;-меток.
-1. Задание будущих значений глобальным меткам 1.1. Географический регион vlan’а Эта метка позволит фильтровать ресурсы по местоположению.">
+  <meta itemprop="description" content="1. Задание будущих значений глобальным меткам 1.1. Географический регион vlan’а Эта метка позволит фильтровать ресурсы по местоположению.
+Вручную задайте регион расположения VLAN’а:
+VLAN_REGION=&#39;moscow&#39; #VLAN_REGION=&#39;kirov&#39; 1.2. Числовой номер vlan’а Есть вероятность, что в hostname vmagent’а может не быть номера vlan, поэтому сможем получить номер vlan’а из этой переменной.
+В следующем скрипте происходит вычленение номера VLAN из имени текущей машины, иначе задайте номер вручную:
+# Убираем всё до &#34;ctl&#34; part1=&#34;${HOSTNAME#*ctl}&#34; # Убираем всё после числа (включая &#34;p&#34; и дальше) number=&#34;${part1%%p*}&#34; VLAN_NUM=${number} #VLAN_NUM=&#39;0617&#39;">
   <meta itemprop="datePublished" content="2025-02-12T00:00:00+00:00">
   <meta itemprop="dateModified" content="2025-02-12T00:00:00+00:00">
-  <meta itemprop="wordCount" content="343">
+  <meta itemprop="wordCount" content="224">
   <meta itemprop="keywords" content="VictoriaMetrics,Vmagent">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="30. vmagent. Добавление глобальных меток к собираемым метрикам">
-  <meta name="twitter:description" content="В этой инструкции описан способ добавления глобальных меток и к собираемым метрикам, и ко всем отправляемым. Смысл этого в том, что метрики могут быть отправлены сторонним клиентом через этот настраиваемый vmagent. То есть метрики &#34;vmagent_*&#34; позволят узнать узнать через какой vmagent пришли метрики в VictoriaMetrics-кластер, в случае отсутствия меток &#34;scraper&#34; или отличных значений &#34;scraper&#34;-меток.
-1. Задание будущих значений глобальным меткам 1.1. Географический регион vlan’а Эта метка позволит фильтровать ресурсы по местоположению.">
+  <meta name="twitter:description" content="1. Задание будущих значений глобальным меткам 1.1. Географический регион vlan’а Эта метка позволит фильтровать ресурсы по местоположению.
+Вручную задайте регион расположения VLAN’а:
+VLAN_REGION=&#39;moscow&#39; #VLAN_REGION=&#39;kirov&#39; 1.2. Числовой номер vlan’а Есть вероятность, что в hostname vmagent’а может не быть номера vlan, поэтому сможем получить номер vlan’а из этой переменной.
+В следующем скрипте происходит вычленение номера VLAN из имени текущей машины, иначе задайте номер вручную:
+# Убираем всё до &#34;ctl&#34; part1=&#34;${HOSTNAME#*ctl}&#34; # Убираем всё после числа (включая &#34;p&#34; и дальше) number=&#34;${part1%%p*}&#34; VLAN_NUM=${number} #VLAN_NUM=&#39;0617&#39;">
 
 
 
@@ -717,6 +729,33 @@ if (window.location.pathname !== "/") {
   <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmagentvmagent-basic-installadding-global-labels-to-collected-metrics-check"/>
   <label for="m-manualsmonitoringvictoriametricsvmagentvmagent-basic-installadding-global-labels-to-collected-metrics-check"><a href="/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/adding-global-labels-to-collected-metrics/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsvmagentvmagent-basic-installadding-global-labels-to-collected-metrics"><span class="">30. vmagent. Добавление глобальных меток к собираемым метрикам</span></a></label>
   
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvmagentvmagent-basic-installconfiguring-scraping-metrics-li">
+  <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmagentvmagent-basic-installconfiguring-scraping-metrics-check"/>
+  <label for="m-manualsmonitoringvictoriametricsvmagentvmagent-basic-installconfiguring-scraping-metrics-check"><a href="/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/configuring-scraping-metrics/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsvmagentvmagent-basic-installconfiguring-scraping-metrics"><span class="">40. vmagent. Настройка сбора метрик из target&#39;ов</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvmagentvmagent-basic-installstarting-vmagent-li">
+  <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmagentvmagent-basic-installstarting-vmagent-check"/>
+  <label for="m-manualsmonitoringvictoriametricsvmagentvmagent-basic-installstarting-vmagent-check"><a href="/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/starting-vmagent/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsvmagentvmagent-basic-installstarting-vmagent"><span class="">50. vmagent. Запуск демона</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvmagentvmagent-basic-installvmagent-testing-li">
+  <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmagentvmagent-basic-installvmagent-testing-check"/>
+  <label for="m-manualsmonitoringvictoriametricsvmagentvmagent-basic-installvmagent-testing-check"><a href="/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/vmagent-testing/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsvmagentvmagent-basic-installvmagent-testing"><span class="">60. vmagent. Проверка</span></a></label>
+  
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsmonitoringvictoriametricsvmagenttesting-debugging-vmagent-li">
+  <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmagenttesting-debugging-vmagent-check"/>
+  <label for="m-manualsmonitoringvictoriametricsvmagenttesting-debugging-vmagent-check"><a href="/manuals/monitoring/victoriametrics/vmagent/testing-debugging-vmagent/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoringvictoriametricsvmagenttesting-debugging-vmagent"><span class="">vmagent. Способы тестирования и отладки</span></a></label>
+  
+  <ul class="ul-5 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvmagenttesting-debugging-vmagentdebugging-vmagent-from-gui-li">
+  <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmagenttesting-debugging-vmagentdebugging-vmagent-from-gui-check"/>
+  <label for="m-manualsmonitoringvictoriametricsvmagenttesting-debugging-vmagentdebugging-vmagent-from-gui-check"><a href="/manuals/monitoring/victoriametrics/vmagent/testing-debugging-vmagent/debugging-vmagent-from-gui/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsvmagenttesting-debugging-vmagentdebugging-vmagent-from-gui"><span class="">Отладка vmagent&#39;а с помощью Web UI</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvmagenttesting-debugging-vmagenttesting-vmagent-from-cli-li">
+  <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmagenttesting-debugging-vmagenttesting-vmagent-from-cli-check"/>
+  <label for="m-manualsmonitoringvictoriametricsvmagenttesting-debugging-vmagenttesting-vmagent-from-cli-check"><a href="/manuals/monitoring/victoriametrics/vmagent/testing-debugging-vmagent/testing-vmagent-from-cli/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsvmagenttesting-debugging-vmagenttesting-vmagent-from-cli"><span class="">Проверка работоспособности vmagent&#39;а с помощью командной строки</span></a></label>
+  
 </li>
   </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsmonitoringvictoriametricsvmagentlabeling-in-vmagent-li">
@@ -830,11 +869,6 @@ if (window.location.pathname !== "/") {
     <li><a href="#_добавление_глобальных_лейблов_scraper_к_собираемым_метрикам">2. Добавление глобальных лейблов &#39;scraper_*&#39; к собираемым метрикам</a>
       <ul>
         <li><a href="#_добавление_глобальных_метрик_в_основной_config_файла_vmagentа">2.1. Добавление глобальных метрик в основной config-файла vmagent’а</a></li>
-      </ul>
-    </li>
-    <li><a href="#_добавление_глобальных_меток_vmagent_ко_всем_отправляемым_метрикам">3. Добавление глобальных меток &#39;vmagent_*&#39; ко всем отправляемым метрикам</a>
-      <ul>
-        <li><a href="#_добавление_меток_в_remotewrite_label">3.1. Добавление меток в &#39;remoteWrite.label&#39;</a></li>
       </ul>
     </li>
   </ul>
@@ -1009,11 +1043,11 @@ if (window.location.pathname !== "/") {
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/venv/" data-taxonomy-term="venv"><span class="taxonomy-label">Venv</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vertica/" data-taxonomy-term="vertica"><span class="taxonomy-label">Vertica</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vfs/" data-taxonomy-term="vfs"><span class="taxonomy-label">VFS</span><span class="taxonomy-count">2</span></a></li>
-        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/victoriametrics/" data-taxonomy-term="victoriametrics"><span class="taxonomy-label">VictoriaMetrics</span><span class="taxonomy-count">9</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/victoriametrics/" data-taxonomy-term="victoriametrics"><span class="taxonomy-label">VictoriaMetrics</span><span class="taxonomy-count">14</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/victoriametrics-cluster/" data-taxonomy-term="victoriametrics-cluster"><span class="taxonomy-label">VictoriaMetrics Cluster</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/virtualization/" data-taxonomy-term="virtualization"><span class="taxonomy-label">Virtualization</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/visual-studio-code/" data-taxonomy-term="visual-studio-code"><span class="taxonomy-label">Visual Studio Code</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmagent/" data-taxonomy-term="vmagent"><span class="taxonomy-label">Vmagent</span><span class="taxonomy-count">7</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmagent/" data-taxonomy-term="vmagent"><span class="taxonomy-label">Vmagent</span><span class="taxonomy-count">12</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmalert/" data-taxonomy-term="vmalert"><span class="taxonomy-label">Vmalert</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmauth/" data-taxonomy-term="vmauth"><span class="taxonomy-label">Vmauth</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vminsert/" data-taxonomy-term="vminsert"><span class="taxonomy-label">Vminsert</span><span class="taxonomy-count">2</span></a></li>
@@ -1067,20 +1101,6 @@ if (window.location.pathname !== "/") {
 
 </header>
 	
-<div class="admonitionblock note">
-<table>
-<tbody><tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>В этой инструкции описан способ добавления глобальных меток и к собираемым метрикам, и ко всем отправляемым. Смысл этого в том, что метрики могут быть отправлены сторонним клиентом через этот настраиваемый vmagent. То есть метрики &#34;vmagent_*&#34; позволят узнать узнать через какой vmagent пришли метрики в VictoriaMetrics-кластер, в случае отсутствия меток &#34;scraper&#34; или отличных значений &#34;scraper&#34;-меток.</p>
-</div>
-</td>
-</tr>
-</tbody></table>
-</div>
 <div class="sect1">
 <h2 id="_задание_будущих_значений_глобальным_меткам">1. Задание будущих значений глобальным меткам</h2>
 <div class="sectionbody">
@@ -1198,53 +1218,6 @@ global:
     scraper_region: &#34;moscow&#34;
     scraper_vlan_num: &#34;0617&#34;
     scraper_vlan_env: &#34;prod&#34;</pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_добавление_глобальных_меток_vmagent_ко_всем_отправляемым_метрикам">3. Добавление глобальных меток &#39;vmagent_*&#39; ко всем отправляемым метрикам</h2>
-<div class="sectionbody">
-<div class="admonitionblock note">
-<table>
-<tbody><tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Этот способ добавления лейблов добавит метки к всем метриками отправляемых текущим vmagent’ом на remoteWrite.url, независимо от способа получения этих метрик.</p>
-</div>
-</td>
-</tr>
-</tbody></table>
-</div>
-<div class="sect2">
-<h3 id="_добавление_меток_в_remotewrite_label">3.1. Добавление меток в &#39;remoteWrite.label&#39;</h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Добавьте значения инициализированных переменных в <code>/etc/sysconfig/vmagent</code>:</p>
-<div class="listingblock">
-<div class="content">
-<pre>set -u; cat &lt;&lt; EOF &gt;&gt; /etc/sysconfig/vmagent
-remoteWrite_label=&#34;vmagent_hostname=%{SYSTEMD_HOSTNAME}&#34;,\
-&#34;vmagent_region=${VLAN_REGION}&#34;,\
-&#34;vmagent_vlan_num=${VLAN_NUM}&#34;,\
-&#34;vmagent_vlan_env=${VLAN_ENV}&#34;
-EOF</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Ожидаемая строка в файле <code>/etc/sysconfig/vmagent</code>, где переменная %{SYSTEMD_HOSTNAME} берётся из systemd-юнита &#39;vmagent.service&#39;:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>remoteWrite_label=&#34;vmagent_hostname=%{SYSTEMD_HOSTNAME}&#34;,&#34;vmagent_region=kurch&#34;,&#34;vmagent_vlan_num=0617&#34;,&#34;vmagent_vlan_env=prod&#34;</pre>
 </div>
 </div>
 </li>

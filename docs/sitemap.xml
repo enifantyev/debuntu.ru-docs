@@ -81,14 +81,14 @@
   
   
   <url>
-    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/installing-vmagent-with-systemd/</loc>
-    <lastmod>2025-02-12T00:00:00+00:00</lastmod>
+    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/</loc>
+    <lastmod>2025-02-15T00:00:00+00:00</lastmod>
   </url>
   
   
   
   <url>
-    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/</loc>
+    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/installing-vmagent-with-systemd/</loc>
     <lastmod>2025-02-12T00:00:00+00:00</lastmod>
   </url>
   
@@ -1178,7 +1178,7 @@
   
   <url>
     <loc>https://debuntu.ru/manuals/</loc>
-    <lastmod>2025-02-13T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-15T00:00:00+00:00</lastmod>
   </url>
   
   
@@ -1401,6 +1401,13 @@
   
   
   <url>
+    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/configuring-scraping-metrics/</loc>
+    <lastmod>2025-02-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://debuntu.ru/manuals/databases/</loc>
     <lastmod>2023-05-02T00:00:00+00:00</lastmod>
   </url>
@@ -1415,8 +1422,22 @@
   
   
   <url>
+    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/starting-vmagent/</loc>
+    <lastmod>2025-02-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://debuntu.ru/manuals/freeipa/</loc>
     <lastmod>2024-08-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/vmagent-testing/</loc>
+    <lastmod>2025-02-15T00:00:00+00:00</lastmod>
   </url>
   
   
@@ -1436,7 +1457,7 @@
   
   <url>
     <loc>https://debuntu.ru/manuals/monitoring/</loc>
-    <lastmod>2025-02-13T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-15T00:00:00+00:00</lastmod>
   </url>
   
   
@@ -1457,7 +1478,7 @@
   
   <url>
     <loc>https://debuntu.ru/</loc>
-    <lastmod>2025-02-13T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-15T00:00:00+00:00</lastmod>
   </url>
   
   
@@ -1468,17 +1489,38 @@
   
   <url>
     <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/</loc>
-    <lastmod>2025-02-13T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-15T00:00:00+00:00</lastmod>
   </url>
   
   
   
   <url>
     <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/</loc>
-    <lastmod>2025-02-13T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-15T00:00:00+00:00</lastmod>
   </url>
   
   
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/testing-debugging-vmagent/</loc>
+    <lastmod>2025-02-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/testing-debugging-vmagent/debugging-vmagent-from-gui/</loc>
+    <lastmod>2025-02-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/testing-debugging-vmagent/testing-vmagent-from-cli/</loc>
+    <lastmod>2025-02-15T00:00:00+00:00</lastmod>
+  </url>
   
   
   
