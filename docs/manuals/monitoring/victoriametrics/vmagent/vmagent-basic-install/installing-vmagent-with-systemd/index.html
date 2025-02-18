@@ -20,7 +20,7 @@
 <title>10. vmagent. Установка бинарника в systemd | Debuntarium</title>
 <meta name="description" content=" 1. Добавление бинарника в систему Отключите bash history и задайте логин/пароль для доступа к Nexus-репозиторию:
 set &#43;o history USER_PASS=&#39;nx-reader:xxxxxxxxxxxxxxxxxxxx&#39; Скачайте vmagent выбранной версии:
-set -o history URI=&#39;https://nexus.example.org/repository/dud_evolut_raw/monitoring/victoriametrics&#39; PLATFORM=&#39;linux-amd64&#39; VER=&#39;v1.110.0&#39; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LOu ${USER_PASS} ${URI}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LOu ${USER_PASS} ${URI}/vmutils-${PLATFORM}-${VER}_checksums.txt Распакуйте архив в tmp-директорию и проверьте корректность файлов:
+set -o history URI=&#39;https://nexus.example.org/repository/dud_evolut_raw/monitoring/victoriametrics&#39; PLATFORM=&#39;linux-amd64&#39; VER=&#39;v1.111.0&#39; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LOu ${USER_PASS} ${URI}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LOu ${USER_PASS} ${URI}/vmutils-${PLATFORM}-${VER}_checksums.txt Распакуйте архив в tmp-директорию и проверьте корректность файлов:
 tar xvf vmutils-linux-amd64-v1.110.0.tar.gz sha256sum -c vmutils-${PLATFORM}-${VER}_checksums.txt Ожидаемый вывод:
 vmutils-linux-amd64-v1.110.0.tar.gz: OK vmagent-prod: OK vmalert-prod: OK vmalert-tool-prod: OK vmauth-prod: OK vmbackup-prod: OK vmrestore-prod: OK vmctl-prod: OK ">
 <meta property="og:url" content="https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/installing-vmagent-with-systemd/">
@@ -28,32 +28,32 @@ vmutils-linux-amd64-v1.110.0.tar.gz: OK vmagent-prod: OK vmalert-prod: OK vmaler
   <meta property="og:title" content="10. vmagent. Установка бинарника в systemd">
   <meta property="og:description" content="1. Добавление бинарника в систему Отключите bash history и задайте логин/пароль для доступа к Nexus-репозиторию:
 set &#43;o history USER_PASS=&#39;nx-reader:xxxxxxxxxxxxxxxxxxxx&#39; Скачайте vmagent выбранной версии:
-set -o history URI=&#39;https://nexus.example.org/repository/dud_evolut_raw/monitoring/victoriametrics&#39; PLATFORM=&#39;linux-amd64&#39; VER=&#39;v1.110.0&#39; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LOu ${USER_PASS} ${URI}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LOu ${USER_PASS} ${URI}/vmutils-${PLATFORM}-${VER}_checksums.txt Распакуйте архив в tmp-директорию и проверьте корректность файлов:
+set -o history URI=&#39;https://nexus.example.org/repository/dud_evolut_raw/monitoring/victoriametrics&#39; PLATFORM=&#39;linux-amd64&#39; VER=&#39;v1.111.0&#39; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LOu ${USER_PASS} ${URI}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LOu ${USER_PASS} ${URI}/vmutils-${PLATFORM}-${VER}_checksums.txt Распакуйте архив в tmp-директорию и проверьте корректность файлов:
 tar xvf vmutils-linux-amd64-v1.110.0.tar.gz sha256sum -c vmutils-${PLATFORM}-${VER}_checksums.txt Ожидаемый вывод:
 vmutils-linux-amd64-v1.110.0.tar.gz: OK vmagent-prod: OK vmalert-prod: OK vmalert-tool-prod: OK vmauth-prod: OK vmbackup-prod: OK vmrestore-prod: OK vmctl-prod: OK">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:type" content="article">
     <meta property="article:section" content="manuals">
     <meta property="article:published_time" content="2025-02-12T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-02-12T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-02-18T00:00:00+00:00">
     <meta property="article:tag" content="VictoriaMetrics">
     <meta property="article:tag" content="Vmagent">
 
   <meta itemprop="name" content="10. vmagent. Установка бинарника в systemd">
   <meta itemprop="description" content="1. Добавление бинарника в систему Отключите bash history и задайте логин/пароль для доступа к Nexus-репозиторию:
 set &#43;o history USER_PASS=&#39;nx-reader:xxxxxxxxxxxxxxxxxxxx&#39; Скачайте vmagent выбранной версии:
-set -o history URI=&#39;https://nexus.example.org/repository/dud_evolut_raw/monitoring/victoriametrics&#39; PLATFORM=&#39;linux-amd64&#39; VER=&#39;v1.110.0&#39; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LOu ${USER_PASS} ${URI}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LOu ${USER_PASS} ${URI}/vmutils-${PLATFORM}-${VER}_checksums.txt Распакуйте архив в tmp-директорию и проверьте корректность файлов:
+set -o history URI=&#39;https://nexus.example.org/repository/dud_evolut_raw/monitoring/victoriametrics&#39; PLATFORM=&#39;linux-amd64&#39; VER=&#39;v1.111.0&#39; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LOu ${USER_PASS} ${URI}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LOu ${USER_PASS} ${URI}/vmutils-${PLATFORM}-${VER}_checksums.txt Распакуйте архив в tmp-директорию и проверьте корректность файлов:
 tar xvf vmutils-linux-amd64-v1.110.0.tar.gz sha256sum -c vmutils-${PLATFORM}-${VER}_checksums.txt Ожидаемый вывод:
 vmutils-linux-amd64-v1.110.0.tar.gz: OK vmagent-prod: OK vmalert-prod: OK vmalert-tool-prod: OK vmauth-prod: OK vmbackup-prod: OK vmrestore-prod: OK vmctl-prod: OK">
   <meta itemprop="datePublished" content="2025-02-12T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2025-02-12T00:00:00+00:00">
-  <meta itemprop="wordCount" content="427">
+  <meta itemprop="dateModified" content="2025-02-18T00:00:00+00:00">
+  <meta itemprop="wordCount" content="535">
   <meta itemprop="keywords" content="VictoriaMetrics,Vmagent">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="10. vmagent. Установка бинарника в systemd">
   <meta name="twitter:description" content="1. Добавление бинарника в систему Отключите bash history и задайте логин/пароль для доступа к Nexus-репозиторию:
 set &#43;o history USER_PASS=&#39;nx-reader:xxxxxxxxxxxxxxxxxxxx&#39; Скачайте vmagent выбранной версии:
-set -o history URI=&#39;https://nexus.example.org/repository/dud_evolut_raw/monitoring/victoriametrics&#39; PLATFORM=&#39;linux-amd64&#39; VER=&#39;v1.110.0&#39; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LOu ${USER_PASS} ${URI}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LOu ${USER_PASS} ${URI}/vmutils-${PLATFORM}-${VER}_checksums.txt Распакуйте архив в tmp-директорию и проверьте корректность файлов:
+set -o history URI=&#39;https://nexus.example.org/repository/dud_evolut_raw/monitoring/victoriametrics&#39; PLATFORM=&#39;linux-amd64&#39; VER=&#39;v1.111.0&#39; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LOu ${USER_PASS} ${URI}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LOu ${USER_PASS} ${URI}/vmutils-${PLATFORM}-${VER}_checksums.txt Распакуйте архив в tmp-директорию и проверьте корректность файлов:
 tar xvf vmutils-linux-amd64-v1.110.0.tar.gz sha256sum -c vmutils-${PLATFORM}-${VER}_checksums.txt Ожидаемый вывод:
 vmutils-linux-amd64-v1.110.0.tar.gz: OK vmagent-prod: OK vmalert-prod: OK vmalert-tool-prod: OK vmauth-prod: OK vmbackup-prod: OK vmrestore-prod: OK vmctl-prod: OK">
 
@@ -709,12 +709,12 @@ if (window.location.pathname !== "/") {
   
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsmonitoringvictoriametricsvmagent-li">
   <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmagent-check"/>
-  <label for="m-manualsmonitoringvictoriametricsvmagent-check"><a href="/manuals/monitoring/victoriametrics/vmagent/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoringvictoriametricsvmagent"><span class="">vmagent</span></a></label>
+  <label for="m-manualsmonitoringvictoriametricsvmagent-check"><a href="/manuals/monitoring/victoriametrics/vmagent/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoringvictoriametricsvmagent"><span class="">VMAgent</span></a></label>
   
   <ul class="ul-4 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsmonitoringvictoriametricsvmagentvmagent-basic-install-li">
   <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmagentvmagent-basic-install-check"/>
-  <label for="m-manualsmonitoringvictoriametricsvmagentvmagent-basic-install-check"><a href="/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoringvictoriametricsvmagentvmagent-basic-install"><span class="">vmagent. Базовая установка</span></a></label>
+  <label for="m-manualsmonitoringvictoriametricsvmagentvmagent-basic-install-check"><a href="/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoringvictoriametricsvmagentvmagent-basic-install"><span class="">VMAgent. Установка и базовая настройка в изолированной среде</span></a></label>
   
   <ul class="ul-5 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvmagentvmagent-basic-installinstalling-vmagent-with-systemd-li">
@@ -1071,9 +1071,9 @@ if (window.location.pathname !== "/") {
   <li class="breadcrumb-item">
     <a href="/manuals/monitoring/victoriametrics/">VictoriaMetrics</a></li>
   <li class="breadcrumb-item">
-    <a href="/manuals/monitoring/victoriametrics/vmagent/">vmagent</a></li>
+    <a href="/manuals/monitoring/victoriametrics/vmagent/">VMAgent</a></li>
   <li class="breadcrumb-item">
-    <a href="/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/">vmagent. Базовая установка</a></li>
+    <a href="/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/">VMAgent. Установка и базовая настройка в изолированной среде</a></li>
   <li class="breadcrumb-item active" aria-current="page">
     10. vmagent. Установка бинарника в systemd</li>
   </ol>
@@ -1115,7 +1115,7 @@ USER_PASS=&#39;nx-reader:xxxxxxxxxxxxxxxxxxxx&#39;</pre>
 
 URI=&#39;https://nexus.example.org/repository/dud_evolut_raw/monitoring/victoriametrics&#39;
 PLATFORM=&#39;linux-amd64&#39;
-VER=&#39;v1.110.0&#39;
+VER=&#39;v1.111.0&#39;
 
 TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR
 curl -LOu ${USER_PASS} ${URI}/vmutils-${PLATFORM}-${VER}.tar.gz
@@ -1148,7 +1148,7 @@ vmctl-prod: OK</pre>
 </div>
 </li>
 <li>
-<p>Установите vmagent в <code>/usr/local/bin</code>, где по правилам FHS должны размещаться вручную добавляемые в систему бинарники:</p>
+<p>Установите <strong>vmagent</strong> в <code>/usr/local/bin</code>, где по правилам FHS должны размещаться вручную добавляемые в систему бинарники:</p>
 <div class="listingblock">
 <div class="content">
 <pre>install vmagent-prod /usr/local/bin</pre>
@@ -1173,16 +1173,38 @@ vmctl-prod: OK</pre>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Добавьте в систему УЗ &#39;vmagent:victoriametrics&#39;:</p>
+<p>Добавьте в систему УЗ &#39;vmagent:victoriametrics&#39; и создайте каталог под конф-файлы:</p>
 <div class="listingblock">
 <div class="content">
-<pre>groupadd -r victoriametrics
-useradd -rM -s /sbin/nologin -g victoriametrics vmagent</pre>
+<pre>VMAGENT_CONF_DIR=&#39;/etc/victoriametrics&#39;
+
+groupadd -r victoriametrics
+useradd -rM -s /sbin/nologin -d ${VMAGENT_CONF_DIR} -g victoriametrics vmagent
+
+mkdir -p ${VMAGENT_CONF_DIR}
+chown root:victoriametrics ${VMAGENT_CONF_DIR}
+chmod 2750 ${VMAGENT_CONF_DIR}
+setfacl -d -m u::rwX,g::r-X,o::--- ${VMAGENT_CONF_DIR}
+setfacl -m u::rwX,g::r-X,o::--- ${VMAGENT_CONF_DIR}</pre>
 </div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Этот каталог предназначен для размещения файлов конфигурации vmagent’а. Режим <code>2750</code> позволяет наследовать права «группы» для создаваемых объектов внутри этого каталога, а правила ACL обеспечивают сохранность данных, запрещая доступ для остальных пользователей (<code>other</code>).</p>
+</div>
+</td>
+</tr>
+</tbody></table>
 </div>
 </li>
 <li>
-<p>Для буферизации собранных метрик vmagent’ом, на случай временной невозможности их отправки в VictoriaMetrics-кластер, используйте отдельный каталог-кеш, желательно с подмонтированным отдельным диском. Иначе проверьте в <code>/etc/sysconfig/vmagent</code> наличие опциюи &#39;remoteWrite.maxDiskUsagePerURL&#39;, ограничивающую выделенное пространство для кеша на рутовом диске.</p>
+<p>Для буферизации собранных метрик vmagent’ом на случай временной невозможности их отправки в VictoriaMetrics-кластер, используйте отдельный каталог-кеш, желательно с подмонтированным отдельным диском. Иначе проверьте в <code>/etc/sysconfig/vmagent</code> наличие опций <code>remoteWrite.maxDiskUsagePerURL</code>, ограничивающих выделенное пространство для кеша.</p>
 </li>
 <li>
 <p>Добавьте в переменную каталог для кеша vmagent’а и создайте каталог:</p>
@@ -1191,12 +1213,27 @@ useradd -rM -s /sbin/nologin -g victoriametrics vmagent</pre>
 <pre>VMAGENT_CACHE_DIR=&#39;/data/vmagent&#39;
 
 mkdir -p ${VMAGENT_CACHE_DIR}
-chown vmagent:victoriametrics ${VMAGENT_CACHE_DIR}</pre>
+chown vmagent:victoriametrics ${VMAGENT_CACHE_DIR}
+chmod 750 ${VMAGENT_CACHE_DIR}</pre>
 </div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Режим <em>750</em> и опция <em>UMask=027</em> в systemd-юните позволяют сохранять данные, записываемые в этот каталог, в безопасности, то есть без доступа для <em>other</em>.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
 </div>
 </li>
 <li>
-<p>Добавьте systemd-юнит в /etc/systemd/system, где по правилам SYSTEMD должны находиться созданные вручную systemd-юниты:</p>
+<p>Добавьте systemd-юнит в <code>/etc/systemd/system</code>, где по правилам SYSTEMD должны находиться созданные вручную systemd-юниты:</p>
 <div id="_tabs_1" class="openblock tabs is-loading">
 <div class="content">
 <div class="ulist tablist">
@@ -1222,6 +1259,7 @@ After=network.target
 Type=simple
 User=vmagent
 Group=victoriametrics
+UMask=027
 StartLimitBurst=5
 StartLimitInterval=0
 Restart=on-failure
@@ -1235,7 +1273,7 @@ ExecReload=/bin/kill -HUP \$MAINPID
 LimitNOFILE=1048576
 LimitNPROC=1048576
 LimitCORE=infinity
-WorkingDirectory=${VMAGENT_CACHE_DIR}
+WorkingDirectory=${VMAGENT_CONF_DIR}
 ReadWritePaths=${VMAGENT_CACHE_DIR}
 PrivateTmp=yes
 ProtectHome=yes
@@ -1265,6 +1303,7 @@ After=network.target
 Type=simple
 User=vmagent
 Group=victoriametrics
+UMask=027
 StartLimitBurst=5
 StartLimitInterval=0
 Restart=on-failure
@@ -1278,7 +1317,7 @@ ExecReload=/bin/kill -HUP $MAINPID
 LimitNOFILE=1048576
 LimitNPROC=1048576
 LimitCORE=infinity
-WorkingDirectory=/data/vmagent
+WorkingDirectory=/etc/victoriametrics
 ReadWritePaths=/data/vmagent
 PrivateTmp=yes
 ProtectHome=yes
@@ -1311,7 +1350,10 @@ WantedBy=multi-user.target</pre>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Здесь хранятся опции командной строки при выполнении команды <code>vmagent-prod -envflag.enable</code>. Например, переменная <code>promscrape_config=/etc/victoriametrics/vmagent.yml</code> преобразуется в опцию <code>promscrape.config=/etc/victoriametrics/vmagent.yml</code>, то есть подчерк в имени переменной замещается точкой.</p>
+<p>Здесь хранятся опции командной строки при выполнении команды <code>vmagent-prod -envflag.enable</code>. Например, переменная <em>promscrape_config=vmagent.yml</em> преобразуется в опцию <em>promscrape.config=vmagent.yml</em>, то есть подчерк в имени переменной замещается точкой.</p>
+</div>
+<div class="paragraph">
+<p>Опция <em>WorkingDirectory</em> в systemd-юните, которая определяет «рабочий каталог» для запускаемого процесса, даёт возможность использовать относительные пути к конфигурационным файлам.</p>
 </div>
 </td>
 </tr>
@@ -1325,10 +1367,13 @@ WantedBy=multi-user.target</pre>
 <div class="content">
 <pre>set -u; cat &lt;&lt; EOF &gt; /etc/sysconfig/vmagent
 httpListenAddr=127.0.0.1:8429
-promscrape_config=/etc/victoriametrics/vmagent.yml
+promscrape_config=vmagent.yml
 
 ## Silently skip unsupported fields
 #promscrape_config_strictParse=false
+
+## see all the valid urls
+#remoteWrite_showURL
 
 ## Directory for temporary storage of collected data
 remoteWrite_tmpDataPath=${VMAGENT_CACHE_DIR}
@@ -1350,12 +1395,12 @@ EOF</pre>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Создайте &#34;основной&#34; конфиг-файл:</p>
+<p>Создайте «основной» конфиг-файл:</p>
 <div class="listingblock">
 <div class="content">
 <pre>cat &lt;&lt; EOF &gt; /etc/victoriametrics/vmagent.yml
 scrape_config_files:
-- vmagent.d/*.yml
+- targets/*.yml
 
 global:
   scrape_interval: 15s

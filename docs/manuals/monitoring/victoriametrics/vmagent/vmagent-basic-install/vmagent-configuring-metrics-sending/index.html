@@ -21,14 +21,14 @@
 <meta name="description" content=" 1. Добавление в Environment-файл vmauth-адреса В файле /etc/sysconfig/vmagent хранятся опции командной строки, используемые при выполнении команды vmagent-prod -envflag.enable, где точки заменены на подчерки.
 Например, переменная promscrape_config=/etc/victoriametrics/vmagent.yml преобразуется в опцию командной строки promscrape.config=/etc/victoriametrics/vmagent.yml, то есть подчерк в имени переменной замещается точкой.
 https://docs.victoriametrics.com/vmagent/#calculating-disk-space-for-persistence-queue
-Опция командной строки &#39;remoteWrite.maxDiskUsagePerURL&#39; позволяет указать размер буфера для кеширования метрик. Для каждого remoteWrite.url будет создан отдельный каталог. По умолчанию, при отсутствии опции, будет использован всё доступное пространство диска. Так как данные сохраняются в блоках по ~500 MB, рекомендуется указывать размер кратным 500. Замечено, что запись в буфер продолжается до значения &#43;500MB к указанному, после чего уменьшается до заданного значения. Если указать одно значение, например &#39;remoteWrite.maxDiskUsagePerURL=1GiB&#39;, то при двух remoteWrite.url буфер-каталог может увеличиваться до 2Gib &#43; (~500MB*2), то есть примерно до 3Gib. Если требуется указать разные размеры буферов для каждой &#39;remoteWrite.url&#39;, то укажите их через запятую в порядке следования адресов в &#39;remoteWrite.url&#39;.">
+Опция командной строки remoteWrite.maxDiskUsagePerURL позволяет указать размер буфера для кеширования метрик. Для каждого remoteWrite.url будет создан отдельный каталог. По умолчанию, при отсутствии опции, будет использован всё доступное пространство диска. Так как данные сохраняются в блоках по ~500 MB, рекомендуется указывать размер кратным 500. Замечено, что запись в буфер продолжается до значения &#43;500MB к указанному, после чего уменьшается до заданного значения. Если указать одно значение, например remoteWrite.maxDiskUsagePerURL=1GiB, то при двух remoteWrite.url буфер-каталог может увеличиваться до 2Gib &#43; (~500MB*2), то есть примерно до 3Gib. Если требуется указать разные размеры буферов для каждой remoteWrite.url, то укажите их через запятую в порядке следования адресов в remoteWrite.url.">
 <meta property="og:url" content="https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/vmagent-configuring-metrics-sending/">
   <meta property="og:site_name" content="Debuntarium">
   <meta property="og:title" content="20. vmagent. Конфигурирование отправки метрик">
   <meta property="og:description" content="1. Добавление в Environment-файл vmauth-адреса В файле /etc/sysconfig/vmagent хранятся опции командной строки, используемые при выполнении команды vmagent-prod -envflag.enable, где точки заменены на подчерки.
 Например, переменная promscrape_config=/etc/victoriametrics/vmagent.yml преобразуется в опцию командной строки promscrape.config=/etc/victoriametrics/vmagent.yml, то есть подчерк в имени переменной замещается точкой.
 https://docs.victoriametrics.com/vmagent/#calculating-disk-space-for-persistence-queue
-Опция командной строки &#39;remoteWrite.maxDiskUsagePerURL&#39; позволяет указать размер буфера для кеширования метрик. Для каждого remoteWrite.url будет создан отдельный каталог. По умолчанию, при отсутствии опции, будет использован всё доступное пространство диска. Так как данные сохраняются в блоках по ~500 MB, рекомендуется указывать размер кратным 500. Замечено, что запись в буфер продолжается до значения &#43;500MB к указанному, после чего уменьшается до заданного значения. Если указать одно значение, например &#39;remoteWrite.maxDiskUsagePerURL=1GiB&#39;, то при двух remoteWrite.url буфер-каталог может увеличиваться до 2Gib &#43; (~500MB*2), то есть примерно до 3Gib. Если требуется указать разные размеры буферов для каждой &#39;remoteWrite.url&#39;, то укажите их через запятую в порядке следования адресов в &#39;remoteWrite.url&#39;.">
+Опция командной строки remoteWrite.maxDiskUsagePerURL позволяет указать размер буфера для кеширования метрик. Для каждого remoteWrite.url будет создан отдельный каталог. По умолчанию, при отсутствии опции, будет использован всё доступное пространство диска. Так как данные сохраняются в блоках по ~500 MB, рекомендуется указывать размер кратным 500. Замечено, что запись в буфер продолжается до значения &#43;500MB к указанному, после чего уменьшается до заданного значения. Если указать одно значение, например remoteWrite.maxDiskUsagePerURL=1GiB, то при двух remoteWrite.url буфер-каталог может увеличиваться до 2Gib &#43; (~500MB*2), то есть примерно до 3Gib. Если требуется указать разные размеры буферов для каждой remoteWrite.url, то укажите их через запятую в порядке следования адресов в remoteWrite.url.">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:type" content="article">
     <meta property="article:section" content="manuals">
@@ -41,7 +41,7 @@ https://docs.victoriametrics.com/vmagent/#calculating-disk-space-for-persistence
   <meta itemprop="description" content="1. Добавление в Environment-файл vmauth-адреса В файле /etc/sysconfig/vmagent хранятся опции командной строки, используемые при выполнении команды vmagent-prod -envflag.enable, где точки заменены на подчерки.
 Например, переменная promscrape_config=/etc/victoriametrics/vmagent.yml преобразуется в опцию командной строки promscrape.config=/etc/victoriametrics/vmagent.yml, то есть подчерк в имени переменной замещается точкой.
 https://docs.victoriametrics.com/vmagent/#calculating-disk-space-for-persistence-queue
-Опция командной строки &#39;remoteWrite.maxDiskUsagePerURL&#39; позволяет указать размер буфера для кеширования метрик. Для каждого remoteWrite.url будет создан отдельный каталог. По умолчанию, при отсутствии опции, будет использован всё доступное пространство диска. Так как данные сохраняются в блоках по ~500 MB, рекомендуется указывать размер кратным 500. Замечено, что запись в буфер продолжается до значения &#43;500MB к указанному, после чего уменьшается до заданного значения. Если указать одно значение, например &#39;remoteWrite.maxDiskUsagePerURL=1GiB&#39;, то при двух remoteWrite.url буфер-каталог может увеличиваться до 2Gib &#43; (~500MB*2), то есть примерно до 3Gib. Если требуется указать разные размеры буферов для каждой &#39;remoteWrite.url&#39;, то укажите их через запятую в порядке следования адресов в &#39;remoteWrite.url&#39;.">
+Опция командной строки remoteWrite.maxDiskUsagePerURL позволяет указать размер буфера для кеширования метрик. Для каждого remoteWrite.url будет создан отдельный каталог. По умолчанию, при отсутствии опции, будет использован всё доступное пространство диска. Так как данные сохраняются в блоках по ~500 MB, рекомендуется указывать размер кратным 500. Замечено, что запись в буфер продолжается до значения &#43;500MB к указанному, после чего уменьшается до заданного значения. Если указать одно значение, например remoteWrite.maxDiskUsagePerURL=1GiB, то при двух remoteWrite.url буфер-каталог может увеличиваться до 2Gib &#43; (~500MB*2), то есть примерно до 3Gib. Если требуется указать разные размеры буферов для каждой remoteWrite.url, то укажите их через запятую в порядке следования адресов в remoteWrite.url.">
   <meta itemprop="datePublished" content="2025-02-12T00:00:00+00:00">
   <meta itemprop="dateModified" content="2025-02-12T00:00:00+00:00">
   <meta itemprop="wordCount" content="263">
@@ -51,7 +51,7 @@ https://docs.victoriametrics.com/vmagent/#calculating-disk-space-for-persistence
   <meta name="twitter:description" content="1. Добавление в Environment-файл vmauth-адреса В файле /etc/sysconfig/vmagent хранятся опции командной строки, используемые при выполнении команды vmagent-prod -envflag.enable, где точки заменены на подчерки.
 Например, переменная promscrape_config=/etc/victoriametrics/vmagent.yml преобразуется в опцию командной строки promscrape.config=/etc/victoriametrics/vmagent.yml, то есть подчерк в имени переменной замещается точкой.
 https://docs.victoriametrics.com/vmagent/#calculating-disk-space-for-persistence-queue
-Опция командной строки &#39;remoteWrite.maxDiskUsagePerURL&#39; позволяет указать размер буфера для кеширования метрик. Для каждого remoteWrite.url будет создан отдельный каталог. По умолчанию, при отсутствии опции, будет использован всё доступное пространство диска. Так как данные сохраняются в блоках по ~500 MB, рекомендуется указывать размер кратным 500. Замечено, что запись в буфер продолжается до значения &#43;500MB к указанному, после чего уменьшается до заданного значения. Если указать одно значение, например &#39;remoteWrite.maxDiskUsagePerURL=1GiB&#39;, то при двух remoteWrite.url буфер-каталог может увеличиваться до 2Gib &#43; (~500MB*2), то есть примерно до 3Gib. Если требуется указать разные размеры буферов для каждой &#39;remoteWrite.url&#39;, то укажите их через запятую в порядке следования адресов в &#39;remoteWrite.url&#39;.">
+Опция командной строки remoteWrite.maxDiskUsagePerURL позволяет указать размер буфера для кеширования метрик. Для каждого remoteWrite.url будет создан отдельный каталог. По умолчанию, при отсутствии опции, будет использован всё доступное пространство диска. Так как данные сохраняются в блоках по ~500 MB, рекомендуется указывать размер кратным 500. Замечено, что запись в буфер продолжается до значения &#43;500MB к указанному, после чего уменьшается до заданного значения. Если указать одно значение, например remoteWrite.maxDiskUsagePerURL=1GiB, то при двух remoteWrite.url буфер-каталог может увеличиваться до 2Gib &#43; (~500MB*2), то есть примерно до 3Gib. Если требуется указать разные размеры буферов для каждой remoteWrite.url, то укажите их через запятую в порядке следования адресов в remoteWrite.url.">
 
 
 
@@ -705,12 +705,12 @@ if (window.location.pathname !== "/") {
   
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsmonitoringvictoriametricsvmagent-li">
   <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmagent-check"/>
-  <label for="m-manualsmonitoringvictoriametricsvmagent-check"><a href="/manuals/monitoring/victoriametrics/vmagent/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoringvictoriametricsvmagent"><span class="">vmagent</span></a></label>
+  <label for="m-manualsmonitoringvictoriametricsvmagent-check"><a href="/manuals/monitoring/victoriametrics/vmagent/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoringvictoriametricsvmagent"><span class="">VMAgent</span></a></label>
   
   <ul class="ul-4 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsmonitoringvictoriametricsvmagentvmagent-basic-install-li">
   <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmagentvmagent-basic-install-check"/>
-  <label for="m-manualsmonitoringvictoriametricsvmagentvmagent-basic-install-check"><a href="/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoringvictoriametricsvmagentvmagent-basic-install"><span class="">vmagent. Базовая установка</span></a></label>
+  <label for="m-manualsmonitoringvictoriametricsvmagentvmagent-basic-install-check"><a href="/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoringvictoriametricsvmagentvmagent-basic-install"><span class="">VMAgent. Установка и базовая настройка в изолированной среде</span></a></label>
   
   <ul class="ul-5 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvmagentvmagent-basic-installinstalling-vmagent-with-systemd-li">
@@ -1064,9 +1064,9 @@ if (window.location.pathname !== "/") {
   <li class="breadcrumb-item">
     <a href="/manuals/monitoring/victoriametrics/">VictoriaMetrics</a></li>
   <li class="breadcrumb-item">
-    <a href="/manuals/monitoring/victoriametrics/vmagent/">vmagent</a></li>
+    <a href="/manuals/monitoring/victoriametrics/vmagent/">VMAgent</a></li>
   <li class="breadcrumb-item">
-    <a href="/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/">vmagent. Базовая установка</a></li>
+    <a href="/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/">VMAgent. Установка и базовая настройка в изолированной среде</a></li>
   <li class="breadcrumb-item active" aria-current="page">
     20. vmagent. Конфигурирование отправки метрик</li>
   </ol>
@@ -1107,13 +1107,13 @@ if (window.location.pathname !== "/") {
 <p><a href="https://docs.victoriametrics.com/vmagent/#calculating-disk-space-for-persistence-queue" class="bare">https://docs.victoriametrics.com/vmagent/#calculating-disk-space-for-persistence-queue</a></p>
 </div>
 <div class="paragraph">
-<p>Опция командной строки &#39;remoteWrite.maxDiskUsagePerURL&#39; позволяет указать размер буфера для кеширования метрик.
-Для каждого remoteWrite.url будет создан отдельный каталог.
+<p>Опция командной строки <code>remoteWrite.maxDiskUsagePerURL</code> позволяет указать размер буфера для кеширования метрик.
+Для каждого <code>remoteWrite.url</code> будет создан отдельный каталог.
 По умолчанию, при отсутствии опции, будет использован всё доступное пространство диска.
 Так как данные сохраняются в блоках по ~500 MB, рекомендуется указывать размер кратным 500.
 Замечено, что запись в буфер продолжается до значения +500MB к указанному, после чего уменьшается до заданного значения.
-Если указать одно значение, например &#39;remoteWrite.maxDiskUsagePerURL=1GiB&#39;, то при двух remoteWrite.url буфер-каталог может увеличиваться до 2Gib + (~500MB*2), то есть примерно до 3Gib.
-Если требуется указать разные размеры буферов для каждой &#39;remoteWrite.url&#39;, то укажите их через запятую в порядке следования адресов в &#39;remoteWrite.url&#39;.</p>
+Если указать одно значение, например <code>remoteWrite.maxDiskUsagePerURL=1GiB</code>, то при двух <code>remoteWrite.url</code> буфер-каталог может увеличиваться до 2Gib + (~500MB*2), то есть примерно до 3Gib.
+Если требуется указать разные размеры буферов для каждой <code>remoteWrite.url</code>, то укажите их через запятую в порядке следования адресов в <code>remoteWrite.url</code>.</p>
 </div>
 </td>
 </tr>
@@ -1156,7 +1156,7 @@ EOF</pre>
 </div>
 <div id="_tabs_1_два_адреса_remotewrite_url_или_больше--panel" class="tabpanel" aria-labelledby="_tabs_1_два_адреса_remotewrite_url_или_больше">
 <div class="paragraph">
-<p>Здесь в каждой опции через запятую перечисляем необходимые параметры. Например, если для двух remoteWrite.url требуются разные токены, то в опции remoteWrite.bearerToken перечисляем их через запятую в той последовательности, как адреса указаны в опции remoteWrite.url.</p>
+<p>Здесь в каждой опции через запятую перечисляем необходимые параметры. Например, если для двух <code>remoteWrite.url</code> требуются разные токены, то в опции <code>remoteWrite.bearerToken</code> перечисляем их через запятую в той последовательности, как адреса указаны в опции <code>remoteWrite.url</code>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
