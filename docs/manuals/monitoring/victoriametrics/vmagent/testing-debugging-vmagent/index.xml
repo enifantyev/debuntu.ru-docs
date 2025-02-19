@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>vmagent. Способы тестирования и отладки on Debuntarium</title>
+    <title>VMAgent. Способы тестирования и отладки on Debuntarium</title>
     <link>https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/testing-debugging-vmagent/</link>
-    <description>Recent content in vmagent. Способы тестирования и отладки on Debuntarium</description>
+    <description>Recent content in VMAgent. Способы тестирования и отладки on Debuntarium</description>
     <generator>Hugo</generator>
     <language>ru-RU</language>
     <lastBuildDate>Sat, 15 Feb 2025 00:00:00 +0000</lastBuildDate>
