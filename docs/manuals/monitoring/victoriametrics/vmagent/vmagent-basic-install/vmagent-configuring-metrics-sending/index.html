@@ -44,7 +44,7 @@ https://docs.victoriametrics.com/vmagent/#calculating-disk-space-for-persistence
 Опция командной строки remoteWrite.maxDiskUsagePerURL позволяет указать размер буфера для кеширования метрик. Для каждого remoteWrite.url будет создан отдельный каталог. По умолчанию, при отсутствии опции, будет использован всё доступное пространство диска. Так как данные сохраняются в блоках по ~500 MB, рекомендуется указывать размер кратным 500. Замечено, что запись в буфер продолжается до значения &#43;500MB к указанному, после чего уменьшается до заданного значения. Если указать одно значение, например remoteWrite.maxDiskUsagePerURL=1GiB, то при двух remoteWrite.url буфер-каталог может увеличиваться до 2Gib &#43; (~500MB*2), то есть примерно до 3Gib. Если требуется указать разные размеры буферов для каждой remoteWrite.url, то укажите их через запятую в порядке следования адресов в remoteWrite.url.">
   <meta itemprop="datePublished" content="2025-02-12T00:00:00+00:00">
   <meta itemprop="dateModified" content="2025-02-12T00:00:00+00:00">
-  <meta itemprop="wordCount" content="263">
+  <meta itemprop="wordCount" content="269">
   <meta itemprop="keywords" content="VictoriaMetrics,Vmagent">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="20. vmagent. Конфигурирование отправки метрик">
@@ -1150,13 +1150,14 @@ set -u; cat &lt;&lt; EOF &gt;&gt; /etc/sysconfig/vmagent
 remoteWrite_url=${REMOTEWRITE_URL_1}
 remoteWrite_bearerToken=${REMOTEWRITE_BEARERTOKEN_1}
 remoteWrite_maxDiskUsagePerURL=${REMOTEWRITE_MAXDISKUSAGEPERURL}
-EOF</pre>
+EOF
+set +u</pre>
 </div>
 </div>
 </div>
 <div id="_tabs_1_два_адреса_remotewrite_url_или_больше--panel" class="tabpanel" aria-labelledby="_tabs_1_два_адреса_remotewrite_url_или_больше">
 <div class="paragraph">
-<p>Здесь в каждой опции через запятую перечисляем необходимые параметры. Например, если для двух <code>remoteWrite.url</code> требуются разные токены, то в опции <code>remoteWrite.bearerToken</code> перечисляем их через запятую в той последовательности, как адреса указаны в опции <code>remoteWrite.url</code>.</p>
+<p>Здесь в каждой опции через запятую перечисляем необходимые параметры. Например, если для двух <code>remoteWrite.url</code> требуются разные токены доступа, то в опции <code>remoteWrite.bearerToken</code> перечисляем их через запятую в той последовательности, в какой адреса указаны в опции <code>remoteWrite.url</code>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1170,7 +1171,8 @@ set -u; cat &lt;&lt; EOF &gt;&gt; /etc/sysconfig/vmagent
 remoteWrite_url=&#34;${REMOTEWRITE_URL_1}&#34;,&#34;${REMOTEWRITE_URL_2}&#34;
 remoteWrite_bearerToken=&#34;${REMOTEWRITE_BEARERTOKEN_1}&#34;
 remoteWrite_maxDiskUsagePerURL=${REMOTEWRITE_MAXDISKUSAGEPERURL},${REMOTEWRITE_MAXDISKUSAGEPERURL}
-EOF</pre>
+EOF
+set +u</pre>
 </div>
 </div>
 </div>

@@ -47,7 +47,7 @@ tar xvf vmutils-linux-amd64-v1.111.0.tar.gz sha256sum -c vmutils-${PLATFORM}-${V
 vmutils-linux-amd64-v1.111.0.tar.gz: OK vmagent-prod: OK vmalert-prod: OK vmalert-tool-prod: OK vmauth-prod: OK vmbackup-prod: OK vmrestore-prod: OK vmctl-prod: OK">
   <meta itemprop="datePublished" content="2025-02-12T00:00:00+00:00">
   <meta itemprop="dateModified" content="2025-02-18T00:00:00+00:00">
-  <meta itemprop="wordCount" content="604">
+  <meta itemprop="wordCount" content="608">
   <meta itemprop="keywords" content="VictoriaMetrics,Vmagent">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="10. vmagent. Установка бинарника в systemd">
@@ -1195,9 +1195,7 @@ setfacl -m u::rwX,g::r-X,o::--- ${VMAGENT_CONF_DIR}</pre>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-<div class="paragraph">
-<p>Этот каталог предназначен для размещения файлов конфигурации vmagent. Режим <code>2750</code> позволяет наследовать права «группы» для создаваемых объектов внутри этого каталога, а правила ACL обеспечивают сохранность данных, запрещая доступ для остальных пользователей (<code>other</code>). Вы можете проверить наследование прав, создав внутри каталога новый файл или каталог.</p>
-</div>
+Этот каталог предназначен для размещения файлов конфигурации vmagent. Режим <code>2750</code> позволяет наследовать права «группы» для создаваемых объектов внутри этого каталога, а правила ACL обеспечивают сохранность данных, запрещая доступ для остальных пользователей (<code>other</code>). Вы можете проверить наследование прав, создав внутри каталога новый файл или каталог.
 </td>
 </tr>
 </tbody></table>
@@ -1289,6 +1287,7 @@ ProtectKernelTunables=yes
 [Install]
 WantedBy=multi-user.target
 EOF
+set +u
 
 systemctl daemon-reload</pre>
 </div>
@@ -1385,7 +1384,8 @@ remoteWrite_tmpDataPath=${VMAGENT_CACHE_DIR}
 loggerLevel=INFO
 promscrape_suppressDuplicateScrapeTargetErrors=true
 
-EOF</pre>
+EOF
+set +u</pre>
 </div>
 </div>
 </li>
