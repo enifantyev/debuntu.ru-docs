@@ -19,7 +19,7 @@
 
 <title>10. vmagent. Установка бинарника в systemd | Debuntarium</title>
 <meta name="description" content=" 1. Добавление бинарника в систему Временно отключите bash history и задайте логин/пароль для доступа к внутреннему репозиторию, если требуется:
-set &#43;o history USER_PASS=&#39;nx-reader:xxxxxxxxxxxxxxxxxxxx&#39; set -o history Скачайте vmagent выбранной версии:
+set &#43;o history USER_PASS=&#39;nx-reader:xxxxxxxxxxxxxxxxxxxx&#39; set -o history Скачайте файлы выбранной версии:
 URI=&#39;https://nexus.example.org/repository/raw/monitoring/victoriametrics&#39; PLATFORM=&#39;linux-amd64&#39; VER=&#39;v1.111.0&#39; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LOu ${USER_PASS} ${URI}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LOu ${USER_PASS} ${URI}/vmutils-${PLATFORM}-${VER}_checksums.txt Распакуйте архив во временную директорию и проверьте корректность файлов:
 tar xvf vmutils-linux-amd64-v1.111.0.tar.gz sha256sum -c vmutils-${PLATFORM}-${VER}_checksums.txt Ожидаемый вывод:
 vmutils-linux-amd64-v1.111.0.tar.gz: OK vmagent-prod: OK vmalert-prod: OK vmalert-tool-prod: OK vmauth-prod: OK vmbackup-prod: OK vmrestore-prod: OK vmctl-prod: OK ">
@@ -27,7 +27,7 @@ vmutils-linux-amd64-v1.111.0.tar.gz: OK vmagent-prod: OK vmalert-prod: OK vmaler
   <meta property="og:site_name" content="Debuntarium">
   <meta property="og:title" content="10. vmagent. Установка бинарника в systemd">
   <meta property="og:description" content="1. Добавление бинарника в систему Временно отключите bash history и задайте логин/пароль для доступа к внутреннему репозиторию, если требуется:
-set &#43;o history USER_PASS=&#39;nx-reader:xxxxxxxxxxxxxxxxxxxx&#39; set -o history Скачайте vmagent выбранной версии:
+set &#43;o history USER_PASS=&#39;nx-reader:xxxxxxxxxxxxxxxxxxxx&#39; set -o history Скачайте файлы выбранной версии:
 URI=&#39;https://nexus.example.org/repository/raw/monitoring/victoriametrics&#39; PLATFORM=&#39;linux-amd64&#39; VER=&#39;v1.111.0&#39; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LOu ${USER_PASS} ${URI}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LOu ${USER_PASS} ${URI}/vmutils-${PLATFORM}-${VER}_checksums.txt Распакуйте архив во временную директорию и проверьте корректность файлов:
 tar xvf vmutils-linux-amd64-v1.111.0.tar.gz sha256sum -c vmutils-${PLATFORM}-${VER}_checksums.txt Ожидаемый вывод:
 vmutils-linux-amd64-v1.111.0.tar.gz: OK vmagent-prod: OK vmalert-prod: OK vmalert-tool-prod: OK vmauth-prod: OK vmbackup-prod: OK vmrestore-prod: OK vmctl-prod: OK">
@@ -41,7 +41,7 @@ vmutils-linux-amd64-v1.111.0.tar.gz: OK vmagent-prod: OK vmalert-prod: OK vmaler
 
   <meta itemprop="name" content="10. vmagent. Установка бинарника в systemd">
   <meta itemprop="description" content="1. Добавление бинарника в систему Временно отключите bash history и задайте логин/пароль для доступа к внутреннему репозиторию, если требуется:
-set &#43;o history USER_PASS=&#39;nx-reader:xxxxxxxxxxxxxxxxxxxx&#39; set -o history Скачайте vmagent выбранной версии:
+set &#43;o history USER_PASS=&#39;nx-reader:xxxxxxxxxxxxxxxxxxxx&#39; set -o history Скачайте файлы выбранной версии:
 URI=&#39;https://nexus.example.org/repository/raw/monitoring/victoriametrics&#39; PLATFORM=&#39;linux-amd64&#39; VER=&#39;v1.111.0&#39; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LOu ${USER_PASS} ${URI}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LOu ${USER_PASS} ${URI}/vmutils-${PLATFORM}-${VER}_checksums.txt Распакуйте архив во временную директорию и проверьте корректность файлов:
 tar xvf vmutils-linux-amd64-v1.111.0.tar.gz sha256sum -c vmutils-${PLATFORM}-${VER}_checksums.txt Ожидаемый вывод:
 vmutils-linux-amd64-v1.111.0.tar.gz: OK vmagent-prod: OK vmalert-prod: OK vmalert-tool-prod: OK vmauth-prod: OK vmbackup-prod: OK vmrestore-prod: OK vmctl-prod: OK">
@@ -52,7 +52,7 @@ vmutils-linux-amd64-v1.111.0.tar.gz: OK vmagent-prod: OK vmalert-prod: OK vmaler
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="10. vmagent. Установка бинарника в systemd">
   <meta name="twitter:description" content="1. Добавление бинарника в систему Временно отключите bash history и задайте логин/пароль для доступа к внутреннему репозиторию, если требуется:
-set &#43;o history USER_PASS=&#39;nx-reader:xxxxxxxxxxxxxxxxxxxx&#39; set -o history Скачайте vmagent выбранной версии:
+set &#43;o history USER_PASS=&#39;nx-reader:xxxxxxxxxxxxxxxxxxxx&#39; set -o history Скачайте файлы выбранной версии:
 URI=&#39;https://nexus.example.org/repository/raw/monitoring/victoriametrics&#39; PLATFORM=&#39;linux-amd64&#39; VER=&#39;v1.111.0&#39; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LOu ${USER_PASS} ${URI}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LOu ${USER_PASS} ${URI}/vmutils-${PLATFORM}-${VER}_checksums.txt Распакуйте архив во временную директорию и проверьте корректность файлов:
 tar xvf vmutils-linux-amd64-v1.111.0.tar.gz sha256sum -c vmutils-${PLATFORM}-${VER}_checksums.txt Ожидаемый вывод:
 vmutils-linux-amd64-v1.111.0.tar.gz: OK vmagent-prod: OK vmalert-prod: OK vmalert-tool-prod: OK vmauth-prod: OK vmbackup-prod: OK vmrestore-prod: OK vmctl-prod: OK">
@@ -1109,7 +1109,7 @@ set -o history</pre>
 </div>
 </li>
 <li>
-<p>Скачайте vmagent выбранной версии:</p>
+<p>Скачайте файлы выбранной версии:</p>
 <div class="listingblock">
 <div class="content">
 <pre>URI=&#39;https://nexus.example.org/repository/raw/monitoring/victoriametrics&#39;
