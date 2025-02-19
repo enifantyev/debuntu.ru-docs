@@ -18,7 +18,7 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>10. vmagent. Установка бинарника в systemd | Debuntarium</title>
-<meta name="description" content=" 1. Добавление бинарника в систему Временно отключите bash history и задайте логин/пароль для доступа к внутреннему репозиторию:
+<meta name="description" content=" 1. Добавление бинарника в систему Временно отключите bash history и задайте логин/пароль для доступа к внутреннему репозиторию, если требуется:
 set &#43;o history USER_PASS=&#39;nx-reader:xxxxxxxxxxxxxxxxxxxx&#39; set -o history Скачайте vmagent выбранной версии:
 URI=&#39;https://nexus.example.org/repository/raw/monitoring/victoriametrics&#39; PLATFORM=&#39;linux-amd64&#39; VER=&#39;v1.111.0&#39; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LOu ${USER_PASS} ${URI}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LOu ${USER_PASS} ${URI}/vmutils-${PLATFORM}-${VER}_checksums.txt Распакуйте архив во временную директорию и проверьте корректность файлов:
 tar xvf vmutils-linux-amd64-v1.111.0.tar.gz sha256sum -c vmutils-${PLATFORM}-${VER}_checksums.txt Ожидаемый вывод:
@@ -26,7 +26,7 @@ vmutils-linux-amd64-v1.111.0.tar.gz: OK vmagent-prod: OK vmalert-prod: OK vmaler
 <meta property="og:url" content="https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/installing-vmagent-with-systemd/">
   <meta property="og:site_name" content="Debuntarium">
   <meta property="og:title" content="10. vmagent. Установка бинарника в systemd">
-  <meta property="og:description" content="1. Добавление бинарника в систему Временно отключите bash history и задайте логин/пароль для доступа к внутреннему репозиторию:
+  <meta property="og:description" content="1. Добавление бинарника в систему Временно отключите bash history и задайте логин/пароль для доступа к внутреннему репозиторию, если требуется:
 set &#43;o history USER_PASS=&#39;nx-reader:xxxxxxxxxxxxxxxxxxxx&#39; set -o history Скачайте vmagent выбранной версии:
 URI=&#39;https://nexus.example.org/repository/raw/monitoring/victoriametrics&#39; PLATFORM=&#39;linux-amd64&#39; VER=&#39;v1.111.0&#39; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LOu ${USER_PASS} ${URI}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LOu ${USER_PASS} ${URI}/vmutils-${PLATFORM}-${VER}_checksums.txt Распакуйте архив во временную директорию и проверьте корректность файлов:
 tar xvf vmutils-linux-amd64-v1.111.0.tar.gz sha256sum -c vmutils-${PLATFORM}-${VER}_checksums.txt Ожидаемый вывод:
@@ -40,18 +40,18 @@ vmutils-linux-amd64-v1.111.0.tar.gz: OK vmagent-prod: OK vmalert-prod: OK vmaler
     <meta property="article:tag" content="Vmagent">
 
   <meta itemprop="name" content="10. vmagent. Установка бинарника в systemd">
-  <meta itemprop="description" content="1. Добавление бинарника в систему Временно отключите bash history и задайте логин/пароль для доступа к внутреннему репозиторию:
+  <meta itemprop="description" content="1. Добавление бинарника в систему Временно отключите bash history и задайте логин/пароль для доступа к внутреннему репозиторию, если требуется:
 set &#43;o history USER_PASS=&#39;nx-reader:xxxxxxxxxxxxxxxxxxxx&#39; set -o history Скачайте vmagent выбранной версии:
 URI=&#39;https://nexus.example.org/repository/raw/monitoring/victoriametrics&#39; PLATFORM=&#39;linux-amd64&#39; VER=&#39;v1.111.0&#39; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LOu ${USER_PASS} ${URI}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LOu ${USER_PASS} ${URI}/vmutils-${PLATFORM}-${VER}_checksums.txt Распакуйте архив во временную директорию и проверьте корректность файлов:
 tar xvf vmutils-linux-amd64-v1.111.0.tar.gz sha256sum -c vmutils-${PLATFORM}-${VER}_checksums.txt Ожидаемый вывод:
 vmutils-linux-amd64-v1.111.0.tar.gz: OK vmagent-prod: OK vmalert-prod: OK vmalert-tool-prod: OK vmauth-prod: OK vmbackup-prod: OK vmrestore-prod: OK vmctl-prod: OK">
   <meta itemprop="datePublished" content="2025-02-12T00:00:00+00:00">
   <meta itemprop="dateModified" content="2025-02-18T00:00:00+00:00">
-  <meta itemprop="wordCount" content="608">
+  <meta itemprop="wordCount" content="612">
   <meta itemprop="keywords" content="VictoriaMetrics,Vmagent">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="10. vmagent. Установка бинарника в systemd">
-  <meta name="twitter:description" content="1. Добавление бинарника в систему Временно отключите bash history и задайте логин/пароль для доступа к внутреннему репозиторию:
+  <meta name="twitter:description" content="1. Добавление бинарника в систему Временно отключите bash history и задайте логин/пароль для доступа к внутреннему репозиторию, если требуется:
 set &#43;o history USER_PASS=&#39;nx-reader:xxxxxxxxxxxxxxxxxxxx&#39; set -o history Скачайте vmagent выбранной версии:
 URI=&#39;https://nexus.example.org/repository/raw/monitoring/victoriametrics&#39; PLATFORM=&#39;linux-amd64&#39; VER=&#39;v1.111.0&#39; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LOu ${USER_PASS} ${URI}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LOu ${USER_PASS} ${URI}/vmutils-${PLATFORM}-${VER}_checksums.txt Распакуйте архив во временную директорию и проверьте корректность файлов:
 tar xvf vmutils-linux-amd64-v1.111.0.tar.gz sha256sum -c vmutils-${PLATFORM}-${VER}_checksums.txt Ожидаемый вывод:
@@ -1099,7 +1099,7 @@ if (window.location.pathname !== "/") {
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Временно отключите bash history и задайте логин/пароль для доступа к внутреннему репозиторию:</p>
+<p>Временно отключите bash history и задайте логин/пароль для доступа к внутреннему репозиторию, если требуется:</p>
 <div class="listingblock">
 <div class="content">
 <pre>set +o history
@@ -1147,10 +1147,10 @@ vmctl-prod: OK</pre>
 </div>
 </li>
 <li>
-<p>Установите <strong>vmagent</strong> в <code>/usr/local/bin</code>, где, согласно FHS, следует размещать вручную добавляемые бинарники:</p>
+<p>Установите выбранные бинарники в <code>/usr/local/bin</code>, где, согласно FHS, следует размещать вручную добавляемые бинарники:</p>
 <div class="listingblock">
 <div class="content">
-<pre>install vmagent-prod /usr/local/bin</pre>
+<pre>install vmagent vmctl /usr/local/bin</pre>
 </div>
 </div>
 </li>
