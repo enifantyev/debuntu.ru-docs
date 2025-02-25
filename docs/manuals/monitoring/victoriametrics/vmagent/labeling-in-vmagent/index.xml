@@ -6,8 +6,15 @@
     <description>Recent content in VMAgent. Применение labels on Debuntarium</description>
     <generator>Hugo</generator>
     <language>ru-RU</language>
-    <lastBuildDate>Thu, 13 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 25 Feb 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/labeling-in-vmagent/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>vmagent. Добавление меток к собранным метрикам на уровне отдельных job</title>
+      <link>https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/labeling-in-vmagent/adding-labels-in-job/</link>
+      <pubDate>Tue, 25 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/labeling-in-vmagent/adding-labels-in-job/</guid>
+      <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Нет отдельного действия add для добавления меток к метрикам, но есть replace, с помощью которого можно изменить или добавить метку.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;olist arabic&#34;&gt;&#xA;&lt;ol class=&#34;arabic&#34;&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Пример добавления двух лейблов &lt;code&gt;vm_account_id&lt;/code&gt; и &lt;code&gt;vm_project_id&lt;/code&gt;:&lt;/p&gt;&#xA;&lt;div class=&#34;listingblock&#34;&gt;&#xA;&lt;div class=&#34;content&#34;&gt;&#xA;&lt;pre&gt;- job_name: &amp;#34;telegraf&amp;#34;&#xA;  #scrape_interval: 15s&#xA;  static_configs:&#xA;    - targets:&#xA;      - host.example.org:9101&#xA;  metrics_path: /metrics&#xA;  relabel_configs:&#xA;    - action: replace&#xA;      target_label: &amp;#34;vm_account_id&amp;#34;&#xA;      replacement: &amp;#34;0&amp;#34;&#xA;    - action: replace&#xA;      target_label: &amp;#34;vm_project_id&amp;#34;&#xA;      replacement: &amp;#34;0&amp;#34;&lt;/pre&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/div&gt;</description>
+    </item>
     <item>
       <title>Добавление глобальных меток ко всем отправляемым vmagent&#39;ом метрикам, независимо от способа их получения</title>
       <link>https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/labeling-in-vmagent/adding-global-labels-in-remotewrite/</link>

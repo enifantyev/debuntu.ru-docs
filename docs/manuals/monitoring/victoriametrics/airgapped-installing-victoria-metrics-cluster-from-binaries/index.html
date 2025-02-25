@@ -17,22 +17,26 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Установка Victoria Metrics Cluster из бинарников в изолированной среде | Debuntarium</title>
+<title>Установка VictoriaMetrics Cluster из бинарников в изолированной среде | Debuntarium</title>
 <meta name="description" content=" 1. Использованные материалы https://docs.victoriametrics.com/quick-start/
 https://github.com/VictoriaMetrics-Community/victoriametrics-rpm/blob/master/vmstorage.service
 https://github.com/VictoriaMetrics-Community/victoriametrics-rpm/blob/master/vminsert.service
 https://github.com/VictoriaMetrics-Community/victoriametrics-rpm/blob/master/vmselect.service
-2. Скачивание бинарников из локального репозитория на целевые хосты На целевых нодах будущего кластера Victoria Metrics выполните загрузку бинарников из локального NXRM:
-VER=&#39;v1.110.0&#39; PLATFORM=&#39;linux-amd64&#39; INTERNAL_REPO=&#34;https://nexus.example.org/repository/dud_evolut_raw&#34; REPO_FOLDER=&#34;monitoring/victoriametrics&#34; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}_checksums.txt ">
+2. Скачивание бинарников из локального репозитория на целевые хосты На целевых нодах будущего кластера VictoriaMetrics выполните загрузку бинарников из локального NXRM:
+VER=&#39;v1.111.0&#39; PLATFORM=&#39;linux-amd64&#39; INTERNAL_REPO=&#34;https://nexus.example.org/repository/raw&#34; REPO_FOLDER=&#34;monitoring/victoriametrics&#34; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}_checksums.txt Распакуйте скачанные файлы-архивы:
+tar xvf victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz tar xvf vmutils-${PLATFORM}-${VER}.tar.gz Проверьте целостность всех полученных файлов:
+sha256sum -c \ victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt \ vmutils-${PLATFORM}-${VER}_checksums.txt ">
 <meta property="og:url" content="https://debuntu.ru/manuals/monitoring/victoriametrics/airgapped-installing-victoria-metrics-cluster-from-binaries/">
   <meta property="og:site_name" content="Debuntarium">
-  <meta property="og:title" content="Установка Victoria Metrics Cluster из бинарников в изолированной среде">
+  <meta property="og:title" content="Установка VictoriaMetrics Cluster из бинарников в изолированной среде">
   <meta property="og:description" content="1. Использованные материалы https://docs.victoriametrics.com/quick-start/
 https://github.com/VictoriaMetrics-Community/victoriametrics-rpm/blob/master/vmstorage.service
 https://github.com/VictoriaMetrics-Community/victoriametrics-rpm/blob/master/vminsert.service
 https://github.com/VictoriaMetrics-Community/victoriametrics-rpm/blob/master/vmselect.service
-2. Скачивание бинарников из локального репозитория на целевые хосты На целевых нодах будущего кластера Victoria Metrics выполните загрузку бинарников из локального NXRM:
-VER=&#39;v1.110.0&#39; PLATFORM=&#39;linux-amd64&#39; INTERNAL_REPO=&#34;https://nexus.example.org/repository/dud_evolut_raw&#34; REPO_FOLDER=&#34;monitoring/victoriametrics&#34; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}_checksums.txt">
+2. Скачивание бинарников из локального репозитория на целевые хосты На целевых нодах будущего кластера VictoriaMetrics выполните загрузку бинарников из локального NXRM:
+VER=&#39;v1.111.0&#39; PLATFORM=&#39;linux-amd64&#39; INTERNAL_REPO=&#34;https://nexus.example.org/repository/raw&#34; REPO_FOLDER=&#34;monitoring/victoriametrics&#34; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}_checksums.txt Распакуйте скачанные файлы-архивы:
+tar xvf victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz tar xvf vmutils-${PLATFORM}-${VER}.tar.gz Проверьте целостность всех полученных файлов:
+sha256sum -c \ victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt \ vmutils-${PLATFORM}-${VER}_checksums.txt">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:type" content="article">
     <meta property="article:section" content="manuals">
@@ -43,25 +47,29 @@ VER=&#39;v1.110.0&#39; PLATFORM=&#39;linux-amd64&#39; INTERNAL_REPO=&#34;https:/
     <meta property="article:tag" content="Vminsert">
     <meta property="article:tag" content="Vmselect">
 
-  <meta itemprop="name" content="Установка Victoria Metrics Cluster из бинарников в изолированной среде">
+  <meta itemprop="name" content="Установка VictoriaMetrics Cluster из бинарников в изолированной среде">
   <meta itemprop="description" content="1. Использованные материалы https://docs.victoriametrics.com/quick-start/
 https://github.com/VictoriaMetrics-Community/victoriametrics-rpm/blob/master/vmstorage.service
 https://github.com/VictoriaMetrics-Community/victoriametrics-rpm/blob/master/vminsert.service
 https://github.com/VictoriaMetrics-Community/victoriametrics-rpm/blob/master/vmselect.service
-2. Скачивание бинарников из локального репозитория на целевые хосты На целевых нодах будущего кластера Victoria Metrics выполните загрузку бинарников из локального NXRM:
-VER=&#39;v1.110.0&#39; PLATFORM=&#39;linux-amd64&#39; INTERNAL_REPO=&#34;https://nexus.example.org/repository/dud_evolut_raw&#34; REPO_FOLDER=&#34;monitoring/victoriametrics&#34; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}_checksums.txt">
+2. Скачивание бинарников из локального репозитория на целевые хосты На целевых нодах будущего кластера VictoriaMetrics выполните загрузку бинарников из локального NXRM:
+VER=&#39;v1.111.0&#39; PLATFORM=&#39;linux-amd64&#39; INTERNAL_REPO=&#34;https://nexus.example.org/repository/raw&#34; REPO_FOLDER=&#34;monitoring/victoriametrics&#34; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}_checksums.txt Распакуйте скачанные файлы-архивы:
+tar xvf victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz tar xvf vmutils-${PLATFORM}-${VER}.tar.gz Проверьте целостность всех полученных файлов:
+sha256sum -c \ victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt \ vmutils-${PLATFORM}-${VER}_checksums.txt">
   <meta itemprop="datePublished" content="2025-01-30T00:00:00+00:00">
   <meta itemprop="dateModified" content="2025-01-30T00:00:00+00:00">
-  <meta itemprop="wordCount" content="518">
+  <meta itemprop="wordCount" content="624">
   <meta itemprop="keywords" content="VictoriaMetrics,Vmstorage,Vminsert,Vmselect">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Установка Victoria Metrics Cluster из бинарников в изолированной среде">
+  <meta name="twitter:title" content="Установка VictoriaMetrics Cluster из бинарников в изолированной среде">
   <meta name="twitter:description" content="1. Использованные материалы https://docs.victoriametrics.com/quick-start/
 https://github.com/VictoriaMetrics-Community/victoriametrics-rpm/blob/master/vmstorage.service
 https://github.com/VictoriaMetrics-Community/victoriametrics-rpm/blob/master/vminsert.service
 https://github.com/VictoriaMetrics-Community/victoriametrics-rpm/blob/master/vmselect.service
-2. Скачивание бинарников из локального репозитория на целевые хосты На целевых нодах будущего кластера Victoria Metrics выполните загрузку бинарников из локального NXRM:
-VER=&#39;v1.110.0&#39; PLATFORM=&#39;linux-amd64&#39; INTERNAL_REPO=&#34;https://nexus.example.org/repository/dud_evolut_raw&#34; REPO_FOLDER=&#34;monitoring/victoriametrics&#34; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}_checksums.txt">
+2. Скачивание бинарников из локального репозитория на целевые хосты На целевых нодах будущего кластера VictoriaMetrics выполните загрузку бинарников из локального NXRM:
+VER=&#39;v1.111.0&#39; PLATFORM=&#39;linux-amd64&#39; INTERNAL_REPO=&#34;https://nexus.example.org/repository/raw&#34; REPO_FOLDER=&#34;monitoring/victoriametrics&#34; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}_checksums.txt Распакуйте скачанные файлы-архивы:
+tar xvf victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz tar xvf vmutils-${PLATFORM}-${VER}.tar.gz Проверьте целостность всех полученных файлов:
+sha256sum -c \ victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt \ vmutils-${PLATFORM}-${VER}_checksums.txt">
 
 
 
@@ -749,6 +757,29 @@ if (window.location.pathname !== "/") {
   
 </li>
   </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsmonitoringvictoriametricsvmagentlabeling-in-vmagent-li">
+  <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmagentlabeling-in-vmagent-check"/>
+  <label for="m-manualsmonitoringvictoriametricsvmagentlabeling-in-vmagent-check"><a href="/manuals/monitoring/victoriametrics/vmagent/labeling-in-vmagent/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoringvictoriametricsvmagentlabeling-in-vmagent"><span class="">VMAgent. Применение labels</span></a></label>
+  
+  <ul class="ul-5 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvmagentlabeling-in-vmagentadding-labels-in-job-li">
+  <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmagentlabeling-in-vmagentadding-labels-in-job-check"/>
+  <label for="m-manualsmonitoringvictoriametricsvmagentlabeling-in-vmagentadding-labels-in-job-check"><a href="/manuals/monitoring/victoriametrics/vmagent/labeling-in-vmagent/adding-labels-in-job/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsvmagentlabeling-in-vmagentadding-labels-in-job"><span class="">vmagent. Добавление меток к собранным метрикам на уровне отдельных job</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvmagentlabeling-in-vmagentadding-global-labels-in-remotewrite-li">
+  <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmagentlabeling-in-vmagentadding-global-labels-in-remotewrite-check"/>
+  <label for="m-manualsmonitoringvictoriametricsvmagentlabeling-in-vmagentadding-global-labels-in-remotewrite-check"><a href="/manuals/monitoring/victoriametrics/vmagent/labeling-in-vmagent/adding-global-labels-in-remotewrite/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsvmagentlabeling-in-vmagentadding-global-labels-in-remotewrite"><span class="">Добавление глобальных меток ко всем отправляемым vmagent&#39;ом метрикам, независимо от способа их получения</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvmagentlabeling-in-vmagentadding-global-labels-with-scraping-li">
+  <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmagentlabeling-in-vmagentadding-global-labels-with-scraping-check"/>
+  <label for="m-manualsmonitoringvictoriametricsvmagentlabeling-in-vmagentadding-global-labels-with-scraping-check"><a href="/manuals/monitoring/victoriametrics/vmagent/labeling-in-vmagent/adding-global-labels-with-scraping/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsvmagentlabeling-in-vmagentadding-global-labels-with-scraping"><span class="">Добавление глобальных меток ко всем метрикам, собираемым vmagent&#39;ом с помощью скрейпинга</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvmagentlabeling-in-vmagentexample-list-of-global-labels-li">
+  <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmagentlabeling-in-vmagentexample-list-of-global-labels-check"/>
+  <label for="m-manualsmonitoringvictoriametricsvmagentlabeling-in-vmagentexample-list-of-global-labels-check"><a href="/manuals/monitoring/victoriametrics/vmagent/labeling-in-vmagent/example-list-of-global-labels/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsvmagentlabeling-in-vmagentexample-list-of-global-labels"><span class="">Пример списка глобальных меток для применения в vmagent</span></a></label>
+  
+</li>
+  </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsmonitoringvictoriametricsvmagenttesting-debugging-vmagent-li">
   <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmagenttesting-debugging-vmagent-check"/>
   <label for="m-manualsmonitoringvictoriametricsvmagenttesting-debugging-vmagent-check"><a href="/manuals/monitoring/victoriametrics/vmagent/testing-debugging-vmagent/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoringvictoriametricsvmagenttesting-debugging-vmagent"><span class="">VMAgent. Способы тестирования и отладки</span></a></label>
@@ -764,25 +795,6 @@ if (window.location.pathname !== "/") {
   
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsmonitoringvictoriametricsvmagentlabeling-in-vmagent-li">
-  <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmagentlabeling-in-vmagent-check"/>
-  <label for="m-manualsmonitoringvictoriametricsvmagentlabeling-in-vmagent-check"><a href="/manuals/monitoring/victoriametrics/vmagent/labeling-in-vmagent/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoringvictoriametricsvmagentlabeling-in-vmagent"><span class="">VMAgent. Применение labels</span></a></label>
-  
-  <ul class="ul-5 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvmagentlabeling-in-vmagentadding-global-labels-in-remotewrite-li">
-  <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmagentlabeling-in-vmagentadding-global-labels-in-remotewrite-check"/>
-  <label for="m-manualsmonitoringvictoriametricsvmagentlabeling-in-vmagentadding-global-labels-in-remotewrite-check"><a href="/manuals/monitoring/victoriametrics/vmagent/labeling-in-vmagent/adding-global-labels-in-remotewrite/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsvmagentlabeling-in-vmagentadding-global-labels-in-remotewrite"><span class="">Добавление глобальных меток ко всем отправляемым vmagent&#39;ом метрикам, независимо от способа их получения</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvmagentlabeling-in-vmagentadding-global-labels-with-scraping-li">
-  <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmagentlabeling-in-vmagentadding-global-labels-with-scraping-check"/>
-  <label for="m-manualsmonitoringvictoriametricsvmagentlabeling-in-vmagentadding-global-labels-with-scraping-check"><a href="/manuals/monitoring/victoriametrics/vmagent/labeling-in-vmagent/adding-global-labels-with-scraping/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsvmagentlabeling-in-vmagentadding-global-labels-with-scraping"><span class="">Добавление глобальных меток ко всем метрикам, собираемым vmagent&#39;ом с помощью скрейпинга</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvmagentlabeling-in-vmagentexample-list-of-global-labels-li">
-  <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmagentlabeling-in-vmagentexample-list-of-global-labels-check"/>
-  <label for="m-manualsmonitoringvictoriametricsvmagentlabeling-in-vmagentexample-list-of-global-labels-check"><a href="/manuals/monitoring/victoriametrics/vmagent/labeling-in-vmagent/example-list-of-global-labels/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsvmagentlabeling-in-vmagentexample-list-of-global-labels"><span class="">Пример списка глобальных меток для применения в vmagent</span></a></label>
-  
-</li>
-  </ul>
 </li>
   </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvictoriametrics-what-you-should-avoid-li">
@@ -791,7 +803,7 @@ if (window.location.pathname !== "/") {
   
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsairgapped-installing-victoria-metrics-cluster-from-binaries-li">
   <input type="checkbox" id="m-manualsmonitoringvictoriametricsairgapped-installing-victoria-metrics-cluster-from-binaries-check"/>
-  <label for="m-manualsmonitoringvictoriametricsairgapped-installing-victoria-metrics-cluster-from-binaries-check"><a href="/manuals/monitoring/victoriametrics/airgapped-installing-victoria-metrics-cluster-from-binaries/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsairgapped-installing-victoria-metrics-cluster-from-binaries"><span class="">Установка Victoria Metrics Cluster из бинарников в изолированной среде</span></a></label>
+  <label for="m-manualsmonitoringvictoriametricsairgapped-installing-victoria-metrics-cluster-from-binaries-check"><a href="/manuals/monitoring/victoriametrics/airgapped-installing-victoria-metrics-cluster-from-binaries/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsairgapped-installing-victoria-metrics-cluster-from-binaries"><span class="">Установка VictoriaMetrics Cluster из бинарников в изолированной среде</span></a></label>
   
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsdownload-victoria-metrics-binaries-and-upload-to-nexus-li">
   <input type="checkbox" id="m-manualsmonitoringvictoriametricsdownload-victoria-metrics-binaries-and-upload-to-nexus-check"/>
@@ -867,9 +879,10 @@ if (window.location.pathname !== "/") {
   <ul>
     <li><a href="#_использованные_материалы">1. Использованные материалы</a></li>
     <li><a href="#_скачивание_бинарников_из_локального_репозитория_на_целевые_хосты">2. Скачивание бинарников из локального репозитория на целевые хосты</a></li>
-    <li><a href="#_установка_vmstorage">3. Установка vmstorage</a></li>
-    <li><a href="#_установка_vminsert">4. Установка vminsert</a></li>
-    <li><a href="#_установка_vmselect">5. Установка vmselect</a></li>
+    <li><a href="#_приведение_hosts_к_единому_виду">3. Приведение hosts к единому виду</a></li>
+    <li><a href="#_установка_vmstorage">4. Установка vmstorage</a></li>
+    <li><a href="#_установка_vminsert">5. Установка vminsert</a></li>
+    <li><a href="#_установка_vmselect">6. Установка vmselect</a></li>
   </ul>
 </nav>
       </div>
@@ -1042,11 +1055,11 @@ if (window.location.pathname !== "/") {
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/venv/" data-taxonomy-term="venv"><span class="taxonomy-label">Venv</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vertica/" data-taxonomy-term="vertica"><span class="taxonomy-label">Vertica</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vfs/" data-taxonomy-term="vfs"><span class="taxonomy-label">VFS</span><span class="taxonomy-count">2</span></a></li>
-        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/victoriametrics/" data-taxonomy-term="victoriametrics"><span class="taxonomy-label">VictoriaMetrics</span><span class="taxonomy-count">14</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/victoriametrics/" data-taxonomy-term="victoriametrics"><span class="taxonomy-label">VictoriaMetrics</span><span class="taxonomy-count">15</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/victoriametrics-cluster/" data-taxonomy-term="victoriametrics-cluster"><span class="taxonomy-label">VictoriaMetrics Cluster</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/virtualization/" data-taxonomy-term="virtualization"><span class="taxonomy-label">Virtualization</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/visual-studio-code/" data-taxonomy-term="visual-studio-code"><span class="taxonomy-label">Visual Studio Code</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmagent/" data-taxonomy-term="vmagent"><span class="taxonomy-label">Vmagent</span><span class="taxonomy-count">12</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmagent/" data-taxonomy-term="vmagent"><span class="taxonomy-label">Vmagent</span><span class="taxonomy-count">13</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmalert/" data-taxonomy-term="vmalert"><span class="taxonomy-label">Vmalert</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmauth/" data-taxonomy-term="vmauth"><span class="taxonomy-label">Vmauth</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vminsert/" data-taxonomy-term="vminsert"><span class="taxonomy-label">Vminsert</span><span class="taxonomy-count">2</span></a></li>
@@ -1078,12 +1091,12 @@ if (window.location.pathname !== "/") {
   <li class="breadcrumb-item">
     <a href="/manuals/monitoring/victoriametrics/">VictoriaMetrics</a></li>
   <li class="breadcrumb-item active" aria-current="page">
-    Установка Victoria Metrics Cluster из бинарников в изолированной среде</li>
+    Установка VictoriaMetrics Cluster из бинарников в изолированной среде</li>
   </ol>
 </nav>
             
 <div class="td-content">
-	<h1>Установка Victoria Metrics Cluster из бинарников в изолированной среде</h1>
+	<h1>Установка VictoriaMetrics Cluster из бинарников в изолированной среде</h1>
 	
 	<header class="article-meta">
 		<div class="taxonomy taxonomy-terms-article taxo-tags">
@@ -1125,20 +1138,20 @@ if (window.location.pathname !== "/") {
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>На целевых нодах будущего кластера Victoria Metrics выполните загрузку бинарников из локального NXRM:</p>
+<p>На целевых нодах будущего кластера VictoriaMetrics выполните загрузку бинарников из локального NXRM:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">VER=&#39;v1.110.0&#39;
+<pre>VER=&#39;v1.111.0&#39;
 PLATFORM=&#39;linux-amd64&#39;
 
-INTERNAL_REPO=&#34;https://nexus.example.org/repository/dud_evolut_raw&#34;
+INTERNAL_REPO=&#34;https://nexus.example.org/repository/raw&#34;
 REPO_FOLDER=&#34;monitoring/victoriametrics&#34;
 
-</span><span style="color: #FFFFFF;background-color: #231529">TMPDIR=$</span><span style="color: #41ff5b">(</span><span style="font-weight: bold">mktemp</span> <span style="color: #9f93e6;font-weight: bold">-d</span><span style="color: #41ff5b">)</span> <span style="color: #41ff5b">&amp;&amp;</span> <span style="font-weight: bold">cd</span> <span style="color: #41ff5b;font-weight: bold">$TMPDIR</span>
-<span style="color: #FFFFFF;background-color: #231529">curl -LO $</span><span style="color: #41ff5b">{</span>INTERNAL_REPO<span style="color: #41ff5b">}</span>/<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">REPO_FOLDER</span><span style="color: #FFF02A;font-weight: bold">}</span>/victoria-metrics-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">PLATFORM</span><span style="color: #FFF02A;font-weight: bold">}</span>-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VER</span><span style="color: #FFF02A;font-weight: bold">}</span><span style="color: #9f93e6;font-weight: bold">-cluster</span>.tar.gz
-<span style="color: #FFFFFF;background-color: #231529">curl -LO $</span><span style="color: #41ff5b">{</span>INTERNAL_REPO<span style="color: #41ff5b">}</span>/<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">REPO_FOLDER</span><span style="color: #FFF02A;font-weight: bold">}</span>/victoria-metrics-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">PLATFORM</span><span style="color: #FFF02A;font-weight: bold">}</span>-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VER</span><span style="color: #FFF02A;font-weight: bold">}</span><span style="color: #9f93e6;font-weight: bold">-cluster_checksums</span>.txt
-<span style="color: #FFFFFF;background-color: #231529">curl -LO $</span><span style="color: #41ff5b">{</span>INTERNAL_REPO<span style="color: #41ff5b">}</span>/<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">REPO_FOLDER</span><span style="color: #FFF02A;font-weight: bold">}</span>/vmutils-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">PLATFORM</span><span style="color: #FFF02A;font-weight: bold">}</span>-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VER</span><span style="color: #FFF02A;font-weight: bold">}</span>.tar.gz
-<span style="color: #FFFFFF;background-color: #231529">curl -LO $</span><span style="color: #41ff5b">{</span>INTERNAL_REPO<span style="color: #41ff5b">}</span>/<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">REPO_FOLDER</span><span style="color: #FFF02A;font-weight: bold">}</span>/vmutils-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">PLATFORM</span><span style="color: #FFF02A;font-weight: bold">}</span>-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VER</span><span style="color: #FFF02A;font-weight: bold">}</span>_checksums.txt</code></pre>
+TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR
+curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz
+curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt
+curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}.tar.gz
+curl -LO ${INTERNAL_REPO}/${REPO_FOLDER}/vmutils-${PLATFORM}-${VER}_checksums.txt</pre>
 </div>
 </div>
 </li>
@@ -1146,8 +1159,8 @@ REPO_FOLDER=&#34;monitoring/victoriametrics&#34;
 <p>Распакуйте скачанные файлы-архивы:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">tar xvf victoria-metrics-$</span><span style="color: #41ff5b">{</span>PLATFORM<span style="color: #41ff5b">}</span>-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VER</span><span style="color: #FFF02A;font-weight: bold">}</span><span style="color: #9f93e6;font-weight: bold">-cluster</span>.tar.gz
-<span style="color: #FFFFFF;background-color: #231529">tar xvf vmutils-$</span><span style="color: #41ff5b">{</span>PLATFORM<span style="color: #41ff5b">}</span>-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VER</span><span style="color: #FFF02A;font-weight: bold">}</span>.tar.gz</code></pre>
+<pre>tar xvf victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz
+tar xvf vmutils-${PLATFORM}-${VER}.tar.gz</pre>
 </div>
 </div>
 </li>
@@ -1155,9 +1168,9 @@ REPO_FOLDER=&#34;monitoring/victoriametrics&#34;
 <p>Проверьте целостность всех полученных файлов:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">sha256sum -c \
-</span><span style="color: #FFFFFF;background-color: #231529">  victoria-metrics-$</span><span style="color: #41ff5b">{</span>PLATFORM<span style="color: #41ff5b">}</span>-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VER</span><span style="color: #FFF02A;font-weight: bold">}</span><span style="color: #9f93e6;font-weight: bold">-cluster_checksums</span>.txt <span style="color: #FAAF4C;font-weight: bold">\</span>
-<span style="color: #FFFFFF;background-color: #231529">  vmutils-$</span><span style="color: #41ff5b">{</span>PLATFORM<span style="color: #41ff5b">}</span>-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VER</span><span style="color: #FFF02A;font-weight: bold">}</span>_checksums.txt</code></pre>
+<pre>sha256sum -c \
+  victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt \
+  vmutils-${PLATFORM}-${VER}_checksums.txt</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1165,18 +1178,18 @@ REPO_FOLDER=&#34;monitoring/victoriametrics&#34;
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">victoria-metrics-linux-amd64-v1.110.0-cluster.tar.gz: OK
+<pre>victoria-metrics-linux-amd64-v1.111.0-cluster.tar.gz: OK
 vminsert-prod: OK
 vmselect-prod: OK
 vmstorage-prod: OK
-vmutils-linux-amd64-v1.110.0.tar.gz: OK
+vmutils-linux-amd64-v1.111.0.tar.gz: OK
 vmagent-prod: OK
 vmalert-prod: OK
 vmalert-tool-prod: OK
 vmauth-prod: OK
 vmbackup-prod: OK
 vmrestore-prod: OK
-vmctl-prod: OK</span></code></pre>
+vmctl-prod: OK</pre>
 </div>
 </div>
 </li>
@@ -1184,16 +1197,16 @@ vmctl-prod: OK</span></code></pre>
 <p>Разместите бинарники в каталоге <code>/usr/local/bin</code>:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">rm -f *$</span><span style="color: #41ff5b">{</span>VER<span style="color: #41ff5b">}</span><span style="color: #FFF02A;font-weight: bold">*</span>
-<span style="color: #FFFFFF;background-color: #231529">install vm* /usr/local/bin/</span></code></pre>
+<pre>rm -f *${VER}*
+install vm* /usr/local/bin/</pre>
 </div>
 </div>
 </li>
 <li>
-<p>Удалите временный каталог со скачанными файлами Victoria Metrics:</p>
+<p>Удалите временный каталог со скачанными файлами VictoriaMetrics:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">rm -rf &#34;$</span><span style="color: #41ff5b">{</span>TMPDIR<span style="color: #41ff5b">}</span><span style="color: #fff0a6;font-weight: bold">&#34;</span></code></pre>
+<pre>rm -rf &#34;${TMPDIR}&#34;</pre>
 </div>
 </div>
 </li>
@@ -1202,7 +1215,51 @@ vmctl-prod: OK</span></code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_установка_vmstorage">3. Установка vmstorage</h2>
+<h2 id="_приведение_hosts_к_единому_виду">3. Приведение hosts к единому виду</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Отредактируйте файл <code>/etc/hosts</code> одинаковым образом на всех машинах будущего VictoriaMetrics-кластера:</p>
+<div class="listingblock">
+<div class="content">
+<pre>#
+# IP-Address  Full-Qualified-Hostname  Short-Hostname
+#
+
+127.0.0.1       localhost
+
+# special IPv6 addresses
+::1             localhost ipv6-localhost ipv6-loopback
+
+fe00::0         ipv6-localnet
+
+ff00::0         ipv6-mcastprefix
+ff02::1         ipv6-allnodes
+ff02::2         ipv6-allrouters
+ff02::3         ipv6-allhosts
+
+10.0.0.15    mon-vmauth01p.example.org    mon-vmauth01p
+10.0.0.13    mon-vmauth02p.example.org    mon-vmauth02p
+10.0.0.7     mon-vminsert01p.example.org  mon-vminsert01p
+10.0.0.4     mon-vminsert02p.example.org  mon-vminsert02p
+10.0.0.12    mon-vmselect01p.example.org  mon-vmselect01p
+10.0.0.9     mon-vmselect02p.example.org  mon-vmselect02p
+10.0.0.3     mon-vmstorage01p.example.org mon-vmstorage01p vmstorage01
+10.0.0.6     mon-vmstorage02p.example.org mon-vmstorage02p vmstorage02
+10.0.0.1     mon-vmstorage03p.example.org mon-vmstorage03p vmstorage03
+10.0.0.16    mon-vmstorage04p.example.org mon-vmstorage04p vmstorage04
+10.0.0.2     mon-vmstorage05p.example.org mon-vmstorage05p vmstorage05
+10.0.0.18    mon-ctl0617p.example.org     mon-ctl0617p</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_установка_vmstorage">4. Установка vmstorage</h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
@@ -1210,45 +1267,58 @@ vmctl-prod: OK</span></code></pre>
 <p>На хостах, выделенных для размещения vmstorage, создайте аккаунт, каталог для хранения данных, и разместите systemd-юнит в каталоге <code>/etc/systemd/system</code>:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">VMSTORAGE_DIR=&#39;/srv/vmstorage&#39;
+<pre>VMSTORAGE_DIR=&#39;/srv/vmstorage&#39;
 
-groupadd -r victoriametrics
+groupadd -g 800 victoriametrics
 useradd -r -M -s /sbin/nologin -g victoriametrics vmstorage
 
-</span><span style="color: #FFFFFF;background-color: #231529">mkdir -p $</span><span style="color: #41ff5b">{</span>VMSTORAGE_DIR<span style="color: #41ff5b">}</span> <span style="color: #41ff5b">&amp;&amp;</span> <span style="color: #FAAF4C;font-weight: bold">\</span>
-<span style="color: #FFFFFF;background-color: #231529">chown -R vmstorage:victoriametrics $</span><span style="color: #41ff5b">{</span>VMSTORAGE_DIR<span style="color: #41ff5b">}</span></code></pre>
+mkdir -p ${VMSTORAGE_DIR} &amp;&amp; \
+chown -R vmstorage:victoriametrics ${VMSTORAGE_DIR}
+chmod 750 ${VMSELECT_DIR}</pre>
 </div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Возможно нам пригодится одинаковый GID группы на всех vmstorage-нодах для целей бекапирования?
+</td>
+</tr>
+</tbody></table>
 </div>
 </li>
 <li>
-<p>Добавьте в systemd соответствующий service-модуль <code>vmstorage.service</code>:</p>
+<p>Добавьте в systemd юнит <code>vmstorage.service</code>:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">cat &lt;&lt; EOF &gt;</span>/etc/systemd/system/vmstorage.service
-<span style="color: #FFFFFF;background-color: #231529">[Unit]
+<pre>cat &lt;&lt; EOF &gt;/etc/systemd/system/vmstorage.service
+[Unit]
 Description=vmstorage - stores the raw data and returns the queried data on the given time range for the given label filters
-</span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>https://docs.victoriametrics.com/Cluster-VictoriaMetrics.html
-<span style="color: #FFFFFF;background-color: #231529">After=network.target
+# https://docs.victoriametrics.com/Cluster-VictoriaMetrics.html
+After=network.target
 
 [Service]
 Type=simple
 User=vmstorage
 Group=victoriametrics
+UMask=027
 StartLimitBurst=5
 StartLimitInterval=0
 Restart=on-failure
 RestartSec=1
 EnvironmentFile=/etc/sysconfig/vmstorage
 ExecStart=/usr/local/bin/vmstorage-prod -envflag.enable
-</span><span style="color: #FFFFFF;background-color: #231529">ExecStop=/bin/kill -s SIGTERM \$</span>MAINPID
-<span style="color: #FFFFFF;background-color: #231529">ExecReload=/bin/kill -s HUP \$</span>MAINPID
-<span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>See docs https://docs.victoriametrics.com/Single-server-VictoriaMetrics.html#tuning
-<span style="color: #FFFFFF;background-color: #231529">LimitNOFILE=1048576
+ExecStop=/bin/kill -s SIGTERM \$MAINPID
+ExecReload=/bin/kill -s HUP \$MAINPID
+# See docs https://docs.victoriametrics.com/Single-server-VictoriaMetrics.html#tuning
+LimitNOFILE=1048576
 LimitNPROC=1048576
 LimitCORE=infinity
-</span><span style="color: #FFFFFF;background-color: #231529">WorkingDirectory=$</span><span style="color: #41ff5b">{</span>VMSTORAGE_DIR<span style="color: #41ff5b">}</span>
-<span style="color: #FFFFFF;background-color: #231529">ReadWritePaths=$</span><span style="color: #41ff5b">{</span>VMSTORAGE_DIR<span style="color: #41ff5b">}</span>
-<span style="color: #FFFFFF;background-color: #231529">PrivateTmp=yes
+ReadWritePaths=${VMSTORAGE_DIR}
+PrivateTmp=yes
 ProtectHome=yes
 NoNewPrivileges=yes
 ProtectSystem=strict
@@ -1262,20 +1332,21 @@ EOF
 
 systemctl daemon-reload
 
-</span><span style="color: #FFFFFF;background-color: #231529">cat &lt;&lt; EOF &gt;</span><span style="color: #BBBBBB"> </span>/etc/sysconfig/vmstorage
-<span style="color: #FFFFFF;background-color: #231529">retentionPeriod=90d
-</span><span style="color: #FFFFFF;background-color: #231529">storageDataPath=$</span><span style="color: #41ff5b">{</span>VMSTORAGE_DIR<span style="color: #41ff5b">}</span>
-<span style="color: #FFFFFF;background-color: #231529">EOF
+cat &lt;&lt; EOF &gt; /etc/sysconfig/vmstorage
+retentionPeriod=90d
+storageDataPath=${VMSTORAGE_DIR}
+EOF
+set +u
 
-systemctl enable --now vmstorage</span></code></pre>
+systemctl enable --now vmstorage</pre>
 </div>
 </div>
 </li>
 <li>
-<p>Проверьте работоспособность сервиса:</p>
+<p>Проверьте работоспособность сервиса. Например:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">curl http://&lt;ip-address&gt;</span>:8482/-/healthy</code></pre>
+<pre>curl http://vminsert01:8482/-/healthy</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1283,7 +1354,7 @@ systemctl enable --now vmstorage</span></code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">VictoriaMetrics is Healthy.</span></code></pre>
+<pre>VictoriaMetrics is Healthy.</pre>
 </div>
 </div>
 </li>
@@ -1292,24 +1363,22 @@ systemctl enable --now vmstorage</span></code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_установка_vminsert">4. Установка vminsert</h2>
+<h2 id="_установка_vminsert">5. Установка vminsert</h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>На тех же хостах с установленными vmstorage, или же отдельных, добавьте в systemd соответствующий service-модуль <code>vminsert.service</code>:</p>
+<p>На хостах, выделенных под vminsert-сервис, добавьте в systemd юнит <code>vminsert.service</code>:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">VMSTORAGE_ADDRESSES=&#39;10.15.160.1,10.15.160.2,10.15.160.3,10.15.160.4,10.15.160.5&#39;
-
-groupadd -r victoriametrics
+<pre>groupadd -r victoriametrics
 useradd -r -M -s /sbin/nologin -g victoriametrics vminsert
 
-</span><span style="color: #FFFFFF;background-color: #231529">set -u;</span><span style="color: #BBBBBB"> </span><span style="font-weight: bold">cat</span> <span style="color: #41ff5b">&lt;&lt;</span> <span style="color: #FAAF4C;font-weight: bold">EOF</span><span style="color: #fff0a6;font-weight: bold"> &gt;/etc/systemd/system/vminsert.service
-</span><span style="color: #FFFFFF;background-color: #231529">[Unit]
+set -u; cat &lt;&lt; EOF &gt;/etc/systemd/system/vminsert.service
+[Unit]
 Description=vminsert - accepts the ingested data and spreads it among vmstorage nodes according to consistent hashing over metric name and all its labels
-</span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>https://docs.victoriametrics.com/Cluster-VictoriaMetrics.html
-<span style="color: #FFFFFF;background-color: #231529">After=network.target
+# https://docs.victoriametrics.com/Cluster-VictoriaMetrics.html
+After=network.target
 
 [Service]
 Type=simple
@@ -1321,10 +1390,10 @@ Restart=on-failure
 RestartSec=1
 EnvironmentFile=/etc/sysconfig/vminsert
 ExecStart=/usr/local/bin/vminsert-prod -envflag.enable
-</span><span style="color: #FFFFFF;background-color: #231529">ExecStop=/bin/kill -s SIGTERM \$</span>MAINPID
-<span style="color: #FFFFFF;background-color: #231529">ExecReload=/bin/kill -s HUP \$</span>MAINPID
-<span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>See docs https://docs.victoriametrics.com/Single-server-VictoriaMetrics.html#tuning
-<span style="color: #FFFFFF;background-color: #231529">LimitNOFILE=1048576
+ExecStop=/bin/kill -s SIGTERM \$MAINPID
+ExecReload=/bin/kill -s HUP \$MAINPID
+# See docs https://docs.victoriametrics.com/Single-server-VictoriaMetrics.html#tuning
+LimitNOFILE=1048576
 LimitNPROC=1048576
 LimitCORE=infinity
 PrivateTmp=yes
@@ -1341,11 +1410,18 @@ EOF
 
 systemctl daemon-reload
 
-</span><span style="color: #FFFFFF;background-color: #231529">cat &lt;&lt; EOF &gt;</span><span style="color: #BBBBBB"> </span>/etc/sysconfig/vminsert
-<span style="color: #FFFFFF;background-color: #231529">storageNode=$</span><span style="color: #41ff5b">{</span>VMSTORAGE_ADDRESSES<span style="color: #41ff5b">}</span>
-<span style="color: #FFFFFF;background-color: #231529">EOF
+cat &lt;&lt; &#39;EOF&#39; &gt; vminsert
+#vminsertAddr=:8480
+storageNode=&#39;\
+vmstorage01,\
+vmstorage02,\
+vmstorage03,\
+vmstorage04,\
+vmstorage05&#39;
+EOF
+set +u
 
-systemctl enable --now vminsert</span></code></pre>
+systemctl enable --now vminsert</pre>
 </div>
 </div>
 </li>
@@ -1353,7 +1429,7 @@ systemctl enable --now vminsert</span></code></pre>
 <p>Проверьте работоспособность сервиса:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">curl http://&lt;ip-address&gt;</span>:8480/-/healthy</code></pre>
+<pre>curl http://mon-vminsert01p:8480/-/healthy</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1361,7 +1437,7 @@ systemctl enable --now vminsert</span></code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">VictoriaMetrics is Healthy.</span></code></pre>
+<pre>VictoriaMetrics is Healthy.</pre>
 </div>
 </div>
 </li>
@@ -1370,48 +1446,48 @@ systemctl enable --now vminsert</span></code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_установка_vmselect">5. Установка vmselect</h2>
+<h2 id="_установка_vmselect">6. Установка vmselect</h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>На хостах, выделенных для размещения vmselect, создайте непривилегированный аккаунт, под которым будет работать демон vmselect, каталог для буфера запросов, и добавьте в <code>/etc/systemd/system</code> vmselect-юнит:</p>
+<p>На хостах, выделенных для размещения vmselect, создайте непривилегированный аккаунт, под которым будет работать демон vmselect, каталог для буфера запросов, и добавьте в <code>/etc/systemd/system</code> systemd-юнит:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">VMSELECT_DIR=&#39;/srv/vmselect&#39;
-VMSTORAGE_ADDRESSES=&#39;10.15.160.1,10.15.160.2,10.15.160.3,10.15.160.4,10.15.160.5&#39;
+<pre>VMSELECT_DIR=&#39;/srv/vmselect&#39;
 
 groupadd -r victoriametrics
-</span><span style="color: #FFFFFF;background-color: #231529">useradd -r -M -s /sbin/nologin -g victoriametrics -d $</span><span style="color: #41ff5b">{</span>VMSELECT_DIR<span style="color: #41ff5b">}</span> vmselect
-<span style="color: #FFFFFF;background-color: #231529">
-</span><span style="color: #FFFFFF;background-color: #231529">mkdir -p $</span><span style="color: #41ff5b">{</span>VMSELECT_DIR<span style="color: #41ff5b">}</span> <span style="color: #41ff5b">&amp;&amp;</span> <span style="color: #FAAF4C;font-weight: bold">\</span>
-<span style="color: #FFFFFF;background-color: #231529">chown -R vmselect:victoriametrics $</span><span style="color: #41ff5b">{</span>VMSELECT_DIR<span style="color: #41ff5b">}</span>
-<span style="color: #FFFFFF;background-color: #231529">
-</span><span style="color: #FFFFFF;background-color: #231529">set -u;</span><span style="color: #BBBBBB"> </span><span style="font-weight: bold">cat</span> <span style="color: #41ff5b">&lt;&lt;</span> <span style="color: #FAAF4C;font-weight: bold">EOF</span><span style="color: #fff0a6;font-weight: bold"> &gt;/etc/systemd/system/vmselect.service
-</span><span style="color: #FFFFFF;background-color: #231529">[Unit]
+useradd -r -M -s /sbin/nologin -g victoriametrics -d ${VMSELECT_DIR} vmselect
+
+mkdir -p ${VMSELECT_DIR}
+chown vmselect:victoriametrics ${VMSELECT_DIR}
+chmod 750 ${VMSELECT_DIR}
+
+set -u; cat &lt;&lt; EOF &gt;/etc/systemd/system/vmselect.service
+[Unit]
 Description=vmselect - performs incoming queries by fetching the needed data from all the configured vmstorage nodes
-</span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>https://docs.victoriametrics.com/Cluster-VictoriaMetrics.html
-<span style="color: #FFFFFF;background-color: #231529">After=network.target
+# https://docs.victoriametrics.com/Cluster-VictoriaMetrics.html
+After=network.target
 
 [Service]
 Type=simple
 User=vmselect
 Group=victoriametrics
+UMask=027
 StartLimitBurst=5
 StartLimitInterval=0
 Restart=on-failure
 RestartSec=1
 EnvironmentFile=/etc/sysconfig/vmselect
 ExecStart=/usr/local/bin/vmselect-prod -envflag.enable
-</span><span style="color: #FFFFFF;background-color: #231529">ExecStop=/bin/kill -s SIGTERM \$</span>MAINPID
-<span style="color: #FFFFFF;background-color: #231529">ExecReload=/bin/kill -s HUP \$</span>MAINPID
-<span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>See docs https://docs.victoriametrics.com/Single-server-VictoriaMetrics.html#tuning
-<span style="color: #FFFFFF;background-color: #231529">LimitNOFILE=1048576
+ExecStop=/bin/kill -s SIGTERM \$MAINPID
+ExecReload=/bin/kill -s HUP \$MAINPID
+# See docs https://docs.victoriametrics.com/Single-server-VictoriaMetrics.html#tuning
+LimitNOFILE=1048576
 LimitNPROC=1048576
 LimitCORE=infinity
-</span><span style="color: #FFFFFF;background-color: #231529">WorkingDirectory=$</span><span style="color: #41ff5b">{</span>VMSELECT_DIR<span style="color: #41ff5b">}</span>
-<span style="color: #FFFFFF;background-color: #231529">ReadWritePaths=$</span><span style="color: #41ff5b">{</span>VMSELECT_DIR<span style="color: #41ff5b">}</span>
-<span style="color: #FFFFFF;background-color: #231529">PrivateTmp=yes
+ReadWritePaths=${VMSELECT_DIR}
+PrivateTmp=yes
 ProtectHome=yes
 NoNewPrivileges=yes
 ProtectSystem=strict
@@ -1425,11 +1501,17 @@ EOF
 
 systemctl daemon-reload
 
-</span><span style="color: #FFFFFF;background-color: #231529">cat &lt;&lt; EOF &gt;</span><span style="color: #BBBBBB"> </span>/etc/sysconfig/vmselect
-<span style="color: #FFFFFF;background-color: #231529">storageNode=$</span><span style="color: #41ff5b">{</span>VMSTORAGE_ADDRESSES<span style="color: #41ff5b">}</span>
-<span style="color: #FFFFFF;background-color: #231529">EOF
+cat &lt;&lt; &#39;EOF&#39; &gt; /etc/sysconfig/vmselect
+storageNode=&#39;\
+vmstorage01,\
+vmstorage02,\
+vmstorage03,\
+vmstorage04,\
+vmstorage05&#39;
+EOF
+set +u
 
-systemctl enable --now vmselect</span></code></pre>
+systemctl enable --now vmselect</pre>
 </div>
 </div>
 </li>
@@ -1437,7 +1519,7 @@ systemctl enable --now vmselect</span></code></pre>
 <p>Проверьте работоспособность сервиса:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">curl http://&lt;ip-address&gt;</span>:8481/-/healthy</code></pre>
+<pre>curl http://mon-vmselect01p:8481/-/healthy</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1445,7 +1527,7 @@ systemctl enable --now vmselect</span></code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">VictoriaMetrics is Healthy.</span></code></pre>
+<pre>VictoriaMetrics is Healthy.</pre>
 </div>
 </div>
 </li>
