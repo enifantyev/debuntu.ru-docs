@@ -18,15 +18,15 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>40. vmagent. Настройка сбора метрик из target&#39;ов | Debuntarium</title>
-<meta name="description" content=" 1. Добавьте config-файлы с Job’ами В каталоге /etc/victoriametrics/vmagent.d разместите дополнительные файлы с описанием jobs.
+<meta name="description" content=" 1. Добавьте config-файлы с Job’ами В каталоге /etc/victoriametrics/targets разместите дополнительные файлы с описанием jobs.
 1.1. Сбор метрик с самого vmagent’а В job vmagent.yml опишите самосбор собственных метрик.
-set -u; cat &lt;&lt; EOF &gt; /etc/victoriametrics/vmagent.d/vmagent.yml - job_name: &#34;vmagent&#34; metrics_path: /metrics relabel_configs: - source_labels: [__address__] target_label: instance replacement: %{SYSTEMD_HOSTNAME} static_configs: - targets: - 127.0.0.1:8429 EOF Здесь выполняется релейбелинг метрики instance: localhost:8429 → mon-vmagent01p.example.org с помощью переменной SYSTEMD_HOSTNAME, которая инициализируется в systemd-юните. Иначе в метриках наблюдались бы метки &#39;instance&#39; с неинформативным значением 127.0.0.1:8429. ">
+set -u; cat &lt;&lt; EOF &gt; /etc/victoriametrics/targets/vmagent.yml - job_name: &#34;vmagent&#34; metrics_path: /metrics relabel_configs: - source_labels: [__address__] target_label: instance replacement: %{SYSTEMD_HOSTNAME} static_configs: - targets: - 127.0.0.1:8429 EOF Здесь выполняется релейбелинг метрики instance: localhost:8429 → mon-vmagent01p.example.org с помощью переменной SYSTEMD_HOSTNAME, которая инициализируется в systemd-юните. Иначе в метриках наблюдались бы метки &#39;instance&#39; с неинформативным значением 127.0.0.1:8429. ">
 <meta property="og:url" content="https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/configuring-scraping-metrics/">
   <meta property="og:site_name" content="Debuntarium">
   <meta property="og:title" content="40. vmagent. Настройка сбора метрик из target&#39;ов">
-  <meta property="og:description" content="1. Добавьте config-файлы с Job’ами В каталоге /etc/victoriametrics/vmagent.d разместите дополнительные файлы с описанием jobs.
+  <meta property="og:description" content="1. Добавьте config-файлы с Job’ами В каталоге /etc/victoriametrics/targets разместите дополнительные файлы с описанием jobs.
 1.1. Сбор метрик с самого vmagent’а В job vmagent.yml опишите самосбор собственных метрик.
-set -u; cat &lt;&lt; EOF &gt; /etc/victoriametrics/vmagent.d/vmagent.yml - job_name: &#34;vmagent&#34; metrics_path: /metrics relabel_configs: - source_labels: [__address__] target_label: instance replacement: %{SYSTEMD_HOSTNAME} static_configs: - targets: - 127.0.0.1:8429 EOF Здесь выполняется релейбелинг метрики instance: localhost:8429 → mon-vmagent01p.example.org с помощью переменной SYSTEMD_HOSTNAME, которая инициализируется в systemd-юните. Иначе в метриках наблюдались бы метки &#39;instance&#39; с неинформативным значением 127.0.0.1:8429.">
+set -u; cat &lt;&lt; EOF &gt; /etc/victoriametrics/targets/vmagent.yml - job_name: &#34;vmagent&#34; metrics_path: /metrics relabel_configs: - source_labels: [__address__] target_label: instance replacement: %{SYSTEMD_HOSTNAME} static_configs: - targets: - 127.0.0.1:8429 EOF Здесь выполняется релейбелинг метрики instance: localhost:8429 → mon-vmagent01p.example.org с помощью переменной SYSTEMD_HOSTNAME, которая инициализируется в systemd-юните. Иначе в метриках наблюдались бы метки &#39;instance&#39; с неинформативным значением 127.0.0.1:8429.">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:type" content="article">
     <meta property="article:section" content="manuals">
@@ -36,18 +36,18 @@ set -u; cat &lt;&lt; EOF &gt; /etc/victoriametrics/vmagent.d/vmagent.yml - job_n
     <meta property="article:tag" content="Vmagent">
 
   <meta itemprop="name" content="40. vmagent. Настройка сбора метрик из target&#39;ов">
-  <meta itemprop="description" content="1. Добавьте config-файлы с Job’ами В каталоге /etc/victoriametrics/vmagent.d разместите дополнительные файлы с описанием jobs.
+  <meta itemprop="description" content="1. Добавьте config-файлы с Job’ами В каталоге /etc/victoriametrics/targets разместите дополнительные файлы с описанием jobs.
 1.1. Сбор метрик с самого vmagent’а В job vmagent.yml опишите самосбор собственных метрик.
-set -u; cat &lt;&lt; EOF &gt; /etc/victoriametrics/vmagent.d/vmagent.yml - job_name: &#34;vmagent&#34; metrics_path: /metrics relabel_configs: - source_labels: [__address__] target_label: instance replacement: %{SYSTEMD_HOSTNAME} static_configs: - targets: - 127.0.0.1:8429 EOF Здесь выполняется релейбелинг метрики instance: localhost:8429 → mon-vmagent01p.example.org с помощью переменной SYSTEMD_HOSTNAME, которая инициализируется в systemd-юните. Иначе в метриках наблюдались бы метки &#39;instance&#39; с неинформативным значением 127.0.0.1:8429.">
+set -u; cat &lt;&lt; EOF &gt; /etc/victoriametrics/targets/vmagent.yml - job_name: &#34;vmagent&#34; metrics_path: /metrics relabel_configs: - source_labels: [__address__] target_label: instance replacement: %{SYSTEMD_HOSTNAME} static_configs: - targets: - 127.0.0.1:8429 EOF Здесь выполняется релейбелинг метрики instance: localhost:8429 → mon-vmagent01p.example.org с помощью переменной SYSTEMD_HOSTNAME, которая инициализируется в systemd-юните. Иначе в метриках наблюдались бы метки &#39;instance&#39; с неинформативным значением 127.0.0.1:8429.">
   <meta itemprop="datePublished" content="2025-02-15T00:00:00+00:00">
   <meta itemprop="dateModified" content="2025-02-15T00:00:00+00:00">
-  <meta itemprop="wordCount" content="132">
+  <meta itemprop="wordCount" content="134">
   <meta itemprop="keywords" content="VictoriaMetrics,Vmagent">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="40. vmagent. Настройка сбора метрик из target&#39;ов">
-  <meta name="twitter:description" content="1. Добавьте config-файлы с Job’ами В каталоге /etc/victoriametrics/vmagent.d разместите дополнительные файлы с описанием jobs.
+  <meta name="twitter:description" content="1. Добавьте config-файлы с Job’ами В каталоге /etc/victoriametrics/targets разместите дополнительные файлы с описанием jobs.
 1.1. Сбор метрик с самого vmagent’а В job vmagent.yml опишите самосбор собственных метрик.
-set -u; cat &lt;&lt; EOF &gt; /etc/victoriametrics/vmagent.d/vmagent.yml - job_name: &#34;vmagent&#34; metrics_path: /metrics relabel_configs: - source_labels: [__address__] target_label: instance replacement: %{SYSTEMD_HOSTNAME} static_configs: - targets: - 127.0.0.1:8429 EOF Здесь выполняется релейбелинг метрики instance: localhost:8429 → mon-vmagent01p.example.org с помощью переменной SYSTEMD_HOSTNAME, которая инициализируется в systemd-юните. Иначе в метриках наблюдались бы метки &#39;instance&#39; с неинформативным значением 127.0.0.1:8429.">
+set -u; cat &lt;&lt; EOF &gt; /etc/victoriametrics/targets/vmagent.yml - job_name: &#34;vmagent&#34; metrics_path: /metrics relabel_configs: - source_labels: [__address__] target_label: instance replacement: %{SYSTEMD_HOSTNAME} static_configs: - targets: - 127.0.0.1:8429 EOF Здесь выполняется релейбелинг метрики instance: localhost:8429 → mon-vmagent01p.example.org с помощью переменной SYSTEMD_HOSTNAME, которая инициализируется в systemd-юните. Иначе в метриках наблюдались бы метки &#39;instance&#39; с неинформативным значением 127.0.0.1:8429.">
 
 
 
@@ -100,10 +100,10 @@ if (!doNotTrack) {
   <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="/n/"><span>Заметки</span></a>
+        <a class="nav-link active" href="/manuals/"><span>Документация</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="/manuals/"><span>Инструкции</span></a>
+        <a class="nav-link" href="/n/"><span>Заметки</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/refbooks/"><span>Справочники</span></a>
@@ -212,7 +212,7 @@ if (window.location.pathname !== "/") {
   <nav class="td-sidebar-nav collapse foldable-nav" id="td-section-nav">
     <ul class="td-sidebar-nav__section pe-md-3 ul-0">
       <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manuals-li">
-  <a href="/manuals/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-manuals"><span class="">Инструкции</span></a>
+  <a href="/manuals/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-manuals"><span class="">Документация</span></a>
   <ul class="ul-1">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsapps-li">
   <input type="checkbox" id="m-manualsapps-check"/>
@@ -785,7 +785,7 @@ if (window.location.pathname !== "/") {
   
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsdownload-victoria-metrics-binaries-and-upload-to-nexus-li">
   <input type="checkbox" id="m-manualsmonitoringvictoriametricsdownload-victoria-metrics-binaries-and-upload-to-nexus-check"/>
-  <label for="m-manualsmonitoringvictoriametricsdownload-victoria-metrics-binaries-and-upload-to-nexus-check"><a href="/manuals/monitoring/victoriametrics/download-victoria-metrics-binaries-and-upload-to-nexus/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsdownload-victoria-metrics-binaries-and-upload-to-nexus"><span class="">Перенос бинарников Victoria Metrics Cluster из github в локальный Nexus</span></a></label>
+  <label for="m-manualsmonitoringvictoriametricsdownload-victoria-metrics-binaries-and-upload-to-nexus-check"><a href="/manuals/monitoring/victoriametrics/download-victoria-metrics-binaries-and-upload-to-nexus/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsdownload-victoria-metrics-binaries-and-upload-to-nexus"><span class="">Перенос бинарников VictoriaMetrics Cluster из github в локальный Nexus</span></a></label>
   
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricssnippets-li">
   <input type="checkbox" id="m-manualsmonitoringvictoriametricssnippets-check"/>
@@ -794,6 +794,10 @@ if (window.location.pathname !== "/") {
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options-li">
   <input type="checkbox" id="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options-check"/>
   <label for="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options-check"><a href="/manuals/monitoring/victoriametrics/victoriametrics-vminsert-options/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options"><span class="">VictoriaMetrics. vminsert options</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvmauth-li">
+  <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmauth-check"/>
+  <label for="m-manualsmonitoringvictoriametricsvmauth-check"><a href="/manuals/monitoring/victoriametrics/vmauth/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoringvictoriametricsvmauth"><span class="">VMAuth</span></a></label>
   
 </li>
   </ul>
@@ -1063,7 +1067,7 @@ if (window.location.pathname !== "/") {
             <nav aria-label="breadcrumb" class="td-breadcrumbs">
   <ol class="breadcrumb">
   <li class="breadcrumb-item">
-    <a href="/manuals/">Инструкции</a></li>
+    <a href="/manuals/">Документация</a></li>
   <li class="breadcrumb-item">
     <a href="/manuals/monitoring/">Monitoring</a></li>
   <li class="breadcrumb-item">
@@ -1097,7 +1101,7 @@ if (window.location.pathname !== "/") {
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>В каталоге <code>/etc/victoriametrics/vmagent.d</code> разместите дополнительные файлы с описанием jobs.</p>
+<p>В каталоге <code>/etc/victoriametrics/targets</code> разместите дополнительные файлы с описанием jobs.</p>
 </li>
 </ol>
 </div>
@@ -1109,7 +1113,7 @@ if (window.location.pathname !== "/") {
 <p>В job <code>vmagent.yml</code> опишите самосбор собственных метрик.</p>
 <div class="listingblock">
 <div class="content">
-<pre>set -u; cat &lt;&lt; EOF &gt; /etc/victoriametrics/vmagent.d/vmagent.yml
+<pre>set -u; cat &lt;&lt; EOF &gt; /etc/victoriametrics/targets/vmagent.yml
 - job_name: &#34;vmagent&#34;
   metrics_path: /metrics
   relabel_configs:
@@ -1146,12 +1150,13 @@ EOF</pre>
 <p>Конфигурационный файл <code>telegraf.yml</code> выделите для сбора метрик со всех машин текущего vlan:</p>
 <div class="listingblock">
 <div class="content">
-<pre>cat &lt;&lt; EOF &gt; /etc/victoriametrics/vmagent.d/telegraf.yml
+<pre>cat &lt;&lt; EOF &gt; /etc/victoriametrics/targets/telegraf.yml
 - job_name: &#34;telegraf&#34;
   #scrape_interval: 15s
   metrics_path: /metrics
   static_configs:
     - targets:
+        - %{SYSTEMD_HOSTNAME}:9101
         - mon-vminsert01p.example.org:9101
         - mon-vminsert02p.example.org:9101
         - mon-vmstorage01p.example.org:9101

@@ -17,13 +17,13 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Перенос бинарников Victoria Metrics Cluster из github в локальный Nexus | Debuntarium</title>
+<title>Перенос бинарников VictoriaMetrics Cluster из github в локальный Nexus | Debuntarium</title>
 <meta name="description" content=" 1. Скачивание бинарников из GitHub Посетите страницу https://github.com/VictoriaMetrics/VictoriaMetrics/releases и задайте в переменной актуальную версию Victoria Metrics:
 VER=&#39;v1.111.0&#39; Скачайте следующие пакеты в отдельную директорию:
 URI=&#39;https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download&#39; PLATFORM=&#39;linux-amd64&#39; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LO ${URI}/${VER}/victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz curl -LO ${URI}/${VER}/victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt curl -LO ${URI}/${VER}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LO ${URI}/${VER}/vmutils-${PLATFORM}-${VER}_checksums.txt ">
 <meta property="og:url" content="https://debuntu.ru/manuals/monitoring/victoriametrics/download-victoria-metrics-binaries-and-upload-to-nexus/">
   <meta property="og:site_name" content="Debuntarium">
-  <meta property="og:title" content="Перенос бинарников Victoria Metrics Cluster из github в локальный Nexus">
+  <meta property="og:title" content="Перенос бинарников VictoriaMetrics Cluster из github в локальный Nexus">
   <meta property="og:description" content="1. Скачивание бинарников из GitHub Посетите страницу https://github.com/VictoriaMetrics/VictoriaMetrics/releases и задайте в переменной актуальную версию Victoria Metrics:
 VER=&#39;v1.111.0&#39; Скачайте следующие пакеты в отдельную директорию:
 URI=&#39;https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download&#39; PLATFORM=&#39;linux-amd64&#39; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LO ${URI}/${VER}/victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz curl -LO ${URI}/${VER}/victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt curl -LO ${URI}/${VER}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LO ${URI}/${VER}/vmutils-${PLATFORM}-${VER}_checksums.txt">
@@ -33,7 +33,7 @@ URI=&#39;https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download&#3
     <meta property="article:published_time" content="2024-07-24T00:00:00+00:00">
     <meta property="article:modified_time" content="2024-07-24T00:00:00+00:00">
 
-  <meta itemprop="name" content="Перенос бинарников Victoria Metrics Cluster из github в локальный Nexus">
+  <meta itemprop="name" content="Перенос бинарников VictoriaMetrics Cluster из github в локальный Nexus">
   <meta itemprop="description" content="1. Скачивание бинарников из GitHub Посетите страницу https://github.com/VictoriaMetrics/VictoriaMetrics/releases и задайте в переменной актуальную версию Victoria Metrics:
 VER=&#39;v1.111.0&#39; Скачайте следующие пакеты в отдельную директорию:
 URI=&#39;https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download&#39; PLATFORM=&#39;linux-amd64&#39; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LO ${URI}/${VER}/victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz curl -LO ${URI}/${VER}/victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt curl -LO ${URI}/${VER}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LO ${URI}/${VER}/vmutils-${PLATFORM}-${VER}_checksums.txt">
@@ -41,7 +41,7 @@ URI=&#39;https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download&#3
   <meta itemprop="dateModified" content="2024-07-24T00:00:00+00:00">
   <meta itemprop="wordCount" content="177">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Перенос бинарников Victoria Metrics Cluster из github в локальный Nexus">
+  <meta name="twitter:title" content="Перенос бинарников VictoriaMetrics Cluster из github в локальный Nexus">
   <meta name="twitter:description" content="1. Скачивание бинарников из GitHub Посетите страницу https://github.com/VictoriaMetrics/VictoriaMetrics/releases и задайте в переменной актуальную версию Victoria Metrics:
 VER=&#39;v1.111.0&#39; Скачайте следующие пакеты в отдельную директорию:
 URI=&#39;https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download&#39; PLATFORM=&#39;linux-amd64&#39; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LO ${URI}/${VER}/victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz curl -LO ${URI}/${VER}/victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt curl -LO ${URI}/${VER}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LO ${URI}/${VER}/vmutils-${PLATFORM}-${VER}_checksums.txt">
@@ -97,10 +97,10 @@ if (!doNotTrack) {
   <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="/n/"><span>Заметки</span></a>
+        <a class="nav-link active" href="/manuals/"><span>Документация</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="/manuals/"><span>Инструкции</span></a>
+        <a class="nav-link" href="/n/"><span>Заметки</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/refbooks/"><span>Справочники</span></a>
@@ -209,7 +209,7 @@ if (window.location.pathname !== "/") {
   <nav class="td-sidebar-nav collapse foldable-nav" id="td-section-nav">
     <ul class="td-sidebar-nav__section pe-md-3 ul-0">
       <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manuals-li">
-  <a href="/manuals/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-manuals"><span class="">Инструкции</span></a>
+  <a href="/manuals/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-manuals"><span class="">Документация</span></a>
   <ul class="ul-1">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsapps-li">
   <input type="checkbox" id="m-manualsapps-check"/>
@@ -782,7 +782,7 @@ if (window.location.pathname !== "/") {
   
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsdownload-victoria-metrics-binaries-and-upload-to-nexus-li">
   <input type="checkbox" id="m-manualsmonitoringvictoriametricsdownload-victoria-metrics-binaries-and-upload-to-nexus-check"/>
-  <label for="m-manualsmonitoringvictoriametricsdownload-victoria-metrics-binaries-and-upload-to-nexus-check"><a href="/manuals/monitoring/victoriametrics/download-victoria-metrics-binaries-and-upload-to-nexus/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsdownload-victoria-metrics-binaries-and-upload-to-nexus"><span class="">Перенос бинарников Victoria Metrics Cluster из github в локальный Nexus</span></a></label>
+  <label for="m-manualsmonitoringvictoriametricsdownload-victoria-metrics-binaries-and-upload-to-nexus-check"><a href="/manuals/monitoring/victoriametrics/download-victoria-metrics-binaries-and-upload-to-nexus/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsdownload-victoria-metrics-binaries-and-upload-to-nexus"><span class="">Перенос бинарников VictoriaMetrics Cluster из github в локальный Nexus</span></a></label>
   
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricssnippets-li">
   <input type="checkbox" id="m-manualsmonitoringvictoriametricssnippets-check"/>
@@ -791,6 +791,10 @@ if (window.location.pathname !== "/") {
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options-li">
   <input type="checkbox" id="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options-check"/>
   <label for="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options-check"><a href="/manuals/monitoring/victoriametrics/victoriametrics-vminsert-options/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options"><span class="">VictoriaMetrics. vminsert options</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvmauth-li">
+  <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmauth-check"/>
+  <label for="m-manualsmonitoringvictoriametricsvmauth-check"><a href="/manuals/monitoring/victoriametrics/vmauth/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoringvictoriametricsvmauth"><span class="">VMAuth</span></a></label>
   
 </li>
   </ul>
@@ -1056,18 +1060,18 @@ if (window.location.pathname !== "/") {
             <nav aria-label="breadcrumb" class="td-breadcrumbs">
   <ol class="breadcrumb">
   <li class="breadcrumb-item">
-    <a href="/manuals/">Инструкции</a></li>
+    <a href="/manuals/">Документация</a></li>
   <li class="breadcrumb-item">
     <a href="/manuals/monitoring/">Monitoring</a></li>
   <li class="breadcrumb-item">
     <a href="/manuals/monitoring/victoriametrics/">VictoriaMetrics</a></li>
   <li class="breadcrumb-item active" aria-current="page">
-    Перенос бинарников Victoria Metrics Cluster из github в локальный Nexus</li>
+    Перенос бинарников VictoriaMetrics Cluster из github в локальный Nexus</li>
   </ol>
 </nav>
             
 <div class="td-content">
-	<h1>Перенос бинарников Victoria Metrics Cluster из github в локальный Nexus</h1>
+	<h1>Перенос бинарников VictoriaMetrics Cluster из github в локальный Nexus</h1>
 	
 	<header class="article-meta">
 		
