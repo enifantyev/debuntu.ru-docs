@@ -47,7 +47,7 @@ tar xvf vmutils-linux-amd64-v1.111.0.tar.gz sha256sum -c vmutils-${PLATFORM}-${V
 vmutils-linux-amd64-v1.111.0.tar.gz: OK vmagent-prod: OK vmalert-prod: OK vmalert-tool-prod: OK vmauth-prod: OK vmbackup-prod: OK vmrestore-prod: OK vmctl-prod: OK">
   <meta itemprop="datePublished" content="2025-02-12T00:00:00+00:00">
   <meta itemprop="dateModified" content="2025-02-18T00:00:00+00:00">
-  <meta itemprop="wordCount" content="608">
+  <meta itemprop="wordCount" content="585">
   <meta itemprop="keywords" content="VictoriaMetrics,Vmagent">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="10. vmagent. Установка бинарника в systemd">
@@ -1385,17 +1385,7 @@ WantedBy=multi-user.target</pre>
 <pre>set -u; cat &lt;&lt; EOF &gt; /etc/sysconfig/vmagent
 httpListenAddr=127.0.0.1:8429
 promscrape_config=vmagent.yml
-
-## Silently skip unsupported fields
-#promscrape_config_strictParse=false
-
-## To see all the valid urls
-#remoteWrite_showURL
-
-## Directory for temporary storage of collected data
 remoteWrite_tmpDataPath=${VMAGENT_CACHE_DIR}
-
-loggerLevel=INFO
 promscrape_suppressDuplicateScrapeTargetErrors=true
 
 EOF
