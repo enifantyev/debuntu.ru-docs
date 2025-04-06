@@ -376,7 +376,7 @@ if (window.location.pathname !== "/") {
     <li><a href="#overlay-filesystem">Overlay Filesystem</a>
       <ul>
         <li><a href="#overlay-объекты">Overlay объекты</a></li>
-        <li><a href="#верхний-и-нижний-слои">Верхний и нижний слои</a></li>
+        <li><a href="#верхний-и-нижний-слои">«Верхний» и «нижний» слои</a></li>
         <li><a href="#каталоги">Каталоги</a></li>
         <li><a href="#затёртости-и-затемнённые-каталоги">«Затёртости» и «затемнённые» каталоги</a></li>
         <li><a href="#системный-запрос-readdir-чтение-каталога">Системный запрос readdir (Чтение каталога)</a></li>
@@ -459,7 +459,7 @@ if (window.location.pathname !== "/") {
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/devops/" data-taxonomy-term="devops"><span class="taxonomy-label">DevOps</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/dm-setup/" data-taxonomy-term="dm-setup"><span class="taxonomy-label">Dm-Setup</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/dns/" data-taxonomy-term="dns"><span class="taxonomy-label">DNS</span><span class="taxonomy-count">2</span></a></li>
-        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/docker/" data-taxonomy-term="docker"><span class="taxonomy-label">Docker</span><span class="taxonomy-count">2</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/docker/" data-taxonomy-term="docker"><span class="taxonomy-label">Docker</span><span class="taxonomy-count">4</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/drupal/" data-taxonomy-term="drupal"><span class="taxonomy-label">Drupal</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/easy-rsa/" data-taxonomy-term="easy-rsa"><span class="taxonomy-label">Easy-RSA</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/eclipse/" data-taxonomy-term="eclipse"><span class="taxonomy-label">Eclipse</span><span class="taxonomy-count">1</span></a></li>
@@ -636,7 +636,7 @@ if (window.location.pathname !== "/") {
 <p>В то время как директории будут сообщать <code>st_dev</code> из <em>наложенной</em> файловой системы, объекты, не являющиеся каталогами, могут сообщать <code>st_dev</code> из <em>нижней</em> или <em>верхней</em> файловой системы, которая предоставляет объект. Аналогично <code>st_ino</code> будет уникальным только в сочетании с <code>st_dev</code>, и оба они могут изменяться в течение всего времени жизни объекта не-каталога. Многие приложения и инструменты игнорируют эти значения.</p>
 <p>В особом случае, когда все наложенные слои принадлежат одной подлежащей файловой системе, то все объекты будут сообщать <code>st_dev</code> из наложенной файловой системы, а <code>st_ino</code> из подлежащей файловой системы. Это делает монтирование наложения более совместимым со сканерами файловой системы, и оверлей-объекты будут отличаться от соответствующих объектов в оригинальной файловой системе.</p>
 <p>On 64-bit systems, even if all overlay layers are not on the same underlying filesystem, the same compliant behavior could be achieved with the &ldquo;xino&rdquo; feature. The &ldquo;xino&rdquo; feature composes a unique object identifier from the real object st_ino and an underlying fsid index. If all underlying filesystems support NFS file handles and export file handles with 32bit inode number encoding (e.g. ext4), overlay filesystem will use the high inode number bits for fsid.  Even when the underlying filesystem uses 64bit inode numbers, users can still enable the &ldquo;xino&rdquo; feature with the &ldquo;-o xino=on&rdquo; overlay mount option.  That is useful for the case of underlying filesystems like xfs and tmpfs, which use 64bit inode numbers, but are very unlikely to use the high inode number bit.</p>
-<h3 id="верхний-и-нижний-слои">Верхний и нижний слои</h3>
+<h3 id="верхний-и-нижний-слои">«Верхний» и «нижний» слои</h3>
 <p>Наложенная файловая система комбинируется из двух ФС — <em>верхней</em> и <em>нижней</em>. Когда имя объекта существует в обеих ФС, тогда объект из <em>верхней</em> ФС виден, а объект из <em>нижней</em> ФС скрыт. В случае с совпадением имён каталогов, их содержимое будет объединено.</p>
 <p>Было бы правильней употреблять термин верхнее и нижнее <em>дерево каталогов</em> вместо термина <em>файловая система</em>, поскольку вполне возможно, что оба <em>дерева каталогов</em> могут находиться в одной и той же файловой системе, и здесь не требуется указывать корень файловой системы для верхней или нижней файловой системы.</p>
 <p>Нижняя файловая система может быть любой файловой системой, поддерживаемой Linux, и для неё не требуется прав на запись. Нижняя файловая система может быть даже другим оверлеем. Верхняя файловая система обычно доступна для записи, и в таком случае она должна поддерживать создание расширенных атрибутов &ldquo;trusted.*&rdquo;, и также должна предоставлять допустимый &rsquo;d_type&rsquo; в &lsquo;readdir&rsquo; ответах, так что NFS не подходит.</p>
@@ -655,7 +655,7 @@ DT_LNK      This is a symbolic link.
 DT_REG      This is a regular file.
 DT_SOCK     This is a UNIX domain socket.
 DT_UNKNOWN  The file type could not be determined.</p>
-<p>На данный момент только некоторые файловые системы (среди них, такие как: Btrfs, ext2, ext3, and ext4) умеют возвращать правильное значение типа файла в поде &ldquo;d_type&rdquo;. Все приложения обязаны должным образом обрабатывать возвращаемое значение DT_UNKNOWN.</p>
+<p>На данный момент только некоторые файловые системы (среди них, такие как: btrfs, ext2, ext3, and ext4) умеют возвращать правильное значение типа файла в поде &ldquo;d_type&rdquo;. Все приложения обязаны должным образом обрабатывать возвращаемое значение DT_UNKNOWN.</p>
 </p></details><br>
 <p>Только в варианте, когда наложенная ФС имеет атрибут «только для чтения» и составлена из двух «только для чтения» файловых систем, могут использоваться любые типы ФС.</p>
 <h3 id="каталоги">Каталоги</h3>

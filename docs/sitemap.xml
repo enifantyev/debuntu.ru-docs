@@ -81,6 +81,20 @@
   
   
   <url>
+    <loc>https://debuntu.ru/manuals/docker/dockerfile-image-for-build-packages-with-fpm/</loc>
+    <lastmod>2025-03-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/docker/upload-docker-image-to-remote-registry/</loc>
+    <lastmod>2025-03-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/</loc>
     <lastmod>2025-02-18T00:00:00+00:00</lastmod>
   </url>
@@ -1178,7 +1192,7 @@
   
   <url>
     <loc>https://debuntu.ru/manuals/</loc>
-    <lastmod>2025-02-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-03-30T00:00:00+00:00</lastmod>
   </url>
   
   
@@ -1436,6 +1450,13 @@
   
   
   <url>
+    <loc>https://debuntu.ru/manuals/docker/</loc>
+    <lastmod>2025-03-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/vmagent-testing/</loc>
     <lastmod>2025-02-15T00:00:00+00:00</lastmod>
   </url>
@@ -1457,7 +1478,7 @@
   
   <url>
     <loc>https://debuntu.ru/manuals/monitoring/</loc>
-    <lastmod>2025-02-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-03-30T00:00:00+00:00</lastmod>
   </url>
   
   
@@ -1478,28 +1499,30 @@
   
   <url>
     <loc>https://debuntu.ru/</loc>
-    <lastmod>2025-02-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-03-30T00:00:00+00:00</lastmod>
   </url>
-  
-  
-  
-  
   
   
   
   <url>
     <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/</loc>
-    <lastmod>2025-02-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-03-30T00:00:00+00:00</lastmod>
   </url>
-  
-  
   
   
   
   <url>
     <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/</loc>
-    <lastmod>2025-02-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-03-30T00:00:00+00:00</lastmod>
   </url>
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
@@ -1663,8 +1686,6 @@
     <loc>https://debuntu.ru/manuals/kubernetes/tls-kerberos-in-kubernetes/cert-manager_and_all_about_it/cert-manager_upgrade/</loc>
     <lastmod>2024-05-13T00:00:00+00:00</lastmod>
   </url>
-  
-  
   
   
   

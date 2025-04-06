@@ -6,8 +6,15 @@
     <description>Recent content in Tags on Debuntarium</description>
     <generator>Hugo</generator>
     <language>ru-RU</language>
-    <lastBuildDate>Tue, 25 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 13 Mar 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://debuntu.ru/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker</title>
+      <link>https://debuntu.ru/tags/docker/</link>
+      <pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://debuntu.ru/tags/docker/</guid>
+      <description></description>
+    </item>
     <item>
       <title>VictoriaMetrics</title>
       <link>https://debuntu.ru/tags/victoriametrics/</link>
@@ -566,13 +573,6 @@
       <link>https://debuntu.ru/tags/automation/</link>
       <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
       <guid>https://debuntu.ru/tags/automation/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Docker</title>
-      <link>https://debuntu.ru/tags/docker/</link>
-      <pubDate>Fri, 05 Mar 2021 00:00:00 +0000</pubDate>
-      <guid>https://debuntu.ru/tags/docker/</guid>
       <description></description>
     </item>
     <item>
