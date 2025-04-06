@@ -1504,10 +1504,16 @@
   
   
   
+  
+  
+  
+  
   <url>
     <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/</loc>
     <lastmod>2025-03-30T00:00:00+00:00</lastmod>
   </url>
+  
+  
   
   
   
@@ -1518,9 +1524,10 @@
   
   
   
-  
-  
-  
+  <url>
+    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/configuring-vmagent-for-parallel-sending-of-metrics/</loc>
+    <lastmod>2025-03-30T00:00:00+00:00</lastmod>
+  </url>
   
   
   
