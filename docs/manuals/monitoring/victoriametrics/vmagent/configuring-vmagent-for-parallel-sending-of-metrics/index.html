@@ -18,35 +18,19 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>Настройка в VMAgent параллельной отправки метрик в «новый» и «старый» VMetrics-кластеры | Debuntarium</title>
-<meta name="description" content=" 1. Сбор используемой в сценарии информации Имя переменной
-Описание
-Возможные значения
-1
-REMOTEWRITE_URL_NEW
-VMAuth URL отправки метрик в VM-кластер. Запрашивается у ответственного за мониторинг.
-Например:
-https://&lt;team&gt;-vmauth.example.org
-2
-REMOTEWRITE_URL_OLD
-Адрес отправки метрик в «старый» кластер. Может быть найден в текущих настройках VMAgent.
-Например:
-http://10.1.1.122:8480/insert/222/prometheus/api/v1/write">
+<meta name="description" content=" 1. Некоторые правила пользования сервисом хранения метрик 1.1. О номере тенанта https://docs.victoriametrics.com/cluster-victoriametrics/#multitenancy VictoriaMetrics cluster supports multiple isolated tenants (aka namespaces). Tenants are identified by accountID or accountID:projectID, which are put inside request URLs for writes and reads.
+Тенанты различаются по идентификатору аккаунта (accountID) или по паре accountID:projectID. Например: 203:5.
+Технически, для того чтобы метрика была отправлена в конкретный тенант, к ней необходимо прикрепить метки, например vm_account_id=203 и vm_project_id=5. Допустимо указать только vm_account_id=203 — в этом случае кластер VictoriaMetrics воспримет, что метрика предназначена для тенанта 203:0.
+Каждому арендатору назначается уникальный номер, определяющий аккаунт (accountID), в который сохраняются метрики в кластере VictoriaMetrics.
+Все метрики, отправляемые арендатором в кластер, должны быть помечены меткой vm_account_id со значением, соответствующим выданному номеру аккаунта.">
 <meta property="og:url" content="https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/configuring-vmagent-for-parallel-sending-of-metrics/">
   <meta property="og:site_name" content="Debuntarium">
   <meta property="og:title" content="Настройка в VMAgent параллельной отправки метрик в «новый» и «старый» VMetrics-кластеры">
-  <meta property="og:description" content="1. Сбор используемой в сценарии информации Имя переменной
-Описание
-Возможные значения
-1
-REMOTEWRITE_URL_NEW
-VMAuth URL отправки метрик в VM-кластер. Запрашивается у ответственного за мониторинг.
-Например:
-https://&lt;team&gt;-vmauth.example.org
-2
-REMOTEWRITE_URL_OLD
-Адрес отправки метрик в «старый» кластер. Может быть найден в текущих настройках VMAgent.
-Например:
-http://10.1.1.122:8480/insert/222/prometheus/api/v1/write">
+  <meta property="og:description" content="1. Некоторые правила пользования сервисом хранения метрик 1.1. О номере тенанта https://docs.victoriametrics.com/cluster-victoriametrics/#multitenancy VictoriaMetrics cluster supports multiple isolated tenants (aka namespaces). Tenants are identified by accountID or accountID:projectID, which are put inside request URLs for writes and reads.
+Тенанты различаются по идентификатору аккаунта (accountID) или по паре accountID:projectID. Например: 203:5.
+Технически, для того чтобы метрика была отправлена в конкретный тенант, к ней необходимо прикрепить метки, например vm_account_id=203 и vm_project_id=5. Допустимо указать только vm_account_id=203 — в этом случае кластер VictoriaMetrics воспримет, что метрика предназначена для тенанта 203:0.
+Каждому арендатору назначается уникальный номер, определяющий аккаунт (accountID), в который сохраняются метрики в кластере VictoriaMetrics.
+Все метрики, отправляемые арендатором в кластер, должны быть помечены меткой vm_account_id со значением, соответствующим выданному номеру аккаунта.">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:type" content="article">
     <meta property="article:section" content="manuals">
@@ -56,38 +40,22 @@ http://10.1.1.122:8480/insert/222/prometheus/api/v1/write">
     <meta property="article:tag" content="Vmagent">
 
   <meta itemprop="name" content="Настройка в VMAgent параллельной отправки метрик в «новый» и «старый» VMetrics-кластеры">
-  <meta itemprop="description" content="1. Сбор используемой в сценарии информации Имя переменной
-Описание
-Возможные значения
-1
-REMOTEWRITE_URL_NEW
-VMAuth URL отправки метрик в VM-кластер. Запрашивается у ответственного за мониторинг.
-Например:
-https://&lt;team&gt;-vmauth.example.org
-2
-REMOTEWRITE_URL_OLD
-Адрес отправки метрик в «старый» кластер. Может быть найден в текущих настройках VMAgent.
-Например:
-http://10.1.1.122:8480/insert/222/prometheus/api/v1/write">
+  <meta itemprop="description" content="1. Некоторые правила пользования сервисом хранения метрик 1.1. О номере тенанта https://docs.victoriametrics.com/cluster-victoriametrics/#multitenancy VictoriaMetrics cluster supports multiple isolated tenants (aka namespaces). Tenants are identified by accountID or accountID:projectID, which are put inside request URLs for writes and reads.
+Тенанты различаются по идентификатору аккаунта (accountID) или по паре accountID:projectID. Например: 203:5.
+Технически, для того чтобы метрика была отправлена в конкретный тенант, к ней необходимо прикрепить метки, например vm_account_id=203 и vm_project_id=5. Допустимо указать только vm_account_id=203 — в этом случае кластер VictoriaMetrics воспримет, что метрика предназначена для тенанта 203:0.
+Каждому арендатору назначается уникальный номер, определяющий аккаунт (accountID), в который сохраняются метрики в кластере VictoriaMetrics.
+Все метрики, отправляемые арендатором в кластер, должны быть помечены меткой vm_account_id со значением, соответствующим выданному номеру аккаунта.">
   <meta itemprop="datePublished" content="2025-03-30T00:00:00+00:00">
   <meta itemprop="dateModified" content="2025-03-30T00:00:00+00:00">
-  <meta itemprop="wordCount" content="1480">
+  <meta itemprop="wordCount" content="1746">
   <meta itemprop="keywords" content="VictoriaMetrics,Vmagent">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Настройка в VMAgent параллельной отправки метрик в «новый» и «старый» VMetrics-кластеры">
-  <meta name="twitter:description" content="1. Сбор используемой в сценарии информации Имя переменной
-Описание
-Возможные значения
-1
-REMOTEWRITE_URL_NEW
-VMAuth URL отправки метрик в VM-кластер. Запрашивается у ответственного за мониторинг.
-Например:
-https://&lt;team&gt;-vmauth.example.org
-2
-REMOTEWRITE_URL_OLD
-Адрес отправки метрик в «старый» кластер. Может быть найден в текущих настройках VMAgent.
-Например:
-http://10.1.1.122:8480/insert/222/prometheus/api/v1/write">
+  <meta name="twitter:description" content="1. Некоторые правила пользования сервисом хранения метрик 1.1. О номере тенанта https://docs.victoriametrics.com/cluster-victoriametrics/#multitenancy VictoriaMetrics cluster supports multiple isolated tenants (aka namespaces). Tenants are identified by accountID or accountID:projectID, which are put inside request URLs for writes and reads.
+Тенанты различаются по идентификатору аккаунта (accountID) или по паре accountID:projectID. Например: 203:5.
+Технически, для того чтобы метрика была отправлена в конкретный тенант, к ней необходимо прикрепить метки, например vm_account_id=203 и vm_project_id=5. Допустимо указать только vm_account_id=203 — в этом случае кластер VictoriaMetrics воспримет, что метрика предназначена для тенанта 203:0.
+Каждому арендатору назначается уникальный номер, определяющий аккаунт (accountID), в который сохраняются метрики в кластере VictoriaMetrics.
+Все метрики, отправляемые арендатором в кластер, должны быть помечены меткой vm_account_id со значением, соответствующим выданному номеру аккаунта.">
 
 
 
@@ -918,13 +886,20 @@ if (window.location.pathname !== "/") {
             <div class="td-toc">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#_сбор_используемой_в_сценарии_информации">1. Сбор используемой в сценарии информации</a></li>
-    <li><a href="#_проверка_доступности_нового_vmetrics_кластера">2. Проверка доступности «нового» VMetrics-кластера</a></li>
-    <li><a href="#_установка_vmagent_из_внутреннего_rpm_репозитория">3. Установка VMAgent из внутреннего rpm-репозитория</a></li>
-    <li><a href="#_конфигурирование_отправки_метрик_и_настройка_глобальных_меток">4. Конфигурирование отправки метрик и настройка глобальных меток</a></li>
-    <li><a href="#_редактирование_основного_файла_для_настройки_сбора_метрик_методом_pull">5. Редактирование «основного» файла для настройки сбора метрик методом pull</a></li>
-    <li><a href="#_пример_настройки_сбора_собственных_метрик">6. Пример настройки сбора собственных метрик</a></li>
-    <li><a href="#_запуск_демона_vmagent">7. Запуск демона vmagent</a></li>
+    <li><a href="#_некоторые_правила_пользования_сервисом_хранения_метрик">1. Некоторые правила пользования сервисом хранения метрик</a>
+      <ul>
+        <li><a href="#_о_номере_тенанта">1.1. О номере тенанта</a></li>
+        <li><a href="#_о_номере_проекта">1.2. О номере проекта</a></li>
+        <li><a href="#_о_высокой_кардинальности_метрик">1.3. О высокой «кардинальности» метрик</a></li>
+      </ul>
+    </li>
+    <li><a href="#_сбор_используемой_в_сценарии_информации">2. Сбор используемой в сценарии информации</a></li>
+    <li><a href="#_проверка_доступности_нового_vmetrics_кластера">3. Проверка доступности «нового» VMetrics-кластера</a></li>
+    <li><a href="#_установка_vmagent_из_внутреннего_rpm_репозитория">4. Установка VMAgent из внутреннего rpm-репозитория</a></li>
+    <li><a href="#_конфигурирование_отправки_метрик_и_настройка_глобальных_меток">5. Конфигурирование отправки метрик и настройка глобальных меток</a></li>
+    <li><a href="#_редактирование_основного_файла_для_настройки_сбора_метрик_методом_pull">6. Редактирование «основного» файла для настройки сбора метрик методом pull</a></li>
+    <li><a href="#_пример_настройки_сбора_собственных_метрик">7. Пример настройки сбора собственных метрик</a></li>
+    <li><a href="#_запуск_демона_vmagent">8. Запуск демона vmagent</a></li>
   </ul>
 </nav>
       </div>
@@ -1158,7 +1133,93 @@ if (window.location.pathname !== "/") {
 </div>
 <hr/>
 <div class="sect1">
-<h2 id="_сбор_используемой_в_сценарии_информации">1. Сбор используемой в сценарии информации</h2>
+<h2 id="_некоторые_правила_пользования_сервисом_хранения_метрик">1. Некоторые правила пользования сервисом хранения метрик</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_о_номере_тенанта">1.1. О номере тенанта</h3>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title"><a href="https://docs.victoriametrics.com/cluster-victoriametrics/#multitenancy" class="bare">https://docs.victoriametrics.com/cluster-victoriametrics/#multitenancy</a></div>
+<div class="paragraph">
+<p>VictoriaMetrics cluster supports multiple isolated tenants (aka namespaces). Tenants are identified by accountID or accountID:projectID, which are put inside request URLs for writes and reads.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Тенанты различаются по идентификатору аккаунта (accountID) или по паре accountID:projectID. Например: 203:5.</p>
+</li>
+<li>
+<p>Технически, для того чтобы метрика была отправлена в конкретный тенант, к ней необходимо прикрепить метки, например <code>vm_account_id=203</code> и <code>vm_project_id=5</code>. Допустимо указать только <code>vm_account_id=203</code> — в этом случае кластер VictoriaMetrics воспримет, что метрика предназначена для тенанта <code>203:0</code>.</p>
+</li>
+<li>
+<p>Каждому арендатору назначается уникальный номер, определяющий аккаунт (accountID), в который сохраняются метрики в кластере VictoriaMetrics.</p>
+</li>
+<li>
+<p>Все метрики, отправляемые арендатором в кластер, должны быть помечены меткой vm_account_id со значением, соответствующим выданному номеру аккаунта.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_о_номере_проекта">1.2. О номере проекта</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Перед отправкой метрик в кластер, арендатор может дополнительно присваивать метрикам метку <code>vm_project_id</code>, определяющую номер проекта внутри выделенного аккаунта, в который будет сохранена метрика.</p>
+</li>
+<li>
+<p>Диапазон допустимых значений <code>vm_project_id</code> — от <code>0</code> до <code>4 294 967 295</code>. Конкретное значение выбирается арендатором самостоятельно.</p>
+</li>
+<li>
+<p>Если метка <code>vm_project_id</code> не указана, по умолчанию используется значение <code>0</code>. Рекомендуется избегать использования нуля, так как при ошибках в конфигурации метрики могут непреднамеренно попадать именно в проект 0.</p>
+</li>
+<li>
+<p>При чтении метрик (например, через Grafana) использование метки <code>vm_project_id</code> удобно для логической группировки данных на уровне dashboard — эту группировку арендатор выполняет самостоятельно.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_о_высокой_кардинальности_метрик">1.3. О высокой «кардинальности» метрик</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Арендатору необходимо избегать назначения на метрики лейблов с динамическими значениями.</p>
+</li>
+<li>
+<p>Пример «проблемных» меток:</p>
+<div class="listingblock">
+<div class="content">
+<pre>http_requests_total{method=&#34;GET&#34;, path=&#34;/api/v1/user/67890&#34;, status=&#34;200&#34;}
+http_requests_total{method=&#34;GET&#34;, path=&#34;/api/v1/user/54321&#34;, status=&#34;200&#34;}
+http_requests_total{method=&#34;GET&#34;, path=&#34;/api/v1/user/98765&#34;, status=&#34;404&#34;}</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Если в метках встречаются уникальные значения от миллионов пользователей, это приведёт к взрывному росту числа временных рядов, что негативно скажется на производительности и потреблении ресурсов кластера VictoriaMetrics.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><br/>
+<br/></p>
+</div>
+<hr/>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_сбор_используемой_в_сценарии_информации">2. Сбор используемой в сценарии информации</h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1246,7 +1307,7 @@ if (window.location.pathname !== "/") {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_проверка_доступности_нового_vmetrics_кластера">2. Проверка доступности «нового» VMetrics-кластера</h2>
+<h2 id="_проверка_доступности_нового_vmetrics_кластера">3. Проверка доступности «нового» VMetrics-кластера</h2>
 <div class="sectionbody">
 <div class="admonitionblock note">
 <table>
@@ -1308,7 +1369,7 @@ VMAuth настроен возвращать своё состояние <a href
 </div>
 </div>
 <div class="sect1">
-<h2 id="_установка_vmagent_из_внутреннего_rpm_репозитория">3. Установка VMAgent из внутреннего rpm-репозитория</h2>
+<h2 id="_установка_vmagent_из_внутреннего_rpm_репозитория">4. Установка VMAgent из внутреннего rpm-репозитория</h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1375,7 +1436,7 @@ autorefresh=1
 </div>
 </div>
 <div class="sect1">
-<h2 id="_конфигурирование_отправки_метрик_и_настройка_глобальных_меток">4. Конфигурирование отправки метрик и настройка глобальных меток</h2>
+<h2 id="_конфигурирование_отправки_метрик_и_настройка_глобальных_меток">5. Конфигурирование отправки метрик и настройка глобальных меток</h2>
 <div class="sectionbody">
 <div class="admonitionblock note">
 <table>
@@ -1412,8 +1473,8 @@ autorefresh=1
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">remoteWrite_url</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#34;https://vd-vmauth.data.corp&#34;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#34;http://10.206.141.200:8480/insert/222/prometheus/api/v1/write&#34;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#34;https://vd-vmauth.example.org&#34;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#34;http://10.0.0.200:8480/insert/222/prometheus/api/v1/write&#34;</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">remoteWrite_bearerTokenFile</p></td>
@@ -1765,7 +1826,7 @@ EOF</span></code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_редактирование_основного_файла_для_настройки_сбора_метрик_методом_pull">5. Редактирование «основного» файла для настройки сбора метрик методом pull</h2>
+<h2 id="_редактирование_основного_файла_для_настройки_сбора_метрик_методом_pull">6. Редактирование «основного» файла для настройки сбора метрик методом pull</h2>
 <div class="sectionbody">
 <div class="admonitionblock note">
 <table>
@@ -1910,7 +1971,7 @@ EOF</span></code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_пример_настройки_сбора_собственных_метрик">6. Пример настройки сбора собственных метрик</h2>
+<h2 id="_пример_настройки_сбора_собственных_метрик">7. Пример настройки сбора собственных метрик</h2>
 <div class="sectionbody">
 <div class="admonitionblock note">
 <table>
@@ -2069,7 +2130,7 @@ EOF</span></code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_запуск_демона_vmagent">7. Запуск демона vmagent</h2>
+<h2 id="_запуск_демона_vmagent">8. Запуск демона vmagent</h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
