@@ -71,7 +71,7 @@ REMOTEWRITE_URL_OLD
 http://10.1.1.122:8480/insert/222/prometheus/api/v1/write">
   <meta itemprop="datePublished" content="2025-03-30T00:00:00+00:00">
   <meta itemprop="dateModified" content="2025-03-30T00:00:00+00:00">
-  <meta itemprop="wordCount" content="1244">
+  <meta itemprop="wordCount" content="1471">
   <meta itemprop="keywords" content="VictoriaMetrics,Vmagent">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Настройка в VMAgent параллельной отправки метрик в «новый» и «старый» VMetrics-кластеры">
@@ -1372,7 +1372,62 @@ autorefresh=1
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Для параллельной отправки метрик в «новый» и «старый» кластеры в большинстве случаев понадобятся изменения только в одной переменной <code>remoteWrite_url</code>.
+<div class="paragraph">
+<p>Для параллельной отправки метрик в «новый» и «старый» кластеры, в большинстве случаев понадобятся изменения только в одной переменной <code>remoteWrite_url</code>. Дальше приведено объяснение этому.</p>
+</div>
+<div class="paragraph">
+<p>Вообще здесь, в этой инструкции, для отправки метрик в различные места назначений задействованы переменные: <code>remoteWrite_url</code>, <code>remoteWrite_bearerTokenFile</code>, <code>remoteWrite_headers</code>, <code>remoteWrite_urlRelabelConfig</code>, <code>remoteWrite_maxDiskUsagePerURL</code>. Каждая переменная может содержать несколько значений, разделённых запятыми. Для отправки метрик в первое место, используется значения в первой позиции в этих переменных. Для отправки во второе — вторая позиция. И т.д.</p>
+</div>
+<div class="paragraph">
+<p>В предложенной ниже схеме, аутентификация используется только для отправки метрик в «новый» кластер. Поэтому, в каждой из вышеуказанных переменных, значения для отправки метрик в «новый» VMetrics-кластер указаны в первой позиции. Тогда как значения для отправки в «старый» VMetrics-кластер указаны во второй позиции.</p>
+</div>
+<div class="paragraph">
+<p>Так как отправка в «старый» VMetrics-кластер не требует аутентификации, то все переменные, кроме <code>remoteWrite_url</code> и <code>remoteWrite_maxDiskUsagePerURL</code>  имеют только одно значение в первой позиции, предназначенные для использования при отправке в «новый» кластер. А в остальных двух переменных используются два значения. В <code>remoteWrite_url</code> мы видим адреса: в первой позиции — URL «нового» кластера, а во второй позиции — URL «старого». И в <code>remoteWrite_maxDiskUsagePerURL</code> определены размеры буфера, используемые при буферизации метрик: в первой позиции — размер буфера для первого URL, а во второй позиции — размер буфера для второго URL.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;"/>
+<col style="width: 33.3333%;"/>
+<col style="width: 33.3334%;"/>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Переменная</th>
+<th class="tableblock halign-left valign-top">Первая позиция</th>
+<th class="tableblock halign-left valign-top">Вторая позиция</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">remoteWrite_url</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#34;https://vd-vmauth.data.corp&#34;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#34;http://10.206.141.200:8480/insert/222/prometheus/api/v1/write&#34;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">remoteWrite_bearerTokenFile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#34;bearer.txt&#34;</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">remoteWrite_headers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#34;TenantID: 203&#34;</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">remoteWrite_urlRelabelConfig</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#34;filters/203.yml&#34;</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">remoteWrite_maxDiskUsagePerURL<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#34;5GB&#34;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#34;5GB&#34;</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Естественно, при необходимости, можно дополнить переменные, чтобы организовать отправку в третье и последующие URL.</p>
+</div>
 </td>
 </tr>
 </tbody></table>
@@ -2064,6 +2119,12 @@ Mar 27 18:25:31 vmagent-prod[21127]: 2025-03-27T15:25:31.106Z        info       
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div id="footnotes">
+<hr/>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Если под буфер выделен отдельный диск, то переменная <code>remoteWrite_maxDiskUsagePerURL</code> не потребуется.
 </div>
 </div>
 
