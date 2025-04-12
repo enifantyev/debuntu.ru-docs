@@ -71,7 +71,7 @@ REMOTEWRITE_URL_OLD
 http://10.1.1.122:8480/insert/222/prometheus/api/v1/write">
   <meta itemprop="datePublished" content="2025-03-30T00:00:00+00:00">
   <meta itemprop="dateModified" content="2025-03-30T00:00:00+00:00">
-  <meta itemprop="wordCount" content="1471">
+  <meta itemprop="wordCount" content="1480">
   <meta itemprop="keywords" content="VictoriaMetrics,Vmagent">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Настройка в VMAgent параллельной отправки метрик в «новый» и «старый» VMetrics-кластеры">
@@ -1248,6 +1248,18 @@ if (window.location.pathname !== "/") {
 <div class="sect1">
 <h2 id="_проверка_доступности_нового_vmetrics_кластера">2. Проверка доступности «нового» VMetrics-кластера</h2>
 <div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+VMAuth настроен возвращать своё состояние <a href="https://127.0.0.1:8426/-/ready" class="bare">https://127.0.0.1:8426/-/ready</a> на анонимные запросы.
+</td>
+</tr>
+</tbody></table>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 1%;"/>
