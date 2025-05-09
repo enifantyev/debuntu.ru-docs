@@ -1247,13 +1247,6 @@
   
   
   <url>
-    <loc>https://debuntu.ru/manuals/freeipa/installing-and-setup-freeipa/first-configuring-freeipa/</loc>
-    <lastmod>2023-04-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  
-  
-  <url>
     <loc>https://debuntu.ru/manuals/bigdata/apacheatlas/</loc>
     <lastmod>2023-02-26T00:00:00+00:00</lastmod>
   </url>
@@ -1366,6 +1359,12 @@
   
   
   <url>
+    <loc>https://debuntu.ru/manuals/freeipa/installing-and-setup-freeipa/first-configuring-freeipa/</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://debuntu.ru/manuals/bigdata/ustanovka-cloudera-cdh-6.3.2-s-tls-i-kerberos-na-osnove-freeipa/solr-ustanovka-i-nastroyka/</loc>
     <lastmod>2021-07-21T00:00:00+00:00</lastmod>
   </url>
@@ -1389,13 +1388,6 @@
   <url>
     <loc>https://debuntu.ru/manuals/borgbackup/</loc>
     <lastmod>2024-07-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://debuntu.ru/manuals/freeipa/installing-and-setup-freeipa/adding-additional-freeipa-replicas/</loc>
-    <lastmod>2023-04-13T00:00:00+00:00</lastmod>
   </url>
   
   
@@ -1431,6 +1423,12 @@
   <url>
     <loc>https://debuntu.ru/manuals/borgbackup/ustanovka-novogo-yadra-v-altlinux-10-dlya-proverki-vosstanovleniya-mashiny-s-pomoshchyu-borgbackup/</loc>
     <lastmod>2022-03-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/freeipa/installing-and-setup-freeipa/adding-additional-freeipa-replicas/</loc>
   </url>
   
   
@@ -1533,6 +1531,24 @@
   
   
   
+  
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmauth/</loc>
+    <lastmod>2025-03-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmauth/tls-cert-for-vip-on-vmauth-nodes-with-auto-renewal/</loc>
+    <lastmod>2025-03-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
   <url>
     <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/labeling-in-vmagent/adding-labels-in-job/</loc>
     <lastmod>2025-02-25T00:00:00+00:00</lastmod>
@@ -1606,8 +1622,6 @@
   
   
   
-  
-  
   <url>
     <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/airgapped-installing-victoria-metrics-cluster-from-binaries/</loc>
     <lastmod>2025-01-30T00:00:00+00:00</lastmod>
@@ -1623,8 +1637,6 @@
     <loc>https://debuntu.ru/manuals/kubernetes/tls-kerberos-in-kubernetes/cert-manager_and_all_about_it/</loc>
     <lastmod>2024-08-13T00:00:00+00:00</lastmod>
   </url>
-  
-  
   
   
   
@@ -2017,24 +2029,6 @@
   
   
   <url>
-    <loc>https://debuntu.ru/manuals/freeipa/installing-and-setup-freeipa/common/10-podgotovka-hosta/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://debuntu.ru/manuals/freeipa/installing-and-setup-freeipa/common/disabling-dnssec-validation/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://debuntu.ru/manuals/freeipa/installing-and-setup-freeipa/common/ldap-disabling-anonymous-access-to-directory/</loc>
-  </url>
-  
-  
-  
-  <url>
     <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/snippets/</loc>
   </url>
   
@@ -2098,12 +2092,6 @@
   
   <url>
     <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/victoriametrics-vminsert-options/</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmauth/</loc>
   </url>
   
   

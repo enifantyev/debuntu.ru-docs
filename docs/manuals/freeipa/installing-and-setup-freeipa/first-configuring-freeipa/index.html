@@ -18,45 +18,41 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>Первоначальная настройка FreeIPA | Debuntarium</title>
-<meta name="description" content=" 2023-04-13
+<meta name="description" content=" Rev date: {revdata}
 1. Настройка LDAP-каталога Так как у нас вышестоящие форвард-серверы не поддерживают DNSSEC, необходимо отключить эту опцию и на нашем BIND9, иначе рекурсивные запросы на сторонние DNS будут возвращать ошибку.
 https://access.redhat.com/solutions/5633621
-1.1. Отключение анонимного доступа к LDAP-каталогу Процедура выполняется на каждом сервере FreeIPA-реплике, так как изменения производятся в нереплицируемой части LDAP-каталога &#39;cn=config&#39;.
+Процедура выполняется на каждом сервере FreeIPA-реплике, так как изменения производятся в нереплицируемой части LDAP-каталога cn=config.
 Выполните из командной строки:
 IPAREPLICA=$(hostname) set &#43;o history DM_PASSWORD=&#39;&lt;Password of Directory Manager is here&gt;&#39; set -o history ldapmodify -x -D &#34;cn=Directory Manager&#34; -w ${DM_PASSWORD} -h ${IPAREPLICA} -Z &lt;&lt; EOF dn: cn=config changetype: modify replace: nsslapd-allow-anonymous-access nsslapd-allow-anonymous-access: rootdse EOF ipactl restart ">
 <meta property="og:url" content="https://debuntu.ru/manuals/freeipa/installing-and-setup-freeipa/first-configuring-freeipa/">
   <meta property="og:site_name" content="Debuntarium">
   <meta property="og:title" content="Первоначальная настройка FreeIPA">
-  <meta property="og:description" content="2023-04-13
+  <meta property="og:description" content="Rev date: {revdata}
 1. Настройка LDAP-каталога Так как у нас вышестоящие форвард-серверы не поддерживают DNSSEC, необходимо отключить эту опцию и на нашем BIND9, иначе рекурсивные запросы на сторонние DNS будут возвращать ошибку.
 https://access.redhat.com/solutions/5633621
-1.1. Отключение анонимного доступа к LDAP-каталогу Процедура выполняется на каждом сервере FreeIPA-реплике, так как изменения производятся в нереплицируемой части LDAP-каталога &#39;cn=config&#39;.
+Процедура выполняется на каждом сервере FreeIPA-реплике, так как изменения производятся в нереплицируемой части LDAP-каталога cn=config.
 Выполните из командной строки:
 IPAREPLICA=$(hostname) set &#43;o history DM_PASSWORD=&#39;&lt;Password of Directory Manager is here&gt;&#39; set -o history ldapmodify -x -D &#34;cn=Directory Manager&#34; -w ${DM_PASSWORD} -h ${IPAREPLICA} -Z &lt;&lt; EOF dn: cn=config changetype: modify replace: nsslapd-allow-anonymous-access nsslapd-allow-anonymous-access: rootdse EOF ipactl restart">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:type" content="article">
     <meta property="article:section" content="manuals">
-    <meta property="article:published_time" content="2023-04-13T00:00:00+00:00">
-    <meta property="article:modified_time" content="2023-04-13T00:00:00+00:00">
     <meta property="article:tag" content="FreeIPA">
 
   <meta itemprop="name" content="Первоначальная настройка FreeIPA">
-  <meta itemprop="description" content="2023-04-13
+  <meta itemprop="description" content="Rev date: {revdata}
 1. Настройка LDAP-каталога Так как у нас вышестоящие форвард-серверы не поддерживают DNSSEC, необходимо отключить эту опцию и на нашем BIND9, иначе рекурсивные запросы на сторонние DNS будут возвращать ошибку.
 https://access.redhat.com/solutions/5633621
-1.1. Отключение анонимного доступа к LDAP-каталогу Процедура выполняется на каждом сервере FreeIPA-реплике, так как изменения производятся в нереплицируемой части LDAP-каталога &#39;cn=config&#39;.
+Процедура выполняется на каждом сервере FreeIPA-реплике, так как изменения производятся в нереплицируемой части LDAP-каталога cn=config.
 Выполните из командной строки:
 IPAREPLICA=$(hostname) set &#43;o history DM_PASSWORD=&#39;&lt;Password of Directory Manager is here&gt;&#39; set -o history ldapmodify -x -D &#34;cn=Directory Manager&#34; -w ${DM_PASSWORD} -h ${IPAREPLICA} -Z &lt;&lt; EOF dn: cn=config changetype: modify replace: nsslapd-allow-anonymous-access nsslapd-allow-anonymous-access: rootdse EOF ipactl restart">
-  <meta itemprop="datePublished" content="2023-04-13T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2023-04-13T00:00:00+00:00">
-  <meta itemprop="wordCount" content="670">
+  <meta itemprop="wordCount" content="666">
   <meta itemprop="keywords" content="FreeIPA">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Первоначальная настройка FreeIPA">
-  <meta name="twitter:description" content="2023-04-13
+  <meta name="twitter:description" content="Rev date: {revdata}
 1. Настройка LDAP-каталога Так как у нас вышестоящие форвард-серверы не поддерживают DNSSEC, необходимо отключить эту опцию и на нашем BIND9, иначе рекурсивные запросы на сторонние DNS будут возвращать ошибку.
 https://access.redhat.com/solutions/5633621
-1.1. Отключение анонимного доступа к LDAP-каталогу Процедура выполняется на каждом сервере FreeIPA-реплике, так как изменения производятся в нереплицируемой части LDAP-каталога &#39;cn=config&#39;.
+Процедура выполняется на каждом сервере FreeIPA-реплике, так как изменения производятся в нереплицируемой части LDAP-каталога cn=config.
 Выполните из командной строки:
 IPAREPLICA=$(hostname) set &#43;o history DM_PASSWORD=&#39;&lt;Password of Directory Manager is here&gt;&#39; set -o history ldapmodify -x -D &#34;cn=Directory Manager&#34; -w ${DM_PASSWORD} -h ${IPAREPLICA} -Z &lt;&lt; EOF dn: cn=config changetype: modify replace: nsslapd-allow-anonymous-access nsslapd-allow-anonymous-access: rootdse EOF ipactl restart">
 
@@ -547,18 +543,6 @@ if (window.location.pathname !== "/") {
   <input type="checkbox" id="m-manualsfreeipainstalling-and-setup-freeipaadding-additional-freeipa-replicas-check"/>
   <label for="m-manualsfreeipainstalling-and-setup-freeipaadding-additional-freeipa-replicas-check"><a href="/manuals/freeipa/installing-and-setup-freeipa/adding-additional-freeipa-replicas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsfreeipainstalling-and-setup-freeipaadding-additional-freeipa-replicas"><span class="">Добавление дополнительных реплик FreeIPA</span></a></label>
   
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsfreeipainstalling-and-setup-freeipacommon10-podgotovka-hosta-li">
-  <input type="checkbox" id="m-manualsfreeipainstalling-and-setup-freeipacommon10-podgotovka-hosta-check"/>
-  <label for="m-manualsfreeipainstalling-and-setup-freeipacommon10-podgotovka-hosta-check"><a href="/manuals/freeipa/installing-and-setup-freeipa/common/10-podgotovka-hosta/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsfreeipainstalling-and-setup-freeipacommon10-podgotovka-hosta"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsfreeipainstalling-and-setup-freeipacommondisabling-dnssec-validation-li">
-  <input type="checkbox" id="m-manualsfreeipainstalling-and-setup-freeipacommondisabling-dnssec-validation-check"/>
-  <label for="m-manualsfreeipainstalling-and-setup-freeipacommondisabling-dnssec-validation-check"><a href="/manuals/freeipa/installing-and-setup-freeipa/common/disabling-dnssec-validation/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsfreeipainstalling-and-setup-freeipacommondisabling-dnssec-validation"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsfreeipainstalling-and-setup-freeipacommonldap-disabling-anonymous-access-to-directory-li">
-  <input type="checkbox" id="m-manualsfreeipainstalling-and-setup-freeipacommonldap-disabling-anonymous-access-to-directory-check"/>
-  <label for="m-manualsfreeipainstalling-and-setup-freeipacommonldap-disabling-anonymous-access-to-directory-check"><a href="/manuals/freeipa/installing-and-setup-freeipa/common/ldap-disabling-anonymous-access-to-directory/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsfreeipainstalling-and-setup-freeipacommonldap-disabling-anonymous-access-to-directory"><span class=""></span></a></label>
-  
 </li>
   </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsfreeipacheckipaconsistency-utilita-dlya-opredeleniya-rassinhronizacii-replik-freeipa-li">
@@ -817,6 +801,17 @@ if (window.location.pathname !== "/") {
   </ul>
 </li>
   </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsmonitoringvictoriametricsvmauth-li">
+  <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmauth-check"/>
+  <label for="m-manualsmonitoringvictoriametricsvmauth-check"><a href="/manuals/monitoring/victoriametrics/vmauth/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoringvictoriametricsvmauth"><span class="">VMAuth</span></a></label>
+  
+  <ul class="ul-4 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvmauthtls-cert-for-vip-on-vmauth-nodes-with-auto-renewal-li">
+  <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmauthtls-cert-for-vip-on-vmauth-nodes-with-auto-renewal-check"/>
+  <label for="m-manualsmonitoringvictoriametricsvmauthtls-cert-for-vip-on-vmauth-nodes-with-auto-renewal-check"><a href="/manuals/monitoring/victoriametrics/vmauth/tls-cert-for-vip-on-vmauth-nodes-with-auto-renewal/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsvmauthtls-cert-for-vip-on-vmauth-nodes-with-auto-renewal"><span class="">Пример организации получения TLS-сертификата для Virtual IP (VIP) на vmauth-узлах с автообновлением</span></a></label>
+  
+</li>
+  </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvictoriametrics-what-you-should-avoid-li">
   <input type="checkbox" id="m-manualsmonitoringvictoriametricsvictoriametrics-what-you-should-avoid-check"/>
   <label for="m-manualsmonitoringvictoriametricsvictoriametrics-what-you-should-avoid-check"><a href="/manuals/monitoring/victoriametrics/victoriametrics-what-you-should-avoid/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsvictoriametrics-what-you-should-avoid"><span class="">VictoriaMetrics. Чего надо избегать</span></a></label>
@@ -836,10 +831,6 @@ if (window.location.pathname !== "/") {
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options-li">
   <input type="checkbox" id="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options-check"/>
   <label for="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options-check"><a href="/manuals/monitoring/victoriametrics/victoriametrics-vminsert-options/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options"><span class="">VictoriaMetrics. vminsert options</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvmauth-li">
-  <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmauth-check"/>
-  <label for="m-manualsmonitoringvictoriametricsvmauth-check"><a href="/manuals/monitoring/victoriametrics/vmauth/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoringvictoriametricsvmauth"><span class="">VMAuth</span></a></label>
   
 </li>
   </ul>
@@ -901,11 +892,7 @@ if (window.location.pathname !== "/") {
             <div class="td-toc">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#_настройка_ldap_каталога">1. Настройка LDAP-каталога</a>
-      <ul>
-        <li><a href="#_отключение_анонимного_доступа_к_ldap_каталогу">1.1. Отключение анонимного доступа к LDAP-каталогу</a></li>
-      </ul>
-    </li>
+    <li><a href="#_настройка_ldap_каталога">1. Настройка LDAP-каталога</a></li>
     <li><a href="#_настройка_dns">2. Настройка DNS</a>
       <ul>
         <li><a href="#_включение_автодобавления_обратных_записей">2.1. Включение автодобавления обратных записей</a></li>
@@ -994,7 +981,7 @@ if (window.location.pathname !== "/") {
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/encfs/" data-taxonomy-term="encfs"><span class="taxonomy-label">EncFS</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/filesystem/" data-taxonomy-term="filesystem"><span class="taxonomy-label">FileSystem</span><span class="taxonomy-count">6</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/freebsd/" data-taxonomy-term="freebsd"><span class="taxonomy-label">FreeBSD</span><span class="taxonomy-count">2</span></a></li>
-        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/freeipa/" data-taxonomy-term="freeipa"><span class="taxonomy-label">FreeIPA</span><span class="taxonomy-count">24</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/freeipa/" data-taxonomy-term="freeipa"><span class="taxonomy-label">FreeIPA</span><span class="taxonomy-count">25</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/freeipa-4.9.6/" data-taxonomy-term="freeipa-4.9.6"><span class="taxonomy-label">FreeIPA 4.9.6</span><span class="taxonomy-count">4</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/gnu-screen/" data-taxonomy-term="gnu-screen"><span class="taxonomy-label">GNU Screen</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/groupware/" data-taxonomy-term="groupware"><span class="taxonomy-label">Groupware</span><span class="taxonomy-count">1</span></a></li>
@@ -1086,13 +1073,13 @@ if (window.location.pathname !== "/") {
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/venv/" data-taxonomy-term="venv"><span class="taxonomy-label">Venv</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vertica/" data-taxonomy-term="vertica"><span class="taxonomy-label">Vertica</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vfs/" data-taxonomy-term="vfs"><span class="taxonomy-label">VFS</span><span class="taxonomy-count">2</span></a></li>
-        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/victoriametrics/" data-taxonomy-term="victoriametrics"><span class="taxonomy-label">VictoriaMetrics</span><span class="taxonomy-count">16</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/victoriametrics/" data-taxonomy-term="victoriametrics"><span class="taxonomy-label">VictoriaMetrics</span><span class="taxonomy-count">17</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/victoriametrics-cluster/" data-taxonomy-term="victoriametrics-cluster"><span class="taxonomy-label">VictoriaMetrics Cluster</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/virtualization/" data-taxonomy-term="virtualization"><span class="taxonomy-label">Virtualization</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/visual-studio-code/" data-taxonomy-term="visual-studio-code"><span class="taxonomy-label">Visual Studio Code</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmagent/" data-taxonomy-term="vmagent"><span class="taxonomy-label">Vmagent</span><span class="taxonomy-count">14</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmalert/" data-taxonomy-term="vmalert"><span class="taxonomy-label">Vmalert</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmauth/" data-taxonomy-term="vmauth"><span class="taxonomy-label">Vmauth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmauth/" data-taxonomy-term="vmauth"><span class="taxonomy-label">Vmauth</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vminsert/" data-taxonomy-term="vminsert"><span class="taxonomy-label">Vminsert</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmselect/" data-taxonomy-term="vmselect"><span class="taxonomy-label">Vmselect</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmstorage/" data-taxonomy-term="vmstorage"><span class="taxonomy-label">Vmstorage</span><span class="taxonomy-count">2</span></a></li>
@@ -1139,11 +1126,15 @@ if (window.location.pathname !== "/") {
 
 </header>
 	
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>2023-04-13</p>
+<p>Rev date: {revdata}</p>
+</div>
+</div>
 </div>
 <div class="sect1">
-<h2 id="_настройка_ldap_каталога">1. Настройка LDAP-каталога</h2>
+<h2 id="_настройка_ldap_каталога"><a class="anchor" href="#_настройка_ldap_каталога"></a>1. Настройка LDAP-каталога</h2>
 <div class="sectionbody">
 <div class="admonitionblock note">
 <table>
@@ -1162,30 +1153,28 @@ if (window.location.pathname !== "/") {
 </tr>
 </tbody></table>
 </div>
-<div class="sect2">
-<h3 id="_отключение_анонимного_доступа_к_ldap_каталогу">1.1. Отключение анонимного доступа к LDAP-каталогу</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Процедура выполняется на каждом сервере FreeIPA-реплике, так как изменения производятся в нереплицируемой части LDAP-каталога &#39;cn=config&#39;.</p>
+<p>Процедура выполняется на каждом сервере FreeIPA-реплике, так как изменения производятся в нереплицируемой части LDAP-каталога <code>cn=config</code>.</p>
 </li>
 <li>
 <p>Выполните из командной строки:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">IPAREPLICA=$</span><span style="color: #41ff5b">(</span><span style="font-weight: bold">hostname</span><span style="color: #41ff5b">)</span>
-<span style="color: #FFFFFF;background-color: #231529">set +o history
-</span><span style="color: #FFFFFF;background-color: #231529">DM_PASSWORD=&#39;&lt;Password of Directory Manager is here&gt;</span><span style="color: #fff0a6;font-weight: bold">&#39;
-</span><span style="color: #FFFFFF;background-color: #231529">set -o history
+<pre>IPAREPLICA=$(hostname)
+set +o history
+DM_PASSWORD=&#39;&lt;Password of Directory Manager is here&gt;&#39;
+set -o history
 
-</span><span style="color: #FFFFFF;background-color: #231529">ldapmodify -x -D &#34;cn=Directory Manager&#34; -w $</span><span style="color: #41ff5b">{</span>DM_PASSWORD<span style="color: #41ff5b">}</span> <span style="color: #9f93e6;font-weight: bold">-h</span> <span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">IPAREPLICA</span><span style="color: #FFF02A;font-weight: bold">}</span> <span style="color: #9f93e6;font-weight: bold">-Z</span> <span style="color: #41ff5b">&lt;&lt;</span> <span style="color: #FAAF4C;font-weight: bold">EOF</span><span style="color: #fff0a6;font-weight: bold">
-</span><span style="color: #FFFFFF;background-color: #231529">dn: cn=config
+ldapmodify -x -D &#34;cn=Directory Manager&#34; -w ${DM_PASSWORD} -h ${IPAREPLICA} -Z &lt;&lt; EOF
+dn: cn=config
 changetype: modify
 replace: nsslapd-allow-anonymous-access
 nsslapd-allow-anonymous-access: rootdse
 EOF
 
-ipactl restart</span></code></pre>
+ipactl restart</pre>
 </div>
 </div>
 </li>
@@ -1193,17 +1182,19 @@ ipactl restart</span></code></pre>
 </div>
 </div>
 </div>
-</div>
 <div class="sect1">
-<h2 id="_настройка_dns">2. Настройка DNS</h2>
+<h2 id="_настройка_dns"><a class="anchor" href="#_настройка_dns"></a>2. Настройка DNS</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_включение_автодобавления_обратных_записей">2.1. Включение автодобавления обратных записей</h3>
+<h3 id="_включение_автодобавления_обратных_записей"><a class="anchor" href="#_включение_автодобавления_обратных_записей"></a>2.1. Включение автодобавления обратных записей</h3>
 <div class="paragraph">
-<p>По умолчанию, при введении новой машины в домен, соответствующая PTR-запись в обратной зоне DNS не создаётся. Если я правильно помню, то это делается в целях сохранения производительности FreeIPA. Видимо, при достаточном количестве машин одновременно меняющих ip-адреса…​. бла-бла-бла.</p>
+<p>По умолчанию, при введении новой машины в домен, соответствующая PTR-запись в обратной зоне DNS не создаётся.
+Если я правильно помню, то это делается в целях сохранения производительности FreeIPA.
+Видимо, при достаточном количестве машин одновременно меняющих ip-адреса…​. бла-бла-бла.</p>
 </div>
 <div class="paragraph">
-<p>Опция &#39;Allow PTR sync&#39; доступна для отдельной DNS-зоны и/или глобально для DNS-сервера. В нашем случае включим опцию глобально.</p>
+<p>Опция <code>Allow PTR sync</code> доступна для отдельной DNS-зоны и/или глобально для DNS-сервера.
+В нашем случае включим опцию глобально.</p>
 </div>
 <div class="paragraph">
 <p>Включите опцию для DNS-сервера одним из двух способов:</p>
@@ -1227,15 +1218,15 @@ ipactl restart</span></code></pre>
 <p>Получите Kerberos-билет:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">kinit admin</span></code></pre>
+<pre>kinit admin</pre>
 </div>
 </div>
 </li>
 <li>
-<p>Включите опцию &#39;allow-sync-ptr&#39;:</p>
+<p>Включите опцию <code>allow-sync-ptr</code>:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">ipa dnsconfig-mod --allow-sync-ptr=1</span></code></pre>
+<pre>ipa dnsconfig-mod --allow-sync-ptr=1</pre>
 </div>
 </div>
 <div class="listingblock">
@@ -1257,13 +1248,13 @@ ipactl restart</span></code></pre>
 <p>В Web-браузере откройте страницу <a href="https://dev-ipa01.example.org/ipa/ui/#/e/dnsconfig/details" class="bare">https://dev-ipa01.example.org/ipa/ui/#/e/dnsconfig/details</a>.</p>
 </li>
 <li>
-<p>Отметьте опцию &#39;Allow PTR sync&#39;:</p>
+<p>Отметьте опцию <code>Allow PTR sync</code>:</p>
 <div class="paragraph">
-<p><span class="image"><img src="dns-enabling-allow-sync-ptr.png" alt="dns enabling allow sync ptr" width="400"/></span></p>
+<p><span class="image"><img src="/img/aaa/freeipa/installing-and-setup-freeipa/20-first-configuring-freeipa-server/dns-enabling-allow-sync-ptr.png" alt="dns enabling allow sync ptr" width="400"/></span></p>
 </div>
 </li>
 <li>
-<p>Сохраните результат нажатием кнопки &#39;Save&#39;.</p>
+<p>Сохраните результат нажатием кнопки <b class="button">Save</b>.</p>
 </li>
 </ol>
 </div>
@@ -1272,7 +1263,7 @@ ipactl restart</span></code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_включение_рекурсивных_запросов">2.2. Включение рекурсивных запросов</h3>
+<h3 id="_включение_рекурсивных_запросов"><a class="anchor" href="#_включение_рекурсивных_запросов"></a>2.2. Включение рекурсивных запросов</h3>
 <div class="admonitionblock note">
 <table>
 <tbody><tr>
@@ -1282,7 +1273,7 @@ ipactl restart</span></code></pre>
 <td class="content">
 <div class="title">Как рекурсия настроена по умолчанию?</div>
 <div class="paragraph">
-<p>По умолчанию, локальный BIND9 разрешает рекурсивные запросы, то есть запросы к другим доменам, только от localhost и localnet.</p>
+<p>По умолчанию, локальный BIND9 разрешает рекурсивные запросы, то есть запросы к другим доменам, только от <code>localhost</code> и <code>localnet</code>.</p>
 </div>
 </td>
 </tr>
@@ -1291,15 +1282,15 @@ ipactl restart</span></code></pre>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>ЧТобы включить рекурсию для запросов от всех сетей, что очень опасно, добавьте следующие опции в файл <code>/etc/named/ipa-options-ext.conf</code> и перезапустите BIND9:</p>
+<p>Чтобы включить рекурсию для запросов от всех сетей, что очень опасно, добавьте следующие опции в файл <code>/etc/named/ipa-options-ext.conf</code> и перезапустите BIND9:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">cat &lt;&lt; EOF &gt;</span><span style="color: #41ff5b">&gt;</span> /etc/named/ipa-options-ext.conf
-<span style="color: #FFFFFF;background-color: #231529">allow-recursion { any;</span><span style="color: #BBBBBB"> </span><span style="color: #41ff5b">}</span><span style="color: #41ff5b">;</span>
-<span style="color: #FFFFFF;background-color: #231529">allow-query-cache { any;</span><span style="color: #BBBBBB"> </span><span style="color: #41ff5b">}</span><span style="color: #41ff5b">;</span>
-<span style="color: #FFFFFF;background-color: #231529">EOF
+<pre>cat &lt;&lt; EOF &gt;&gt; /etc/named/ipa-options-ext.conf
+allow-recursion { any; };
+allow-query-cache { any; };
+EOF
 
-systemctl restart named</span></code></pre>
+systemctl restart named</pre>
 </div>
 </div>
 </li>
@@ -1307,13 +1298,13 @@ systemctl restart named</span></code></pre>
 <p>Чтобы включить рекурсию для определённых сетей, сначала перечислите их в файле <code>/etc/named/ipa-ext.conf</code>. Например:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">cat &lt;&lt; EOF &gt;</span><span style="color: #41ff5b">&gt;</span> /etc/named/ipa-ext.conf
-<span style="color: #FFFFFF;background-color: #231529">acl &#34;trusted_network&#34; {
-</span><span style="color: #FFFFFF;background-color: #231529">  localnets;</span><span style="color: #BBBBBB">
-</span><span style="color: #FFFFFF;background-color: #231529">  localhost;</span><span style="color: #BBBBBB">
-</span><span style="color: #FFFFFF;background-color: #231529">  10.0.0.0/8;</span><span style="color: #BBBBBB">
-</span><span style="color: #FFFFFF;background-color: #231529">};</span><span style="color: #BBBBBB">
-</span><span style="color: #FFFFFF;background-color: #231529">EOF</span></code></pre>
+<pre>cat &lt;&lt; EOF &gt;&gt; /etc/named/ipa-ext.conf
+acl &#34;trusted_network&#34; {
+  localnets;
+  localhost;
+  10.0.0.0/8;
+};
+EOF</pre>
 </div>
 </div>
 </li>
@@ -1321,10 +1312,10 @@ systemctl restart named</span></code></pre>
 <p>После чего включите рекурсию для этих сетей в файле <code>/etc/named/ipa-options-ext.conf</code>:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">cat &lt;&lt; EOF &gt;</span><span style="color: #41ff5b">&gt;</span> /etc/named/ipa-options-ext.conf
-<span style="color: #FFFFFF;background-color: #231529">allow-recursion { trusted_network;</span><span style="color: #BBBBBB"> </span><span style="color: #41ff5b">}</span><span style="color: #41ff5b">;</span>
-<span style="color: #FFFFFF;background-color: #231529">allow-query-cache { trusted_network;</span><span style="color: #BBBBBB"> </span><span style="color: #41ff5b">}</span><span style="color: #41ff5b">;</span>
-<span style="color: #FFFFFF;background-color: #231529">EOF</span></code></pre>
+<pre>cat &lt;&lt; EOF &gt;&gt; /etc/named/ipa-options-ext.conf
+allow-recursion { trusted_network; };
+allow-query-cache { trusted_network; };
+EOF</pre>
 </div>
 </div>
 </li>
@@ -1332,7 +1323,7 @@ systemctl restart named</span></code></pre>
 <p>Не забудьте перезапустить BIND9:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">systemctl restart named</span></code></pre>
+<pre>systemctl restart named</pre>
 </div>
 </div>
 </li>
@@ -1340,7 +1331,7 @@ systemctl restart named</span></code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_добавление_dns_форвардеров">2.3. Добавление DNS-форвардеров</h3>
+<h3 id="_добавление_dns_форвардеров"><a class="anchor" href="#_добавление_dns_форвардеров"></a>2.3. Добавление DNS-форвардеров</h3>
 <div class="admonitionblock note">
 <table>
 <tbody><tr>
@@ -1447,10 +1438,10 @@ systemctl restart named</span></code></pre>
 <p>Добавьте адреса форвардер-серверов командой:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code>ipa dnsconfig-mod \
+<pre>ipa dnsconfig-mod \
   --forwarder=&#34;10.1.1.1&#34; \
   --forwarder=&#34;10.0.0.1&#34; \
-  --forward-policy=&#39;only&#39;</code></pre>
+  --forward-policy=&#39;only&#39;</pre>
 </div>
 </div>
 <div class="listingblock">
@@ -1481,13 +1472,13 @@ If DNSSEC validation is enabled on IPA server(s), please disable it.
 <p>В Web-браузере откройте страницу <a href="https://dev-ipa01.example.org/ipa/ui/#/e/dnsconfig/details" class="bare">https://dev-ipa01.example.org/ipa/ui/#/e/dnsconfig/details</a>.</p>
 </li>
 <li>
-<p>Отметьте опцию &#39;Allow PTR sync&#39;:</p>
+<p>Отметьте опцию <code>Allow PTR sync</code>:</p>
 <div class="paragraph">
-<p><span class="image"><img src="dns-configuring-forwarders.png" alt="dns configuring forwarders" width="400"/></span></p>
+<p><span class="image"><img src="/img/aaa/freeipa/installing-and-setup-freeipa/20-first-configuring-freeipa-server/dns-configuring-forwarders.png" alt="dns configuring forwarders" width="400"/></span></p>
 </div>
 </li>
 <li>
-<p>Сохраните результат нажатием кнопки &#39;Save&#39;.</p>
+<p>Сохраните результат нажатием кнопки <b class="button">Save</b>.</p>
 </li>
 </ol>
 </div>
@@ -1499,19 +1490,19 @@ If DNSSEC validation is enabled on IPA server(s), please disable it.
 </div>
 </div>
 <div class="sect2">
-<h3 id="_отключение_dnssec_validation">2.4. Отключение DNSSEC validation</h3>
+<h3 id="_отключение_dnssec_validation"><a class="anchor" href="#_отключение_dnssec_validation"></a>2.4. Отключение DNSSEC validation</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Отключите DNSSEC-валидацию в файле <code>/etc/named/ipa-options-ext.conf</code> на каждой IPA-реплике:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">sed -i &#39;s/dnssec-validation yes/dnssec-validation no/&#39; /etc/named/ipa-options-ext.conf
+<pre>sed -i &#39;s/dnssec-validation yes/dnssec-validation no/&#39; /etc/named/ipa-options-ext.conf
 
-</span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>Было ранее
-<span style="color: #FFFFFF;background-color: #231529">systemctl restart named-pkcs11
-</span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>На более свежих версиях FreeIPA
-<span style="color: #FFFFFF;background-color: #231529">systemctl restart named</span></code></pre>
+# Было ранее
+systemctl restart named-pkcs11
+# На более свежих версиях FreeIPA
+systemctl restart named</pre>
 </div>
 </div>
 </li>

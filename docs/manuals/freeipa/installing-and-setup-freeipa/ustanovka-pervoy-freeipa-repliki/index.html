@@ -18,25 +18,21 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>Установка первой FreeIPA-реплики | Debuntarium</title>
-<meta name="description" content=" 2023-04-13
-1. Подготовка ОС к установке FreeIPA-сервера Проверьте настройки точного времени.
+<meta name="description" content=" 1. Подготовка ОС к установке FreeIPA-сервера Проверьте настройки точного времени.
 Проверьте сетевые настройки.
 Задайте полное имя хоста. Пример:
 hostnamectl set-hostname dev-ipa01.example.org Добавьте в /etc/hosts записи для локальной, или для всех существующих/будущих IPA-реплик. Пример:
-192.168.100.11 dev-ipa01.example.org dev-ipa01 192.168.100.12 dev-ipa02.example.org dev-ipa02 192.168.100.13 dev-ipa03.example.org dev-ipa03 Перегенерируйте ssh-ключи. Пример:
-rm -f /etc/ssh/ssh_host_*_key* systemctl restart sshd Обновите /etc/machine-id:
-rm -f /etc/machine-id dbus-uuidgen --ensure=/etc/machine-id ">
+192.168.50.21 dev-ipa01.example.org dev-ipa01 192.168.50.22 dev-ipa02.example.org dev-ipa02 192.168.50.23 dev-ipa03.example.org dev-ipa03 Перегенерируйте ssh-ключи на тот случай, если машина была получена из единого образа (без автоматический смены ssh-ключей при первом её запуске). Пример:
+rm -f /etc/ssh/ssh_host_*_key* systemctl restart sshd ">
 <meta property="og:url" content="https://debuntu.ru/manuals/freeipa/installing-and-setup-freeipa/ustanovka-pervoy-freeipa-repliki/">
   <meta property="og:site_name" content="Debuntarium">
   <meta property="og:title" content="Установка первой FreeIPA-реплики">
-  <meta property="og:description" content="2023-04-13
-1. Подготовка ОС к установке FreeIPA-сервера Проверьте настройки точного времени.
+  <meta property="og:description" content="1. Подготовка ОС к установке FreeIPA-сервера Проверьте настройки точного времени.
 Проверьте сетевые настройки.
 Задайте полное имя хоста. Пример:
 hostnamectl set-hostname dev-ipa01.example.org Добавьте в /etc/hosts записи для локальной, или для всех существующих/будущих IPA-реплик. Пример:
-192.168.100.11 dev-ipa01.example.org dev-ipa01 192.168.100.12 dev-ipa02.example.org dev-ipa02 192.168.100.13 dev-ipa03.example.org dev-ipa03 Перегенерируйте ssh-ключи. Пример:
-rm -f /etc/ssh/ssh_host_*_key* systemctl restart sshd Обновите /etc/machine-id:
-rm -f /etc/machine-id dbus-uuidgen --ensure=/etc/machine-id">
+192.168.50.21 dev-ipa01.example.org dev-ipa01 192.168.50.22 dev-ipa02.example.org dev-ipa02 192.168.50.23 dev-ipa03.example.org dev-ipa03 Перегенерируйте ssh-ключи на тот случай, если машина была получена из единого образа (без автоматический смены ssh-ключей при первом её запуске). Пример:
+rm -f /etc/ssh/ssh_host_*_key* systemctl restart sshd">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:type" content="article">
     <meta property="article:section" content="manuals">
@@ -45,28 +41,24 @@ rm -f /etc/machine-id dbus-uuidgen --ensure=/etc/machine-id">
     <meta property="article:tag" content="FreeIPA">
 
   <meta itemprop="name" content="Установка первой FreeIPA-реплики">
-  <meta itemprop="description" content="2023-04-13
-1. Подготовка ОС к установке FreeIPA-сервера Проверьте настройки точного времени.
+  <meta itemprop="description" content="1. Подготовка ОС к установке FreeIPA-сервера Проверьте настройки точного времени.
 Проверьте сетевые настройки.
 Задайте полное имя хоста. Пример:
 hostnamectl set-hostname dev-ipa01.example.org Добавьте в /etc/hosts записи для локальной, или для всех существующих/будущих IPA-реплик. Пример:
-192.168.100.11 dev-ipa01.example.org dev-ipa01 192.168.100.12 dev-ipa02.example.org dev-ipa02 192.168.100.13 dev-ipa03.example.org dev-ipa03 Перегенерируйте ssh-ключи. Пример:
-rm -f /etc/ssh/ssh_host_*_key* systemctl restart sshd Обновите /etc/machine-id:
-rm -f /etc/machine-id dbus-uuidgen --ensure=/etc/machine-id">
+192.168.50.21 dev-ipa01.example.org dev-ipa01 192.168.50.22 dev-ipa02.example.org dev-ipa02 192.168.50.23 dev-ipa03.example.org dev-ipa03 Перегенерируйте ssh-ключи на тот случай, если машина была получена из единого образа (без автоматический смены ssh-ключей при первом её запуске). Пример:
+rm -f /etc/ssh/ssh_host_*_key* systemctl restart sshd">
   <meta itemprop="datePublished" content="2024-08-02T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-08-02T00:00:00+00:00">
-  <meta itemprop="wordCount" content="2440">
+  <meta itemprop="wordCount" content="2484">
   <meta itemprop="keywords" content="FreeIPA">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Установка первой FreeIPA-реплики">
-  <meta name="twitter:description" content="2023-04-13
-1. Подготовка ОС к установке FreeIPA-сервера Проверьте настройки точного времени.
+  <meta name="twitter:description" content="1. Подготовка ОС к установке FreeIPA-сервера Проверьте настройки точного времени.
 Проверьте сетевые настройки.
 Задайте полное имя хоста. Пример:
 hostnamectl set-hostname dev-ipa01.example.org Добавьте в /etc/hosts записи для локальной, или для всех существующих/будущих IPA-реплик. Пример:
-192.168.100.11 dev-ipa01.example.org dev-ipa01 192.168.100.12 dev-ipa02.example.org dev-ipa02 192.168.100.13 dev-ipa03.example.org dev-ipa03 Перегенерируйте ssh-ключи. Пример:
-rm -f /etc/ssh/ssh_host_*_key* systemctl restart sshd Обновите /etc/machine-id:
-rm -f /etc/machine-id dbus-uuidgen --ensure=/etc/machine-id">
+192.168.50.21 dev-ipa01.example.org dev-ipa01 192.168.50.22 dev-ipa02.example.org dev-ipa02 192.168.50.23 dev-ipa03.example.org dev-ipa03 Перегенерируйте ssh-ключи на тот случай, если машина была получена из единого образа (без автоматический смены ssh-ключей при первом её запуске). Пример:
+rm -f /etc/ssh/ssh_host_*_key* systemctl restart sshd">
 
 
 
@@ -555,18 +547,6 @@ if (window.location.pathname !== "/") {
   <input type="checkbox" id="m-manualsfreeipainstalling-and-setup-freeipaadding-additional-freeipa-replicas-check"/>
   <label for="m-manualsfreeipainstalling-and-setup-freeipaadding-additional-freeipa-replicas-check"><a href="/manuals/freeipa/installing-and-setup-freeipa/adding-additional-freeipa-replicas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsfreeipainstalling-and-setup-freeipaadding-additional-freeipa-replicas"><span class="">Добавление дополнительных реплик FreeIPA</span></a></label>
   
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsfreeipainstalling-and-setup-freeipacommon10-podgotovka-hosta-li">
-  <input type="checkbox" id="m-manualsfreeipainstalling-and-setup-freeipacommon10-podgotovka-hosta-check"/>
-  <label for="m-manualsfreeipainstalling-and-setup-freeipacommon10-podgotovka-hosta-check"><a href="/manuals/freeipa/installing-and-setup-freeipa/common/10-podgotovka-hosta/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsfreeipainstalling-and-setup-freeipacommon10-podgotovka-hosta"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsfreeipainstalling-and-setup-freeipacommondisabling-dnssec-validation-li">
-  <input type="checkbox" id="m-manualsfreeipainstalling-and-setup-freeipacommondisabling-dnssec-validation-check"/>
-  <label for="m-manualsfreeipainstalling-and-setup-freeipacommondisabling-dnssec-validation-check"><a href="/manuals/freeipa/installing-and-setup-freeipa/common/disabling-dnssec-validation/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsfreeipainstalling-and-setup-freeipacommondisabling-dnssec-validation"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsfreeipainstalling-and-setup-freeipacommonldap-disabling-anonymous-access-to-directory-li">
-  <input type="checkbox" id="m-manualsfreeipainstalling-and-setup-freeipacommonldap-disabling-anonymous-access-to-directory-check"/>
-  <label for="m-manualsfreeipainstalling-and-setup-freeipacommonldap-disabling-anonymous-access-to-directory-check"><a href="/manuals/freeipa/installing-and-setup-freeipa/common/ldap-disabling-anonymous-access-to-directory/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsfreeipainstalling-and-setup-freeipacommonldap-disabling-anonymous-access-to-directory"><span class=""></span></a></label>
-  
 </li>
   </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsfreeipacheckipaconsistency-utilita-dlya-opredeleniya-rassinhronizacii-replik-freeipa-li">
@@ -825,6 +805,17 @@ if (window.location.pathname !== "/") {
   </ul>
 </li>
   </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsmonitoringvictoriametricsvmauth-li">
+  <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmauth-check"/>
+  <label for="m-manualsmonitoringvictoriametricsvmauth-check"><a href="/manuals/monitoring/victoriametrics/vmauth/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoringvictoriametricsvmauth"><span class="">VMAuth</span></a></label>
+  
+  <ul class="ul-4 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvmauthtls-cert-for-vip-on-vmauth-nodes-with-auto-renewal-li">
+  <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmauthtls-cert-for-vip-on-vmauth-nodes-with-auto-renewal-check"/>
+  <label for="m-manualsmonitoringvictoriametricsvmauthtls-cert-for-vip-on-vmauth-nodes-with-auto-renewal-check"><a href="/manuals/monitoring/victoriametrics/vmauth/tls-cert-for-vip-on-vmauth-nodes-with-auto-renewal/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsvmauthtls-cert-for-vip-on-vmauth-nodes-with-auto-renewal"><span class="">Пример организации получения TLS-сертификата для Virtual IP (VIP) на vmauth-узлах с автообновлением</span></a></label>
+  
+</li>
+  </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvictoriametrics-what-you-should-avoid-li">
   <input type="checkbox" id="m-manualsmonitoringvictoriametricsvictoriametrics-what-you-should-avoid-check"/>
   <label for="m-manualsmonitoringvictoriametricsvictoriametrics-what-you-should-avoid-check"><a href="/manuals/monitoring/victoriametrics/victoriametrics-what-you-should-avoid/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsvictoriametrics-what-you-should-avoid"><span class="">VictoriaMetrics. Чего надо избегать</span></a></label>
@@ -844,10 +835,6 @@ if (window.location.pathname !== "/") {
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options-li">
   <input type="checkbox" id="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options-check"/>
   <label for="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options-check"><a href="/manuals/monitoring/victoriametrics/victoriametrics-vminsert-options/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options"><span class="">VictoriaMetrics. vminsert options</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvmauth-li">
-  <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmauth-check"/>
-  <label for="m-manualsmonitoringvictoriametricsvmauth-check"><a href="/manuals/monitoring/victoriametrics/vmauth/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoringvictoriametricsvmauth"><span class="">VMAuth</span></a></label>
   
 </li>
   </ul>
@@ -919,6 +906,7 @@ if (window.location.pathname !== "/") {
       </ul>
     </li>
     <li><a href="#_бэкап_важной_особо_секретной_информации">3. Бэкап важной особо секретной информации</a></li>
+    <li><a href="#_проверка_корректности_установки_первой_реплики_freeipa">4. Проверка корректности установки первой реплики FreeIPA</a></li>
   </ul>
 </nav>
       </div>
@@ -999,7 +987,7 @@ if (window.location.pathname !== "/") {
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/encfs/" data-taxonomy-term="encfs"><span class="taxonomy-label">EncFS</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/filesystem/" data-taxonomy-term="filesystem"><span class="taxonomy-label">FileSystem</span><span class="taxonomy-count">6</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/freebsd/" data-taxonomy-term="freebsd"><span class="taxonomy-label">FreeBSD</span><span class="taxonomy-count">2</span></a></li>
-        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/freeipa/" data-taxonomy-term="freeipa"><span class="taxonomy-label">FreeIPA</span><span class="taxonomy-count">24</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/freeipa/" data-taxonomy-term="freeipa"><span class="taxonomy-label">FreeIPA</span><span class="taxonomy-count">25</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/freeipa-4.9.6/" data-taxonomy-term="freeipa-4.9.6"><span class="taxonomy-label">FreeIPA 4.9.6</span><span class="taxonomy-count">4</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/gnu-screen/" data-taxonomy-term="gnu-screen"><span class="taxonomy-label">GNU Screen</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/groupware/" data-taxonomy-term="groupware"><span class="taxonomy-label">Groupware</span><span class="taxonomy-count">1</span></a></li>
@@ -1091,13 +1079,13 @@ if (window.location.pathname !== "/") {
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/venv/" data-taxonomy-term="venv"><span class="taxonomy-label">Venv</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vertica/" data-taxonomy-term="vertica"><span class="taxonomy-label">Vertica</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vfs/" data-taxonomy-term="vfs"><span class="taxonomy-label">VFS</span><span class="taxonomy-count">2</span></a></li>
-        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/victoriametrics/" data-taxonomy-term="victoriametrics"><span class="taxonomy-label">VictoriaMetrics</span><span class="taxonomy-count">16</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/victoriametrics/" data-taxonomy-term="victoriametrics"><span class="taxonomy-label">VictoriaMetrics</span><span class="taxonomy-count">17</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/victoriametrics-cluster/" data-taxonomy-term="victoriametrics-cluster"><span class="taxonomy-label">VictoriaMetrics Cluster</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/virtualization/" data-taxonomy-term="virtualization"><span class="taxonomy-label">Virtualization</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/visual-studio-code/" data-taxonomy-term="visual-studio-code"><span class="taxonomy-label">Visual Studio Code</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmagent/" data-taxonomy-term="vmagent"><span class="taxonomy-label">Vmagent</span><span class="taxonomy-count">14</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmalert/" data-taxonomy-term="vmalert"><span class="taxonomy-label">Vmalert</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmauth/" data-taxonomy-term="vmauth"><span class="taxonomy-label">Vmauth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmauth/" data-taxonomy-term="vmauth"><span class="taxonomy-label">Vmauth</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vminsert/" data-taxonomy-term="vminsert"><span class="taxonomy-label">Vminsert</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmselect/" data-taxonomy-term="vmselect"><span class="taxonomy-label">Vmselect</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmstorage/" data-taxonomy-term="vmstorage"><span class="taxonomy-label">Vmstorage</span><span class="taxonomy-count">2</span></a></li>
@@ -1144,9 +1132,6 @@ if (window.location.pathname !== "/") {
 
 </header>
 	
-<div class="paragraph">
-<p>2023-04-13</p>
-</div>
 <div class="sect1">
 <h2 id="_подготовка_ос_к_установке_freeipa_сервера">1. Подготовка ОС к установке FreeIPA-сервера</h2>
 <div class="sectionbody">
@@ -1162,7 +1147,7 @@ if (window.location.pathname !== "/") {
 <p>Задайте полное имя хоста. Пример:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code>hostnamectl set-hostname dev-ipa01.example.org</code></pre>
+<pre>hostnamectl set-hostname dev-ipa01.example.org</pre>
 </div>
 </div>
 </li>
@@ -1170,18 +1155,18 @@ if (window.location.pathname !== "/") {
 <p>Добавьте в <code>/etc/hosts</code> записи для локальной, или для всех существующих/будущих IPA-реплик. Пример:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code>192.168.100.11 dev-ipa01.example.org dev-ipa01
-192.168.100.12 dev-ipa02.example.org dev-ipa02
-192.168.100.13 dev-ipa03.example.org dev-ipa03</code></pre>
+<pre>192.168.50.21 dev-ipa01.example.org dev-ipa01
+192.168.50.22 dev-ipa02.example.org dev-ipa02
+192.168.50.23 dev-ipa03.example.org dev-ipa03</pre>
 </div>
 </div>
 </li>
 <li>
-<p>Перегенерируйте ssh-ключи. Пример:</p>
+<p>Перегенерируйте ssh-ключи на тот случай, если машина была получена из единого образа (без автоматический смены ssh-ключей при первом её запуске). Пример:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">rm -f /etc/ssh/ssh_host_*_key*
-systemctl restart sshd</span></code></pre>
+<pre>rm -f /etc/ssh/ssh_host_*_key*
+systemctl restart sshd</pre>
 </div>
 </div>
 </li>
@@ -1189,8 +1174,8 @@ systemctl restart sshd</span></code></pre>
 <p>Обновите <code>/etc/machine-id</code>:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">rm -f /etc/machine-id
-dbus-uuidgen --ensure=/etc/machine-id</span></code></pre>
+<pre>rm -f /etc/machine-id
+dbus-uuidgen --ensure=/etc/machine-id</pre>
 </div>
 </div>
 </li>
@@ -1239,7 +1224,7 @@ dbus-uuidgen --ensure=/etc/machine-id</span></code></pre>
 <p>--auto-reverse --allow-zone-overlap — две опции, которые необходимы для автоматического добавления обратной зоны DNS, в которой находится основной ip-адрес сервера FreeIPA. (<a href="https://access.redhat.com/solutions/4237121" class="bare">https://access.redhat.com/solutions/4237121</a>)</p>
 </li>
 <li>
-<p>--no-hbac-allow — запрещает автоматическое добавление HBAC-правила, которое позволяет всем пользователям домена заходить на все машины домена через ssh.</p>
+<p>--no-hbac-allow — запрещает автоматическое добавление HBAC-правила, которое позволяет <strong>всем</strong> пользователям домена заходить на <strong>все</strong> машины домена через ssh.</p>
 </li>
 <li>
 <p>--ntp-server — задаёт ip-адрес NTP-сервера. Адрес будет добавлен в <code>/etc/chrony.conf</code>.</p>
@@ -1255,42 +1240,54 @@ dbus-uuidgen --ensure=/etc/machine-id</span></code></pre>
 <div class="paragraph">
 <p>Ниже показаны различия в именах сертификатах без использования или с использованием этих опций.</p>
 </div>
-<table class="tableblock frame-all grid-all fit-content">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col/>
-<col/>
+<col style="width: 50%;"/>
+<col style="width: 50%;"/>
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">CN=Certificate Authority,O=EXAMPLE.ORG</th>
-<th class="tableblock halign-left valign-top">CN=Acme Corp Root CA,O=Acme Corp</th>
-</tr>
-</thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="image1.png" alt="image1"/></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="image2.png" alt="image2"/></span></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>CN=Certificate Authority,O=EXAMPLE.ORG</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>CN=Acme Corp Root CA,O=Acme Corp</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="/img/aaa/freeipa/installing-and-setup-freeipa/10-install-first-replica-of-freeipa/image1.png" alt="image1"/></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="/img/aaa/freeipa/installing-and-setup-freeipa/10-install-first-replica-of-freeipa/image2.png" alt="image2"/></span></p>
+</div></div></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
 <p>В Chromium стандартный и специально именованный сертификаты отображаются так:</p>
 </div>
-<table class="tableblock frame-all grid-all fit-content">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col/>
 <col/>
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">CN=Certificate Authority,O=EXAMPLE.ORG</th>
-<th class="tableblock halign-left valign-top">CN=Acme Corp Root CA,O=Acme Corp</th>
-</tr>
-</thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="image3.png" alt="image3"/></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="image4.png" alt="image4"/></span></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>CN=Certificate Authority,O=EXAMPLE.ORG</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>CN=Acme Corp Root CA,O=Acme Corp</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="/img/aaa/freeipa/installing-and-setup-freeipa/10-install-first-replica-of-freeipa/image3.png" alt="image3"/></span></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="image"><img src="/img/aaa/freeipa/installing-and-setup-freeipa/10-install-first-replica-of-freeipa/image4.png" alt="image4"/></span></p>
+</div></div></td>
 </tr>
 </tbody>
 </table>
@@ -1301,14 +1298,15 @@ dbus-uuidgen --ensure=/etc/machine-id</span></code></pre>
 <div class="sect2">
 <h3 id="_правила_задания_пароля_для_dm_аккаунта">2.2. Правила задания пароля для DM-аккаунта</h3>
 <div class="paragraph">
-<p>Судя по исходникам, пароль может содержать все ASCII-символы, кроме обратного слэша (видим следующее присваивание — bad_characters = &#39;\\&#39; — в регулярных выражениях символ обратного слэша обычно обозначается двумя обратными слэшами). Наверное, наравне с обратным слэшем, лучше будет воздержаться от использования одинарных, обратных и двойных кавычек, а также прямого слэша и вертикальной черты.</p>
+<p>Судя по исходникам, пароль может содержать все ASCII-символы, кроме обратного слэша (видим следующее присваивание — bad_characters = &#39;\\&#39; — в регулярных выражениях символ обратного слэша обычно обозначается двумя обратными слэшами).
+Наверное, наравне с обратным слэшем, лучше будет воздержаться от использования одинарных, обратных и двойных кавычек, а также прямого слэша и вертикальной черты.</p>
 </div>
 <div class="paragraph">
 <p>Для генерации пароля, который не будет включать в себя символы слэшей и кавычек (одинарных, двойных и обратных), проще использовать bash-строку:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">tr -dc &#39;A-Za-z0-9!#</span><span style="color: #41ff5b;font-weight: bold">$%</span>&amp;<span style="color: #41ff5b">()</span><span style="color: #FFF02A;font-weight: bold">*</span>+,-.:<span style="color: #41ff5b">;</span>&lt;<span style="color: #41ff5b">=&gt;</span>?@[]^_<span style="color: #41ff5b">{}</span>~<span style="color: #fff0a6;font-weight: bold">&#39; &lt;/dev/urandom | head -c 43; echo</span></code></pre>
+<pre>tr -dc &#39;A-Za-z0-9!#$%&amp;()*+,-.:;&lt;=&gt;?@[]^_{}~&#39; &lt;/dev/urandom | head -c 43; echo</pre>
 </div>
 </div>
 <details>
@@ -1316,28 +1314,28 @@ dbus-uuidgen --ensure=/etc/machine-id</span></code></pre>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">def validate_dm_password(password):
+<pre>def validate_dm_password(password):
     if len(password) &lt; 8:
         raise ValueError(&#34;Password must be at least 8 characters long&#34;)
     if any(ord(c) &lt; 0x20 for c in password):
         raise ValueError(&#34;Password must not contain control characters&#34;)
-</span><span style="color: #FFFFFF;background-color: #231529">    if any(ord(c) &gt;</span><span style="color: #41ff5b">=</span> 0x7F <span style="color: #FFF02A;font-weight: bold">for </span>c <span style="color: #FFF02A;font-weight: bold">in </span>password<span style="color: #41ff5b">)</span>:
-<span style="color: #FFFFFF;background-color: #231529">        raise ValueError(&#34;Password must only contain ASCII characters&#34;)
+    if any(ord(c) &gt;= 0x7F for c in password):
+        raise ValueError(&#34;Password must only contain ASCII characters&#34;)
 
-</span><span style="color: #FFFFFF;background-color: #231529">    #</span><span style="color: #BBBBBB"> </span>Disallow characters that pkisilent doesn<span style="color: #fff0a6;font-weight: bold">&#39;t process properly:
-</span><span style="color: #FFFFFF;background-color: #231529">    bad_characters = &#39;\\&#39;
+    # Disallow characters that pkisilent doesn&#39;t process properly:
+    bad_characters = &#39;\\&#39;
     if any(c in bad_characters for c in password):
         raise ValueError(&#39;Password must not contain these characters: %s&#39; %
                          &#39;, &#39;.join(&#39;&#34;%s&#34;&#39; % c for c in bad_characters))
 
-</span><span style="color: #FFFFFF;background-color: #231529">    #</span><span style="color: #BBBBBB"> </span>TODO: Check https://fedorahosted.org/389/ticket/47849
-<span style="color: #FFFFFF;background-color: #231529">    #</span><span style="color: #BBBBBB"> </span>Actual behavior of setup-ds.pl is that it does not accept white
-<span style="color: #FFFFFF;background-color: #231529">    #</span><span style="color: #BBBBBB"> </span>space characters <span style="color: #FFF02A;font-weight: bold">in </span>password when called interactively but does when
-<span style="color: #FFFFFF;background-color: #231529">    #</span><span style="color: #BBBBBB"> </span>provided such password <span style="color: #FFF02A;font-weight: bold">in </span>INF file. But it ignores leading and trailing
-<span style="color: #FFFFFF;background-color: #231529">    #</span><span style="color: #BBBBBB"> </span>whitespaces <span style="color: #FFF02A;font-weight: bold">in </span>INF file.
-<span style="color: #FFFFFF;background-color: #231529">
-</span><span style="color: #FFFFFF;background-color: #231529">    #</span><span style="color: #BBBBBB"> </span>Disallow leading/trailing whaitespaces
-<span style="color: #FFFFFF;background-color: #231529">    if password.strip() != password:
+    # TODO: Check https://fedorahosted.org/389/ticket/47849
+    # Actual behavior of setup-ds.pl is that it does not accept white
+    # space characters in password when called interactively but does when
+    # provided such password in INF file. But it ignores leading and trailing
+    # whitespaces in INF file.
+
+    # Disallow leading/trailing whaitespaces
+    if password.strip() != password:
         raise ValueError(&#39;Password must not start or end with whitespace.&#39;)
 
 def validate_admin_password(password):
@@ -1345,14 +1343,14 @@ def validate_admin_password(password):
         raise ValueError(&#34;Password must be at least 8 characters long&#34;)
     if any(ord(c) &lt; 0x20 for c in password):
         raise ValueError(&#34;Password must not contain control characters&#34;)
-</span><span style="color: #FFFFFF;background-color: #231529">    if any(ord(c) &gt;</span><span style="color: #41ff5b">=</span> 0x7F <span style="color: #FFF02A;font-weight: bold">for </span>c <span style="color: #FFF02A;font-weight: bold">in </span>password<span style="color: #41ff5b">)</span>:
-<span style="color: #FFFFFF;background-color: #231529">        raise ValueError(&#34;Password must only contain ASCII characters&#34;)
+    if any(ord(c) &gt;= 0x7F for c in password):
+        raise ValueError(&#34;Password must only contain ASCII characters&#34;)
 
-</span><span style="color: #FFFFFF;background-color: #231529">    #</span><span style="color: #BBBBBB"> </span>Disallow characters that pkisilent doesn<span style="color: #fff0a6;font-weight: bold">&#39;t process properly:
-</span><span style="color: #FFFFFF;background-color: #231529">    bad_characters = &#39;\\&#39;
+    # Disallow characters that pkisilent doesn&#39;t process properly:
+    bad_characters = &#39;\\&#39;
     if any(c in bad_characters for c in password):
         raise ValueError(&#39;Password must not contain these characters: %s&#39; %
-                         &#39;, &#39;.join(&#39;&#34;%s&#34;&#39; % c for c in bad_characters))</span></code></pre>
+                         &#39;, &#39;.join(&#39;&#34;%s&#34;&#39; % c for c in bad_characters))</pre>
 </div>
 </div>
 </div>
@@ -1369,28 +1367,28 @@ def validate_admin_password(password):
 <p>Выполните следующий скрипт и ждите окончания процедуры. В случае наличия на хосте только одного ip-адреса, переменную IP_ADDRESS и опцию &#39;--ip-address&#39; можно не применять.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>Generating new passwords
-<span style="color: #FFFFFF;background-color: #231529">DM_PASSWORD=$</span><span style="color: #41ff5b">(</span><span style="font-weight: bold">tr</span> <span style="color: #9f93e6;font-weight: bold">-dc</span> <span style="color: #fff0a6;font-weight: bold">&#39;A-Za-z0-9!#$%&amp;()*+,-.:;&lt;=&gt;?@[]^_{}~&#39;</span> &lt;/dev/urandom | <span style="font-weight: bold">head</span> <span style="color: #9f93e6;font-weight: bold">-c</span> 43<span style="color: #41ff5b">;</span> <span style="font-weight: bold">echo</span><span style="color: #41ff5b">)</span>
-<span style="color: #FFFFFF;background-color: #231529">ADMIN_PASSWORD=$</span><span style="color: #41ff5b">(</span><span style="font-weight: bold">tr</span> <span style="color: #9f93e6;font-weight: bold">-dc</span> <span style="color: #fff0a6;font-weight: bold">&#39;A-Za-z0-9_&#39;</span> &lt;/dev/urandom | <span style="font-weight: bold">head</span> <span style="color: #9f93e6;font-weight: bold">-c</span> 14<span style="color: #41ff5b">;</span> <span style="font-weight: bold">echo</span><span style="color: #41ff5b">)</span>
-<span style="color: #FFFFFF;background-color: #231529">
-</span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>Saving new passwords to /root/freeipa_passwords.txt
-<span style="color: #FFFFFF;background-color: #231529">[ -f /root/freeipa_passwords.txt ] &amp;&amp; \
-</span><span style="color: #FFFFFF;background-color: #231529">mv /root/freeipa_passwords.txt /root/freeipa_passwords.txt.$</span><span style="color: #41ff5b">(</span><span style="font-weight: bold">date</span> +%y%m%d-%H%M%S<span style="color: #41ff5b">)</span>
-<span style="color: #FFFFFF;background-color: #231529">echo -e &#34;$</span><span style="color: #41ff5b">{</span>DM_PASSWORD<span style="color: #41ff5b">}</span><span style="color: #FAAF4C;font-weight: bold">\n</span><span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">ADMIN_PASSWORD</span><span style="color: #FFF02A;font-weight: bold">}</span><span style="color: #fff0a6;font-weight: bold">&#34; | tee /root/freeipa_passwords.txt
-</span><span style="color: #FFFFFF;background-color: #231529">
-IP_ADDRESS=&#34;192.168.100.11&#34;
+<pre># Generating new passwords
+DM_PASSWORD=$(tr -dc &#39;A-Za-z0-9!#$%&amp;()*+,-.:;&lt;=&gt;?@[]^_{}~&#39; &lt;/dev/urandom | head -c 43; echo)
+ADMIN_PASSWORD=$(tr -dc &#39;A-Za-z0-9_&#39; &lt;/dev/urandom | head -c 14; echo)
+
+# Saving new passwords to /root/freeipa_passwords.txt
+[ -f /root/freeipa_passwords.txt ] &amp;&amp; \
+mv /root/freeipa_passwords.txt /root/freeipa_passwords.txt.$(date +%y%m%d-%H%M%S)
+echo -e &#34;${DM_PASSWORD}\n${ADMIN_PASSWORD}&#34; | tee /root/freeipa_passwords.txt
+
+IP_ADDRESS=&#34;192.168.50.21&#34;
 DOMAIN_NAME=&#34;example.org&#34;
 CRT_NAME_BASE=&#34;Acme Corp&#34;
 
-</span><span style="color: #FFFFFF;background-color: #231529">SUBJECT_BASE=&#34;O=$</span><span style="color: #41ff5b">{</span>CRT_NAME_BASE<span style="color: #41ff5b">}</span><span style="color: #fff0a6;font-weight: bold">&#34;
-</span><span style="color: #FFFFFF;background-color: #231529">CA_SUBJECT=&#34;CN=$</span><span style="color: #fff0a6;font-weight: bold">{CRT_NAME_BASE} Root CA,O=</span><span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">CRT_NAME_BASE</span><span style="color: #FFF02A;font-weight: bold">}</span><span style="color: #fff0a6;font-weight: bold">&#34;</span>
-<span style="color: #FFFFFF;background-color: #231529">
+SUBJECT_BASE=&#34;O=${CRT_NAME_BASE}&#34;
+CA_SUBJECT=&#34;CN=${CRT_NAME_BASE} Root CA,O=${CRT_NAME_BASE}&#34;
+
 ipa-server-install --unattended \
-</span><span style="color: #FFFFFF;background-color: #231529">  --ds-password=$</span><span style="color: #41ff5b">{</span>DM_PASSWORD<span style="color: #41ff5b">}</span> <span style="color: #9f93e6;font-weight: bold">--admin-password</span><span style="color: #41ff5b">=</span><span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">ADMIN_PASSWORD</span><span style="color: #FFF02A;font-weight: bold">}</span> <span style="color: #FAAF4C;font-weight: bold">\</span>
-<span style="color: #FFFFFF;background-color: #231529">  --ip-address=$</span><span style="color: #41ff5b">{</span>IP_ADDRESS<span style="color: #41ff5b">}</span> <span style="color: #9f93e6;font-weight: bold">--realm</span><span style="color: #41ff5b">=</span><span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">DOMAIN_NAME</span><span style="color: #41ff5b">^^</span><span style="color: #FFF02A;font-weight: bold">}</span> <span style="color: #FAAF4C;font-weight: bold">\</span>
-<span style="color: #FFFFFF;background-color: #231529">  --setup-dns --no-forwarders --auto-reverse --allow-zone-overlap \
+  --ds-password=${DM_PASSWORD} --admin-password=${ADMIN_PASSWORD} \
+  --ip-address=${IP_ADDRESS} --realm=${DOMAIN_NAME^^} \
+  --setup-dns --no-forwarders --auto-reverse --allow-zone-overlap \
   --no-hbac-allow --mkhomedir \
-</span><span style="color: #FFFFFF;background-color: #231529">  --subject-base=&#34;$</span><span style="color: #41ff5b">{</span>SUBJECT_BASE<span style="color: #41ff5b">}</span><span style="color: #fff0a6;font-weight: bold">&#34; --ca-subject=&#34;</span><span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">CA_SUBJECT</span><span style="color: #FFF02A;font-weight: bold">}</span><span style="color: #fff0a6;font-weight: bold">&#34;</span></code></pre>
+  --subject-base=&#34;${SUBJECT_BASE}&#34; --ca-subject=&#34;${CA_SUBJECT}&#34;</pre>
 </div>
 </div>
 <details>
@@ -1398,7 +1396,7 @@ ipa-server-install --unattended \
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">The log file for this installation can be found in /var/log/ipaserver-install.log
+<pre>The log file for this installation can be found in /var/log/ipaserver-install.log
 ==============================================================================
 This program will set up the IPA Server.
 Version 4.12.1
@@ -1420,12 +1418,12 @@ Checking DNS domain example.org., please wait ...
 DNS zone example.org. already exists in DNS and is handled by server(s):
   [&#39;a.iana-servers.net.&#39;, &#39;b.iana-servers.net.&#39;]
   Please make sure that the domain is properly delegated to this IPA server.
-Reverse record for IP address 192.168.100.11 already exists
+Reverse record for IP address 192.168.50.21 already exists
 Trust is configured but no NetBIOS domain name found, setting it now.
 
 The IPA Master Server will be configured with:
 Hostname:       dev-ipa01.example.org
-IP address(es): 192.168.100.11
+IP address(es): 192.168.50.21
 Domain name:    example.org
 Realm name:     EXAMPLE.ORG
 
@@ -1691,7 +1689,7 @@ Next steps:
 Be sure to back up the CA certificates stored in /root/cacert.p12
 These files are required to create replicas. The password for these
 files is the Directory Manager password
-The ipa-server-install command was successful</span></code></pre>
+The ipa-server-install command was successful</pre>
 </div>
 </div>
 </div>
@@ -1708,15 +1706,15 @@ The ipa-server-install command was successful</span></code></pre>
 <p>Пока отсутствует DNS resolving для нового домена example.org, добавьте на свою рабочую машину в файл <code>/etc/hosts</code> запись для FreeIPA-сервера:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">echo &#34;192.168.100.11 dev-ipa1.example.org&#34; &gt;</span><span style="color: #41ff5b">&gt;</span> /etc/hosts</code></pre>
+<pre>echo &#34;192.168.50.21 dev-ipa01.example.org&#34; &gt;&gt; /etc/hosts</pre>
 </div>
 </div>
 </li>
 <li>
-<p>Теперь откройте WEB UI страницу FreeIPA-сервера по адресу &#39;https://dev-ipa1.example.org&#39; и зайдите в консоль управления под учётными данными аккаунта &#39;admin&#39;:</p>
+<p>Теперь откройте WEB UI страницу FreeIPA-сервера по адресу &#39;https://dev-ipa01.example.org&#39; и зайдите в консоль управления под учётными данными аккаунта &#39;admin&#39;:</p>
 <div class="imageblock">
 <div class="content">
-<img src="image05.png" alt="image05"/>
+<img src="/img/aaa/freeipa/installing-and-setup-freeipa/10-install-first-replica-of-freeipa/image05.png" alt="image05"/>
 </div>
 </div>
 </li>
@@ -1724,7 +1722,7 @@ The ipa-server-install command was successful</span></code></pre>
 <p>Если необходимо добавить CA-сертификат нового домена example.org в &#34;надёжные&#34; своего web-браузера, то сам CA-сертификат скачайте здесь под первым серийным номером:</p>
 <div class="imageblock">
 <div class="content">
-<img src="image06.png" alt="image06"/>
+<img src="/img/aaa/freeipa/installing-and-setup-freeipa/10-install-first-replica-of-freeipa/image06.png" alt="image06"/>
 </div>
 </div>
 </li>
@@ -1743,13 +1741,16 @@ The ipa-server-install command was successful</span></code></pre>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Пароль аккаунта &#39;cn=Directory Manager&#39;. Находится в первой строке файла <code>/root/freeipa_passwords.txt</code>.</p>
+<p>Пароль аккаунта &#39;cn=Directory Manager&#39;.
+Находится в первой строке файла <code>/root/freeipa_passwords.txt</code>.</p>
 </li>
 <li>
-<p>Пароль аккаунта &#39;uid=admin,cn=users,cn=accounts,dc=test3,dc=lan&#39;. Находится в второй строке файла <code>/root/freeipa_passwords.txt</code>.</p>
+<p>Пароль аккаунта &#39;uid=admin,cn=users,cn=accounts,dc=example,dc=org&#39;.
+Находится в второй строке файла <code>/root/freeipa_passwords.txt</code>.</p>
 </li>
 <li>
-<p>Файл <code>/root/cacert.p12</code> с приватным ключом и сертификатом от Центра Сертификации. Файл зашифрован на основе пароля от &#39;cn=Directory Manager.</p>
+<p>Файл <code>/root/cacert.p12</code> с приватным ключом и сертификатом от Центра Сертификации.
+Файл зашифрован на основе пароля от &#39;cn=Directory Manager.</p>
 </li>
 </ol>
 </div>
@@ -1758,31 +1759,31 @@ The ipa-server-install command was successful</span></code></pre>
 <p>Перед удалением файла <code>/root/freeipa_passwords.txt</code>, проверяем корректность сохранённых паролей путём их ввода в ответ на запрос пароля следующих двух команд:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">kdestroy &amp;&amp; kinit admin
+<pre>kdestroy &amp;&amp; kinit admin
 Password for admin@EXAMPLE.ORG: *********
 
 Ticket cache: KCM:0
 Default principal: admin@EXAMPLE.ORG
 
 Valid starting       Expires              Service principal
-08/03/2024 23:15:35  08/04/2024 23:13:39  krbtgt/EXAMPLE.ORG@EXAMPLE.ORG</span></code></pre>
+08/03/2024 23:15:35  08/04/2024 23:13:39  krbtgt/EXAMPLE.ORG@EXAMPLE.ORG</pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">ldapsearch -D &#39;cn=Directory Manager&#39; -W | head
+<pre>ldapsearch -D &#39;cn=Directory Manager&#39; -W | head
 Enter LDAP Password: *********
 
-</span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>extended LDIF
-<span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB">
-</span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>LDAPv3
-<span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>base &lt;<span style="color: #41ff5b;font-weight: bold">dc</span><span style="color: #41ff5b">=</span>example,dc<span style="color: #41ff5b">=</span>org&gt; <span style="color: #41ff5b">(</span>default<span style="color: #41ff5b">)</span> with scope subtree
-<span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>filter: <span style="color: #41ff5b">(</span><span style="color: #41ff5b;font-weight: bold">objectclass</span><span style="color: #41ff5b">=</span><span style="color: #FFF02A;font-weight: bold">*</span><span style="color: #41ff5b">)</span>
-<span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>requesting: ALL
-<span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB">
-</span><span style="color: #FFFFFF;background-color: #231529">
-</span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>example.org
-<span style="color: #FFFFFF;background-color: #231529">dn: dc=example,dc=org</span></code></pre>
+# extended LDIF
+#
+# LDAPv3
+# base &lt;dc=example,dc=org&gt; (default) with scope subtree
+# filter: (objectclass=*)
+# requesting: ALL
+#
+
+# example.org
+dn: dc=example,dc=org</pre>
 </div>
 </div>
 </li>
@@ -1790,12 +1791,40 @@ Enter LDAP Password: *********
 <p>Сохранив и проверив пароли для УЗ &#39;cn=Directory Manager&#39; и &#39;uid=admin&#39; в надёжном месте, удаляем файл <code>/root/freeipa_passwords.txt</code>:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">shred -u /root/freeipa_passwords.txt</span></code></pre>
+<pre>shred -u /root/freeipa_passwords.txt</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Напомню, что безопасное удаление с помощью утилиты &#39;shred&#39; может быть обратимо, например, на журналируемых файловых системах. Поэтому в некоторых случаях необходимо переработать данный сценарий установки FreeIPA-сервера, где пароли бы не сохранялись в файл на жёсткий диск.</p>
+<p>Напомню, что безопасное удаление с помощью утилиты &#39;shred&#39; может быть обратимо, например, на журналируемых файловых системах.
+Поэтому в некоторых случаях необходимо переработать данный сценарий установки FreeIPA-сервера, где пароли бы не сохранялись в файл на жёсткий диск.</p>
 </div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_проверка_корректности_установки_первой_реплики_freeipa">4. Проверка корректности установки первой реплики FreeIPA</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Запустите <code>ipa-healthcheck</code>:</p>
+<div class="listingblock">
+<div class="content">
+<pre>ipa-healthcheck --output-type=human</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">stdout:</div>
+<div class="content">
+<pre>config file /etc/ipahealthcheck/ipahealthcheck.conf does not exist, using defaults
+No issues found.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Все проверки пройдены успешно.</p>
 </li>
 </ol>
 </div>

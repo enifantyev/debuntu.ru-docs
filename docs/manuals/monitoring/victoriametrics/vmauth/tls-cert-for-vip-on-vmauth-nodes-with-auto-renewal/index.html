@@ -17,30 +17,50 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Debuntarium</title>
-<meta name="description" content=" Отключение анонимного доступа к LDAP-каталогу Процедура выполняется на каждом сервере FreeIPA-реплике, так как изменения производятся в нереплицируемой части LDAP-каталога &#39;cn=config&#39;.
-Выполните из командной строки:
-IPAREPLICA=$(hostname) set &#43;o history DM_PASSWORD=&#39;&lt;Password of Directory Manager is here&gt;&#39; set -o history ldapmodify -x -D &#34;cn=Directory Manager&#34; -w ${DM_PASSWORD} -h ${IPAREPLICA} -Z &lt;&lt; EOF dn: cn=config changetype: modify replace: nsslapd-allow-anonymous-access nsslapd-allow-anonymous-access: rootdse EOF ipactl restart ">
-<meta property="og:url" content="https://debuntu.ru/manuals/freeipa/installing-and-setup-freeipa/common/ldap-disabling-anonymous-access-to-directory/">
+<title>Пример организации получения TLS-сертификата для Virtual IP (VIP) на vmauth-узлах с автообновлением | Debuntarium</title>
+<meta name="description" content=" 1. Добавление записей в DNS для «основного» доменного имени 1.1. Добавление записей для Virtual IP Добавьте в DNS-зону A-запись для нового Virtual IP с понятным именем.
+Для двух узлов is1-mon-vmauth0[1-2]p выбрано имя is1-mon-vmauth-vip.
+Добавьте в DNS-зону TXT-запись с датой, своим логином, кратким описанием цели создания этого IP, заключёнными в кавычки. &#34;250304. dmr. VIP for is1-mon-vmauth.&#34;
+Добавьте в DNS-зону PTR-запись, соответствующую ранее добавленной A-записи.
+1.2. Результат В результате этих действий упрощается отладка. При распознавании is1-vmauth.example.org получим исчерпывающий ответ:
+# host c-mon-vmauth-vip.example.org is1-mon-vmauth-vip.example.org has address 10.0.77.120 # dig TXT is1-mon-vmauth-vip.example.org &#43;short &#34;250130. dmr. VIP for is1-mon-vmauth.&#34; ">
+<meta property="og:url" content="https://debuntu.ru/manuals/monitoring/victoriametrics/vmauth/tls-cert-for-vip-on-vmauth-nodes-with-auto-renewal/">
   <meta property="og:site_name" content="Debuntarium">
-  <meta property="og:title" content="Debuntarium">
-  <meta property="og:description" content="Отключение анонимного доступа к LDAP-каталогу Процедура выполняется на каждом сервере FreeIPA-реплике, так как изменения производятся в нереплицируемой части LDAP-каталога &#39;cn=config&#39;.
-Выполните из командной строки:
-IPAREPLICA=$(hostname) set &#43;o history DM_PASSWORD=&#39;&lt;Password of Directory Manager is here&gt;&#39; set -o history ldapmodify -x -D &#34;cn=Directory Manager&#34; -w ${DM_PASSWORD} -h ${IPAREPLICA} -Z &lt;&lt; EOF dn: cn=config changetype: modify replace: nsslapd-allow-anonymous-access nsslapd-allow-anonymous-access: rootdse EOF ipactl restart">
+  <meta property="og:title" content="Пример организации получения TLS-сертификата для Virtual IP (VIP) на vmauth-узлах с автообновлением">
+  <meta property="og:description" content="1. Добавление записей в DNS для «основного» доменного имени 1.1. Добавление записей для Virtual IP Добавьте в DNS-зону A-запись для нового Virtual IP с понятным именем.
+Для двух узлов is1-mon-vmauth0[1-2]p выбрано имя is1-mon-vmauth-vip.
+Добавьте в DNS-зону TXT-запись с датой, своим логином, кратким описанием цели создания этого IP, заключёнными в кавычки. &#34;250304. dmr. VIP for is1-mon-vmauth.&#34;
+Добавьте в DNS-зону PTR-запись, соответствующую ранее добавленной A-записи.
+1.2. Результат В результате этих действий упрощается отладка. При распознавании is1-vmauth.example.org получим исчерпывающий ответ:
+# host c-mon-vmauth-vip.example.org is1-mon-vmauth-vip.example.org has address 10.0.77.120 # dig TXT is1-mon-vmauth-vip.example.org &#43;short &#34;250130. dmr. VIP for is1-mon-vmauth.&#34;">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:type" content="article">
     <meta property="article:section" content="manuals">
+    <meta property="article:published_time" content="2025-03-04T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-03-04T00:00:00+00:00">
+    <meta property="article:tag" content="VictoriaMetrics">
+    <meta property="article:tag" content="Vmauth">
+    <meta property="article:tag" content="FreeIPA">
 
-  <meta itemprop="name" content="Debuntarium">
-  <meta itemprop="description" content="Отключение анонимного доступа к LDAP-каталогу Процедура выполняется на каждом сервере FreeIPA-реплике, так как изменения производятся в нереплицируемой части LDAP-каталога &#39;cn=config&#39;.
-Выполните из командной строки:
-IPAREPLICA=$(hostname) set &#43;o history DM_PASSWORD=&#39;&lt;Password of Directory Manager is here&gt;&#39; set -o history ldapmodify -x -D &#34;cn=Directory Manager&#34; -w ${DM_PASSWORD} -h ${IPAREPLICA} -Z &lt;&lt; EOF dn: cn=config changetype: modify replace: nsslapd-allow-anonymous-access nsslapd-allow-anonymous-access: rootdse EOF ipactl restart">
-  <meta itemprop="wordCount" content="60">
+  <meta itemprop="name" content="Пример организации получения TLS-сертификата для Virtual IP (VIP) на vmauth-узлах с автообновлением">
+  <meta itemprop="description" content="1. Добавление записей в DNS для «основного» доменного имени 1.1. Добавление записей для Virtual IP Добавьте в DNS-зону A-запись для нового Virtual IP с понятным именем.
+Для двух узлов is1-mon-vmauth0[1-2]p выбрано имя is1-mon-vmauth-vip.
+Добавьте в DNS-зону TXT-запись с датой, своим логином, кратким описанием цели создания этого IP, заключёнными в кавычки. &#34;250304. dmr. VIP for is1-mon-vmauth.&#34;
+Добавьте в DNS-зону PTR-запись, соответствующую ранее добавленной A-записи.
+1.2. Результат В результате этих действий упрощается отладка. При распознавании is1-vmauth.example.org получим исчерпывающий ответ:
+# host c-mon-vmauth-vip.example.org is1-mon-vmauth-vip.example.org has address 10.0.77.120 # dig TXT is1-mon-vmauth-vip.example.org &#43;short &#34;250130. dmr. VIP for is1-mon-vmauth.&#34;">
+  <meta itemprop="datePublished" content="2025-03-04T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-03-04T00:00:00+00:00">
+  <meta itemprop="wordCount" content="508">
+  <meta itemprop="keywords" content="VictoriaMetrics,Vmauth,FreeIPA">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Debuntarium">
-  <meta name="twitter:description" content="Отключение анонимного доступа к LDAP-каталогу Процедура выполняется на каждом сервере FreeIPA-реплике, так как изменения производятся в нереплицируемой части LDAP-каталога &#39;cn=config&#39;.
-Выполните из командной строки:
-IPAREPLICA=$(hostname) set &#43;o history DM_PASSWORD=&#39;&lt;Password of Directory Manager is here&gt;&#39; set -o history ldapmodify -x -D &#34;cn=Directory Manager&#34; -w ${DM_PASSWORD} -h ${IPAREPLICA} -Z &lt;&lt; EOF dn: cn=config changetype: modify replace: nsslapd-allow-anonymous-access nsslapd-allow-anonymous-access: rootdse EOF ipactl restart">
+  <meta name="twitter:title" content="Пример организации получения TLS-сертификата для Virtual IP (VIP) на vmauth-узлах с автообновлением">
+  <meta name="twitter:description" content="1. Добавление записей в DNS для «основного» доменного имени 1.1. Добавление записей для Virtual IP Добавьте в DNS-зону A-запись для нового Virtual IP с понятным именем.
+Для двух узлов is1-mon-vmauth0[1-2]p выбрано имя is1-mon-vmauth-vip.
+Добавьте в DNS-зону TXT-запись с датой, своим логином, кратким описанием цели создания этого IP, заключёнными в кавычки. &#34;250304. dmr. VIP for is1-mon-vmauth.&#34;
+Добавьте в DNS-зону PTR-запись, соответствующую ранее добавленной A-записи.
+1.2. Результат В результате этих действий упрощается отладка. При распознавании is1-vmauth.example.org получим исчерпывающий ответ:
+# host c-mon-vmauth-vip.example.org is1-mon-vmauth-vip.example.org has address 10.0.77.120 # dig TXT is1-mon-vmauth-vip.example.org &#43;short &#34;250130. dmr. VIP for is1-mon-vmauth.&#34;">
 
 
 
@@ -93,13 +113,13 @@ if (!doNotTrack) {
   <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link active" href="/manuals/freeipa/"><span>FreeIPA</span></a>
+        <a class="nav-link" href="/manuals/freeipa/"><span>FreeIPA</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/manuals/kubernetes/"><span>Kubernetes</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/manuals/monitoring/"><span>Monitoring</span></a>
+        <a class="nav-link active" href="/manuals/monitoring/"><span>Monitoring</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/manuals/vpn/"><span>VPN</span></a>
@@ -198,13 +218,13 @@ if (window.location.pathname !== "/") {
   <script>
     $(function() {
     $("#td-section-nav a").removeClass("active");
-    $("#td-section-nav #m-manualsfreeipainstalling-and-setup-freeipacommonldap-disabling-anonymous-access-to-directory").addClass("active"); 
-    $("#td-section-nav #m-manualsfreeipainstalling-and-setup-freeipacommonldap-disabling-anonymous-access-to-directory-li span").addClass("td-sidebar-nav-active-item"); 
-    $("#td-section-nav #m-manualsfreeipainstalling-and-setup-freeipacommonldap-disabling-anonymous-access-to-directory").parents("li").addClass("active-path"); 
+    $("#td-section-nav #m-manualsmonitoringvictoriametricsvmauthtls-cert-for-vip-on-vmauth-nodes-with-auto-renewal").addClass("active"); 
+    $("#td-section-nav #m-manualsmonitoringvictoriametricsvmauthtls-cert-for-vip-on-vmauth-nodes-with-auto-renewal-li span").addClass("td-sidebar-nav-active-item"); 
+    $("#td-section-nav #m-manualsmonitoringvictoriametricsvmauthtls-cert-for-vip-on-vmauth-nodes-with-auto-renewal").parents("li").addClass("active-path"); 
     $("#td-section-nav li.active-path").addClass("show"); 
     $("#td-section-nav li.active-path").children("input").prop('checked', true);
-    $("#td-section-nav #m-manualsfreeipainstalling-and-setup-freeipacommonldap-disabling-anonymous-access-to-directory-li").siblings("li").addClass("show");  
-    $("#td-section-nav #m-manualsfreeipainstalling-and-setup-freeipacommonldap-disabling-anonymous-access-to-directory-li").children("ul").children("li").addClass("show");  
+    $("#td-section-nav #m-manualsmonitoringvictoriametricsvmauthtls-cert-for-vip-on-vmauth-nodes-with-auto-renewal-li").siblings("li").addClass("show");  
+    $("#td-section-nav #m-manualsmonitoringvictoriametricsvmauthtls-cert-for-vip-on-vmauth-nodes-with-auto-renewal-li").children("ul").children("li").addClass("show");  
     $("#td-sidebar-menu").toggleClass("d-none"); 
     });
   </script>
@@ -529,18 +549,6 @@ if (window.location.pathname !== "/") {
   <input type="checkbox" id="m-manualsfreeipainstalling-and-setup-freeipaadding-additional-freeipa-replicas-check"/>
   <label for="m-manualsfreeipainstalling-and-setup-freeipaadding-additional-freeipa-replicas-check"><a href="/manuals/freeipa/installing-and-setup-freeipa/adding-additional-freeipa-replicas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsfreeipainstalling-and-setup-freeipaadding-additional-freeipa-replicas"><span class="">Добавление дополнительных реплик FreeIPA</span></a></label>
   
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsfreeipainstalling-and-setup-freeipacommon10-podgotovka-hosta-li">
-  <input type="checkbox" id="m-manualsfreeipainstalling-and-setup-freeipacommon10-podgotovka-hosta-check"/>
-  <label for="m-manualsfreeipainstalling-and-setup-freeipacommon10-podgotovka-hosta-check"><a href="/manuals/freeipa/installing-and-setup-freeipa/common/10-podgotovka-hosta/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsfreeipainstalling-and-setup-freeipacommon10-podgotovka-hosta"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsfreeipainstalling-and-setup-freeipacommondisabling-dnssec-validation-li">
-  <input type="checkbox" id="m-manualsfreeipainstalling-and-setup-freeipacommondisabling-dnssec-validation-check"/>
-  <label for="m-manualsfreeipainstalling-and-setup-freeipacommondisabling-dnssec-validation-check"><a href="/manuals/freeipa/installing-and-setup-freeipa/common/disabling-dnssec-validation/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsfreeipainstalling-and-setup-freeipacommondisabling-dnssec-validation"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsfreeipainstalling-and-setup-freeipacommonldap-disabling-anonymous-access-to-directory-li">
-  <input type="checkbox" id="m-manualsfreeipainstalling-and-setup-freeipacommonldap-disabling-anonymous-access-to-directory-check"/>
-  <label for="m-manualsfreeipainstalling-and-setup-freeipacommonldap-disabling-anonymous-access-to-directory-check"><a href="/manuals/freeipa/installing-and-setup-freeipa/common/ldap-disabling-anonymous-access-to-directory/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsfreeipainstalling-and-setup-freeipacommonldap-disabling-anonymous-access-to-directory"><span class=""></span></a></label>
-  
 </li>
   </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsfreeipacheckipaconsistency-utilita-dlya-opredeleniya-rassinhronizacii-replik-freeipa-li">
@@ -799,6 +807,17 @@ if (window.location.pathname !== "/") {
   </ul>
 </li>
   </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsmonitoringvictoriametricsvmauth-li">
+  <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmauth-check"/>
+  <label for="m-manualsmonitoringvictoriametricsvmauth-check"><a href="/manuals/monitoring/victoriametrics/vmauth/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoringvictoriametricsvmauth"><span class="">VMAuth</span></a></label>
+  
+  <ul class="ul-4 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvmauthtls-cert-for-vip-on-vmauth-nodes-with-auto-renewal-li">
+  <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmauthtls-cert-for-vip-on-vmauth-nodes-with-auto-renewal-check"/>
+  <label for="m-manualsmonitoringvictoriametricsvmauthtls-cert-for-vip-on-vmauth-nodes-with-auto-renewal-check"><a href="/manuals/monitoring/victoriametrics/vmauth/tls-cert-for-vip-on-vmauth-nodes-with-auto-renewal/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsvmauthtls-cert-for-vip-on-vmauth-nodes-with-auto-renewal"><span class="">Пример организации получения TLS-сертификата для Virtual IP (VIP) на vmauth-узлах с автообновлением</span></a></label>
+  
+</li>
+  </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvictoriametrics-what-you-should-avoid-li">
   <input type="checkbox" id="m-manualsmonitoringvictoriametricsvictoriametrics-what-you-should-avoid-check"/>
   <label for="m-manualsmonitoringvictoriametricsvictoriametrics-what-you-should-avoid-check"><a href="/manuals/monitoring/victoriametrics/victoriametrics-what-you-should-avoid/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsvictoriametrics-what-you-should-avoid"><span class="">VictoriaMetrics. Чего надо избегать</span></a></label>
@@ -818,10 +837,6 @@ if (window.location.pathname !== "/") {
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options-li">
   <input type="checkbox" id="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options-check"/>
   <label for="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options-check"><a href="/manuals/monitoring/victoriametrics/victoriametrics-vminsert-options/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options"><span class="">VictoriaMetrics. vminsert options</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvmauth-li">
-  <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmauth-check"/>
-  <label for="m-manualsmonitoringvictoriametricsvmauth-check"><a href="/manuals/monitoring/victoriametrics/vmauth/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoringvictoriametricsvmauth"><span class="">VMAuth</span></a></label>
   
 </li>
   </ul>
@@ -880,7 +895,31 @@ if (window.location.pathname !== "/") {
 
 </div>
 
-            
+            <div class="td-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#_добавление_записей_в_dns_для_основного_доменного_имени">1. Добавление записей в DNS для «основного» доменного имени</a>
+      <ul>
+        <li><a href="#_добавление_записей_для_virtual_ip">1.1. Добавление записей для Virtual IP</a></li>
+        <li><a href="#_результат">1.2. Результат</a></li>
+      </ul>
+    </li>
+    <li><a href="#_добавление_host_для_virtual_ip_во_freeipa">2. Добавление «host» для Virtual IP во FreeIPA</a>
+      <ul>
+        <li><a href="#_создание_узла">2.1. Создание «Узла»</a></li>
+      </ul>
+    </li>
+    <li><a href="#_запрос_tls_сертификата_для_основного_dns_имени_virtual_ip">3. Запрос TLS-сертификата для основного dns-имени Virtual IP</a>
+      <ul>
+        <li><a href="#_переменные_для_скриптов_и_запроса_сертификата">3.1. Переменные для скриптов и запроса сертификата</a></li>
+        <li><a href="#_скрипты_для_автовыполнения_перед_и_после_получения_сертификата">3.2. Скрипты для автовыполнения перед и после получения сертификата</a></li>
+        <li><a href="#_запрос_tls_сертификата_для_основного_vip_имени">3.3. Запрос TLS-сертификата для основного VIP-имени</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    
             <div class="taxonomy taxonomy-terms-cloud taxo-categories">
       <h5 class="taxonomy-title">Categories</h5>
       <ul class="taxonomy-terms">
@@ -957,7 +996,7 @@ if (window.location.pathname !== "/") {
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/encfs/" data-taxonomy-term="encfs"><span class="taxonomy-label">EncFS</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/filesystem/" data-taxonomy-term="filesystem"><span class="taxonomy-label">FileSystem</span><span class="taxonomy-count">6</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/freebsd/" data-taxonomy-term="freebsd"><span class="taxonomy-label">FreeBSD</span><span class="taxonomy-count">2</span></a></li>
-        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/freeipa/" data-taxonomy-term="freeipa"><span class="taxonomy-label">FreeIPA</span><span class="taxonomy-count">24</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/freeipa/" data-taxonomy-term="freeipa"><span class="taxonomy-label">FreeIPA</span><span class="taxonomy-count">25</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/freeipa-4.9.6/" data-taxonomy-term="freeipa-4.9.6"><span class="taxonomy-label">FreeIPA 4.9.6</span><span class="taxonomy-count">4</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/gnu-screen/" data-taxonomy-term="gnu-screen"><span class="taxonomy-label">GNU Screen</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/groupware/" data-taxonomy-term="groupware"><span class="taxonomy-label">Groupware</span><span class="taxonomy-count">1</span></a></li>
@@ -1049,13 +1088,13 @@ if (window.location.pathname !== "/") {
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/venv/" data-taxonomy-term="venv"><span class="taxonomy-label">Venv</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vertica/" data-taxonomy-term="vertica"><span class="taxonomy-label">Vertica</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vfs/" data-taxonomy-term="vfs"><span class="taxonomy-label">VFS</span><span class="taxonomy-count">2</span></a></li>
-        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/victoriametrics/" data-taxonomy-term="victoriametrics"><span class="taxonomy-label">VictoriaMetrics</span><span class="taxonomy-count">16</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/victoriametrics/" data-taxonomy-term="victoriametrics"><span class="taxonomy-label">VictoriaMetrics</span><span class="taxonomy-count">17</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/victoriametrics-cluster/" data-taxonomy-term="victoriametrics-cluster"><span class="taxonomy-label">VictoriaMetrics Cluster</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/virtualization/" data-taxonomy-term="virtualization"><span class="taxonomy-label">Virtualization</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/visual-studio-code/" data-taxonomy-term="visual-studio-code"><span class="taxonomy-label">Visual Studio Code</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmagent/" data-taxonomy-term="vmagent"><span class="taxonomy-label">Vmagent</span><span class="taxonomy-count">14</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmalert/" data-taxonomy-term="vmalert"><span class="taxonomy-label">Vmalert</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmauth/" data-taxonomy-term="vmauth"><span class="taxonomy-label">Vmauth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmauth/" data-taxonomy-term="vmauth"><span class="taxonomy-label">Vmauth</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vminsert/" data-taxonomy-term="vminsert"><span class="taxonomy-label">Vminsert</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmselect/" data-taxonomy-term="vmselect"><span class="taxonomy-label">Vmselect</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmstorage/" data-taxonomy-term="vmstorage"><span class="taxonomy-label">Vmstorage</span><span class="taxonomy-count">2</span></a></li>
@@ -1081,49 +1120,244 @@ if (window.location.pathname !== "/") {
   <li class="breadcrumb-item">
     <a href="/manuals/">Документация</a></li>
   <li class="breadcrumb-item">
-    <a href="/manuals/freeipa/">FreeIPA</a></li>
+    <a href="/manuals/monitoring/">Monitoring</a></li>
   <li class="breadcrumb-item">
-    <a href="/manuals/freeipa/installing-and-setup-freeipa/">Installing and configuring FreeIPA</a></li>
+    <a href="/manuals/monitoring/victoriametrics/">VictoriaMetrics</a></li>
+  <li class="breadcrumb-item">
+    <a href="/manuals/monitoring/victoriametrics/vmauth/">VMAuth</a></li>
   <li class="breadcrumb-item active" aria-current="page">
-    </li>
+    Пример организации получения TLS-сертификата для Virtual IP (VIP) на vmauth-узлах с автообновлением</li>
   </ol>
 </nav>
             
 <div class="td-content">
-	<h1></h1>
+	<h1>Пример организации получения TLS-сертификата для Virtual IP (VIP) на vmauth-узлах с автообновлением</h1>
 	
 	<header class="article-meta">
-		
+		<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://debuntu.ru/tags/victoriametrics/" data-taxonomy-term="victoriametrics"><span class="taxonomy-label">VictoriaMetrics</span></a></li>
+    <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmauth/" data-taxonomy-term="vmauth"><span class="taxonomy-label">Vmauth</span></a></li>
+    <li><a class="taxonomy-term" href="https://debuntu.ru/tags/freeipa/" data-taxonomy-term="freeipa"><span class="taxonomy-label">FreeIPA</span></a></li>
+    </ul>
+</div>
+
 </header>
-	<div class="sect1">
-<h2 id="_отключение_анонимного_доступа_к_ldap_каталогу">Отключение анонимного доступа к LDAP-каталогу</h2>
+	
+<div class="sect1">
+<h2 id="_добавление_записей_в_dns_для_основного_доменного_имени">1. Добавление записей в DNS для «основного» доменного имени</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_добавление_записей_для_virtual_ip">1.1. Добавление записей для Virtual IP</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Процедура выполняется на каждом сервере FreeIPA-реплике, так как изменения производятся в нереплицируемой части LDAP-каталога &#39;cn=config&#39;.</p>
+<p>Добавьте в DNS-зону A-запись для нового Virtual IP с понятным именем.</p>
 </li>
 <li>
-<p>Выполните из командной строки:</p>
+<p>Для двух узлов is1-mon-vmauth0[1-2]p выбрано имя is1-mon-vmauth-vip.</p>
+</li>
+<li>
+<p>Добавьте в DNS-зону TXT-запись с датой, своим логином, кратким описанием цели создания этого IP, заключёнными в кавычки.
+&#34;250304. dmr. VIP for is1-mon-vmauth.&#34;</p>
+</li>
+<li>
+<p>Добавьте в DNS-зону PTR-запись, соответствующую ранее добавленной A-записи.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_результат">1.2. Результат</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>В результате этих действий упрощается отладка. При распознавании is1-vmauth.example.org получим исчерпывающий ответ:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">IPAREPLICA=$</span><span style="color: #41ff5b">(</span><span style="font-weight: bold">hostname</span><span style="color: #41ff5b">)</span>
-<span style="color: #FFFFFF;background-color: #231529">set +o history
-</span><span style="color: #FFFFFF;background-color: #231529">DM_PASSWORD=&#39;&lt;Password of Directory Manager is here&gt;</span><span style="color: #fff0a6;font-weight: bold">&#39;
-</span><span style="color: #FFFFFF;background-color: #231529">set -o history
+<pre># host c-mon-vmauth-vip.example.org
+is1-mon-vmauth-vip.example.org has address 10.0.77.120
 
-</span><span style="color: #FFFFFF;background-color: #231529">ldapmodify -x -D &#34;cn=Directory Manager&#34; -w $</span><span style="color: #41ff5b">{</span>DM_PASSWORD<span style="color: #41ff5b">}</span> <span style="color: #9f93e6;font-weight: bold">-h</span> <span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">IPAREPLICA</span><span style="color: #FFF02A;font-weight: bold">}</span> <span style="color: #9f93e6;font-weight: bold">-Z</span> <span style="color: #41ff5b">&lt;&lt;</span> <span style="color: #FAAF4C;font-weight: bold">EOF</span><span style="color: #fff0a6;font-weight: bold">
-</span><span style="color: #FFFFFF;background-color: #231529">dn: cn=config
-changetype: modify
-replace: nsslapd-allow-anonymous-access
-nsslapd-allow-anonymous-access: rootdse
-EOF
-
-ipactl restart</span></code></pre>
+# dig TXT is1-mon-vmauth-vip.example.org +short
+&#34;250130. dmr. VIP for is1-mon-vmauth.&#34;</pre>
 </div>
 </div>
 </li>
 </ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_добавление_host_для_virtual_ip_во_freeipa">2. Добавление «host» для Virtual IP во FreeIPA</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_создание_узла">2.1. Создание «Узла»</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Добавьте во FreeIPA, в разделе «Hosts», узел для VIP с именем, как у ранее добавленной в DNS A-записи.</p>
+<div class="paragraph">
+<p>is1-mon-vmauth-vip.example.org</p>
+</div>
+</li>
+<li>
+<p>Добавьте к «узлу» в поле «Описание» краткое описание цели создания узла. Например:</p>
+<div class="paragraph">
+<p><code>250304. nifantev. Для выпуска TLS-сертификата под vmauth в новом VictoriaMetrics-кластере. Так как Kerberos не нужен, то вместо создания «сервиса» было выбрано создание «узла».</code></p>
+</div>
+</li>
+<li>
+<p>Добавьте к созданному «узлу» is1-mon-vmauth-vip.example.org два реальных узла is1-mon-vmauth0[1-2]p.example.org , между которыми будет мигрировать VIP.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_запрос_tls_сертификата_для_основного_dns_имени_virtual_ip">3. Запрос TLS-сертификата для основного dns-имени Virtual IP</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_переменные_для_скриптов_и_запроса_сертификата">3.1. Переменные для скриптов и запроса сертификата</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Задайте общие переменные. В большинстве случаев ничего менять не требуется:</p>
+<div class="listingblock">
+<div class="content">
+<pre>REQUEST_SHORT_NAME=&#39;vip&#39;
+TLS_DIR=&#34;/etc/pki/tls&#34;
+
+TLS_KEY_FILE=&#34;${TLS_DIR}/private/${REQUEST_SHORT_NAME}.key&#34;
+TLS_CERT_FILE=&#34;${TLS_DIR}/certs/${REQUEST_SHORT_NAME}.crt&#34;
+
+SCRIPT_DIR=&#34;/usr/local/lib/certmonger&#34;
+SCRIPT_BEFORE=&#34;${REQUEST_SHORT_NAME}-before-savecert&#34;
+SCRIPT_AFTER=&#34;${REQUEST_SHORT_NAME}-after-savecert&#34;
+FULL_SCRIPT_BEFORE=${SCRIPT_DIR}/${SCRIPT_BEFORE}
+FULL_SCRIPT_AFTER=${SCRIPT_DIR}/${SCRIPT_AFTER}</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_скрипты_для_автовыполнения_перед_и_после_получения_сертификата">3.2. Скрипты для автовыполнения перед и после получения сертификата</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Выполните этот сценарий для создания двух скриптов, которые выполняются перед и после получения нового сертификата:</p>
+<div class="listingblock">
+<div class="content">
+<pre>mkdir -p ${SCRIPT_DIR}
+
+cat &lt;&lt; EOF &gt; ${FULL_SCRIPT_BEFORE}
+#!/bin/bash
+set +e
+set -ux
+echo &#34;The script ${SCRIPT_BEFORE} is launching...&#34;
+KEY=&#34;${TLS_KEY_FILE}&#34;
+CERT=&#34;${TLS_CERT_FILE}&#34;
+
+# Your commands is here!
+cp \${KEY} &#34;\${KEY}-\$(date +%y%m%d-%H%M%S).bak&#34;
+cp \${CERT} &#34;\${CERT}-\$(date +%y%m%d-%H%M%S).bak&#34;
+
+# End of script
+echo &#34;The script ${SCRIPT_BEFORE} has finished.&#34;
+EOF
+
+cat &lt;&lt; EOF &gt; ${FULL_SCRIPT_AFTER}
+#!/bin/bash
+# На сгенерированный ключ имеет права только root,
+# поэтому с помощью setfacl необходимо добавить право чтения
+# учётной записи, под которой работает сервис.
+
+set +e
+set -ux
+echo &#34;The script ${SCRIPT_AFTER} is launching...&#34;
+KEY=&#34;${TLS_KEY_FILE}&#34;
+CERT=&#34;${TLS_CERT_FILE}&#34;
+
+# Example for airflow
+#echo &#34;airflow...&#34;
+#/usr/bin/setfacl -m &#34;u:airflow:r&#34; \$KEY
+#/usr/bin/systemctl restart airflow-webserver
+
+# Example for nginx
+#echo &#34;nginx...&#34;
+#/usr/bin/setfacl -m &#34;u:nginx:r&#34; \$KEY
+#systemctl reload nginx
+
+# Your commands is here!
+/usr/bin/setfacl -m &#34;u:vmauth:r&#34; \$KEY
+systemctl restart vmauth
+
+# End of script
+echo &#34;The script ${SCRIPT_AFTER} has finished.&#34;
+EOF
+
+FILES_PATH=&#34;${SCRIPT_DIR}/${REQUEST_SHORT_NAME}-*&#34;
+chmod 700 ${FILES_PATH}
+chown root:root ${FILES_PATH}</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_запрос_tls_сертификата_для_основного_vip_имени">3.3. Запрос TLS-сертификата для основного VIP-имени</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Выполните запрос для основного имени заданного в переменной <code>VIP_HOSTNAME</code>:</p>
+<div class="listingblock">
+<div class="content">
+<pre>VIP_HOSTNAME=&#39;isbi-mon-vmauth-vip.data.corp&#39;
+
+ipa-getcert request \
+ -I ${REQUEST_SHORT_NAME} \
+ --subject-name CN=${VIP_HOSTNAME} \
+ --principal host/${VIP_HOSTNAME} \
+ --keyfile &#34;${TLS_KEY_FILE}&#34; \
+ --certfile &#34;${TLS_CERT_FILE}&#34; \
+ --before-command=&#34;/bin/bash -c \&#34;${FULL_SCRIPT_BEFORE} 2&gt;&amp;1 | /usr/bin/logger -t CERTMONGER\&#34;&#34; \
+ --after-command=&#34;/bin/bash -c \&#34;${FULL_SCRIPT_AFTER} 2&gt;&amp;1 | /usr/bin/logger -t CERTMONGER\&#34;&#34; \
+ --key-owner root --key-perms 0600 \
+ --cert-owner root --cert-perms 0644 \
+ -w</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Number of certificates and requests being tracked: 1.
+Request ID &#39;vip&#39;:
+        status: MONITORING
+        stuck: no
+        key pair storage: type=FILE,location=&#39;/etc/pki/tls/private/vip.key&#39;,owner=root,perms=0600
+        certificate: type=FILE,location=&#39;/etc/pki/tls/certs/vip.crt&#39;,owner=root,perms=0644
+        CA: IPA
+        issuer: CN=Certificate Authority,O=DATA.CORP
+        subject: CN=isbi-mon-vmauth-vip.data.corp,O=DATA.CORP
+        issued: 2025-03-04 17:22:17 MSK
+        expires: 2027-03-05 17:22:17 MSK
+        dns: isbi-mon-vmauth-vip.data.corp
+        principal name: host/isbi-mon-vmauth-vip.data.corp@DATA.CORP
+        key usage: digitalSignature,nonRepudiation,keyEncipherment,dataEncipherment
+        eku: id-kp-serverAuth,id-kp-clientAuth
+        pre-save command: /bin/bash -c &#34;/usr/local/lib/certmonger/vip-before-savecert 2&gt;&amp;1 | /usr/bin/logger -t CERTMONGER&#34;
+        post-save command: /bin/bash -c &#34;/usr/local/lib/certmonger/vip-after-savecert 2&gt;&amp;1 | /usr/bin/logger -t CERTMONGER&#34;
+        track: yes
+        auto-renew: yes</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
 </div>
 </div>
 </div>

@@ -20,13 +20,19 @@
 <title>Перенос бинарников VictoriaMetrics Cluster из github в локальный Nexus | Debuntarium</title>
 <meta name="description" content=" 1. Скачивание бинарников из GitHub Посетите страницу https://github.com/VictoriaMetrics/VictoriaMetrics/releases и задайте в переменной актуальную версию Victoria Metrics:
 VER=&#39;v1.111.0&#39; Скачайте следующие пакеты в отдельную директорию:
-URI=&#39;https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download&#39; PLATFORM=&#39;linux-amd64&#39; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LO ${URI}/${VER}/victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz curl -LO ${URI}/${VER}/victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt curl -LO ${URI}/${VER}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LO ${URI}/${VER}/vmutils-${PLATFORM}-${VER}_checksums.txt ">
+URI=&#39;https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download&#39; PLATFORM=&#39;linux-amd64&#39; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LO ${URI}/${VER}/victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz curl -LO ${URI}/${VER}/victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt curl -LO ${URI}/${VER}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LO ${URI}/${VER}/vmutils-${PLATFORM}-${VER}_checksums.txt Распакуйте скачанные файлы-архивы:
+tar xvf victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz tar xvf vmutils-${PLATFORM}-${VER}.tar.gz Проверьте целостность всех полученных файлов:
+sha256sum -c \ victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt \ vmutils-${PLATFORM}-${VER}_checksums.txt Ожидаемый вывод:
+victoria-metrics-linux-amd64-v1.102.0-cluster.tar.gz: OK vminsert-prod: OK vmselect-prod: OK vmstorage-prod: OK vmutils-linux-amd64-v1.102.0.tar.gz: OK vmagent-prod: OK vmalert-prod: OK vmalert-tool-prod: OK vmauth-prod: OK vmbackup-prod: OK vmrestore-prod: OK vmctl-prod: OK ">
 <meta property="og:url" content="https://debuntu.ru/manuals/monitoring/victoriametrics/download-victoria-metrics-binaries-and-upload-to-nexus/">
   <meta property="og:site_name" content="Debuntarium">
   <meta property="og:title" content="Перенос бинарников VictoriaMetrics Cluster из github в локальный Nexus">
   <meta property="og:description" content="1. Скачивание бинарников из GitHub Посетите страницу https://github.com/VictoriaMetrics/VictoriaMetrics/releases и задайте в переменной актуальную версию Victoria Metrics:
 VER=&#39;v1.111.0&#39; Скачайте следующие пакеты в отдельную директорию:
-URI=&#39;https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download&#39; PLATFORM=&#39;linux-amd64&#39; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LO ${URI}/${VER}/victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz curl -LO ${URI}/${VER}/victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt curl -LO ${URI}/${VER}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LO ${URI}/${VER}/vmutils-${PLATFORM}-${VER}_checksums.txt">
+URI=&#39;https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download&#39; PLATFORM=&#39;linux-amd64&#39; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LO ${URI}/${VER}/victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz curl -LO ${URI}/${VER}/victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt curl -LO ${URI}/${VER}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LO ${URI}/${VER}/vmutils-${PLATFORM}-${VER}_checksums.txt Распакуйте скачанные файлы-архивы:
+tar xvf victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz tar xvf vmutils-${PLATFORM}-${VER}.tar.gz Проверьте целостность всех полученных файлов:
+sha256sum -c \ victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt \ vmutils-${PLATFORM}-${VER}_checksums.txt Ожидаемый вывод:
+victoria-metrics-linux-amd64-v1.102.0-cluster.tar.gz: OK vminsert-prod: OK vmselect-prod: OK vmstorage-prod: OK vmutils-linux-amd64-v1.102.0.tar.gz: OK vmagent-prod: OK vmalert-prod: OK vmalert-tool-prod: OK vmauth-prod: OK vmbackup-prod: OK vmrestore-prod: OK vmctl-prod: OK">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:type" content="article">
     <meta property="article:section" content="manuals">
@@ -36,7 +42,10 @@ URI=&#39;https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download&#3
   <meta itemprop="name" content="Перенос бинарников VictoriaMetrics Cluster из github в локальный Nexus">
   <meta itemprop="description" content="1. Скачивание бинарников из GitHub Посетите страницу https://github.com/VictoriaMetrics/VictoriaMetrics/releases и задайте в переменной актуальную версию Victoria Metrics:
 VER=&#39;v1.111.0&#39; Скачайте следующие пакеты в отдельную директорию:
-URI=&#39;https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download&#39; PLATFORM=&#39;linux-amd64&#39; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LO ${URI}/${VER}/victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz curl -LO ${URI}/${VER}/victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt curl -LO ${URI}/${VER}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LO ${URI}/${VER}/vmutils-${PLATFORM}-${VER}_checksums.txt">
+URI=&#39;https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download&#39; PLATFORM=&#39;linux-amd64&#39; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LO ${URI}/${VER}/victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz curl -LO ${URI}/${VER}/victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt curl -LO ${URI}/${VER}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LO ${URI}/${VER}/vmutils-${PLATFORM}-${VER}_checksums.txt Распакуйте скачанные файлы-архивы:
+tar xvf victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz tar xvf vmutils-${PLATFORM}-${VER}.tar.gz Проверьте целостность всех полученных файлов:
+sha256sum -c \ victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt \ vmutils-${PLATFORM}-${VER}_checksums.txt Ожидаемый вывод:
+victoria-metrics-linux-amd64-v1.102.0-cluster.tar.gz: OK vminsert-prod: OK vmselect-prod: OK vmstorage-prod: OK vmutils-linux-amd64-v1.102.0.tar.gz: OK vmagent-prod: OK vmalert-prod: OK vmalert-tool-prod: OK vmauth-prod: OK vmbackup-prod: OK vmrestore-prod: OK vmctl-prod: OK">
   <meta itemprop="datePublished" content="2024-07-24T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-07-24T00:00:00+00:00">
   <meta itemprop="wordCount" content="177">
@@ -44,7 +53,10 @@ URI=&#39;https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download&#3
   <meta name="twitter:title" content="Перенос бинарников VictoriaMetrics Cluster из github в локальный Nexus">
   <meta name="twitter:description" content="1. Скачивание бинарников из GitHub Посетите страницу https://github.com/VictoriaMetrics/VictoriaMetrics/releases и задайте в переменной актуальную версию Victoria Metrics:
 VER=&#39;v1.111.0&#39; Скачайте следующие пакеты в отдельную директорию:
-URI=&#39;https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download&#39; PLATFORM=&#39;linux-amd64&#39; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LO ${URI}/${VER}/victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz curl -LO ${URI}/${VER}/victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt curl -LO ${URI}/${VER}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LO ${URI}/${VER}/vmutils-${PLATFORM}-${VER}_checksums.txt">
+URI=&#39;https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download&#39; PLATFORM=&#39;linux-amd64&#39; TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR curl -LO ${URI}/${VER}/victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz curl -LO ${URI}/${VER}/victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt curl -LO ${URI}/${VER}/vmutils-${PLATFORM}-${VER}.tar.gz curl -LO ${URI}/${VER}/vmutils-${PLATFORM}-${VER}_checksums.txt Распакуйте скачанные файлы-архивы:
+tar xvf victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz tar xvf vmutils-${PLATFORM}-${VER}.tar.gz Проверьте целостность всех полученных файлов:
+sha256sum -c \ victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt \ vmutils-${PLATFORM}-${VER}_checksums.txt Ожидаемый вывод:
+victoria-metrics-linux-amd64-v1.102.0-cluster.tar.gz: OK vminsert-prod: OK vmselect-prod: OK vmstorage-prod: OK vmutils-linux-amd64-v1.102.0.tar.gz: OK vmagent-prod: OK vmalert-prod: OK vmalert-tool-prod: OK vmauth-prod: OK vmbackup-prod: OK vmrestore-prod: OK vmctl-prod: OK">
 
 
 
@@ -533,18 +545,6 @@ if (window.location.pathname !== "/") {
   <input type="checkbox" id="m-manualsfreeipainstalling-and-setup-freeipaadding-additional-freeipa-replicas-check"/>
   <label for="m-manualsfreeipainstalling-and-setup-freeipaadding-additional-freeipa-replicas-check"><a href="/manuals/freeipa/installing-and-setup-freeipa/adding-additional-freeipa-replicas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsfreeipainstalling-and-setup-freeipaadding-additional-freeipa-replicas"><span class="">Добавление дополнительных реплик FreeIPA</span></a></label>
   
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsfreeipainstalling-and-setup-freeipacommon10-podgotovka-hosta-li">
-  <input type="checkbox" id="m-manualsfreeipainstalling-and-setup-freeipacommon10-podgotovka-hosta-check"/>
-  <label for="m-manualsfreeipainstalling-and-setup-freeipacommon10-podgotovka-hosta-check"><a href="/manuals/freeipa/installing-and-setup-freeipa/common/10-podgotovka-hosta/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsfreeipainstalling-and-setup-freeipacommon10-podgotovka-hosta"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsfreeipainstalling-and-setup-freeipacommondisabling-dnssec-validation-li">
-  <input type="checkbox" id="m-manualsfreeipainstalling-and-setup-freeipacommondisabling-dnssec-validation-check"/>
-  <label for="m-manualsfreeipainstalling-and-setup-freeipacommondisabling-dnssec-validation-check"><a href="/manuals/freeipa/installing-and-setup-freeipa/common/disabling-dnssec-validation/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsfreeipainstalling-and-setup-freeipacommondisabling-dnssec-validation"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsfreeipainstalling-and-setup-freeipacommonldap-disabling-anonymous-access-to-directory-li">
-  <input type="checkbox" id="m-manualsfreeipainstalling-and-setup-freeipacommonldap-disabling-anonymous-access-to-directory-check"/>
-  <label for="m-manualsfreeipainstalling-and-setup-freeipacommonldap-disabling-anonymous-access-to-directory-check"><a href="/manuals/freeipa/installing-and-setup-freeipa/common/ldap-disabling-anonymous-access-to-directory/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsfreeipainstalling-and-setup-freeipacommonldap-disabling-anonymous-access-to-directory"><span class=""></span></a></label>
-  
 </li>
   </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsfreeipacheckipaconsistency-utilita-dlya-opredeleniya-rassinhronizacii-replik-freeipa-li">
@@ -803,6 +803,17 @@ if (window.location.pathname !== "/") {
   </ul>
 </li>
   </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsmonitoringvictoriametricsvmauth-li">
+  <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmauth-check"/>
+  <label for="m-manualsmonitoringvictoriametricsvmauth-check"><a href="/manuals/monitoring/victoriametrics/vmauth/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoringvictoriametricsvmauth"><span class="">VMAuth</span></a></label>
+  
+  <ul class="ul-4 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvmauthtls-cert-for-vip-on-vmauth-nodes-with-auto-renewal-li">
+  <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmauthtls-cert-for-vip-on-vmauth-nodes-with-auto-renewal-check"/>
+  <label for="m-manualsmonitoringvictoriametricsvmauthtls-cert-for-vip-on-vmauth-nodes-with-auto-renewal-check"><a href="/manuals/monitoring/victoriametrics/vmauth/tls-cert-for-vip-on-vmauth-nodes-with-auto-renewal/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsvmauthtls-cert-for-vip-on-vmauth-nodes-with-auto-renewal"><span class="">Пример организации получения TLS-сертификата для Virtual IP (VIP) на vmauth-узлах с автообновлением</span></a></label>
+  
+</li>
+  </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvictoriametrics-what-you-should-avoid-li">
   <input type="checkbox" id="m-manualsmonitoringvictoriametricsvictoriametrics-what-you-should-avoid-check"/>
   <label for="m-manualsmonitoringvictoriametricsvictoriametrics-what-you-should-avoid-check"><a href="/manuals/monitoring/victoriametrics/victoriametrics-what-you-should-avoid/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsvictoriametrics-what-you-should-avoid"><span class="">VictoriaMetrics. Чего надо избегать</span></a></label>
@@ -822,10 +833,6 @@ if (window.location.pathname !== "/") {
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options-li">
   <input type="checkbox" id="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options-check"/>
   <label for="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options-check"><a href="/manuals/monitoring/victoriametrics/victoriametrics-vminsert-options/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options"><span class="">VictoriaMetrics. vminsert options</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvmauth-li">
-  <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmauth-check"/>
-  <label for="m-manualsmonitoringvictoriametricsvmauth-check"><a href="/manuals/monitoring/victoriametrics/vmauth/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoringvictoriametricsvmauth"><span class="">VMAuth</span></a></label>
   
 </li>
   </ul>
@@ -969,7 +976,7 @@ if (window.location.pathname !== "/") {
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/encfs/" data-taxonomy-term="encfs"><span class="taxonomy-label">EncFS</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/filesystem/" data-taxonomy-term="filesystem"><span class="taxonomy-label">FileSystem</span><span class="taxonomy-count">6</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/freebsd/" data-taxonomy-term="freebsd"><span class="taxonomy-label">FreeBSD</span><span class="taxonomy-count">2</span></a></li>
-        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/freeipa/" data-taxonomy-term="freeipa"><span class="taxonomy-label">FreeIPA</span><span class="taxonomy-count">24</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/freeipa/" data-taxonomy-term="freeipa"><span class="taxonomy-label">FreeIPA</span><span class="taxonomy-count">25</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/freeipa-4.9.6/" data-taxonomy-term="freeipa-4.9.6"><span class="taxonomy-label">FreeIPA 4.9.6</span><span class="taxonomy-count">4</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/gnu-screen/" data-taxonomy-term="gnu-screen"><span class="taxonomy-label">GNU Screen</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/groupware/" data-taxonomy-term="groupware"><span class="taxonomy-label">Groupware</span><span class="taxonomy-count">1</span></a></li>
@@ -1061,13 +1068,13 @@ if (window.location.pathname !== "/") {
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/venv/" data-taxonomy-term="venv"><span class="taxonomy-label">Venv</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vertica/" data-taxonomy-term="vertica"><span class="taxonomy-label">Vertica</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vfs/" data-taxonomy-term="vfs"><span class="taxonomy-label">VFS</span><span class="taxonomy-count">2</span></a></li>
-        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/victoriametrics/" data-taxonomy-term="victoriametrics"><span class="taxonomy-label">VictoriaMetrics</span><span class="taxonomy-count">16</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/victoriametrics/" data-taxonomy-term="victoriametrics"><span class="taxonomy-label">VictoriaMetrics</span><span class="taxonomy-count">17</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/victoriametrics-cluster/" data-taxonomy-term="victoriametrics-cluster"><span class="taxonomy-label">VictoriaMetrics Cluster</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/virtualization/" data-taxonomy-term="virtualization"><span class="taxonomy-label">Virtualization</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/visual-studio-code/" data-taxonomy-term="visual-studio-code"><span class="taxonomy-label">Visual Studio Code</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmagent/" data-taxonomy-term="vmagent"><span class="taxonomy-label">Vmagent</span><span class="taxonomy-count">14</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmalert/" data-taxonomy-term="vmalert"><span class="taxonomy-label">Vmalert</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmauth/" data-taxonomy-term="vmauth"><span class="taxonomy-label">Vmauth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmauth/" data-taxonomy-term="vmauth"><span class="taxonomy-label">Vmauth</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vminsert/" data-taxonomy-term="vminsert"><span class="taxonomy-label">Vminsert</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmselect/" data-taxonomy-term="vmselect"><span class="taxonomy-label">Vmselect</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmstorage/" data-taxonomy-term="vmstorage"><span class="taxonomy-label">Vmstorage</span><span class="taxonomy-count">2</span></a></li>
@@ -1117,7 +1124,7 @@ if (window.location.pathname !== "/") {
 <p>Посетите страницу <a href="https://github.com/VictoriaMetrics/VictoriaMetrics/releases" class="bare">https://github.com/VictoriaMetrics/VictoriaMetrics/releases</a> и задайте в переменной актуальную версию Victoria Metrics:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">VER=&#39;v1.111.0&#39;</span></code></pre>
+<pre>VER=&#39;v1.111.0&#39;</pre>
 </div>
 </div>
 </li>
@@ -1125,14 +1132,14 @@ if (window.location.pathname !== "/") {
 <p>Скачайте следующие пакеты в отдельную директорию:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">URI=&#39;https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download&#39;
+<pre>URI=&#39;https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download&#39;
 PLATFORM=&#39;linux-amd64&#39;
 
-</span><span style="color: #FFFFFF;background-color: #231529">TMPDIR=$</span><span style="color: #41ff5b">(</span><span style="font-weight: bold">mktemp</span> <span style="color: #9f93e6;font-weight: bold">-d</span><span style="color: #41ff5b">)</span> <span style="color: #41ff5b">&amp;&amp;</span> <span style="font-weight: bold">cd</span> <span style="color: #41ff5b;font-weight: bold">$TMPDIR</span>
-<span style="color: #FFFFFF;background-color: #231529">curl -LO $</span><span style="color: #41ff5b">{</span>URI<span style="color: #41ff5b">}</span>/<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VER</span><span style="color: #FFF02A;font-weight: bold">}</span>/victoria-metrics-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">PLATFORM</span><span style="color: #FFF02A;font-weight: bold">}</span>-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VER</span><span style="color: #FFF02A;font-weight: bold">}</span><span style="color: #9f93e6;font-weight: bold">-cluster</span>.tar.gz
-<span style="color: #FFFFFF;background-color: #231529">curl -LO $</span><span style="color: #41ff5b">{</span>URI<span style="color: #41ff5b">}</span>/<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VER</span><span style="color: #FFF02A;font-weight: bold">}</span>/victoria-metrics-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">PLATFORM</span><span style="color: #FFF02A;font-weight: bold">}</span>-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VER</span><span style="color: #FFF02A;font-weight: bold">}</span><span style="color: #9f93e6;font-weight: bold">-cluster_checksums</span>.txt
-<span style="color: #FFFFFF;background-color: #231529">curl -LO $</span><span style="color: #41ff5b">{</span>URI<span style="color: #41ff5b">}</span>/<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VER</span><span style="color: #FFF02A;font-weight: bold">}</span>/vmutils-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">PLATFORM</span><span style="color: #FFF02A;font-weight: bold">}</span>-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VER</span><span style="color: #FFF02A;font-weight: bold">}</span>.tar.gz
-<span style="color: #FFFFFF;background-color: #231529">curl -LO $</span><span style="color: #41ff5b">{</span>URI<span style="color: #41ff5b">}</span>/<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VER</span><span style="color: #FFF02A;font-weight: bold">}</span>/vmutils-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">PLATFORM</span><span style="color: #FFF02A;font-weight: bold">}</span>-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VER</span><span style="color: #FFF02A;font-weight: bold">}</span>_checksums.txt</code></pre>
+TMPDIR=$(mktemp -d) &amp;&amp; cd $TMPDIR
+curl -LO ${URI}/${VER}/victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz
+curl -LO ${URI}/${VER}/victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt
+curl -LO ${URI}/${VER}/vmutils-${PLATFORM}-${VER}.tar.gz
+curl -LO ${URI}/${VER}/vmutils-${PLATFORM}-${VER}_checksums.txt</pre>
 </div>
 </div>
 </li>
@@ -1140,8 +1147,8 @@ PLATFORM=&#39;linux-amd64&#39;
 <p>Распакуйте скачанные файлы-архивы:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">tar xvf victoria-metrics-$</span><span style="color: #41ff5b">{</span>PLATFORM<span style="color: #41ff5b">}</span>-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VER</span><span style="color: #FFF02A;font-weight: bold">}</span><span style="color: #9f93e6;font-weight: bold">-cluster</span>.tar.gz
-<span style="color: #FFFFFF;background-color: #231529">tar xvf vmutils-$</span><span style="color: #41ff5b">{</span>PLATFORM<span style="color: #41ff5b">}</span>-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VER</span><span style="color: #FFF02A;font-weight: bold">}</span>.tar.gz</code></pre>
+<pre>tar xvf victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz
+tar xvf vmutils-${PLATFORM}-${VER}.tar.gz</pre>
 </div>
 </div>
 </li>
@@ -1149,9 +1156,9 @@ PLATFORM=&#39;linux-amd64&#39;
 <p>Проверьте целостность всех полученных файлов:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">sha256sum -c \
-</span><span style="color: #FFFFFF;background-color: #231529">  victoria-metrics-$</span><span style="color: #41ff5b">{</span>PLATFORM<span style="color: #41ff5b">}</span>-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VER</span><span style="color: #FFF02A;font-weight: bold">}</span><span style="color: #9f93e6;font-weight: bold">-cluster_checksums</span>.txt <span style="color: #FAAF4C;font-weight: bold">\</span>
-<span style="color: #FFFFFF;background-color: #231529">  vmutils-$</span><span style="color: #41ff5b">{</span>PLATFORM<span style="color: #41ff5b">}</span>-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VER</span><span style="color: #FFF02A;font-weight: bold">}</span>_checksums.txt</code></pre>
+<pre>sha256sum -c \
+  victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt \
+  vmutils-${PLATFORM}-${VER}_checksums.txt</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1159,7 +1166,7 @@ PLATFORM=&#39;linux-amd64&#39;
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">victoria-metrics-linux-amd64-v1.102.0-cluster.tar.gz: OK
+<pre>victoria-metrics-linux-amd64-v1.102.0-cluster.tar.gz: OK
 vminsert-prod: OK
 vmselect-prod: OK
 vmstorage-prod: OK
@@ -1170,7 +1177,7 @@ vmalert-tool-prod: OK
 vmauth-prod: OK
 vmbackup-prod: OK
 vmrestore-prod: OK
-vmctl-prod: OK</span></code></pre>
+vmctl-prod: OK</pre>
 </div>
 </div>
 </li>
@@ -1187,9 +1194,9 @@ vmctl-prod: OK</span></code></pre>
 <p>Задайте учётные данные используемые для доступа к локальному репо:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">set +o history
+<pre>set +o history
 USER_PASS=&#39;ken:xxxxxxxxxxxxxxxx&#39;
-set -o history</span></code></pre>
+set -o history</pre>
 </div>
 </div>
 </li>
@@ -1197,25 +1204,25 @@ set -o history</span></code></pre>
 <p>Загрузите файлы-архивы и файлы с контрольными суммами в NXRM:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">INTERNAL_REPO=&#34;https://nexus.example.org/repository/dud_evolut_raw&#34;
+<pre>INTERNAL_REPO=&#34;https://nexus.example.org/repository/dud_evolut_raw&#34;
 REPO_FOLDER=&#34;monitoring/victoriametrics&#34;
 
-</span><span style="color: #FFFFFF;background-color: #231529">curl -v --user &#34;$</span><span style="color: #41ff5b">{</span>USER_PASS<span style="color: #41ff5b">}</span><span style="color: #fff0a6;font-weight: bold">&#34; </span><span style="color: #FAAF4C;font-weight: bold">\</span><span style="color: #fff0a6;font-weight: bold">
-</span><span style="color: #FFFFFF;background-color: #231529">  --upload-file victoria-metrics-$</span><span style="color: #fff0a6;font-weight: bold">{PLATFORM}-</span><span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VER</span><span style="color: #FFF02A;font-weight: bold">}</span><span style="color: #fff0a6;font-weight: bold">-cluster.tar.gz </span><span style="color: #FAAF4C;font-weight: bold">\</span><span style="color: #fff0a6;font-weight: bold">
-</span><span style="color: #FFFFFF;background-color: #231529">  $</span><span style="color: #fff0a6;font-weight: bold">{INTERNAL_REPO}/</span><span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">REPO_FOLDER</span><span style="color: #FFF02A;font-weight: bold">}</span><span style="color: #fff0a6;font-weight: bold">/
-</span><span style="color: #FFFFFF;background-color: #231529">curl -v --user &#34;$</span><span style="color: #fff0a6;font-weight: bold">{USER_PASS}&#34;</span> <span style="color: #FAAF4C;font-weight: bold">\</span>
-<span style="color: #FFFFFF;background-color: #231529">  --upload-file vmutils-$</span><span style="color: #41ff5b">{</span>PLATFORM<span style="color: #41ff5b">}</span>-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VER</span><span style="color: #FFF02A;font-weight: bold">}</span>.tar.gz <span style="color: #FAAF4C;font-weight: bold">\</span>
-<span style="color: #FFFFFF;background-color: #231529">  $</span><span style="color: #41ff5b">{</span>INTERNAL_REPO<span style="color: #41ff5b">}</span>/<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">REPO_FOLDER</span><span style="color: #FFF02A;font-weight: bold">}</span>/
-<span style="color: #FFFFFF;background-color: #231529">curl -v --user &#34;$</span><span style="color: #41ff5b">{</span>USER_PASS<span style="color: #41ff5b">}</span><span style="color: #fff0a6;font-weight: bold">&#34; </span><span style="color: #FAAF4C;font-weight: bold">\</span><span style="color: #fff0a6;font-weight: bold">
-</span><span style="color: #FFFFFF;background-color: #231529">  --upload-file victoria-metrics-$</span><span style="color: #fff0a6;font-weight: bold">{PLATFORM}-</span><span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VER</span><span style="color: #FFF02A;font-weight: bold">}</span><span style="color: #fff0a6;font-weight: bold">-cluster_checksums.txt </span><span style="color: #FAAF4C;font-weight: bold">\</span><span style="color: #fff0a6;font-weight: bold">
-</span><span style="color: #FFFFFF;background-color: #231529">  $</span><span style="color: #fff0a6;font-weight: bold">{INTERNAL_REPO}/</span><span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">REPO_FOLDER</span><span style="color: #FFF02A;font-weight: bold">}</span><span style="color: #fff0a6;font-weight: bold">/
-</span><span style="color: #FFFFFF;background-color: #231529">curl -v --user &#34;$</span><span style="color: #fff0a6;font-weight: bold">{USER_PASS}&#34;</span> <span style="color: #FAAF4C;font-weight: bold">\</span>
-<span style="color: #FFFFFF;background-color: #231529">  --upload-file vmutils-$</span><span style="color: #41ff5b">{</span>PLATFORM<span style="color: #41ff5b">}</span>-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VER</span><span style="color: #FFF02A;font-weight: bold">}</span>_checksums.txt <span style="color: #FAAF4C;font-weight: bold">\</span>
-<span style="color: #FFFFFF;background-color: #231529">  $</span><span style="color: #41ff5b">{</span>INTERNAL_REPO<span style="color: #41ff5b">}</span>/<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">REPO_FOLDER</span><span style="color: #FFF02A;font-weight: bold">}</span>/
-<span style="color: #FFFFFF;background-color: #231529">
+curl -v --user &#34;${USER_PASS}&#34; \
+  --upload-file victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz \
+  ${INTERNAL_REPO}/${REPO_FOLDER}/
+curl -v --user &#34;${USER_PASS}&#34; \
+  --upload-file vmutils-${PLATFORM}-${VER}.tar.gz \
+  ${INTERNAL_REPO}/${REPO_FOLDER}/
+curl -v --user &#34;${USER_PASS}&#34; \
+  --upload-file victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt \
+  ${INTERNAL_REPO}/${REPO_FOLDER}/
+curl -v --user &#34;${USER_PASS}&#34; \
+  --upload-file vmutils-${PLATFORM}-${VER}_checksums.txt \
+  ${INTERNAL_REPO}/${REPO_FOLDER}/
 
-</span><span style="color: #FFFFFF;background-color: #231529">curl -v --user &#34;$</span><span style="color: #41ff5b">{</span>USER_PASS<span style="color: #41ff5b">}</span><span style="color: #fff0a6;font-weight: bold">&#34; --upload-file &#34;</span><span style="color: #41ff5b">{</span><span style="color: #41ff5b;font-weight: bold">$FILES</span><span style="color: #41ff5b">}</span><span style="color: #fff0a6;font-weight: bold">&#34; </span><span style="color: #FAAF4C;font-weight: bold">\</span><span style="color: #fff0a6;font-weight: bold">
-</span><span style="color: #FFFFFF;background-color: #231529">  $</span><span style="color: #fff0a6;font-weight: bold">{INTERNAL_REPO}/</span><span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">REPO_FOLDER</span><span style="color: #FFF02A;font-weight: bold">}</span><span style="color: #fff0a6;font-weight: bold">/</span></code></pre>
+
+curl -v --user &#34;${USER_PASS}&#34; --upload-file &#34;{$FILES}&#34; \
+  ${INTERNAL_REPO}/${REPO_FOLDER}/</pre>
 </div>
 </div>
 </li>
@@ -1223,7 +1230,7 @@ REPO_FOLDER=&#34;monitoring/victoriametrics&#34;
 <p>Удалите временный каталог со скачанными файлами Victoria Metrics:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">rm -rf &#34;$</span><span style="color: #41ff5b">{</span>TMPDIR<span style="color: #41ff5b">}</span><span style="color: #fff0a6;font-weight: bold">&#34;&#34;</span></code></pre>
+<pre>rm -rf &#34;${TMPDIR}&#34;&#34;</pre>
 </div>
 </div>
 </li>

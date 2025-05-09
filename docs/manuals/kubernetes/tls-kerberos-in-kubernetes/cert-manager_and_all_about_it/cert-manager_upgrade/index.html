@@ -18,17 +18,19 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>cert-manager. Обновление | Debuntarium</title>
-<meta name="description" content=" Использованные материалы https://cert-manager.io/docs/installation/upgrade/
+<meta name="description" content=" Note Использованные материалы https://cert-manager.io/docs/installation/upgrade/
 Так как Helm Chart cert-manager мы применяем без CRD, чтобы случайно не потерять ранее выданные сертификаты, то сначала вручную применим CRD-манифест, а потом накатим Helm Chart.
 Скачайте файлы с новой версией cert-manager’а и распакуйте их:
-set &#43;o history USER_PASS=&#39;dmr:xxxxxxxxxxxxxxxxxxxx&#39; set -o history INTERNAL_REPO=&#39;https://nexus.example.org/repository/evo_raw&#39; REPO_FOLDER=&#39;kubernetes/cert-manager/&#39; VERSION=&#39;v1.15.0&#39; curl -LOu $USER_PASS ${INTERNAL_REPO}/${REPO_FOLDER}/cert-manager-${VERSION}.tgz curl -LOu $USER_PASS ${INTERNAL_REPO}/${REPO_FOLDER}/cert-manager-${VERSION}.crds.yaml tar xvf cert-manager-${VERSION}.tgz ">
+set &#43;o history USER_PASS=&#39;dmr:xxxxxxxxxxxxxxxxxxxx&#39; set -o history INTERNAL_REPO=&#39;https://nexus.example.org/repository/evo_raw&#39; REPO_FOLDER=&#39;kubernetes/cert-manager/&#39; VERSION=&#39;v1.15.0&#39; curl -LOu $USER_PASS ${INTERNAL_REPO}/${REPO_FOLDER}/cert-manager-${VERSION}.tgz curl -LOu $USER_PASS ${INTERNAL_REPO}/${REPO_FOLDER}/cert-manager-${VERSION}.crds.yaml tar xvf cert-manager-${VERSION}.tgz Примените новый CRD:
+kubectl apply -f cert-manager-${VERSION}.crds.yaml ">
 <meta property="og:url" content="https://debuntu.ru/manuals/kubernetes/tls-kerberos-in-kubernetes/cert-manager_and_all_about_it/cert-manager_upgrade/">
   <meta property="og:site_name" content="Debuntarium">
   <meta property="og:title" content="cert-manager. Обновление">
-  <meta property="og:description" content="Использованные материалы https://cert-manager.io/docs/installation/upgrade/
+  <meta property="og:description" content="Note Использованные материалы https://cert-manager.io/docs/installation/upgrade/
 Так как Helm Chart cert-manager мы применяем без CRD, чтобы случайно не потерять ранее выданные сертификаты, то сначала вручную применим CRD-манифест, а потом накатим Helm Chart.
 Скачайте файлы с новой версией cert-manager’а и распакуйте их:
-set &#43;o history USER_PASS=&#39;dmr:xxxxxxxxxxxxxxxxxxxx&#39; set -o history INTERNAL_REPO=&#39;https://nexus.example.org/repository/evo_raw&#39; REPO_FOLDER=&#39;kubernetes/cert-manager/&#39; VERSION=&#39;v1.15.0&#39; curl -LOu $USER_PASS ${INTERNAL_REPO}/${REPO_FOLDER}/cert-manager-${VERSION}.tgz curl -LOu $USER_PASS ${INTERNAL_REPO}/${REPO_FOLDER}/cert-manager-${VERSION}.crds.yaml tar xvf cert-manager-${VERSION}.tgz">
+set &#43;o history USER_PASS=&#39;dmr:xxxxxxxxxxxxxxxxxxxx&#39; set -o history INTERNAL_REPO=&#39;https://nexus.example.org/repository/evo_raw&#39; REPO_FOLDER=&#39;kubernetes/cert-manager/&#39; VERSION=&#39;v1.15.0&#39; curl -LOu $USER_PASS ${INTERNAL_REPO}/${REPO_FOLDER}/cert-manager-${VERSION}.tgz curl -LOu $USER_PASS ${INTERNAL_REPO}/${REPO_FOLDER}/cert-manager-${VERSION}.crds.yaml tar xvf cert-manager-${VERSION}.tgz Примените новый CRD:
+kubectl apply -f cert-manager-${VERSION}.crds.yaml">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:type" content="article">
     <meta property="article:section" content="manuals">
@@ -38,20 +40,22 @@ set &#43;o history USER_PASS=&#39;dmr:xxxxxxxxxxxxxxxxxxxx&#39; set -o history I
     <meta property="article:tag" content="Cert-Manager">
 
   <meta itemprop="name" content="cert-manager. Обновление">
-  <meta itemprop="description" content="Использованные материалы https://cert-manager.io/docs/installation/upgrade/
+  <meta itemprop="description" content="Note Использованные материалы https://cert-manager.io/docs/installation/upgrade/
 Так как Helm Chart cert-manager мы применяем без CRD, чтобы случайно не потерять ранее выданные сертификаты, то сначала вручную применим CRD-манифест, а потом накатим Helm Chart.
 Скачайте файлы с новой версией cert-manager’а и распакуйте их:
-set &#43;o history USER_PASS=&#39;dmr:xxxxxxxxxxxxxxxxxxxx&#39; set -o history INTERNAL_REPO=&#39;https://nexus.example.org/repository/evo_raw&#39; REPO_FOLDER=&#39;kubernetes/cert-manager/&#39; VERSION=&#39;v1.15.0&#39; curl -LOu $USER_PASS ${INTERNAL_REPO}/${REPO_FOLDER}/cert-manager-${VERSION}.tgz curl -LOu $USER_PASS ${INTERNAL_REPO}/${REPO_FOLDER}/cert-manager-${VERSION}.crds.yaml tar xvf cert-manager-${VERSION}.tgz">
+set &#43;o history USER_PASS=&#39;dmr:xxxxxxxxxxxxxxxxxxxx&#39; set -o history INTERNAL_REPO=&#39;https://nexus.example.org/repository/evo_raw&#39; REPO_FOLDER=&#39;kubernetes/cert-manager/&#39; VERSION=&#39;v1.15.0&#39; curl -LOu $USER_PASS ${INTERNAL_REPO}/${REPO_FOLDER}/cert-manager-${VERSION}.tgz curl -LOu $USER_PASS ${INTERNAL_REPO}/${REPO_FOLDER}/cert-manager-${VERSION}.crds.yaml tar xvf cert-manager-${VERSION}.tgz Примените новый CRD:
+kubectl apply -f cert-manager-${VERSION}.crds.yaml">
   <meta itemprop="datePublished" content="2024-05-13T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-05-13T00:00:00+00:00">
-  <meta itemprop="wordCount" content="91">
+  <meta itemprop="wordCount" content="92">
   <meta itemprop="keywords" content="Kubernetes,Cert-Manager">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="cert-manager. Обновление">
-  <meta name="twitter:description" content="Использованные материалы https://cert-manager.io/docs/installation/upgrade/
+  <meta name="twitter:description" content="Note Использованные материалы https://cert-manager.io/docs/installation/upgrade/
 Так как Helm Chart cert-manager мы применяем без CRD, чтобы случайно не потерять ранее выданные сертификаты, то сначала вручную применим CRD-манифест, а потом накатим Helm Chart.
 Скачайте файлы с новой версией cert-manager’а и распакуйте их:
-set &#43;o history USER_PASS=&#39;dmr:xxxxxxxxxxxxxxxxxxxx&#39; set -o history INTERNAL_REPO=&#39;https://nexus.example.org/repository/evo_raw&#39; REPO_FOLDER=&#39;kubernetes/cert-manager/&#39; VERSION=&#39;v1.15.0&#39; curl -LOu $USER_PASS ${INTERNAL_REPO}/${REPO_FOLDER}/cert-manager-${VERSION}.tgz curl -LOu $USER_PASS ${INTERNAL_REPO}/${REPO_FOLDER}/cert-manager-${VERSION}.crds.yaml tar xvf cert-manager-${VERSION}.tgz">
+set &#43;o history USER_PASS=&#39;dmr:xxxxxxxxxxxxxxxxxxxx&#39; set -o history INTERNAL_REPO=&#39;https://nexus.example.org/repository/evo_raw&#39; REPO_FOLDER=&#39;kubernetes/cert-manager/&#39; VERSION=&#39;v1.15.0&#39; curl -LOu $USER_PASS ${INTERNAL_REPO}/${REPO_FOLDER}/cert-manager-${VERSION}.tgz curl -LOu $USER_PASS ${INTERNAL_REPO}/${REPO_FOLDER}/cert-manager-${VERSION}.crds.yaml tar xvf cert-manager-${VERSION}.tgz Примените новый CRD:
+kubectl apply -f cert-manager-${VERSION}.crds.yaml">
 
 
 
@@ -540,18 +544,6 @@ if (window.location.pathname !== "/") {
   <input type="checkbox" id="m-manualsfreeipainstalling-and-setup-freeipaadding-additional-freeipa-replicas-check"/>
   <label for="m-manualsfreeipainstalling-and-setup-freeipaadding-additional-freeipa-replicas-check"><a href="/manuals/freeipa/installing-and-setup-freeipa/adding-additional-freeipa-replicas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsfreeipainstalling-and-setup-freeipaadding-additional-freeipa-replicas"><span class="">Добавление дополнительных реплик FreeIPA</span></a></label>
   
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsfreeipainstalling-and-setup-freeipacommon10-podgotovka-hosta-li">
-  <input type="checkbox" id="m-manualsfreeipainstalling-and-setup-freeipacommon10-podgotovka-hosta-check"/>
-  <label for="m-manualsfreeipainstalling-and-setup-freeipacommon10-podgotovka-hosta-check"><a href="/manuals/freeipa/installing-and-setup-freeipa/common/10-podgotovka-hosta/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsfreeipainstalling-and-setup-freeipacommon10-podgotovka-hosta"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsfreeipainstalling-and-setup-freeipacommondisabling-dnssec-validation-li">
-  <input type="checkbox" id="m-manualsfreeipainstalling-and-setup-freeipacommondisabling-dnssec-validation-check"/>
-  <label for="m-manualsfreeipainstalling-and-setup-freeipacommondisabling-dnssec-validation-check"><a href="/manuals/freeipa/installing-and-setup-freeipa/common/disabling-dnssec-validation/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsfreeipainstalling-and-setup-freeipacommondisabling-dnssec-validation"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsfreeipainstalling-and-setup-freeipacommonldap-disabling-anonymous-access-to-directory-li">
-  <input type="checkbox" id="m-manualsfreeipainstalling-and-setup-freeipacommonldap-disabling-anonymous-access-to-directory-check"/>
-  <label for="m-manualsfreeipainstalling-and-setup-freeipacommonldap-disabling-anonymous-access-to-directory-check"><a href="/manuals/freeipa/installing-and-setup-freeipa/common/ldap-disabling-anonymous-access-to-directory/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsfreeipainstalling-and-setup-freeipacommonldap-disabling-anonymous-access-to-directory"><span class=""></span></a></label>
-  
 </li>
   </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsfreeipacheckipaconsistency-utilita-dlya-opredeleniya-rassinhronizacii-replik-freeipa-li">
@@ -810,6 +802,17 @@ if (window.location.pathname !== "/") {
   </ul>
 </li>
   </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsmonitoringvictoriametricsvmauth-li">
+  <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmauth-check"/>
+  <label for="m-manualsmonitoringvictoriametricsvmauth-check"><a href="/manuals/monitoring/victoriametrics/vmauth/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoringvictoriametricsvmauth"><span class="">VMAuth</span></a></label>
+  
+  <ul class="ul-4 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvmauthtls-cert-for-vip-on-vmauth-nodes-with-auto-renewal-li">
+  <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmauthtls-cert-for-vip-on-vmauth-nodes-with-auto-renewal-check"/>
+  <label for="m-manualsmonitoringvictoriametricsvmauthtls-cert-for-vip-on-vmauth-nodes-with-auto-renewal-check"><a href="/manuals/monitoring/victoriametrics/vmauth/tls-cert-for-vip-on-vmauth-nodes-with-auto-renewal/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsvmauthtls-cert-for-vip-on-vmauth-nodes-with-auto-renewal"><span class="">Пример организации получения TLS-сертификата для Virtual IP (VIP) на vmauth-узлах с автообновлением</span></a></label>
+  
+</li>
+  </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvictoriametrics-what-you-should-avoid-li">
   <input type="checkbox" id="m-manualsmonitoringvictoriametricsvictoriametrics-what-you-should-avoid-check"/>
   <label for="m-manualsmonitoringvictoriametricsvictoriametrics-what-you-should-avoid-check"><a href="/manuals/monitoring/victoriametrics/victoriametrics-what-you-should-avoid/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsvictoriametrics-what-you-should-avoid"><span class="">VictoriaMetrics. Чего надо избегать</span></a></label>
@@ -829,10 +832,6 @@ if (window.location.pathname !== "/") {
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options-li">
   <input type="checkbox" id="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options-check"/>
   <label for="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options-check"><a href="/manuals/monitoring/victoriametrics/victoriametrics-vminsert-options/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options"><span class="">VictoriaMetrics. vminsert options</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvmauth-li">
-  <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmauth-check"/>
-  <label for="m-manualsmonitoringvictoriametricsvmauth-check"><a href="/manuals/monitoring/victoriametrics/vmauth/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoringvictoriametricsvmauth"><span class="">VMAuth</span></a></label>
   
 </li>
   </ul>
@@ -968,7 +967,7 @@ if (window.location.pathname !== "/") {
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/encfs/" data-taxonomy-term="encfs"><span class="taxonomy-label">EncFS</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/filesystem/" data-taxonomy-term="filesystem"><span class="taxonomy-label">FileSystem</span><span class="taxonomy-count">6</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/freebsd/" data-taxonomy-term="freebsd"><span class="taxonomy-label">FreeBSD</span><span class="taxonomy-count">2</span></a></li>
-        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/freeipa/" data-taxonomy-term="freeipa"><span class="taxonomy-label">FreeIPA</span><span class="taxonomy-count">24</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/freeipa/" data-taxonomy-term="freeipa"><span class="taxonomy-label">FreeIPA</span><span class="taxonomy-count">25</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/freeipa-4.9.6/" data-taxonomy-term="freeipa-4.9.6"><span class="taxonomy-label">FreeIPA 4.9.6</span><span class="taxonomy-count">4</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/gnu-screen/" data-taxonomy-term="gnu-screen"><span class="taxonomy-label">GNU Screen</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/groupware/" data-taxonomy-term="groupware"><span class="taxonomy-label">Groupware</span><span class="taxonomy-count">1</span></a></li>
@@ -1060,13 +1059,13 @@ if (window.location.pathname !== "/") {
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/venv/" data-taxonomy-term="venv"><span class="taxonomy-label">Venv</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vertica/" data-taxonomy-term="vertica"><span class="taxonomy-label">Vertica</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vfs/" data-taxonomy-term="vfs"><span class="taxonomy-label">VFS</span><span class="taxonomy-count">2</span></a></li>
-        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/victoriametrics/" data-taxonomy-term="victoriametrics"><span class="taxonomy-label">VictoriaMetrics</span><span class="taxonomy-count">16</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/victoriametrics/" data-taxonomy-term="victoriametrics"><span class="taxonomy-label">VictoriaMetrics</span><span class="taxonomy-count">17</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/victoriametrics-cluster/" data-taxonomy-term="victoriametrics-cluster"><span class="taxonomy-label">VictoriaMetrics Cluster</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/virtualization/" data-taxonomy-term="virtualization"><span class="taxonomy-label">Virtualization</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/visual-studio-code/" data-taxonomy-term="visual-studio-code"><span class="taxonomy-label">Visual Studio Code</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmagent/" data-taxonomy-term="vmagent"><span class="taxonomy-label">Vmagent</span><span class="taxonomy-count">14</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmalert/" data-taxonomy-term="vmalert"><span class="taxonomy-label">Vmalert</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmauth/" data-taxonomy-term="vmauth"><span class="taxonomy-label">Vmauth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmauth/" data-taxonomy-term="vmauth"><span class="taxonomy-label">Vmauth</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vminsert/" data-taxonomy-term="vminsert"><span class="taxonomy-label">Vminsert</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmselect/" data-taxonomy-term="vmselect"><span class="taxonomy-label">Vmselect</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmstorage/" data-taxonomy-term="vmstorage"><span class="taxonomy-label">Vmstorage</span><span class="taxonomy-count">2</span></a></li>
@@ -1119,7 +1118,7 @@ if (window.location.pathname !== "/") {
 <table>
 <tbody><tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 <div class="title">Использованные материалы</div>
@@ -1143,7 +1142,7 @@ if (window.location.pathname !== "/") {
 <p>Скачайте файлы с новой версией cert-manager’а и распакуйте их:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">set +o history
+<pre class="highlight"><code class="language-console" data-lang="console">set +o history
 USER_PASS=&#39;dmr:xxxxxxxxxxxxxxxxxxxx&#39;
 set -o history
 
@@ -1151,10 +1150,10 @@ INTERNAL_REPO=&#39;https://nexus.example.org/repository/evo_raw&#39;
 REPO_FOLDER=&#39;kubernetes/cert-manager/&#39;
 VERSION=&#39;v1.15.0&#39;
 
-</span><span style="color: #FFFFFF;background-color: #231529">curl -LOu $</span>USER_PASS <span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">INTERNAL_REPO</span><span style="color: #FFF02A;font-weight: bold">}</span>/<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">REPO_FOLDER</span><span style="color: #FFF02A;font-weight: bold">}</span>/cert-manager-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VERSION</span><span style="color: #FFF02A;font-weight: bold">}</span>.tgz
-<span style="color: #FFFFFF;background-color: #231529">curl -LOu $</span>USER_PASS <span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">INTERNAL_REPO</span><span style="color: #FFF02A;font-weight: bold">}</span>/<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">REPO_FOLDER</span><span style="color: #FFF02A;font-weight: bold">}</span>/cert-manager-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">VERSION</span><span style="color: #FFF02A;font-weight: bold">}</span>.crds.yaml
-<span style="color: #FFFFFF;background-color: #231529">
-</span><span style="color: #FFFFFF;background-color: #231529">tar xvf cert-manager-$</span><span style="color: #41ff5b">{</span>VERSION<span style="color: #41ff5b">}</span>.tgz</code></pre>
+curl -LOu $USER_PASS ${INTERNAL_REPO}/${REPO_FOLDER}/cert-manager-${VERSION}.tgz
+curl -LOu $USER_PASS ${INTERNAL_REPO}/${REPO_FOLDER}/cert-manager-${VERSION}.crds.yaml
+
+tar xvf cert-manager-${VERSION}.tgz</code></pre>
 </div>
 </div>
 </li>
@@ -1162,7 +1161,7 @@ VERSION=&#39;v1.15.0&#39;
 <p>Примените новый CRD:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">kubectl apply -f cert-manager-$</span><span style="color: #41ff5b">{</span>VERSION<span style="color: #41ff5b">}</span>.crds.yaml</code></pre>
+<pre class="highlight"><code class="language-console" data-lang="console">kubectl apply -f cert-manager-${VERSION}.crds.yaml</code></pre>
 </div>
 </div>
 </li>
@@ -1170,8 +1169,8 @@ VERSION=&#39;v1.15.0&#39;
 <p>Накатите новый Helm Chart (предварительно измените значения в values.yaml, как были установлены в первой установке приложения):</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">cd cert-manager
-helm upgrade --reset-then-reuse-values cert-manager . --namespace cert-manager</span></code></pre>
+<pre class="highlight"><code class="language-console" data-lang="console">cd cert-manager
+helm upgrade --reset-then-reuse-values cert-manager . --namespace cert-manager</code></pre>
 </div>
 </div>
 </li>

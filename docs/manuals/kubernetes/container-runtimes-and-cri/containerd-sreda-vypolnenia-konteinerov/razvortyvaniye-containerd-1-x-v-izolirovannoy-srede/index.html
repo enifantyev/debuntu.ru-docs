@@ -19,7 +19,7 @@
 
 <title>Развёртывание containerd 1.x в изолированной среде | Debuntarium</title>
 <meta name="description" content=" 1. Добавление загрузки модуля overlay в систему Модуль overlay добавляет в систему поддержку файловой системы OverlayFS. Эта файловая система используется для хранения слоёв образов, которые использует containerd.
-Этот шаг можно пропустить, так как загрузка модуля overlay выполняется через systemd-юнит &#39;containerd.service&#39;, где присутствует строка &#39;ExecStartPre=-/sbin/modprobe overlay&#39;.
+Note Этот шаг можно пропустить, так как загрузка модуля overlay выполняется через systemd-юнит &#39;containerd.service&#39;, где присутствует строка &#39;ExecStartPre=-/sbin/modprobe overlay&#39;.
 Выполните:
 cat &lt;&lt; EOF &gt; /etc/modules-load.d/containerd.conf overlay EOF modprobe overlay 2. Скачивание компонентов containerd из внутреннего raw-репозитория Если внутренний репозиторий требует аутентификации, то задайте учётные данные для скачивания компонентов containerd:
 set &#43;o history USER_PASS=&#39;ken:xxxxxxxxxxxxxxx&#39; set -o history ">
@@ -27,7 +27,7 @@ set &#43;o history USER_PASS=&#39;ken:xxxxxxxxxxxxxxx&#39; set -o history ">
   <meta property="og:site_name" content="Debuntarium">
   <meta property="og:title" content="Развёртывание containerd 1.x в изолированной среде">
   <meta property="og:description" content="1. Добавление загрузки модуля overlay в систему Модуль overlay добавляет в систему поддержку файловой системы OverlayFS. Эта файловая система используется для хранения слоёв образов, которые использует containerd.
-Этот шаг можно пропустить, так как загрузка модуля overlay выполняется через systemd-юнит &#39;containerd.service&#39;, где присутствует строка &#39;ExecStartPre=-/sbin/modprobe overlay&#39;.
+Note Этот шаг можно пропустить, так как загрузка модуля overlay выполняется через systemd-юнит &#39;containerd.service&#39;, где присутствует строка &#39;ExecStartPre=-/sbin/modprobe overlay&#39;.
 Выполните:
 cat &lt;&lt; EOF &gt; /etc/modules-load.d/containerd.conf overlay EOF modprobe overlay 2. Скачивание компонентов containerd из внутреннего raw-репозитория Если внутренний репозиторий требует аутентификации, то задайте учётные данные для скачивания компонентов containerd:
 set &#43;o history USER_PASS=&#39;ken:xxxxxxxxxxxxxxx&#39; set -o history">
@@ -41,18 +41,18 @@ set &#43;o history USER_PASS=&#39;ken:xxxxxxxxxxxxxxx&#39; set -o history">
 
   <meta itemprop="name" content="Развёртывание containerd 1.x в изолированной среде">
   <meta itemprop="description" content="1. Добавление загрузки модуля overlay в систему Модуль overlay добавляет в систему поддержку файловой системы OverlayFS. Эта файловая система используется для хранения слоёв образов, которые использует containerd.
-Этот шаг можно пропустить, так как загрузка модуля overlay выполняется через systemd-юнит &#39;containerd.service&#39;, где присутствует строка &#39;ExecStartPre=-/sbin/modprobe overlay&#39;.
+Note Этот шаг можно пропустить, так как загрузка модуля overlay выполняется через systemd-юнит &#39;containerd.service&#39;, где присутствует строка &#39;ExecStartPre=-/sbin/modprobe overlay&#39;.
 Выполните:
 cat &lt;&lt; EOF &gt; /etc/modules-load.d/containerd.conf overlay EOF modprobe overlay 2. Скачивание компонентов containerd из внутреннего raw-репозитория Если внутренний репозиторий требует аутентификации, то задайте учётные данные для скачивания компонентов containerd:
 set &#43;o history USER_PASS=&#39;ken:xxxxxxxxxxxxxxx&#39; set -o history">
   <meta itemprop="datePublished" content="2024-05-18T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-05-18T00:00:00+00:00">
-  <meta itemprop="wordCount" content="631">
+  <meta itemprop="wordCount" content="634">
   <meta itemprop="keywords" content="Containerd,Cri">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Развёртывание containerd 1.x в изолированной среде">
   <meta name="twitter:description" content="1. Добавление загрузки модуля overlay в систему Модуль overlay добавляет в систему поддержку файловой системы OverlayFS. Эта файловая система используется для хранения слоёв образов, которые использует containerd.
-Этот шаг можно пропустить, так как загрузка модуля overlay выполняется через systemd-юнит &#39;containerd.service&#39;, где присутствует строка &#39;ExecStartPre=-/sbin/modprobe overlay&#39;.
+Note Этот шаг можно пропустить, так как загрузка модуля overlay выполняется через systemd-юнит &#39;containerd.service&#39;, где присутствует строка &#39;ExecStartPre=-/sbin/modprobe overlay&#39;.
 Выполните:
 cat &lt;&lt; EOF &gt; /etc/modules-load.d/containerd.conf overlay EOF modprobe overlay 2. Скачивание компонентов containerd из внутреннего raw-репозитория Если внутренний репозиторий требует аутентификации, то задайте учётные данные для скачивания компонентов containerd:
 set &#43;o history USER_PASS=&#39;ken:xxxxxxxxxxxxxxx&#39; set -o history">
@@ -544,18 +544,6 @@ if (window.location.pathname !== "/") {
   <input type="checkbox" id="m-manualsfreeipainstalling-and-setup-freeipaadding-additional-freeipa-replicas-check"/>
   <label for="m-manualsfreeipainstalling-and-setup-freeipaadding-additional-freeipa-replicas-check"><a href="/manuals/freeipa/installing-and-setup-freeipa/adding-additional-freeipa-replicas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsfreeipainstalling-and-setup-freeipaadding-additional-freeipa-replicas"><span class="">Добавление дополнительных реплик FreeIPA</span></a></label>
   
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsfreeipainstalling-and-setup-freeipacommon10-podgotovka-hosta-li">
-  <input type="checkbox" id="m-manualsfreeipainstalling-and-setup-freeipacommon10-podgotovka-hosta-check"/>
-  <label for="m-manualsfreeipainstalling-and-setup-freeipacommon10-podgotovka-hosta-check"><a href="/manuals/freeipa/installing-and-setup-freeipa/common/10-podgotovka-hosta/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsfreeipainstalling-and-setup-freeipacommon10-podgotovka-hosta"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsfreeipainstalling-and-setup-freeipacommondisabling-dnssec-validation-li">
-  <input type="checkbox" id="m-manualsfreeipainstalling-and-setup-freeipacommondisabling-dnssec-validation-check"/>
-  <label for="m-manualsfreeipainstalling-and-setup-freeipacommondisabling-dnssec-validation-check"><a href="/manuals/freeipa/installing-and-setup-freeipa/common/disabling-dnssec-validation/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsfreeipainstalling-and-setup-freeipacommondisabling-dnssec-validation"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsfreeipainstalling-and-setup-freeipacommonldap-disabling-anonymous-access-to-directory-li">
-  <input type="checkbox" id="m-manualsfreeipainstalling-and-setup-freeipacommonldap-disabling-anonymous-access-to-directory-check"/>
-  <label for="m-manualsfreeipainstalling-and-setup-freeipacommonldap-disabling-anonymous-access-to-directory-check"><a href="/manuals/freeipa/installing-and-setup-freeipa/common/ldap-disabling-anonymous-access-to-directory/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsfreeipainstalling-and-setup-freeipacommonldap-disabling-anonymous-access-to-directory"><span class=""></span></a></label>
-  
 </li>
   </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsfreeipacheckipaconsistency-utilita-dlya-opredeleniya-rassinhronizacii-replik-freeipa-li">
@@ -814,6 +802,17 @@ if (window.location.pathname !== "/") {
   </ul>
 </li>
   </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsmonitoringvictoriametricsvmauth-li">
+  <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmauth-check"/>
+  <label for="m-manualsmonitoringvictoriametricsvmauth-check"><a href="/manuals/monitoring/victoriametrics/vmauth/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoringvictoriametricsvmauth"><span class="">VMAuth</span></a></label>
+  
+  <ul class="ul-4 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvmauthtls-cert-for-vip-on-vmauth-nodes-with-auto-renewal-li">
+  <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmauthtls-cert-for-vip-on-vmauth-nodes-with-auto-renewal-check"/>
+  <label for="m-manualsmonitoringvictoriametricsvmauthtls-cert-for-vip-on-vmauth-nodes-with-auto-renewal-check"><a href="/manuals/monitoring/victoriametrics/vmauth/tls-cert-for-vip-on-vmauth-nodes-with-auto-renewal/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsvmauthtls-cert-for-vip-on-vmauth-nodes-with-auto-renewal"><span class="">Пример организации получения TLS-сертификата для Virtual IP (VIP) на vmauth-узлах с автообновлением</span></a></label>
+  
+</li>
+  </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvictoriametrics-what-you-should-avoid-li">
   <input type="checkbox" id="m-manualsmonitoringvictoriametricsvictoriametrics-what-you-should-avoid-check"/>
   <label for="m-manualsmonitoringvictoriametricsvictoriametrics-what-you-should-avoid-check"><a href="/manuals/monitoring/victoriametrics/victoriametrics-what-you-should-avoid/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsvictoriametrics-what-you-should-avoid"><span class="">VictoriaMetrics. Чего надо избегать</span></a></label>
@@ -833,10 +832,6 @@ if (window.location.pathname !== "/") {
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options-li">
   <input type="checkbox" id="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options-check"/>
   <label for="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options-check"><a href="/manuals/monitoring/victoriametrics/victoriametrics-vminsert-options/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options"><span class="">VictoriaMetrics. vminsert options</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvmauth-li">
-  <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmauth-check"/>
-  <label for="m-manualsmonitoringvictoriametricsvmauth-check"><a href="/manuals/monitoring/victoriametrics/vmauth/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoringvictoriametricsvmauth"><span class="">VMAuth</span></a></label>
   
 </li>
   </ul>
@@ -988,7 +983,7 @@ if (window.location.pathname !== "/") {
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/encfs/" data-taxonomy-term="encfs"><span class="taxonomy-label">EncFS</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/filesystem/" data-taxonomy-term="filesystem"><span class="taxonomy-label">FileSystem</span><span class="taxonomy-count">6</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/freebsd/" data-taxonomy-term="freebsd"><span class="taxonomy-label">FreeBSD</span><span class="taxonomy-count">2</span></a></li>
-        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/freeipa/" data-taxonomy-term="freeipa"><span class="taxonomy-label">FreeIPA</span><span class="taxonomy-count">24</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/freeipa/" data-taxonomy-term="freeipa"><span class="taxonomy-label">FreeIPA</span><span class="taxonomy-count">25</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/freeipa-4.9.6/" data-taxonomy-term="freeipa-4.9.6"><span class="taxonomy-label">FreeIPA 4.9.6</span><span class="taxonomy-count">4</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/gnu-screen/" data-taxonomy-term="gnu-screen"><span class="taxonomy-label">GNU Screen</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/groupware/" data-taxonomy-term="groupware"><span class="taxonomy-label">Groupware</span><span class="taxonomy-count">1</span></a></li>
@@ -1080,13 +1075,13 @@ if (window.location.pathname !== "/") {
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/venv/" data-taxonomy-term="venv"><span class="taxonomy-label">Venv</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vertica/" data-taxonomy-term="vertica"><span class="taxonomy-label">Vertica</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vfs/" data-taxonomy-term="vfs"><span class="taxonomy-label">VFS</span><span class="taxonomy-count">2</span></a></li>
-        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/victoriametrics/" data-taxonomy-term="victoriametrics"><span class="taxonomy-label">VictoriaMetrics</span><span class="taxonomy-count">16</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/victoriametrics/" data-taxonomy-term="victoriametrics"><span class="taxonomy-label">VictoriaMetrics</span><span class="taxonomy-count">17</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/victoriametrics-cluster/" data-taxonomy-term="victoriametrics-cluster"><span class="taxonomy-label">VictoriaMetrics Cluster</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/virtualization/" data-taxonomy-term="virtualization"><span class="taxonomy-label">Virtualization</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/visual-studio-code/" data-taxonomy-term="visual-studio-code"><span class="taxonomy-label">Visual Studio Code</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmagent/" data-taxonomy-term="vmagent"><span class="taxonomy-label">Vmagent</span><span class="taxonomy-count">14</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmalert/" data-taxonomy-term="vmalert"><span class="taxonomy-label">Vmalert</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmauth/" data-taxonomy-term="vmauth"><span class="taxonomy-label">Vmauth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmauth/" data-taxonomy-term="vmauth"><span class="taxonomy-label">Vmauth</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vminsert/" data-taxonomy-term="vminsert"><span class="taxonomy-label">Vminsert</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmselect/" data-taxonomy-term="vmselect"><span class="taxonomy-label">Vmselect</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmstorage/" data-taxonomy-term="vmstorage"><span class="taxonomy-label">Vmstorage</span><span class="taxonomy-count">2</span></a></li>
@@ -1146,7 +1141,7 @@ if (window.location.pathname !== "/") {
 <table>
 <tbody><tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 <div class="paragraph">
@@ -1162,11 +1157,11 @@ if (window.location.pathname !== "/") {
 <p>Выполните:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="shell"><span style="font-weight: bold">cat</span> <span style="color: #41ff5b">&lt;&lt;</span> <span style="color: #FAAF4C;font-weight: bold">EOF</span><span style="color: #fff0a6;font-weight: bold"> &gt; /etc/modules-load.d/containerd.conf
+<pre class="highlight"><code class="language-shell" data-lang="shell">cat &lt;&lt; EOF &gt; /etc/modules-load.d/containerd.conf
 overlay
-</span><span style="color: #FAAF4C;font-weight: bold">EOF
+EOF
 
-</span>modprobe overlay</code></pre>
+modprobe overlay</code></pre>
 </div>
 </div>
 </li>
@@ -1183,9 +1178,9 @@ overlay
 <p>Если внутренний репозиторий требует аутентификации, то задайте учётные данные для скачивания компонентов containerd:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">set +o history
+<pre class="highlight"><code class="language-console" data-lang="console">set +o history
 USER_PASS=&#39;ken:xxxxxxxxxxxxxxx&#39;
-set -o history</span></code></pre>
+set -o history</code></pre>
 </div>
 </div>
 </li>
@@ -1193,7 +1188,7 @@ set -o history</span></code></pre>
 <p>Скачайте компоненты, предварительно изменив номера версий на актуальные:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">CONTAINERD_VER=&#39;1.7.16&#39;
+<pre class="highlight"><code class="language-console" data-lang="console">CONTAINERD_VER=&#39;1.7.16&#39;
 CONTAINERD_SERVICE_VER=&#39;231012&#39;
 RUNC_VER=&#39;1.1.12&#39;
 INTERNAL_REPO=&#39;http://nexus.example.org:8081/repository/evolut_raw&#39;
@@ -1202,9 +1197,9 @@ REPO_FOLDER=&#39;kubernetes/containerd&#39;
 mkdir -p /root/tmp
 cd /root/tmp
 
-</span><span style="color: #FFFFFF;background-color: #231529">curl -LO -u $</span>USER_PASS <span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">INTERNAL_REPO</span><span style="color: #FFF02A;font-weight: bold">}</span>/<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">REPO_FOLDER</span><span style="color: #FFF02A;font-weight: bold">}</span>/containerd-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">CONTAINERD_VER</span><span style="color: #FFF02A;font-weight: bold">}</span><span style="color: #9f93e6;font-weight: bold">-linux-amd64</span>.tar.gz
-<span style="color: #FFFFFF;background-color: #231529">curl -LO -u $</span>USER_PASS <span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">INTERNAL_REPO</span><span style="color: #FFF02A;font-weight: bold">}</span>/<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">REPO_FOLDER</span><span style="color: #FFF02A;font-weight: bold">}</span>/containerd.service.<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">CONTAINERD_SERVICE_VER</span><span style="color: #FFF02A;font-weight: bold">}</span>
-<span style="color: #FFFFFF;background-color: #231529">curl -LO -u $</span>USER_PASS <span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">INTERNAL_REPO</span><span style="color: #FFF02A;font-weight: bold">}</span>/<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">REPO_FOLDER</span><span style="color: #FFF02A;font-weight: bold">}</span>/runc.amd64-<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">RUNC_VER</span><span style="color: #FFF02A;font-weight: bold">}</span></code></pre>
+curl -LO -u $USER_PASS ${INTERNAL_REPO}/${REPO_FOLDER}/containerd-${CONTAINERD_VER}-linux-amd64.tar.gz
+curl -LO -u $USER_PASS ${INTERNAL_REPO}/${REPO_FOLDER}/containerd.service.${CONTAINERD_SERVICE_VER}
+curl -LO -u $USER_PASS ${INTERNAL_REPO}/${REPO_FOLDER}/runc.amd64-${RUNC_VER}</code></pre>
 </div>
 </div>
 </li>
@@ -1221,7 +1216,7 @@ cd /root/tmp
 <p>Распакуйте containerd в каталог <code>/usr/local</code>:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">tar Cxvf /usr/local containerd-$</span><span style="color: #41ff5b">{</span>CONTAINERD_VER<span style="color: #41ff5b">}</span><span style="color: #9f93e6;font-weight: bold">-linux-amd64</span>.tar.gz</code></pre>
+<pre class="highlight"><code class="language-console" data-lang="console">tar Cxvf /usr/local containerd-${CONTAINERD_VER}-linux-amd64.tar.gz</code></pre>
 </div>
 </div>
 <details>
@@ -1254,8 +1249,8 @@ bin/containerd-shim</pre>
 <p>Добавьте в Systemd ранее скачанный юнит:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">cp containerd.service.$</span><span style="color: #41ff5b">{</span>CONTAINERD_SERVICE_VER<span style="color: #41ff5b">}</span> /etc/systemd/system/containerd.service
-<span style="color: #FFFFFF;background-color: #231529">systemctl daemon-reload</span></code></pre>
+<pre class="highlight"><code class="language-console" data-lang="console">cp containerd.service.${CONTAINERD_SERVICE_VER} /etc/systemd/system/containerd.service
+systemctl daemon-reload</code></pre>
 </div>
 </div>
 </li>
@@ -1272,7 +1267,7 @@ bin/containerd-shim</pre>
 <p>Скопируйте ранее скачанный runc в каталог <code>/usr/local/sbin/</code>:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">install -m 755 runc.amd64-$</span><span style="color: #41ff5b">{</span>RUNC_VER<span style="color: #41ff5b">}</span> /usr/local/sbin/runc</code></pre>
+<pre class="highlight"><code class="language-console" data-lang="console">install -m 755 runc.amd64-${RUNC_VER} /usr/local/sbin/runc</code></pre>
 </div>
 </div>
 </li>
@@ -1289,8 +1284,8 @@ bin/containerd-shim</pre>
 <p>Сгенерируйте конфиг по-умолчанию для containerd:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">mkdir -p /etc/containerd
-</span><span style="color: #FFFFFF;background-color: #231529">containerd config default &gt;</span><span style="color: #BBBBBB"> </span>/etc/containerd/config.toml</code></pre>
+<pre class="highlight"><code class="language-console" data-lang="console">mkdir -p /etc/containerd
+containerd config default &gt; /etc/containerd/config.toml</code></pre>
 </div>
 </div>
 </li>
@@ -1307,7 +1302,7 @@ bin/containerd-shim</pre>
 <p>Включите в конфиге использование &#39;Control Group&#39;:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">sed -i &#39;s/SystemdCgroup = false/SystemdCgroup = true/&#39; /etc/containerd/config.toml</span></code></pre>
+<pre class="highlight"><code class="language-console" data-lang="console">sed -i &#39;s/SystemdCgroup = false/SystemdCgroup = true/&#39; /etc/containerd/config.toml</code></pre>
 </div>
 </div>
 </li>
@@ -1315,14 +1310,14 @@ bin/containerd-shim</pre>
 <p>Переключите версию pause-образа:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">sed -i &#34;s|pause:3.8|pause:3.9|&#34; /etc/containerd/config.toml</span></code></pre>
+<pre class="highlight"><code class="language-console" data-lang="console">sed -i &#34;s|pause:3.8|pause:3.9|&#34; /etc/containerd/config.toml</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
 <table>
 <tbody><tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 <div class="title">Почему меняем образ pause:3.8 на pause:3.9?</div>
@@ -1341,7 +1336,7 @@ bin/containerd-shim</pre>
 <p>Если требуется, то приведите опцию &#39;bin_dir&#39; в секции &#39;[plugins.&#34;io.containerd.grpc.v1.cri&#34;.cni]&#39; к актуальному значению. В опции указан каталог, где будет установлен пакет cni-plugins и куда будут распаковываться устанавливаемые плагины, например cilium:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="source">bin_dir = &#34;/opt/cni/bin&#34;</code></pre>
+<pre class="highlight"><code class="language-source" data-lang="source">bin_dir = &#34;/opt/cni/bin&#34;</code></pre>
 </div>
 </div>
 </li>
@@ -1356,7 +1351,7 @@ bin/containerd-shim</pre>
 <table>
 <tbody><tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 <div class="title">Использованные материалы:</div>
@@ -1380,28 +1375,28 @@ bin/containerd-shim</pre>
 <p>Выполните:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">INTERNAL_REGISTRY=&#39;https://dockerhub.example.org&#39;
+<pre class="highlight"><code class="language-console" data-lang="console">INTERNAL_REGISTRY=&#39;https://dockerhub.example.org&#39;
 
 PRIVATE_REGISTRY=&#39;nexus.example.org:5022&#39;
-</span><span style="color: #FFFFFF;background-color: #231529">PRIVATE_REGISTRY_HTTP=&#39;http://$</span><span style="color: #41ff5b">{</span>PRIVATE_REGISTRY<span style="color: #41ff5b">}</span><span style="color: #fff0a6;font-weight: bold">&#39;
-</span><span style="color: #FFFFFF;background-color: #231529">
-mkdir -p /etc/containerd/certs.d/_default
-</span><span style="color: #FFFFFF;background-color: #231529">cat &lt;&lt; EOF &gt;</span><span style="color: #BBBBBB"> </span>/etc/containerd/certs.d/_default/hosts.toml
-<span style="color: #FFFFFF;background-color: #231529">[host.&#34;$</span><span style="color: #41ff5b">{</span>INTERNAL_REGISTRY<span style="color: #41ff5b">}</span><span style="color: #fff0a6;font-weight: bold">&#34;]
-</span><span style="color: #FFFFFF;background-color: #231529">  capabilities = [&#34;pull&#34;, &#34;resolve&#34;]
-</span><span style="color: #FFFFFF;background-color: #231529">  #</span>skip_verify <span style="color: #41ff5b">=</span> <span style="font-weight: bold">true</span>
-<span style="color: #FFFFFF;background-color: #231529">EOF
+PRIVATE_REGISTRY_HTTP=&#39;http://${PRIVATE_REGISTRY}&#39;
 
-</span><span style="color: #FFFFFF;background-color: #231529">mkdir -p /etc/containerd/certs.d/$</span><span style="color: #41ff5b">{</span>PRIVATE_REGISTRY<span style="color: #41ff5b">}</span>
-<span style="color: #FFFFFF;background-color: #231529">cat &lt;&lt; EOF &gt;</span><span style="color: #BBBBBB"> </span>/etc/containerd/certs.d/<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">PRIVATE_REGISTRY</span><span style="color: #FFF02A;font-weight: bold">}</span>/hosts.toml
-<span style="color: #FFFFFF;background-color: #231529">[host.&#34;$</span><span style="color: #41ff5b">{</span>PRIVATE_REGISTRY_HTTP<span style="color: #41ff5b">}</span><span style="color: #fff0a6;font-weight: bold">&#34;]
-</span><span style="color: #FFFFFF;background-color: #231529">  capabilities = [&#34;pull&#34;, &#34;resolve&#34;]
+mkdir -p /etc/containerd/certs.d/_default
+cat &lt;&lt; EOF &gt; /etc/containerd/certs.d/_default/hosts.toml
+[host.&#34;${INTERNAL_REGISTRY}&#34;]
+  capabilities = [&#34;pull&#34;, &#34;resolve&#34;]
+  #skip_verify = true
+EOF
+
+mkdir -p /etc/containerd/certs.d/${PRIVATE_REGISTRY}
+cat &lt;&lt; EOF &gt; /etc/containerd/certs.d/${PRIVATE_REGISTRY}/hosts.toml
+[host.&#34;${PRIVATE_REGISTRY_HTTP}&#34;]
+  capabilities = [&#34;pull&#34;, &#34;resolve&#34;]
   inscure_skip_verify = true
 EOF
 
-</span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>Поиск строки .registry и замена следующей строки на
-<span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>config_path <span style="color: #41ff5b">=</span> <span style="color: #fff0a6;font-weight: bold">&#34;/etc/containerd/certs.d&#34;</span>
-<span style="color: #FFFFFF;background-color: #231529">sed -i &#39;/\.registry\]/{ n;</span><span style="color: #BBBBBB"> </span>s|config_path <span style="color: #41ff5b">=</span> .<span style="color: #FFF02A;font-weight: bold">*</span>|config_path <span style="color: #41ff5b">=</span> <span style="color: #FAAF4C;font-weight: bold">\&#34;</span>/etc/containerd/certs.d<span style="color: #FAAF4C;font-weight: bold">\&#34;</span>|g <span style="color: #41ff5b">}</span><span style="color: #fff0a6;font-weight: bold">&#39; /etc/containerd/config.toml</span></code></pre>
+# Поиск строки .registry и замена следующей строки на
+# config_path = &#34;/etc/containerd/certs.d&#34;
+sed -i &#39;/\.registry\]/{ n; s|config_path = .*|config_path = \&#34;/etc/containerd/certs.d\&#34;|g }&#39; /etc/containerd/config.toml</code></pre>
 </div>
 </div>
 </li>
@@ -1418,7 +1413,7 @@ EOF
 <p>Включите и запустите демон containerd:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">systemctl enable --now containerd</span></code></pre>
+<pre class="highlight"><code class="language-console" data-lang="console">systemctl enable --now containerd</code></pre>
 </div>
 </div>
 </li>
@@ -1448,8 +1443,8 @@ EOF
 <p>С помощью утилиты <code>ctr</code> убедитесь, что списки контейнеров и образов в containerd пусты:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">ctr c ls   #</span>ctr containers <span style="font-weight: bold">ls</span>
-<span style="color: #FFFFFF;background-color: #231529">ctr i ls   #</span>ctr images <span style="font-weight: bold">ls</span></code></pre>
+<pre class="highlight"><code class="language-console" data-lang="console">ctr c ls   #ctr containers ls
+ctr i ls   #ctr images ls</code></pre>
 </div>
 </div>
 </li>
@@ -1457,21 +1452,21 @@ EOF
 <p>Скачайте &#39;Hello, World&#39; для Docker’а:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">ctr images pull --hosts-dir &#34;/etc/containerd/certs.d&#34; \
-  docker.io/hello-world:latest</span></code></pre>
+<pre class="highlight"><code class="language-console" data-lang="console">ctr images pull --hosts-dir &#34;/etc/containerd/certs.d&#34; \
+  docker.io/hello-world:latest</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">stdout:</div>
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">docker.io/hello-world:latest:                                                     resolved       |++++++++++++++++++++++++++++++++++++++|
+<pre class="highlight"><code class="language-console" data-lang="console">docker.io/hello-world:latest:                                                     resolved       |++++++++++++++++++++++++++++++++++++++|
 index-sha256:53cc4d415d839c98be39331c948609b659ed725170ad2ca8eb36951288f81b75:    done           |++++++++++++++++++++++++++++++++++++++|
 manifest-sha256:e2fc4e5012d16e7fe466f5291c476431beaa1f9b90a5c2125b493ed28e2aba57: done           |++++++++++++++++++++++++++++++++++++++|
 layer-sha256:c1ec31eb59444d78df06a974d155e597c894ab4cda84f08294145e845394988e:    done           |++++++++++++++++++++++++++++++++++++++|
 config-sha256:d2c94e258dcb3c5ac2798d32e1249e42ef01cba4841c2234249495f87264ac5a:   done           |++++++++++++++++++++++++++++++++++++++|
 elapsed: 1.1 s                                                                    total:  12.5 K (11.4 KiB/s)
 unpacking linux/amd64 sha256:53cc4d415d839c98be39331c948609b659ed725170ad2ca8eb36951288f81b75...
-done: 31.118275ms</span></code></pre>
+done: 31.118275ms</code></pre>
 </div>
 </div>
 </li>
@@ -1479,13 +1474,13 @@ done: 31.118275ms</span></code></pre>
 <p>Запустите тестовый контейнер &#39;Hello, World&#39;:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">ctr run -rm docker.io/hello-world:latest hello-world</span></code></pre>
+<pre class="highlight"><code class="language-console" data-lang="console">ctr run -rm docker.io/hello-world:latest hello-world</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">stdout:</div>
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">Hello from Docker!
+<pre class="highlight"><code class="language-console" data-lang="console">Hello from Docker!
 This message shows that your installation appears to be working correctly.
 
 To generate this message, Docker took the following steps:
@@ -1498,13 +1493,13 @@ To generate this message, Docker took the following steps:
     to your terminal.
 
 To try something more ambitious, you can run an Ubuntu container with:
-</span><span style="color: #FFFFFF;background-color: #231529"> $</span><span style="color: #BBBBBB"> </span>docker run <span style="color: #9f93e6;font-weight: bold">-it</span> ubuntu bash
-<span style="color: #FFFFFF;background-color: #231529">
+ $ docker run -it ubuntu bash
+
 Share images, automate workflows, and more with a free Docker ID:
  https://hub.docker.com/
 
 For more examples and ideas, visit:
- https://docs.docker.com/get-started/</span></code></pre>
+ https://docs.docker.com/get-started/</code></pre>
 </div>
 </div>
 </li>
@@ -1512,7 +1507,7 @@ For more examples and ideas, visit:
 <p>Удалите ранее скачанный образ:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">ctr i rm docker.io/hello-world:latest</span></code></pre>
+<pre class="highlight"><code class="language-console" data-lang="console">ctr i rm docker.io/hello-world:latest</code></pre>
 </div>
 </div>
 </li>
@@ -1520,8 +1515,8 @@ For more examples and ideas, visit:
 <p>Вновь убедитесь, что списки контейнеров и образов пусты:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">ctr c ls
-ctr i ls</span></code></pre>
+<pre class="highlight"><code class="language-console" data-lang="console">ctr c ls
+ctr i ls</code></pre>
 </div>
 </div>
 </li>
@@ -1535,14 +1530,14 @@ ctr i ls</span></code></pre>
 <p>Выполните:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">ctr c ls   #</span>ctr containers <span style="font-weight: bold">ls</span>
-<span style="color: #FFFFFF;background-color: #231529">ctr i ls   #</span>ctr images <span style="font-weight: bold">ls</span>
-<span style="color: #FFFFFF;background-color: #231529">ctr images pull --hosts-dir &#34;/etc/containerd/certs.d&#34; \
+<pre class="highlight"><code class="language-console" data-lang="console">ctr c ls   #ctr containers ls
+ctr i ls   #ctr images ls
+ctr images pull --hosts-dir &#34;/etc/containerd/certs.d&#34; \
   docker.io/hello-world:latest
 ctr run -rm docker.io/hello-world:latest hello-world
 ctr i rm docker.io/hello-world:latest
 ctr c ls
-ctr i ls</span></code></pre>
+ctr i ls</code></pre>
 </div>
 </div>
 </li>

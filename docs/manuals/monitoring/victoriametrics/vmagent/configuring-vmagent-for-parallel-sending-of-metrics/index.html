@@ -18,7 +18,7 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>Настройка в VMAgent параллельной отправки метрик в «новый» и «старый» VMetrics-кластеры | Debuntarium</title>
-<meta name="description" content=" 1. Некоторые правила пользования сервисом хранения метрик 1.1. О номере тенанта https://docs.victoriametrics.com/cluster-victoriametrics/#multitenancy VictoriaMetrics cluster supports multiple isolated tenants (aka namespaces). Tenants are identified by accountID or accountID:projectID, which are put inside request URLs for writes and reads.
+<meta name="description" content=" 1. Некоторые правила пользования сервисом хранения метрик 1.1. О номере тенанта Note https://docs.victoriametrics.com/cluster-victoriametrics/#multitenancy VictoriaMetrics cluster supports multiple isolated tenants (aka namespaces). Tenants are identified by accountID or accountID:projectID, which are put inside request URLs for writes and reads.
 Тенанты различаются по идентификатору аккаунта (accountID) или по паре accountID:projectID. Например: 203:5.
 Технически, для того чтобы метрика была отправлена в конкретный тенант, к ней необходимо прикрепить метки, например vm_account_id=203 и vm_project_id=5. Допустимо указать только vm_account_id=203 — в этом случае кластер VictoriaMetrics воспримет, что метрика предназначена для тенанта 203:0.
 Каждому арендатору назначается уникальный номер, определяющий аккаунт (accountID), в который сохраняются метрики в кластере VictoriaMetrics.
@@ -26,7 +26,7 @@
 <meta property="og:url" content="https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/configuring-vmagent-for-parallel-sending-of-metrics/">
   <meta property="og:site_name" content="Debuntarium">
   <meta property="og:title" content="Настройка в VMAgent параллельной отправки метрик в «новый» и «старый» VMetrics-кластеры">
-  <meta property="og:description" content="1. Некоторые правила пользования сервисом хранения метрик 1.1. О номере тенанта https://docs.victoriametrics.com/cluster-victoriametrics/#multitenancy VictoriaMetrics cluster supports multiple isolated tenants (aka namespaces). Tenants are identified by accountID or accountID:projectID, which are put inside request URLs for writes and reads.
+  <meta property="og:description" content="1. Некоторые правила пользования сервисом хранения метрик 1.1. О номере тенанта Note https://docs.victoriametrics.com/cluster-victoriametrics/#multitenancy VictoriaMetrics cluster supports multiple isolated tenants (aka namespaces). Tenants are identified by accountID or accountID:projectID, which are put inside request URLs for writes and reads.
 Тенанты различаются по идентификатору аккаунта (accountID) или по паре accountID:projectID. Например: 203:5.
 Технически, для того чтобы метрика была отправлена в конкретный тенант, к ней необходимо прикрепить метки, например vm_account_id=203 и vm_project_id=5. Допустимо указать только vm_account_id=203 — в этом случае кластер VictoriaMetrics воспримет, что метрика предназначена для тенанта 203:0.
 Каждому арендатору назначается уникальный номер, определяющий аккаунт (accountID), в который сохраняются метрики в кластере VictoriaMetrics.
@@ -40,18 +40,18 @@
     <meta property="article:tag" content="Vmagent">
 
   <meta itemprop="name" content="Настройка в VMAgent параллельной отправки метрик в «новый» и «старый» VMetrics-кластеры">
-  <meta itemprop="description" content="1. Некоторые правила пользования сервисом хранения метрик 1.1. О номере тенанта https://docs.victoriametrics.com/cluster-victoriametrics/#multitenancy VictoriaMetrics cluster supports multiple isolated tenants (aka namespaces). Tenants are identified by accountID or accountID:projectID, which are put inside request URLs for writes and reads.
+  <meta itemprop="description" content="1. Некоторые правила пользования сервисом хранения метрик 1.1. О номере тенанта Note https://docs.victoriametrics.com/cluster-victoriametrics/#multitenancy VictoriaMetrics cluster supports multiple isolated tenants (aka namespaces). Tenants are identified by accountID or accountID:projectID, which are put inside request URLs for writes and reads.
 Тенанты различаются по идентификатору аккаунта (accountID) или по паре accountID:projectID. Например: 203:5.
 Технически, для того чтобы метрика была отправлена в конкретный тенант, к ней необходимо прикрепить метки, например vm_account_id=203 и vm_project_id=5. Допустимо указать только vm_account_id=203 — в этом случае кластер VictoriaMetrics воспримет, что метрика предназначена для тенанта 203:0.
 Каждому арендатору назначается уникальный номер, определяющий аккаунт (accountID), в который сохраняются метрики в кластере VictoriaMetrics.
 Все метрики, отправляемые арендатором в кластер, должны быть помечены меткой vm_account_id со значением, соответствующим выданному номеру аккаунта.">
   <meta itemprop="datePublished" content="2025-03-30T00:00:00+00:00">
   <meta itemprop="dateModified" content="2025-03-30T00:00:00+00:00">
-  <meta itemprop="wordCount" content="1745">
+  <meta itemprop="wordCount" content="1749">
   <meta itemprop="keywords" content="VictoriaMetrics,Vmagent">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Настройка в VMAgent параллельной отправки метрик в «новый» и «старый» VMetrics-кластеры">
-  <meta name="twitter:description" content="1. Некоторые правила пользования сервисом хранения метрик 1.1. О номере тенанта https://docs.victoriametrics.com/cluster-victoriametrics/#multitenancy VictoriaMetrics cluster supports multiple isolated tenants (aka namespaces). Tenants are identified by accountID or accountID:projectID, which are put inside request URLs for writes and reads.
+  <meta name="twitter:description" content="1. Некоторые правила пользования сервисом хранения метрик 1.1. О номере тенанта Note https://docs.victoriametrics.com/cluster-victoriametrics/#multitenancy VictoriaMetrics cluster supports multiple isolated tenants (aka namespaces). Tenants are identified by accountID or accountID:projectID, which are put inside request URLs for writes and reads.
 Тенанты различаются по идентификатору аккаунта (accountID) или по паре accountID:projectID. Например: 203:5.
 Технически, для того чтобы метрика была отправлена в конкретный тенант, к ней необходимо прикрепить метки, например vm_account_id=203 и vm_project_id=5. Допустимо указать только vm_account_id=203 — в этом случае кластер VictoriaMetrics воспримет, что метрика предназначена для тенанта 203:0.
 Каждому арендатору назначается уникальный номер, определяющий аккаунт (accountID), в который сохраняются метрики в кластере VictoriaMetrics.
@@ -544,18 +544,6 @@ if (window.location.pathname !== "/") {
   <input type="checkbox" id="m-manualsfreeipainstalling-and-setup-freeipaadding-additional-freeipa-replicas-check"/>
   <label for="m-manualsfreeipainstalling-and-setup-freeipaadding-additional-freeipa-replicas-check"><a href="/manuals/freeipa/installing-and-setup-freeipa/adding-additional-freeipa-replicas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsfreeipainstalling-and-setup-freeipaadding-additional-freeipa-replicas"><span class="">Добавление дополнительных реплик FreeIPA</span></a></label>
   
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsfreeipainstalling-and-setup-freeipacommon10-podgotovka-hosta-li">
-  <input type="checkbox" id="m-manualsfreeipainstalling-and-setup-freeipacommon10-podgotovka-hosta-check"/>
-  <label for="m-manualsfreeipainstalling-and-setup-freeipacommon10-podgotovka-hosta-check"><a href="/manuals/freeipa/installing-and-setup-freeipa/common/10-podgotovka-hosta/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsfreeipainstalling-and-setup-freeipacommon10-podgotovka-hosta"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsfreeipainstalling-and-setup-freeipacommondisabling-dnssec-validation-li">
-  <input type="checkbox" id="m-manualsfreeipainstalling-and-setup-freeipacommondisabling-dnssec-validation-check"/>
-  <label for="m-manualsfreeipainstalling-and-setup-freeipacommondisabling-dnssec-validation-check"><a href="/manuals/freeipa/installing-and-setup-freeipa/common/disabling-dnssec-validation/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsfreeipainstalling-and-setup-freeipacommondisabling-dnssec-validation"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsfreeipainstalling-and-setup-freeipacommonldap-disabling-anonymous-access-to-directory-li">
-  <input type="checkbox" id="m-manualsfreeipainstalling-and-setup-freeipacommonldap-disabling-anonymous-access-to-directory-check"/>
-  <label for="m-manualsfreeipainstalling-and-setup-freeipacommonldap-disabling-anonymous-access-to-directory-check"><a href="/manuals/freeipa/installing-and-setup-freeipa/common/ldap-disabling-anonymous-access-to-directory/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsfreeipainstalling-and-setup-freeipacommonldap-disabling-anonymous-access-to-directory"><span class=""></span></a></label>
-  
 </li>
   </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsfreeipacheckipaconsistency-utilita-dlya-opredeleniya-rassinhronizacii-replik-freeipa-li">
@@ -814,6 +802,17 @@ if (window.location.pathname !== "/") {
   </ul>
 </li>
   </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsmonitoringvictoriametricsvmauth-li">
+  <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmauth-check"/>
+  <label for="m-manualsmonitoringvictoriametricsvmauth-check"><a href="/manuals/monitoring/victoriametrics/vmauth/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoringvictoriametricsvmauth"><span class="">VMAuth</span></a></label>
+  
+  <ul class="ul-4 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvmauthtls-cert-for-vip-on-vmauth-nodes-with-auto-renewal-li">
+  <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmauthtls-cert-for-vip-on-vmauth-nodes-with-auto-renewal-check"/>
+  <label for="m-manualsmonitoringvictoriametricsvmauthtls-cert-for-vip-on-vmauth-nodes-with-auto-renewal-check"><a href="/manuals/monitoring/victoriametrics/vmauth/tls-cert-for-vip-on-vmauth-nodes-with-auto-renewal/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsvmauthtls-cert-for-vip-on-vmauth-nodes-with-auto-renewal"><span class="">Пример организации получения TLS-сертификата для Virtual IP (VIP) на vmauth-узлах с автообновлением</span></a></label>
+  
+</li>
+  </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvictoriametrics-what-you-should-avoid-li">
   <input type="checkbox" id="m-manualsmonitoringvictoriametricsvictoriametrics-what-you-should-avoid-check"/>
   <label for="m-manualsmonitoringvictoriametricsvictoriametrics-what-you-should-avoid-check"><a href="/manuals/monitoring/victoriametrics/victoriametrics-what-you-should-avoid/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsvictoriametrics-what-you-should-avoid"><span class="">VictoriaMetrics. Чего надо избегать</span></a></label>
@@ -833,10 +832,6 @@ if (window.location.pathname !== "/") {
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options-li">
   <input type="checkbox" id="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options-check"/>
   <label for="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options-check"><a href="/manuals/monitoring/victoriametrics/victoriametrics-vminsert-options/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options"><span class="">VictoriaMetrics. vminsert options</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvmauth-li">
-  <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmauth-check"/>
-  <label for="m-manualsmonitoringvictoriametricsvmauth-check"><a href="/manuals/monitoring/victoriametrics/vmauth/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoringvictoriametricsvmauth"><span class="">VMAuth</span></a></label>
   
 </li>
   </ul>
@@ -992,7 +987,7 @@ if (window.location.pathname !== "/") {
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/encfs/" data-taxonomy-term="encfs"><span class="taxonomy-label">EncFS</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/filesystem/" data-taxonomy-term="filesystem"><span class="taxonomy-label">FileSystem</span><span class="taxonomy-count">6</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/freebsd/" data-taxonomy-term="freebsd"><span class="taxonomy-label">FreeBSD</span><span class="taxonomy-count">2</span></a></li>
-        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/freeipa/" data-taxonomy-term="freeipa"><span class="taxonomy-label">FreeIPA</span><span class="taxonomy-count">24</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/freeipa/" data-taxonomy-term="freeipa"><span class="taxonomy-label">FreeIPA</span><span class="taxonomy-count">25</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/freeipa-4.9.6/" data-taxonomy-term="freeipa-4.9.6"><span class="taxonomy-label">FreeIPA 4.9.6</span><span class="taxonomy-count">4</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/gnu-screen/" data-taxonomy-term="gnu-screen"><span class="taxonomy-label">GNU Screen</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/groupware/" data-taxonomy-term="groupware"><span class="taxonomy-label">Groupware</span><span class="taxonomy-count">1</span></a></li>
@@ -1084,13 +1079,13 @@ if (window.location.pathname !== "/") {
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/venv/" data-taxonomy-term="venv"><span class="taxonomy-label">Venv</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vertica/" data-taxonomy-term="vertica"><span class="taxonomy-label">Vertica</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vfs/" data-taxonomy-term="vfs"><span class="taxonomy-label">VFS</span><span class="taxonomy-count">2</span></a></li>
-        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/victoriametrics/" data-taxonomy-term="victoriametrics"><span class="taxonomy-label">VictoriaMetrics</span><span class="taxonomy-count">16</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/victoriametrics/" data-taxonomy-term="victoriametrics"><span class="taxonomy-label">VictoriaMetrics</span><span class="taxonomy-count">17</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/victoriametrics-cluster/" data-taxonomy-term="victoriametrics-cluster"><span class="taxonomy-label">VictoriaMetrics Cluster</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/virtualization/" data-taxonomy-term="virtualization"><span class="taxonomy-label">Virtualization</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/visual-studio-code/" data-taxonomy-term="visual-studio-code"><span class="taxonomy-label">Visual Studio Code</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmagent/" data-taxonomy-term="vmagent"><span class="taxonomy-label">Vmagent</span><span class="taxonomy-count">14</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmalert/" data-taxonomy-term="vmalert"><span class="taxonomy-label">Vmalert</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmauth/" data-taxonomy-term="vmauth"><span class="taxonomy-label">Vmauth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmauth/" data-taxonomy-term="vmauth"><span class="taxonomy-label">Vmauth</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vminsert/" data-taxonomy-term="vminsert"><span class="taxonomy-label">Vminsert</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmselect/" data-taxonomy-term="vmselect"><span class="taxonomy-label">Vmselect</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmstorage/" data-taxonomy-term="vmstorage"><span class="taxonomy-label">Vmstorage</span><span class="taxonomy-count">2</span></a></li>
@@ -1153,7 +1148,7 @@ if (window.location.pathname !== "/") {
 <table>
 <tbody><tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 <div class="title"><a href="https://docs.victoriametrics.com/cluster-victoriametrics/#multitenancy" class="bare">https://docs.victoriametrics.com/cluster-victoriametrics/#multitenancy</a></div>
@@ -1325,7 +1320,7 @@ http_requests_total{method=&#34;GET&#34;, path=&#34;/api/v1/user/98765&#34;, sta
 <table>
 <tbody><tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 VMAuth настроен возвращать своё состояние <a href="https://127.0.0.1:8426/-/ready" class="bare">https://127.0.0.1:8426/-/ready</a> на анонимные запросы.
@@ -1356,7 +1351,7 @@ VMAuth настроен возвращать своё состояние <a href
 <p>Выполните:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">curl --insecure $</span><span style="color: #41ff5b">{</span>REMOTEWRITE_URL_NEW<span style="color: #41ff5b">}</span></code></pre>
+<pre>curl --insecure ${REMOTEWRITE_URL_NEW}</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1364,7 +1359,7 @@ VMAuth настроен возвращать своё состояние <a href
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">VictoriaMetrics is Ready.</span></code></pre>
+<pre>VictoriaMetrics is Ready.</pre>
 </div>
 </div>
 </li>
@@ -1406,16 +1401,16 @@ VMAuth настроен возвращать своё состояние <a href
 <p>Выполните:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">USERPASS=&#39;nx-pubrepo-reader:xxxxxxxxxxxxxxxxx&#39;
+<pre>USERPASS=&#39;nx-pubrepo-reader:xxxxxxxxxxxxxxxxx&#39;
 REPO=&#39;evo_distr_yum/monitoring/victoriametrics/x86_64/&#39;
-</span><span style="color: #FFFFFF;background-color: #231529">cat &lt;&lt; EOF &gt;</span><span style="color: #BBBBBB"> </span>/etc/zypp/repos.d/evo_distr_yum.repo
-<span style="color: #FFFFFF;background-color: #231529">[evo_distr_yum]
+cat &lt;&lt; EOF &gt; /etc/zypp/repos.d/evo_distr_yum.repo
+[evo_distr_yum]
 enabled=1
 autorefresh=1
-</span><span style="color: #FFFFFF;background-color: #231529">baseurl=http://$</span><span style="color: #41ff5b">{</span>USERPASS<span style="color: #41ff5b">}</span>@nexus.example.org/repository/<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">REPO</span><span style="color: #FFF02A;font-weight: bold">}</span>
-<span style="color: #FFFFFF;background-color: #231529">gpgcheck=0
-</span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #41ff5b;font-weight: bold">repo_gpgcheck</span><span style="color: #41ff5b">=</span>0
-<span style="color: #FFFFFF;background-color: #231529">EOF</span></code></pre>
+baseurl=http://${USERPASS}@nexus.example.org/repository/${REPO}
+gpgcheck=0
+#repo_gpgcheck=0
+EOF</pre>
 </div>
 </div>
 </li>
@@ -1431,7 +1426,7 @@ autorefresh=1
 <p>Выполните:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">zypper install vmagent</span></code></pre>
+<pre>zypper install vmagent</pre>
 </div>
 </div>
 </li>
@@ -1454,7 +1449,7 @@ autorefresh=1
 <table>
 <tbody><tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 <div class="paragraph">
@@ -1556,9 +1551,9 @@ autorefresh=1
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">remoteWrite_url=\
-</span><span style="color: #FFFFFF;background-color: #231529">&#34;$</span><span style="color: #41ff5b">{</span>REMOTEWRITE_URL_NEW<span style="color: #41ff5b">}</span><span style="color: #fff0a6;font-weight: bold">&#34;,</span><span style="color: #FAAF4C;font-weight: bold">\</span><span style="color: #fff0a6;font-weight: bold">
-</span><span style="color: #FFFFFF;background-color: #231529">&#34;$</span><span style="color: #fff0a6;font-weight: bold">{REMOTEWRITE_URL_OLD}&#34;</span></code></pre>
+<pre>remoteWrite_url=\
+&#34;${REMOTEWRITE_URL_NEW}&#34;,\
+&#34;${REMOTEWRITE_URL_OLD}&#34;</pre>
 </div>
 </div>
 </li>
@@ -1578,11 +1573,11 @@ autorefresh=1
 <p><code>remoteWrite_label</code> — список глобальных лейблов, назначаемых на абсолютно все метрики, проходящие сквозь vmagent, независимо от способа получения (push или pull). Пример назначения глобальных меток, для удобства чтения оформленных в несколько строк, где переменная <code>SYSTEMD_HOSTNAME</code> объявляется в systemd-юните и определяет имя хоста, а остальные метки добавляются/изменяются вручную:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">remoteWrite_label=\
+<pre>remoteWrite_label=\
 &#34;vmagent_hostname=%{SYSTEMD_HOSTNAME}&#34;,\
 &#34;vmagent_region=kurch&#34;,\
 &#34;vmagent_vlan_num=0617&#34;,\
-&#34;vmagent_vlan_env=dev&#34;</span></code></pre>
+&#34;vmagent_vlan_env=dev&#34;</pre>
 </div>
 </div>
 </li>
@@ -1609,38 +1604,38 @@ autorefresh=1
 <div id="_tabs_1_до_настройки_сразу_после_установки_rpm_пакета--panel" class="tabpanel" aria-labelledby="_tabs_1_до_настройки_сразу_после_установки_rpm_пакета">
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">httpListenAddr=127.0.0.1:8429
+<pre>httpListenAddr=127.0.0.1:8429
 promscrape_config=vmagent.yml
 
-</span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #6D6E70;font-style: italic"># Silently skip unsupported fields</span>
-<span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #41ff5b;font-weight: bold">promscrape_config_strictParse</span><span style="color: #41ff5b">=</span><span style="font-weight: bold">false</span>
-<span style="color: #FFFFFF;background-color: #231529">
+## Silently skip unsupported fields
+#promscrape_config_strictParse=false
+
 loggerLevel=INFO
 promscrape_suppressDuplicateScrapeTargetErrors=true
 
-</span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #6D6E70;font-style: italic"># Directory for temporary storage of collected data</span>
-<span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #41ff5b;font-weight: bold">remoteWrite_tmpDataPath</span><span style="color: #41ff5b">=</span><span style="color: #fff0a6;font-weight: bold">&#34;/var/lib/vmagent&#34;</span>
-<span style="color: #FFFFFF;background-color: #231529">remoteWrite_tmpDataPath=&#34;/data/vmagent&#34;
+## Directory for temporary storage of collected data
+#remoteWrite_tmpDataPath=&#34;/var/lib/vmagent&#34;
+remoteWrite_tmpDataPath=&#34;/data/vmagent&#34;
 
-remoteWrite_label=&#34;vmagent_hostname=%{SYSTEMD_HOSTNAME}&#34;</span></code></pre>
+remoteWrite_label=&#34;vmagent_hostname=%{SYSTEMD_HOSTNAME}&#34;</pre>
 </div>
 </div>
 </div>
 <div id="_tabs_1_пример_отправки_метрик_только_в_новый_vm_кластер--panel" class="tabpanel" aria-labelledby="_tabs_1_пример_отправки_метрик_только_в_новый_vm_кластер">
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">httpListenAddr=127.0.0.1:8429
+<pre>httpListenAddr=127.0.0.1:8429
 promscrape_config=vmagent.yml
 
-</span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #6D6E70;font-style: italic"># Silently skip unsupported fields</span>
-<span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #41ff5b;font-weight: bold">promscrape_config_strictParse</span><span style="color: #41ff5b">=</span><span style="font-weight: bold">false</span>
-<span style="color: #FFFFFF;background-color: #231529">
+## Silently skip unsupported fields
+#promscrape_config_strictParse=false
+
 loggerLevel=INFO
 promscrape_suppressDuplicateScrapeTargetErrors=true
 
-</span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #6D6E70;font-style: italic"># Directory for temporary storage of collected data</span>
-<span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #41ff5b;font-weight: bold">remoteWrite_tmpDataPath</span><span style="color: #41ff5b">=</span><span style="color: #fff0a6;font-weight: bold">&#34;/var/lib/vmagent&#34;</span>
-<span style="color: #FFFFFF;background-color: #231529">remoteWrite_tmpDataPath=&#34;/data/vmagent&#34;
+## Directory for temporary storage of collected data
+#remoteWrite_tmpDataPath=&#34;/var/lib/vmagent&#34;
+remoteWrite_tmpDataPath=&#34;/data/vmagent&#34;
 
 remoteWrite_url=&#34;https://vd-vmauth.example.org&#34;
 
@@ -1652,25 +1647,25 @@ remoteWrite_urlRelabelConfig=&#34;filters/203.yml&#34;
 
 remoteWrite_maxDiskUsagePerURL=10GB
 
-remoteWrite_label=&#34;vmagent_hostname=%{SYSTEMD_HOSTNAME}&#34;</span></code></pre>
+remoteWrite_label=&#34;vmagent_hostname=%{SYSTEMD_HOSTNAME}&#34;</pre>
 </div>
 </div>
 </div>
 <div id="_tabs_1_пример_параллельной_отправки_метрик--panel" class="tabpanel" aria-labelledby="_tabs_1_пример_параллельной_отправки_метрик">
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">httpListenAddr=127.0.0.1:8429
+<pre>httpListenAddr=127.0.0.1:8429
 promscrape_config=vmagent.yml
 
-</span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #6D6E70;font-style: italic"># Silently skip unsupported fields</span>
-<span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #41ff5b;font-weight: bold">promscrape_config_strictParse</span><span style="color: #41ff5b">=</span><span style="font-weight: bold">false</span>
-<span style="color: #FFFFFF;background-color: #231529">
+## Silently skip unsupported fields
+#promscrape_config_strictParse=false
+
 loggerLevel=INFO
 promscrape_suppressDuplicateScrapeTargetErrors=true
 
-</span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #6D6E70;font-style: italic"># Directory for temporary storage of collected data</span>
-<span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #41ff5b;font-weight: bold">remoteWrite_tmpDataPath</span><span style="color: #41ff5b">=</span><span style="color: #fff0a6;font-weight: bold">&#34;/var/lib/vmagent&#34;</span>
-<span style="color: #FFFFFF;background-color: #231529">remoteWrite_tmpDataPath=&#34;/data/vmagent&#34;
+## Directory for temporary storage of collected data
+#remoteWrite_tmpDataPath=&#34;/var/lib/vmagent&#34;
+remoteWrite_tmpDataPath=&#34;/data/vmagent&#34;
 
 remoteWrite_url=\
 &#34;https://vd-vmauth.example.org&#34;,\
@@ -1688,7 +1683,7 @@ remoteWrite_label=\
 &#34;vmagent_hostname=%{SYSTEMD_HOSTNAME}&#34;,\
 &#34;vmagent_region=kurch&#34;,\
 &#34;vmagent_vlan_num=0617&#34;,\
-&#34;vmagent_vlan_env=dev&#34;</span></code></pre>
+&#34;vmagent_vlan_env=dev&#34;</pre>
 </div>
 </div>
 </div>
@@ -1704,7 +1699,7 @@ remoteWrite_label=\
 <table>
 <tbody><tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 Этот пункт пропускается, если хост был ранее введён в домен и является участником нашего домена <code>example.org</code>.
@@ -1722,14 +1717,14 @@ remoteWrite_label=\
 <p>Добавьте в файл <code>/etc/sysconfig/vmagent</code> следующую переменную с одним значением:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">remoteWrite_tlsCAFile=&#34;ca.crt&#34;</span></code></pre>
+<pre>remoteWrite_tlsCAFile=&#34;ca.crt&#34;</pre>
 </div>
 </div>
 <div class="admonitionblock note">
 <table>
 <tbody><tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 В переменной <code>remoteWrite_url</code> https-адрес «нового» VMetrics-кластера находится в первой позиции, поэтому здесь достаточно указать одно значение.
@@ -1742,13 +1737,13 @@ remoteWrite_label=\
 <p>Добавьте CA-сертификат домена EXAMPLE.ORG в «рабочий» каталог VMAagent:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">cat &lt;&lt; EOF &gt;</span><span style="color: #BBBBBB"> </span>/etc/victoriametrics/ca.crt
-<span style="color: #FFFFFF;background-color: #231529">-----BEGIN CERTIFICATE-----
+<pre>cat &lt;&lt; EOF &gt; /etc/victoriametrics/ca.crt
+-----BEGIN CERTIFICATE-----
 MIIDhTCCAm2gAwIBAgIBATANBgkqhkiG9w0BAQsFADA0MRIwEAYDVQQKDAlEQVRB
-</span><span style="color: #6D6E70;font-style: italic">....
-</span><span style="color: #FFFFFF;background-color: #231529">qBh7PtUIDlIT3mb6oKMaLxm971GsX0cWiIynI6Vp/lg+ULFt3zRJVrA=
+....
+qBh7PtUIDlIT3mb6oKMaLxm971GsX0cWiIynI6Vp/lg+ULFt3zRJVrA=
 -----END CERTIFICATE-----
-EOF</span></code></pre>
+EOF</pre>
 </div>
 </div>
 </li>
@@ -1776,9 +1771,9 @@ EOF</span></code></pre>
 <p>Выполните:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">set +o history
-</span><span style="color: #FFFFFF;background-color: #231529">echo $</span><span style="color: #41ff5b">{</span>BEARER_TOKEN<span style="color: #41ff5b">}</span> <span style="color: #41ff5b">&gt;</span> /etc/victoriametrics/bearer.txt
-<span style="color: #FFFFFF;background-color: #231529">set -o history</span></code></pre>
+<pre>set +o history
+echo ${BEARER_TOKEN} &gt; /etc/victoriametrics/bearer.txt
+set -o history</pre>
 </div>
 </div>
 </li>
@@ -1802,9 +1797,9 @@ EOF</span></code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">- action: keep
+<pre>- action: keep
   source_labels: [vm_account_id]
-</span><span style="color: #FFFFFF;background-color: #231529">  regex: &#34;$</span><span style="color: #41ff5b">{</span>TENANT<span style="color: #41ff5b">}</span><span style="color: #fff0a6;font-weight: bold">&#34;</span></code></pre>
+  regex: &#34;${TENANT}&#34;</pre>
 </div>
 </div>
 </li>
@@ -1816,12 +1811,12 @@ EOF</span></code></pre>
 <p>Примеры создания файла с фильтром для тенанта 203:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">TENANT=203
-</span><span style="color: #FFFFFF;background-color: #231529">cat &lt;&lt; EOF &gt;</span><span style="color: #BBBBBB"> </span>/etc/victoriametrics/filters/<span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">TENANT</span><span style="color: #FFF02A;font-weight: bold">}</span>.yml
-<span style="color: #FFFFFF;background-color: #231529">- action: keep
+<pre>TENANT=203
+cat &lt;&lt; EOF &gt; /etc/victoriametrics/filters/${TENANT}.yml
+- action: keep
   source_labels: [vm_account_id]
-</span><span style="color: #FFFFFF;background-color: #231529">  regex: &#34;$</span><span style="color: #41ff5b">{</span>TENANT<span style="color: #41ff5b">}</span><span style="color: #fff0a6;font-weight: bold">&#34;
-</span><span style="color: #FFFFFF;background-color: #231529">EOF</span></code></pre>
+  regex: &#34;${TENANT}&#34;
+EOF</pre>
 </div>
 </div>
 </li>
@@ -1844,7 +1839,7 @@ EOF</span></code></pre>
 <table>
 <tbody><tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 <div class="paragraph">
@@ -1903,28 +1898,25 @@ EOF</span></code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>external_labels: <i class="conum" data-value="1"></i><b>(1)</b>
-  scraper_hostname: %{SYSTEMD_HOSTNAME} <i class="conum" data-value="2"></i><b>(2)</b>
-  scraper_region: &#34;kurch&#34; <i class="conum" data-value="3"></i><b>(3)</b>
-  scraper_vlan_num: &#34;0617&#34; <i class="conum" data-value="3"></i><b>(3)</b>
-  scraper_vlan_env: &#34;dev&#34; <i class="conum" data-value="3"></i><b>(3)</b></pre>
+<pre>external_labels: <b class="conum">(1)</b>
+  scraper_hostname: %{SYSTEMD_HOSTNAME} <b class="conum">(2)</b>
+  scraper_region: &#34;kurch&#34; <b class="conum">(3)</b>
+  scraper_vlan_num: &#34;0617&#34; <b class="conum">(3)</b>
+  scraper_vlan_env: &#34;dev&#34; <b class="conum">(3)</b></pre>
 </div>
 </div>
 <div class="colist arabic">
-<table>
-<tbody><tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Словарь с метками для всех метрик, собираемых методом pull.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Переменная <code>SYSTEMD_HOSTNAME</code> инициализируется в systemd-юните <code>vmagent.service</code>.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>Примеры других меток.</td>
-</tr>
-</tbody></table>
+<ol>
+<li>
+<p>Словарь с метками для всех метрик, собираемых методом pull.</p>
+</li>
+<li>
+<p>Переменная <code>SYSTEMD_HOSTNAME</code> инициализируется в systemd-юните <code>vmagent.service</code>.</p>
+</li>
+<li>
+<p>Примеры других меток.</p>
+</li>
+</ol>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Пример содержимого файла файла /etc/victoriametrics/vmagent.yml:</p>
@@ -1944,29 +1936,29 @@ EOF</span></code></pre>
 <div id="_tabs_2_сразу_после_установки_rpm_пакета--panel" class="tabpanel" aria-labelledby="_tabs_2_сразу_после_установки_rpm_пакета">
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="yaml"><span style="color: #41ff5b">scrape_config_files</span><span style="color: #41ff5b">:</span>
-  <span style="color: #41ff5b">-</span> <span style="color: #fff0a6;font-weight: bold">targets/*.yml</span>
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">scrape_config_files:
+  - targets/*.yml
 
-<span style="color: #41ff5b">global</span><span style="color: #41ff5b">:</span>
-  <span style="color: #41ff5b">scrape_interval</span><span style="color: #41ff5b">:</span> <span style="color: #fff0a6;font-weight: bold">15s</span>
-  <span style="color: #41ff5b">external_labels</span><span style="color: #41ff5b">:</span>
-    <span style="color: #41ff5b">scraper_hostname</span><span style="color: #41ff5b">:</span> <span style="color: #FFFFFF;background-color: #CC0000">%</span><span style="color: #41ff5b">{</span><span style="color: #41ff5b;font-weight: bold">SYSTEMD_HOSTNAME</span><span style="color: #41ff5b">}</span></code></pre>
+global:
+  scrape_interval: 15s
+  external_labels:
+    scraper_hostname: %{SYSTEMD_HOSTNAME}</code></pre>
 </div>
 </div>
 </div>
 <div id="_tabs_2_после_конфигурирования--panel" class="tabpanel" aria-labelledby="_tabs_2_после_конфигурирования">
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="yaml"><span style="color: #41ff5b">scrape_config_files</span><span style="color: #41ff5b">:</span>
-  <span style="color: #41ff5b">-</span> <span style="color: #fff0a6;font-weight: bold">targets/*.yml</span>
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">scrape_config_files:
+  - targets/*.yml
 
-<span style="color: #41ff5b">global</span><span style="color: #41ff5b">:</span>
-  <span style="color: #41ff5b">scrape_interval</span><span style="color: #41ff5b">:</span> <span style="color: #fff0a6;font-weight: bold">15s</span>
-  <span style="color: #41ff5b">external_labels</span><span style="color: #41ff5b">:</span>
-    <span style="color: #41ff5b">scraper_hostname</span><span style="color: #41ff5b">:</span> <span style="color: #FFFFFF;background-color: #CC0000">%</span><span style="color: #41ff5b">{</span><span style="color: #41ff5b;font-weight: bold">SYSTEMD_HOSTNAME</span><span style="color: #41ff5b">}</span>
-    <span style="color: #41ff5b">scraper_region</span><span style="color: #41ff5b">:</span> <span style="color: #fff0a6;font-weight: bold">&#34;</span><span style="color: #fff0a6;font-weight: bold">kurch&#34;</span>
-    <span style="color: #41ff5b">scraper_vlan_num</span><span style="color: #41ff5b">:</span> <span style="color: #fff0a6;font-weight: bold">&#34;</span><span style="color: #fff0a6;font-weight: bold">0617&#34;</span>
-    <span style="color: #41ff5b">scraper_vlan_env</span><span style="color: #41ff5b">:</span> <span style="color: #fff0a6;font-weight: bold">&#34;</span><span style="color: #fff0a6;font-weight: bold">dev&#34;</span></code></pre>
+global:
+  scrape_interval: 15s
+  external_labels:
+    scraper_hostname: %{SYSTEMD_HOSTNAME}
+    scraper_region: &#34;kurch&#34;
+    scraper_vlan_num: &#34;0617&#34;
+    scraper_vlan_env: &#34;dev&#34;</code></pre>
 </div>
 </div>
 </div>
@@ -1989,7 +1981,7 @@ EOF</span></code></pre>
 <table>
 <tbody><tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 <div class="paragraph">
@@ -2042,13 +2034,13 @@ EOF</span></code></pre>
 <p>Изменяемые строки:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="yaml"><span style="color: #41ff5b">relabel_configs</span><span style="color: #41ff5b">:</span>
-  <span style="color: #41ff5b">-</span> <span style="color: #41ff5b">action</span><span style="color: #41ff5b">:</span> <span style="color: #fff0a6;font-weight: bold">replace</span>
-    <span style="color: #41ff5b">target_label</span><span style="color: #41ff5b">:</span> <span style="color: #fff0a6;font-weight: bold">&#34;</span><span style="color: #fff0a6;font-weight: bold">vm_account_id&#34;</span>
-    <span style="color: #41ff5b">replacement</span><span style="color: #41ff5b">:</span> <span style="color: #fff0a6;font-weight: bold">&#34;</span><span style="color: #fff0a6;font-weight: bold">${TENANT}&#34;</span>
-<span style="color: #41ff5b">-</span> <span style="color: #41ff5b">action</span><span style="color: #41ff5b">:</span> <span style="color: #fff0a6;font-weight: bold">replace</span>
-      <span style="color: #fff0a6;font-weight: bold">target_label</span><span style="color: #FFFFFF;background-color: #CC0000">:</span> <span style="color: #fff0a6;font-weight: bold">&#34;</span><span style="color: #fff0a6;font-weight: bold">vm_project_id&#34;</span>
-      <span style="color: #41ff5b">replacement</span><span style="color: #41ff5b">:</span> <span style="color: #fff0a6;font-weight: bold">&#34;</span><span style="color: #fff0a6;font-weight: bold">${PROJECT}&#34;</span></code></pre>
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">relabel_configs:
+  - action: replace
+    target_label: &#34;vm_account_id&#34;
+    replacement: &#34;${TENANT}&#34;
+- action: replace
+      target_label: &#34;vm_project_id&#34;
+      replacement: &#34;${PROJECT}&#34;</code></pre>
 </div>
 </div>
 </li>
@@ -2059,21 +2051,21 @@ EOF</span></code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="yml"><span style="color: #41ff5b">-</span> <span style="color: #41ff5b">job_name</span><span style="color: #41ff5b">:</span> <span style="color: #fff0a6;font-weight: bold">&#34;</span><span style="color: #fff0a6;font-weight: bold">vmagent&#34;</span>
-  <span style="color: #41ff5b">static_configs</span><span style="color: #41ff5b">:</span>
-    <span style="color: #41ff5b">-</span> <span style="color: #41ff5b">targets</span><span style="color: #41ff5b">:</span>
-        <span style="color: #41ff5b">-</span> <span style="color: #fff0a6;font-weight: bold">127.0.0.1:8429</span>
-  <span style="color: #41ff5b">metrics_path</span><span style="color: #41ff5b">:</span> <span style="color: #fff0a6;font-weight: bold">/metrics</span>
-  <span style="color: #41ff5b">relabel_configs</span><span style="color: #41ff5b">:</span>
-    <span style="color: #41ff5b">-</span> <span style="color: #41ff5b">source_labels</span><span style="color: #41ff5b">:</span> <span style="color: #41ff5b">[</span><span style="color: #41ff5b;font-weight: bold">__address__</span><span style="color: #41ff5b">]</span>
-      <span style="color: #41ff5b">target_label</span><span style="color: #41ff5b">:</span> <span style="color: #fff0a6;font-weight: bold">instance</span>
-      <span style="color: #41ff5b">replacement</span><span style="color: #41ff5b">:</span> <span style="color: #FFFFFF;background-color: #CC0000">%</span><span style="color: #41ff5b">{</span><span style="color: #41ff5b;font-weight: bold">SYSTEMD_HOSTNAME</span><span style="color: #41ff5b">}</span>
-    <span style="color: #41ff5b">-</span> <span style="color: #41ff5b">action</span><span style="color: #41ff5b">:</span> <span style="color: #fff0a6;font-weight: bold">replace</span>
-      <span style="color: #41ff5b">target_label</span><span style="color: #41ff5b">:</span> <span style="color: #fff0a6;font-weight: bold">&#34;</span><span style="color: #fff0a6;font-weight: bold">vm_account_id&#34;</span>
-      <span style="color: #41ff5b">replacement</span><span style="color: #41ff5b">:</span> <span style="color: #fff0a6;font-weight: bold">&#34;</span><span style="color: #fff0a6;font-weight: bold">203&#34;</span>
-    <span style="color: #41ff5b">-</span> <span style="color: #41ff5b">action</span><span style="color: #41ff5b">:</span> <span style="color: #fff0a6;font-weight: bold">replace</span>
-      <span style="color: #41ff5b">target_label</span><span style="color: #41ff5b">:</span> <span style="color: #fff0a6;font-weight: bold">&#34;</span><span style="color: #fff0a6;font-weight: bold">vm_project_id&#34;</span>
-      <span style="color: #41ff5b">replacement</span><span style="color: #41ff5b">:</span> <span style="color: #fff0a6;font-weight: bold">&#34;</span><span style="color: #fff0a6;font-weight: bold">2&#34;</span></code></pre>
+<pre class="highlight"><code class="language-yml" data-lang="yml">- job_name: &#34;vmagent&#34;
+  static_configs:
+    - targets:
+        - 127.0.0.1:8429
+  metrics_path: /metrics
+  relabel_configs:
+    - source_labels: [__address__]
+      target_label: instance
+      replacement: %{SYSTEMD_HOSTNAME}
+    - action: replace
+      target_label: &#34;vm_account_id&#34;
+      replacement: &#34;203&#34;
+    - action: replace
+      target_label: &#34;vm_project_id&#34;
+      replacement: &#34;2&#34;</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -2097,7 +2089,7 @@ EOF</span></code></pre>
 <p>Изменяемые строки:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="ymal">relabel_configs:
+<pre class="highlight"><code class="language-ymal" data-lang="ymal">relabel_configs:
   - action: replace
     target_label: &#34;vm_account_id&#34;
     replacement: &#34;${TENANT}&#34;
@@ -2114,21 +2106,21 @@ EOF</span></code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="yaml"><span style="color: #41ff5b">-</span> <span style="color: #41ff5b">job_name</span><span style="color: #41ff5b">:</span> <span style="color: #fff0a6;font-weight: bold">&#34;</span><span style="color: #fff0a6;font-weight: bold">telegraf&#34;</span>
-  <span style="color: #6D6E70;font-style: italic">#scrape_interval: 15s</span>
-  <span style="color: #41ff5b">static_configs</span><span style="color: #41ff5b">:</span>
-    <span style="color: #41ff5b">-</span> <span style="color: #41ff5b">targets</span><span style="color: #41ff5b">:</span>
-        <span style="color: #41ff5b">-</span> <span style="color: #FFFFFF;background-color: #CC0000">%</span><span style="color: #41ff5b">{</span><span style="color: #41ff5b;font-weight: bold">SYSTEMD_HOSTNAME</span><span style="color: #41ff5b">}</span><span style="color: #fff0a6;font-weight: bold">:9100</span>
-<span style="color: #6D6E70;font-style: italic">#       - hostname1:9100</span>
-<span style="color: #6D6E70;font-style: italic">#       - hostname2:9100</span>
-  <span style="color: #41ff5b">metrics_path</span><span style="color: #41ff5b">:</span> <span style="color: #fff0a6;font-weight: bold">/metrics</span>
-  <span style="color: #41ff5b">relabel_configs</span><span style="color: #41ff5b">:</span>
-    <span style="color: #41ff5b">-</span> <span style="color: #41ff5b">action</span><span style="color: #41ff5b">:</span> <span style="color: #fff0a6;font-weight: bold">replace</span>
-      <span style="color: #41ff5b">target_label</span><span style="color: #41ff5b">:</span> <span style="color: #fff0a6;font-weight: bold">&#34;</span><span style="color: #fff0a6;font-weight: bold">vm_account_id&#34;</span>
-      <span style="color: #41ff5b">replacement</span><span style="color: #41ff5b">:</span> <span style="color: #fff0a6;font-weight: bold">&#34;</span><span style="color: #fff0a6;font-weight: bold">203&#34;</span>
-    <span style="color: #41ff5b">-</span> <span style="color: #41ff5b">action</span><span style="color: #41ff5b">:</span> <span style="color: #fff0a6;font-weight: bold">replace</span>
-      <span style="color: #41ff5b">target_label</span><span style="color: #41ff5b">:</span> <span style="color: #fff0a6;font-weight: bold">&#34;</span><span style="color: #fff0a6;font-weight: bold">vm_project_id&#34;</span>
-      <span style="color: #41ff5b">replacement</span><span style="color: #41ff5b">:</span> <span style="color: #fff0a6;font-weight: bold">&#34;</span><span style="color: #fff0a6;font-weight: bold">1&#34;</span></code></pre>
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">- job_name: &#34;telegraf&#34;
+  #scrape_interval: 15s
+  static_configs:
+    - targets:
+        - %{SYSTEMD_HOSTNAME}:9100
+#       - hostname1:9100
+#       - hostname2:9100
+  metrics_path: /metrics
+  relabel_configs:
+    - action: replace
+      target_label: &#34;vm_account_id&#34;
+      replacement: &#34;203&#34;
+    - action: replace
+      target_label: &#34;vm_project_id&#34;
+      replacement: &#34;1&#34;</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -2166,7 +2158,7 @@ EOF</span></code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">systemctl enable --now vmagent</span></code></pre>
+<pre>systemctl enable --now vmagent</pre>
 </div>
 </div></div></td>
 </tr>
@@ -2178,12 +2170,12 @@ EOF</span></code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">journalctl -u vmagent -n 100 -f --no-hostname</span></code></pre>
+<pre>journalctl -u vmagent -n 100 -f --no-hostname</pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">Примерный ожидаемый вывод:
+<pre>Примерный ожидаемый вывод:
 Mar 27 18:25:31 vmagent-prod[21127]: 2025-03-27T15:25:31.070Z        info        VictoriaMetrics/app/vmagent/main.go:144        starting vmagent at &#34;[127.0.0.1:8429]&#34;...
 Mar 27 18:25:31 vmagent-prod[21127]: 2025-03-27T15:25:31.072Z        info        VictoriaMetrics/lib/memory/memory.go:42        limiting caches to 1241272320 bytes, leaving 827514880 bytes to the OS according to -memory.allowedPercent=60
 Mar 27 18:25:31 vmagent-prod[21127]: 2025-03-27T15:25:31.073Z        info        VictoriaMetrics/lib/persistentqueue/fastqueue.go:71        opened fast queue at &#34;/data/vmagent/persistent-queue/1_A3AAB188CD4F97D5&#34; with maxInmemoryBlocks=400, it contains 0 pending bytes, persistence is enabled
@@ -2198,7 +2190,7 @@ Mar 27 18:25:31 vmagent-prod[21127]: 2025-03-27T15:25:31.104Z        info       
 Mar 27 18:25:31 vmagent-prod[21127]: 2025-03-27T15:25:31.104Z        info        VictoriaMetrics/lib/promscrape/scraper.go:118        reading scrape configs from &#34;vmagent.yml&#34;
 Mar 27 18:25:31 vmagent-prod[21127]: 2025-03-27T15:25:31.106Z        info        VictoriaMetrics/lib/promscrape/config.go:149        starting service discovery routines...
 Mar 27 18:25:31 vmagent-prod[21127]: 2025-03-27T15:25:31.106Z        info        VictoriaMetrics/lib/promscrape/config.go:155        started 2 service discovery routines in 0.000 seconds
-</span><span style="color: #FFFFFF;background-color: #231529">Mar 27 18:25:31 vmagent-prod[21127]: 2025-03-27T15:25:31.106Z        info        VictoriaMetrics/lib/promscrape/scraper.go:439        static_configs: added targets: 2, removed targets: 0;</span><span style="color: #BBBBBB"> </span>total targets: 2</code></pre>
+Mar 27 18:25:31 vmagent-prod[21127]: 2025-03-27T15:25:31.106Z        info        VictoriaMetrics/lib/promscrape/scraper.go:439        static_configs: added targets: 2, removed targets: 0; total targets: 2</pre>
 </div>
 </div></div></td>
 </tr>

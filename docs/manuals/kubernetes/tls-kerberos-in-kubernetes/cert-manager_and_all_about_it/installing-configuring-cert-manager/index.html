@@ -50,7 +50,7 @@ SUBDOMAIN_NAME=&#39;k8s.example.org&#39; 1.3. Создание TSIG-ключа �
 TSIG_KEY_NAME=&#34;${SUBDOMAIN_NAME}-acme&#34; tsig-keygen -a hmac-sha512 ${TSIG_KEY_NAME} | tee -a /etc/named/ipa-ext.conf systemctl restart named">
   <meta itemprop="datePublished" content="2024-08-13T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-08-13T00:00:00+00:00">
-  <meta itemprop="wordCount" content="1062">
+  <meta itemprop="wordCount" content="1067">
   <meta itemprop="keywords" content="FreeIPA,Kubernetes,Cert-Manager,Acme Protocol,TLS Certification">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Установка и настройка cert-manager">
@@ -547,18 +547,6 @@ if (window.location.pathname !== "/") {
   <input type="checkbox" id="m-manualsfreeipainstalling-and-setup-freeipaadding-additional-freeipa-replicas-check"/>
   <label for="m-manualsfreeipainstalling-and-setup-freeipaadding-additional-freeipa-replicas-check"><a href="/manuals/freeipa/installing-and-setup-freeipa/adding-additional-freeipa-replicas/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsfreeipainstalling-and-setup-freeipaadding-additional-freeipa-replicas"><span class="">Добавление дополнительных реплик FreeIPA</span></a></label>
   
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsfreeipainstalling-and-setup-freeipacommon10-podgotovka-hosta-li">
-  <input type="checkbox" id="m-manualsfreeipainstalling-and-setup-freeipacommon10-podgotovka-hosta-check"/>
-  <label for="m-manualsfreeipainstalling-and-setup-freeipacommon10-podgotovka-hosta-check"><a href="/manuals/freeipa/installing-and-setup-freeipa/common/10-podgotovka-hosta/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsfreeipainstalling-and-setup-freeipacommon10-podgotovka-hosta"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsfreeipainstalling-and-setup-freeipacommondisabling-dnssec-validation-li">
-  <input type="checkbox" id="m-manualsfreeipainstalling-and-setup-freeipacommondisabling-dnssec-validation-check"/>
-  <label for="m-manualsfreeipainstalling-and-setup-freeipacommondisabling-dnssec-validation-check"><a href="/manuals/freeipa/installing-and-setup-freeipa/common/disabling-dnssec-validation/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsfreeipainstalling-and-setup-freeipacommondisabling-dnssec-validation"><span class=""></span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsfreeipainstalling-and-setup-freeipacommonldap-disabling-anonymous-access-to-directory-li">
-  <input type="checkbox" id="m-manualsfreeipainstalling-and-setup-freeipacommonldap-disabling-anonymous-access-to-directory-check"/>
-  <label for="m-manualsfreeipainstalling-and-setup-freeipacommonldap-disabling-anonymous-access-to-directory-check"><a href="/manuals/freeipa/installing-and-setup-freeipa/common/ldap-disabling-anonymous-access-to-directory/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsfreeipainstalling-and-setup-freeipacommonldap-disabling-anonymous-access-to-directory"><span class=""></span></a></label>
-  
 </li>
   </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsfreeipacheckipaconsistency-utilita-dlya-opredeleniya-rassinhronizacii-replik-freeipa-li">
@@ -817,6 +805,17 @@ if (window.location.pathname !== "/") {
   </ul>
 </li>
   </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsmonitoringvictoriametricsvmauth-li">
+  <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmauth-check"/>
+  <label for="m-manualsmonitoringvictoriametricsvmauth-check"><a href="/manuals/monitoring/victoriametrics/vmauth/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoringvictoriametricsvmauth"><span class="">VMAuth</span></a></label>
+  
+  <ul class="ul-4 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvmauthtls-cert-for-vip-on-vmauth-nodes-with-auto-renewal-li">
+  <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmauthtls-cert-for-vip-on-vmauth-nodes-with-auto-renewal-check"/>
+  <label for="m-manualsmonitoringvictoriametricsvmauthtls-cert-for-vip-on-vmauth-nodes-with-auto-renewal-check"><a href="/manuals/monitoring/victoriametrics/vmauth/tls-cert-for-vip-on-vmauth-nodes-with-auto-renewal/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsvmauthtls-cert-for-vip-on-vmauth-nodes-with-auto-renewal"><span class="">Пример организации получения TLS-сертификата для Virtual IP (VIP) на vmauth-узлах с автообновлением</span></a></label>
+  
+</li>
+  </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvictoriametrics-what-you-should-avoid-li">
   <input type="checkbox" id="m-manualsmonitoringvictoriametricsvictoriametrics-what-you-should-avoid-check"/>
   <label for="m-manualsmonitoringvictoriametricsvictoriametrics-what-you-should-avoid-check"><a href="/manuals/monitoring/victoriametrics/victoriametrics-what-you-should-avoid/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsvictoriametrics-what-you-should-avoid"><span class="">VictoriaMetrics. Чего надо избегать</span></a></label>
@@ -836,10 +835,6 @@ if (window.location.pathname !== "/") {
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options-li">
   <input type="checkbox" id="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options-check"/>
   <label for="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options-check"><a href="/manuals/monitoring/victoriametrics/victoriametrics-vminsert-options/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsmonitoringvictoriametricsvictoriametrics-vminsert-options"><span class="">VictoriaMetrics. vminsert options</span></a></label>
-  
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsmonitoringvictoriametricsvmauth-li">
-  <input type="checkbox" id="m-manualsmonitoringvictoriametricsvmauth-check"/>
-  <label for="m-manualsmonitoringvictoriametricsvmauth-check"><a href="/manuals/monitoring/victoriametrics/vmauth/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoringvictoriametricsvmauth"><span class="">VMAuth</span></a></label>
   
 </li>
   </ul>
@@ -1006,7 +1001,7 @@ if (window.location.pathname !== "/") {
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/encfs/" data-taxonomy-term="encfs"><span class="taxonomy-label">EncFS</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/filesystem/" data-taxonomy-term="filesystem"><span class="taxonomy-label">FileSystem</span><span class="taxonomy-count">6</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/freebsd/" data-taxonomy-term="freebsd"><span class="taxonomy-label">FreeBSD</span><span class="taxonomy-count">2</span></a></li>
-        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/freeipa/" data-taxonomy-term="freeipa"><span class="taxonomy-label">FreeIPA</span><span class="taxonomy-count">24</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/freeipa/" data-taxonomy-term="freeipa"><span class="taxonomy-label">FreeIPA</span><span class="taxonomy-count">25</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/freeipa-4.9.6/" data-taxonomy-term="freeipa-4.9.6"><span class="taxonomy-label">FreeIPA 4.9.6</span><span class="taxonomy-count">4</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/gnu-screen/" data-taxonomy-term="gnu-screen"><span class="taxonomy-label">GNU Screen</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/groupware/" data-taxonomy-term="groupware"><span class="taxonomy-label">Groupware</span><span class="taxonomy-count">1</span></a></li>
@@ -1098,13 +1093,13 @@ if (window.location.pathname !== "/") {
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/venv/" data-taxonomy-term="venv"><span class="taxonomy-label">Venv</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vertica/" data-taxonomy-term="vertica"><span class="taxonomy-label">Vertica</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vfs/" data-taxonomy-term="vfs"><span class="taxonomy-label">VFS</span><span class="taxonomy-count">2</span></a></li>
-        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/victoriametrics/" data-taxonomy-term="victoriametrics"><span class="taxonomy-label">VictoriaMetrics</span><span class="taxonomy-count">16</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/victoriametrics/" data-taxonomy-term="victoriametrics"><span class="taxonomy-label">VictoriaMetrics</span><span class="taxonomy-count">17</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/victoriametrics-cluster/" data-taxonomy-term="victoriametrics-cluster"><span class="taxonomy-label">VictoriaMetrics Cluster</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/virtualization/" data-taxonomy-term="virtualization"><span class="taxonomy-label">Virtualization</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/visual-studio-code/" data-taxonomy-term="visual-studio-code"><span class="taxonomy-label">Visual Studio Code</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmagent/" data-taxonomy-term="vmagent"><span class="taxonomy-label">Vmagent</span><span class="taxonomy-count">14</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmalert/" data-taxonomy-term="vmalert"><span class="taxonomy-label">Vmalert</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmauth/" data-taxonomy-term="vmauth"><span class="taxonomy-label">Vmauth</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmauth/" data-taxonomy-term="vmauth"><span class="taxonomy-label">Vmauth</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vminsert/" data-taxonomy-term="vminsert"><span class="taxonomy-label">Vminsert</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmselect/" data-taxonomy-term="vmselect"><span class="taxonomy-label">Vmselect</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmstorage/" data-taxonomy-term="vmstorage"><span class="taxonomy-label">Vmstorage</span><span class="taxonomy-count">2</span></a></li>
@@ -1171,7 +1166,7 @@ if (window.location.pathname !== "/") {
 <p>Для включения протокола ACME для IPA-домена, выполните следующие команды на одной из IPA-реплик:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">[[ $</span><span style="color: #41ff5b">(</span>ipa-acme-manage status <span style="color: #9f93e6;font-weight: bold">-q</span><span style="color: #41ff5b">)</span> <span style="color: #41ff5b">=</span> <span style="color: #fff0a6;font-weight: bold">&#39;ACME is disabled&#39;</span> <span style="color: #41ff5b">]]</span> <span style="color: #41ff5b">&amp;&amp;</span> ipa-acme-manage <span style="font-weight: bold">enable</span></code></pre>
+<pre class="highlight"><code class="language-console" data-lang="console">[[ $(ipa-acme-manage status -q) = &#39;ACME is disabled&#39; ]] &amp;&amp; ipa-acme-manage enable</code></pre>
 </div>
 </div>
 </li>
@@ -1186,7 +1181,7 @@ if (window.location.pathname !== "/") {
 <p>Задайте переменную с именем целевого домена:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">SUBDOMAIN_NAME=&#39;k8s.example.org&#39;</span></code></pre>
+<pre class="highlight"><code class="language-console" data-lang="console">SUBDOMAIN_NAME=&#39;k8s.example.org&#39;</code></pre>
 </div>
 </div>
 </li>
@@ -1201,10 +1196,10 @@ if (window.location.pathname !== "/") {
 <p>Сгенерируйте TSIG-ключ, добавьте его в настройки Named и перезапустите демон:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">TSIG_KEY_NAME=&#34;$</span><span style="color: #41ff5b">{</span>SUBDOMAIN_NAME<span style="color: #41ff5b">}</span><span style="color: #9f93e6;font-weight: bold">-acme</span><span style="color: #fff0a6;font-weight: bold">&#34;
-</span><span style="color: #FFFFFF;background-color: #231529">
-</span><span style="color: #FFFFFF;background-color: #231529">tsig-keygen -a hmac-sha512 $</span><span style="color: #41ff5b">{</span>TSIG_KEY_NAME<span style="color: #41ff5b">}</span> | <span style="font-weight: bold">tee</span> <span style="color: #9f93e6;font-weight: bold">-a</span> /etc/named/ipa-ext.conf
-<span style="color: #FFFFFF;background-color: #231529">systemctl restart named</span></code></pre>
+<pre class="highlight"><code class="language-console" data-lang="console">TSIG_KEY_NAME=&#34;${SUBDOMAIN_NAME}-acme&#34;
+
+tsig-keygen -a hmac-sha512 ${TSIG_KEY_NAME} | tee -a /etc/named/ipa-ext.conf
+systemctl restart named</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -1231,9 +1226,9 @@ if (window.location.pathname !== "/") {
 <p>Если зона для поддомена в DNS не существует, то создайте зону с опциями динамического обновления и синхронизации записей в обратной зоне:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">ipa dnszone-add $</span><span style="color: #41ff5b">{</span>SUBDOMAIN_NAME<span style="color: #41ff5b">}</span> <span style="color: #FAAF4C;font-weight: bold">\</span>
-<span style="color: #FFFFFF;background-color: #231529">  --allow-sync-ptr=1 \
-  --dynamic-update=1</span></code></pre>
+<pre class="highlight"><code class="language-console" data-lang="console">ipa dnszone-add ${SUBDOMAIN_NAME} \
+  --allow-sync-ptr=1 \
+  --dynamic-update=1</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -1260,25 +1255,25 @@ Allow PTR sync: True</pre>
 <p>Разрешите обновление зоны по TSIG-ключу для записей типа TXT. Если указать ANY, то выдаются излишне широкие права, тогда как cert-manager будет добавлять только записи типа TXT и записи &#39;_acme-challenge&#39; с длинным символьно-цифровым значением.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">ACME_POLICY=&#34;grant $</span><span style="color: #41ff5b">{</span>TSIG_KEY_NAME<span style="color: #41ff5b">}</span> subdomain <span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">SUBDOMAIN_NAME</span><span style="color: #FFF02A;font-weight: bold">}</span> TXT<span style="color: #41ff5b">;</span><span style="color: #fff0a6;font-weight: bold">&#34;
-</span><span style="color: #FFFFFF;background-color: #231529">
-</span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>Получаем текущие политики для DNS-зоны.
-<span style="color: #FFFFFF;background-color: #231529">CURRENT_UPDATE_POLICY=&#34;$</span><span style="color: #41ff5b">(</span>ipa dnszone-show <span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">SUBDOMAIN_NAME</span><span style="color: #FFF02A;font-weight: bold">}</span> <span style="color: #9f93e6;font-weight: bold">--raw</span> | <span style="font-weight: bold">grep </span>idnsupdatepolicy<span style="color: #41ff5b">)</span><span style="color: #fff0a6;font-weight: bold">&#34;
-</span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span><span style="color: #fff0a6;font-weight: bold">idnsupdatepolicy: grant EXAMPLE.ORG krb5-self * A; </span><span style="color: #FAAF4C;font-weight: bold">\</span><span style="color: #fff0a6;font-weight: bold">
-</span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span><span style="color: #fff0a6;font-weight: bold">grant EXAMPLE.ORG krb5-self * AAAA; </span><span style="color: #FAAF4C;font-weight: bold">\</span><span style="color: #fff0a6;font-weight: bold">
-</span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span><span style="color: #fff0a6;font-weight: bold">grant EXAMPLE.ORG krb5-self * SSHFP;
-</span><span style="color: #FFFFFF;background-color: #231529">
-</span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>Обрезаем начало строки до двоеточия и пробела
-<span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>и добавляем ещё одну политику к текущим политикам.
-<span style="color: #FFFFFF;background-color: #231529">NEW_UPDATE_POLICY=&#34;$</span><span style="color: #41ff5b">{</span>CURRENT_UPDATE_POLICY#<span style="color: #FFF02A;font-weight: bold">*</span>: <span style="color: #41ff5b">}</span> <span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">ACME_POLICY</span><span style="color: #FFF02A;font-weight: bold">}</span><span style="color: #fff0a6;font-weight: bold">&#34;
-</span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span><span style="color: #fff0a6;font-weight: bold">grant EXAMPLE.ORG krb5-self * A; </span><span style="color: #FAAF4C;font-weight: bold">\</span><span style="color: #fff0a6;font-weight: bold">
-</span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span><span style="color: #fff0a6;font-weight: bold">grant EXAMPLE.ORG krb5-self * AAAA; </span><span style="color: #FAAF4C;font-weight: bold">\</span><span style="color: #fff0a6;font-weight: bold">
-</span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span><span style="color: #fff0a6;font-weight: bold">grant EXAMPLE.ORG krb5-self * SSHFP; </span><span style="color: #FAAF4C;font-weight: bold">\</span><span style="color: #fff0a6;font-weight: bold">
-</span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span><span style="color: #fff0a6;font-weight: bold">grant k8s.example.org-acme-update subdomain k8s.example.org TXT;
-</span><span style="color: #FFFFFF;background-color: #231529">
-</span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>Обновляем политики новым значением.
-<span style="color: #FFFFFF;background-color: #231529">ipa dnszone-mod $</span><span style="color: #41ff5b">{</span>SUBDOMAIN_NAME<span style="color: #41ff5b">}</span> <span style="color: #FAAF4C;font-weight: bold">\</span>
-<span style="color: #FFFFFF;background-color: #231529">  --update-policy=&#34;$</span><span style="color: #41ff5b">{</span>NEW_UPDATE_POLICY<span style="color: #41ff5b">}</span><span style="color: #fff0a6;font-weight: bold">&#34;</span></code></pre>
+<pre class="highlight"><code class="language-console" data-lang="console">ACME_POLICY=&#34;grant ${TSIG_KEY_NAME} subdomain ${SUBDOMAIN_NAME} TXT;&#34;
+
+# Получаем текущие политики для DNS-зоны.
+CURRENT_UPDATE_POLICY=&#34;$(ipa dnszone-show ${SUBDOMAIN_NAME} --raw | grep idnsupdatepolicy)&#34;
+# idnsupdatepolicy: grant EXAMPLE.ORG krb5-self * A; \
+# grant EXAMPLE.ORG krb5-self * AAAA; \
+# grant EXAMPLE.ORG krb5-self * SSHFP;
+
+# Обрезаем начало строки до двоеточия и пробела
+# и добавляем ещё одну политику к текущим политикам.
+NEW_UPDATE_POLICY=&#34;${CURRENT_UPDATE_POLICY#*: } ${ACME_POLICY}&#34;
+# grant EXAMPLE.ORG krb5-self * A; \
+# grant EXAMPLE.ORG krb5-self * AAAA; \
+# grant EXAMPLE.ORG krb5-self * SSHFP; \
+# grant k8s.example.org-acme-update subdomain k8s.example.org TXT;
+
+# Обновляем политики новым значением.
+ipa dnszone-mod ${SUBDOMAIN_NAME} \
+  --update-policy=&#34;${NEW_UPDATE_POLICY}&#34;</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -1356,7 +1351,7 @@ volumeMounts:
 <table>
 <tbody><tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 <div class="title">Использованные материалы</div>
@@ -1395,7 +1390,7 @@ volumeMounts:
 <p>Выполните:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">kubectl apply -f cert-manager.crds.yaml</span></code></pre>
+<pre class="highlight"><code class="language-console" data-lang="console">kubectl apply -f cert-manager.crds.yaml</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -1421,10 +1416,10 @@ customresourcedefinition.apiextensions.k8s.io/orders.acme.cert-manager.io create
 <p>Выполните:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">helm install \
+<pre class="highlight"><code class="language-console" data-lang="console">helm install \
   cert-manager . \
   --namespace cert-manager \
-  --create-namespace</span></code></pre>
+  --create-namespace</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -1469,8 +1464,8 @@ https://cert-manager.io/docs/usage/ingress/</pre>
 <p>Выполните скачивание утилиты на, например, control plane ноду и установите в <code>/usr/local/bin</code>:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">curl -LOu $</span>USER_PASS https://nexus.example.org:8081/repository/evo_raw/kubernetes/cert-manager/cmctl_linux_amd64
-<span style="color: #FFFFFF;background-color: #231529">install cmctl_linux_amd64 /usr/local/bin/cmctl</span></code></pre>
+<pre class="highlight"><code class="language-console" data-lang="console">curl -LOu $USER_PASS https://nexus.example.org:8081/repository/evo_raw/kubernetes/cert-manager/cmctl_linux_amd64
+install cmctl_linux_amd64 /usr/local/bin/cmctl</code></pre>
 </div>
 </div>
 </li>
@@ -1486,7 +1481,7 @@ https://cert-manager.io/docs/usage/ingress/</pre>
 <table>
 <tbody><tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 <div class="title">Использованные материалы</div>
@@ -1509,15 +1504,15 @@ https://cert-manager.io/docs/usage/ingress/</pre>
 <p>Добавьте в Kubernetes ранее сгенерированный для FreeIPA TSIG-ключ командой:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">NAMESPACE=&#39;cert-manager&#39;
+<pre class="highlight"><code class="language-console" data-lang="console">NAMESPACE=&#39;cert-manager&#39;
 SUBDOMAIN_NAME=&#39;k8s.example.org&#39;
-</span><span style="color: #FFFFFF;background-color: #231529">SECRET_NAME=&#34;tsig-$</span><span style="color: #41ff5b">{</span>SUBDOMAIN_NAME<span style="color: #41ff5b">}</span><span style="color: #9f93e6;font-weight: bold">-acme</span><span style="color: #fff0a6;font-weight: bold">&#34;
-</span><span style="color: #FFFFFF;background-color: #231529">SECRET_KEY_NAME=&#39;tsig-key&#39;
-</span><span style="color: #FFFFFF;background-color: #231529">#</span><span style="color: #BBBBBB"> </span>TSIG_KEY возьмите из <span style="color: #fff0a6;font-weight: bold">`</span>/etc/named/ipa-ext.conf<span style="color: #fff0a6;font-weight: bold">`</span> на любой IPA-реплике
-<span style="color: #FFFFFF;background-color: #231529">TSIG_KEY=&#39;1oDJxfU16OOPUN4exDwivoDx22rTUYwTtWwL3yisBcUyUTEcgwPmHph7KFiq04evzPOcP8hDMc+0UwPNGyuGpg==&#39;
+SECRET_NAME=&#34;tsig-${SUBDOMAIN_NAME}-acme&#34;
+SECRET_KEY_NAME=&#39;tsig-key&#39;
+# TSIG_KEY возьмите из `/etc/named/ipa-ext.conf` на любой IPA-реплике
+TSIG_KEY=&#39;1oDJxfU16OOPUN4exDwivoDx22rTUYwTtWwL3yisBcUyUTEcgwPmHph7KFiq04evzPOcP8hDMc+0UwPNGyuGpg==&#39;
 
-</span><span style="color: #FFFFFF;background-color: #231529">kubectl --namespace $</span><span style="color: #41ff5b">{</span>NAMESPACE<span style="color: #41ff5b">}</span> create secret generic <span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">SECRET_NAME</span><span style="color: #FFF02A;font-weight: bold">}</span> <span style="color: #FAAF4C;font-weight: bold">\</span>
-<span style="color: #FFFFFF;background-color: #231529">--from-literal=$</span><span style="color: #41ff5b">{</span>SECRET_KEY_NAME<span style="color: #41ff5b">}=</span><span style="color: #FAAF4C;font-weight: bold">$(</span><span style="font-weight: bold">echo</span> <span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">TSIG_KEY</span><span style="color: #FFF02A;font-weight: bold">}</span> | <span style="font-weight: bold">base64</span> <span style="color: #9f93e6;font-weight: bold">-w0</span><span style="color: #FAAF4C;font-weight: bold">)</span></code></pre>
+kubectl --namespace ${NAMESPACE} create secret generic ${SECRET_NAME} \
+--from-literal=${SECRET_KEY_NAME}=$(echo ${TSIG_KEY} | base64 -w0)</code></pre>
 </div>
 </div>
 </li>
@@ -1527,7 +1522,7 @@ SUBDOMAIN_NAME=&#39;k8s.example.org&#39;
 <table>
 <tbody><tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 <div class="paragraph">
@@ -1544,7 +1539,7 @@ SUBDOMAIN_NAME=&#39;k8s.example.org&#39;
 <table>
 <tbody><tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 <div class="paragraph">
@@ -1563,12 +1558,12 @@ SUBDOMAIN_NAME=&#39;k8s.example.org&#39;
 <p>Добавьте этот файл в K8s, где его имя будет изменено на <code>ca-certificates.crt</code>. Проверить, такое имя необходимо для работы cert-manager?</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">CONFIGMAP_NAME=&#39;ca-example.org&#39;
+<pre class="highlight"><code class="language-console" data-lang="console">CONFIGMAP_NAME=&#39;ca-example.org&#39;
 EXT_CA_CRT_FILE=&#34;/etc/ipa/ca.crt&#34;
 INT_CA_CRT_FILE=&#39;ca-certificates.crt&#39;
 
-</span><span style="color: #FFFFFF;background-color: #231529">kubectl --namespace cert-manager create configmap $</span><span style="color: #41ff5b">{</span>CONFIGMAP_NAME<span style="color: #41ff5b">}</span> <span style="color: #FAAF4C;font-weight: bold">\</span>
-<span style="color: #FFFFFF;background-color: #231529">  --from-file $</span><span style="color: #41ff5b">{</span>INT_CA_CRT_FILE<span style="color: #41ff5b">}=</span><span style="color: #FFF02A;font-weight: bold">${</span><span style="color: #41ff5b;font-weight: bold">EXT_CA_CRT_FILE</span><span style="color: #FFF02A;font-weight: bold">}</span></code></pre>
+kubectl --namespace cert-manager create configmap ${CONFIGMAP_NAME} \
+  --from-file ${INT_CA_CRT_FILE}=${EXT_CA_CRT_FILE}</code></pre>
 </div>
 </div>
 </li>
@@ -1581,7 +1576,7 @@ INT_CA_CRT_FILE=&#39;ca-certificates.crt&#39;
 <table>
 <tbody><tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 <div class="paragraph">
@@ -1600,38 +1595,38 @@ INT_CA_CRT_FILE=&#39;ca-certificates.crt&#39;
 <p>Создайте и примените манифест:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">ACME_URI=&#39;https://ipa-ca.example.org/acme/directory&#39;
+<pre class="highlight"><code class="language-console" data-lang="console">ACME_URI=&#39;https://ipa-ca.example.org/acme/directory&#39;
 DNS_VIP=&#39;10.0.0.53&#39;
 SUBDOMAIN_NAME=&#39;k8s.example.org&#39;
-</span><span style="color: #FFFFFF;background-color: #231529">TSIG_KEY_NAME=&#34;$</span><span style="color: #41ff5b">{</span>SUBDOMAIN_NAME<span style="color: #41ff5b">}</span><span style="color: #9f93e6;font-weight: bold">-acme</span><span style="color: #fff0a6;font-weight: bold">&#34;
-</span><span style="color: #FFFFFF;background-color: #231529">
-</span><span style="color: #FFFFFF;background-color: #231529">cat &lt;&lt; EOF &gt;</span><span style="color: #BBBBBB"> </span>issuer.yaml
-<span style="color: #FFFFFF;background-color: #231529">apiVersion: cert-manager.io/v1
+TSIG_KEY_NAME=&#34;${SUBDOMAIN_NAME}-acme&#34;
+
+cat &lt;&lt; EOF &gt; issuer.yaml
+apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
-</span><span style="color: #FFFFFF;background-color: #231529">  name: $</span><span style="color: #41ff5b">{</span>SUBDOMAIN_NAME<span style="color: #41ff5b">}</span>
-<span style="color: #FFFFFF;background-color: #231529">  namespace: cert-manager
+  name: ${SUBDOMAIN_NAME}
+  namespace: cert-manager
 spec:
   acme:
-</span><span style="color: #FFFFFF;background-color: #231529">    email: admin@$</span><span style="color: #41ff5b">{</span>SUBDOMAIN_NAME<span style="color: #41ff5b">}</span>
-<span style="color: #FFFFFF;background-color: #231529">    server: $</span><span style="color: #41ff5b">{</span>ACME_URI<span style="color: #41ff5b">}</span>
-<span style="color: #FFFFFF;background-color: #231529">    privateKeySecretRef:
+    email: admin@${SUBDOMAIN_NAME}
+    server: ${ACME_URI}
+    privateKeySecretRef:
       name: ipa-issuer-account-key
     solvers:
       - dns01:
           rfc2136:
-</span><span style="color: #FFFFFF;background-color: #231529">            nameserver: $</span><span style="color: #41ff5b">{</span>DNS_VIP<span style="color: #41ff5b">}</span>
-<span style="color: #FFFFFF;background-color: #231529">            tsigKeyName: $</span><span style="color: #41ff5b">{</span>TSIG_KEY_NAME<span style="color: #41ff5b">}</span>
-<span style="color: #FFFFFF;background-color: #231529">            tsigAlgorithm: HMACSHA512
+            nameserver: ${DNS_VIP}
+            tsigKeyName: ${TSIG_KEY_NAME}
+            tsigAlgorithm: HMACSHA512
             tsigSecretSecretRef:
-</span><span style="color: #FFFFFF;background-color: #231529">              name: $</span><span style="color: #41ff5b">{</span>SECRET_NAME<span style="color: #41ff5b">}</span>
-<span style="color: #FFFFFF;background-color: #231529">              key: $</span><span style="color: #41ff5b">{</span>SECRET_KEY_NAME<span style="color: #41ff5b">}</span>
-<span style="color: #FFFFFF;background-color: #231529">        selector:
+              name: ${SECRET_NAME}
+              key: ${SECRET_KEY_NAME}
+        selector:
           dnsZones:
-</span><span style="color: #FFFFFF;background-color: #231529">            - $</span><span style="color: #41ff5b">{</span>SUBDOMAIN_NAME<span style="color: #41ff5b">}</span>
-<span style="color: #FFFFFF;background-color: #231529">EOF
+            - ${SUBDOMAIN_NAME}
+EOF
 
-kunectl apply -f issuer.yaml</span></code></pre>
+kunectl apply -f issuer.yaml</code></pre>
 </div>
 </div>
 </li>
@@ -1649,7 +1644,7 @@ kunectl apply -f issuer.yaml</span></code></pre>
 <p>Создайте  манифест и примените его:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="consile">HOST_NAME=&#39;host5.k8s.example.org&#39;
+<pre class="highlight"><code class="language-consile" data-lang="consile">HOST_NAME=&#39;host5.k8s.example.org&#39;
 CLUSTER_ISSUER_NAME=&#39;ipa-example.org&#39;
 
 cat &lt;&lt; EOF &gt; getcert_${HOST_NAME}.yaml
@@ -1681,9 +1676,9 @@ kubectl apply -f getcert_${HOST_NAME}.yaml</code></pre>
 <p>Список запросов и их статус доступен через команду:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">$</span><span style="color: #BBBBBB"> </span>kubectl get certificaterequests.cert-manager.io
-<span style="color: #FFFFFF;background-color: #231529">NAME                               APPROVED   DENIED   READY   ISSUER            REQUESTOR                                            AGE
-cert-host5.k8s.example.org-fbw42   True                True    k8s.example.org system:serviceaccount:cert-manager:cert-manager   1m57s</span></code></pre>
+<pre class="highlight"><code class="language-console" data-lang="console">$ kubectl get certificaterequests.cert-manager.io
+NAME                               APPROVED   DENIED   READY   ISSUER            REQUESTOR                                            AGE
+cert-host5.k8s.example.org-fbw42   True                True    k8s.example.org system:serviceaccount:cert-manager:cert-manager   1m57s</code></pre>
 </div>
 </div>
 </li>
@@ -1694,9 +1689,9 @@ cert-host5.k8s.example.org-fbw42   True                True    k8s.example.org s
 <p>Проверьте факт получения сертификата:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight" style="color: #FFFFFF;background-color: #231529"><code data-lang="console"><span style="color: #FFFFFF;background-color: #231529">$</span><span style="color: #BBBBBB"> </span>kubectl get certificates.cert-manager.io
-<span style="color: #FFFFFF;background-color: #231529">NAME                         READY   SECRET                  AGE
-cert-host5.k8s.example.org   True    host5.k8s.example.org   2m25s</span></code></pre>
+<pre class="highlight"><code class="language-console" data-lang="console">$ kubectl get certificates.cert-manager.io
+NAME                         READY   SECRET                  AGE
+cert-host5.k8s.example.org   True    host5.k8s.example.org   2m25s</code></pre>
 </div>
 </div>
 </li>
