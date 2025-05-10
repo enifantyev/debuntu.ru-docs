@@ -47,7 +47,7 @@ tar xvf vmutils-linux-amd64-v1.111.0.tar.gz sha256sum -c vmutils-${PLATFORM}-${V
 vmutils-linux-amd64-v1.111.0.tar.gz: OK vmagent-prod: OK vmalert-prod: OK vmalert-tool-prod: OK vmauth-prod: OK vmbackup-prod: OK vmrestore-prod: OK vmctl-prod: OK">
   <meta itemprop="datePublished" content="2025-02-12T00:00:00+00:00">
   <meta itemprop="dateModified" content="2025-02-18T00:00:00+00:00">
-  <meta itemprop="wordCount" content="589">
+  <meta itemprop="wordCount" content="585">
   <meta itemprop="keywords" content="VictoriaMetrics,Vmagent">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="10. vmagent. Установка бинарника в systemd">
@@ -1232,7 +1232,7 @@ setfacl -m u::rwX,g::r-X,o::--- ${VMAGENT_CONF_DIR}</pre>
 <table>
 <tbody><tr>
 <td class="icon">
-<div class="title">Tip</div>
+<i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
 Этот каталог предназначен для размещения файлов конфигурации vmagent. Режим <code>2750</code> позволяет наследовать права «группы» для создаваемых объектов внутри этого каталога, а правила ACL обеспечивают сохранность данных, запрещая доступ для остальных пользователей (<code>other</code>). Вы можете проверить наследование прав, создав внутри каталога новый файл или каталог.
@@ -1259,7 +1259,7 @@ chmod 750 ${VMAGENT_CACHE_DIR}</pre>
 <table>
 <tbody><tr>
 <td class="icon">
-<div class="title">Tip</div>
+<i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
 <div class="paragraph">
@@ -1388,7 +1388,7 @@ WantedBy=multi-user.target</pre>
 <table>
 <tbody><tr>
 <td class="icon">
-<div class="title">Note</div>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 <div class="title">Для чего используется этот environment-файл?</div>
@@ -1448,7 +1448,7 @@ EOF</pre>
 <table>
 <tbody><tr>
 <td class="icon">
-<div class="title">Note</div>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 <div class="title">Что дальше</div>

@@ -18,14 +18,14 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>20. vmagent. Конфигурирование отправки метрик | Debuntarium</title>
-<meta name="description" content=" 1. Добавление в Environment-файл vmauth-адреса Note В файле /etc/sysconfig/vmagent хранятся опции командной строки, используемые при выполнении команды vmagent-prod -envflag.enable, где точки заменены на подчерки.
+<meta name="description" content=" 1. Добавление в Environment-файл vmauth-адреса В файле /etc/sysconfig/vmagent хранятся опции командной строки, используемые при выполнении команды vmagent-prod -envflag.enable, где точки заменены на подчерки.
 Например, переменная promscrape_config=/etc/victoriametrics/vmagent.yml преобразуется в опцию командной строки promscrape.config=/etc/victoriametrics/vmagent.yml, то есть подчерк в имени переменной замещается точкой.
 https://docs.victoriametrics.com/vmagent/#calculating-disk-space-for-persistence-queue
 Опция командной строки remoteWrite.maxDiskUsagePerURL позволяет указать размер буфера для кеширования метрик. Для каждого remoteWrite.url будет создан отдельный каталог. По умолчанию, при отсутствии опции, будет использован всё доступное пространство диска. Так как данные сохраняются в блоках по ~500 MB, рекомендуется указывать размер кратным 500. Замечено, что запись в буфер продолжается до значения &#43;500MB к указанному, после чего уменьшается до заданного значения. Если указать одно значение, например remoteWrite.maxDiskUsagePerURL=1GiB, то при двух remoteWrite.url буфер-каталог может увеличиваться до 2Gib &#43; (~500MB*2), то есть примерно до 3Gib. Если требуется указать разные размеры буферов для каждой remoteWrite.url, то укажите их через запятую в порядке следования адресов в remoteWrite.url.">
 <meta property="og:url" content="https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/vmagent-configuring-metrics-sending/">
   <meta property="og:site_name" content="Debuntarium">
   <meta property="og:title" content="20. vmagent. Конфигурирование отправки метрик">
-  <meta property="og:description" content="1. Добавление в Environment-файл vmauth-адреса Note В файле /etc/sysconfig/vmagent хранятся опции командной строки, используемые при выполнении команды vmagent-prod -envflag.enable, где точки заменены на подчерки.
+  <meta property="og:description" content="1. Добавление в Environment-файл vmauth-адреса В файле /etc/sysconfig/vmagent хранятся опции командной строки, используемые при выполнении команды vmagent-prod -envflag.enable, где точки заменены на подчерки.
 Например, переменная promscrape_config=/etc/victoriametrics/vmagent.yml преобразуется в опцию командной строки promscrape.config=/etc/victoriametrics/vmagent.yml, то есть подчерк в имени переменной замещается точкой.
 https://docs.victoriametrics.com/vmagent/#calculating-disk-space-for-persistence-queue
 Опция командной строки remoteWrite.maxDiskUsagePerURL позволяет указать размер буфера для кеширования метрик. Для каждого remoteWrite.url будет создан отдельный каталог. По умолчанию, при отсутствии опции, будет использован всё доступное пространство диска. Так как данные сохраняются в блоках по ~500 MB, рекомендуется указывать размер кратным 500. Замечено, что запись в буфер продолжается до значения &#43;500MB к указанному, после чего уменьшается до заданного значения. Если указать одно значение, например remoteWrite.maxDiskUsagePerURL=1GiB, то при двух remoteWrite.url буфер-каталог может увеличиваться до 2Gib &#43; (~500MB*2), то есть примерно до 3Gib. Если требуется указать разные размеры буферов для каждой remoteWrite.url, то укажите их через запятую в порядке следования адресов в remoteWrite.url.">
@@ -38,17 +38,17 @@ https://docs.victoriametrics.com/vmagent/#calculating-disk-space-for-persistence
     <meta property="article:tag" content="Vmagent">
 
   <meta itemprop="name" content="20. vmagent. Конфигурирование отправки метрик">
-  <meta itemprop="description" content="1. Добавление в Environment-файл vmauth-адреса Note В файле /etc/sysconfig/vmagent хранятся опции командной строки, используемые при выполнении команды vmagent-prod -envflag.enable, где точки заменены на подчерки.
+  <meta itemprop="description" content="1. Добавление в Environment-файл vmauth-адреса В файле /etc/sysconfig/vmagent хранятся опции командной строки, используемые при выполнении команды vmagent-prod -envflag.enable, где точки заменены на подчерки.
 Например, переменная promscrape_config=/etc/victoriametrics/vmagent.yml преобразуется в опцию командной строки promscrape.config=/etc/victoriametrics/vmagent.yml, то есть подчерк в имени переменной замещается точкой.
 https://docs.victoriametrics.com/vmagent/#calculating-disk-space-for-persistence-queue
 Опция командной строки remoteWrite.maxDiskUsagePerURL позволяет указать размер буфера для кеширования метрик. Для каждого remoteWrite.url будет создан отдельный каталог. По умолчанию, при отсутствии опции, будет использован всё доступное пространство диска. Так как данные сохраняются в блоках по ~500 MB, рекомендуется указывать размер кратным 500. Замечено, что запись в буфер продолжается до значения &#43;500MB к указанному, после чего уменьшается до заданного значения. Если указать одно значение, например remoteWrite.maxDiskUsagePerURL=1GiB, то при двух remoteWrite.url буфер-каталог может увеличиваться до 2Gib &#43; (~500MB*2), то есть примерно до 3Gib. Если требуется указать разные размеры буферов для каждой remoteWrite.url, то укажите их через запятую в порядке следования адресов в remoteWrite.url.">
   <meta itemprop="datePublished" content="2025-02-12T00:00:00+00:00">
   <meta itemprop="dateModified" content="2025-02-12T00:00:00+00:00">
-  <meta itemprop="wordCount" content="270">
+  <meta itemprop="wordCount" content="269">
   <meta itemprop="keywords" content="VictoriaMetrics,Vmagent">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="20. vmagent. Конфигурирование отправки метрик">
-  <meta name="twitter:description" content="1. Добавление в Environment-файл vmauth-адреса Note В файле /etc/sysconfig/vmagent хранятся опции командной строки, используемые при выполнении команды vmagent-prod -envflag.enable, где точки заменены на подчерки.
+  <meta name="twitter:description" content="1. Добавление в Environment-файл vmauth-адреса В файле /etc/sysconfig/vmagent хранятся опции командной строки, используемые при выполнении команды vmagent-prod -envflag.enable, где точки заменены на подчерки.
 Например, переменная promscrape_config=/etc/victoriametrics/vmagent.yml преобразуется в опцию командной строки promscrape.config=/etc/victoriametrics/vmagent.yml, то есть подчерк в имени переменной замещается точкой.
 https://docs.victoriametrics.com/vmagent/#calculating-disk-space-for-persistence-queue
 Опция командной строки remoteWrite.maxDiskUsagePerURL позволяет указать размер буфера для кеширования метрик. Для каждого remoteWrite.url будет создан отдельный каталог. По умолчанию, при отсутствии опции, будет использован всё доступное пространство диска. Так как данные сохраняются в блоках по ~500 MB, рекомендуется указывать размер кратным 500. Замечено, что запись в буфер продолжается до значения &#43;500MB к указанному, после чего уменьшается до заданного значения. Если указать одно значение, например remoteWrite.maxDiskUsagePerURL=1GiB, то при двух remoteWrite.url буфер-каталог может увеличиваться до 2Gib &#43; (~500MB*2), то есть примерно до 3Gib. Если требуется указать разные размеры буферов для каждой remoteWrite.url, то укажите их через запятую в порядке следования адресов в remoteWrite.url.">
@@ -1127,7 +1127,7 @@ if (window.location.pathname !== "/") {
 <table>
 <tbody><tr>
 <td class="icon">
-<div class="title">Note</div>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 <div class="paragraph">

@@ -58,7 +58,7 @@ tar xvf victoria-metrics-${PLATFORM}-${VER}-cluster.tar.gz tar xvf vmutils-${PLA
 sha256sum -c \ victoria-metrics-${PLATFORM}-${VER}-cluster_checksums.txt \ vmutils-${PLATFORM}-${VER}_checksums.txt">
   <meta itemprop="datePublished" content="2025-01-30T00:00:00+00:00">
   <meta itemprop="dateModified" content="2025-01-30T00:00:00+00:00">
-  <meta itemprop="wordCount" content="634">
+  <meta itemprop="wordCount" content="633">
   <meta itemprop="keywords" content="VictoriaMetrics,Vmstorage,Vminsert,Vmselect">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Установка VictoriaMetrics Cluster из бинарников в изолированной среде">
@@ -1311,7 +1311,7 @@ chmod 750 ${VMSELECT_DIR}</pre>
 <table>
 <tbody><tr>
 <td class="icon">
-<div class="title">Tip</div>
+<i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
 Возможно нам пригодится одинаковый GID группы на всех vmstorage-нодах для целей бекапирования? Например, если к каждой ноде будет прицеплен один NFS-диск.

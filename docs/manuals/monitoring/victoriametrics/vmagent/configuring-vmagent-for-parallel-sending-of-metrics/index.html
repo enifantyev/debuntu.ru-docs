@@ -18,7 +18,7 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>Настройка в VMAgent параллельной отправки метрик в «новый» и «старый» VMetrics-кластеры | Debuntarium</title>
-<meta name="description" content=" 1. Некоторые правила пользования сервисом хранения метрик 1.1. О номере тенанта Note https://docs.victoriametrics.com/cluster-victoriametrics/#multitenancy VictoriaMetrics cluster supports multiple isolated tenants (aka namespaces). Tenants are identified by accountID or accountID:projectID, which are put inside request URLs for writes and reads.
+<meta name="description" content=" 1. Некоторые правила пользования сервисом хранения метрик 1.1. О номере тенанта https://docs.victoriametrics.com/cluster-victoriametrics/#multitenancy VictoriaMetrics cluster supports multiple isolated tenants (aka namespaces). Tenants are identified by accountID or accountID:projectID, which are put inside request URLs for writes and reads.
 Тенанты различаются по идентификатору аккаунта (accountID) или по паре accountID:projectID. Например: 203:5.
 Технически, для того чтобы метрика была отправлена в конкретный тенант, к ней необходимо прикрепить метки, например vm_account_id=203 и vm_project_id=5. Допустимо указать только vm_account_id=203 — в этом случае кластер VictoriaMetrics воспримет, что метрика предназначена для тенанта 203:0.
 Каждому арендатору назначается уникальный номер, определяющий аккаунт (accountID), в который сохраняются метрики в кластере VictoriaMetrics.
@@ -26,7 +26,7 @@
 <meta property="og:url" content="https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/configuring-vmagent-for-parallel-sending-of-metrics/">
   <meta property="og:site_name" content="Debuntarium">
   <meta property="og:title" content="Настройка в VMAgent параллельной отправки метрик в «новый» и «старый» VMetrics-кластеры">
-  <meta property="og:description" content="1. Некоторые правила пользования сервисом хранения метрик 1.1. О номере тенанта Note https://docs.victoriametrics.com/cluster-victoriametrics/#multitenancy VictoriaMetrics cluster supports multiple isolated tenants (aka namespaces). Tenants are identified by accountID or accountID:projectID, which are put inside request URLs for writes and reads.
+  <meta property="og:description" content="1. Некоторые правила пользования сервисом хранения метрик 1.1. О номере тенанта https://docs.victoriametrics.com/cluster-victoriametrics/#multitenancy VictoriaMetrics cluster supports multiple isolated tenants (aka namespaces). Tenants are identified by accountID or accountID:projectID, which are put inside request URLs for writes and reads.
 Тенанты различаются по идентификатору аккаунта (accountID) или по паре accountID:projectID. Например: 203:5.
 Технически, для того чтобы метрика была отправлена в конкретный тенант, к ней необходимо прикрепить метки, например vm_account_id=203 и vm_project_id=5. Допустимо указать только vm_account_id=203 — в этом случае кластер VictoriaMetrics воспримет, что метрика предназначена для тенанта 203:0.
 Каждому арендатору назначается уникальный номер, определяющий аккаунт (accountID), в который сохраняются метрики в кластере VictoriaMetrics.
@@ -40,18 +40,18 @@
     <meta property="article:tag" content="Vmagent">
 
   <meta itemprop="name" content="Настройка в VMAgent параллельной отправки метрик в «новый» и «старый» VMetrics-кластеры">
-  <meta itemprop="description" content="1. Некоторые правила пользования сервисом хранения метрик 1.1. О номере тенанта Note https://docs.victoriametrics.com/cluster-victoriametrics/#multitenancy VictoriaMetrics cluster supports multiple isolated tenants (aka namespaces). Tenants are identified by accountID or accountID:projectID, which are put inside request URLs for writes and reads.
+  <meta itemprop="description" content="1. Некоторые правила пользования сервисом хранения метрик 1.1. О номере тенанта https://docs.victoriametrics.com/cluster-victoriametrics/#multitenancy VictoriaMetrics cluster supports multiple isolated tenants (aka namespaces). Tenants are identified by accountID or accountID:projectID, which are put inside request URLs for writes and reads.
 Тенанты различаются по идентификатору аккаунта (accountID) или по паре accountID:projectID. Например: 203:5.
 Технически, для того чтобы метрика была отправлена в конкретный тенант, к ней необходимо прикрепить метки, например vm_account_id=203 и vm_project_id=5. Допустимо указать только vm_account_id=203 — в этом случае кластер VictoriaMetrics воспримет, что метрика предназначена для тенанта 203:0.
 Каждому арендатору назначается уникальный номер, определяющий аккаунт (accountID), в который сохраняются метрики в кластере VictoriaMetrics.
 Все метрики, отправляемые арендатором в кластер, должны быть помечены меткой vm_account_id со значением, соответствующим выданному номеру аккаунта.">
   <meta itemprop="datePublished" content="2025-03-30T00:00:00+00:00">
   <meta itemprop="dateModified" content="2025-03-30T00:00:00+00:00">
-  <meta itemprop="wordCount" content="1749">
+  <meta itemprop="wordCount" content="1745">
   <meta itemprop="keywords" content="VictoriaMetrics,Vmagent">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Настройка в VMAgent параллельной отправки метрик в «новый» и «старый» VMetrics-кластеры">
-  <meta name="twitter:description" content="1. Некоторые правила пользования сервисом хранения метрик 1.1. О номере тенанта Note https://docs.victoriametrics.com/cluster-victoriametrics/#multitenancy VictoriaMetrics cluster supports multiple isolated tenants (aka namespaces). Tenants are identified by accountID or accountID:projectID, which are put inside request URLs for writes and reads.
+  <meta name="twitter:description" content="1. Некоторые правила пользования сервисом хранения метрик 1.1. О номере тенанта https://docs.victoriametrics.com/cluster-victoriametrics/#multitenancy VictoriaMetrics cluster supports multiple isolated tenants (aka namespaces). Tenants are identified by accountID or accountID:projectID, which are put inside request URLs for writes and reads.
 Тенанты различаются по идентификатору аккаунта (accountID) или по паре accountID:projectID. Например: 203:5.
 Технически, для того чтобы метрика была отправлена в конкретный тенант, к ней необходимо прикрепить метки, например vm_account_id=203 и vm_project_id=5. Допустимо указать только vm_account_id=203 — в этом случае кластер VictoriaMetrics воспримет, что метрика предназначена для тенанта 203:0.
 Каждому арендатору назначается уникальный номер, определяющий аккаунт (accountID), в который сохраняются метрики в кластере VictoriaMetrics.
@@ -1148,7 +1148,7 @@ if (window.location.pathname !== "/") {
 <table>
 <tbody><tr>
 <td class="icon">
-<div class="title">Note</div>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 <div class="title"><a href="https://docs.victoriametrics.com/cluster-victoriametrics/#multitenancy" class="bare">https://docs.victoriametrics.com/cluster-victoriametrics/#multitenancy</a></div>
@@ -1320,7 +1320,7 @@ http_requests_total{method=&#34;GET&#34;, path=&#34;/api/v1/user/98765&#34;, sta
 <table>
 <tbody><tr>
 <td class="icon">
-<div class="title">Note</div>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 VMAuth настроен возвращать своё состояние <a href="https://127.0.0.1:8426/-/ready" class="bare">https://127.0.0.1:8426/-/ready</a> на анонимные запросы.
@@ -1449,7 +1449,7 @@ EOF</pre>
 <table>
 <tbody><tr>
 <td class="icon">
-<div class="title">Note</div>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 <div class="paragraph">
@@ -1699,7 +1699,7 @@ remoteWrite_label=\
 <table>
 <tbody><tr>
 <td class="icon">
-<div class="title">Note</div>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 Этот пункт пропускается, если хост был ранее введён в домен и является участником нашего домена <code>example.org</code>.
@@ -1724,7 +1724,7 @@ remoteWrite_label=\
 <table>
 <tbody><tr>
 <td class="icon">
-<div class="title">Note</div>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 В переменной <code>remoteWrite_url</code> https-адрес «нового» VMetrics-кластера находится в первой позиции, поэтому здесь достаточно указать одно значение.
@@ -1839,7 +1839,7 @@ EOF</pre>
 <table>
 <tbody><tr>
 <td class="icon">
-<div class="title">Note</div>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 <div class="paragraph">
@@ -1898,25 +1898,28 @@ EOF</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>external_labels: <b class="conum">(1)</b>
-  scraper_hostname: %{SYSTEMD_HOSTNAME} <b class="conum">(2)</b>
-  scraper_region: &#34;kurch&#34; <b class="conum">(3)</b>
-  scraper_vlan_num: &#34;0617&#34; <b class="conum">(3)</b>
-  scraper_vlan_env: &#34;dev&#34; <b class="conum">(3)</b></pre>
+<pre>external_labels: <i class="conum" data-value="1"></i><b>(1)</b>
+  scraper_hostname: %{SYSTEMD_HOSTNAME} <i class="conum" data-value="2"></i><b>(2)</b>
+  scraper_region: &#34;kurch&#34; <i class="conum" data-value="3"></i><b>(3)</b>
+  scraper_vlan_num: &#34;0617&#34; <i class="conum" data-value="3"></i><b>(3)</b>
+  scraper_vlan_env: &#34;dev&#34; <i class="conum" data-value="3"></i><b>(3)</b></pre>
 </div>
 </div>
 <div class="colist arabic">
-<ol>
-<li>
-<p>Словарь с метками для всех метрик, собираемых методом pull.</p>
-</li>
-<li>
-<p>Переменная <code>SYSTEMD_HOSTNAME</code> инициализируется в systemd-юните <code>vmagent.service</code>.</p>
-</li>
-<li>
-<p>Примеры других меток.</p>
-</li>
-</ol>
+<table>
+<tbody><tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Словарь с метками для всех метрик, собираемых методом pull.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Переменная <code>SYSTEMD_HOSTNAME</code> инициализируется в systemd-юните <code>vmagent.service</code>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Примеры других меток.</td>
+</tr>
+</tbody></table>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Пример содержимого файла файла /etc/victoriametrics/vmagent.yml:</p>
@@ -1981,7 +1984,7 @@ global:
 <table>
 <tbody><tr>
 <td class="icon">
-<div class="title">Note</div>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 <div class="paragraph">

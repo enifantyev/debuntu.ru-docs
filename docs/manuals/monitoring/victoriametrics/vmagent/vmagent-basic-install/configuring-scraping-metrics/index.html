@@ -20,13 +20,13 @@
 <title>40. vmagent. Настройка сбора метрик из target&#39;ов | Debuntarium</title>
 <meta name="description" content=" 1. Добавьте config-файлы с Job’ами В каталоге /etc/victoriametrics/targets разместите дополнительные файлы с описанием jobs.
 1.1. Сбор метрик с самого vmagent’а В job vmagent.yml опишите самосбор собственных метрик.
-set -u; cat &lt;&lt; EOF &gt; /etc/victoriametrics/targets/vmagent.yml - job_name: &#34;vmagent&#34; metrics_path: /metrics relabel_configs: - source_labels: [__address__] target_label: instance replacement: %{SYSTEMD_HOSTNAME} static_configs: - targets: - 127.0.0.1:8429 EOF Note Здесь выполняется релейбелинг метрики instance: localhost:8429 → mon-vmagent01p.example.org с помощью переменной SYSTEMD_HOSTNAME, которая инициализируется в systemd-юните. Иначе в метриках наблюдались бы метки &#39;instance&#39; с неинформативным значением 127.0.0.1:8429. ">
+set -u; cat &lt;&lt; EOF &gt; /etc/victoriametrics/targets/vmagent.yml - job_name: &#34;vmagent&#34; metrics_path: /metrics relabel_configs: - source_labels: [__address__] target_label: instance replacement: %{SYSTEMD_HOSTNAME} static_configs: - targets: - 127.0.0.1:8429 EOF Здесь выполняется релейбелинг метрики instance: localhost:8429 → mon-vmagent01p.example.org с помощью переменной SYSTEMD_HOSTNAME, которая инициализируется в systemd-юните. Иначе в метриках наблюдались бы метки &#39;instance&#39; с неинформативным значением 127.0.0.1:8429. ">
 <meta property="og:url" content="https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/configuring-scraping-metrics/">
   <meta property="og:site_name" content="Debuntarium">
   <meta property="og:title" content="40. vmagent. Настройка сбора метрик из target&#39;ов">
   <meta property="og:description" content="1. Добавьте config-файлы с Job’ами В каталоге /etc/victoriametrics/targets разместите дополнительные файлы с описанием jobs.
 1.1. Сбор метрик с самого vmagent’а В job vmagent.yml опишите самосбор собственных метрик.
-set -u; cat &lt;&lt; EOF &gt; /etc/victoriametrics/targets/vmagent.yml - job_name: &#34;vmagent&#34; metrics_path: /metrics relabel_configs: - source_labels: [__address__] target_label: instance replacement: %{SYSTEMD_HOSTNAME} static_configs: - targets: - 127.0.0.1:8429 EOF Note Здесь выполняется релейбелинг метрики instance: localhost:8429 → mon-vmagent01p.example.org с помощью переменной SYSTEMD_HOSTNAME, которая инициализируется в systemd-юните. Иначе в метриках наблюдались бы метки &#39;instance&#39; с неинформативным значением 127.0.0.1:8429.">
+set -u; cat &lt;&lt; EOF &gt; /etc/victoriametrics/targets/vmagent.yml - job_name: &#34;vmagent&#34; metrics_path: /metrics relabel_configs: - source_labels: [__address__] target_label: instance replacement: %{SYSTEMD_HOSTNAME} static_configs: - targets: - 127.0.0.1:8429 EOF Здесь выполняется релейбелинг метрики instance: localhost:8429 → mon-vmagent01p.example.org с помощью переменной SYSTEMD_HOSTNAME, которая инициализируется в systemd-юните. Иначе в метриках наблюдались бы метки &#39;instance&#39; с неинформативным значением 127.0.0.1:8429.">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:type" content="article">
     <meta property="article:section" content="manuals">
@@ -38,16 +38,16 @@ set -u; cat &lt;&lt; EOF &gt; /etc/victoriametrics/targets/vmagent.yml - job_nam
   <meta itemprop="name" content="40. vmagent. Настройка сбора метрик из target&#39;ов">
   <meta itemprop="description" content="1. Добавьте config-файлы с Job’ами В каталоге /etc/victoriametrics/targets разместите дополнительные файлы с описанием jobs.
 1.1. Сбор метрик с самого vmagent’а В job vmagent.yml опишите самосбор собственных метрик.
-set -u; cat &lt;&lt; EOF &gt; /etc/victoriametrics/targets/vmagent.yml - job_name: &#34;vmagent&#34; metrics_path: /metrics relabel_configs: - source_labels: [__address__] target_label: instance replacement: %{SYSTEMD_HOSTNAME} static_configs: - targets: - 127.0.0.1:8429 EOF Note Здесь выполняется релейбелинг метрики instance: localhost:8429 → mon-vmagent01p.example.org с помощью переменной SYSTEMD_HOSTNAME, которая инициализируется в systemd-юните. Иначе в метриках наблюдались бы метки &#39;instance&#39; с неинформативным значением 127.0.0.1:8429.">
+set -u; cat &lt;&lt; EOF &gt; /etc/victoriametrics/targets/vmagent.yml - job_name: &#34;vmagent&#34; metrics_path: /metrics relabel_configs: - source_labels: [__address__] target_label: instance replacement: %{SYSTEMD_HOSTNAME} static_configs: - targets: - 127.0.0.1:8429 EOF Здесь выполняется релейбелинг метрики instance: localhost:8429 → mon-vmagent01p.example.org с помощью переменной SYSTEMD_HOSTNAME, которая инициализируется в systemd-юните. Иначе в метриках наблюдались бы метки &#39;instance&#39; с неинформативным значением 127.0.0.1:8429.">
   <meta itemprop="datePublished" content="2025-02-15T00:00:00+00:00">
   <meta itemprop="dateModified" content="2025-02-15T00:00:00+00:00">
-  <meta itemprop="wordCount" content="135">
+  <meta itemprop="wordCount" content="134">
   <meta itemprop="keywords" content="VictoriaMetrics,Vmagent">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="40. vmagent. Настройка сбора метрик из target&#39;ов">
   <meta name="twitter:description" content="1. Добавьте config-файлы с Job’ами В каталоге /etc/victoriametrics/targets разместите дополнительные файлы с описанием jobs.
 1.1. Сбор метрик с самого vmagent’а В job vmagent.yml опишите самосбор собственных метрик.
-set -u; cat &lt;&lt; EOF &gt; /etc/victoriametrics/targets/vmagent.yml - job_name: &#34;vmagent&#34; metrics_path: /metrics relabel_configs: - source_labels: [__address__] target_label: instance replacement: %{SYSTEMD_HOSTNAME} static_configs: - targets: - 127.0.0.1:8429 EOF Note Здесь выполняется релейбелинг метрики instance: localhost:8429 → mon-vmagent01p.example.org с помощью переменной SYSTEMD_HOSTNAME, которая инициализируется в systemd-юните. Иначе в метриках наблюдались бы метки &#39;instance&#39; с неинформативным значением 127.0.0.1:8429.">
+set -u; cat &lt;&lt; EOF &gt; /etc/victoriametrics/targets/vmagent.yml - job_name: &#34;vmagent&#34; metrics_path: /metrics relabel_configs: - source_labels: [__address__] target_label: instance replacement: %{SYSTEMD_HOSTNAME} static_configs: - targets: - 127.0.0.1:8429 EOF Здесь выполняется релейбелинг метрики instance: localhost:8429 → mon-vmagent01p.example.org с помощью переменной SYSTEMD_HOSTNAME, которая инициализируется в systemd-юните. Иначе в метриках наблюдались бы метки &#39;instance&#39; с неинформативным значением 127.0.0.1:8429.">
 
 
 
@@ -1156,7 +1156,7 @@ EOF</pre>
 <table>
 <tbody><tr>
 <td class="icon">
-<div class="title">Note</div>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 Здесь выполняется релейбелинг метрики instance: <code>localhost:8429</code> → <code>mon-vmagent01p.example.org</code> с помощью переменной <code>SYSTEMD_HOSTNAME</code>, которая инициализируется в systemd-юните. Иначе в метриках наблюдались бы метки &#39;instance&#39; с неинформативным значением <code>127.0.0.1:8429</code>.

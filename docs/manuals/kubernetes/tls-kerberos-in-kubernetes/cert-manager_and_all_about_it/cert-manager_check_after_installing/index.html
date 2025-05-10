@@ -18,14 +18,14 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>cert-manager. Проверка после установки | Debuntarium</title>
-<meta name="description" content=" Note Использованные материалы End-to-end verify the installation
+<meta name="description" content=" Использованные материалы End-to-end verify the installation
 1. Выпуск тестового сертификата Создайте манифест для выпуска тестового сертификата:
 cat &lt;&lt; EOF &gt; test-resources.yaml apiVersion: v1 kind: Namespace metadata: name: cert-manager-test --- apiVersion: cert-manager.io/v1 kind: Issuer metadata: name: test-selfsigned namespace: cert-manager-test spec: selfSigned: {} --- apiVersion: cert-manager.io/v1 kind: Certificate metadata: name: selfsigned-cert namespace: cert-manager-test spec: dnsNames: - example.com secretName: selfsigned-cert-tls issuerRef: name: test-selfsigned EOF Примените созданный манифест:
 kubectl apply -f test-resources.yaml ">
 <meta property="og:url" content="https://debuntu.ru/manuals/kubernetes/tls-kerberos-in-kubernetes/cert-manager_and_all_about_it/cert-manager_check_after_installing/">
   <meta property="og:site_name" content="Debuntarium">
   <meta property="og:title" content="cert-manager. Проверка после установки">
-  <meta property="og:description" content="Note Использованные материалы End-to-end verify the installation
+  <meta property="og:description" content="Использованные материалы End-to-end verify the installation
 1. Выпуск тестового сертификата Создайте манифест для выпуска тестового сертификата:
 cat &lt;&lt; EOF &gt; test-resources.yaml apiVersion: v1 kind: Namespace metadata: name: cert-manager-test --- apiVersion: cert-manager.io/v1 kind: Issuer metadata: name: test-selfsigned namespace: cert-manager-test spec: selfSigned: {} --- apiVersion: cert-manager.io/v1 kind: Certificate metadata: name: selfsigned-cert namespace: cert-manager-test spec: dnsNames: - example.com secretName: selfsigned-cert-tls issuerRef: name: test-selfsigned EOF Примените созданный манифест:
 kubectl apply -f test-resources.yaml">
@@ -41,17 +41,17 @@ kubectl apply -f test-resources.yaml">
     <meta property="article:tag" content="TLS Certification">
 
   <meta itemprop="name" content="cert-manager. Проверка после установки">
-  <meta itemprop="description" content="Note Использованные материалы End-to-end verify the installation
+  <meta itemprop="description" content="Использованные материалы End-to-end verify the installation
 1. Выпуск тестового сертификата Создайте манифест для выпуска тестового сертификата:
 cat &lt;&lt; EOF &gt; test-resources.yaml apiVersion: v1 kind: Namespace metadata: name: cert-manager-test --- apiVersion: cert-manager.io/v1 kind: Issuer metadata: name: test-selfsigned namespace: cert-manager-test spec: selfSigned: {} --- apiVersion: cert-manager.io/v1 kind: Certificate metadata: name: selfsigned-cert namespace: cert-manager-test spec: dnsNames: - example.com secretName: selfsigned-cert-tls issuerRef: name: test-selfsigned EOF Примените созданный манифест:
 kubectl apply -f test-resources.yaml">
   <meta itemprop="datePublished" content="2024-05-27T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-05-27T00:00:00+00:00">
-  <meta itemprop="wordCount" content="229">
+  <meta itemprop="wordCount" content="228">
   <meta itemprop="keywords" content="FreeIPA,Kubernetes,Cert-Manager,Acme Protocol,TLS Certification">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="cert-manager. Проверка после установки">
-  <meta name="twitter:description" content="Note Использованные материалы End-to-end verify the installation
+  <meta name="twitter:description" content="Использованные материалы End-to-end verify the installation
 1. Выпуск тестового сертификата Создайте манифест для выпуска тестового сертификата:
 cat &lt;&lt; EOF &gt; test-resources.yaml apiVersion: v1 kind: Namespace metadata: name: cert-manager-test --- apiVersion: cert-manager.io/v1 kind: Issuer metadata: name: test-selfsigned namespace: cert-manager-test spec: selfSigned: {} --- apiVersion: cert-manager.io/v1 kind: Certificate metadata: name: selfsigned-cert namespace: cert-manager-test spec: dnsNames: - example.com secretName: selfsigned-cert-tls issuerRef: name: test-selfsigned EOF Примените созданный манифест:
 kubectl apply -f test-resources.yaml">
@@ -1128,7 +1128,7 @@ if (window.location.pathname !== "/") {
 <table>
 <tbody><tr>
 <td class="icon">
-<div class="title">Note</div>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 <div class="title">Использованные материалы</div>

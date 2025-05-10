@@ -18,14 +18,14 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>Добавление глобальных меток ко всем отправляемым vmagent&#39;ом метрикам, независимо от способа их получения | Debuntarium</title>
-<meta name="description" content=" Note Этот способ добавления лейблов добавит метки к всем метриками отправляемых текущим vmagent’ом на remoteWrite.url, независимо от способа получения этих метрик.
+<meta name="description" content=" Этот способ добавления лейблов добавит метки к всем метриками отправляемых текущим vmagent’ом на remoteWrite.url, независимо от способа получения этих метрик.
 Добавление меток в &#39;remoteWrite.label&#39; Добавьте значения инициализированных переменных в /etc/sysconfig/vmagent:
 set -u; cat &lt;&lt; EOF &gt;&gt; /etc/sysconfig/vmagent remoteWrite_label=&#34;vmagent_hostname=%{SYSTEMD_HOSTNAME}&#34;,\ &#34;vmagent_region=${VLAN_REGION}&#34;,\ &#34;vmagent_vlan_num=${VLAN_NUM}&#34;,\ &#34;vmagent_vlan_env=${VLAN_ENV}&#34; EOF Ожидаемая строка в файле /etc/sysconfig/vmagent, где переменная %{SYSTEMD_HOSTNAME} берётся из systemd-юнита &#39;vmagent.service&#39;:
 remoteWrite_label=&#34;vmagent_hostname=%{SYSTEMD_HOSTNAME}&#34;,&#34;vmagent_region=kurch&#34;,&#34;vmagent_vlan_num=0617&#34;,&#34;vmagent_vlan_env=prod&#34; ">
 <meta property="og:url" content="https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/labeling-in-vmagent/adding-global-labels-in-remotewrite/">
   <meta property="og:site_name" content="Debuntarium">
   <meta property="og:title" content="Добавление глобальных меток ко всем отправляемым vmagent&#39;ом метрикам, независимо от способа их получения">
-  <meta property="og:description" content="Note Этот способ добавления лейблов добавит метки к всем метриками отправляемых текущим vmagent’ом на remoteWrite.url, независимо от способа получения этих метрик.
+  <meta property="og:description" content="Этот способ добавления лейблов добавит метки к всем метриками отправляемых текущим vmagent’ом на remoteWrite.url, независимо от способа получения этих метрик.
 Добавление меток в &#39;remoteWrite.label&#39; Добавьте значения инициализированных переменных в /etc/sysconfig/vmagent:
 set -u; cat &lt;&lt; EOF &gt;&gt; /etc/sysconfig/vmagent remoteWrite_label=&#34;vmagent_hostname=%{SYSTEMD_HOSTNAME}&#34;,\ &#34;vmagent_region=${VLAN_REGION}&#34;,\ &#34;vmagent_vlan_num=${VLAN_NUM}&#34;,\ &#34;vmagent_vlan_env=${VLAN_ENV}&#34; EOF Ожидаемая строка в файле /etc/sysconfig/vmagent, где переменная %{SYSTEMD_HOSTNAME} берётся из systemd-юнита &#39;vmagent.service&#39;:
 remoteWrite_label=&#34;vmagent_hostname=%{SYSTEMD_HOSTNAME}&#34;,&#34;vmagent_region=kurch&#34;,&#34;vmagent_vlan_num=0617&#34;,&#34;vmagent_vlan_env=prod&#34;">
@@ -38,17 +38,17 @@ remoteWrite_label=&#34;vmagent_hostname=%{SYSTEMD_HOSTNAME}&#34;,&#34;vmagent_re
     <meta property="article:tag" content="Vmagent">
 
   <meta itemprop="name" content="Добавление глобальных меток ко всем отправляемым vmagent&#39;ом метрикам, независимо от способа их получения">
-  <meta itemprop="description" content="Note Этот способ добавления лейблов добавит метки к всем метриками отправляемых текущим vmagent’ом на remoteWrite.url, независимо от способа получения этих метрик.
+  <meta itemprop="description" content="Этот способ добавления лейблов добавит метки к всем метриками отправляемых текущим vmagent’ом на remoteWrite.url, независимо от способа получения этих метрик.
 Добавление меток в &#39;remoteWrite.label&#39; Добавьте значения инициализированных переменных в /etc/sysconfig/vmagent:
 set -u; cat &lt;&lt; EOF &gt;&gt; /etc/sysconfig/vmagent remoteWrite_label=&#34;vmagent_hostname=%{SYSTEMD_HOSTNAME}&#34;,\ &#34;vmagent_region=${VLAN_REGION}&#34;,\ &#34;vmagent_vlan_num=${VLAN_NUM}&#34;,\ &#34;vmagent_vlan_env=${VLAN_ENV}&#34; EOF Ожидаемая строка в файле /etc/sysconfig/vmagent, где переменная %{SYSTEMD_HOSTNAME} берётся из systemd-юнита &#39;vmagent.service&#39;:
 remoteWrite_label=&#34;vmagent_hostname=%{SYSTEMD_HOSTNAME}&#34;,&#34;vmagent_region=kurch&#34;,&#34;vmagent_vlan_num=0617&#34;,&#34;vmagent_vlan_env=prod&#34;">
   <meta itemprop="datePublished" content="2025-02-13T00:00:00+00:00">
   <meta itemprop="dateModified" content="2025-02-13T00:00:00+00:00">
-  <meta itemprop="wordCount" content="56">
+  <meta itemprop="wordCount" content="55">
   <meta itemprop="keywords" content="VictoriaMetrics,Vmagent">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Добавление глобальных меток ко всем отправляемым vmagent&#39;ом метрикам, независимо от способа их получения">
-  <meta name="twitter:description" content="Note Этот способ добавления лейблов добавит метки к всем метриками отправляемых текущим vmagent’ом на remoteWrite.url, независимо от способа получения этих метрик.
+  <meta name="twitter:description" content="Этот способ добавления лейблов добавит метки к всем метриками отправляемых текущим vmagent’ом на remoteWrite.url, независимо от способа получения этих метрик.
 Добавление меток в &#39;remoteWrite.label&#39; Добавьте значения инициализированных переменных в /etc/sysconfig/vmagent:
 set -u; cat &lt;&lt; EOF &gt;&gt; /etc/sysconfig/vmagent remoteWrite_label=&#34;vmagent_hostname=%{SYSTEMD_HOSTNAME}&#34;,\ &#34;vmagent_region=${VLAN_REGION}&#34;,\ &#34;vmagent_vlan_num=${VLAN_NUM}&#34;,\ &#34;vmagent_vlan_env=${VLAN_ENV}&#34; EOF Ожидаемая строка в файле /etc/sysconfig/vmagent, где переменная %{SYSTEMD_HOSTNAME} берётся из systemd-юнита &#39;vmagent.service&#39;:
 remoteWrite_label=&#34;vmagent_hostname=%{SYSTEMD_HOSTNAME}&#34;,&#34;vmagent_region=kurch&#34;,&#34;vmagent_vlan_num=0617&#34;,&#34;vmagent_vlan_env=prod&#34;">
@@ -1116,7 +1116,7 @@ if (window.location.pathname !== "/") {
 <table>
 <tbody><tr>
 <td class="icon">
-<div class="title">Note</div>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 <div class="paragraph">

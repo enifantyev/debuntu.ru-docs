@@ -19,7 +19,7 @@
 
 <title>Развёртывание containerd 1.x в изолированной среде | Debuntarium</title>
 <meta name="description" content=" 1. Добавление загрузки модуля overlay в систему Модуль overlay добавляет в систему поддержку файловой системы OverlayFS. Эта файловая система используется для хранения слоёв образов, которые использует containerd.
-Note Этот шаг можно пропустить, так как загрузка модуля overlay выполняется через systemd-юнит &#39;containerd.service&#39;, где присутствует строка &#39;ExecStartPre=-/sbin/modprobe overlay&#39;.
+Этот шаг можно пропустить, так как загрузка модуля overlay выполняется через systemd-юнит &#39;containerd.service&#39;, где присутствует строка &#39;ExecStartPre=-/sbin/modprobe overlay&#39;.
 Выполните:
 cat &lt;&lt; EOF &gt; /etc/modules-load.d/containerd.conf overlay EOF modprobe overlay 2. Скачивание компонентов containerd из внутреннего raw-репозитория Если внутренний репозиторий требует аутентификации, то задайте учётные данные для скачивания компонентов containerd:
 set &#43;o history USER_PASS=&#39;ken:xxxxxxxxxxxxxxx&#39; set -o history ">
@@ -27,7 +27,7 @@ set &#43;o history USER_PASS=&#39;ken:xxxxxxxxxxxxxxx&#39; set -o history ">
   <meta property="og:site_name" content="Debuntarium">
   <meta property="og:title" content="Развёртывание containerd 1.x в изолированной среде">
   <meta property="og:description" content="1. Добавление загрузки модуля overlay в систему Модуль overlay добавляет в систему поддержку файловой системы OverlayFS. Эта файловая система используется для хранения слоёв образов, которые использует containerd.
-Note Этот шаг можно пропустить, так как загрузка модуля overlay выполняется через systemd-юнит &#39;containerd.service&#39;, где присутствует строка &#39;ExecStartPre=-/sbin/modprobe overlay&#39;.
+Этот шаг можно пропустить, так как загрузка модуля overlay выполняется через systemd-юнит &#39;containerd.service&#39;, где присутствует строка &#39;ExecStartPre=-/sbin/modprobe overlay&#39;.
 Выполните:
 cat &lt;&lt; EOF &gt; /etc/modules-load.d/containerd.conf overlay EOF modprobe overlay 2. Скачивание компонентов containerd из внутреннего raw-репозитория Если внутренний репозиторий требует аутентификации, то задайте учётные данные для скачивания компонентов containerd:
 set &#43;o history USER_PASS=&#39;ken:xxxxxxxxxxxxxxx&#39; set -o history">
@@ -41,18 +41,18 @@ set &#43;o history USER_PASS=&#39;ken:xxxxxxxxxxxxxxx&#39; set -o history">
 
   <meta itemprop="name" content="Развёртывание containerd 1.x в изолированной среде">
   <meta itemprop="description" content="1. Добавление загрузки модуля overlay в систему Модуль overlay добавляет в систему поддержку файловой системы OverlayFS. Эта файловая система используется для хранения слоёв образов, которые использует containerd.
-Note Этот шаг можно пропустить, так как загрузка модуля overlay выполняется через systemd-юнит &#39;containerd.service&#39;, где присутствует строка &#39;ExecStartPre=-/sbin/modprobe overlay&#39;.
+Этот шаг можно пропустить, так как загрузка модуля overlay выполняется через systemd-юнит &#39;containerd.service&#39;, где присутствует строка &#39;ExecStartPre=-/sbin/modprobe overlay&#39;.
 Выполните:
 cat &lt;&lt; EOF &gt; /etc/modules-load.d/containerd.conf overlay EOF modprobe overlay 2. Скачивание компонентов containerd из внутреннего raw-репозитория Если внутренний репозиторий требует аутентификации, то задайте учётные данные для скачивания компонентов containerd:
 set &#43;o history USER_PASS=&#39;ken:xxxxxxxxxxxxxxx&#39; set -o history">
   <meta itemprop="datePublished" content="2024-05-18T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-05-18T00:00:00+00:00">
-  <meta itemprop="wordCount" content="634">
+  <meta itemprop="wordCount" content="631">
   <meta itemprop="keywords" content="Containerd,Cri">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Развёртывание containerd 1.x в изолированной среде">
   <meta name="twitter:description" content="1. Добавление загрузки модуля overlay в систему Модуль overlay добавляет в систему поддержку файловой системы OverlayFS. Эта файловая система используется для хранения слоёв образов, которые использует containerd.
-Note Этот шаг можно пропустить, так как загрузка модуля overlay выполняется через systemd-юнит &#39;containerd.service&#39;, где присутствует строка &#39;ExecStartPre=-/sbin/modprobe overlay&#39;.
+Этот шаг можно пропустить, так как загрузка модуля overlay выполняется через systemd-юнит &#39;containerd.service&#39;, где присутствует строка &#39;ExecStartPre=-/sbin/modprobe overlay&#39;.
 Выполните:
 cat &lt;&lt; EOF &gt; /etc/modules-load.d/containerd.conf overlay EOF modprobe overlay 2. Скачивание компонентов containerd из внутреннего raw-репозитория Если внутренний репозиторий требует аутентификации, то задайте учётные данные для скачивания компонентов containerd:
 set &#43;o history USER_PASS=&#39;ken:xxxxxxxxxxxxxxx&#39; set -o history">
@@ -1141,7 +1141,7 @@ if (window.location.pathname !== "/") {
 <table>
 <tbody><tr>
 <td class="icon">
-<div class="title">Note</div>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 <div class="paragraph">
@@ -1317,7 +1317,7 @@ containerd config default &gt; /etc/containerd/config.toml</code></pre>
 <table>
 <tbody><tr>
 <td class="icon">
-<div class="title">Note</div>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 <div class="title">Почему меняем образ pause:3.8 на pause:3.9?</div>
@@ -1351,7 +1351,7 @@ containerd config default &gt; /etc/containerd/config.toml</code></pre>
 <table>
 <tbody><tr>
 <td class="icon">
-<div class="title">Note</div>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 <div class="title">Использованные материалы:</div>
