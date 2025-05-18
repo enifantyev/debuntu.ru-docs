@@ -116,6 +116,9 @@ if (!doNotTrack) {
         <a class="nav-link" href="/manuals/monitoring/"><span>Monitoring</span></a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="/manuals/networking/"><span>Networking</span></a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="/manuals/vpn/"><span>VPN</span></a>
       </li>
       <li class="nav-item">
@@ -707,6 +710,31 @@ if (window.location.pathname !== "/") {
   </ul>
 </li>
   </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsnetworking-li">
+  <input type="checkbox" id="m-manualsnetworking-check"/>
+  <label for="m-manualsnetworking-check"><a href="/manuals/networking/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsnetworking"><span class="">Networking</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsnetworkingproxy-li">
+  <input type="checkbox" id="m-manualsnetworkingproxy-check"/>
+  <label for="m-manualsnetworkingproxy-check"><a href="/manuals/networking/proxy/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsnetworkingproxy"><span class="">Proxy</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsnetworkingproxytraefik-li">
+  <input type="checkbox" id="m-manualsnetworkingproxytraefik-check"/>
+  <label for="m-manualsnetworkingproxytraefik-check"><a href="/manuals/networking/proxy/traefik/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsnetworkingproxytraefik"><span class="">Traefik</span></a></label>
+  
+  <ul class="ul-4 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsnetworkingproxytraefikinstalling-traefik-binary-in-systemd-li">
+  <input type="checkbox" id="m-manualsnetworkingproxytraefikinstalling-traefik-binary-in-systemd-check"/>
+  <label for="m-manualsnetworkingproxytraefikinstalling-traefik-binary-in-systemd-check"><a href="/manuals/networking/proxy/traefik/installing-traefik-binary-in-systemd/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsnetworkingproxytraefikinstalling-traefik-binary-in-systemd"><span class="">Установка бинарника traefik в systemd</span></a></label>
+  
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+  </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsmonitoring-li">
   <input type="checkbox" id="m-manualsmonitoring-check"/>
   <label for="m-manualsmonitoring-check"><a href="/manuals/monitoring/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoring"><span class="">Monitoring</span></a></label>
@@ -892,13 +920,13 @@ if (window.location.pathname !== "/") {
             <div class="td-toc">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#_настройка_ldap_каталога">1. Настройка LDAP-каталога</a></li>
-    <li><a href="#_настройка_dns">2. Настройка DNS</a>
+    <li><a href="#настройка-ldap-каталога">1. Настройка LDAP-каталога</a></li>
+    <li><a href="#настройка-dns">2. Настройка DNS</a>
       <ul>
-        <li><a href="#_включение_автодобавления_обратных_записей">2.1. Включение автодобавления обратных записей</a></li>
-        <li><a href="#_включение_рекурсивных_запросов">2.2. Включение рекурсивных запросов</a></li>
-        <li><a href="#_добавление_dns_форвардеров">2.3. Добавление DNS-форвардеров</a></li>
-        <li><a href="#_отключение_dnssec_validation">2.4. Отключение DNSSEC validation</a></li>
+        <li><a href="#включение-автодобавления-обратных-записей">2.1. Включение автодобавления обратных записей</a></li>
+        <li><a href="#включение-рекурсивных-запросов">2.2. Включение рекурсивных запросов</a></li>
+        <li><a href="#добавление-dns-форвардеров">2.3. Добавление DNS-форвардеров</a></li>
+        <li><a href="#отключение-dnssec-validation">2.4. Отключение DNSSEC validation</a></li>
       </ul>
     </li>
   </ul>
@@ -1023,7 +1051,7 @@ if (window.location.pathname !== "/") {
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/monitorix/" data-taxonomy-term="monitorix"><span class="taxonomy-label">Monitorix</span><span class="taxonomy-count">3</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/multic/" data-taxonomy-term="multic"><span class="taxonomy-label">Multic</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/nat/" data-taxonomy-term="nat"><span class="taxonomy-label">NAT</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/networking/" data-taxonomy-term="networking"><span class="taxonomy-label">Networking</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/networking/" data-taxonomy-term="networking"><span class="taxonomy-label">Networking</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/nextcloud/" data-taxonomy-term="nextcloud"><span class="taxonomy-label">NextCloud</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/nexus/" data-taxonomy-term="nexus"><span class="taxonomy-label">Nexus</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/nexus-repository-manager/" data-taxonomy-term="nexus-repository-manager"><span class="taxonomy-label">Nexus Repository Manager</span><span class="taxonomy-count">6</span></a></li>
@@ -1063,9 +1091,11 @@ if (window.location.pathname !== "/") {
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/sudo/" data-taxonomy-term="sudo"><span class="taxonomy-label">Sudo</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/swap/" data-taxonomy-term="swap"><span class="taxonomy-label">Swap</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/syslinux/" data-taxonomy-term="syslinux"><span class="taxonomy-label">Syslinux</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/systemd/" data-taxonomy-term="systemd"><span class="taxonomy-label">Systemd</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/terminal/" data-taxonomy-term="terminal"><span class="taxonomy-label">Terminal</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/tls-certification/" data-taxonomy-term="tls-certification"><span class="taxonomy-label">TLS Certification</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/traditional-unix-permission/" data-taxonomy-term="traditional-unix-permission"><span class="taxonomy-label">Traditional Unix Permission</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/traefik/" data-taxonomy-term="traefik"><span class="taxonomy-label">Traefik</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/translation/" data-taxonomy-term="translation"><span class="taxonomy-label">Translation</span><span class="taxonomy-count">10</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/truecrypt/" data-taxonomy-term="truecrypt"><span class="taxonomy-label">TrueCrypt</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/ubuntu/" data-taxonomy-term="ubuntu"><span class="taxonomy-label">Ubuntu</span><span class="taxonomy-count">4</span></a></li>
@@ -1134,7 +1164,7 @@ if (window.location.pathname !== "/") {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_настройка_ldap_каталога"><a class="anchor" href="#_настройка_ldap_каталога"></a>1. Настройка LDAP-каталога</h2>
+<h2 id="настройка-ldap-каталога"><a class="anchor" href="#настройка-ldap-каталога"></a>1. Настройка LDAP-каталога</h2>
 <div class="sectionbody">
 <div class="admonitionblock note">
 <table>
@@ -1183,10 +1213,10 @@ ipactl restart</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_настройка_dns"><a class="anchor" href="#_настройка_dns"></a>2. Настройка DNS</h2>
+<h2 id="настройка-dns"><a class="anchor" href="#настройка-dns"></a>2. Настройка DNS</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_включение_автодобавления_обратных_записей"><a class="anchor" href="#_включение_автодобавления_обратных_записей"></a>2.1. Включение автодобавления обратных записей</h3>
+<h3 id="включение-автодобавления-обратных-записей"><a class="anchor" href="#включение-автодобавления-обратных-записей"></a>2.1. Включение автодобавления обратных записей</h3>
 <div class="paragraph">
 <p>По умолчанию, при введении новой машины в домен, соответствующая PTR-запись в обратной зоне DNS не создаётся.
 Если я правильно помню, то это делается в целях сохранения производительности FreeIPA.
@@ -1199,19 +1229,19 @@ ipactl restart</pre>
 <div class="paragraph">
 <p>Включите опцию для DNS-сервера одним из двух способов:</p>
 </div>
-<div id="_tabs_1" class="openblock tabs is-loading">
+<div id="tabs-1" class="openblock tabs is-loading">
 <div class="content">
 <div class="ulist tablist">
 <ul>
-<li id="_tabs_1_из_командной_строки" class="tab">
+<li id="tabs-1-из-командной-строки" class="tab">
 <p>Из командной строки</p>
 </li>
-<li id="_tabs_1_через_webui" class="tab">
+<li id="tabs-1-через-webui" class="tab">
 <p>Через WebUI</p>
 </li>
 </ul>
 </div>
-<div id="_tabs_1_из_командной_строки--panel" class="tabpanel" aria-labelledby="_tabs_1_из_командной_строки">
+<div id="tabs-1-из-командной-строки--panel" class="tabpanel" aria-labelledby="tabs-1-из-командной-строки">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1241,7 +1271,7 @@ ipactl restart</pre>
 </ol>
 </div>
 </div>
-<div id="_tabs_1_через_webui--panel" class="tabpanel" aria-labelledby="_tabs_1_через_webui">
+<div id="tabs-1-через-webui--panel" class="tabpanel" aria-labelledby="tabs-1-через-webui">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1263,7 +1293,7 @@ ipactl restart</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_включение_рекурсивных_запросов"><a class="anchor" href="#_включение_рекурсивных_запросов"></a>2.2. Включение рекурсивных запросов</h3>
+<h3 id="включение-рекурсивных-запросов"><a class="anchor" href="#включение-рекурсивных-запросов"></a>2.2. Включение рекурсивных запросов</h3>
 <div class="admonitionblock note">
 <table>
 <tbody><tr>
@@ -1331,7 +1361,7 @@ EOF</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_добавление_dns_форвардеров"><a class="anchor" href="#_добавление_dns_форвардеров"></a>2.3. Добавление DNS-форвардеров</h3>
+<h3 id="добавление-dns-форвардеров"><a class="anchor" href="#добавление-dns-форвардеров"></a>2.3. Добавление DNS-форвардеров</h3>
 <div class="admonitionblock note">
 <table>
 <tbody><tr>
@@ -1411,19 +1441,19 @@ EOF</pre>
 <ol class="arabic">
 <li>
 <p>Включите опции для DNS-сервера одним из двух способов:</p>
-<div id="_tabs_2" class="openblock tabs is-loading">
+<div id="tabs-2" class="openblock tabs is-loading">
 <div class="content">
 <div class="ulist tablist">
 <ul>
-<li id="_tabs_2_из_командной_строки" class="tab">
+<li id="tabs-2-из-командной-строки" class="tab">
 <p>Из командной строки</p>
 </li>
-<li id="_tabs_2_через_webui" class="tab">
+<li id="tabs-2-через-webui" class="tab">
 <p>Через WebUI</p>
 </li>
 </ul>
 </div>
-<div id="_tabs_2_из_командной_строки--panel" class="tabpanel" aria-labelledby="_tabs_2_из_командной_строки">
+<div id="tabs-2-из-командной-строки--panel" class="tabpanel" aria-labelledby="tabs-2-из-командной-строки">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1465,7 +1495,7 @@ If DNSSEC validation is enabled on IPA server(s), please disable it.
 </ol>
 </div>
 </div>
-<div id="_tabs_2_через_webui--panel" class="tabpanel" aria-labelledby="_tabs_2_через_webui">
+<div id="tabs-2-через-webui--panel" class="tabpanel" aria-labelledby="tabs-2-через-webui">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1490,7 +1520,7 @@ If DNSSEC validation is enabled on IPA server(s), please disable it.
 </div>
 </div>
 <div class="sect2">
-<h3 id="_отключение_dnssec_validation"><a class="anchor" href="#_отключение_dnssec_validation"></a>2.4. Отключение DNSSEC validation</h3>
+<h3 id="отключение-dnssec-validation"><a class="anchor" href="#отключение-dnssec-validation"></a>2.4. Отключение DNSSEC validation</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>

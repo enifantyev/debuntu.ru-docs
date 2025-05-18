@@ -18,20 +18,20 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>Пример организации получения TLS-сертификата для Virtual IP (VIP) на vmauth-узлах с автообновлением | Debuntarium</title>
-<meta name="description" content=" 1. Добавление записей в DNS для «основного» доменного имени 1.1. Добавление записей для Virtual IP Добавьте в DNS-зону A-запись для нового Virtual IP с понятным именем.
+<meta name="description" content=" Добавление записей в DNS для «основного» доменного имени Добавление записей для Virtual IP Добавьте в DNS-зону A-запись для нового Virtual IP с понятным именем.
 Для двух узлов is1-mon-vmauth0[1-2]p выбрано имя is1-mon-vmauth-vip.
 Добавьте в DNS-зону TXT-запись с датой, своим логином, кратким описанием цели создания этого IP, заключёнными в кавычки. &#34;250304. dmr. VIP for is1-mon-vmauth.&#34;
 Добавьте в DNS-зону PTR-запись, соответствующую ранее добавленной A-записи.
-1.2. Результат В результате этих действий упрощается отладка. При распознавании is1-vmauth.example.org получим исчерпывающий ответ:
+Результат В результате этих действий упрощается отладка. При распознавании is1-vmauth.example.org получим исчерпывающий ответ:
 # host c-mon-vmauth-vip.example.org is1-mon-vmauth-vip.example.org has address 10.0.77.120 # dig TXT is1-mon-vmauth-vip.example.org &#43;short &#34;250130. dmr. VIP for is1-mon-vmauth.&#34; ">
 <meta property="og:url" content="https://debuntu.ru/manuals/monitoring/victoriametrics/vmauth/tls-cert-for-vip-on-vmauth-nodes-with-auto-renewal/">
   <meta property="og:site_name" content="Debuntarium">
   <meta property="og:title" content="Пример организации получения TLS-сертификата для Virtual IP (VIP) на vmauth-узлах с автообновлением">
-  <meta property="og:description" content="1. Добавление записей в DNS для «основного» доменного имени 1.1. Добавление записей для Virtual IP Добавьте в DNS-зону A-запись для нового Virtual IP с понятным именем.
+  <meta property="og:description" content="Добавление записей в DNS для «основного» доменного имени Добавление записей для Virtual IP Добавьте в DNS-зону A-запись для нового Virtual IP с понятным именем.
 Для двух узлов is1-mon-vmauth0[1-2]p выбрано имя is1-mon-vmauth-vip.
 Добавьте в DNS-зону TXT-запись с датой, своим логином, кратким описанием цели создания этого IP, заключёнными в кавычки. &#34;250304. dmr. VIP for is1-mon-vmauth.&#34;
 Добавьте в DNS-зону PTR-запись, соответствующую ранее добавленной A-записи.
-1.2. Результат В результате этих действий упрощается отладка. При распознавании is1-vmauth.example.org получим исчерпывающий ответ:
+Результат В результате этих действий упрощается отладка. При распознавании is1-vmauth.example.org получим исчерпывающий ответ:
 # host c-mon-vmauth-vip.example.org is1-mon-vmauth-vip.example.org has address 10.0.77.120 # dig TXT is1-mon-vmauth-vip.example.org &#43;short &#34;250130. dmr. VIP for is1-mon-vmauth.&#34;">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:type" content="article">
@@ -43,23 +43,23 @@
     <meta property="article:tag" content="FreeIPA">
 
   <meta itemprop="name" content="Пример организации получения TLS-сертификата для Virtual IP (VIP) на vmauth-узлах с автообновлением">
-  <meta itemprop="description" content="1. Добавление записей в DNS для «основного» доменного имени 1.1. Добавление записей для Virtual IP Добавьте в DNS-зону A-запись для нового Virtual IP с понятным именем.
+  <meta itemprop="description" content="Добавление записей в DNS для «основного» доменного имени Добавление записей для Virtual IP Добавьте в DNS-зону A-запись для нового Virtual IP с понятным именем.
 Для двух узлов is1-mon-vmauth0[1-2]p выбрано имя is1-mon-vmauth-vip.
 Добавьте в DNS-зону TXT-запись с датой, своим логином, кратким описанием цели создания этого IP, заключёнными в кавычки. &#34;250304. dmr. VIP for is1-mon-vmauth.&#34;
 Добавьте в DNS-зону PTR-запись, соответствующую ранее добавленной A-записи.
-1.2. Результат В результате этих действий упрощается отладка. При распознавании is1-vmauth.example.org получим исчерпывающий ответ:
+Результат В результате этих действий упрощается отладка. При распознавании is1-vmauth.example.org получим исчерпывающий ответ:
 # host c-mon-vmauth-vip.example.org is1-mon-vmauth-vip.example.org has address 10.0.77.120 # dig TXT is1-mon-vmauth-vip.example.org &#43;short &#34;250130. dmr. VIP for is1-mon-vmauth.&#34;">
   <meta itemprop="datePublished" content="2025-03-04T00:00:00+00:00">
   <meta itemprop="dateModified" content="2025-03-04T00:00:00+00:00">
-  <meta itemprop="wordCount" content="508">
+  <meta itemprop="wordCount" content="499">
   <meta itemprop="keywords" content="VictoriaMetrics,Vmauth,FreeIPA">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Пример организации получения TLS-сертификата для Virtual IP (VIP) на vmauth-узлах с автообновлением">
-  <meta name="twitter:description" content="1. Добавление записей в DNS для «основного» доменного имени 1.1. Добавление записей для Virtual IP Добавьте в DNS-зону A-запись для нового Virtual IP с понятным именем.
+  <meta name="twitter:description" content="Добавление записей в DNS для «основного» доменного имени Добавление записей для Virtual IP Добавьте в DNS-зону A-запись для нового Virtual IP с понятным именем.
 Для двух узлов is1-mon-vmauth0[1-2]p выбрано имя is1-mon-vmauth-vip.
 Добавьте в DNS-зону TXT-запись с датой, своим логином, кратким описанием цели создания этого IP, заключёнными в кавычки. &#34;250304. dmr. VIP for is1-mon-vmauth.&#34;
 Добавьте в DNS-зону PTR-запись, соответствующую ранее добавленной A-записи.
-1.2. Результат В результате этих действий упрощается отладка. При распознавании is1-vmauth.example.org получим исчерпывающий ответ:
+Результат В результате этих действий упрощается отладка. При распознавании is1-vmauth.example.org получим исчерпывающий ответ:
 # host c-mon-vmauth-vip.example.org is1-mon-vmauth-vip.example.org has address 10.0.77.120 # dig TXT is1-mon-vmauth-vip.example.org &#43;short &#34;250130. dmr. VIP for is1-mon-vmauth.&#34;">
 
 
@@ -120,6 +120,9 @@ if (!doNotTrack) {
       </li>
       <li class="nav-item">
         <a class="nav-link active" href="/manuals/monitoring/"><span>Monitoring</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/manuals/networking/"><span>Networking</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/manuals/vpn/"><span>VPN</span></a>
@@ -713,6 +716,31 @@ if (window.location.pathname !== "/") {
   </ul>
 </li>
   </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsnetworking-li">
+  <input type="checkbox" id="m-manualsnetworking-check"/>
+  <label for="m-manualsnetworking-check"><a href="/manuals/networking/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsnetworking"><span class="">Networking</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsnetworkingproxy-li">
+  <input type="checkbox" id="m-manualsnetworkingproxy-check"/>
+  <label for="m-manualsnetworkingproxy-check"><a href="/manuals/networking/proxy/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsnetworkingproxy"><span class="">Proxy</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsnetworkingproxytraefik-li">
+  <input type="checkbox" id="m-manualsnetworkingproxytraefik-check"/>
+  <label for="m-manualsnetworkingproxytraefik-check"><a href="/manuals/networking/proxy/traefik/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsnetworkingproxytraefik"><span class="">Traefik</span></a></label>
+  
+  <ul class="ul-4 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsnetworkingproxytraefikinstalling-traefik-binary-in-systemd-li">
+  <input type="checkbox" id="m-manualsnetworkingproxytraefikinstalling-traefik-binary-in-systemd-check"/>
+  <label for="m-manualsnetworkingproxytraefikinstalling-traefik-binary-in-systemd-check"><a href="/manuals/networking/proxy/traefik/installing-traefik-binary-in-systemd/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsnetworkingproxytraefikinstalling-traefik-binary-in-systemd"><span class="">Установка бинарника traefik в systemd</span></a></label>
+  
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+  </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsmonitoring-li">
   <input type="checkbox" id="m-manualsmonitoring-check"/>
   <label for="m-manualsmonitoring-check"><a href="/manuals/monitoring/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoring"><span class="">Monitoring</span></a></label>
@@ -898,22 +926,22 @@ if (window.location.pathname !== "/") {
             <div class="td-toc">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#_добавление_записей_в_dns_для_основного_доменного_имени">1. Добавление записей в DNS для «основного» доменного имени</a>
+    <li><a href="#_добавление_записей_в_dns_для_основного_доменного_имени">Добавление записей в DNS для «основного» доменного имени</a>
       <ul>
-        <li><a href="#_добавление_записей_для_virtual_ip">1.1. Добавление записей для Virtual IP</a></li>
-        <li><a href="#_результат">1.2. Результат</a></li>
+        <li><a href="#_добавление_записей_для_virtual_ip">Добавление записей для Virtual IP</a></li>
+        <li><a href="#_результат">Результат</a></li>
       </ul>
     </li>
-    <li><a href="#_добавление_host_для_virtual_ip_во_freeipa">2. Добавление «host» для Virtual IP во FreeIPA</a>
+    <li><a href="#_добавление_host_для_virtual_ip_во_freeipa">Добавление «host» для Virtual IP во FreeIPA</a>
       <ul>
-        <li><a href="#_создание_узла">2.1. Создание «Узла»</a></li>
+        <li><a href="#_создание_узла">Создание «Узла»</a></li>
       </ul>
     </li>
-    <li><a href="#_запрос_tls_сертификата_для_основного_dns_имени_virtual_ip">3. Запрос TLS-сертификата для основного dns-имени Virtual IP</a>
+    <li><a href="#_запрос_tls_сертификата_для_основного_dns_имени_virtual_ip">Запрос TLS-сертификата для основного dns-имени Virtual IP</a>
       <ul>
-        <li><a href="#_переменные_для_скриптов_и_запроса_сертификата">3.1. Переменные для скриптов и запроса сертификата</a></li>
-        <li><a href="#_скрипты_для_автовыполнения_перед_и_после_получения_сертификата">3.2. Скрипты для автовыполнения перед и после получения сертификата</a></li>
-        <li><a href="#_запрос_tls_сертификата_для_основного_vip_имени">3.3. Запрос TLS-сертификата для основного VIP-имени</a></li>
+        <li><a href="#_переменные_для_скриптов_и_запроса_сертификата">Переменные для скриптов и запроса сертификата</a></li>
+        <li><a href="#_скрипты_для_автовыполнения_перед_и_после_получения_сертификата">Скрипты для автовыполнения перед и после получения сертификата</a></li>
+        <li><a href="#_запрос_tls_сертификата_для_основного_vip_имени">Запрос TLS-сертификата для основного VIP-имени</a></li>
       </ul>
     </li>
   </ul>
@@ -1038,7 +1066,7 @@ if (window.location.pathname !== "/") {
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/monitorix/" data-taxonomy-term="monitorix"><span class="taxonomy-label">Monitorix</span><span class="taxonomy-count">3</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/multic/" data-taxonomy-term="multic"><span class="taxonomy-label">Multic</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/nat/" data-taxonomy-term="nat"><span class="taxonomy-label">NAT</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/networking/" data-taxonomy-term="networking"><span class="taxonomy-label">Networking</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/networking/" data-taxonomy-term="networking"><span class="taxonomy-label">Networking</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/nextcloud/" data-taxonomy-term="nextcloud"><span class="taxonomy-label">NextCloud</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/nexus/" data-taxonomy-term="nexus"><span class="taxonomy-label">Nexus</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/nexus-repository-manager/" data-taxonomy-term="nexus-repository-manager"><span class="taxonomy-label">Nexus Repository Manager</span><span class="taxonomy-count">6</span></a></li>
@@ -1078,9 +1106,11 @@ if (window.location.pathname !== "/") {
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/sudo/" data-taxonomy-term="sudo"><span class="taxonomy-label">Sudo</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/swap/" data-taxonomy-term="swap"><span class="taxonomy-label">Swap</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/syslinux/" data-taxonomy-term="syslinux"><span class="taxonomy-label">Syslinux</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/systemd/" data-taxonomy-term="systemd"><span class="taxonomy-label">Systemd</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/terminal/" data-taxonomy-term="terminal"><span class="taxonomy-label">Terminal</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/tls-certification/" data-taxonomy-term="tls-certification"><span class="taxonomy-label">TLS Certification</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/traditional-unix-permission/" data-taxonomy-term="traditional-unix-permission"><span class="taxonomy-label">Traditional Unix Permission</span><span class="taxonomy-count">1</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/traefik/" data-taxonomy-term="traefik"><span class="taxonomy-label">Traefik</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/translation/" data-taxonomy-term="translation"><span class="taxonomy-label">Translation</span><span class="taxonomy-count">10</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/truecrypt/" data-taxonomy-term="truecrypt"><span class="taxonomy-label">TrueCrypt</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/ubuntu/" data-taxonomy-term="ubuntu"><span class="taxonomy-label">Ubuntu</span><span class="taxonomy-count">4</span></a></li>
@@ -1146,10 +1176,10 @@ if (window.location.pathname !== "/") {
 </header>
 	
 <div class="sect1">
-<h2 id="_добавление_записей_в_dns_для_основного_доменного_имени">1. Добавление записей в DNS для «основного» доменного имени</h2>
+<h2 id="_добавление_записей_в_dns_для_основного_доменного_имени">Добавление записей в DNS для «основного» доменного имени</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_добавление_записей_для_virtual_ip">1.1. Добавление записей для Virtual IP</h3>
+<h3 id="_добавление_записей_для_virtual_ip">Добавление записей для Virtual IP</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1169,7 +1199,7 @@ if (window.location.pathname !== "/") {
 </div>
 </div>
 <div class="sect2">
-<h3 id="_результат">1.2. Результат</h3>
+<h3 id="_результат">Результат</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1190,10 +1220,10 @@ is1-mon-vmauth-vip.example.org has address 10.0.77.120
 </div>
 </div>
 <div class="sect1">
-<h2 id="_добавление_host_для_virtual_ip_во_freeipa">2. Добавление «host» для Virtual IP во FreeIPA</h2>
+<h2 id="_добавление_host_для_virtual_ip_во_freeipa">Добавление «host» для Virtual IP во FreeIPA</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_создание_узла">2.1. Создание «Узла»</h3>
+<h3 id="_создание_узла">Создание «Узла»</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1205,7 +1235,7 @@ is1-mon-vmauth-vip.example.org has address 10.0.77.120
 <li>
 <p>Добавьте к «узлу» в поле «Описание» краткое описание цели создания узла. Например:</p>
 <div class="paragraph">
-<p><code>250304. nifantev. Для выпуска TLS-сертификата под vmauth в новом VictoriaMetrics-кластере. Так как Kerberos не нужен, то вместо создания «сервиса» было выбрано создание «узла».</code></p>
+<p><code>250304. nifantiev. Для выпуска TLS-сертификата под vmauth в новом VictoriaMetrics-кластере. Так как Kerberos не нужен, то вместо создания «сервиса» было выбрано создание «узла».</code></p>
 </div>
 </li>
 <li>
@@ -1217,10 +1247,10 @@ is1-mon-vmauth-vip.example.org has address 10.0.77.120
 </div>
 </div>
 <div class="sect1">
-<h2 id="_запрос_tls_сертификата_для_основного_dns_имени_virtual_ip">3. Запрос TLS-сертификата для основного dns-имени Virtual IP</h2>
+<h2 id="_запрос_tls_сертификата_для_основного_dns_имени_virtual_ip">Запрос TLS-сертификата для основного dns-имени Virtual IP</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_переменные_для_скриптов_и_запроса_сертификата">3.1. Переменные для скриптов и запроса сертификата</h3>
+<h3 id="_переменные_для_скриптов_и_запроса_сертификата">Переменные для скриптов и запроса сертификата</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1245,7 +1275,7 @@ FULL_SCRIPT_AFTER=${SCRIPT_DIR}/${SCRIPT_AFTER}</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_скрипты_для_автовыполнения_перед_и_после_получения_сертификата">3.2. Скрипты для автовыполнения перед и после получения сертификата</h3>
+<h3 id="_скрипты_для_автовыполнения_перед_и_после_получения_сертификата">Скрипты для автовыполнения перед и после получения сертификата</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1310,7 +1340,7 @@ chown root:root ${FILES_PATH}</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_запрос_tls_сертификата_для_основного_vip_имени">3.3. Запрос TLS-сертификата для основного VIP-имени</h3>
+<h3 id="_запрос_tls_сертификата_для_основного_vip_имени">Запрос TLS-сертификата для основного VIP-имени</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Systemd on Debuntarium</title>
+    <link>https://debuntu.ru/tags/systemd/</link>
+    <description>Recent content in Systemd on Debuntarium</description>
+    <generator>Hugo</generator>
+    <language>ru-RU</language>
+    <lastBuildDate>Sun, 18 May 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://debuntu.ru/tags/systemd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Установка бинарника traefik в systemd</title>
+      <link>https://debuntu.ru/manuals/networking/proxy/traefik/installing-traefik-binary-in-systemd/</link>
+      <pubDate>Sun, 18 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://debuntu.ru/manuals/networking/proxy/traefik/installing-traefik-binary-in-systemd/</guid>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;скачивание-бинарника-из-github-в-nexus&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#скачивание-бинарника-из-github-в-nexus&#34;&gt;&lt;/a&gt;1. Скачивание бинарника из github в Nexus&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;olist arabic&#34;&gt;&#xA;&lt;ol class=&#34;arabic&#34;&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Создайте временный каталог:&lt;/p&gt;&#xA;&lt;div class=&#34;listingblock&#34;&gt;&#xA;&lt;div class=&#34;content&#34;&gt;&#xA;&lt;pre&gt;mkdir -p ~/tmp&#xA;temp_dir=$(mktemp -d ~/tmp/tmpdir.XXXXXX)&#xA;cd $temp_dir&lt;/pre&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Скачайте архив с бинарником последней версии и файл с контрольными суммами:&lt;/p&gt;&#xA;&lt;div class=&#34;listingblock&#34;&gt;&#xA;&lt;div class=&#34;content&#34;&gt;&#xA;&lt;pre&gt;GITHUB_REPO_NAME=&amp;#34;traefik/traefik&amp;#34;&#xA;FILES=(&amp;#34;traefik_.*_linux_amd64\.tar\.gz&amp;#34; &amp;#34;traefik_.*_checksums\.txt&amp;#34;)&#xA;&#xA;&#xA;for i in ${FILES[@]}; do&#xA;  curl -s https://api.github.com/repos/${GITHUB_REPO_NAME}/releases | \&#xA;  grep browser_download_url | \&#xA;  grep &amp;#34;$i&amp;#34; \&#xA;  | head -n1 | cut -d &amp;#39;&amp;#34;&amp;#39; -f 4 | \&#xA;  wget -i -&#xA;done&lt;/pre&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Распакуйте архивный файл и проверьте контрольные суммы:&lt;/p&gt;&#xA;&lt;div class=&#34;listingblock&#34;&gt;&#xA;&lt;div class=&#34;content&#34;&gt;&#xA;&lt;pre&gt;tar -xvf traefik_*.tar.gz&#xA;sha256sum -c --ignore-missing traefik_*_checksums.txt&lt;/pre&gt;&#xA;&lt;/div&gt;</description>
+    </item>
+  </channel>
+</rss>
