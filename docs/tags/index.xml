@@ -9,6 +9,13 @@
     <lastBuildDate>Sun, 18 May 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://debuntu.ru/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Envoy</title>
+      <link>https://debuntu.ru/tags/envoy/</link>
+      <pubDate>Sun, 18 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://debuntu.ru/tags/envoy/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Networking</title>
       <link>https://debuntu.ru/tags/networking/</link>
       <pubDate>Sun, 18 May 2025 00:00:00 +0000</pubDate>

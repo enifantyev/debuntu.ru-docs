@@ -81,6 +81,13 @@
   
   
   <url>
+    <loc>https://debuntu.ru/manuals/networking/proxy/envoy/installing-envoy-binary-in-systemd/</loc>
+    <lastmod>2025-05-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://debuntu.ru/manuals/networking/proxy/traefik/installing-traefik-binary-in-systemd/</loc>
     <lastmod>2025-05-18T00:00:00+00:00</lastmod>
   </url>
@@ -1511,6 +1518,15 @@
   
   <url>
     <loc>https://debuntu.ru/</loc>
+    <lastmod>2025-05-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/networking/proxy/envoy/</loc>
     <lastmod>2025-05-18T00:00:00+00:00</lastmod>
   </url>
   
