@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VMStorage on Debuntarium</title>
+    <link>https://debuntu.ru/manuals/monitoring/victoriametrics/vmstorage/</link>
+    <description>Recent content in VMStorage on Debuntarium</description>
+    <generator>Hugo</generator>
+    <language>ru-RU</language>
+    <lastBuildDate>Thu, 22 May 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://debuntu.ru/manuals/monitoring/victoriametrics/vmstorage/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Алгоритм ротации indexdb</title>
+      <link>https://debuntu.ru/manuals/monitoring/victoriametrics/vmstorage/indexdb-retention-algorythm/</link>
+      <pubDate>Thu, 22 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://debuntu.ru/manuals/monitoring/victoriametrics/vmstorage/indexdb-retention-algorythm/</guid>
+      <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;&lt;strong&gt;Первоначальное создание indexdb каталога:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;После initial-запуска vmstorage, в каталоге &lt;code&gt;{storageDataPath}/indexdb&lt;/code&gt; создаются три каталога с именами в виде хеша.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Каталоги предназначены для хранения indexdb.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Один из каталогов, назовём его Previous, предназначен для хранения «Предыдущего» indexd- Второй — Current, то есть хранит «Актуальную» indexd. Третий — Next, обычно это пустой каталог. Далее будет объяснена ротация indexdb в этих каталогах.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;admonitionblock tip&#34;&gt;&#xA;&lt;table&gt;&#xA;&lt;tbody&gt;&lt;tr&gt;&#xA;&lt;td class=&#34;icon&#34;&gt;&#xA;&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;&#xA;&lt;/td&gt;&#xA;&lt;td class=&#34;content&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Предположим, что на данный момент &lt;code&gt;retentionPeriod 6&lt;/code&gt;. Заканчивается первый retentionPeriod после первой инициализации vmstorage.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
+    </item>
+  </channel>
+</rss>

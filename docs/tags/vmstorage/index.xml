@@ -6,7 +6,7 @@
     <description>Recent content in Vmstorage on Debuntarium</description>
     <generator>Hugo</generator>
     <language>ru-RU</language>
-    <lastBuildDate>Sat, 08 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 May 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://debuntu.ru/tags/vmstorage/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>VictoriaMetrics ecosystem. Краткий обзор</title>
@@ -14,6 +14,13 @@
       <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
       <guid>https://debuntu.ru/manuals/monitoring/victoriametrics/notes-about-victoriametrics-ecosystem/</guid>
       <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_анатомия_экосистемы&#34;&gt;1. Анатомия экосистемы&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;VictoriaMetrics ecosystem состоит из нескольких компонентов.&lt;/p&gt;&#xA;&lt;div class=&#34;olist arabic&#34;&gt;&#xA;&lt;ol class=&#34;arabic&#34;&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;vmstorage&lt;/strong&gt;, &lt;strong&gt;vminsert&lt;/strong&gt;, &lt;strong&gt;vmselect&lt;/strong&gt; — составляют ядро системы VictoriaMetrics Cluster.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;vmagent&lt;/strong&gt;, &lt;strong&gt;vmauth&lt;/strong&gt;, &lt;strong&gt;vmalert&lt;/strong&gt; — дополнительные компоненты.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;vmctl&lt;/strong&gt;, &lt;strong&gt;vmalert-tool&lt;/strong&gt;, &lt;strong&gt;vmbackup&lt;/strong&gt;, &lt;strong&gt;vmrestore&lt;/strong&gt; — различные утилиты.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/div&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Каждый компонент экосистемы VictoriaMetrics компилируется в форме одного бинарника без зависимостей, поэтому эти компоненты могут работать почти в любом Linux’е без установки дополнительных пакетов.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;vminsert и vmselect поддерживают различные форматы метрик, поэтому взаимодействовать с хранилищем возможно из различных инструментов, что удобно для бесшовного перехода из других систем мониторинга.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Относительно недавно в экосистему был добавлен VictoriaLogs, но я его пока не изучал.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>Алгоритм ротации indexdb</title>
+      <link>https://debuntu.ru/manuals/monitoring/victoriametrics/vmstorage/indexdb-retention-algorythm/</link>
+      <pubDate>Thu, 22 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://debuntu.ru/manuals/monitoring/victoriametrics/vmstorage/indexdb-retention-algorythm/</guid>
+      <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;&lt;strong&gt;Первоначальное создание indexdb каталога:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;После initial-запуска vmstorage, в каталоге &lt;code&gt;{storageDataPath}/indexdb&lt;/code&gt; создаются три каталога с именами в виде хеша.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Каталоги предназначены для хранения indexdb.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Один из каталогов, назовём его Previous, предназначен для хранения «Предыдущего» indexd- Второй — Current, то есть хранит «Актуальную» indexd. Третий — Next, обычно это пустой каталог. Далее будет объяснена ротация indexdb в этих каталогах.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;admonitionblock tip&#34;&gt;&#xA;&lt;table&gt;&#xA;&lt;tbody&gt;&lt;tr&gt;&#xA;&lt;td class=&#34;icon&#34;&gt;&#xA;&lt;i class=&#34;fa icon-tip&#34; title=&#34;Tip&#34;&gt;&lt;/i&gt;&#xA;&lt;/td&gt;&#xA;&lt;td class=&#34;content&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Предположим, что на данный момент &lt;code&gt;retentionPeriod 6&lt;/code&gt;. Заканчивается первый retentionPeriod после первой инициализации vmstorage.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>Установка VictoriaMetrics Cluster из бинарников в изолированной среде</title>
