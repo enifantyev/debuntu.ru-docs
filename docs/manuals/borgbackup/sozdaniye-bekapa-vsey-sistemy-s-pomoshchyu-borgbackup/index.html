@@ -1227,7 +1227,7 @@ Number  Start    End       Size      Type     File system  Flags
 <p>Если требуется освободить немного места в VG, то можно попробовать освободить пару гигабайтов за счёт уменьшения, например <code>/dev/vg/data</code>, конечно, если на томе используется файловая система &#39;ext4&#39;:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">/usr/sbin/lvreduce -L -2G -r /dev/vg/data</code></pre>
+<pre class="highlight"><code class="language-console" data-lang="console">/usr/sbin/lvreduce -L -2G -r vg/data</code></pre>
 </div>
 </div>
 </li>
@@ -1235,7 +1235,7 @@ Number  Start    End       Size      Type     File system  Flags
 <p>После завершения бэкапа вновь увеличиваем LV:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">/usr/sbin/lvextend -l +100%FREE -r /dev/vg/data</code></pre>
+<pre class="highlight"><code class="language-console" data-lang="console">/usr/sbin/lvextend -l +100%FREE -r vg/data</code></pre>
 </div>
 </div>
 </li>
@@ -1299,8 +1299,8 @@ service auditd stop</code></pre>
 <p>Помним, что в Volume Group должно быть достаточно свободного места для размещения снэпшотов.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">lvcreate -L 500M -s -n snap_root /dev/vg/root
-lvcreate -L 500M -s -n snap_var /dev/vg/var</code></pre>
+<pre class="highlight"><code class="language-console" data-lang="console">lvcreate -L 500M -s -n snap_root vg/root
+lvcreate -L 500M -s -n snap_var vg/var</code></pre>
 </div>
 </div>
 </li>
@@ -1467,8 +1467,8 @@ export BORG_REPO=&#34;ssh://borg@192.168.50.10:22/./repo1&#34;</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-console" data-lang="console">umount -R ${SYSROOT}
-lvremove -y /dev/vg/snap_var
-lvremove -y /dev/vg/snap_root</code></pre>
+lvremove -y vg/snap_var
+lvremove -y vg/snap_root</code></pre>
 </div>
 </div>
 </li>
