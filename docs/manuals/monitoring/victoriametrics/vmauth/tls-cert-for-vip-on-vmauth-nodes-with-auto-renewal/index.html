@@ -18,18 +18,18 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>Пример организации получения TLS-сертификата для Virtual IP (VIP) на vmauth-узлах с автообновлением | Debuntarium</title>
-<meta name="description" content=" Добавление записей в DNS для «основного» доменного имени Добавление записей для Virtual IP Добавьте в DNS-зону A-запись для нового Virtual IP с понятным именем. Например, для двух узлов is1-mon-vmauth0[1-2]p выбрано имя объединённое имя is1-mon-vmauth-vip.
+<meta name="description" content=" 1. VIP. Добавление записей в DNS для «основного» доменного имени 1.1. Добавление записей для Virtual IP Добавьте в DNS-зону A-запись для нового Virtual IP с понятным именем. Например, для двух узлов is1-mon-vmauth0[1-2]p выбрано имя объединённое имя is1-mon-vmauth-vip.
 Добавьте в DNS-зону TXT-запись с датой, своим логином, кратким описанием цели создания этого IP, заключёнными в кавычки. &#34;250304. dmr. VIP for is1-mon-vmauth.&#34;
 Добавьте в DNS-зону PTR-запись, соответствующую ранее добавленной A-записи.
-Результат В результате этих действий упрощается отладка. При распознавании is1-vmauth.example.org получим исчерпывающий ответ:
+1.2. Результат В результате этих действий упрощается отладка. При распознавании is1-vmauth.example.org получим исчерпывающий ответ:
 # host c-mon-vmauth-vip.example.org is1-mon-vmauth-vip.example.org has address 10.0.77.120 # dig TXT is1-mon-vmauth-vip.example.org &#43;short &#34;250130. dmr. VIP for is1-mon-vmauth.&#34; ">
 <meta property="og:url" content="https://debuntu.ru/manuals/monitoring/victoriametrics/vmauth/tls-cert-for-vip-on-vmauth-nodes-with-auto-renewal/">
   <meta property="og:site_name" content="Debuntarium">
   <meta property="og:title" content="Пример организации получения TLS-сертификата для Virtual IP (VIP) на vmauth-узлах с автообновлением">
-  <meta property="og:description" content="Добавление записей в DNS для «основного» доменного имени Добавление записей для Virtual IP Добавьте в DNS-зону A-запись для нового Virtual IP с понятным именем. Например, для двух узлов is1-mon-vmauth0[1-2]p выбрано имя объединённое имя is1-mon-vmauth-vip.
+  <meta property="og:description" content="1. VIP. Добавление записей в DNS для «основного» доменного имени 1.1. Добавление записей для Virtual IP Добавьте в DNS-зону A-запись для нового Virtual IP с понятным именем. Например, для двух узлов is1-mon-vmauth0[1-2]p выбрано имя объединённое имя is1-mon-vmauth-vip.
 Добавьте в DNS-зону TXT-запись с датой, своим логином, кратким описанием цели создания этого IP, заключёнными в кавычки. &#34;250304. dmr. VIP for is1-mon-vmauth.&#34;
 Добавьте в DNS-зону PTR-запись, соответствующую ранее добавленной A-записи.
-Результат В результате этих действий упрощается отладка. При распознавании is1-vmauth.example.org получим исчерпывающий ответ:
+1.2. Результат В результате этих действий упрощается отладка. При распознавании is1-vmauth.example.org получим исчерпывающий ответ:
 # host c-mon-vmauth-vip.example.org is1-mon-vmauth-vip.example.org has address 10.0.77.120 # dig TXT is1-mon-vmauth-vip.example.org &#43;short &#34;250130. dmr. VIP for is1-mon-vmauth.&#34;">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:type" content="article">
@@ -41,21 +41,21 @@
     <meta property="article:tag" content="FreeIPA">
 
   <meta itemprop="name" content="Пример организации получения TLS-сертификата для Virtual IP (VIP) на vmauth-узлах с автообновлением">
-  <meta itemprop="description" content="Добавление записей в DNS для «основного» доменного имени Добавление записей для Virtual IP Добавьте в DNS-зону A-запись для нового Virtual IP с понятным именем. Например, для двух узлов is1-mon-vmauth0[1-2]p выбрано имя объединённое имя is1-mon-vmauth-vip.
+  <meta itemprop="description" content="1. VIP. Добавление записей в DNS для «основного» доменного имени 1.1. Добавление записей для Virtual IP Добавьте в DNS-зону A-запись для нового Virtual IP с понятным именем. Например, для двух узлов is1-mon-vmauth0[1-2]p выбрано имя объединённое имя is1-mon-vmauth-vip.
 Добавьте в DNS-зону TXT-запись с датой, своим логином, кратким описанием цели создания этого IP, заключёнными в кавычки. &#34;250304. dmr. VIP for is1-mon-vmauth.&#34;
 Добавьте в DNS-зону PTR-запись, соответствующую ранее добавленной A-записи.
-Результат В результате этих действий упрощается отладка. При распознавании is1-vmauth.example.org получим исчерпывающий ответ:
+1.2. Результат В результате этих действий упрощается отладка. При распознавании is1-vmauth.example.org получим исчерпывающий ответ:
 # host c-mon-vmauth-vip.example.org is1-mon-vmauth-vip.example.org has address 10.0.77.120 # dig TXT is1-mon-vmauth-vip.example.org &#43;short &#34;250130. dmr. VIP for is1-mon-vmauth.&#34;">
   <meta itemprop="datePublished" content="2025-03-04T00:00:00+00:00">
   <meta itemprop="dateModified" content="2025-03-04T00:00:00+00:00">
-  <meta itemprop="wordCount" content="503">
+  <meta itemprop="wordCount" content="791">
   <meta itemprop="keywords" content="VictoriaMetrics,Vmauth,FreeIPA">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Пример организации получения TLS-сертификата для Virtual IP (VIP) на vmauth-узлах с автообновлением">
-  <meta name="twitter:description" content="Добавление записей в DNS для «основного» доменного имени Добавление записей для Virtual IP Добавьте в DNS-зону A-запись для нового Virtual IP с понятным именем. Например, для двух узлов is1-mon-vmauth0[1-2]p выбрано имя объединённое имя is1-mon-vmauth-vip.
+  <meta name="twitter:description" content="1. VIP. Добавление записей в DNS для «основного» доменного имени 1.1. Добавление записей для Virtual IP Добавьте в DNS-зону A-запись для нового Virtual IP с понятным именем. Например, для двух узлов is1-mon-vmauth0[1-2]p выбрано имя объединённое имя is1-mon-vmauth-vip.
 Добавьте в DNS-зону TXT-запись с датой, своим логином, кратким описанием цели создания этого IP, заключёнными в кавычки. &#34;250304. dmr. VIP for is1-mon-vmauth.&#34;
 Добавьте в DNS-зону PTR-запись, соответствующую ранее добавленной A-записи.
-Результат В результате этих действий упрощается отладка. При распознавании is1-vmauth.example.org получим исчерпывающий ответ:
+1.2. Результат В результате этих действий упрощается отладка. При распознавании is1-vmauth.example.org получим исчерпывающий ответ:
 # host c-mon-vmauth-vip.example.org is1-mon-vmauth-vip.example.org has address 10.0.77.120 # dig TXT is1-mon-vmauth-vip.example.org &#43;short &#34;250130. dmr. VIP for is1-mon-vmauth.&#34;">
 
 
@@ -944,22 +944,36 @@ if (window.location.pathname !== "/") {
             <div class="td-toc">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#_добавление_записей_в_dns_для_основного_доменного_имени">Добавление записей в DNS для «основного» доменного имени</a>
+    <li><a href="#_vip_добавление_записей_в_dns_для_основного_доменного_имени">1. VIP. Добавление записей в DNS для «основного» доменного имени</a>
       <ul>
-        <li><a href="#_добавление_записей_для_virtual_ip">Добавление записей для Virtual IP</a></li>
-        <li><a href="#_результат">Результат</a></li>
+        <li><a href="#_добавление_записей_для_virtual_ip">1.1. Добавление записей для Virtual IP</a></li>
+        <li><a href="#_результат">1.2. Результат</a></li>
       </ul>
     </li>
-    <li><a href="#_добавление_host_для_virtual_ip_во_freeipa">Добавление «host» для Virtual IP во FreeIPA</a>
+    <li><a href="#_vip_добавление_host_для_virtual_ip_во_freeipa">2. VIP. Добавление «host» для Virtual IP во FreeIPA</a>
       <ul>
-        <li><a href="#_создание_узла">Создание «Узла»</a></li>
+        <li><a href="#_создание_узла">2.1. Создание «Узла»</a></li>
       </ul>
     </li>
-    <li><a href="#_запрос_tls_сертификата_для_основного_dns_имени_virtual_ip">Запрос TLS-сертификата для основного dns-имени Virtual IP</a>
+    <li><a href="#_vip_запрос_tls_сертификата_для_основного_dns_имени_virtual_ip">3. VIP. Запрос TLS-сертификата для основного dns-имени Virtual IP</a>
       <ul>
-        <li><a href="#_переменные_для_скриптов_и_запроса_сертификата">Переменные для скриптов и запроса сертификата</a></li>
-        <li><a href="#_скрипты_для_автовыполнения_перед_и_после_получения_сертификата">Скрипты для автовыполнения перед и после получения сертификата</a></li>
-        <li><a href="#_запрос_tls_сертификата_для_основного_vip_имени">Запрос TLS-сертификата для основного VIP-имени</a></li>
+        <li><a href="#_переменные_для_скриптов_и_запроса_сертификата">3.1. Переменные для скриптов и запроса сертификата</a></li>
+        <li><a href="#_скрипты_для_автовыполнения_перед_и_после_получения_сертификата">3.2. Скрипты для автовыполнения перед и после получения сертификата</a></li>
+        <li><a href="#_запрос_tls_сертификата_для_основного_vip_имени">3.3. Запрос TLS-сертификата для основного VIP-имени</a></li>
+      </ul>
+    </li>
+    <li><a href="#_san_добавление_псевдонимов_учётной_записи_к_узлу">4. SAN. Добавление «Псевдонимов учётной записи» к «Узлу»</a></li>
+    <li><a href="#_san_добавление_записей_в_dns_для_san_дополнительных_dns_имён">5. SAN. Добавление записей в DNS для SAN (дополнительных dns-имён)</a>
+      <ul>
+        <li><a href="#_добавление_записей_для_альтернативных_имён">5.1. Добавление записей для альтернативных имён</a></li>
+        <li><a href="#_результат_2">5.2. Результат</a></li>
+      </ul>
+    </li>
+    <li><a href="#_san_запрос_tls_сертификата_для_всех_дополнительных_имён">6. SAN. Запрос TLS-сертификата для всех дополнительных имён</a>
+      <ul>
+        <li><a href="#_перезапрос_сертификата">6.1. Перезапрос сертификата</a></li>
+        <li><a href="#_проверка_успешности_перезапроса">6.2. Проверка успешности перезапроса</a></li>
+        <li><a href="#_вывод_пронумерованного_отсортированного_списка_всех_доменных_имён_кроме_is1i_mon_vmauth_vip_example_org">6.3. Вывод пронумерованного отсортированного списка всех доменных имён, кроме &#39;is1i-mon-vmauth-vip.example.org&#39;</a></li>
       </ul>
     </li>
   </ul>
@@ -1194,11 +1208,14 @@ if (window.location.pathname !== "/") {
 
 </header>
 	
+<div class="paragraph">
+<p><br/></p>
+</div>
 <div class="sect1">
-<h2 id="_добавление_записей_в_dns_для_основного_доменного_имени">Добавление записей в DNS для «основного» доменного имени</h2>
+<h2 id="_vip_добавление_записей_в_dns_для_основного_доменного_имени">1. VIP. Добавление записей в DNS для «основного» доменного имени</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_добавление_записей_для_virtual_ip">Добавление записей для Virtual IP</h3>
+<h3 id="_добавление_записей_для_virtual_ip">1.1. Добавление записей для Virtual IP</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1215,7 +1232,7 @@ if (window.location.pathname !== "/") {
 </div>
 </div>
 <div class="sect2">
-<h3 id="_результат">Результат</h3>
+<h3 id="_результат">1.2. Результат</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1232,14 +1249,18 @@ is1-mon-vmauth-vip.example.org has address 10.0.77.120
 </li>
 </ol>
 </div>
+<div class="paragraph">
+<p><br/>
+<br/></p>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_добавление_host_для_virtual_ip_во_freeipa">Добавление «host» для Virtual IP во FreeIPA</h2>
+<h2 id="_vip_добавление_host_для_virtual_ip_во_freeipa">2. VIP. Добавление «host» для Virtual IP во FreeIPA</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_создание_узла">Создание «Узла»</h3>
+<h3 id="_создание_узла">2.1. Создание «Узла»</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1259,14 +1280,18 @@ is1-mon-vmauth-vip.example.org has address 10.0.77.120
 </li>
 </ol>
 </div>
+<div class="paragraph">
+<p><br/>
+<br/></p>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_запрос_tls_сертификата_для_основного_dns_имени_virtual_ip">Запрос TLS-сертификата для основного dns-имени Virtual IP</h2>
+<h2 id="_vip_запрос_tls_сертификата_для_основного_dns_имени_virtual_ip">3. VIP. Запрос TLS-сертификата для основного dns-имени Virtual IP</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_переменные_для_скриптов_и_запроса_сертификата">Переменные для скриптов и запроса сертификата</h3>
+<h3 id="_переменные_для_скриптов_и_запроса_сертификата">3.1. Переменные для скриптов и запроса сертификата</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1291,7 +1316,7 @@ FULL_SCRIPT_AFTER=${SCRIPT_DIR}/${SCRIPT_AFTER}</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_скрипты_для_автовыполнения_перед_и_после_получения_сертификата">Скрипты для автовыполнения перед и после получения сертификата</h3>
+<h3 id="_скрипты_для_автовыполнения_перед_и_после_получения_сертификата">3.2. Скрипты для автовыполнения перед и после получения сертификата</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1356,7 +1381,7 @@ chown root:root ${FILES_PATH}</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_запрос_tls_сертификата_для_основного_vip_имени">Запрос TLS-сертификата для основного VIP-имени</h3>
+<h3 id="_запрос_tls_сертификата_для_основного_vip_имени">3.3. Запрос TLS-сертификата для основного VIP-имени</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1400,6 +1425,177 @@ Request ID &#39;vip&#39;:
         post-save command: /bin/bash -c &#34;/usr/local/lib/certmonger/vip-after-savecert 2&gt;&amp;1 | /usr/bin/logger -t CERTMONGER&#34;
         track: yes
         auto-renew: yes</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><br/>
+<br/></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_san_добавление_псевдонимов_учётной_записи_к_узлу">4. SAN. Добавление «Псевдонимов учётной записи» к «Узлу»</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Добавьте к «узлу» псевдонимы для каждого SAN с префиксом host:</p>
+<div class="listingblock">
+<div class="content">
+<pre>host/dev-vmauth.example.org
+host/prod-vmauth.example.org
+host/test-vmauth.example.org</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><br/>
+<br/></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_san_добавление_записей_в_dns_для_san_дополнительных_dns_имён">5. SAN. Добавление записей в DNS для SAN (дополнительных dns-имён)</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_добавление_записей_для_альтернативных_имён">5.1. Добавление записей для альтернативных имён</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Добавьте в DNS-зону example.org CNAME-запись для каждого альтернативного имени. Имя домена и символы точки не добавляйте.</p>
+<div class="listingblock">
+<div class="content">
+<pre>dev-vmauth → is1-mon-vmauth-vip
+prod-vmauth → is1-mon-vmauth-vip
+test-vmauth → is1-mon-vmauth-vip</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_результат_2">5.2. Результат</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>В результате этих действий упрощается отладка. При распознавании dev-vmauth.example.org получим исчерпывающий ответ:</p>
+<div class="listingblock">
+<div class="content">
+<pre># host dev-vmauth.example.org
+dev-vmauth.example.org is an alias for is1-mon-vmauth-vip.example.org.
+is1-mon-vmauth-vip.example.org has address 10.1.77.12
+
+# dig TXT dev-vmauth.example.org +short
+is1-mon-vmauth-vip.example.org.
+&#34;250130. nifantevea. VIP for is1-mon-vmauth*.&#34;</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><br/>
+<br/></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_san_запрос_tls_сертификата_для_всех_дополнительных_имён">6. SAN. Запрос TLS-сертификата для всех дополнительных имён</h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+При повторных перезапросах сертификата с дополнительными SAN необходимо в командной строке перечислять все SAN, и те, что были, и новые.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect2">
+<h3 id="_перезапрос_сертификата">6.1. Перезапрос сертификата</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Выполните на каждом vmauth-хосте:</p>
+<div class="listingblock">
+<div class="content">
+<pre>ipa-getcert resubmit -i vip \
+-D dev-vmauth.example.org \
+-D prod-vmauth.example.org \
+-D test-vmauth.example.org</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_проверка_успешности_перезапроса">6.2. Проверка успешности перезапроса</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Выполните на каждом vmauth-хосте:</p>
+<div class="listingblock">
+<div class="content">
+<pre>ipa-getcert list -i vip</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Примерный ожидаемый вывод:</div>
+<div class="content">
+<pre>Number of certificates and requests being tracked: 1.
+Request ID &#39;vip&#39;:
+        status: MONITORING
+        stuck: no
+        key pair storage: type=FILE,location=&#39;/etc/pki/tls/private/vip.key&#39;,owner=root,perms=0600
+        certificate: type=FILE,location=&#39;/etc/pki/tls/certs/vip.crt&#39;,owner=root,perms=0644
+        CA: IPA
+        issuer: CN=Certificate Authority,O=EXAMPLE.ORG
+        subject: CN=is1-mon-vmauth-vip.example.org,O=EXAMPLE.ORG
+        issued: 2025-03-04 17:31:28 MSK
+        expires: 2027-03-05 17:31:28 MSK
+        dns: dev-vmauth.example.org,prod-vmauth.example.org,test-vmauth.example.org,is1-mon-vmauth-vip.example.org
+        principal name: host/is1-mon-vmauth-vip.example.org@EXAMPLE.ORG
+        key usage: digitalSignature,nonRepudiation,keyEncipherment,dataEncipherment
+        eku: id-kp-serverAuth,id-kp-clientAuth
+        pre-save command: /bin/bash -c &#34;/usr/local/lib/certmonger/vip-before-savecert 2&gt;&amp;1 | /usr/bin/logger -t CERTMONGER&#34;
+        post-save command: /bin/bash -c &#34;/usr/local/lib/certmonger/vip-after-savecert 2&gt;&amp;1 | /usr/bin/logger -t CERTMONGER&#34;
+        track: yes
+        auto-renew: yes</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_вывод_пронумерованного_отсортированного_списка_всех_доменных_имён_кроме_is1i_mon_vmauth_vip_example_org">6.3. Вывод пронумерованного отсортированного списка всех доменных имён, кроме &#39;is1i-mon-vmauth-vip.example.org&#39;</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Выполните на каждом vmauth-хосте:</p>
+<div class="listingblock">
+<div class="content">
+<pre>ipa-getcert list -i vip | grep dns | sed -E &#39;s/^\s*dns: //; s/,isbi-mon-vmauth-vip\.example\.org//&#39; | tr &#39;,&#39; &#39;\n&#39; | sort | nl</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Примерный вывод:</div>
+<div class="content">
+<pre>1  dev-vmauth.example.org
+2  prod-vmauth.example.org
+3  test-vmauth.example.org</pre>
 </div>
 </div>
 </li>
