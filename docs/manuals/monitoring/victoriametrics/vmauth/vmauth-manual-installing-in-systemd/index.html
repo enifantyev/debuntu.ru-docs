@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="alternate" type="application/rss&#43;xml" href="https://debuntu.ru/manuals/networking/proxy/envoy/index.xml">
 <meta name="robots" content="index, follow">
 
 
@@ -18,22 +17,37 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Envoy | Debuntarium</title>
-<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
-<meta property="og:url" content="https://debuntu.ru/manuals/networking/proxy/envoy/">
+<title>Установка vmauth в минимальной конфигурации и запуск через systemd | Debuntarium</title>
+<meta name="description" content=" 1. Установка бинарника и добавление systemd-юнита в систему Установите бинарник vmauth-prod в каталог /usr/local/sbin:
+install vmauth-prod /usr/local/sbin Добавьте в систему аккаунт для работы демона VMAuth и создайте каталог под конфигурационные файлы:
+Этот каталог предназначен для размещения файлов конфигурации vmauth. Режим 2750 позволяет наследовать права «группы» для создаваемых объектов внутри этого каталога, а правила ACL обеспечивают сохранность данных, запрещая доступ для остальных пользователей (other). Вы можете проверить наследование прав, создав внутри каталога новый файл или каталог. ">
+<meta property="og:url" content="https://debuntu.ru/manuals/monitoring/victoriametrics/vmauth/vmauth-manual-installing-in-systemd/">
   <meta property="og:site_name" content="Debuntarium">
-  <meta property="og:title" content="Envoy">
-  <meta property="og:description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
+  <meta property="og:title" content="Установка vmauth в минимальной конфигурации и запуск через systemd">
+  <meta property="og:description" content="1. Установка бинарника и добавление systemd-юнита в систему Установите бинарник vmauth-prod в каталог /usr/local/sbin:
+install vmauth-prod /usr/local/sbin Добавьте в систему аккаунт для работы демона VMAuth и создайте каталог под конфигурационные файлы:
+Этот каталог предназначен для размещения файлов конфигурации vmauth. Режим 2750 позволяет наследовать права «группы» для создаваемых объектов внутри этого каталога, а правила ACL обеспечивают сохранность данных, запрещая доступ для остальных пользователей (other). Вы можете проверить наследование прав, создав внутри каталога новый файл или каталог.">
   <meta property="og:locale" content="ru_RU">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="manuals">
+    <meta property="article:published_time" content="2025-06-13T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-06-13T00:00:00+00:00">
+    <meta property="article:tag" content="VictoriaMetrics">
+    <meta property="article:tag" content="Vmauth">
 
-  <meta itemprop="name" content="Envoy">
-  <meta itemprop="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
-  <meta itemprop="datePublished" content="2025-05-18T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2025-05-18T00:00:00+00:00">
+  <meta itemprop="name" content="Установка vmauth в минимальной конфигурации и запуск через systemd">
+  <meta itemprop="description" content="1. Установка бинарника и добавление systemd-юнита в систему Установите бинарник vmauth-prod в каталог /usr/local/sbin:
+install vmauth-prod /usr/local/sbin Добавьте в систему аккаунт для работы демона VMAuth и создайте каталог под конфигурационные файлы:
+Этот каталог предназначен для размещения файлов конфигурации vmauth. Режим 2750 позволяет наследовать права «группы» для создаваемых объектов внутри этого каталога, а правила ACL обеспечивают сохранность данных, запрещая доступ для остальных пользователей (other). Вы можете проверить наследование прав, создав внутри каталога новый файл или каталог.">
+  <meta itemprop="datePublished" content="2025-06-13T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-06-13T00:00:00+00:00">
+  <meta itemprop="wordCount" content="729">
+  <meta itemprop="keywords" content="VictoriaMetrics,Vmauth">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Envoy">
-  <meta name="twitter:description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
+  <meta name="twitter:title" content="Установка vmauth в минимальной конфигурации и запуск через systemd">
+  <meta name="twitter:description" content="1. Установка бинарника и добавление systemd-юнита в систему Установите бинарник vmauth-prod в каталог /usr/local/sbin:
+install vmauth-prod /usr/local/sbin Добавьте в систему аккаунт для работы демона VMAuth и создайте каталог под конфигурационные файлы:
+Этот каталог предназначен для размещения файлов конфигурации vmauth. Режим 2750 позволяет наследовать права «группы» для создаваемых объектов внутри этого каталога, а правила ACL обеспечивают сохранность данных, запрещая доступ для остальных пользователей (other). Вы можете проверить наследование прав, создав внутри каталога новый файл или каталог.">
 
 
 
@@ -78,7 +92,7 @@ if (!doNotTrack) {
 }
 </script>
   </head>
-  <body class="td-section">
+  <body class="td-page">
     <header>
       <nav class="td-navbar js-navbar-scroll" data-bs-theme="dark">
 <div class="container-fluid flex-column flex-md-row">
@@ -92,10 +106,10 @@ if (!doNotTrack) {
         <a class="nav-link" href="/manuals/kubernetes/"><span>Kubernetes</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/manuals/monitoring/"><span>Monitoring</span></a>
+        <a class="nav-link active" href="/manuals/monitoring/"><span>Monitoring</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="/manuals/networking/"><span>Networking</span></a>
+        <a class="nav-link" href="/manuals/networking/"><span>Networking</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/manuals/vpn/"><span>VPN</span></a>
@@ -194,13 +208,13 @@ if (window.location.pathname !== "/") {
   <script>
     $(function() {
     $("#td-section-nav a").removeClass("active");
-    $("#td-section-nav #m-manualsnetworkingproxyenvoy").addClass("active"); 
-    $("#td-section-nav #m-manualsnetworkingproxyenvoy-li span").addClass("td-sidebar-nav-active-item"); 
-    $("#td-section-nav #m-manualsnetworkingproxyenvoy").parents("li").addClass("active-path"); 
+    $("#td-section-nav #m-manualsmonitoringvictoriametricsvmauthvmauth-manual-installing-in-systemd").addClass("active"); 
+    $("#td-section-nav #m-manualsmonitoringvictoriametricsvmauthvmauth-manual-installing-in-systemd-li span").addClass("td-sidebar-nav-active-item"); 
+    $("#td-section-nav #m-manualsmonitoringvictoriametricsvmauthvmauth-manual-installing-in-systemd").parents("li").addClass("active-path"); 
     $("#td-section-nav li.active-path").addClass("show"); 
     $("#td-section-nav li.active-path").children("input").prop('checked', true);
-    $("#td-section-nav #m-manualsnetworkingproxyenvoy-li").siblings("li").addClass("show");  
-    $("#td-section-nav #m-manualsnetworkingproxyenvoy-li").children("ul").children("li").addClass("show");  
+    $("#td-section-nav #m-manualsmonitoringvictoriametricsvmauthvmauth-manual-installing-in-systemd-li").siblings("li").addClass("show");  
+    $("#td-section-nav #m-manualsmonitoringvictoriametricsvmauthvmauth-manual-installing-in-systemd-li").children("ul").children("li").addClass("show");  
     $("#td-sidebar-menu").toggleClass("d-none"); 
     });
   </script>
@@ -922,7 +936,17 @@ if (window.location.pathname !== "/") {
 
 </div>
 
-            
+            <div class="td-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#_установка_бинарника_и_добавление_systemd_юнита_в_систему">1. Установка бинарника и добавление systemd-юнита в систему</a></li>
+    <li><a href="#_минимальная_конфигурация_vmauth">2. Минимальная конфигурация vmauth</a></li>
+    <li><a href="#_первый_запуск_vmauth">3. Первый запуск vmauth</a></li>
+    <li><a href="#_проверка">4. Проверка</a></li>
+  </ul>
+</nav>
+      </div>
+    
             <div class="taxonomy taxonomy-terms-cloud taxo-categories">
       <h5 class="taxonomy-title">Categories</h5>
       <ul class="taxonomy-terms">
@@ -1126,33 +1150,400 @@ if (window.location.pathname !== "/") {
   <li class="breadcrumb-item">
     <a href="/manuals/">Документация</a></li>
   <li class="breadcrumb-item">
-    <a href="/manuals/networking/">Networking</a></li>
+    <a href="/manuals/monitoring/">Monitoring</a></li>
   <li class="breadcrumb-item">
-    <a href="/manuals/networking/proxy/">Proxy</a></li>
+    <a href="/manuals/monitoring/victoriametrics/">VictoriaMetrics</a></li>
+  <li class="breadcrumb-item">
+    <a href="/manuals/monitoring/victoriametrics/vmauth/">VMAuth</a></li>
   <li class="breadcrumb-item active" aria-current="page">
-    Envoy</li>
+    Установка vmauth в минимальной конфигурации и запуск через systemd</li>
   </ol>
 </nav>
             
 <div class="td-content">
-	<h1>Envoy</h1>
-  
+	<h1>Установка vmauth в минимальной конфигурации и запуск через systemd</h1>
+	
 	<header class="article-meta">
-		
+		<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://debuntu.ru/tags/victoriametrics/" data-taxonomy-term="victoriametrics"><span class="taxonomy-label">VictoriaMetrics</span></a></li>
+    <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmauth/" data-taxonomy-term="vmauth"><span class="taxonomy-label">Vmauth</span></a></li>
+    </ul>
+</div>
+
 </header>
 	
-  <div class="section-index">
-    
-    
-    <hr class="panel-line">
-        <div class="entry">
-                <h5>
-                    <a href="/manuals/networking/proxy/envoy/installing-envoy-binary-in-systemd/">Установка бинарника envoy в systemd</a>
-                </h5>
-                <p>Описание установки envoy в systemd в изолированной среде.</p>
-            </div>
-        </div>
+<div class="paragraph">
+<p><br/></p>
 </div>
+<div class="sect1">
+<h2 id="_установка_бинарника_и_добавление_systemd_юнита_в_систему">1. Установка бинарника и добавление systemd-юнита в систему</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Установите бинарник <code>vmauth-prod</code> в каталог <code>/usr/local/sbin</code>:</p>
+<div class="listingblock">
+<div class="content">
+<pre>install vmauth-prod /usr/local/sbin</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Добавьте в систему аккаунт для работы демона VMAuth и создайте каталог под конфигурационные файлы:</p>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Этот каталог предназначен для размещения файлов конфигурации vmauth. Режим 2750 позволяет наследовать права «группы» для создаваемых объектов внутри этого каталога, а правила ACL обеспечивают сохранность данных, запрещая доступ для остальных пользователей (other).
+Вы можете проверить наследование прав, создав внутри каталога новый файл или каталог.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>VMAUTH_ACCOUNT_NAME=&#39;vmauth&#39;
+VMETRICS_GROUP=&#39;victoriametrics&#39;
+VMAUTH_CONF_DIR=&#34;/etc/${VMETRICS_GROUP}&#34;
+
+groupadd --system ${VMAUTH_CONF_DIR}
+useradd --system --no-create-home \
+ --shell /sbin/nologin \
+ --home-dir ${VMAUTH_CONF_DIR} \
+ --gid ${VMETRICS_GROUP} ${VMAUTH_ACCOUNT_NAME}
+
+mkdir -p ${VMAUTH_CONF_DIR}
+chown root:${VMETRICS_GROUP} ${VMAUTH_CONF_DIR}
+chmod 2750 ${VMAUTH_CONF_DIR}
+setfacl -d -m u::rwX,g::r-X,o::--- ${VMAUTH_CONF_DIR}
+setfacl -m u::rwX,g::r-X,o::--- ${VMAUTH_CONF_DIR}</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Добавьте systemd-юнит в <code>/etc/systemd/system</code>, где по правилам должны находиться созданные вручную systemd-юниты.</p>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+В переменную SYSTEMD_HOSTNAME может попасть короткое имя машины, если юнит запустится раньше момента установки полного имени машины.
+То есть в метку instance может попасть не vmaut01p.example.org, а vmauth01p.
+Но это не проблема, если есть правила, по которым в метке instance и должно быть короткое имя машины.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div id="_tabs_1" class="openblock tabs is-loading">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li id="_tabs_1_скрипт" class="tab">
+<p>Скрипт</p>
+</li>
+<li id="_tabs_1_результативный_файл" class="tab">
+<p>Результативный файл</p>
+</li>
+</ul>
+</div>
+<div id="_tabs_1_скрипт--panel" class="tabpanel" aria-labelledby="_tabs_1_скрипт">
+<div class="listingblock">
+<div class="content">
+<pre>set -u; cat &lt;&lt; EOF &gt; /etc/systemd/system/vmauth.service
+[Unit]
+Description=vmauth is a simple auth proxy, router and load balancer for VictoriaMetrics.
+# https://docs.victoriametrics.com/vmauth.html
+After=network.target systemd-hostnamed.service
+Requires=systemd-hostnamed.service
+
+[Service]
+Type=simple
+User=vmauth
+Group=victoriametrics
+StartLimitBurst=5
+StartLimitInterval=0
+Restart=on-failure
+RestartSec=1
+EnvironmentFile=/etc/sysconfig/vmauth
+RuntimeDirectory=%N
+RuntimeDirectoryMode=755
+ExecStartPre=/bin/sh -c &#34;echo SYSTEMD_HOSTNAME=\$(cat /etc/hostname) &gt; /run/%N/systemd_hostname.env&#34;
+EnvironmentFile=-/run/%N/systemd_hostname.env
+ExecStart=/usr/local/bin/vmauth-prod -envflag.enable
+ExecStop=/bin/kill -s SIGTERM \$MAINPID
+ExecReload=/bin/kill -HUP \$MAINPID
+# See docs https://docs.victoriametrics.com/Single-server-VictoriaMetrics.html#tuning
+LimitNOFILE=1048576
+LimitNPROC=1048576
+LimitCORE=infinity
+WorkingDirectory=${VMAUTH_CONF_DIR}
+PrivateTmp=yes
+ProtectHome=yes
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectControlGroups=true
+ProtectKernelModules=true
+ProtectKernelTunables=yes
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+
+[Install]
+WantedBy=multi-user.target
+EOF
+set +u
+
+systemctl daemon-reload</pre>
+</div>
+</div>
+</div>
+<div id="_tabs_1_результативный_файл--panel" class="tabpanel" aria-labelledby="_tabs_1_результативный_файл">
+<div class="listingblock">
+<div class="content">
+<pre>[Unit]
+Description=vmauth is a simple auth proxy, router and load balancer for VictoriaMetrics.
+# https://docs.victoriametrics.com/vmauth.html
+After=network.target
+
+[Service]
+Type=simple
+User=vmauth
+Group=victoriametrics
+StartLimitBurst=5
+StartLimitInterval=0
+Restart=on-failure
+RestartSec=1
+EnvironmentFile=/etc/sysconfig/vmauth
+RuntimeDirectory=%N
+RuntimeDirectoryMode=755
+ExecStartPre=/bin/sh -c &#34;echo SYSTEMD_HOSTNAME=$(cat /etc/hostname) &gt; /run/%N/systemd_hostname.env&#34;
+EnvironmentFile=-/run/%N/systemd_hostname.env
+ExecStart=/usr/local/bin/vmauth-prod -envflag.enable
+ExecStop=/bin/kill -s SIGTERM $MAINPID
+ExecReload=/bin/kill -HUP $MAINPID
+# See docs https://docs.victoriametrics.com/Single-server-VictoriaMetrics.html#tuning
+LimitNOFILE=1048576
+LimitNPROC=1048576
+LimitCORE=infinity
+WorkingDirectory=/etc/victoriametrics
+PrivateTmp=yes
+ProtectHome=yes
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectControlGroups=true
+ProtectKernelModules=true
+ProtectKernelTunables=yes
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+
+[Install]
+WantedBy=multi-user.target</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><br/></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_минимальная_конфигурация_vmauth">2. Минимальная конфигурация vmauth</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Добавьте в каталог <code>/etc/sysconfig</code> файл с окружением для <code>vmauth.service</code>:</p>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>В этом файле <code>/etc/sysconfig/vmauth</code> хранятся опции командной строк, использующиеся при выполнении команды <code>vmauth-prod -envflag.enable</code>.
+Например, переменная <code>auth_config=vmauth.yml</code> преобразуется в опцию <code>auth.config=vmauth.yml</code>, то есть подчерк в имени переменной замещается точкой.</p>
+</div>
+<div class="paragraph">
+<p>Из-за наличия в systemd-юните опции <code>WorkingDirectory</code>, которая определяет «рабочий каталог» для запускаемого процесса, имеется возможность использовать относительные пути к конфигурационным файлам.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>cat &lt;&lt; EOF &gt; /etc/sysconfig/vmauth
+## TCP address to listen for incoming http requests.
+httpListenAddr=:8427
+
+## TCP address to listen for incoming internal API http requests.
+## I.e. /metrics, /health, etc.
+httpInternalListenAddr=127.0.0.1:8426
+
+## Minimum level of errors to log. Possible values:
+## INFO, WARN, ERROR, FATAL, PANIC (default &#34;INFO&#34;)
+#loggerLevel=INFO
+
+## Log requests with invalid auth tokens.
+#logInvalidAuthTokens
+
+## Path to auth config.
+auth_config=vmauth.yml
+
+EOF</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Добавьте в «рабочий» каталог vmauth <code>/etc/victoriametrics</code> основной файл <code>vmauth.yml</code> с минимальным содержимым:</p>
+<div class="listingblock">
+<div class="content">
+<pre>cat &lt;&lt; &#39;EOF&#39; &gt; /etc/victoriametrics/vmauth.yml
+## For generation a token use:
+## &#39;tr -dc &#39;A-Za-z0-9_&#39; &lt; /dev/urandom | head -c $(( RANDOM % (23 - 19 + 1) + 19 )); echo&#39;.
+##
+## To reread the config files, use &#39;docker kill -s HUP vmauth&#39;.
+##
+## Format of name:
+##   First part - Whose request? (MDM).
+##   Second part - Type of request (select or insert or import or export).
+##
+## The fields &#39;name&#39; will be seen in the Grafana vmauth dashboard.
+
+unauthorized_user:
+  url_prefix: &#34;http://127.0.0.1:8426/-/ready&#34;
+  #tls_insecure_skip_verify: true
+
+EOF</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Строка url_prefix: &#34;http://127.0.0.1:8426/-/ready&#34; позволит keepalived’у вычислять неработающие ноды.</p>
+</div>
+<div class="paragraph">
+<p>Раскомментировать опцию <code>#tls_insecure_skip_verify: true</code> потребуется после включения TLS для входящих подключений в vmauth. TLS включается одновременно и для внутренних URN, типа <code>/metrics</code>, <code>/-/ready</code>, и т.д.
+А так как в выдаваемых TLS-сертификатах отсутствует DNS-имя 127.0.0.1, то TLS-проверка при подключении к таким URI без опции <code>tls_insecure_skip_verify</code> будет провалена.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><br/></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_первый_запуск_vmauth">3. Первый запуск vmauth</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Включите и Запустите vmauth одной командой:</p>
+<div class="listingblock">
+<div class="content">
+<pre>systemctl enable --now vmauth</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Проверьте журнал:</p>
+<div class="listingblock">
+<div class="content">
+<pre>journalctl -u vmauth --no-pager -o cat -n</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Ожидаемый вывод</div>
+<div class="content">
+<pre>2025-02-21T13:07:06.089Z        info    VictoriaMetrics/lib/logger/flag.go:20     -envflag.enable=&#34;true&#34;
+2025-02-21T13:07:06.089Z        info    VictoriaMetrics/lib/logger/flag.go:20     -httpInternalListenAddr=&#34;127.0.0.1:8426&#34;
+2025-02-21T13:07:06.089Z        info    VictoriaMetrics/lib/logger/flag.go:20     -httpListenAddr=&#34;:8427&#34;
+2025-02-21T13:07:06.089Z        info    VictoriaMetrics/lib/logger/flag.go:20     -loggerLevel=&#34;INFO&#34;
+2025-02-21T13:07:06.090Z        info    VictoriaMetrics/app/vmauth/main.go:95   starting vmauth at &#34;[:8427]&#34;...
+2025-02-21T13:07:06.090Z        info    VictoriaMetrics/app/vmauth/auth_config.go:691   loaded information about 0 users from -auth.config=&#34;vmauth.yml&#34;
+2025-02-21T13:07:06.090Z        info    VictoriaMetrics/app/vmauth/main.go:113  started vmauth in 0.000 seconds
+2025-02-21T13:07:06.090Z        info    VictoriaMetrics/lib/httpserver/httpserver.go:169        started server at http://127.0.0.1:8426/
+2025-02-21T13:07:06.090Z        info    VictoriaMetrics/lib/httpserver/httpserver.go:171        pprof handlers are exposed at http://127.0.0.1:8426/debug/pprof/
+2025-02-21T13:07:06.090Z        info    VictoriaMetrics/lib/httpserver/httpserver.go:169        started server at http://0.0.0.0:8427/</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><br/></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_проверка">4. Проверка</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Выполните проверку готовности сервиса:</p>
+<div class="listingblock">
+<div class="content">
+<pre>curl http://mon-vmauth01p:8427</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Ожидаемый вывод</div>
+<div class="content">
+<pre>VictoriaMetrics is Ready.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Выполните проверку возвращаемого HTTP-кода:</p>
+<div class="listingblock">
+<div class="content">
+<pre>curl -i http://mon-vmauth01p:8427</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Ожидаемый вывод</div>
+<div class="content">
+<pre>HTTP/1.1 200 OK
+Content-Length: 26
+Content-Type: text/plain; charset=utf-8
+Date: Thu, 20 Feb 2025 15:18:01 GMT
+Vary: Accept-Encoding
+Vary: Accept-Encoding
+X-Server-Hostname: mon-vmauth01p.example.org
+X-Server-Hostname: mon-vmauth01p.example.org</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+	
+</div>
+
 
           </main>
         </div>

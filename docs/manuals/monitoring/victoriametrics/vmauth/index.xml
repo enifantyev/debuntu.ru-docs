@@ -6,8 +6,15 @@
     <description>Recent content in VMAuth on Debuntarium</description>
     <generator>Hugo</generator>
     <language>ru-RU</language>
-    <lastBuildDate>Tue, 04 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 13 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://debuntu.ru/manuals/monitoring/victoriametrics/vmauth/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Установка vmauth в минимальной конфигурации и запуск через systemd</title>
+      <link>https://debuntu.ru/manuals/monitoring/victoriametrics/vmauth/vmauth-manual-installing-in-systemd/</link>
+      <pubDate>Fri, 13 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://debuntu.ru/manuals/monitoring/victoriametrics/vmauth/vmauth-manual-installing-in-systemd/</guid>
+      <description>&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_установка_бинарника_и_добавление_systemd_юнита_в_систему&#34;&gt;1. Установка бинарника и добавление systemd-юнита в систему&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;olist arabic&#34;&gt;&#xA;&lt;ol class=&#34;arabic&#34;&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Установите бинарник &lt;code&gt;vmauth-prod&lt;/code&gt; в каталог &lt;code&gt;/usr/local/sbin&lt;/code&gt;:&lt;/p&gt;&#xA;&lt;div class=&#34;listingblock&#34;&gt;&#xA;&lt;div class=&#34;content&#34;&gt;&#xA;&lt;pre&gt;install vmauth-prod /usr/local/sbin&lt;/pre&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Добавьте в систему аккаунт для работы демона VMAuth и создайте каталог под конфигурационные файлы:&lt;/p&gt;&#xA;&lt;div class=&#34;admonitionblock note&#34;&gt;&#xA;&lt;table&gt;&#xA;&lt;tbody&gt;&lt;tr&gt;&#xA;&lt;td class=&#34;icon&#34;&gt;&#xA;&lt;i class=&#34;fa icon-note&#34; title=&#34;Note&#34;&gt;&lt;/i&gt;&#xA;&lt;/td&gt;&#xA;&lt;td class=&#34;content&#34;&gt;&#xA;Этот каталог предназначен для размещения файлов конфигурации vmauth. Режим 2750 позволяет наследовать права «группы» для создаваемых объектов внутри этого каталога, а правила ACL обеспечивают сохранность данных, запрещая доступ для остальных пользователей (other).&#xA;Вы можете проверить наследование прав, создав внутри каталога новый файл или каталог.&#xA;&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;/tbody&gt;&lt;/table&gt;&#xA;&lt;/div&gt;</description>
+    </item>
     <item>
       <title>Пример организации получения TLS-сертификата для Virtual IP (VIP) на vmauth-узлах с автообновлением</title>
       <link>https://debuntu.ru/manuals/monitoring/victoriametrics/vmauth/tls-cert-for-vip-on-vmauth-nodes-with-auto-renewal/</link>

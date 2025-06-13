@@ -1206,7 +1206,7 @@
   
   <url>
     <loc>https://debuntu.ru/manuals/</loc>
-    <lastmod>2025-05-22T00:00:00+00:00</lastmod>
+    <lastmod>2025-06-13T00:00:00+00:00</lastmod>
   </url>
   
   
@@ -1490,7 +1490,7 @@
   
   <url>
     <loc>https://debuntu.ru/manuals/monitoring/</loc>
-    <lastmod>2025-05-22T00:00:00+00:00</lastmod>
+    <lastmod>2025-06-13T00:00:00+00:00</lastmod>
   </url>
   
   
@@ -1518,7 +1518,7 @@
   
   <url>
     <loc>https://debuntu.ru/</loc>
-    <lastmod>2025-05-22T00:00:00+00:00</lastmod>
+    <lastmod>2025-06-13T00:00:00+00:00</lastmod>
   </url>
   
   
@@ -1529,7 +1529,23 @@
   
   <url>
     <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/</loc>
-    <lastmod>2025-05-22T00:00:00+00:00</lastmod>
+    <lastmod>2025-06-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmauth/</loc>
+    <lastmod>2025-06-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmauth/vmauth-manual-installing-in-systemd/</loc>
+    <lastmod>2025-06-13T00:00:00+00:00</lastmod>
   </url>
   
   
@@ -1596,15 +1612,6 @@
   
   
   
-  
-  
-  
-  
-  
-  <url>
-    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmauth/</loc>
-    <lastmod>2025-03-04T00:00:00+00:00</lastmod>
-  </url>
   
   
   
