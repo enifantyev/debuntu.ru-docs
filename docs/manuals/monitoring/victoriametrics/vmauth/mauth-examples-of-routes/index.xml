@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VMAuth. Примеры блоков маршрутизации в vmauth.yml on Debuntarium</title>
+    <link>https://debuntu.ru/manuals/monitoring/victoriametrics/vmauth/mauth-examples-of-routes/</link>
+    <description>Recent content in VMAuth. Примеры блоков маршрутизации в vmauth.yml on Debuntarium</description>
+    <generator>Hugo</generator>
+    <language>ru-RU</language>
+    <lastBuildDate>Sat, 14 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://debuntu.ru/manuals/monitoring/victoriametrics/vmauth/mauth-examples-of-routes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>vmauth.yml — базовый блок</title>
+      <link>https://debuntu.ru/manuals/monitoring/victoriametrics/vmauth/mauth-examples-of-routes/vmauth-basic-route-block/</link>
+      <pubDate>Sat, 14 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://debuntu.ru/manuals/monitoring/victoriametrics/vmauth/mauth-examples-of-routes/vmauth-basic-route-block/</guid>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;содержимое-блока&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#содержимое-блока&#34;&gt;&lt;/a&gt;1. Содержимое блока&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;В начало файла &lt;code&gt;/etc/victoriametrics/vmauth.yml&lt;/code&gt; добавьте следующие строки:&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;listingblock&#34;&gt;&#xA;&lt;div class=&#34;content&#34;&gt;&#xA;&lt;pre&gt;## For generation a token use:&#xA;## &amp;#39;tr -dc &amp;#39;A-Za-z0-9_&amp;#39; &amp;lt; /dev/urandom | head -c $(( RANDOM % (23 - 19 + 1) + 19 )); echo&amp;#39;.&#xA;##&#xA;## To reload the config file /etc/victoriametrics/vmauth.yml, use &amp;#39;systemctl reload vmauth&amp;#39;.&#xA;##&#xA;## Format of name:&#xA;##   First part - Whose request? (team name?).&#xA;##   Second part - Type of request (select or insert or import or export?).&#xA;##&#xA;## The fields &amp;#39;name&amp;#39; will be seen in the Grafana vmauth dashboard.&#xA;&#xA;unauthorized_user:&#xA;  url_prefix: &amp;#34;https://127.0.0.1:8426/-/ready&amp;#34;&#xA;  tls_insecure_skip_verify: true&lt;/pre&gt;&#xA;&lt;/div&gt;</description>
+    </item>
+  </channel>
+</rss>
