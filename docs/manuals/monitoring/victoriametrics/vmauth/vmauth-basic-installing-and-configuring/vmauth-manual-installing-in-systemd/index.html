@@ -41,7 +41,7 @@ install vmauth-prod /usr/local/sbin Добавьте в систему акка�
 Этот каталог предназначен для размещения файлов конфигурации vmauth. Режим 2750 позволяет наследовать права «группы» для создаваемых объектов внутри этого каталога, а правила ACL обеспечивают сохранность данных, запрещая доступ для остальных пользователей (other). Вы можете проверить наследование прав, создав внутри каталога новый файл или каталог.">
   <meta itemprop="datePublished" content="2025-06-13T00:00:00+00:00">
   <meta itemprop="dateModified" content="2025-06-13T00:00:00+00:00">
-  <meta itemprop="wordCount" content="737">
+  <meta itemprop="wordCount" content="795">
   <meta itemprop="keywords" content="VictoriaMetrics,Vmauth">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="10. Установка vmauth в минимальной конфигурации и запуск через systemd">
@@ -1248,12 +1248,14 @@ setfacl -m u::rwX,g::r-X,o::--- ${VMAUTH_CONF_DIR}</pre>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>В переменную <code>SYSTEMD_HOSTNAME</code> может попасть короткое имя машины, если юнит запустится раньше момента установки полного имени машины.
-То есть в метку instance может попасть не <code>vmaut01p.example.org</code>, а <code>vmauth01p</code>.
-Но это не проблема, если есть правила, по которым в метке instance и должно быть короткое имя машины.</p>
+<p>В переменную <code>SYSTEMD_HOSTNAME</code> может попасть короткое имя машины, если юнит запустится раньше момента установки полного имени машины. То есть в метку instance может попасть не <code>vmaut01p.example.org</code>, а <code>vmauth01p</code>.</p>
 </div>
 <div class="paragraph">
 <p>Уточнить, что я имел ввиду и способы решения.</p>
+</div>
+<div class="paragraph">
+<p>Уточняю:
+В первых попытках написания systemd-юнита для vmauth, я использовал для присвоения переменной <code>SYSTEMD_HOSTNAME</code> значение из systemd-перенной <code>%H</code>. Но встретившись с проблемой попадания в переменную короткого имени машины, я добавил в systemd-юнит строку <code>ExecStartPre</code>, где полное имя машины берётся из файла <code>/etc/hostname</code>. В этом случае исключается вышеописанная проблема с попаданием короткого имени машины в переменную <code>SYSTEMD_HOSTNAME</code>. Напомню, что эта переменная далее используется для присвоения имени машины метке <code>instance</code> в отправляемых vmauth’ом своих собственных метрик в VMetrics-кластер.</p>
 </div>
 </td>
 </tr>
