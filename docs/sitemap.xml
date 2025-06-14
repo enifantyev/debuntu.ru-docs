@@ -81,6 +81,13 @@
   
   
   <url>
+    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmauth/vmauth-basic-installing-and-configuring/vmauth-manual-installing-in-systemd/</loc>
+    <lastmod>2025-06-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://debuntu.ru/manuals/networking/proxy/envoy/installing-envoy-binary-in-systemd/</loc>
     <lastmod>2025-05-18T00:00:00+00:00</lastmod>
   </url>
@@ -1206,7 +1213,14 @@
   
   <url>
     <loc>https://debuntu.ru/manuals/</loc>
-    <lastmod>2025-06-13T00:00:00+00:00</lastmod>
+    <lastmod>2025-06-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmauth/vmauth-basic-installing-and-configuring/tls-cert-for-vip-on-vmauth-nodes-with-auto-renewal/</loc>
+    <lastmod>2025-03-04T00:00:00+00:00</lastmod>
   </url>
   
   
@@ -1393,6 +1407,13 @@
   
   
   <url>
+    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmauth/vmauth-basic-installing-and-configuring/vmauth-enabling-tls/</loc>
+    <lastmod>2025-06-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/adding-global-labels-to-collected-metrics/</loc>
     <lastmod>2025-02-12T00:00:00+00:00</lastmod>
   </url>
@@ -1490,7 +1511,7 @@
   
   <url>
     <loc>https://debuntu.ru/manuals/monitoring/</loc>
-    <lastmod>2025-06-13T00:00:00+00:00</lastmod>
+    <lastmod>2025-06-14T00:00:00+00:00</lastmod>
   </url>
   
   
@@ -1518,7 +1539,7 @@
   
   <url>
     <loc>https://debuntu.ru/</loc>
-    <lastmod>2025-06-13T00:00:00+00:00</lastmod>
+    <lastmod>2025-06-14T00:00:00+00:00</lastmod>
   </url>
   
   
@@ -1529,7 +1550,7 @@
   
   <url>
     <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/</loc>
-    <lastmod>2025-06-13T00:00:00+00:00</lastmod>
+    <lastmod>2025-06-14T00:00:00+00:00</lastmod>
   </url>
   
   
@@ -1538,14 +1559,14 @@
   
   <url>
     <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmauth/</loc>
-    <lastmod>2025-06-13T00:00:00+00:00</lastmod>
+    <lastmod>2025-06-14T00:00:00+00:00</lastmod>
   </url>
   
   
   
   <url>
-    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmauth/vmauth-manual-installing-in-systemd/</loc>
-    <lastmod>2025-06-13T00:00:00+00:00</lastmod>
+    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmauth/vmauth-basic-installing-and-configuring/</loc>
+    <lastmod>2025-06-14T00:00:00+00:00</lastmod>
   </url>
   
   
@@ -1612,13 +1633,6 @@
   
   
   
-  
-  
-  
-  <url>
-    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmauth/tls-cert-for-vip-on-vmauth-nodes-with-auto-renewal/</loc>
-    <lastmod>2025-03-04T00:00:00+00:00</lastmod>
-  </url>
   
   
   
