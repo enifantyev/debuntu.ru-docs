@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VMctl on Debuntarium</title>
+    <link>https://debuntu.ru/manuals/monitoring/victoriametrics/vmctl/</link>
+    <description>Recent content in VMctl on Debuntarium</description>
+    <generator>Hugo</generator>
+    <language>ru-RU</language>
+    <lastBuildDate>Mon, 16 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://debuntu.ru/manuals/monitoring/victoriametrics/vmctl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Пример копирования из старого VMetrics-кластера в новый с изменением номеров тенантов</title>
+      <link>https://debuntu.ru/manuals/monitoring/victoriametrics/vmctl/vmctl-example-copying/</link>
+      <pubDate>Mon, 16 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://debuntu.ru/manuals/monitoring/victoriametrics/vmctl/vmctl-example-copying/</guid>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;заметки&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#заметки&#34;&gt;&lt;/a&gt;1. Заметки&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;olist arabic&#34;&gt;&#xA;&lt;ol class=&#34;arabic&#34;&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;В старом кластере метрики различных команд хранились в тенантах без учёта номера проекта, то есть одна команда могла занимать несколько номеров &lt;code&gt;vm_account_id&lt;/code&gt;. В парадигме VMetrics, где в случае пропуска номера проекта в номере тенанта, считается, что номер проекта равен нулю.&lt;/p&gt;&#xA;&lt;div class=&#34;sidebarblock&#34;&gt;&#xA;&lt;div class=&#34;content&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Предположим, что «пятая» команда занимает своими метриками в «старом» VMetrics-кластере тенанты с номерами &lt;code&gt;12&lt;/code&gt;, &lt;code&gt;13&lt;/code&gt;, &lt;code&gt;14&lt;/code&gt;. Это означает, что команда занимает тенанты &lt;code&gt;12:0&lt;/code&gt;, &lt;code&gt;13:0&lt;/code&gt;, &lt;code&gt;14:0&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;В новом кластере «пятой» команде выдлелен лишь один номер &lt;code&gt;vm_account-id&lt;/code&gt;, предположим, что это номер &lt;code&gt;5&lt;/code&gt;. В пределах этого номера аккаунта, команда «пять» может занять все 32 бита vm_project_id. То есть для технический метрик выделить тенант &lt;code&gt;5:1&lt;/code&gt;. Для каких-либо бизнес-метрик тенанты &lt;code&gt;5:130&lt;/code&gt;, &lt;code&gt;5:131&lt;/code&gt;, &lt;code&gt;5:132&lt;/code&gt;. И т.д.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/div&gt;</description>
+    </item>
+  </channel>
+</rss>
