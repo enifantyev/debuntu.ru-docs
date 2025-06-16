@@ -17,32 +17,69 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>07. 🎣 Заброс Hook&#39;а в Spark (в разработке) | Debuntarium</title>
-<meta name="description" content="Описание процесса установки Apache Atlas 2.2.0 в Cloudera CDH 6.3.2.
-">
-<meta property="og:url" content="https://debuntu.ru/manuals/bigdata/apacheatlas/ustanovka-apache-atlas-2.2.0/zabros-hook-v-spark/">
+<title>VMStorage. Описание опции retentionPeriod | Debuntarium</title>
+<meta name="description" content=" 1. Использованные материалы https://docs.victoriametrics.com/victoriametrics/single-server-victoriametrics/#retention
+2. Описание Значение опции retentionPeriod указывается в месяцах, которые здесь равны 31 дню. Например, retentionPeriod 2 соответствует установке retentionPeriod 62d.
+Возможные для указания суффиксы: h(ours), d(ays), w(eeks), y(yars).
+При retentionPeriod &lt; 31 дня, метрики хранятся партициями по 1 суткам.
+При retentionPeriod &gt; 31 дня, метрики хранятся партициями по 1 календарному месяцу.
+Нет значения infinite. Для этих целей рекомендуется указывать 100y.
+Метрики хранятся в каталогах {storageDataPath}/data/{big,small}. В этих каталогах для каждого календарного месяца существует отдельная директория с именем вида 2024_09, 2024_10, etc.
+Вне зависимости от указанного значения в retentionPeriod, удаляться будет целый календарный месяц (кроме случая, когда retentionPeriod &lt; 1 месяца). То есть при retentionPeriod 32d, метрики предыдущего месяца будут храниться ещё один месяц. (переформулировать).
+При наступлении retention-события, все календарные каталоги, диапазон содержимого которых вышло за значение RetentionPeriod, будут моментально уничтожены.
+Кроме каталога {storageDataPath}/data, где хранятся временные ряды, для хранения &#34;IndexDB&#34; используется каталог {storageDataPath}/indexdb. Индекс не может быть удалён и/или сжат. Кроме того, после первого же retention-события, в каталоге {storageDataPath}/indexdb будут храниться два Индекса. Один из них актуальный и ежедневно пополняющийся, второй
+Оставшееся время до наступления retention-события указывает в секундах в метрике vm_next_retention_seconds.">
+<meta property="og:url" content="https://debuntu.ru/manuals/monitoring/victoriametrics/vmstorage/vmstorage-description-option-retentionperiod/">
   <meta property="og:site_name" content="Debuntarium">
-  <meta property="og:title" content="07. 🎣 Заброс Hook&#39;а в Spark (в разработке)">
-  <meta property="og:description" content="Описание процесса установки Apache Atlas 2.2.0 в Cloudera CDH 6.3.2.">
+  <meta property="og:title" content="VMStorage. Описание опции retentionPeriod">
+  <meta property="og:description" content="1. Использованные материалы https://docs.victoriametrics.com/victoriametrics/single-server-victoriametrics/#retention
+2. Описание Значение опции retentionPeriod указывается в месяцах, которые здесь равны 31 дню. Например, retentionPeriod 2 соответствует установке retentionPeriod 62d.
+Возможные для указания суффиксы: h(ours), d(ays), w(eeks), y(yars).
+При retentionPeriod &lt; 31 дня, метрики хранятся партициями по 1 суткам.
+При retentionPeriod &gt; 31 дня, метрики хранятся партициями по 1 календарному месяцу.
+Нет значения infinite. Для этих целей рекомендуется указывать 100y.
+Метрики хранятся в каталогах {storageDataPath}/data/{big,small}. В этих каталогах для каждого календарного месяца существует отдельная директория с именем вида 2024_09, 2024_10, etc.
+Вне зависимости от указанного значения в retentionPeriod, удаляться будет целый календарный месяц (кроме случая, когда retentionPeriod &lt; 1 месяца). То есть при retentionPeriod 32d, метрики предыдущего месяца будут храниться ещё один месяц. (переформулировать).
+При наступлении retention-события, все календарные каталоги, диапазон содержимого которых вышло за значение RetentionPeriod, будут моментально уничтожены.
+Кроме каталога {storageDataPath}/data, где хранятся временные ряды, для хранения &#34;IndexDB&#34; используется каталог {storageDataPath}/indexdb. Индекс не может быть удалён и/или сжат. Кроме того, после первого же retention-события, в каталоге {storageDataPath}/indexdb будут храниться два Индекса. Один из них актуальный и ежедневно пополняющийся, второй
+Оставшееся время до наступления retention-события указывает в секундах в метрике vm_next_retention_seconds.">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:type" content="article">
     <meta property="article:section" content="manuals">
-    <meta property="article:published_time" content="2021-11-02T00:00:00+00:00">
-    <meta property="article:modified_time" content="2021-11-02T00:00:00+00:00">
-    <meta property="article:tag" content="BigData">
-    <meta property="article:tag" content="Apache Atlas">
-    <meta property="article:tag" content="Apache Spark">
-    <meta property="article:tag" content="Cloudera CDH 6.3.2">
+    <meta property="article:published_time" content="2025-05-23T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-05-23T00:00:00+00:00">
+    <meta property="article:tag" content="VictoriaMetrics">
+    <meta property="article:tag" content="Vmstorage">
 
-  <meta itemprop="name" content="07. 🎣 Заброс Hook&#39;а в Spark (в разработке)">
-  <meta itemprop="description" content="Описание процесса установки Apache Atlas 2.2.0 в Cloudera CDH 6.3.2.">
-  <meta itemprop="datePublished" content="2021-11-02T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2021-11-02T00:00:00+00:00">
-  <meta itemprop="wordCount" content="13">
-  <meta itemprop="keywords" content="BigData,Apache Atlas,Apache Spark,Cloudera CDH 6.3.2">
+  <meta itemprop="name" content="VMStorage. Описание опции retentionPeriod">
+  <meta itemprop="description" content="1. Использованные материалы https://docs.victoriametrics.com/victoriametrics/single-server-victoriametrics/#retention
+2. Описание Значение опции retentionPeriod указывается в месяцах, которые здесь равны 31 дню. Например, retentionPeriod 2 соответствует установке retentionPeriod 62d.
+Возможные для указания суффиксы: h(ours), d(ays), w(eeks), y(yars).
+При retentionPeriod &lt; 31 дня, метрики хранятся партициями по 1 суткам.
+При retentionPeriod &gt; 31 дня, метрики хранятся партициями по 1 календарному месяцу.
+Нет значения infinite. Для этих целей рекомендуется указывать 100y.
+Метрики хранятся в каталогах {storageDataPath}/data/{big,small}. В этих каталогах для каждого календарного месяца существует отдельная директория с именем вида 2024_09, 2024_10, etc.
+Вне зависимости от указанного значения в retentionPeriod, удаляться будет целый календарный месяц (кроме случая, когда retentionPeriod &lt; 1 месяца). То есть при retentionPeriod 32d, метрики предыдущего месяца будут храниться ещё один месяц. (переформулировать).
+При наступлении retention-события, все календарные каталоги, диапазон содержимого которых вышло за значение RetentionPeriod, будут моментально уничтожены.
+Кроме каталога {storageDataPath}/data, где хранятся временные ряды, для хранения &#34;IndexDB&#34; используется каталог {storageDataPath}/indexdb. Индекс не может быть удалён и/или сжат. Кроме того, после первого же retention-события, в каталоге {storageDataPath}/indexdb будут храниться два Индекса. Один из них актуальный и ежедневно пополняющийся, второй
+Оставшееся время до наступления retention-события указывает в секундах в метрике vm_next_retention_seconds.">
+  <meta itemprop="datePublished" content="2025-05-23T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-05-23T00:00:00+00:00">
+  <meta itemprop="wordCount" content="186">
+  <meta itemprop="keywords" content="VictoriaMetrics,Vmstorage">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="07. 🎣 Заброс Hook&#39;а в Spark (в разработке)">
-  <meta name="twitter:description" content="Описание процесса установки Apache Atlas 2.2.0 в Cloudera CDH 6.3.2.">
+  <meta name="twitter:title" content="VMStorage. Описание опции retentionPeriod">
+  <meta name="twitter:description" content="1. Использованные материалы https://docs.victoriametrics.com/victoriametrics/single-server-victoriametrics/#retention
+2. Описание Значение опции retentionPeriod указывается в месяцах, которые здесь равны 31 дню. Например, retentionPeriod 2 соответствует установке retentionPeriod 62d.
+Возможные для указания суффиксы: h(ours), d(ays), w(eeks), y(yars).
+При retentionPeriod &lt; 31 дня, метрики хранятся партициями по 1 суткам.
+При retentionPeriod &gt; 31 дня, метрики хранятся партициями по 1 календарному месяцу.
+Нет значения infinite. Для этих целей рекомендуется указывать 100y.
+Метрики хранятся в каталогах {storageDataPath}/data/{big,small}. В этих каталогах для каждого календарного месяца существует отдельная директория с именем вида 2024_09, 2024_10, etc.
+Вне зависимости от указанного значения в retentionPeriod, удаляться будет целый календарный месяц (кроме случая, когда retentionPeriod &lt; 1 месяца). То есть при retentionPeriod 32d, метрики предыдущего месяца будут храниться ещё один месяц. (переформулировать).
+При наступлении retention-события, все календарные каталоги, диапазон содержимого которых вышло за значение RetentionPeriod, будут моментально уничтожены.
+Кроме каталога {storageDataPath}/data, где хранятся временные ряды, для хранения &#34;IndexDB&#34; используется каталог {storageDataPath}/indexdb. Индекс не может быть удалён и/или сжат. Кроме того, после первого же retention-события, в каталоге {storageDataPath}/indexdb будут храниться два Индекса. Один из них актуальный и ежедневно пополняющийся, второй
+Оставшееся время до наступления retention-события указывает в секундах в метрике vm_next_retention_seconds.">
 
 
 
@@ -101,7 +138,7 @@ if (!doNotTrack) {
         <a class="nav-link" href="/manuals/kubernetes/"><span>Kubernetes</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/manuals/monitoring/"><span>Monitoring</span></a>
+        <a class="nav-link active" href="/manuals/monitoring/"><span>Monitoring</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/manuals/networking/"><span>Networking</span></a>
@@ -203,13 +240,13 @@ if (window.location.pathname !== "/") {
   <script>
     $(function() {
     $("#td-section-nav a").removeClass("active");
-    $("#td-section-nav #m-manualsbigdataapacheatlasustanovka-apache-atlas-220zabros-hook-v-spark").addClass("active"); 
-    $("#td-section-nav #m-manualsbigdataapacheatlasustanovka-apache-atlas-220zabros-hook-v-spark-li span").addClass("td-sidebar-nav-active-item"); 
-    $("#td-section-nav #m-manualsbigdataapacheatlasustanovka-apache-atlas-220zabros-hook-v-spark").parents("li").addClass("active-path"); 
+    $("#td-section-nav #m-manualsmonitoringvictoriametricsvmstoragevmstorage-description-option-retentionperiod").addClass("active"); 
+    $("#td-section-nav #m-manualsmonitoringvictoriametricsvmstoragevmstorage-description-option-retentionperiod-li span").addClass("td-sidebar-nav-active-item"); 
+    $("#td-section-nav #m-manualsmonitoringvictoriametricsvmstoragevmstorage-description-option-retentionperiod").parents("li").addClass("active-path"); 
     $("#td-section-nav li.active-path").addClass("show"); 
     $("#td-section-nav li.active-path").children("input").prop('checked', true);
-    $("#td-section-nav #m-manualsbigdataapacheatlasustanovka-apache-atlas-220zabros-hook-v-spark-li").siblings("li").addClass("show");  
-    $("#td-section-nav #m-manualsbigdataapacheatlasustanovka-apache-atlas-220zabros-hook-v-spark-li").children("ul").children("li").addClass("show");  
+    $("#td-section-nav #m-manualsmonitoringvictoriametricsvmstoragevmstorage-description-option-retentionperiod-li").siblings("li").addClass("show");  
+    $("#td-section-nav #m-manualsmonitoringvictoriametricsvmstoragevmstorage-description-option-retentionperiod-li").children("ul").children("li").addClass("show");  
     $("#td-sidebar-menu").toggleClass("d-none"); 
     });
   </script>
@@ -957,7 +994,15 @@ if (window.location.pathname !== "/") {
 
 </div>
 
-            
+            <div class="td-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#использованные-материалы">1. Использованные материалы</a></li>
+    <li><a href="#описание">2. Описание</a></li>
+  </ul>
+</nav>
+      </div>
+    
             <div class="taxonomy taxonomy-terms-cloud taxo-categories">
       <h5 class="taxonomy-title">Categories</h5>
       <ul class="taxonomy-terms">
@@ -1161,35 +1206,81 @@ if (window.location.pathname !== "/") {
   <li class="breadcrumb-item">
     <a href="/manuals/">Документация</a></li>
   <li class="breadcrumb-item">
-    <a href="/manuals/bigdata/">BigData</a></li>
+    <a href="/manuals/monitoring/">Monitoring</a></li>
   <li class="breadcrumb-item">
-    <a href="/manuals/bigdata/apacheatlas/">Apache Atlas</a></li>
+    <a href="/manuals/monitoring/victoriametrics/">VictoriaMetrics</a></li>
   <li class="breadcrumb-item">
-    <a href="/manuals/bigdata/apacheatlas/ustanovka-apache-atlas-2.2.0/">Установка Apache Atlas 2.2.0</a></li>
+    <a href="/manuals/monitoring/victoriametrics/vmstorage/">VMStorage</a></li>
   <li class="breadcrumb-item active" aria-current="page">
-    07. 🎣 Заброс Hook&#39;а в Spark (в разработке)</li>
+    VMStorage. Описание опции retentionPeriod</li>
   </ol>
 </nav>
             
 <div class="td-content">
-	<h1>07. 🎣 Заброс Hook&#39;а в Spark (в разработке)</h1>
-	<div class="lead">Описание процесса установки Apache Atlas 2.2.0 в Cloudera CDH 6.3.2.</div>
+	<h1>VMStorage. Описание опции retentionPeriod</h1>
+	
 	<header class="article-meta">
 		<div class="taxonomy taxonomy-terms-article taxo-tags">
   <h5 class="taxonomy-title">Tags:</h5>
   <ul class="taxonomy-terms">
-    <li><a class="taxonomy-term" href="https://debuntu.ru/tags/bigdata/" data-taxonomy-term="bigdata"><span class="taxonomy-label">BigData</span></a></li>
-    <li><a class="taxonomy-term" href="https://debuntu.ru/tags/apache-atlas/" data-taxonomy-term="apache-atlas"><span class="taxonomy-label">Apache Atlas</span></a></li>
-    <li><a class="taxonomy-term" href="https://debuntu.ru/tags/apache-spark/" data-taxonomy-term="apache-spark"><span class="taxonomy-label">Apache Spark</span></a></li>
-    <li><a class="taxonomy-term" href="https://debuntu.ru/tags/cloudera-cdh-6.3.2/" data-taxonomy-term="cloudera-cdh-6.3.2"><span class="taxonomy-label">Cloudera CDH 6.3.2</span></a></li>
+    <li><a class="taxonomy-term" href="https://debuntu.ru/tags/victoriametrics/" data-taxonomy-term="victoriametrics"><span class="taxonomy-label">VictoriaMetrics</span></a></li>
+    <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmstorage/" data-taxonomy-term="vmstorage"><span class="taxonomy-label">Vmstorage</span></a></li>
     </ul>
 </div>
 
 </header>
-	<p>Почитать:</p>
-<ul>
-<li><a href="https://docs.microsoft.com/ru-ru/azure/purview/how-to-lineage-spark-atlas-connector">Как использовать соединитель Apache Atlas для сбора сведений о происхождении данных Spark</a></li>
-</ul>
+	
+<div class="sect1">
+<h2 id="использованные-материалы"><a class="anchor" href="#использованные-материалы"></a>1. Использованные материалы</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="https://docs.victoriametrics.com/victoriametrics/single-server-victoriametrics/#retention" class="bare">https://docs.victoriametrics.com/victoriametrics/single-server-victoriametrics/#retention</a></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="описание"><a class="anchor" href="#описание"></a>2. Описание</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Значение опции <code>retentionPeriod</code> указывается в месяцах, которые здесь равны 31 дню. Например, <code>retentionPeriod 2</code> соответствует установке <code>retentionPeriod 62d</code>.</p>
+</li>
+<li>
+<p>Возможные для указания суффиксы: h(ours), d(ays), w(eeks), y(yars).</p>
+</li>
+<li>
+<p>При <code>retentionPeriod</code> &lt; 31 дня, метрики хранятся партициями по 1 суткам.</p>
+</li>
+<li>
+<p>При <code>retentionPeriod</code> &gt; 31 дня, метрики хранятся партициями по 1 календарному месяцу.</p>
+</li>
+<li>
+<p>Нет значения <code>infinite</code>. Для этих целей рекомендуется указывать <code>100y</code>.</p>
+</li>
+<li>
+<p>Метрики хранятся в каталогах <code>{storageDataPath}/data/{big,small}</code>. В этих каталогах для каждого календарного месяца существует отдельная директория с именем вида <code>2024_09</code>, <code>2024_10</code>, etc.</p>
+</li>
+<li>
+<p>Вне зависимости от указанного значения в <code>retentionPeriod</code>, удаляться будет целый календарный месяц (кроме случая, когда <code>retentionPeriod</code> &lt; 1 месяца). То есть при <code>retentionPeriod 32d</code>, метрики предыдущего месяца будут храниться ещё один месяц. (переформулировать).</p>
+</li>
+<li>
+<p>При наступлении retention-события, все календарные каталоги, диапазон содержимого которых вышло за значение <code>RetentionPeriod</code>, будут моментально уничтожены.</p>
+</li>
+<li>
+<p>Кроме каталога <code>{storageDataPath}/data</code>, где хранятся временные ряды, для хранения &#34;IndexDB&#34; используется каталог <code>{storageDataPath}/indexdb</code>. Индекс не может быть удалён и/или сжат. Кроме того, после первого же retention-события, в каталоге <code>{storageDataPath}/indexdb</code> будут храниться два Индекса. Один из них актуальный и ежедневно пополняющийся, второй</p>
+</li>
+<li>
+<p>Оставшееся время до наступления retention-события указывает в секундах в метрике <code>vm_next_retention_seconds</code>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
 
 	
 </div>
