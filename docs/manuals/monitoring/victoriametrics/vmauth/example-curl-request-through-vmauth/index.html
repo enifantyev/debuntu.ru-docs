@@ -24,7 +24,7 @@ URL, через который имеется внешний доступ к VMe
 Bearer Token, позволяющий читать метрики из VMetrics-кластера. Будет правильным заказать дополнительный Bearer Token для использования его третьими лицами.
 Номера тенантов, содержащие целевые метрики. Пример: &#34;22:4&#34;, где vm_account_id=22, vm_project_id=4.
 Пример запроса с аутентификацией:
-BEARER_TOKEN=&#39;xxxxxxxxxxxxxxx&#39; URL=&#34;https://is1-vmauth.example.org/api/v1/query_range&#34; VM_ACCOUNT_ID=&#39;22&#39; VM_PROJECT_ID=&#39;4&#39; START_DATE=$(TZ=&#34;Europe/Moscow&#34; date -d &#39;2025-06-20 10:03:00&#39; &#43;%s) END_DATE=$(TZ=&#34;Europe/Moscow&#34; date -d &#39;2025-06-20 10:03:00&#39; &#43;%s) STEP=&#34;15s&#34; QUERY=&#34;vm_project_id=\&#34;${VM_PROJECT_ID}\&#34;,__name__=\&#34;RequestProcessor_bytesReceived\&#34;&#34; curl -G \ -H &#34;Authorization: Bearer ${BEARER_TOKEN}&#34; \ -H &#34;TenantID: ${VM_ACCOUNT_ID}&#34; \ --data-urlencode &#34;query={${QUERY}}&#34; \ --data-urlencode &#34;start=${START_DATE}&#34; \ --data-urlencode &#34;end=${END_DATE}&#34; \ --data-urlencode &#34;step=${STEP}&#34; \ &#34;${URL}&#34; | jq ---- ">
+BEARER_TOKEN=&#39;xxxxxxxxxxxxxxx&#39; URL=&#34;https://is1-vmauth.example.org/api/v1/query_range&#34; VM_ACCOUNT_ID=&#39;22&#39; VM_PROJECT_ID=&#39;4&#39; START_DATE=$(TZ=&#34;Europe/Moscow&#34; date -d &#39;2025-06-20 10:03:00&#39; &#43;%s) END_DATE=$(TZ=&#34;Europe/Moscow&#34; date -d &#39;2025-06-20 10:03:00&#39; &#43;%s) STEP=&#34;15s&#34; QUERY=&#34;vm_project_id=\&#34;${VM_PROJECT_ID}\&#34;,__name__=\&#34;RequestProcessor_bytesReceived\&#34;&#34; curl -G \ -H &#34;Authorization: Bearer ${BEARER_TOKEN}&#34; \ -H &#34;TenantID: ${VM_ACCOUNT_ID}&#34; \ --data-urlencode &#34;query={${QUERY}}&#34; \ --data-urlencode &#34;start=${START_DATE}&#34; \ --data-urlencode &#34;end=${END_DATE}&#34; \ --data-urlencode &#34;step=${STEP}&#34; \ &#34;${URL}&#34; | jq ">
 <meta property="og:url" content="https://debuntu.ru/manuals/monitoring/victoriametrics/vmauth/example-curl-request-through-vmauth/">
   <meta property="og:site_name" content="Debuntarium">
   <meta property="og:title" content="Пример запроса к VMetrics-кластеру через vmauth с помощью curl">
@@ -34,7 +34,7 @@ URL, через который имеется внешний доступ к VMe
 Bearer Token, позволяющий читать метрики из VMetrics-кластера. Будет правильным заказать дополнительный Bearer Token для использования его третьими лицами.
 Номера тенантов, содержащие целевые метрики. Пример: &#34;22:4&#34;, где vm_account_id=22, vm_project_id=4.
 Пример запроса с аутентификацией:
-BEARER_TOKEN=&#39;xxxxxxxxxxxxxxx&#39; URL=&#34;https://is1-vmauth.example.org/api/v1/query_range&#34; VM_ACCOUNT_ID=&#39;22&#39; VM_PROJECT_ID=&#39;4&#39; START_DATE=$(TZ=&#34;Europe/Moscow&#34; date -d &#39;2025-06-20 10:03:00&#39; &#43;%s) END_DATE=$(TZ=&#34;Europe/Moscow&#34; date -d &#39;2025-06-20 10:03:00&#39; &#43;%s) STEP=&#34;15s&#34; QUERY=&#34;vm_project_id=\&#34;${VM_PROJECT_ID}\&#34;,__name__=\&#34;RequestProcessor_bytesReceived\&#34;&#34; curl -G \ -H &#34;Authorization: Bearer ${BEARER_TOKEN}&#34; \ -H &#34;TenantID: ${VM_ACCOUNT_ID}&#34; \ --data-urlencode &#34;query={${QUERY}}&#34; \ --data-urlencode &#34;start=${START_DATE}&#34; \ --data-urlencode &#34;end=${END_DATE}&#34; \ --data-urlencode &#34;step=${STEP}&#34; \ &#34;${URL}&#34; | jq ----">
+BEARER_TOKEN=&#39;xxxxxxxxxxxxxxx&#39; URL=&#34;https://is1-vmauth.example.org/api/v1/query_range&#34; VM_ACCOUNT_ID=&#39;22&#39; VM_PROJECT_ID=&#39;4&#39; START_DATE=$(TZ=&#34;Europe/Moscow&#34; date -d &#39;2025-06-20 10:03:00&#39; &#43;%s) END_DATE=$(TZ=&#34;Europe/Moscow&#34; date -d &#39;2025-06-20 10:03:00&#39; &#43;%s) STEP=&#34;15s&#34; QUERY=&#34;vm_project_id=\&#34;${VM_PROJECT_ID}\&#34;,__name__=\&#34;RequestProcessor_bytesReceived\&#34;&#34; curl -G \ -H &#34;Authorization: Bearer ${BEARER_TOKEN}&#34; \ -H &#34;TenantID: ${VM_ACCOUNT_ID}&#34; \ --data-urlencode &#34;query={${QUERY}}&#34; \ --data-urlencode &#34;start=${START_DATE}&#34; \ --data-urlencode &#34;end=${END_DATE}&#34; \ --data-urlencode &#34;step=${STEP}&#34; \ &#34;${URL}&#34; | jq">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:type" content="article">
     <meta property="article:section" content="manuals">
@@ -51,10 +51,10 @@ URL, через который имеется внешний доступ к VMe
 Bearer Token, позволяющий читать метрики из VMetrics-кластера. Будет правильным заказать дополнительный Bearer Token для использования его третьими лицами.
 Номера тенантов, содержащие целевые метрики. Пример: &#34;22:4&#34;, где vm_account_id=22, vm_project_id=4.
 Пример запроса с аутентификацией:
-BEARER_TOKEN=&#39;xxxxxxxxxxxxxxx&#39; URL=&#34;https://is1-vmauth.example.org/api/v1/query_range&#34; VM_ACCOUNT_ID=&#39;22&#39; VM_PROJECT_ID=&#39;4&#39; START_DATE=$(TZ=&#34;Europe/Moscow&#34; date -d &#39;2025-06-20 10:03:00&#39; &#43;%s) END_DATE=$(TZ=&#34;Europe/Moscow&#34; date -d &#39;2025-06-20 10:03:00&#39; &#43;%s) STEP=&#34;15s&#34; QUERY=&#34;vm_project_id=\&#34;${VM_PROJECT_ID}\&#34;,__name__=\&#34;RequestProcessor_bytesReceived\&#34;&#34; curl -G \ -H &#34;Authorization: Bearer ${BEARER_TOKEN}&#34; \ -H &#34;TenantID: ${VM_ACCOUNT_ID}&#34; \ --data-urlencode &#34;query={${QUERY}}&#34; \ --data-urlencode &#34;start=${START_DATE}&#34; \ --data-urlencode &#34;end=${END_DATE}&#34; \ --data-urlencode &#34;step=${STEP}&#34; \ &#34;${URL}&#34; | jq ----">
+BEARER_TOKEN=&#39;xxxxxxxxxxxxxxx&#39; URL=&#34;https://is1-vmauth.example.org/api/v1/query_range&#34; VM_ACCOUNT_ID=&#39;22&#39; VM_PROJECT_ID=&#39;4&#39; START_DATE=$(TZ=&#34;Europe/Moscow&#34; date -d &#39;2025-06-20 10:03:00&#39; &#43;%s) END_DATE=$(TZ=&#34;Europe/Moscow&#34; date -d &#39;2025-06-20 10:03:00&#39; &#43;%s) STEP=&#34;15s&#34; QUERY=&#34;vm_project_id=\&#34;${VM_PROJECT_ID}\&#34;,__name__=\&#34;RequestProcessor_bytesReceived\&#34;&#34; curl -G \ -H &#34;Authorization: Bearer ${BEARER_TOKEN}&#34; \ -H &#34;TenantID: ${VM_ACCOUNT_ID}&#34; \ --data-urlencode &#34;query={${QUERY}}&#34; \ --data-urlencode &#34;start=${START_DATE}&#34; \ --data-urlencode &#34;end=${END_DATE}&#34; \ --data-urlencode &#34;step=${STEP}&#34; \ &#34;${URL}&#34; | jq">
   <meta itemprop="datePublished" content="2025-06-20T00:00:00+00:00">
   <meta itemprop="dateModified" content="2025-06-20T00:00:00+00:00">
-  <meta itemprop="wordCount" content="97">
+  <meta itemprop="wordCount" content="96">
   <meta itemprop="keywords" content="VictoriaMetrics,Vmauth,Curl">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Пример запроса к VMetrics-кластеру через vmauth с помощью curl">
@@ -64,7 +64,7 @@ URL, через который имеется внешний доступ к VMe
 Bearer Token, позволяющий читать метрики из VMetrics-кластера. Будет правильным заказать дополнительный Bearer Token для использования его третьими лицами.
 Номера тенантов, содержащие целевые метрики. Пример: &#34;22:4&#34;, где vm_account_id=22, vm_project_id=4.
 Пример запроса с аутентификацией:
-BEARER_TOKEN=&#39;xxxxxxxxxxxxxxx&#39; URL=&#34;https://is1-vmauth.example.org/api/v1/query_range&#34; VM_ACCOUNT_ID=&#39;22&#39; VM_PROJECT_ID=&#39;4&#39; START_DATE=$(TZ=&#34;Europe/Moscow&#34; date -d &#39;2025-06-20 10:03:00&#39; &#43;%s) END_DATE=$(TZ=&#34;Europe/Moscow&#34; date -d &#39;2025-06-20 10:03:00&#39; &#43;%s) STEP=&#34;15s&#34; QUERY=&#34;vm_project_id=\&#34;${VM_PROJECT_ID}\&#34;,__name__=\&#34;RequestProcessor_bytesReceived\&#34;&#34; curl -G \ -H &#34;Authorization: Bearer ${BEARER_TOKEN}&#34; \ -H &#34;TenantID: ${VM_ACCOUNT_ID}&#34; \ --data-urlencode &#34;query={${QUERY}}&#34; \ --data-urlencode &#34;start=${START_DATE}&#34; \ --data-urlencode &#34;end=${END_DATE}&#34; \ --data-urlencode &#34;step=${STEP}&#34; \ &#34;${URL}&#34; | jq ----">
+BEARER_TOKEN=&#39;xxxxxxxxxxxxxxx&#39; URL=&#34;https://is1-vmauth.example.org/api/v1/query_range&#34; VM_ACCOUNT_ID=&#39;22&#39; VM_PROJECT_ID=&#39;4&#39; START_DATE=$(TZ=&#34;Europe/Moscow&#34; date -d &#39;2025-06-20 10:03:00&#39; &#43;%s) END_DATE=$(TZ=&#34;Europe/Moscow&#34; date -d &#39;2025-06-20 10:03:00&#39; &#43;%s) STEP=&#34;15s&#34; QUERY=&#34;vm_project_id=\&#34;${VM_PROJECT_ID}\&#34;,__name__=\&#34;RequestProcessor_bytesReceived\&#34;&#34; curl -G \ -H &#34;Authorization: Bearer ${BEARER_TOKEN}&#34; \ -H &#34;TenantID: ${VM_ACCOUNT_ID}&#34; \ --data-urlencode &#34;query={${QUERY}}&#34; \ --data-urlencode &#34;start=${START_DATE}&#34; \ --data-urlencode &#34;end=${END_DATE}&#34; \ --data-urlencode &#34;step=${STEP}&#34; \ &#34;${URL}&#34; | jq">
 
 
 
@@ -1264,8 +1264,7 @@ curl -G \
   --data-urlencode &#34;start=${START_DATE}&#34; \
   --data-urlencode &#34;end=${END_DATE}&#34; \
   --data-urlencode &#34;step=${STEP}&#34; \
-  &#34;${URL}&#34; | jq
-  ----</pre>
+  &#34;${URL}&#34; | jq</pre>
 </div>
 </div>
 </li>
