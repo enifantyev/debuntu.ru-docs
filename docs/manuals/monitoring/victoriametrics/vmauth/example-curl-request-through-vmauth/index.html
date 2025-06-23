@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="alternate" type="application/rss&#43;xml" href="https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/index.xml">
 <meta name="robots" content="index, follow">
 
 
@@ -18,22 +17,54 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>VMAgent. Установка и базовая настройка в изолированной среде | Debuntarium</title>
-<meta name="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
-<meta property="og:url" content="https://debuntu.ru/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/">
+<title>Пример запроса к VMetrics-кластеру через vmauth с помощью curl | Debuntarium</title>
+<meta name="description" content=" 2025-06-20
+У ответственного за мониторинг внутри команды необходимо получить:
+URL, через который имеется внешний доступ к VMetrics-кластеру. Например: https://is1-vmauth.example.org
+Bearer Token, позволяющий читать метрики из VMetrics-кластера. Будет правильным заказать дополнительный Bearer Token для использования его третьими лицами.
+Номера тенантов, содержащие целевые метрики. Пример: &#34;22:4&#34;, где vm_account_id=22, vm_project_id=4.
+Пример запроса с аутентификацией:
+BEARER_TOKEN=&#39;xxxxxxxxxxxxxxx&#39; URL=&#34;https://is1-vmauth.example.org/api/v1/query_range&#34; VM_ACCOUNT_ID=&#39;22&#39; VM_PROJECT_ID=&#39;4&#39; START_DATE=$(TZ=&#34;Europe/Moscow&#34; date -d &#39;2025-06-20 10:03:00&#39; &#43;%s) END_DATE=$(TZ=&#34;Europe/Moscow&#34; date -d &#39;2025-06-20 10:03:00&#39; &#43;%s) STEP=&#34;15s&#34; QUERY=&#34;vm_project_id=\&#34;${VM_PROJECT_ID}\&#34;,__name__=\&#34;RequestProcessor_bytesReceived\&#34;&#34; curl -G \ -H &#34;Authorization: Bearer ${BEARER_TOKEN}&#34; \ -H &#34;TenantID: ${VM_ACCOUNT_ID}&#34; \ --data-urlencode &#34;query={${QUERY}}&#34; \ --data-urlencode &#34;start=${START_DATE}&#34; \ --data-urlencode &#34;end=${END_DATE}&#34; \ --data-urlencode &#34;step=${STEP}&#34; \ &#34;${URL}&#34; | jq ---- ">
+<meta property="og:url" content="https://debuntu.ru/manuals/monitoring/victoriametrics/vmauth/example-curl-request-through-vmauth/">
   <meta property="og:site_name" content="Debuntarium">
-  <meta property="og:title" content="VMAgent. Установка и базовая настройка в изолированной среде">
-  <meta property="og:description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
+  <meta property="og:title" content="Пример запроса к VMetrics-кластеру через vmauth с помощью curl">
+  <meta property="og:description" content="2025-06-20
+У ответственного за мониторинг внутри команды необходимо получить:
+URL, через который имеется внешний доступ к VMetrics-кластеру. Например: https://is1-vmauth.example.org
+Bearer Token, позволяющий читать метрики из VMetrics-кластера. Будет правильным заказать дополнительный Bearer Token для использования его третьими лицами.
+Номера тенантов, содержащие целевые метрики. Пример: &#34;22:4&#34;, где vm_account_id=22, vm_project_id=4.
+Пример запроса с аутентификацией:
+BEARER_TOKEN=&#39;xxxxxxxxxxxxxxx&#39; URL=&#34;https://is1-vmauth.example.org/api/v1/query_range&#34; VM_ACCOUNT_ID=&#39;22&#39; VM_PROJECT_ID=&#39;4&#39; START_DATE=$(TZ=&#34;Europe/Moscow&#34; date -d &#39;2025-06-20 10:03:00&#39; &#43;%s) END_DATE=$(TZ=&#34;Europe/Moscow&#34; date -d &#39;2025-06-20 10:03:00&#39; &#43;%s) STEP=&#34;15s&#34; QUERY=&#34;vm_project_id=\&#34;${VM_PROJECT_ID}\&#34;,__name__=\&#34;RequestProcessor_bytesReceived\&#34;&#34; curl -G \ -H &#34;Authorization: Bearer ${BEARER_TOKEN}&#34; \ -H &#34;TenantID: ${VM_ACCOUNT_ID}&#34; \ --data-urlencode &#34;query={${QUERY}}&#34; \ --data-urlencode &#34;start=${START_DATE}&#34; \ --data-urlencode &#34;end=${END_DATE}&#34; \ --data-urlencode &#34;step=${STEP}&#34; \ &#34;${URL}&#34; | jq ----">
   <meta property="og:locale" content="ru_RU">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="manuals">
+    <meta property="article:published_time" content="2025-06-20T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-06-20T00:00:00+00:00">
+    <meta property="article:tag" content="VictoriaMetrics">
+    <meta property="article:tag" content="Vmauth">
+    <meta property="article:tag" content="Curl">
 
-  <meta itemprop="name" content="VMAgent. Установка и базовая настройка в изолированной среде">
-  <meta itemprop="description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
-  <meta itemprop="datePublished" content="2025-02-15T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2025-02-18T00:00:00+00:00">
+  <meta itemprop="name" content="Пример запроса к VMetrics-кластеру через vmauth с помощью curl">
+  <meta itemprop="description" content="2025-06-20
+У ответственного за мониторинг внутри команды необходимо получить:
+URL, через который имеется внешний доступ к VMetrics-кластеру. Например: https://is1-vmauth.example.org
+Bearer Token, позволяющий читать метрики из VMetrics-кластера. Будет правильным заказать дополнительный Bearer Token для использования его третьими лицами.
+Номера тенантов, содержащие целевые метрики. Пример: &#34;22:4&#34;, где vm_account_id=22, vm_project_id=4.
+Пример запроса с аутентификацией:
+BEARER_TOKEN=&#39;xxxxxxxxxxxxxxx&#39; URL=&#34;https://is1-vmauth.example.org/api/v1/query_range&#34; VM_ACCOUNT_ID=&#39;22&#39; VM_PROJECT_ID=&#39;4&#39; START_DATE=$(TZ=&#34;Europe/Moscow&#34; date -d &#39;2025-06-20 10:03:00&#39; &#43;%s) END_DATE=$(TZ=&#34;Europe/Moscow&#34; date -d &#39;2025-06-20 10:03:00&#39; &#43;%s) STEP=&#34;15s&#34; QUERY=&#34;vm_project_id=\&#34;${VM_PROJECT_ID}\&#34;,__name__=\&#34;RequestProcessor_bytesReceived\&#34;&#34; curl -G \ -H &#34;Authorization: Bearer ${BEARER_TOKEN}&#34; \ -H &#34;TenantID: ${VM_ACCOUNT_ID}&#34; \ --data-urlencode &#34;query={${QUERY}}&#34; \ --data-urlencode &#34;start=${START_DATE}&#34; \ --data-urlencode &#34;end=${END_DATE}&#34; \ --data-urlencode &#34;step=${STEP}&#34; \ &#34;${URL}&#34; | jq ----">
+  <meta itemprop="datePublished" content="2025-06-20T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-06-20T00:00:00+00:00">
+  <meta itemprop="wordCount" content="97">
+  <meta itemprop="keywords" content="VictoriaMetrics,Vmauth,Curl">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="VMAgent. Установка и базовая настройка в изолированной среде">
-  <meta name="twitter:description" content="Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.">
+  <meta name="twitter:title" content="Пример запроса к VMetrics-кластеру через vmauth с помощью curl">
+  <meta name="twitter:description" content="2025-06-20
+У ответственного за мониторинг внутри команды необходимо получить:
+URL, через который имеется внешний доступ к VMetrics-кластеру. Например: https://is1-vmauth.example.org
+Bearer Token, позволяющий читать метрики из VMetrics-кластера. Будет правильным заказать дополнительный Bearer Token для использования его третьими лицами.
+Номера тенантов, содержащие целевые метрики. Пример: &#34;22:4&#34;, где vm_account_id=22, vm_project_id=4.
+Пример запроса с аутентификацией:
+BEARER_TOKEN=&#39;xxxxxxxxxxxxxxx&#39; URL=&#34;https://is1-vmauth.example.org/api/v1/query_range&#34; VM_ACCOUNT_ID=&#39;22&#39; VM_PROJECT_ID=&#39;4&#39; START_DATE=$(TZ=&#34;Europe/Moscow&#34; date -d &#39;2025-06-20 10:03:00&#39; &#43;%s) END_DATE=$(TZ=&#34;Europe/Moscow&#34; date -d &#39;2025-06-20 10:03:00&#39; &#43;%s) STEP=&#34;15s&#34; QUERY=&#34;vm_project_id=\&#34;${VM_PROJECT_ID}\&#34;,__name__=\&#34;RequestProcessor_bytesReceived\&#34;&#34; curl -G \ -H &#34;Authorization: Bearer ${BEARER_TOKEN}&#34; \ -H &#34;TenantID: ${VM_ACCOUNT_ID}&#34; \ --data-urlencode &#34;query={${QUERY}}&#34; \ --data-urlencode &#34;start=${START_DATE}&#34; \ --data-urlencode &#34;end=${END_DATE}&#34; \ --data-urlencode &#34;step=${STEP}&#34; \ &#34;${URL}&#34; | jq ----">
 
 
 
@@ -78,7 +109,7 @@ if (!doNotTrack) {
 }
 </script>
   </head>
-  <body class="td-section">
+  <body class="td-page">
     <header>
       <nav class="td-navbar js-navbar-scroll" data-bs-theme="dark">
 <div class="container-fluid flex-column flex-md-row">
@@ -194,13 +225,13 @@ if (window.location.pathname !== "/") {
   <script>
     $(function() {
     $("#td-section-nav a").removeClass("active");
-    $("#td-section-nav #m-manualsmonitoringvictoriametricsvmagentvmagent-basic-install").addClass("active"); 
-    $("#td-section-nav #m-manualsmonitoringvictoriametricsvmagentvmagent-basic-install-li span").addClass("td-sidebar-nav-active-item"); 
-    $("#td-section-nav #m-manualsmonitoringvictoriametricsvmagentvmagent-basic-install").parents("li").addClass("active-path"); 
+    $("#td-section-nav #m-manualsmonitoringvictoriametricsvmauthexample-curl-request-through-vmauth").addClass("active"); 
+    $("#td-section-nav #m-manualsmonitoringvictoriametricsvmauthexample-curl-request-through-vmauth-li span").addClass("td-sidebar-nav-active-item"); 
+    $("#td-section-nav #m-manualsmonitoringvictoriametricsvmauthexample-curl-request-through-vmauth").parents("li").addClass("active-path"); 
     $("#td-section-nav li.active-path").addClass("show"); 
     $("#td-section-nav li.active-path").children("input").prop('checked', true);
-    $("#td-section-nav #m-manualsmonitoringvictoriametricsvmagentvmagent-basic-install-li").siblings("li").addClass("show");  
-    $("#td-section-nav #m-manualsmonitoringvictoriametricsvmagentvmagent-basic-install-li").children("ul").children("li").addClass("show");  
+    $("#td-section-nav #m-manualsmonitoringvictoriametricsvmauthexample-curl-request-through-vmauth-li").siblings("li").addClass("show");  
+    $("#td-section-nav #m-manualsmonitoringvictoriametricsvmauthexample-curl-request-through-vmauth-li").children("ul").children("li").addClass("show");  
     $("#td-sidebar-menu").toggleClass("d-none"); 
     });
   </script>
@@ -1172,61 +1203,78 @@ if (window.location.pathname !== "/") {
   <li class="breadcrumb-item">
     <a href="/manuals/monitoring/victoriametrics/">VictoriaMetrics</a></li>
   <li class="breadcrumb-item">
-    <a href="/manuals/monitoring/victoriametrics/vmagent/">VMAgent</a></li>
+    <a href="/manuals/monitoring/victoriametrics/vmauth/">VMAuth</a></li>
   <li class="breadcrumb-item active" aria-current="page">
-    VMAgent. Установка и базовая настройка в изолированной среде</li>
+    Пример запроса к VMetrics-кластеру через vmauth с помощью curl</li>
   </ol>
 </nav>
             
 <div class="td-content">
-	<h1>VMAgent. Установка и базовая настройка в изолированной среде</h1>
-  
-	<header class="article-meta">
-		
-</header>
+	<h1>Пример запроса к VMetrics-кластеру через vmauth с помощью curl</h1>
 	
-  <div class="section-index">
-    
-    
-    <hr class="panel-line">
-        <div class="entry">
-                <h5>
-                    <a href="/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/installing-vmagent-with-systemd/">10. vmagent. Установка бинарника в systemd</a>
-                </h5>
-                <p></p>
-            </div>
-        <div class="entry">
-                <h5>
-                    <a href="/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/vmagent-configuring-metrics-sending/">20. vmagent. Конфигурирование отправки метрик</a>
-                </h5>
-                <p></p>
-            </div>
-        <div class="entry">
-                <h5>
-                    <a href="/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/adding-global-labels-to-collected-metrics/">30. vmagent. Добавление глобальных меток к собираемым метрикам</a>
-                </h5>
-                <p></p>
-            </div>
-        <div class="entry">
-                <h5>
-                    <a href="/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/configuring-scraping-metrics/">40. vmagent. Настройка сбора метрик из target&#39;ов</a>
-                </h5>
-                <p></p>
-            </div>
-        <div class="entry">
-                <h5>
-                    <a href="/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/starting-vmagent/">50. vmagent. Запуск демона</a>
-                </h5>
-                <p></p>
-            </div>
-        <div class="entry">
-                <h5>
-                    <a href="/manuals/monitoring/victoriametrics/vmagent/vmagent-basic-install/vmagent-testing/">60. vmagent. Проверка</a>
-                </h5>
-                <p></p>
-            </div>
-        </div>
+	<header class="article-meta">
+		<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://debuntu.ru/tags/victoriametrics/" data-taxonomy-term="victoriametrics"><span class="taxonomy-label">VictoriaMetrics</span></a></li>
+    <li><a class="taxonomy-term" href="https://debuntu.ru/tags/vmauth/" data-taxonomy-term="vmauth"><span class="taxonomy-label">Vmauth</span></a></li>
+    <li><a class="taxonomy-term" href="https://debuntu.ru/tags/curl/" data-taxonomy-term="curl"><span class="taxonomy-label">Curl</span></a></li>
+    </ul>
 </div>
+
+</header>
+	<div class="paragraph">
+<p>2025-06-20</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>У ответственного за мониторинг внутри команды необходимо получить:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><strong>URL</strong>, через который имеется внешний доступ к VMetrics-кластеру. Например: <a href="https://is1-vmauth.example.org" class="bare">https://is1-vmauth.example.org</a></p>
+</li>
+<li>
+<p><strong>Bearer Token</strong>, позволяющий читать метрики из VMetrics-кластера. Будет правильным заказать дополнительный <strong>Bearer Token</strong> для использования его третьими лицами.</p>
+</li>
+<li>
+<p><strong>Номера тенантов</strong>, содержащие целевые метрики. Пример: &#34;22:4&#34;, где <code>vm_account_id=22, vm_project_id=4</code>.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Пример запроса с аутентификацией:</p>
+<div class="listingblock">
+<div class="content">
+<pre>BEARER_TOKEN=&#39;xxxxxxxxxxxxxxx&#39;
+URL=&#34;https://is1-vmauth.example.org/api/v1/query_range&#34;
+VM_ACCOUNT_ID=&#39;22&#39;
+VM_PROJECT_ID=&#39;4&#39;
+START_DATE=$(TZ=&#34;Europe/Moscow&#34; date -d &#39;2025-06-20 10:03:00&#39; +%s)
+END_DATE=$(TZ=&#34;Europe/Moscow&#34; date -d &#39;2025-06-20 10:03:00&#39; +%s)
+STEP=&#34;15s&#34;
+QUERY=&#34;vm_project_id=\&#34;${VM_PROJECT_ID}\&#34;,__name__=\&#34;RequestProcessor_bytesReceived\&#34;&#34;
+
+curl -G \
+  -H &#34;Authorization: Bearer ${BEARER_TOKEN}&#34; \
+  -H &#34;TenantID: ${VM_ACCOUNT_ID}&#34; \
+  --data-urlencode &#34;query={${QUERY}}&#34; \
+  --data-urlencode &#34;start=${START_DATE}&#34; \
+  --data-urlencode &#34;end=${END_DATE}&#34; \
+  --data-urlencode &#34;step=${STEP}&#34; \
+  &#34;${URL}&#34; | jq
+  ----</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+
+	
+</div>
+
 
           </main>
         </div>

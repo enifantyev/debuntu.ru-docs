@@ -1213,7 +1213,7 @@
   
   <url>
     <loc>https://debuntu.ru/manuals/</loc>
-    <lastmod>2025-06-16T00:00:00+00:00</lastmod>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
   </url>
   
   
@@ -1511,7 +1511,7 @@
   
   <url>
     <loc>https://debuntu.ru/manuals/monitoring/</loc>
-    <lastmod>2025-06-16T00:00:00+00:00</lastmod>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
   </url>
   
   
@@ -1537,9 +1537,11 @@
   
   
   
+  
+  
   <url>
     <loc>https://debuntu.ru/</loc>
-    <lastmod>2025-06-16T00:00:00+00:00</lastmod>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
   </url>
   
   
@@ -1550,7 +1552,23 @@
   
   <url>
     <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/</loc>
-    <lastmod>2025-06-16T00:00:00+00:00</lastmod>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmauth/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmauth/example-curl-request-through-vmauth/</loc>
+    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
   </url>
   
   
@@ -1567,15 +1585,6 @@
   <url>
     <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmctl/vmctl-example-copying/</loc>
     <lastmod>2025-06-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  
-  
-  
-  
-  <url>
-    <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmauth/</loc>
-    <lastmod>2025-06-14T00:00:00+00:00</lastmod>
   </url>
   
   
@@ -1827,8 +1836,6 @@
     <loc>https://debuntu.ru/manuals/kubernetes/tls-kerberos-in-kubernetes/cert-manager_and_all_about_it/cert-manager_upgrade/</loc>
     <lastmod>2024-05-13T00:00:00+00:00</lastmod>
   </url>
-  
-  
   
   
   
