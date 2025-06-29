@@ -27,7 +27,7 @@
 Метрики хранятся в каталогах {storageDataPath}/data/{big,small}. В этих каталогах для каждого календарного месяца существует отдельная директория с именем вида 2024_09, 2024_10, etc.
 Вне зависимости от указанного значения в retentionPeriod, удаляться будет целый календарный месяц (кроме случая, когда retentionPeriod &lt; 1 месяца). То есть при retentionPeriod 32d, метрики предыдущего месяца будут храниться ещё один месяц. (переформулировать).
 При наступлении retention-события, все календарные каталоги, диапазон содержимого которых вышло за значение RetentionPeriod, будут моментально уничтожены.
-Кроме каталога {storageDataPath}/data, где хранятся временные ряды, для хранения &#34;IndexDB&#34; используется каталог {storageDataPath}/indexdb. Индекс не может быть удалён и/или сжат. Кроме того, после первого же retention-события, в каталоге {storageDataPath}/indexdb будут храниться два Индекса. Один из них актуальный и ежедневно пополняющийся, второй
+Кроме каталога {storageDataPath}/data, где хранятся временные ряды, для хранения &#34;IndexDB&#34; используется каталог {storageDataPath}/indexdb. Индекс не может быть удалён и/или сжат. Кроме того, после первого же retention-события, в каталоге {storageDataPath}/indexdb будут храниться два Индекса. Один из них актуальный и ежедневно пополняющийся, второй статичный прошлый IndexDB.
 Оставшееся время до наступления retention-события указывает в секундах в метрике vm_next_retention_seconds.">
 <meta property="og:url" content="https://debuntu.ru/manuals/monitoring/victoriametrics/vmstorage/vmstorage-description-option-retentionperiod/">
   <meta property="og:site_name" content="Debuntarium">
@@ -41,7 +41,7 @@
 Метрики хранятся в каталогах {storageDataPath}/data/{big,small}. В этих каталогах для каждого календарного месяца существует отдельная директория с именем вида 2024_09, 2024_10, etc.
 Вне зависимости от указанного значения в retentionPeriod, удаляться будет целый календарный месяц (кроме случая, когда retentionPeriod &lt; 1 месяца). То есть при retentionPeriod 32d, метрики предыдущего месяца будут храниться ещё один месяц. (переформулировать).
 При наступлении retention-события, все календарные каталоги, диапазон содержимого которых вышло за значение RetentionPeriod, будут моментально уничтожены.
-Кроме каталога {storageDataPath}/data, где хранятся временные ряды, для хранения &#34;IndexDB&#34; используется каталог {storageDataPath}/indexdb. Индекс не может быть удалён и/или сжат. Кроме того, после первого же retention-события, в каталоге {storageDataPath}/indexdb будут храниться два Индекса. Один из них актуальный и ежедневно пополняющийся, второй
+Кроме каталога {storageDataPath}/data, где хранятся временные ряды, для хранения &#34;IndexDB&#34; используется каталог {storageDataPath}/indexdb. Индекс не может быть удалён и/или сжат. Кроме того, после первого же retention-события, в каталоге {storageDataPath}/indexdb будут храниться два Индекса. Один из них актуальный и ежедневно пополняющийся, второй статичный прошлый IndexDB.
 Оставшееся время до наступления retention-события указывает в секундах в метрике vm_next_retention_seconds.">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:type" content="article">
@@ -61,11 +61,11 @@
 Метрики хранятся в каталогах {storageDataPath}/data/{big,small}. В этих каталогах для каждого календарного месяца существует отдельная директория с именем вида 2024_09, 2024_10, etc.
 Вне зависимости от указанного значения в retentionPeriod, удаляться будет целый календарный месяц (кроме случая, когда retentionPeriod &lt; 1 месяца). То есть при retentionPeriod 32d, метрики предыдущего месяца будут храниться ещё один месяц. (переформулировать).
 При наступлении retention-события, все календарные каталоги, диапазон содержимого которых вышло за значение RetentionPeriod, будут моментально уничтожены.
-Кроме каталога {storageDataPath}/data, где хранятся временные ряды, для хранения &#34;IndexDB&#34; используется каталог {storageDataPath}/indexdb. Индекс не может быть удалён и/или сжат. Кроме того, после первого же retention-события, в каталоге {storageDataPath}/indexdb будут храниться два Индекса. Один из них актуальный и ежедневно пополняющийся, второй
+Кроме каталога {storageDataPath}/data, где хранятся временные ряды, для хранения &#34;IndexDB&#34; используется каталог {storageDataPath}/indexdb. Индекс не может быть удалён и/или сжат. Кроме того, после первого же retention-события, в каталоге {storageDataPath}/indexdb будут храниться два Индекса. Один из них актуальный и ежедневно пополняющийся, второй статичный прошлый IndexDB.
 Оставшееся время до наступления retention-события указывает в секундах в метрике vm_next_retention_seconds.">
   <meta itemprop="datePublished" content="2025-05-23T00:00:00+00:00">
   <meta itemprop="dateModified" content="2025-05-23T00:00:00+00:00">
-  <meta itemprop="wordCount" content="186">
+  <meta itemprop="wordCount" content="189">
   <meta itemprop="keywords" content="VictoriaMetrics,Vmstorage">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="VMStorage. Описание опции retentionPeriod">
@@ -78,7 +78,7 @@
 Метрики хранятся в каталогах {storageDataPath}/data/{big,small}. В этих каталогах для каждого календарного месяца существует отдельная директория с именем вида 2024_09, 2024_10, etc.
 Вне зависимости от указанного значения в retentionPeriod, удаляться будет целый календарный месяц (кроме случая, когда retentionPeriod &lt; 1 месяца). То есть при retentionPeriod 32d, метрики предыдущего месяца будут храниться ещё один месяц. (переформулировать).
 При наступлении retention-события, все календарные каталоги, диапазон содержимого которых вышло за значение RetentionPeriod, будут моментально уничтожены.
-Кроме каталога {storageDataPath}/data, где хранятся временные ряды, для хранения &#34;IndexDB&#34; используется каталог {storageDataPath}/indexdb. Индекс не может быть удалён и/или сжат. Кроме того, после первого же retention-события, в каталоге {storageDataPath}/indexdb будут храниться два Индекса. Один из них актуальный и ежедневно пополняющийся, второй
+Кроме каталога {storageDataPath}/data, где хранятся временные ряды, для хранения &#34;IndexDB&#34; используется каталог {storageDataPath}/indexdb. Индекс не может быть удалён и/или сжат. Кроме того, после первого же retention-события, в каталоге {storageDataPath}/indexdb будут храниться два Индекса. Один из них актуальный и ежедневно пополняющийся, второй статичный прошлый IndexDB.
 Оставшееся время до наступления retention-события указывает в секундах в метрике vm_next_retention_seconds.">
 
 
@@ -142,6 +142,12 @@ if (!doNotTrack) {
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/manuals/networking/"><span>Networking</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/manuals/remote-control/"><span>Remote Control</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/manuals/remote-control/ssh/"><span>SSH</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/manuals/vpn/"><span>VPN</span></a>
@@ -735,6 +741,24 @@ if (window.location.pathname !== "/") {
   </ul>
 </li>
   </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsremote-control-li">
+  <input type="checkbox" id="m-manualsremote-control-check"/>
+  <label for="m-manualsremote-control-check"><a href="/manuals/remote-control/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsremote-control"><span class="">Remote Control</span></a></label>
+  
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsremote-controlssh-li">
+  <input type="checkbox" id="m-manualsremote-controlssh-check"/>
+  <label for="m-manualsremote-controlssh-check"><a href="/manuals/remote-control/ssh/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsremote-controlssh"><span class="">SSH</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-manualsremote-controlsshexample-hardening-ssh-li">
+  <input type="checkbox" id="m-manualsremote-controlsshexample-hardening-ssh-check"/>
+  <label for="m-manualsremote-controlsshexample-hardening-ssh-check"><a href="/manuals/remote-control/ssh/example-hardening-ssh/" class="align-left ps-0  td-sidebar-link td-sidebar-link__page" id="m-manualsremote-controlsshexample-hardening-ssh"><span class="">Пример «укрепления» sshd</span></a></label>
+  
+</li>
+  </ul>
+</li>
+  </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-manualsmonitoring-li">
   <input type="checkbox" id="m-manualsmonitoring-check"/>
   <label for="m-manualsmonitoring-check"><a href="/manuals/monitoring/" class="align-left ps-0  td-sidebar-link td-sidebar-link__section" id="m-manualsmonitoring"><span class="">Monitoring</span></a></label>
@@ -1171,7 +1195,8 @@ if (window.location.pathname !== "/") {
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/spark/" data-taxonomy-term="spark"><span class="taxonomy-label">Spark</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/squid/" data-taxonomy-term="squid"><span class="taxonomy-label">Squid</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/squidguard/" data-taxonomy-term="squidguard"><span class="taxonomy-label">SquidGuard</span><span class="taxonomy-count">1</span></a></li>
-        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/ssh/" data-taxonomy-term="ssh"><span class="taxonomy-label">Ssh</span><span class="taxonomy-count">5</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/ssh/" data-taxonomy-term="ssh"><span class="taxonomy-label">Ssh</span><span class="taxonomy-count">6</span></a></li>
+        <li><a class="taxonomy-term" href="https://debuntu.ru/tags/sshd/" data-taxonomy-term="sshd"><span class="taxonomy-label">Sshd</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/strongswan/" data-taxonomy-term="strongswan"><span class="taxonomy-label">StrongSwan</span><span class="taxonomy-count">1</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/stunnel/" data-taxonomy-term="stunnel"><span class="taxonomy-label">Stunnel</span><span class="taxonomy-count">2</span></a></li>
         <li><a class="taxonomy-term" href="https://debuntu.ru/tags/sudo/" data-taxonomy-term="sudo"><span class="taxonomy-label">Sudo</span><span class="taxonomy-count">1</span></a></li>
@@ -1288,7 +1313,7 @@ if (window.location.pathname !== "/") {
 <p>При наступлении retention-события, все календарные каталоги, диапазон содержимого которых вышло за значение <code>RetentionPeriod</code>, будут моментально уничтожены.</p>
 </li>
 <li>
-<p>Кроме каталога <code>{storageDataPath}/data</code>, где хранятся временные ряды, для хранения &#34;IndexDB&#34; используется каталог <code>{storageDataPath}/indexdb</code>. Индекс не может быть удалён и/или сжат. Кроме того, после первого же retention-события, в каталоге <code>{storageDataPath}/indexdb</code> будут храниться два Индекса. Один из них актуальный и ежедневно пополняющийся, второй</p>
+<p>Кроме каталога <code>{storageDataPath}/data</code>, где хранятся временные ряды, для хранения &#34;IndexDB&#34; используется каталог <code>{storageDataPath}/indexdb</code>. Индекс не может быть удалён и/или сжат. Кроме того, после первого же retention-события, в каталоге <code>{storageDataPath}/indexdb</code> будут храниться два Индекса. Один из них актуальный и ежедневно пополняющийся, второй статичный прошлый IndexDB.</p>
 </li>
 <li>
 <p>Оставшееся время до наступления retention-события указывает в секундах в метрике <code>vm_next_retention_seconds</code>.</p>

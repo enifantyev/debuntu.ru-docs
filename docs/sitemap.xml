@@ -81,6 +81,13 @@
   
   
   <url>
+    <loc>https://debuntu.ru/manuals/remote-control/ssh/example-hardening-ssh/</loc>
+    <lastmod>2025-06-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://debuntu.ru/manuals/monitoring/victoriametrics/vmauth/vmauth-basic-installing-and-configuring/vmauth-manual-installing-in-systemd/</loc>
     <lastmod>2025-06-13T00:00:00+00:00</lastmod>
   </url>
@@ -1213,7 +1220,7 @@
   
   <url>
     <loc>https://debuntu.ru/manuals/</loc>
-    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+    <lastmod>2025-06-29T00:00:00+00:00</lastmod>
   </url>
   
   
@@ -1510,6 +1517,20 @@
   
   
   <url>
+    <loc>https://debuntu.ru/manuals/remote-control/</loc>
+    <lastmod>2025-06-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://debuntu.ru/manuals/remote-control/ssh/</loc>
+    <lastmod>2025-06-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://debuntu.ru/manuals/monitoring/</loc>
     <lastmod>2025-06-20T00:00:00+00:00</lastmod>
   </url>
@@ -1537,12 +1558,16 @@
   
   
   
-  
-  
   <url>
     <loc>https://debuntu.ru/</loc>
-    <lastmod>2025-06-20T00:00:00+00:00</lastmod>
+    <lastmod>2025-06-29T00:00:00+00:00</lastmod>
   </url>
+  
+  
+  
+  
+  
+  
   
   
   
@@ -1836,8 +1861,6 @@
     <loc>https://debuntu.ru/manuals/kubernetes/tls-kerberos-in-kubernetes/cert-manager_and_all_about_it/cert-manager_upgrade/</loc>
     <lastmod>2024-05-13T00:00:00+00:00</lastmod>
   </url>
-  
-  
   
   
   

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SSH on Debuntarium</title>
+    <link>https://debuntu.ru/manuals/remote-control/ssh/</link>
+    <description>Recent content in SSH on Debuntarium</description>
+    <generator>Hugo</generator>
+    <language>ru-RU</language>
+    <lastBuildDate>Sun, 29 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://debuntu.ru/manuals/remote-control/ssh/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Пример «укрепления» sshd</title>
+      <link>https://debuntu.ru/manuals/remote-control/ssh/example-hardening-ssh/</link>
+      <pubDate>Sun, 29 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://debuntu.ru/manuals/remote-control/ssh/example-hardening-ssh/</guid>
+      <description>&lt;div class=&#34;olist arabic&#34;&gt;&#xA;&lt;ol class=&#34;arabic&#34;&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Для облегчения автоматического обновления sshd, все следующие настройки должны размещаться в каталоге &lt;code&gt;/etc/ssh/sshd_config.d/&lt;/code&gt;.&#xA;Проверьте, что в основном файле &lt;code&gt;/etc/ssh/sshd_config&lt;/code&gt; присутствует опция &lt;code&gt;Include /etc/ssh/sshd_config.d/*.conf&lt;/code&gt;, а она обычно присутствует в оригинальном файле, поставляемом с дистрибутивом.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Файлы из каталога &lt;code&gt;/etc/ssh/sshd_config.d&lt;/code&gt; применяются сервисом sshd при своём запуске в алфавитном порядке.&#xA;Из двух одинаковых опций с конфликтующими значениями будет применена первая встретившаяся.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Пример файла &lt;code&gt;/etc/ssh/sshd_config.d/10-hardening.conf&lt;/code&gt;:&lt;/p&gt;&#xA;&lt;div class=&#34;listingblock&#34;&gt;&#xA;&lt;div class=&#34;content&#34;&gt;&#xA;&lt;pre&gt;HostKey /etc/ssh/ssh_host_rsa_key&#xA;HostKey /etc/ssh/ssh_host_ed25519_key&#xA;&#xA;PermitRootLogin no&#xA;MaxAuthTries 6&#xA;PubkeyAuthentication yes&#xA;PasswordAuthentication no&#xA;X11Forwarding no&#xA;UseDNS no&lt;/pre&gt;&#xA;&lt;/div&gt;</description>
+    </item>
+  </channel>
+</rss>
